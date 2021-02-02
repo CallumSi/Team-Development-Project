@@ -32,7 +32,7 @@ namespace VirginTestProject
         }
 
 
-      
+
 
 
 
@@ -127,8 +127,21 @@ namespace VirginTestProject
             Assert.AreEqual(AnMarketplaceUser.Rating, TestData);
         }
 
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure no error msg
+            Assert.AreEqual(Error, "");
 
-
-
+        }
     }
+
 }
