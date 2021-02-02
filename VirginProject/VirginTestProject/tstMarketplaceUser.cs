@@ -70,7 +70,7 @@ namespace VirginTestProject
         [TestMethod]
         public void PostCodePropertyOK()
         {
-            //postcode
+            //postcode in correct format 
 
             //create instance of Marketplace user
             clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
@@ -81,6 +81,52 @@ namespace VirginTestProject
             //test if values are equal 
             Assert.AreEqual(AnMarketplaceUser.PostCode, TestData);
         }
+
+        [TestMethod]
+        public void EmailPropertyOK()
+        {
+            //Email in form aa@bb.cc
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            string TestData = "steve@gmail.com";
+            //assign data to the property
+            AnMarketplaceUser.Email = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.Email, TestData);
+        }
+
+        [TestMethod]
+        public void PasswordPropertyOK()
+        {
+            //password include Capitcal + Number
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            string TestData = "Test1";
+            //assign data to the property
+            AnMarketplaceUser.Password = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.Password, TestData);
+        }
+
+        [TestMethod]
+        public void RatingPropertyOK()
+        {
+            //integer between 1 and 10 inclusive
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            int TestData = 7;
+            //assign data to the property
+            AnMarketplaceUser.Rating = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.Rating, TestData);
+        }
+
 
 
 
