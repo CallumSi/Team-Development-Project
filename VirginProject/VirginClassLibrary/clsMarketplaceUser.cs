@@ -14,13 +14,23 @@ namespace VirginClassLibrary
 
         public string Valid(string anDeliveryAdressLineOne)
         {
-            if (anDeliveryAdressLineOne != "")
+            if (anDeliveryAdressLineOne != "" )
             {
-                //return no error message 
-                return "";
+                if (anDeliveryAdressLineOne.Length < 46)
+                {
+                    //return no error message 
+                    return "";
+                }
+                else
+                {
+                    //return error message 
+                    return "Delivery Line One cannot exceed 45 characters";
+                }
+                
             }
             else
             {
+                //return error message 
                 return "Delivery Line One cannot be left blank! ";
             }
         

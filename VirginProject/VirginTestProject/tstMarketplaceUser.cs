@@ -142,6 +142,126 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
 
         }
+
+        [TestMethod]
+        public void DeliveryAdressLineOneMinMinusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "";
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryAdressLineOneMinBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "A";
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryAdressLineOneMinPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "AA";
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryAdressLineOneMaxMinOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "";
+            //add characters to the string 
+            AnDeliveryAdressLineOne = AnDeliveryAdressLineOne.PadRight(44, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+        [TestMethod]
+        public void DeliveryAdressLineOneMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "";
+            //add characters to the string 
+            AnDeliveryAdressLineOne = AnDeliveryAdressLineOne.PadRight(45, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void DeliveryAdressLineOneMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "";
+            //add characters to the string 
+            AnDeliveryAdressLineOne = AnDeliveryAdressLineOne.PadRight(46, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is an error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryAdressLineOneExtremeMax()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "";
+            //add characters to the string 
+            AnDeliveryAdressLineOne = AnDeliveryAdressLineOne.PadRight(450, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne);
+            //Test to ensure there is an error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
     }
 
 }
