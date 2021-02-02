@@ -15,5 +15,19 @@ namespace VirginTestProject
             //test to see if it existis
             Assert.IsNotNull(AnMarketplaceUser);
         }
+
+        [TestMethod]
+        public void AdminPropertyOK()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            Boolean TestData = true;
+            //assign data to the property
+            AnMarketplaceUser.Admin = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.Admin, TestData);
+        }
+
     }
 }
