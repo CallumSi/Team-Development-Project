@@ -1,8 +1,8 @@
 ﻿namespace VirginClassLibrary
 {
-    public class clsPost
+    public class clsForumPost
     {
-        public clsPost()
+        public clsForumPost()
         {
         }
     }

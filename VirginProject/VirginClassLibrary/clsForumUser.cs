@@ -1,8 +1,8 @@
 ﻿namespace VirginClassLibrary
 {
-    public class clsComment
+    public class clsForumUser
     {
-        public clsComment()
+        public clsForumUser()
         {
         }
     }
