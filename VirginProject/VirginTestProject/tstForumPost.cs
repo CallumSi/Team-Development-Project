@@ -5,15 +5,16 @@ using VirginClassLibrary;
 namespace VirginTestProject
 {
     [TestClass]
-    public class tstComment
+    public class tstForumPost
     {
         [TestMethod]
         public void InstanceOK()
         {
             //create an instance of the class we want to create
-            clsComment AnComment = new clsComment();
+            clsForumPost AnPost = new clsForumPost();
             //test to see that it exists
-            Assert.IsNotNull(AnComment);
+            Assert.IsNotNull(AnPost);
+
         }
     }
 }

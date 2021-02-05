@@ -1,8 +1,8 @@
 ﻿namespace VirginClassLibrary
 {
-    public class clsAdmin
+    public class clsForumAdmin
     {
-        public clsAdmin()
+        public clsForumAdmin()
         {
         }
     }
