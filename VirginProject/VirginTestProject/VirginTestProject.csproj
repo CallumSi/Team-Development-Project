@@ -56,6 +56,14 @@
     <Compile Include="tstForumPost.cs" />
     <Compile Include="tstForumUser.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
+    <Compile Include="tstVHCAppointment.cs" />
+    <Compile Include="tstVHCAppointmentCollection.cs" />
+    <Compile Include="tstVHCHospital.cs" />
+    <Compile Include="tstVHCHospitalCollection.cs" />
+    <Compile Include="tstVHCPatient.cs" />
+    <Compile Include="tstVHCPatientCollection.cs" />
+    <Compile Include="tstVHCStaff.cs" />
+    <Compile Include="tstVHCStaffCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
