@@ -55,6 +55,7 @@
     <Compile Include="tstComment.cs" />
     <Compile Include="tstPost.cs" />
     <Compile Include="tstUser.cs" />
+    <Compile Include="tstMarketplaceUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
