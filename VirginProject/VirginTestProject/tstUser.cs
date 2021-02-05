@@ -15,5 +15,14 @@ namespace VirginTestProject
             //test to see that it exists
             Assert.IsNotNull(AnUser);
         }
+        [TestMethod]
+        public void ActivePropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsUser AnUser = new clsUser();
+            //create some test data to assign to the property
+
+        }
+
     }
 }
