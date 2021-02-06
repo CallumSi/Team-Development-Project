@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using VirginClassLibrary;
 
 namespace VirginTestProject
 {
@@ -7,8 +8,10 @@ namespace VirginTestProject
     public class tstVHCPatient
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstantiationOK()
         {
+            //create an instance of the class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient(); 
         }
     }
 }
