@@ -173,5 +173,18 @@ namespace VirginTestProject
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(AVHCPatient.Patient_Status, SomePatient_Status);
         }
+
+        [TestMethod]
+        //used to test the presence of the Valid Method
+        public void Valid()
+        {
+            //create an instance of the class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //test to see if the valid method exists 
+            AVHCPatient.Valid("Miss"); 
+           
+        }
+
+
     }
 }
