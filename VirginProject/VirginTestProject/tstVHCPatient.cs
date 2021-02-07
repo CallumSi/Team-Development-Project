@@ -7,6 +7,10 @@ namespace VirginTestProject
     [TestClass]
     public class tstVHCPatient
     {
+        /// <summary>
+        /// TESTING PATIENT PROPERTIES
+        /// </summary>
+       
         [TestMethod]
         public void InstantiationOK()
         {
@@ -16,7 +20,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Title property of the class 
-        public void Patient_Title()
+        public void Patient_TitlePropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -32,7 +36,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Firstname property of the class 
-        public void Patient_Firstname()
+        public void Patient_FirstnamePropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -48,7 +52,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Lastname property of the class 
-        public void Patient_Lastname()
+        public void Patient_LastnamePropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -64,7 +68,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Address property of the class 
-        public void Patient_Address()
+        public void Patient_AddressPropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -80,7 +84,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_DOB property of the class 
-        public void Patient_DOB()
+        public void Patient_DOBPropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -96,7 +100,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Email property of the class 
-        public void Patient_Email()
+        public void Patient_EmailPropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -112,7 +116,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Username property of the class 
-        public void Patient_Username()
+        public void Patient_UsernamePropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -128,7 +132,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Password property of the class 
-        public void Patient_Password()
+        public void Patient_PasswordPropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -144,7 +148,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Telephone property of the class 
-        public void Patient_Telephone()
+        public void Patient_TelephonePropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -160,7 +164,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_Status property of the class 
-        public void Patient_Status()
+        public void Patient_StatusPropertyOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -176,7 +180,7 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the presence of the Valid Method
-        public void Valid()
+        public void ValidMethodOK()
         {
             //create an instance of the class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
@@ -184,6 +188,60 @@ namespace VirginTestProject
             AVHCPatient.Valid("Miss"); 
            
         }
+
+
+        /// <summary>
+        /// TEST PLAN: Patient_Title Property
+        /// </summary>
+
+        [TestMethod]
+        //test that the patient title validation throws an error when patient title is blank 
+        public void Patient_TitleMinLessOne()
+        {
+            //create an instance of the class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            Boolean OK;
+            //test the valid method with a blank string
+            OK = AVHCPatient.Valid("");
+            //assert that the outcome should be false 
+            Assert.IsFalse(OK); 
+        }
+
+        [TestMethod]
+        public void Patient_TitleMaxPlusOne()
+        {
+            //create an instance of the class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            Boolean OK;
+            //create a variable to store the test data 
+            string SomeText = "";
+            //pad the data to the required number of characters 
+            SomeText = SomeText.PadLeft(6); 
+            //test the valid method with a two character string 
+            OK = AVHCPatient.Valid(SomeText);
+            //assert that the outcome should be true
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void Patient_TitleExtremeMax()
+        {
+            //create an instance of the class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            Boolean OK;
+            //create a variable to store the test data 
+            string SomeText = "";
+            //pad the data to the required number of characters 
+            SomeText = SomeText.PadLeft(10);
+            //test the valid method with a two character string 
+            OK = AVHCPatient.Valid(SomeText);
+            //assert that the outcome should be true
+            Assert.IsFalse(OK);
+        }
+
 
 
     }

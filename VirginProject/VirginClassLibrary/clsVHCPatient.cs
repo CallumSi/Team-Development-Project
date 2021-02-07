@@ -36,7 +36,29 @@ namespace VirginClassLibrary
 
         public Boolean Valid(string Patient_Title)
         {
-            return true;
+            //var to record any errors found in Patient_Title assuming all is OK
+            Boolean OK = true; 
+            //test to see if the patient title has zero characters 
+            if (Patient_Title.Length == 0)
+            {
+                //set OK to false
+                OK = false; 
+            }
+
+            //test to see if the patient title is no more than 5 characters
+            if (Patient_Title.Length > 5)
+            {
+                //set OK to false
+                OK = false;
+            }
+
+            //return the results of all tests
+            return OK; 
+
+            
+            
+            
+           
         }
     }
 }
