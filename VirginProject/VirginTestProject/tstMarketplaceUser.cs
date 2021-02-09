@@ -152,6 +152,7 @@ namespace VirginTestProject
         }
 
         //Blank Tests
+        [TestMethod]
         public void AnDeliveryAdressLineOneBlank()
         {
             //create instance of Marketplace user
@@ -171,6 +172,7 @@ namespace VirginTestProject
             Assert.AreNotEqual(Error, "");
 
         }
+        [TestMethod]
         public void AnDeliveryAdressLineTwoBlank()
         {
             //create instance of Marketplace user
@@ -190,6 +192,7 @@ namespace VirginTestProject
             Assert.AreNotEqual(Error, "");
 
         }
+        [TestMethod]
         public void AnPostCodeBlank()
         {
             //create instance of Marketplace user
@@ -209,6 +212,7 @@ namespace VirginTestProject
             Assert.AreNotEqual(Error, "");
 
         }
+        [TestMethod]
 
         public void AnEmailBlank()
         {
@@ -226,10 +230,10 @@ namespace VirginTestProject
             //test the valid method with the test data
             Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
             //Test to ensure no error msg
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
 
         }
-
+        [TestMethod]
         //This should be okay as rating can be left blank
         public void AnRatingBlank()
         {
@@ -251,6 +255,14 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
 
         }
+
+
+
+
+
+        // boundary resting 
+
+
     }
 }
 

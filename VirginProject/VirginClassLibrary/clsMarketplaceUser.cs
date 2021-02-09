@@ -30,16 +30,25 @@ namespace VirginClassLibrary
                             {
                                 try
                                 {
-                                    ConvertedRating=Convert.ToInt32(anRating);
-                                    if (ConvertedRating > -1 && ConvertedRating < 11)
+                                    if (anRating=="")
                                     {
-                                        ErrorMsg = "";
+                                        ConvertedRating = 0;
                                     }
                                     else
                                     {
-                                        //return error message 
-                                        ErrorMsg += "Rating must be out of ten ";
-                                    }
+                                        ConvertedRating = Convert.ToInt32(anRating);
+                                        if (ConvertedRating > -1 && ConvertedRating < 11)
+                                        {
+                                            ErrorMsg = "";
+                                        }
+                                        else
+                                        {
+                                            //return error message 
+                                            ErrorMsg += "Rating must be out of ten ";
+                                        }
+                                    }  
+                                  
+                                    
                                 }
                                 catch{
                                     //return error message 
