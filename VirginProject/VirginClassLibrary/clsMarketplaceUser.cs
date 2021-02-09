@@ -24,9 +24,9 @@ namespace VirginClassLibrary
                 {
                     if (anPostCode.Length>0 && anPostCode.Length<16)
                     {
-                        if (anEmail.Length>0 && anEmail.Length<50)
+                        if (anEmail.Length>0 && anEmail.Length<51)
                         {
-                            if (anPassword.Length>2 && anPassword.Length < 50)
+                            if (anPassword.Length>2 && anPassword.Length < 51)
                             {
                                 try
                                 {
