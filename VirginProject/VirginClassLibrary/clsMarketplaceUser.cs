@@ -26,7 +26,7 @@ namespace VirginClassLibrary
                     {
                         if (anEmail.Length>0 && anEmail.Length<50)
                         {
-                            if (anPassword.Length>0 && anPassword.Length < 50)
+                            if (anPassword.Length>2 && anPassword.Length < 50)
                             {
                                 try
                                 {
