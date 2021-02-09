@@ -248,7 +248,7 @@ namespace VirginTestProject
             String AnEmail = "cjs@gmail.com";
             String AnPassword = "Password1#";
             String AnRating = "";
-            
+
             //test the valid method with the test data
             Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
             //Test to ensure no error msg
@@ -669,6 +669,39 @@ namespace VirginTestProject
 
         }
 
+        //Test for incorrect Data Types
+
+
+
+        //Test Contains Special
+
+
+        [TestMethod]
+        public void ContainsSpecial()
+        {
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            bool Return = false;
+            string TestData = "Hello%";
+            Return = AnMarketplaceUser.TestForSpecialCharacters(TestData);
+            Assert.AreEqual(Return, true);
+        }
+
+
+        [TestMethod]
+        public void NoSpecial()
+        {
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            bool Return = false;
+            string TestData = "Hello";
+            Return = AnMarketplaceUser.TestForSpecialCharacters(TestData);
+            Assert.AreEqual(Return, false);
+        }
     }
 }
 

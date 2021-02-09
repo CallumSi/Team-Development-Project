@@ -91,5 +91,34 @@ namespace VirginClassLibrary
 
             return ErrorMsg;
         }
+
+
+
+
+        public bool TestForSpecialCharacters(string TestData)
+        {
+            bool ContainsSpecial = false;
+
+            foreach (var i in TestData)
+            {
+                if (char.IsLetterOrDigit(i))
+                {
+                    ContainsSpecial = false;
+                    
+                }
+                else
+                {
+                    ContainsSpecial = true;
+                    break;
+                }
+
+
+
+
+            }
+
+            return ContainsSpecial;
+        }
+       
     }
 }
