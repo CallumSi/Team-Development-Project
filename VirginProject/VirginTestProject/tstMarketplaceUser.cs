@@ -684,7 +684,7 @@ namespace VirginTestProject
             clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
             //string to store if result isvalid 
             bool Return = false;
-            string TestData = "Hello%";
+            string TestData = "Hello% ";
             Return = AnMarketplaceUser.TestForSpecialCharacters(TestData);
             Assert.AreEqual(Return, true);
         }
@@ -698,7 +698,7 @@ namespace VirginTestProject
             clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
             //string to store if result isvalid 
             bool Return = false;
-            string TestData = "Hello";
+            string TestData = "Hello ";
             Return = AnMarketplaceUser.TestForSpecialCharacters(TestData);
             Assert.AreEqual(Return, false);
         }

@@ -17,6 +17,8 @@ namespace VirginClassLibrary
             //declare empty string 
             string ErrorMsg = "";
             int ConvertedRating;
+            
+
             //check for blank string
             if (anDeliveryAdressLineOne.Length>0 && anDeliveryAdressLineOne.Length< 46)
             {
@@ -32,7 +34,7 @@ namespace VirginClassLibrary
                                 {
                                     if (anRating=="")
                                     {
-                                        ConvertedRating = 0;
+                                        ErrorMsg = "";
                                     }
                                     else
                                     {
@@ -89,6 +91,33 @@ namespace VirginClassLibrary
                 ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
             }
 
+            //check for special characters
+            if (TestForSpecialCharacters(anDeliveryAdressLineOne) == true)
+            {
+                ErrorMsg += "Delivery adress line one must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anDeliveryAdressLineTwo) == true)
+            {
+                ErrorMsg += "Delivery adress line two must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anPostCode) == true)
+            {
+                ErrorMsg += "PostCode must have no special characters";
+
+            }
+            if (anRating!="" && TestForSpecialCharacters(anRating) == true)
+            {
+                ErrorMsg += "Rating must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anPassword) == false)
+            {
+                ErrorMsg += "passsword must have 1 special character";
+
+            }
+
             return ErrorMsg;
         }
 
@@ -98,22 +127,17 @@ namespace VirginClassLibrary
         public bool TestForSpecialCharacters(string TestData)
         {
             bool ContainsSpecial = false;
-
             foreach (var i in TestData)
             {
-                if (char.IsLetterOrDigit(i))
+                if (char.IsLetterOrDigit(i) || char.IsWhiteSpace(i) == true)
                 {
-                    ContainsSpecial = false;
-                    
+                    ContainsSpecial = false;     
                 }
                 else
                 {
                     ContainsSpecial = true;
                     break;
                 }
-
-
-
 
             }
 
