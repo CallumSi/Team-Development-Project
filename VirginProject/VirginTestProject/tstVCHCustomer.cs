@@ -15,7 +15,7 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void FirstName()
+        public void FirstNameOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
@@ -30,7 +30,54 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void LastName()
+        public void FirstNameMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //test the valid method with a 1 letter string
+            OK = VCHCustomer.Valid("D");
+            //assert the the outcome should be false
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void FirstNamePlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //create a variable to store the test data
+            string SomeText = "";
+            //pad the data to the required number of characters
+            SomeText = SomeText.PadLeft(31);
+            //test the valid method with a 31 letter string
+            OK = VCHCustomer.Valid(SomeText);
+            //assert the the outcome should be true
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void FirstNameExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //create a variable to store the test data
+            string SomeText = "";
+            //pad the data to the required number of characters
+            SomeText = SomeText.PadLeft(100);
+            //test the valid method with a 100 letter string
+            OK = VCHCustomer.Valid(SomeText);
+            //assert the the outcome should be true
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void LastNameOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
@@ -44,6 +91,74 @@ namespace VirginTestProject
             Assert.AreEqual(VCHCustomer.LastName, SomeLastName);
         }
 
-        //leaving work at this stage because my tests aren't running anymore. All I'm getting is a blue exclamation mark
+        [TestMethod]
+        public void AddressOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to store the customers address
+            string SomeAddress;
+            //assign an Address to the variable
+            SomeAddress = "12 Florence Cresent, Leicestershire";
+            //try send data to the Address property
+            VCHCustomer.Address = SomeAddress;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(VCHCustomer.Address, SomeAddress);
+        }
+
+        [TestMethod]
+        public void PhoneNumberOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to store the customers phone number
+            string SomePhoneNumber;
+            //assign a PhoneNumber to the variable
+            SomePhoneNumber = "07912345678";
+            //try send data to the PhoneNumber property
+            VCHCustomer.PhoneNumber = SomePhoneNumber;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(VCHCustomer.PhoneNumber, SomePhoneNumber);
+        }
+
+        [TestMethod]
+        public void EmailOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to store the customers email
+            string SomeEmail;
+            //assign an Email to the variable
+            SomeEmail = "d.alighieri@gmail.co.uk";
+            //try send data to the Email property
+            VCHCustomer.Email = SomeEmail;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(VCHCustomer.Email, SomeEmail);
+        }
+
+        [TestMethod]
+        public void PasswordOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to store the customers password
+            string SomePassword;
+            //assign a Password to the variable
+            SomePassword = "3booksInPuPa";
+            //try send data to the Password property
+            VCHCustomer.Password = SomePassword;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(VCHCustomer.Password, SomePassword);
+        }
+
+        [TestMethod]
+        //used to test the presence of the Valid method
+        public void Valid()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //test to see if the valid method exists
+            VCHCustomer.Valid("Dante");
+        }
     }
 }
