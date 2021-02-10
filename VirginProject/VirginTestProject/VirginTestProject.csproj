@@ -66,6 +66,7 @@
     <Compile Include="tstVHCStaff.cs" />
     <Compile Include="tstVHCStaffCollection.cs" />
     <Compile Include="tstVMCustomer.cs" />
+    <Compile Include="tstVPCustomer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VirginClassLibrary\VirginClassLibrary.csproj">
