@@ -68,9 +68,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumUserViewer.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForumAnUser.aspx.cs">
+      <DependentUpon>ForumAnUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAnUser.aspx.designer.cs">
+      <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumUserViewer.aspx.cs">
+      <DependentUpon>ForumUserViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumUserViewer.aspx.designer.cs">
+      <DependentUpon>ForumUserViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +97,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VirginClassLibrary\VirginClassLibrary.csproj">
+      <Project>{fddf02e7-d5af-46af-9f54-b2ba46d8603e}</Project>
+      <Name>VirginClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
