@@ -155,6 +155,17 @@ namespace VirginTestProject
         //used to test the presence of the Valid method
         public void Valid()
         {
+            /*//create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to store the validation
+            string Error = "";
+            //create some test data to test the valid method
+            string FirstName = "Dante";
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName);
+            //Test to see that the result is OK (see if any error message is returned(
+            Assert.AreEqual(Error, "");*/
+
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
             //test to see if the valid method exists

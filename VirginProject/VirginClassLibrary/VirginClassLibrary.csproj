@@ -48,6 +48,7 @@
     <Compile Include="clsForumUser.cs" />
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsVCHCustomer.cs" />
+    <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
