@@ -17,6 +17,8 @@ namespace VirginClassLibrary
             //declare empty string 
             string ErrorMsg = "";
             int ConvertedRating;
+            
+
             //check for blank string
             if (anDeliveryAdressLineOne.Length>0 && anDeliveryAdressLineOne.Length< 46)
             {
@@ -24,22 +26,31 @@ namespace VirginClassLibrary
                 {
                     if (anPostCode.Length>0 && anPostCode.Length<16)
                     {
-                        if (anEmail.Length>0 && anEmail.Length<50)
+                        if (anEmail.Length>0 && anEmail.Length<51)
                         {
-                            if (anPassword.Length>0 && anPassword.Length < 50)
+                            if (anPassword.Length>2 && anPassword.Length < 51)
                             {
                                 try
                                 {
-                                    ConvertedRating=Convert.ToInt32(anRating);
-                                    if (ConvertedRating > -1 && ConvertedRating < 11)
+                                    if (anRating=="")
                                     {
                                         ErrorMsg = "";
                                     }
                                     else
                                     {
-                                        //return error message 
-                                        ErrorMsg += "Rating must be out of ten ";
-                                    }
+                                        ConvertedRating = Convert.ToInt32(anRating);
+                                        if (ConvertedRating > -1 && ConvertedRating < 11)
+                                        {
+                                            ErrorMsg = "";
+                                        }
+                                        else
+                                        {
+                                            //return error message 
+                                            ErrorMsg += "Rating must be out of ten ";
+                                        }
+                                    }  
+                                  
+                                    
                                 }
                                 catch{
                                     //return error message 
@@ -80,7 +91,58 @@ namespace VirginClassLibrary
                 ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
             }
 
+            //check for special characters
+            if (TestForSpecialCharacters(anDeliveryAdressLineOne) == true)
+            {
+                ErrorMsg += "Delivery adress line one must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anDeliveryAdressLineTwo) == true)
+            {
+                ErrorMsg += "Delivery adress line two must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anPostCode) == true)
+            {
+                ErrorMsg += "PostCode must have no special characters";
+
+            }
+            if (anRating!="" && TestForSpecialCharacters(anRating) == true)
+            {
+                ErrorMsg += "Rating must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anPassword) == false)
+            {
+                ErrorMsg += "passsword must have 1 special character";
+
+            }
+
             return ErrorMsg;
         }
+
+
+
+
+        public bool TestForSpecialCharacters(string TestData)
+        {
+            bool ContainsSpecial = false;
+            foreach (var i in TestData)
+            {
+                if (char.IsLetterOrDigit(i) || char.IsWhiteSpace(i) == true)
+                {
+                    ContainsSpecial = false;     
+                }
+                else
+                {
+                    ContainsSpecial = true;
+                    break;
+                }
+
+            }
+
+            return ContainsSpecial;
+        }
+       
     }
 }
