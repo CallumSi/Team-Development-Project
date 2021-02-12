@@ -62,21 +62,6 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void VMcustomerPasswordPropertyOK()
-        {
-            //create an instance of the customer class
-            clsVMCustomer ACustomer = new clsVMCustomer();
-            //create a variable to store the email of the customer
-            string SomeVMcustomerEmail;
-            //try send some data to the customer email property
-            SomeVMcustomerEmail = "JaneDoe123";
-            //try send some data to the VMcustomerEmail property
-            ACustomer.VMcustomerEmail = SomeVMcustomerEmail;
-            //check to see that the data in the variable are thr property are the same
-            Assert.AreEqual(ACustomer.VMcustomerEmail, SomeVMcustomerEmail);
-        }
-
-        [TestMethod]
         public void VMcustomerUsernamePropertyOK()
         {
             //create an instance of the customer class
@@ -89,6 +74,22 @@ namespace VirginTestProject
             ACustomer.VMcustomerUsername = SomeVMcustomerUsername;
             //check to see that the data in the variable are thr property are the same
             Assert.AreEqual(ACustomer.VMcustomerUsername, SomeVMcustomerUsername);
+        }
+
+
+        [TestMethod]
+        public void VMcustomerPasswordPropertyOK()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a variable to store the email of the customer
+            string SomeVMcustomerPassword;
+            //try send some data to the customer email property
+            SomeVMcustomerPassword = "JaneDoe123456";
+            //try send some data to the VMcustomerEmail property
+            ACustomer.VMcustomerPassword = SomeVMcustomerPassword;
+            //check to see that the data in the variable are thr property are the same
+            Assert.AreEqual(ACustomer.VMcustomerPassword, SomeVMcustomerPassword);
         }
 
         [TestMethod]
