@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VirginClassLibrary;
 
+
 namespace VirginTestProject
 {
     [TestClass]
@@ -14,6 +15,18 @@ namespace VirginTestProject
             clsForumUser AnUser = new clsForumUser();
             //test to see that it exists
             Assert.IsNotNull(AnUser);
+        }
+        [TestMethod]
+        public void UserIDPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsForumUser AUser = new clsForumUser();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign the data to the property
+            AUser.UserID = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AUser.UserID, TestData);
         }
         [TestMethod]
         public void UserFirstNamePropertyOK()
