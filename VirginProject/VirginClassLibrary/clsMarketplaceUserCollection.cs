@@ -41,6 +41,14 @@ namespace VirginClassLibrary
             }
         }
 
+        // count property to return count of list
+        public int Count
+        {
+            get
+            {
+                return mUserList.Count;
+            }
+        }
 
         //public int AddUser()
         //{
