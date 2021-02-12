@@ -127,7 +127,7 @@ namespace VirginTestProject
                 Assert.AreEqual(AVPCustomer.Telephone, SomeTelephone);
             }
 
-           /* [TestMethod]
+           [TestMethod]
             //testing the valid method
             public void ValidMethodOK()
             {
@@ -141,13 +141,13 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(FirstName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreEqual(Error, "");
-            }/*
+            }
 
 
             //***TESTING PROPERTIES***/
 
             //***TESTING PROPERTIES FIRST NAME***//
-            /*[TestMethod]
+            [TestMethod]
             //testing the valid method
             public void FirstNameMinLessOne()
             {
@@ -161,10 +161,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(FirstName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES FIRST NAME***//
-           /* [TestMethod]
+          /* [TestMethod]
             //testing the valid method for first name
             public void FirstNameMaxPlusOne()
             {
@@ -173,17 +173,15 @@ namespace VirginTestProject
                 //create a string variable to store the validation
                 String Error = "";
                 //create some test data to test the valid method
-                string FirstName = "";
-                //create some test data to test the valid method
-                FirstName = FirstName.PadLeft(51);
+                string FirstName = "JJJJJJJJJJJJJJJJJJJJJ"; //this should trigger an error message 21 characters
                 //invoke the method
                 Error = AVPCustomer.Valid(FirstName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            } /*
 
-            //***TESTING PROPERTIES FIRST NAME***//
-            /*[TestMethod]
+            //***TESTING PROPERTIES FIRST NAME***/
+            [TestMethod]
             //testing the valid method for first name
             public void FirstNameExtremeMax()
             {
@@ -199,10 +197,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(FirstName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES LAST NAME***//
-           /* [TestMethod]
+            [TestMethod]
             //testing the valid method for last name
             public void LastNameMinLessOne()
             {
@@ -211,12 +209,12 @@ namespace VirginTestProject
                 //create a string variable to store the validation
                 String Error = "";
                 //create some test data to test the valid method
-                string LastName = "";
+                string LastName = "D"; //this should trigger an error message -1 characters
                 //invoke the method
                 Error = AVPCustomer.Valid(LastName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES LAST NAME***//
            /* [TestMethod]
@@ -230,15 +228,15 @@ namespace VirginTestProject
                 //create some test data to test the valid method
                 string LastName = "";
                 //create some test data to test the valid method
-                LastName = LastName.PadLeft(51);
+                LastName = LastName.PadLeft(21);
                 //invoke the method
                 Error = AVPCustomer.Valid(LastName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            } */
 
             //***TESTING PROPERTIES LAST NAME***//
-          /*  [TestMethod]
+            [TestMethod]
             //testing the valid method for first name
             public void LastNameExtremeMax()
             {
@@ -254,10 +252,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(LastName);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES STREET***//
-          /*  [TestMethod]
+           [TestMethod]
             //testing the valid method
             public void StreetMinLessOne()
             {
@@ -266,15 +264,15 @@ namespace VirginTestProject
                 //create a string variable to store the validation
                 String Error = "";
                 //create some test data to test the valid method
-                string Street = "";
+                string Street = "W"; //this should trigger an error message 1 characters
                 //invoke the method
                 Error = AVPCustomer.Valid(Street);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES STREET***//
-            /*[TestMethod]
+           /* [TestMethod]
             //testing the valid method for street
             public void StreetMaxPlusOne()
             {
@@ -290,10 +288,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Street);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            } */
 
             //***TESTING PROPERTIES STREET***//
-           /* [TestMethod]
+           [TestMethod]
             //testing the valid method for street
             public void StreetExtremeMax()
             {
@@ -309,10 +307,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Street);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES EMAIL***//
-            /* [TestMethod]
+           /*  [TestMethod]
              //testing the valid method
              public void EmailMinLessOne()
              {
@@ -321,17 +319,15 @@ namespace VirginTestProject
                  //create a string variable to store the validation
                  String Error = "";
                  //create some test data to test the valid method
-                 string Email = "";
-                 //create some test data to test the valid method
-                 Email = Email.PadLeft(9);
+                 string Email = "JANEDOE@H";
                  //invoke the method
                  Error = AVPCustomer.Valid(Email);
                  //Test to see that result is OK, e.g. no error message is returned
                  Assert.AreNotEqual(Error, "");
-             }*/
+             } */
 
 
-           /* [TestMethod]
+           [TestMethod]
             //testing the valid method for street
             public void EmailMaxPlusOne()
             {
@@ -347,9 +343,9 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Email);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
-           /* [TestMethod]
+           [TestMethod]
             //testing the valid method for email
             public void EmailExtremeMax()
             {
@@ -365,10 +361,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Email);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
 
             //***TESTING PROPERTIES postcode***//
-            /*[TestMethod]
+          /*  [TestMethod]
             //testing the valid method for postcode
             public void PostcodeMinLessOne()
             {
@@ -384,7 +380,7 @@ namespace VirginTestProject
                 Assert.AreNotEqual(Error, "");
             }*/
 
-            /*[TestMethod]
+          /*  [TestMethod]
             //testing the valid method for postcode
             public void PostcodeMaxPlusOne()
             {
@@ -400,10 +396,10 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Postcode);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            } */
 
 
-            /*[TestMethod]
+            [TestMethod]
             //testing the valid method for email
             public void PostcodeExtremeMax()
             {
@@ -419,7 +415,7 @@ namespace VirginTestProject
                 Error = AVPCustomer.Valid(Postcode);
                 //Test to see that result is OK, e.g. no error message is returned
                 Assert.AreNotEqual(Error, "");
-            }*/
+            }
         }
     }
 
