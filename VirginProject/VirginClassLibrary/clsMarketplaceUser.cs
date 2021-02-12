@@ -11,6 +11,12 @@ namespace VirginClassLibrary
         public string Email { get; set; }
         public string Password { get; set; }
         public int Rating { get; set; }
+        public int UserID { get; set; }
+        //public Boolean Find(int UserID)
+        //{
+
+
+        //}
 
         public string Valid(string anDeliveryAdressLineOne, string anDeliveryAdressLineTwo, string anPostCode, string anEmail, string anPassword, string anRating)
         {

@@ -46,6 +46,7 @@
     <Compile Include="clsForumComment.cs" />
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
+    <Compile Include="clsMarketplaceListing.cs" />
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsVCHCustomer.cs" />

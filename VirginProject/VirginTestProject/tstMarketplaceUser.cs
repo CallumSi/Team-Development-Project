@@ -127,6 +127,21 @@ namespace VirginTestProject
         }
 
 
+        [TestMethod]
+        public void UserIDOK()
+        {
+            //integer
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            int TestData = 1;
+            //assign data to the property
+            AnMarketplaceUser.UserID = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.UserID, TestData);
+        }
+
 
         //Testing the validmethod 
 
