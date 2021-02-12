@@ -14,6 +14,17 @@ namespace VirginClassLibrary
         //declarte private variables for a specific User
         clsMarketplaceUser mThisUser = new clsMarketplaceUser();
 
+        //constructor
+        //public clsMarketplaceUserCollection()
+        //{
+
+
+        //}
+
+
+
+
+
         //get set for User list
         public List<clsMarketplaceUser> UserList
         {
@@ -29,6 +40,26 @@ namespace VirginClassLibrary
                 mUserList = value;
             }
         }
+
+
+        //public int AddUser()
+        //{
+          
+
+        //}
+        //public void DeleteUser()
+        //{
+
+        //}
+        //public void Update()
+        //{
+
+        //}
+        //void PopulateArray
+        //{
+
+
+        //}
 
     }
 }
