@@ -4,6 +4,9 @@ namespace VirginClassLibrary
 {
     public class clsVHCPatient
     {
+        //Patient_ID Property
+        public int Patient_ID { get; set; }
+
         //Patient_Title Property 
         public string Patient_Title { get; set; }
 
