@@ -59,8 +59,14 @@ namespace VirginClassLibrary
         //{
 
         //}
-        //public void Update()
+        //public void UpdateUser()
         //{
+
+        //}
+
+        //public void FilterByEmail(string Email)
+        //{
+
 
         //}
         //void PopulateArray
