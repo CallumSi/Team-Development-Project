@@ -2,16 +2,16 @@
 {
     public class clsVCHStaff
     {
-        //staff First Name
+        //staff FirstName property
         public string FirstName { get; set; }
 
-        //staff Last Name
+        //staff LastName property
         public string LastName { get; set; }
 
-        //staff Address
+        //staff Address property
         public string Address { get; set; }
 
-        //staff PhoneNumber
+        //staff PhoneNumber property
         public string PhoneNumber { get; set; }
     }
 }

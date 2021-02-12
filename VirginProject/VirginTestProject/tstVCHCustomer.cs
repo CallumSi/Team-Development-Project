@@ -29,7 +29,7 @@ namespace VirginTestProject
             Assert.AreEqual(VCHCustomer.FirstName, SomeFirstName);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void FirstNameMinLessOne()
         {
             //create an instance of the class
@@ -74,7 +74,7 @@ namespace VirginTestProject
             OK = VCHCustomer.Valid(SomeText);
             //assert the the outcome should be true
             Assert.IsFalse(OK);
-        }
+        }*/
 
         [TestMethod]
         public void LastNameOK()
@@ -90,6 +90,53 @@ namespace VirginTestProject
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(VCHCustomer.LastName, SomeLastName);
         }
+
+        /*[TestMethod]
+        public void LastNameMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //test the valid method with a 1 letter string
+            OK = VCHCustomer.Valid("A");
+            //assert the the outcome should be false
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void LastNamePlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //create a variable to store the test data
+            string SomeText = "";
+            //pad the data to the required number of characters
+            SomeText = SomeText.PadLeft(31);
+            //test the valid method with a 31 letter string
+            OK = VCHCustomer.Valid(SomeText);
+            //assert the the outcome should be true
+            Assert.IsFalse(OK);
+        }
+
+        [TestMethod]
+        public void LastNameExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a variable to record the result of the validation test
+            Boolean OK;
+            //create a variable to store the test data
+            string SomeText = "";
+            //pad the data to the required number of characters
+            SomeText = SomeText.PadLeft(100);
+            //test the valid method with a 100 letter string
+            OK = VCHCustomer.Valid(SomeText);
+            //assert the the outcome should be true
+            Assert.IsFalse(OK);
+        }*/
 
         [TestMethod]
         public void AddressOK()
@@ -153,8 +200,13 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the presence of the Valid method
-        public void Valid()
+        public void ValidMethodOK()
         {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //test to see if the valid method exists
+            VCHCustomer.Valid("Dante", "Alighieri");
+            
             /*//create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
             //create a string variable to store the validation
@@ -166,10 +218,7 @@ namespace VirginTestProject
             //Test to see that the result is OK (see if any error message is returned(
             Assert.AreEqual(Error, "");*/
 
-            //create an instance of the class
-            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //test to see if the valid method exists
-            VCHCustomer.Valid("Dante");
         }
     }
 }
+
