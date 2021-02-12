@@ -55,6 +55,7 @@
     <Compile Include="tstForumComment.cs" />
     <Compile Include="tstForumPost.cs" />
     <Compile Include="tstForumUser.cs" />
+    <Compile Include="tstForumUserCollection.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
     <Compile Include="tstVCHCustomer.cs" />
     <Compile Include="tstVCHStaff.cs" />
