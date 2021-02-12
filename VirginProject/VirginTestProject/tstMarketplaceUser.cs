@@ -127,6 +127,21 @@ namespace VirginTestProject
         }
 
 
+        [TestMethod]
+        public void UserIDOK()
+        {
+            //integer
+
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //test data for property
+            int TestData = 1;
+            //assign data to the property
+            AnMarketplaceUser.UserID = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceUser.UserID, TestData);
+        }
+
 
         //Testing the validmethod 
 
@@ -343,7 +358,7 @@ namespace VirginTestProject
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "LE4 4GL";
-            String AnEmail = "a";
+            String AnEmail = "a@b";
             String AnPassword = "Password1#";
             String AnRating = "7";
 
@@ -479,8 +494,7 @@ namespace VirginTestProject
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "LE4 4GL";
-            String AnEmail = "";
-            AnEmail += AnEmail.PadRight(50);
+            String AnEmail = "aaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbb";
             String AnPassword = "Password1#";
             String AnRating = "7";
 
@@ -615,8 +629,7 @@ namespace VirginTestProject
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "LE4 4GL";
-            String AnEmail = "";
-            AnEmail += AnEmail.PadRight(51);
+            String AnEmail = "aaaaaaaaaaaaaaaaaaaaaaaaa@bbbbbbbbbbbbbbbbbbbbbbbbb";
             String AnPassword = "Password1#";
             String AnRating = "7";
 
@@ -669,10 +682,7 @@ namespace VirginTestProject
 
         }
 
-        //Test for incorrect Data Types
-
-
-
+     
         //Test Contains Special
 
 
@@ -702,6 +712,195 @@ namespace VirginTestProject
             Return = AnMarketplaceUser.TestForSpecialCharacters(TestData);
             Assert.AreEqual(Return, false);
         }
+
+
+
+        //Test for incorrect Data Types
+
+
+        [TestMethod]
+        public void AnDeliveryAdressLineOneSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street %";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void AnDeliveryAdressLineTwoSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York %";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void AnPostCodeSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL %";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void AnEmailSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+        [TestMethod]
+        public void AnPasswordSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+
+        [TestMethod]
+        public void AnRatingSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7%";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+
+        //test email format
+        [TestMethod]
+        public void AnEmailFormat()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "cjs@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+        //test email wrong format
+        [TestMethod]
+        public void AnEmailWrongFormat()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceUser AnMarketplaceUser = new clsMarketplaceUser();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryAdressLineOne = "77 Wall Street";
+            String AnDeliveryAdressLineTwo = "New York";
+            String AnPostcode = "LE4 4GL";
+            String AnEmail = "@gmail.com";
+            String AnPassword = "Password1#";
+            String AnRating = "7";
+
+            //test the valid method with the test data
+            Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            //Test to ensure no error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
     }
 }
 

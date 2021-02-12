@@ -11,6 +11,12 @@ namespace VirginClassLibrary
         public string Email { get; set; }
         public string Password { get; set; }
         public int Rating { get; set; }
+        public int UserID { get; set; }
+        //public Boolean Find(int UserID)
+        //{
+
+
+        //}
 
         public string Valid(string anDeliveryAdressLineOne, string anDeliveryAdressLineTwo, string anPostCode, string anEmail, string anPassword, string anRating)
         {
@@ -26,7 +32,7 @@ namespace VirginClassLibrary
                 {
                     if (anPostCode.Length>0 && anPostCode.Length<16)
                     {
-                        if (anEmail.Length>0 && anEmail.Length<51)
+                        if (anEmail.Length>2 && anEmail.Length<51)
                         {
                             if (anPassword.Length>2 && anPassword.Length < 51)
                             {
@@ -117,7 +123,19 @@ namespace VirginClassLibrary
                 ErrorMsg += "passsword must have 1 special character";
 
             }
-
+            //test email format
+            if (anEmail != "")
+            {
+                
+                try
+                {
+                    var EmailTest = new System.Net.Mail.MailAddress(anEmail);
+                }
+                catch
+                {
+                    ErrorMsg += "Email must be in the correct format";
+                }
+            }
             return ErrorMsg;
         }
 

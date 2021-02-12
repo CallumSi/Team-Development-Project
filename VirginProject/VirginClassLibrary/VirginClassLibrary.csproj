@@ -42,12 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsForumAdmin.cs" />
     <Compile Include="clsForumComment.cs" />
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
+    <Compile Include="clsForumUserCollection.cs" />
+    <Compile Include="clsMarketplaceListing.cs" />
     <Compile Include="clsMarketplaceUser.cs" />
+    <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsVCHCustomer.cs" />
+    <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVPCustomer.cs" />
