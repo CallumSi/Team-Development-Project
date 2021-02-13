@@ -38,12 +38,13 @@ namespace VirginClassLibrary
         //Patient_Status Property
         public bool Patient_Status { get; set; }
 
-        public string Valid(string Patient_Title)
+        public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone, string Patient_Status)
         {
-
-            //Patient Title Validation
             //create a string variable to store data values
             String Error = "";
+
+            // (1) Patient Title Validation
+
             //if patient title is blank 
             if (Patient_Title.Length == 0)
             {
@@ -57,6 +58,24 @@ namespace VirginClassLibrary
                 //set the error message 
                 Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 5 CHARACTERS!" + " ";
             }
+
+
+            // (2) Patient Firstname Validation
+          
+            //if patient firstname is blank 
+            if (Patient_Firstname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT FIRSTNAME CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Patient_Firstname.Length < 1 | Patient_Firstname.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            }
+
 
             //return any error messages
             return Error;
