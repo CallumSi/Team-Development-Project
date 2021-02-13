@@ -4,11 +4,12 @@ namespace VirginClassLibrary
 {
     public class clsVHCPatient
     {
+
         //Patient_ID Property
         public int Patient_ID { get; set; }
 
         //Patient_Title Property 
-        public string Patient_Title { get; set; }
+        public string Patient_Title { get; set;}
 
         //Patient_Firstname Property 
         public string Patient_Firstname { get; set; }
@@ -37,31 +38,48 @@ namespace VirginClassLibrary
         //Patient_Status Property
         public bool Patient_Status { get; set; }
 
-        public Boolean Valid(string Patient_Title)
+        public string Valid(string Patient_Title)
         {
-            //var to record any errors found in Patient_Title assuming all is OK
-            Boolean OK = true; 
-            //test to see if the patient title has zero characters 
+
+            //if (Patient_Title != "")
+            //    //test to see if the patient title has zero characters
+            //    if (Patient_Title.Length < 6)
+            //    {
+            //        //return no error message 
+            //        return "";
+            //    }
+            //    else
+            //    {
+            //        //return no error message 
+            //        return "Patient title cannot be more than 5 characters";
+            //    }
+            //else
+            //{
+            //    //return error message 
+            //    return "Patient title cannot be blank!";
+            //}
+
+
+            //Patient Title Validation
+            //create a string variable to store data values
+            String Error = "";
+            //if patient title is blank 
             if (Patient_Title.Length == 0)
             {
-                //set OK to false
-                OK = false; 
+                //record the error 
+                Error = Error + "PATIENT TITLE CANNOT BE BLANK!" + " ";
+
             }
 
-            //test to see if the patient title is no more than 5 characters
-            if (Patient_Title.Length > 5)
+            if (Patient_Title.Length < 1 | Patient_Title.Length > 5)
             {
-                //set OK to false
-                OK = false;
+                //set the error message 
+                Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 5 CHARACTERS!" + " ";
             }
 
-            //return the results of all tests
-            return OK; 
+            //return any error messages
+            return Error;
 
-            
-            
-            
-           
         }
     }
 }
