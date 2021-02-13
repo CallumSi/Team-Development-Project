@@ -41,25 +41,6 @@ namespace VirginClassLibrary
         public string Valid(string Patient_Title)
         {
 
-            //if (Patient_Title != "")
-            //    //test to see if the patient title has zero characters
-            //    if (Patient_Title.Length < 6)
-            //    {
-            //        //return no error message 
-            //        return "";
-            //    }
-            //    else
-            //    {
-            //        //return no error message 
-            //        return "Patient title cannot be more than 5 characters";
-            //    }
-            //else
-            //{
-            //    //return error message 
-            //    return "Patient title cannot be blank!";
-            //}
-
-
             //Patient Title Validation
             //create a string variable to store data values
             String Error = "";
