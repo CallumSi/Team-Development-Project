@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserList.aspx.cs" Inherits="VirginFrontEnd.MarketplaceUserList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MarketplaceUserList.aspx.cs" Inherits="VirginFrontEnd.MarketplaceUserList" %>
 
 <!DOCTYPE html>
 
