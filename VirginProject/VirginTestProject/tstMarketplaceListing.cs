@@ -65,10 +65,7 @@ namespace VirginTestProject
 
 
         }
-
-
-        
-
+      
 
         [TestMethod]
         public void DeliveryTypePropertyOK()
