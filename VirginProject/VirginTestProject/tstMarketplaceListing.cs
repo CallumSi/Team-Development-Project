@@ -810,6 +810,140 @@ namespace VirginTestProject
 
         }
 
+        //Incorret data types test
+
+        [TestMethod]
+        public void CategorySpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C%";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DescriptionSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class%";
+            String AnDescription = "Includes Audio when opening&";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ImgSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = "";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ListingNameSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar%";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void PriceSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22&";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void QuantitySpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1&";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
 
 
 

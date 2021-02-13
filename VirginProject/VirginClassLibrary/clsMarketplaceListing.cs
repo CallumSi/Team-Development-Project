@@ -114,40 +114,32 @@ namespace VirginClassLibrary
 
             }
 
-
-
-
-
-            //check for special characters
-            if (TestForSpecialCharacters(anCategory) == true)
+            //check money in range
+            try
             {
-                ErrorMsg += "Category must have no special characters";
+                ConvertedPrice = Convert.ToDecimal(anPrice);
+                int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
+                if (decimalplaces == 2)
+                {
+                    if (ConvertedPrice > 0m && ConvertedPrice < 1000000000.01m)
+                    {
+                        ErrorMsg += "";
+
+                    }
+                    else
+                    {
+                        ErrorMsg += "Price must be between 0 and 1million";
+                    }
+                }
+                else
+                {
+                    ErrorMsg += "Price must have 2 decimal places";
+                }
 
             }
-            if (TestForSpecialCharacters(anDeliveryType) == true)
+            catch
             {
-                ErrorMsg += "Delivery Typeo must have no special characters";
-
-            }
-            if (TestForSpecialCharacters(anListingName) == true)
-            {
-                ErrorMsg += "ListingName must have no special characters";
-
-            }
-            if (TestForSpecialCharacters(anPrice) == false)
-            {
-                ErrorMsg += "Price must be in the format 10.00";
-
-            }
-            if (TestForSpecialCharacters(anQuantity) == true)
-            {
-                ErrorMsg += "Quantity must have no special characters";
-
-            }
-            if (anImg !="" && TestForSpecialCharacters(anImg) == false)
-            {
-                ErrorMsg += "img path must include : and / ";
-
+                ErrorMsg += "Price must be a decimal and not blank";
             }
 
 
@@ -166,34 +158,44 @@ namespace VirginClassLibrary
             //}
 
 
-            //check money in range
-            try
+            //check for special characters
+            if (TestForSpecialCharacters(anCategory) == true)
             {
-                ConvertedPrice = Convert.ToDecimal(anPrice);
-                int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
-                if(decimalplaces == 2)
-                {
-                    if (ConvertedPrice > 0m && ConvertedPrice < 1000000000.01m)
-                    {
-                        ErrorMsg += "";
+                ErrorMsg += "Category must have no special characters";
 
-                    }
-                    else
-                    {
-                        ErrorMsg += "Price must be between 0 and 1million";
-                    }
-                }
-                else
-                {
-                    ErrorMsg += "Price must have 2 decimal places";
-                }
-                
             }
-            catch
+            if (TestForSpecialCharacters(anDeliveryType) == true)
             {
-                ErrorMsg += "Price must be a decimal and not blank";
+                ErrorMsg += "Delivery Typeo must have no special characters";
+
             }
+            if (TestForSpecialCharacters(anListingName) == true)
+            {
+                ErrorMsg += "ListingName must have no special characters";
+
+            }
+            
+            if (TestForSpecialCharacters(anQuantity) == true)
+            {
+                ErrorMsg += "Quantity must have no special characters";
+
+            }
+            if (anImg !="" && TestForSpecialCharacters(anImg) == false)
+            {
+                ErrorMsg += "img path must include : and / ";
+
+            }
+            if (TestForSpecialCharacters(anDescription) == true)
+            {
+                ErrorMsg += "Description must have no special characters";
+
+            }
+
+
+
+
             return ErrorMsg;
+
         }
 
 
