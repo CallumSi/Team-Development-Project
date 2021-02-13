@@ -196,5 +196,33 @@ namespace VirginTestProject
             Assert.AreEqual(AnMarketplaceListing.UserID, TestData);
 
         }
+
+
+
+
+        //Testing the validmethod 
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            ////create instance of Marketplace user
+            //clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            ////string to store if result isvalid 
+            //String Error = "";
+            ////some test data to insert into the valid method 
+            //String AnCategory = "77 Wall Street";
+            //String AnDeliveryType = "New York";
+            //String AnDescription = "LE4 4GL";
+            //String AnImg = "cjs@gmail.com";
+            //String AnListingName = "Password1#";
+            //String AnNew = "7";
+            //String AnPrice = "";
+            //String AnQuantity ="";
+            ////test the valid method with the test data
+            //Error = AnMarketplaceUser.Valid(AnDeliveryAdressLineOne, AnDeliveryAdressLineTwo, AnPostcode, AnEmail, AnPassword, AnRating);
+            ////Test to ensure no error msg
+            //Assert.AreEqual(Error, "");
+
+        }
     }
 }
