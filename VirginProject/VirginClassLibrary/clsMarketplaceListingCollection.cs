@@ -8,5 +8,6 @@ namespace VirginClassLibrary
 {
     class clsMarketplaceListingCollection
     {
+
     }
 }
