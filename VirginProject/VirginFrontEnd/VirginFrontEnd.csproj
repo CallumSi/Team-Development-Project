@@ -68,24 +68,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ForumAnUser.aspx" />
-    <Content Include="ForumUserViewer.aspx" />
+    <Content Include="AnUser.aspx" />
+    <Content Include="UserDelete.aspx" />
+    <Content Include="UserList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForumAnUser.aspx.cs">
-      <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    <Compile Include="AnUser.aspx.cs">
+      <DependentUpon>AnUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ForumAnUser.aspx.designer.cs">
-      <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    <Compile Include="AnUser.aspx.designer.cs">
+      <DependentUpon>AnUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ForumUserViewer.aspx.cs">
-      <DependentUpon>ForumUserViewer.aspx</DependentUpon>
+    <Compile Include="UserDelete.aspx.cs">
+      <DependentUpon>UserDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ForumUserViewer.aspx.designer.cs">
-      <DependentUpon>ForumUserViewer.aspx</DependentUpon>
+    <Compile Include="UserDelete.aspx.designer.cs">
+      <DependentUpon>UserDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

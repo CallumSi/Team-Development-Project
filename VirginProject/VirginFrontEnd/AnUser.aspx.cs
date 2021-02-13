@@ -28,7 +28,7 @@ namespace VirginFrontEnd
             //store the address in the session object
             Session["AnUser"] = AnUser;
             //redirect to the viewer page
-            Response.Redirect("ForumUserViewer.aspx");
+            Response.Redirect("UserList.aspx");
         }
     }
 }

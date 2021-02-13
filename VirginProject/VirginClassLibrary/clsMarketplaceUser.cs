@@ -4,19 +4,152 @@ namespace VirginClassLibrary
 {
     public class clsMarketplaceUser
     {
-        public bool Admin { get; set; }
-        public string DeliveryAdressLineOne { get; set; }
-        public string DeliveryAdressLineTwo { get; set; }
-        public string PostCode { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int Rating { get; set; }
-        public int UserID { get; set; }
-        //public Boolean Find(int UserID)
-        //{
 
 
-        //}
+        //private data 
+        private bool mAdmin;
+        private string mDeliveryAdressLineOne;
+        private string mDeliveryAdressLineTwo;
+        private string mPostCode;
+        private string mEmail;
+        private string mPassword;
+        private int mRating;
+        private int mUserID;
+
+        //public data
+        public bool Admin
+        {
+            get
+            {
+                //return private data
+                return mAdmin;
+            }
+            set
+            {
+                //set value to private data
+                mAdmin = value;
+            }
+        }
+        public string DeliveryAdressLineOne
+        {
+            get
+            {
+                //return private data
+                return mDeliveryAdressLineOne;
+            }
+            set
+            {
+                //set value to private data
+                mDeliveryAdressLineOne = value;
+            }
+        }
+        public string DeliveryAdressLineTwo
+        {
+            get
+            {
+                //return private data
+                return mDeliveryAdressLineTwo;
+            }
+            set
+            {
+                //set value to private data
+                mDeliveryAdressLineTwo = value;
+            }
+        }
+        public string PostCode
+        {
+            get
+            {
+                //return private data
+                return mPostCode;
+            }
+            set
+            {
+                //set value to private data
+                mPostCode = value;
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                //return private data
+                return mEmail;
+            }
+            set
+            {
+                //set value to private data
+                mEmail = value;
+            }
+        }
+        public string Password
+        {
+            get
+            {
+                //return private data
+                return mPassword;
+            }
+            set
+            {
+                //set value to private data
+                mPassword = value;
+            }
+        }
+        public int Rating
+        {
+            get
+            {
+                //return private data
+                return mRating;
+            }
+            set
+            {
+                //set value to private data
+                mRating = value;
+            }
+        }
+        public int UserID
+        {
+            get
+            {
+                //return private data
+                return mUserID;
+            }
+            set
+            {
+                //set value to private data
+                mUserID = value;
+            }
+        }
+        public Boolean Find(int UserID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("UserID", UserID);
+            //execute the sproc
+            DB.Execute("sproc_tblUser_FilterByUserID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                mAdmin = Convert.ToBoolean(DB.DataTable.Rows[0]["Admin"]);
+                mDeliveryAdressLineOne = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineOne"]);
+                mDeliveryAdressLineTwo = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineTwo"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mRating = Convert.ToInt32(DB.DataTable.Rows[0]["Rating"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+
+        }
 
         public string Valid(string anDeliveryAdressLineOne, string anDeliveryAdressLineTwo, string anPostCode, string anEmail, string anPassword, string anRating)
         {
