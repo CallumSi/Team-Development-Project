@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MarketplaceUserDelete.aspx.cs" Inherits="VirginFrontEnd.MarketplaceUserDelete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserDelete.aspx.cs" Inherits="VirginFrontEnd.MarketplaceUserDelete" %>
 
 <!DOCTYPE html>
 
