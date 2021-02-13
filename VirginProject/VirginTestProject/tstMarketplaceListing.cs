@@ -526,6 +526,144 @@ namespace VirginTestProject
             String AnImg = @"C:\Users\Callum\Images\img.png";
             String AnListingName = "Shrek Cookie Jar";
             String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+        //max boundary
+        [TestMethod]
+        public void CategoryMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "";
+            AnCategory += AnCategory.PadRight(30, 'A');
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DescriptionMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "Cookie jar";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "";
+            AnDescription+=AnDescription.PadRight(75, 'A');
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ImgMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = "/";
+            AnImg += AnImg.PadRight(199, 'A');
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ListingNameMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "";
+            AnListingName += AnListingName.PadRight(30, 'A');
+            String AnPrice = "10.00";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void PriceMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "1000000000.00";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void QuantityMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
             String AnQuantity = "1000";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -533,6 +671,149 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
 
         }
+
+
+        //max plus one
+        [TestMethod]
+        public void CategoryMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "";
+            AnCategory += AnCategory.PadRight(31, 'A');
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DescriptionMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "Cookie jar";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "";
+            AnDescription += AnDescription.PadRight(76, 'A');
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ImgMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = "/";
+            AnImg += AnImg.PadRight(200, 'A');
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ListingNameMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "";
+            AnListingName += AnListingName.PadRight(31, 'A');
+            String AnPrice = "10.00";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void PriceMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "1000000000.01";
+            String AnQuantity = "1";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void QuantityMaxPlusOne()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnCategory = "C";
+            String AnDeliveryType = "First Class";
+            String AnDescription = "Includes Audio when opening";
+            String AnImg = @"C:\Users\Callum\Images\img.png";
+            String AnListingName = "Shrek Cookie Jar";
+            String AnPrice = "10.22";
+            String AnQuantity = "1001";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+
+
+
+
 
     }
 }

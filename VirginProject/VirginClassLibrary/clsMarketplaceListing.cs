@@ -36,11 +36,21 @@ namespace VirginClassLibrary
                 {
                     if (anDescription.Length > 0 && anDescription.Length < 76)
                     {
-                        if (anListingName.Length > 0 && anListingName.Length < 76)
+                        if (anListingName.Length > 0 && anListingName.Length < 31)
                         {
                            if(anPrice.Length > 0)
                            {
-                                ErrorMsg += "";
+                                if(anImg.Length>-1 && anImg.Length<201)
+                                {
+                                    ErrorMsg += "";
+
+                                }
+                                else
+                                {
+                                    //return error message
+                                    ErrorMsg += "Img cannot exceed 200 characters";
+
+                                }
                            }
                            else
                            {
