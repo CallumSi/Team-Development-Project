@@ -20,129 +20,126 @@ namespace VirginClassLibrary
         public bool New { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public int UserID { get; set; }
+        public int CreatedByUserID { get; set; }
 
-
-
-
-
-        public string Valid(string anCategory, string anCloseDate, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
+        public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {
             //declare empty string 
             string ErrorMsg = "";
             int ConvertedQuantity;
             decimal ConvertedPrice;
-            DateTime ConvertedCloseDate;
-
 
             //check for blank string
             if (anCategory.Length > 0 && anCategory.Length < 31)
             {
-                if (anCloseDate.Length == 18)
+                if (anDeliveryType.Length > 0 && anDeliveryType.Length < 31)
                 {
-                    if (anDeliveryType.Length > 0 && anDeliveryType.Length < 31)
+                    if (anDescription.Length > 0 && anDescription.Length < 76)
                     {
-                        if (anDescription.Length > 0 && anDescription.Length < 75)
+                        if (anListingName.Length > 0 && anListingName.Length < 31)
                         {
-                            if (anListingName.Length > 0 && anListingName.Length < 75)
-                            {
-                                try
+                           if(anPrice.Length > 0)
+                           {
+                                if(anImg.Length>-1 && anImg.Length<201)
                                 {
-                                    if (anQuantity == "")
-                                    {
-                                        ErrorMsg = "";
-                                    }
-                                    else
-                                    {
-                                        ConvertedQuantity = Convert.ToInt32(anQuantity);
-                                        if (ConvertedQuantity > 0 && ConvertedQuantity < 1000)
-                                        {
-                                            ErrorMsg = "";
-                                        }
-                                        else
-                                        {
-                                            //return error message 
-                                            ErrorMsg += "quantity must be out of 1000 ";
-                                        }
-                                    }
-
+                                    ErrorMsg += "";
 
                                 }
-                                catch
+                                else
                                 {
-                                    //return error message 
-                                    ErrorMsg += "Quantity  must be int ";
+                                    //return error message
+                                    ErrorMsg += "Img cannot exceed 200 characters";
 
                                 }
+                           }
+                           else
+                           {
+                                //return error message
+                                ErrorMsg += "Price cannot be left blank";
+                           }
 
-                            }
-                            else
-                            {
-                                //return error message 
-                                ErrorMsg += "Password must be between 0 and 50 characters ";
-                            }
                         }
                         else
                         {
                             //return error message 
-                            ErrorMsg += "Email must be between 0 and 50 characters ";
+                            ErrorMsg += "Listing Name must be between 0 and 76 characters";
                         }
-
                     }
                     else
                     {
                         //return error message 
-                        ErrorMsg += "Postcode must be between 0 and 15 characters ";
+                        ErrorMsg += "Description must be between 0 and 76 characters ";
                     }
                 }
                 else
                 {
-                    //return error message 
-                    ErrorMsg += "Delivery Line Two must be between 0 and 46 characters ";
-
+                  //return error message 
+                  ErrorMsg += "Delivery Type must be between 0 and 31 characters ";
                 }
+                
             }
             else
             {
                 //return error message 
-                ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
+                ErrorMsg += "Category must be between 0 and 31 characters";
             }
 
-            //check for special characters
-            if (TestForSpecialCharacters(anCategory) == true)
+
+            try
             {
-                ErrorMsg += "Delivery adress line one must have no special characters";
+                if (anQuantity == "")
+                {
+                    ErrorMsg += "Please Enter a Quantity";
+                }
+                else
+                {
+                    ConvertedQuantity = Convert.ToInt32(anQuantity);
+                    if (ConvertedQuantity > 0 && ConvertedQuantity < 1001)
+                    {
+                        ErrorMsg += "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        ErrorMsg += "quantity must be out of 1000 ";
+                    }
+                }
+
 
             }
-            if (TestForSpecialCharacters(anDeliveryType) == true)
+            catch
             {
-                ErrorMsg += "Delivery adress line two must have no special characters";
+                //return error message 
+                ErrorMsg += "Quantity  must be int ";
 
             }
-            if (TestForSpecialCharacters(anDescription) == true)
+
+            //check money in range
+            try
             {
-                ErrorMsg += "PostCode must have no special characters";
+                ConvertedPrice = Convert.ToDecimal(anPrice);
+                int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
+                if (decimalplaces == 2)
+                {
+                    if (ConvertedPrice > 0m && ConvertedPrice < 1000000000.01m)
+                    {
+                        ErrorMsg += "";
+
+                    }
+                    else
+                    {
+                        ErrorMsg += "Price must be between 0 and 1million";
+                    }
+                }
+                else
+                {
+                    ErrorMsg += "Price must have 2 decimal places";
+                }
 
             }
-            if (TestForSpecialCharacters(anListingName) == true)
+            catch
             {
-                ErrorMsg += "PostCode must have no special characters";
-
-            }
-            if (TestForSpecialCharacters(anPrice) == true)
-            {
-                ErrorMsg += "PostCode must have no special characters";
-
-            }
-            if (TestForSpecialCharacters(anQuantity) == true)
-            {
-                ErrorMsg += "PostCode must have no special characters";
-
-            }
-            if (anImg !="" && TestForSpecialCharacters(anImg) == false)
-            {
-                ErrorMsg += "img path must include : and / ";
-
+                ErrorMsg += "Price must be a decimal and not blank";
             }
 
 
@@ -159,7 +156,46 @@ namespace VirginClassLibrary
             //        ErrorMsg += "Email must be in the correct format";
             //    }
             //}
+
+
+            //check for special characters
+            if (TestForSpecialCharacters(anCategory) == true)
+            {
+                ErrorMsg += "Category must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anDeliveryType) == true)
+            {
+                ErrorMsg += "Delivery Typeo must have no special characters";
+
+            }
+            if (TestForSpecialCharacters(anListingName) == true)
+            {
+                ErrorMsg += "ListingName must have no special characters";
+
+            }
+            
+            if (TestForSpecialCharacters(anQuantity) == true)
+            {
+                ErrorMsg += "Quantity must have no special characters";
+
+            }
+            if (anImg !="" && TestForSpecialCharacters(anImg) == false)
+            {
+                ErrorMsg += "img path must include : and / ";
+
+            }
+            if (TestForSpecialCharacters(anDescription) == true)
+            {
+                ErrorMsg += "Description must have no special characters";
+
+            }
+
+
+
+
             return ErrorMsg;
+
         }
 
 

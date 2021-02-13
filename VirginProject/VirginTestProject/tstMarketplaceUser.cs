@@ -425,7 +425,7 @@ namespace VirginTestProject
             String Error = "";
             //some test data to insert into the valid method 
             String AnDeliveryAdressLineOne = "";
-            AnDeliveryAdressLineOne += AnDeliveryAdressLineOne.PadRight(45);
+            AnDeliveryAdressLineOne += AnDeliveryAdressLineOne.PadRight(45, 'A');
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "LE4 4GL";
             String AnEmail = "cjs@gmail.com";
@@ -449,7 +449,7 @@ namespace VirginTestProject
             //some test data to insert into the valid method 
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "";
-            AnDeliveryAdressLineTwo += AnDeliveryAdressLineTwo.PadRight(45);
+            AnDeliveryAdressLineTwo += AnDeliveryAdressLineTwo.PadRight(45, 'A');
             String AnPostcode = "LE4 4GL";
             String AnEmail = "cjs@gmail.com";
             String AnPassword = "Password1#";
@@ -472,7 +472,7 @@ namespace VirginTestProject
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "";
-            AnPostcode += AnPostcode.PadRight(15);
+            AnPostcode += AnPostcode.PadRight(15, 'A');
             String AnEmail = "cjs@gmail.com";
             String AnPassword = "Password1#";
             String AnRating = "7";
@@ -560,7 +560,7 @@ namespace VirginTestProject
             String Error = "";
             //some test data to insert into the valid method 
             String AnDeliveryAdressLineOne = "";
-            AnDeliveryAdressLineOne += AnDeliveryAdressLineOne.PadRight(46);
+            AnDeliveryAdressLineOne += AnDeliveryAdressLineOne.PadRight(46, 'A');
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "LE4 4GL";
             String AnEmail = "cjs@gmail.com";
@@ -584,7 +584,7 @@ namespace VirginTestProject
             //some test data to insert into the valid method 
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "";
-            AnDeliveryAdressLineTwo += AnDeliveryAdressLineTwo.PadRight(46);
+            AnDeliveryAdressLineTwo += AnDeliveryAdressLineTwo.PadRight(46, 'A');
             String AnPostcode = "LE4 4GL";
             String AnEmail = "cjs@gmail.com";
             String AnPassword = "Password1#";
@@ -607,7 +607,7 @@ namespace VirginTestProject
             String AnDeliveryAdressLineOne = "77 Wall Street";
             String AnDeliveryAdressLineTwo = "New York";
             String AnPostcode = "";
-            AnPostcode += AnPostcode.PadRight(16);
+            AnPostcode += AnPostcode.PadRight(16, 'A');
             String AnEmail = "cjs@gmail.com";
             String AnPassword = "Password1#";
             String AnRating = "7";
