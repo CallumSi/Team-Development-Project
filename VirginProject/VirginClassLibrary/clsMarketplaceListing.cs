@@ -20,11 +20,7 @@ namespace VirginClassLibrary
         public bool New { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        public int UserID { get; set; }
-
-
-
-
+        public int CreatedByUserID { get; set; }
 
         public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {
@@ -42,7 +38,15 @@ namespace VirginClassLibrary
                     {
                         if (anListingName.Length > 0 && anListingName.Length < 76)
                         {
-                           ErrorMsg += "";
+                           if(anPrice.Length > 0)
+                           {
+                                ErrorMsg += "";
+                           }
+                           else
+                           {
+                                //return error message
+                                ErrorMsg += "Price cannot be left blank";
+                           }
 
                         }
                         else
@@ -75,14 +79,14 @@ namespace VirginClassLibrary
             {
                 if (anQuantity == "")
                 {
-                    ErrorMsg = "";
+                    ErrorMsg += "Please Enter a Quantity";
                 }
                 else
                 {
                     ConvertedQuantity = Convert.ToInt32(anQuantity);
-                    if (ConvertedQuantity > 0 && ConvertedQuantity < 1000)
+                    if (ConvertedQuantity > 0 && ConvertedQuantity < 1001)
                     {
-                        ErrorMsg = "";
+                        ErrorMsg += "";
                     }
                     else
                     {
@@ -120,9 +124,9 @@ namespace VirginClassLibrary
                 ErrorMsg += "ListingName must have no special characters";
 
             }
-            if (TestForSpecialCharacters(anPrice) == true)
+            if (TestForSpecialCharacters(anPrice) == false)
             {
-                ErrorMsg += "Price must have no special characters";
+                ErrorMsg += "Price must be in the format 10.00";
 
             }
             if (TestForSpecialCharacters(anQuantity) == true)
@@ -150,6 +154,35 @@ namespace VirginClassLibrary
             //        ErrorMsg += "Email must be in the correct format";
             //    }
             //}
+
+
+            //check money in range
+            try
+            {
+                ConvertedPrice = Convert.ToDecimal(anPrice);
+                int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
+                if(decimalplaces == 2)
+                {
+                    if (ConvertedPrice > 0m && ConvertedPrice < 1000000000.01m)
+                    {
+                        ErrorMsg += "";
+
+                    }
+                    else
+                    {
+                        ErrorMsg += "Price must be between 0 and 1million";
+                    }
+                }
+                else
+                {
+                    ErrorMsg += "Price must have 2 decimal places";
+                }
+                
+            }
+            catch
+            {
+                ErrorMsg += "Price must be a decimal and not blank";
+            }
             return ErrorMsg;
         }
 
