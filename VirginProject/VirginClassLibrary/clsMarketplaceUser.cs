@@ -36,34 +36,7 @@ namespace VirginClassLibrary
                         {
                             if (anPassword.Length>2 && anPassword.Length < 51)
                             {
-                                try
-                                {
-                                    if (anRating=="")
-                                    {
-                                        ErrorMsg = "";
-                                    }
-                                    else
-                                    {
-                                        ConvertedRating = Convert.ToInt32(anRating);
-                                        if (ConvertedRating > -1 && ConvertedRating < 11)
-                                        {
-                                            ErrorMsg = "";
-                                        }
-                                        else
-                                        {
-                                            //return error message 
-                                            ErrorMsg += "Rating must be out of ten ";
-                                        }
-                                    }  
-                                  
-                                    
-                                }
-                                catch{
-                                    //return error message 
-                                    ErrorMsg += "Rating must be int ";
-
-                                }
-                                
+                                ErrorMsg += "";     
                             }
                             else
                             {
@@ -76,7 +49,6 @@ namespace VirginClassLibrary
                             //return error message 
                             ErrorMsg += "Email must be between 0 and 50 characters ";
                         }
-
                     }
                     else
                     {
@@ -88,13 +60,42 @@ namespace VirginClassLibrary
                 {
                     //return error message 
                     ErrorMsg += "Delivery Line Two must be between 0 and 46 characters ";
-
                 }
             }
             else
             {
                 //return error message 
                 ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
+            }
+
+            //try Convert Rating
+            try
+            {
+                if (anRating == "")
+                {
+                    ErrorMsg += "";
+                }
+                else
+                {
+                    ConvertedRating = Convert.ToInt32(anRating);
+                    if (ConvertedRating > -1 && ConvertedRating < 11)
+                    {
+                        ErrorMsg += "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        ErrorMsg += "Rating must be out of ten ";
+                    }
+                }
+
+
+            }
+            catch
+            {
+                //return error message 
+                ErrorMsg += "Rating must be int ";
+
             }
 
             //check for special characters

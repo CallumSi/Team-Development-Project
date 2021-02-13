@@ -67,20 +67,7 @@ namespace VirginTestProject
         }
 
 
-        [TestMethod]
-        public void CLoseDateOK()
-        {
-            //create instance of Marketplace user
-            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
-            //test data for property
-            DateTime TestData = new DateTime(2000, 12, 12);
-            //assign data to the property
-            AnMarketplaceListing.CloseDate = TestData;
-            //test if values are equal 
-            Assert.AreEqual(AnMarketplaceListing.CloseDate, TestData);
-
-
-        }
+        
 
 
         [TestMethod]

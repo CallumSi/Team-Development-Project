@@ -26,117 +26,108 @@ namespace VirginClassLibrary
 
 
 
-        public string Valid(string anCategory, string anCloseDate, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
+        public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {
             //declare empty string 
             string ErrorMsg = "";
             int ConvertedQuantity;
             decimal ConvertedPrice;
-            DateTime ConvertedCloseDate;
-
 
             //check for blank string
             if (anCategory.Length > 0 && anCategory.Length < 31)
             {
-                if (anCloseDate.Length == 18)
+                if (anDeliveryType.Length > 0 && anDeliveryType.Length < 31)
                 {
-                    if (anDeliveryType.Length > 0 && anDeliveryType.Length < 31)
+                    if (anDescription.Length > 0 && anDescription.Length < 76)
                     {
-                        if (anDescription.Length > 0 && anDescription.Length < 75)
+                        if (anListingName.Length > 0 && anListingName.Length < 76)
                         {
-                            if (anListingName.Length > 0 && anListingName.Length < 75)
-                            {
-                                try
-                                {
-                                    if (anQuantity == "")
-                                    {
-                                        ErrorMsg = "";
-                                    }
-                                    else
-                                    {
-                                        ConvertedQuantity = Convert.ToInt32(anQuantity);
-                                        if (ConvertedQuantity > 0 && ConvertedQuantity < 1000)
-                                        {
-                                            ErrorMsg = "";
-                                        }
-                                        else
-                                        {
-                                            //return error message 
-                                            ErrorMsg += "quantity must be out of 1000 ";
-                                        }
-                                    }
+                           ErrorMsg += "";
 
-
-                                }
-                                catch
-                                {
-                                    //return error message 
-                                    ErrorMsg += "Quantity  must be int ";
-
-                                }
-
-                            }
-                            else
-                            {
-                                //return error message 
-                                ErrorMsg += "Password must be between 0 and 50 characters ";
-                            }
                         }
                         else
                         {
                             //return error message 
-                            ErrorMsg += "Email must be between 0 and 50 characters ";
+                            ErrorMsg += "Listing Name must be between 0 and 76 characters";
                         }
-
                     }
                     else
                     {
                         //return error message 
-                        ErrorMsg += "Postcode must be between 0 and 15 characters ";
+                        ErrorMsg += "Description must be between 0 and 76 characters ";
                     }
                 }
                 else
                 {
-                    //return error message 
-                    ErrorMsg += "Delivery Line Two must be between 0 and 46 characters ";
-
+                  //return error message 
+                  ErrorMsg += "Delivery Type must be between 0 and 31 characters ";
                 }
+                
             }
             else
             {
                 //return error message 
-                ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
+                ErrorMsg += "Category must be between 0 and 31 characters";
             }
+
+
+            try
+            {
+                if (anQuantity == "")
+                {
+                    ErrorMsg = "";
+                }
+                else
+                {
+                    ConvertedQuantity = Convert.ToInt32(anQuantity);
+                    if (ConvertedQuantity > 0 && ConvertedQuantity < 1000)
+                    {
+                        ErrorMsg = "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        ErrorMsg += "quantity must be out of 1000 ";
+                    }
+                }
+
+
+            }
+            catch
+            {
+                //return error message 
+                ErrorMsg += "Quantity  must be int ";
+
+            }
+
+
+
+
 
             //check for special characters
             if (TestForSpecialCharacters(anCategory) == true)
             {
-                ErrorMsg += "Delivery adress line one must have no special characters";
+                ErrorMsg += "Category must have no special characters";
 
             }
             if (TestForSpecialCharacters(anDeliveryType) == true)
             {
-                ErrorMsg += "Delivery adress line two must have no special characters";
-
-            }
-            if (TestForSpecialCharacters(anDescription) == true)
-            {
-                ErrorMsg += "PostCode must have no special characters";
+                ErrorMsg += "Delivery Typeo must have no special characters";
 
             }
             if (TestForSpecialCharacters(anListingName) == true)
             {
-                ErrorMsg += "PostCode must have no special characters";
+                ErrorMsg += "ListingName must have no special characters";
 
             }
             if (TestForSpecialCharacters(anPrice) == true)
             {
-                ErrorMsg += "PostCode must have no special characters";
+                ErrorMsg += "Price must have no special characters";
 
             }
             if (TestForSpecialCharacters(anQuantity) == true)
             {
-                ErrorMsg += "PostCode must have no special characters";
+                ErrorMsg += "Quantity must have no special characters";
 
             }
             if (anImg !="" && TestForSpecialCharacters(anImg) == false)
