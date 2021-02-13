@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class ForumAnUser
-    {
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class ForumAnUser {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// btnOK control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
-
+        
         /// <summary>
         /// btnCancel control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
-
+        
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-
+        
         /// <summary>
         /// txtLastName control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
-
+        
         /// <summary>
         /// txtPhoneNumber control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
-
+        
         /// <summary>
         /// txtEmailAddress control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// lblFirstName control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFirstName;
-
+        
         /// <summary>
         /// lblLastName control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLastName;
-
+        
         /// <summary>
         /// lblPhoneNumber control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPhoneNumber;
-
+        
         /// <summary>
         /// lblEmailAddress control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmailAddress;
-
+        
         /// <summary>
         /// lblPassword control.
         /// </summary>
@@ -130,41 +128,5 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPassword;
-
-        /// <summary>
-        /// chkboxAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkboxAdmin;
-
-        /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
-        /// <summary>
-        /// txtRating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRating;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
     }
 }
