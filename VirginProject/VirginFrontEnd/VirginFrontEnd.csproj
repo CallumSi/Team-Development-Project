@@ -71,6 +71,7 @@
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumUserViewer.aspx" />
+    <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="ForumUserViewer.aspx.designer.cs">
       <DependentUpon>ForumUserViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceUserDelete.aspx.cs">
+      <DependentUpon>MarketplaceUserDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceUserDelete.aspx.designer.cs">
+      <DependentUpon>MarketplaceUserDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarketplaceUserList.aspx.cs">
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
