@@ -168,6 +168,20 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
             }
 
+            // (8) Patient Password Validation
+
+            //if patient password is blank 
+            if (Patient_Password.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT PASSWORD CANNOT BE BLANK!" + " ";
+            }
+
+            if (Patient_Password.Length < 8 | Patient_Password.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "PATIENT PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
+            }
 
 
 
