@@ -113,8 +113,6 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
             }
 
-
-
             // (5) DOB Validation
             //try
             //{
