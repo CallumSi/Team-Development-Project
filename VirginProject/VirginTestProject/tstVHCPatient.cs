@@ -165,21 +165,20 @@ namespace VirginTestProject
             Assert.AreEqual(AVHCPatient.Patient_Password, SomePatient_Password);
         }
 
-        //[TestMethod]
-        ////used to test the Patient_Telephone property of the patient class 
-        //public void Patient_TelephonePropertyOK()
-        //{
-        //    //create an instance of the patient class 
-        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
-        //    //create a variable to store the telephone of a patient 
-        //    string SomePatient_Telephone;
-        //    //assign a patient telephone to the variable 
-        //    SomePatient_Telephone = "01164891276";
-        //    //try to send some data to the Patient_Telephone property
-        //    AVHCPatient.Patient_Telephone = SomePatient_Telephone;
-        //    //check to see that the data in the variable and the property are the same
-        //    Assert.AreEqual(AVHCPatient.Patient_Telephone, SomePatient_Telephone);
-        //}
+        [TestMethod]
+        //used to test the Patient_Telephone property of the patient class 
+        public void Patient_TelephonePropertyOK()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create some test data to assign to the patient telephone property
+            string SomePatient_Telephone = "01164891276";
+            //try to send some data to the patient telephone property
+            AVHCPatient.Patient_Telephone = SomePatient_Telephone;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AVHCPatient.Patient_Telephone, SomePatient_Telephone);
+        }
+
 
         //[TestMethod]
         ////used to test the Patient_Status property of the patient class 
@@ -1200,9 +1199,145 @@ namespace VirginTestProject
         ///// TEST PLAN: Patient_Telephone Property
         ///// </summary>
 
+        [TestMethod]
+        public void Patient_TelephoneMinLessOne()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(6, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMin()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(7, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMinPlusOne()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(8, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMaxLessOne()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            String Error = "";
+            //create a variable to store any error message
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(14, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMax()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            String Error = "";
+            //create a variable to store any error message
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(15, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMaxPlusOne()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            String Error = "";
+            //create a variable to store any error message
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(16, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneMid()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            String Error = "";
+            //create a variable to store any error message
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(11, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Patient_TelephoneExtremeMax()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to record the result of the validation test 
+            String Error = "";
+            //create a variable to store any error message
+            string Patient_Telephone = "";
+            //create some test data to test the valid method 
+            Patient_Telephone = Patient_Telephone.PadLeft(100, '1');
+            //invoke the method 
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
         ///// <summary>
         ///// TEST PLAN: Patient_Status Property
         ///// </summary>
-        
+
     }
 }

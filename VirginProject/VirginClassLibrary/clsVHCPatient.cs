@@ -183,6 +183,21 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
             }
 
+            // (9) Patient Telephone Validation
+
+            //if patient telephone is blank 
+            if (Patient_Telephone.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT TELEPHONE CANNOT BE BLANK!" + " ";
+            }
+
+            if (Patient_Telephone.Length < 7 | Patient_Telephone.Length > 15)
+            {
+                //set the error message 
+                Error = Error + "PATIENT TELEPHONE MUST BE BETWEEN 7 TO 15 DIGITS!" + " ";
+            }
+
 
 
 
