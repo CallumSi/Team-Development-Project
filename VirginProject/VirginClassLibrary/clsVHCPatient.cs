@@ -76,6 +76,21 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
+            // (3) Patient Lastname Validation
+
+            //if patient lastname is blank 
+            if (Patient_Lastname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT LASTNAME CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Patient_Lastname.Length < 1 | Patient_Lastname.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "PATIENT LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            }
 
             //return any error messages
             return Error;
