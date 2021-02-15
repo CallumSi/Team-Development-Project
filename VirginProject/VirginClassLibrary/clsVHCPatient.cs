@@ -46,7 +46,7 @@ namespace VirginClassLibrary
             //create a string variable to store data values
             String Error = "";
             //create a temporary variable to store data values
-            DateTime DOBTemp;
+            //DateTime DOBTemp;
 
             // (1) Patient Title Validation
 
@@ -78,7 +78,7 @@ namespace VirginClassLibrary
             if (Patient_Firstname.Length < 1 | Patient_Firstname.Length > 50)
             {
                 //set the error message 
-                Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+                Error = Error + "PATIENT FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
             // (3) Patient Lastname Validation
@@ -150,6 +150,22 @@ namespace VirginClassLibrary
             {
                 //set the error message 
                 Error = Error + "PATIENT EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
+            }
+
+            // (7) Patient Username Validation
+
+            //if patient username is blank 
+            if (Patient_Username.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT USERNAME CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Patient_Username.Length < 8 | Patient_Username.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "PATIENT USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
             }
 
 
