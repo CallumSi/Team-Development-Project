@@ -38,10 +38,15 @@ namespace VirginClassLibrary
         //Patient_Status Property
         public bool Patient_Status { get; set; }
 
+
+
+
         public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone, string Patient_Status)
         {
             //create a string variable to store data values
             String Error = "";
+            //create a temporary variable to store data values
+            DateTime DOBTemp;
 
             // (1) Patient Title Validation
 
@@ -61,7 +66,7 @@ namespace VirginClassLibrary
 
 
             // (2) Patient Firstname Validation
-          
+
             //if patient firstname is blank 
             if (Patient_Firstname.Length == 0)
             {
@@ -108,9 +113,55 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
             }
 
+
+
+            // (5) DOB Validation
+            //try
+            //{
+            //    //copy the patient DOB value to the DOBTemp variable
+            //    DOBTemp = Convert.ToDateTime(Patient_DOB);
+
+            //    //check to see if the DOB is not more than 31st December 2003
+            //    if (DOBTemp > DateTime.MinValue(31 / 12 / 2003)) //****CHECK THIS****
+            //    {
+            //        //record the error
+            //        Error = Error + "YOU MUST BE OVER 18YRS!" + "  ";
+            //    }
+
+            //}
+
+            //catch
+            //{
+            //    //record the error 
+            //    Error = Error + "THE PATIENT DATE OF BIRTH WAS NOT A VALID DATE : ";
+            //}
+
+            // (6) Patient Email Validation
+
+            //if patient email is blank 
+            if (Patient_Email.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT EMAIL CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Patient_Email.Length < 11 | Patient_Email.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "PATIENT EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
+            }
+
+
+
+
+
+
+
+
+
             //return any error messages
             return Error;
-
         }
     }
 }
