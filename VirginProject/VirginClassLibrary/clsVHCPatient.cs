@@ -92,6 +92,22 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
+            // (4) Patient Address Validation
+
+            //if patient address is blank 
+            if (Patient_Address.Length == 0)
+            {
+                //record the error 
+                Error = Error + "PATIENT ADDRESS CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Patient_Address.Length < 1 | Patient_Address.Length > 100)
+            {
+                //set the error message 
+                Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
+            }
+
             //return any error messages
             return Error;
 
