@@ -35,21 +35,19 @@ namespace VirginTestProject
             Assert.IsNotNull(AVHCPatient); 
         }
 
-        //[TestMethod]
-        //used to test the Patient_ID property of the patient class 
-        //public void Patient_IDPropertyOK()
-        //{
-        //    //create an instance of the patient class 
-        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
-        //    //create a variable to store the ID of a patient 
-        //    Int32 SomePatient_ID;
-        //    //assign a patient ID to the variable 
-        //    SomePatient_ID = 1;
-        //    //try to send some data to the Patient_ID property
-        //    AVHCPatient.Patient_ID = SomePatient_ID;
-        //    //check to see that the data in the variable and the property are the same
-        //    Assert.AreEqual(AVHCPatient.Patient_ID, SomePatient_ID);
-        //}
+        [TestMethod]
+        //used to test the Patient_ID property of the patient class
+        public void Patient_IDPropertyOK()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store the ID of a patient 
+            Int32 SomePatient_ID = 1;
+            //try to send some data to the patient ID property
+            AVHCPatient.Patient_ID = SomePatient_ID;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AVHCPatient.Patient_ID, SomePatient_ID);
+        }
 
         [TestMethod]
         //used to test the Patient_Title property of the patient class 
@@ -180,21 +178,19 @@ namespace VirginTestProject
         }
 
 
-        //[TestMethod]
-        ////used to test the Patient_Status property of the patient class 
-        //public void Patient_StatusPropertyOK()
-        //{
-        //    //create an instance of the patient class 
-        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
-        //    //create a variable to store the status of a patient 
-        //    Boolean SomePatient_Status;
-        //    //assign a patient status to the variable 
-        //    SomePatient_Status = true;
-        //    //try to send some data to the Patient_Status property
-        //    AVHCPatient.Patient_Status = SomePatient_Status;
-        //    //check to see that the data in the variable and the property are the same
-        //    Assert.AreEqual(AVHCPatient.Patient_Status, SomePatient_Status);
-        //}
+        [TestMethod]
+        //used to test the Patient_Status property of the patient class 
+        public void Patient_StatusPropertyOK()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store the status of a patient 
+            Boolean SomePatient_Status = true;
+            //try to send some data to the patient status property
+            AVHCPatient.Patient_Status = SomePatient_Status;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AVHCPatient.Patient_Status, SomePatient_Status);
+        }
 
         [TestMethod]
         public void ValidMethodOK()
@@ -228,7 +224,7 @@ namespace VirginTestProject
         ///// <summary>
         ///// TEST PLAN: Patient_Title Property
         ///// </summary>
-        
+
         [TestMethod]
         public void Patient_TitleMinLessOne()
         {
