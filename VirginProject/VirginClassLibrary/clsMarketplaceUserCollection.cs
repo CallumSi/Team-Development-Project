@@ -121,7 +121,7 @@ namespace VirginClassLibrary
             //first establish connection 
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
-            DB.AddParameter("@Email", mThisUser.Email);
+            DB.AddParameter("@Email", Email);
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceUser_FilterByEmail");
             //populate the array with the found data

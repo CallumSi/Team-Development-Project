@@ -73,7 +73,12 @@ namespace VirginFrontEnd
             //if no error msg then add it to object
             if (Error == "")
             {
+                //find the record to update
+
+                SomeUser.ThisUser.Find(UserID);
+
                 //get the data from the form
+               
                 SomeUser.ThisUser.Admin = chkboxAdmin.Checked;
                 SomeUser.ThisUser.Email = txtEmail.Text;
                 SomeUser.ThisUser.Password = txtPassword.Text;
@@ -82,7 +87,7 @@ namespace VirginFrontEnd
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
 
-                //then add the record
+                //then update the record
                 SomeUser.UpdateUser();
                 //then go back to the list page
                 Response.Redirect("MarketplaceUserList.aspx");
