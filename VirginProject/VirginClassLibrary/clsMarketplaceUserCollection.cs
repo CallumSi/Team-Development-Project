@@ -82,7 +82,6 @@ namespace VirginClassLibrary
             DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@Rating", mThisUser.Rating);
-            DB.AddParameter("@UserID", mThisUser.UserID);
             //execute the insert sproc
             return DB.Execute("sproc_tblMarketplaceUser_Insert");
 
@@ -103,6 +102,7 @@ namespace VirginClassLibrary
             //first establish connection 
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
+            DB.AddParameter("@UserID", mThisUser.UserID);
             DB.AddParameter("@Admin", mThisUser.Admin);
             DB.AddParameter("@DeliveryAdressLineOne", mThisUser.DeliveryAdressLineOne);
             DB.AddParameter("@DeliveryAdressLineTwo", mThisUser.DeliveryAdressLineTwo);
@@ -110,7 +110,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@Rating", mThisUser.Rating);
-            DB.AddParameter("@UserID", mThisUser.UserID);
+           
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceUser_Update");
         }
@@ -147,14 +147,14 @@ namespace VirginClassLibrary
                 //create a blank record
                 clsMarketplaceUser AnUser = new clsMarketplaceUser();
                 //read the data and add the record
-                AnUser.Admin = Convert.ToBoolean(DB.DataTable.Rows[0]["Admin"]);
-                AnUser.DeliveryAdressLineOne = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineOne"]);
-                AnUser.DeliveryAdressLineTwo = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineTwo"]);
-                AnUser.PostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
-                AnUser.Email = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
-                AnUser.Rating = Convert.ToInt32(DB.DataTable.Rows[0]["Rating"]);
-                AnUser.UserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
-                AnUser.Password = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                AnUser.Admin = Convert.ToBoolean(DB.DataTable.Rows[Index]["Admin"]);
+                AnUser.DeliveryAdressLineOne = Convert.ToString(DB.DataTable.Rows[Index]["DeliveryAdressLineOne"]);
+                AnUser.DeliveryAdressLineTwo = Convert.ToString(DB.DataTable.Rows[Index]["DeliveryAdressLineTwo"]);
+                AnUser.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
+                AnUser.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
+                AnUser.Rating = Convert.ToInt32(DB.DataTable.Rows[Index]["Rating"]);
+                AnUser.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserID"]);
+                AnUser.Password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
 
                 //add the record t
                 mUserList.Add(AnUser);

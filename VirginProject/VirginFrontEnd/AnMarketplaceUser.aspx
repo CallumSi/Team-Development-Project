@@ -15,8 +15,6 @@
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 20px; top: 155px; position: absolute" Text="Email"></asp:Label>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 20px; top: 183px; position: absolute" Text="Password"></asp:Label>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 20px; top: 211px; position: absolute" Text="Rating"></asp:Label>
-        <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 21px; top: 98px; position: absolute" Text="UserID"></asp:Label>
-        <asp:TextBox ID="txtUserID" runat="server" style="z-index: 1; left: 80px; top: 94px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 80px; top: 155px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 92px; top: 183px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtRating" runat="server" style="z-index: 1; left: 87px; top: 214px; position: absolute"></asp:TextBox>
