@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirginClassLibrary
 {
-    class clsMarketplaceUserCollection
+    public class clsMarketplaceUserCollection
     {
 
         //declare private variables for use list
@@ -20,7 +20,7 @@ namespace VirginClassLibrary
             //declare data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
-            DB.Execute("sproc_tblUser_SelectAll");
+            DB.Execute("sproc_tblMarketplaceUser_SelectAll");
             //populate the array with the data
             PopulateArray(DB);
         }
@@ -84,7 +84,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Rating", mThisUser.Rating);
             DB.AddParameter("@UserID", mThisUser.UserID);
             //execute the insert sproc
-            return DB.Execute("sproc_tblUser_Insert");
+            return DB.Execute("sproc_tblMarketplaceUser_Insert");
 
         }
         public void DeleteUser()
@@ -94,7 +94,7 @@ namespace VirginClassLibrary
             //set the parameters for the sproc
             DB.AddParameter("@UserID", mThisUser.UserID);
             //execute the stored procedure
-            DB.Execute("sproc_tblUser_Delete");
+            DB.Execute("sproc_tblMarketplaceUser_Delete");
 
         }
         public void UpdateUser()
@@ -112,7 +112,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Rating", mThisUser.Rating);
             DB.AddParameter("@UserID", mThisUser.UserID);
             //execute the spoc
-            DB.Execute("sproc_tblUser_Update");
+            DB.Execute("sproc_tblMarketplaceUser_Update");
         }
 
         public void FilterByEmail(string Email)
@@ -123,7 +123,7 @@ namespace VirginClassLibrary
             //set the paramters for the sproc
             DB.AddParameter("@Email", mThisUser.Email);
             //execute the spoc
-            DB.Execute("sproc_tblUser_FilterByEmail");
+            DB.Execute("sproc_tblMarketplaceUser_FilterByEmail");
             //populate the array with the found data
             PopulateArray(DB);
 

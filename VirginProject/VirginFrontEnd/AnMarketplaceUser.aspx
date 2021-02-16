@@ -22,8 +22,8 @@
         <asp:TextBox ID="txtRating" runat="server" style="z-index: 1; left: 87px; top: 214px; position: absolute"></asp:TextBox>
         <asp:CheckBox ID="chkboxAdmin" runat="server" style="z-index: 1; left: 87px; top: 123px; position: absolute" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 47px; top: 286px; position: absolute" Text="Label"></asp:Label>
-        <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 65px; top: 346px; position: absolute" Text="OK" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 177px; top: 338px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 65px; top: 346px; position: absolute" Text="OK" OnClick="btnOk_Click" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 177px; top: 338px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 302px; top: 114px; position: absolute; width: 94px" Text="Line One"></asp:Label>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 305px; top: 147px; position: absolute" Text="Line Two"></asp:Label>
         <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 303px; top: 181px; position: absolute" Text="PostCode"></asp:Label>
