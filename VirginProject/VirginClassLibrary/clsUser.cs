@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace VirginClassLibrary
 {
-    class clsUser
+    public class clsUser
     {
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }

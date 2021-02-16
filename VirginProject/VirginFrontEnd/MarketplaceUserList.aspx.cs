@@ -22,9 +22,9 @@ namespace VirginFrontEnd
         void DisplayUser()
         {
             //create an instance of the use collection
-            clsMarketplaceUserCollection Users = new clsMarketplaceUserCollection();
-            lstMarketplaceUser.DataSource = Users.UserList;
-            //set name of primary key
+            //clsMarketplaceUserCollection Users = new clsMarketplaceUserCollection();
+            //lstMarketplaceUser.DataSource = Users.UserList;
+            ////set name of primary key
            
         }
     }
