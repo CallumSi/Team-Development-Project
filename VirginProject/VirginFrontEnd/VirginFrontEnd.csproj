@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="ForumAnUser.aspx.designer.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumUserList.aspx.cs">
+      <DependentUpon>ForumUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumUserList.aspx.designer.cs">
+      <DependentUpon>ForumUserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumUserViewer.aspx.cs">
       <DependentUpon>ForumUserViewer.aspx</DependentUpon>
