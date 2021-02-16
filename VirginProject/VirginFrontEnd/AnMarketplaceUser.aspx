@@ -16,14 +16,20 @@
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 20px; top: 183px; position: absolute" Text="Password"></asp:Label>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 20px; top: 211px; position: absolute" Text="Rating"></asp:Label>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 21px; top: 98px; position: absolute" Text="UserID"></asp:Label>
-        <asp:TextBox ID="txtboxUserID" runat="server" style="z-index: 1; left: 80px; top: 94px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtUserID" runat="server" style="z-index: 1; left: 80px; top: 94px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 80px; top: 155px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtAdmin" runat="server" style="z-index: 1; left: 92px; top: 183px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 92px; top: 183px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtRating" runat="server" style="z-index: 1; left: 87px; top: 214px; position: absolute"></asp:TextBox>
         <asp:CheckBox ID="chkboxAdmin" runat="server" style="z-index: 1; left: 87px; top: 123px; position: absolute" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 47px; top: 286px; position: absolute" Text="Label"></asp:Label>
         <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 65px; top: 346px; position: absolute" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 177px; top: 338px; position: absolute" Text="Cancel" />
+        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 302px; top: 114px; position: absolute; width: 94px" Text="Line One"></asp:Label>
+        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 305px; top: 147px; position: absolute" Text="Line Two"></asp:Label>
+        <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 303px; top: 181px; position: absolute" Text="PostCode"></asp:Label>
+        <asp:TextBox ID="txtDeliveryAdressLineOne" runat="server" style="z-index: 1; left: 362px; top: 115px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtDeliveryAdressLineTwo" runat="server" style="z-index: 1; left: 364px; top: 148px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 363px; top: 185px; position: absolute"></asp:TextBox>
     </form>
 </body>
 </html>

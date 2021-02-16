@@ -33,13 +33,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// Label1 control.
@@ -87,13 +87,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// btnAddUser control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddUser;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
         /// btnEdit control.
