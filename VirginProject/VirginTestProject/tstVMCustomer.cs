@@ -25,6 +25,19 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void VMcustomerIDPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign the data to the property
+            ACustomer.VMCustomerID = TestData;
+            //test to see that the two values are the same 
+            Assert.AreEqual(ACustomer.VMCustomerID, TestData);
+        }
+
+        [TestMethod]
         public void VMcustomerFirstNamePropertyOK()
         {
             //create an instance of the customer class
@@ -118,6 +131,21 @@ namespace VirginTestProject
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
+
+        //[TestMethod]
+        //public void FindMethodOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsVMCustomer ACustomer = new clsVMCustomer();
+        //    //boolean variable to store the result of the valdation
+        //    Boolean Found = false;
+        //    //create some test data to use with the method
+        //    Int32 VMCustomerID = 1;
+        //    //invoke the method
+        //    Found = ACustomer.Find(VMCustomerID);
+        //    //test to see that the result is correct
+        //    Assert.IsTrue(Found);
+        //}
 
         [TestMethod]
         public void VMcustomerFirstNameMinLessOne()
@@ -463,5 +491,232 @@ namespace VirginTestProject
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void VMcustomerUsernameMinLessOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to test the valid method 
+            String VMcustomerUsername = "";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernameMin()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass the method
+            string VMcustomerUsername = "L";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernameMinPlusOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass the method
+            string VMcustomerUsername = "Lu";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernameMaxLessOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerUsername = "";
+            //create some test data to test the valid method 
+            VMcustomerUsername = VMcustomerUsername.PadLeft(54, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernameMid()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerUsername = "";
+            //create some test data to test the valid method 
+            VMcustomerUsername = VMcustomerUsername.PadLeft(22, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernamePlusOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerUsername = "";
+            //create some test data to test the valid method 
+            VMcustomerUsername = VMcustomerUsername.PadLeft(56, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerUsernameExtremeMax()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerUsername = "";
+            //create some test data to test the valid method 
+            VMcustomerUsername = VMcustomerUsername.PadLeft(100, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordMinLessOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to test the valid method 
+            String VMcustomerPassword = "JaneDo";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordLastNameMin()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass the method
+            string VMcustomerPassword = "JaneDoe";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordMinPlusOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create some test data to pass the method
+            string VMcustomerPassword = "JaneDoe1";
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordMaxLessOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerPassword = "";
+            //create some test data to test the valid method 
+            VMcustomerPassword = VMcustomerPassword.PadLeft(54, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordMid()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerPassword = "";
+            //create some test data to test the valid method 
+            VMcustomerPassword = VMcustomerPassword.PadLeft(22, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordPlusOne()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerPassword = "";
+            //create some test data to test the valid method 
+            VMcustomerPassword = VMcustomerPassword.PadLeft(56, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMcustomerPasswordExtremeMax()
+        {
+            //create an instance of the customer class
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            //create a variable to store the test data
+            string VMcustomerPassword = "";
+            //create some test data to test the valid method 
+            VMcustomerPassword = VMcustomerPassword.PadLeft(100, 'A');
+            //invoke the method
+            Error = ACustomer.Valid(VMcustomerFirstName, VMcustomerLastName, VMcustomerEmail, VMcustomerUsername, VMcustomerPassword);
+            //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }
