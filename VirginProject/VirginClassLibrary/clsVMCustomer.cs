@@ -10,7 +10,7 @@ namespace VirginClassLibrary
         //Common Customer Attributes
         String mVMcustomerFirstName;
         String mVMcustomerLastName;
-        //String mVMcustomerEmail;
+        String mVMcustomerEmail;
         String mVMcustomerUsername;
         String mVMcustomerPassword;
 
@@ -60,19 +60,19 @@ namespace VirginClassLibrary
         }
 
         //Public property for customer email
-        public string VMcustomerEmail { get; set; }
-        //{
-        //    get
-        //    {
-        //        //return the private data
-        //        //return mVMcustomerEmail;
-        //    }
-        //    set
-        //    {
-        //        //set the private data
-        //        mVMcustomerEmail = value;
-        //    }
-        //}
+        public string VMcustomerEmail
+        {
+            get
+            {
+                //return the private data
+                return mVMcustomerEmail;
+            }
+            set
+            {
+                //set the private data
+                mVMcustomerEmail = value;
+            }
+        }
 
         //Public property for customer username
         public string VMcustomerUsername
@@ -103,6 +103,35 @@ namespace VirginClassLibrary
                 mVMcustomerPassword = value;
             }
         }
+
+        //public bool Find(int VMCustomerID)
+        //{
+        //    //create an instance of the data connection
+        //    clsDataConnection DB = new clsDataConnection();
+        //    //add the parameter for the CustomerID to search for
+        //    DB.AddParameter("@VMCustomerID", VMCustomerID);
+        //    //execute the stored procedure
+        //    DB.Execute("sproc_tblCustomer_FilterByCustomerID");
+        //    //if one record is found (there should be either one or zero!)
+        //    if (DB.Count == 1)
+        //    {
+        //        //copy the data from the database to the private data members
+        //        mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
+        //        mVMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerFirstName"]);
+        //        mVMcustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerLastName"]);
+        //        mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
+        //        mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
+        //        mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
+        //        //return that everything worked OK
+        //        return true;
+        //    }
+        //    //if no record was found
+        //    else
+        //    {
+        //        //return false indicating a problem
+        //        return false;
+        //    }
+        //}
 
         public string Valid(string VMcustomerFirstName, string VMcustomerLastName, string VMcustomerEmail, string VMcustomerUsername, string VMcustomerPassword)
         {
@@ -138,7 +167,6 @@ namespace VirginClassLibrary
             {
                 //return error message 
                 Error = Error + "Customer Lastname cannot be more than 55 characters";
-
             }
 
             //  Customer Email Validation
@@ -147,16 +175,44 @@ namespace VirginClassLibrary
             if (VMcustomerEmail.Length == 0)
             {
                 //record the error 
-                Error = Error + "CUSTOMER EMAIL CANNOT BE BLANK!" + " ";
-
+                Error = Error + "Customer Email cannot be blank!" + " ";
             }
 
             if (VMcustomerEmail.Length < 11 | VMcustomerEmail.Length > 55)
             {
                 //set the error message 
-                Error = Error + "CUSTOMER EMAIL MUST BE BETWEEN 11 TO 55 CHARACTERS!" + " ";
+                Error = Error + "Customer Email must be between 11 and 55 CHARACTERS!" + " ";
             }
 
+            //****************CUSTOMER USERNAME***********************// 
+            //test to see if the customer username has zero characters
+            if (VMcustomerUsername.Length == 0)
+            {
+                //return error message 
+                Error = Error + "Customer Username cannot be blank!";
+            }
+
+            //if the customer username is less than 1 and greater than 55 characters
+            if (VMcustomerUsername.Length < 1 | VMcustomerUsername.Length > 55)
+            {
+                //return error message 
+                Error = Error + "Customer Username cannot be more than 55 characters";
+            }
+
+            //****************CUSTOMER PASSWORD***********************// 
+            //test to see if the customer password has zero characters
+            if (VMcustomerPassword.Length == 0)
+            {
+                //return error message 
+                Error = Error + "Customer Username cannot be blank!";
+            }
+
+            //if the customer password is less than 1 and greater than 55 characters
+            if (VMcustomerPassword.Length < 7 | VMcustomerPassword.Length > 55)
+            {
+                //return error message 
+                Error = Error + "Customer Username cannot be more than 55 characters";
+            }
 
             //return any error messages
             return Error; 
