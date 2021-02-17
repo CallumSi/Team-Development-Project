@@ -32,5 +32,20 @@ namespace VirginTestProject
             //test to see that it exists 
             Assert.IsNotNull(AVHCStaff);
         }
+
+        [TestMethod]
+        //used to test the Staff_ID property of the staff class
+        public void Staff_IDPropertyOK()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store the ID of a staff 
+            Int32 SomeStaff_ID = 1;
+            //try to send some data to the staff ID property
+            AVHCStaff.Staff_ID = SomeStaff_ID;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AVHCStaff.Staff_ID, SomeStaff_ID);
+        }
+
     }
 }
