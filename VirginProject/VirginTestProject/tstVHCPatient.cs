@@ -217,10 +217,6 @@ namespace VirginTestProject
 
         }
 
-        /// <summary>
-        /// TEST PLAN: Patient_ID Property
-        /// </summary>
-
         ///// <summary>
         ///// TEST PLAN: Patient_Title Property
         ///// </summary>
@@ -1330,10 +1326,6 @@ namespace VirginTestProject
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
-
-        ///// <summary>
-        ///// TEST PLAN: Patient_Status Property
-        ///// </summary>
 
     }
 }
