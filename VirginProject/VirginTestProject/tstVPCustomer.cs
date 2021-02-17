@@ -14,10 +14,10 @@ namespace VirginTestProject
         string Customer_FirstName = "Jane";
         string Customer_LastName = "Doe";
         string Customer_Street = "Western Road";
-        string Customer_Address = "42D Western Road, Leicester";
+        string Customer_Address = "42D Western Road,Leicester";
         string Customer_Postcode = "LE3 0BJ";
         string Customer_Email = "JaneDoe123@hotmail.com";
-        //Int32 Customer_Telephone = "12345678901";
+        string Customer_Telephone = "12345678901";
 
         [TestMethod]
 
@@ -100,7 +100,7 @@ namespace VirginTestProject
             //create a variable to store the postcode of the customer
             string SomePostcode;
             //assign a Postcode to the variable
-            SomePostcode = "LE3 0GH";
+            SomePostcode = "LE3 0BJ";
             //try to sent some data to the Postcode property
             AVPCustomer.Customer_Postcode = SomePostcode;
             //check to see that the data in the variable and property are the same
@@ -123,21 +123,21 @@ namespace VirginTestProject
             Assert.AreEqual(AVPCustomer.Customer_Street, SomeStreet);
         }
 
-        /* [TestMethod]
+        [TestMethod]
          //testing the property of Telephone of the class
          public void TelephonePropertyOK()
          {
              //create an instance of a class
              clsVPCustomer AVPCustomer = new clsVPCustomer();
              //create a variable to store the telephone of the customer
-             Int32 SomeTelephone;
+             string SomeTelephone;
              //assign a telephone to the variable
-             SomeTelephone = 0123456789;
+             SomeTelephone = "0123456789";
              //try to sent some data to the Telephone property
              AVPCustomer.Customer_Telephone = SomeTelephone;
              //check to see that the data in the variable and property are the same
-             Assert.AreEqual(AVPCustomer.Telephone, SomeTelephone);
-         }*/
+             Assert.AreEqual(AVPCustomer.Customer_Telephone, SomeTelephone);
+         }
 
         [TestMethod]
         //testing the valid method
@@ -154,9 +154,9 @@ namespace VirginTestProject
             string Customer_Street = "Western Road";
             string Customer_Postcode = "LE3 0BJ";
             string Customer_Email = "JaneDoe123@hotmail.com";
-            //Int32 Customer_Telephone = "12345678901";
+            string Customer_Telephone = "01234567890";
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -178,8 +178,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_FirstName = ""; //this should trigger an error message
+            //create some test data to pass the valid method
+            Customer_FirstName = Customer_FirstName.PadLeft(1, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -197,7 +199,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(2, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -215,7 +217,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(3, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -233,7 +235,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(19, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -251,7 +253,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(20, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -269,7 +271,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(21, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -285,17 +287,17 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_FirstName = ""; //
-                                            //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(10, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method
         public void FirstNameExtremeMax()
         {
             //create an instance of a class 
@@ -307,7 +309,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_FirstName = Customer_FirstName.PadLeft(50, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -331,8 +333,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_LastName = ""; //this should trigger an error message
-                                           //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            //create some test data to pass the valid method
+            Customer_LastName = Customer_LastName.PadLeft(1, 'J');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -350,7 +354,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(2, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -365,10 +369,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_LastName = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(3, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -383,10 +387,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_LastName = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(19, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -401,10 +405,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_LastName = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(20, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -419,10 +423,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_LastName = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(21, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -438,17 +442,17 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_LastName = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_LastName = Customer_LastName.PadLeft(10, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method
         public void LastNameExtremeMax()
         {
             //create an instance of a class 
@@ -460,7 +464,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_LastName = Customer_LastName.PadLeft(50, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -483,8 +487,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_Street = ""; //this should trigger an error message
-                                         //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            //create some test data to pass the valid method
+            Customer_Street = Customer_Street.PadLeft(4, 'W');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -499,10 +505,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
-            Customer_Street = Customer_Street.PadLeft(20, 'W');
+            //create some test data to pass the valid method
+            Customer_Street = Customer_Street.PadLeft(5, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -517,10 +523,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
-            Customer_Street = Customer_Street.PadLeft(21, 'W');
+            //create some test data to pass the valid method
+            Customer_Street = Customer_Street.PadLeft(6, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -535,10 +541,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Street = Customer_Street.PadLeft(49, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -553,10 +559,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Street = Customer_Street.PadLeft(50, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -571,10 +577,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Street = Customer_Street.PadLeft(51, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -590,17 +596,17 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Street = ""; //
-                                         //create some test data to pass the valid method
-            Customer_Street = Customer_Street.PadLeft(35, 'W');
+            //create some test data to pass the valid method
+            Customer_Street = Customer_Street.PadLeft(25, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method
         public void StreetExtremeMax()
         {
             //create an instance of a class 
@@ -612,7 +618,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_Street = Customer_Street.PadLeft(100, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -636,8 +642,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_Address = ""; //this should trigger an error message
-                                          //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            //create some test data to pass the valid method
+            Customer_Address = Customer_Address.PadLeft(19, 'W');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -653,9 +661,9 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Address = ""; //
             //create some test data to pass the valid method
-            Customer_Address = Customer_Address.PadLeft(30, 'W');
+            Customer_Address = Customer_Address.PadLeft(20, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -671,9 +679,9 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Address = ""; //
             //create some test data to pass the valid method
-            Customer_Address = Customer_Address.PadLeft(31, 'W');
+            Customer_Address = Customer_Address.PadLeft(21, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -691,7 +699,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Address = Customer_Address.PadLeft(49, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -709,7 +717,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Address = Customer_Address.PadLeft(50, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -724,10 +732,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Address = ""; //
-                                          //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Address = Customer_Address.PadLeft(51, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -746,14 +754,14 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Street = Customer_Street.PadLeft(35, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method 
         public void AddressExtremeMax()
         {
             //create an instance of a class 
@@ -765,7 +773,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_Street = Customer_Street.PadLeft(100, 'W');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -789,8 +797,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_Postcode = ""; //this should trigger an error message
+            //create some test data to pass the valid method
+            Customer_Postcode = Customer_Postcode.PadLeft(6, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -808,7 +818,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(7, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -826,7 +836,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(8, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -841,10 +851,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Postcode = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(6, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email/*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -859,10 +869,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Postcode = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(7, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -877,10 +887,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Postcode = ""; //
-                                           //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(8, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -899,14 +909,14 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(0);
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method
         public void PostcodeExtremeMax()
         {
             //create an instance of a class 
@@ -918,7 +928,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_Postcode = Customer_Postcode.PadLeft(50, 'L');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -942,8 +952,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method
             string Customer_Email = ""; //this should trigger an error message
+            //create some test data to pass the valid method
+            Customer_Email = Customer_Email.PadLeft(19, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -961,7 +973,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(20, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -979,7 +991,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(21, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -997,7 +1009,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(49, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -1012,10 +1024,10 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Email = ""; //
-                                        //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(50, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -1033,7 +1045,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(51, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/ );
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone );
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -1049,17 +1061,17 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string Customer_Email = ""; //
-                                        //create some test data to pass the valid method
+            //create some test data to pass the valid method
             Customer_Email = Customer_Email.PadLeft(25, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreEqual(Error, "");
         }
 
 
         [TestMethod]
-        //testing the valid method for first name
+        //testing the valid method
         public void EmailExtremeMax()
         {
             //create an instance of a class 
@@ -1071,7 +1083,161 @@ namespace VirginTestProject
             //create some test data to test the valid method
             Customer_Email = Customer_Email.PadLeft(100, 'J');
             //invoke the method
-            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email /*Customer_Telephone*/);
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //***TESTING PROPERTIES***/
+
+        /// <summary>
+        /// //***TESTING PROPERTIES TELEPHONE***//
+        /// </summary>
+        /// 
+
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMinLessOne()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string Customer_Telephone = ""; //this should trigger an error message
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(10, '0');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMin()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(11, '0');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMinPlusOne()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(12, '0');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMaxLessOne()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(10, 'L');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMax()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(11, '0');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMaxPlusOne()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(12, '0');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneMid()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to pass to the method
+            string Customer_Telephone = ""; //
+            //create some test data to pass the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(7);
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void TelephoneExtremeMax()
+        {
+            //create an instance of a class 
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string Customer_Telephone = "";
+            //create some test data to test the valid method
+            Customer_Telephone = Customer_Telephone.PadLeft(15, 'L');
+            //invoke the method
+            Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
             Assert.AreNotEqual(Error, "");
         }

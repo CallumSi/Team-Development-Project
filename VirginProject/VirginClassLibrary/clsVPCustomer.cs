@@ -22,10 +22,10 @@ namespace VirginClassLibrary
         //Customer Street Property
         public string Customer_Street { get; set; }
 
-        //Customer Address Property
-        public int Customer_Telephone { get; set; }
+        //Customer Telephone Property
+        public string Customer_Telephone { get; set; }
 
-        public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email /*string Customer_Telephone*/)
+        public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
         {
             string Error = "";
 
@@ -33,10 +33,10 @@ namespace VirginClassLibrary
             //***VALIDATION FIRST NAME***//
 
             //record the error
-            if (Customer_FirstName.Length == 0)
+            if (Customer_FirstName.Length == 1)
             {
                 //record the error
-                Error = Error + "THE FIRST NAME CAN'T BE LEFT BLANK." + "";
+                Error = Error + "THE FIRST NAME HAS TO BE MORE THAN 1 CHARACTER." + "";
             }
 
             //record the error message  
@@ -51,10 +51,10 @@ namespace VirginClassLibrary
             //***VALIDATION LAST NAME***//
 
             //record the error
-            if (Customer_LastName.Length == 0)
+            if (Customer_LastName.Length == 1)
             {
                 //record the error
-                Error = Error + "THE LAST NAME CAN'T BE LEFT BLANK." + " ";
+                Error = Error + "THE LAST NAME HAS TO BE MORE THAN 1 CHARACTER." + " ";
             }
 
             //record the error message  
@@ -69,17 +69,17 @@ namespace VirginClassLibrary
             //***VALIDATION STREET NAME***//
 
             //record the error
-            if (Customer_Street.Length == 0)
+            if (Customer_Street.Length == 4)
             {
                 //record the error
-                Error = Error + "THE STREET CAN'T BE LEFT BLANK." + " ";
+                Error = Error + "THE STREET HAS TO BE MORE THAN 5 CHARACTERS." + " ";
             }
 
             //record the error message  
             if (Customer_Street.Length < 5 | Customer_Street.Length > 50)
             {
                 //record the error
-                Error = Error + "THE STREET MUST BE BETWEEN 20 AND 50 CHARACTERS" + " ";
+                Error = Error + "THE STREET MUST BE BETWEEN 5 AND 50 CHARACTERS" + " ";
 
             }
 
@@ -87,27 +87,27 @@ namespace VirginClassLibrary
             //***VALIDATION ADDRESS NAME***//
 
             //record the error
-            if (Customer_Address.Length == 0)
+            if (Customer_Address.Length == 19)
             {
                 //record the error
-                Error = Error + "THE ADDRESS CAN'T BE LEFT BLANK." + " ";
+                Error = Error + "THE ADDRESS HAS TO BE MORE THAN 19 CHARACTERS." + " ";
             }
 
             //record the error message  
-            if (Customer_Address.Length < 15 | Customer_Address.Length > 50)
+            if (Customer_Address.Length < 20 | Customer_Address.Length > 50)
             {
                 //record the error
-                Error = Error + "THE ADDRESS MUST BE BETWEEN 30 AND 50 CHARACTERS";
+                Error = Error + "THE ADDRESS MUST BE BETWEEN 20 AND 50 CHARACTERS";
 
             }
 
             //***VALIDATION POSTCODE NAME***//
 
             //record the error
-            if (Customer_Postcode.Length == 0)
+            if (Customer_Postcode.Length == 6)
             {
                 //record the error
-                Error = Error + "THE POSTCODE CAN'T BE LEFT BLANK." + " ";
+                Error = Error + "THE POSTCODE CAN'T BE LESS THAN 6 CHARACTERS." + " ";
             }
 
             //record the error message  
@@ -122,10 +122,10 @@ namespace VirginClassLibrary
             //***VALIDATION EMAIL NAME***//
 
             //record the error
-            if (Customer_Email.Length == 0)
+            if (Customer_Email.Length == 19)
             {
                 //record the error
-                Error = Error + "THE EMAIL CAN'T BE LEFT BLANK." + " ";
+                Error = Error + "THE EMAIL MUST BE MORE THAN 19 CHARACTERS." + " ";
             }
 
             //record the error message  
@@ -135,26 +135,26 @@ namespace VirginClassLibrary
                 Error = Error + "THE EMAIL MUST BE BETWEEN 20 AN 50 CHARACTERS" + " ";
 
             }
-            return Error;
+
 
             //***VALIDATION TELEPHONE NAME***//
 
+            //record the error
+            if (Customer_Telephone.Length == 10)
+            {
+                //record the error
+                Error = Error + "THE TELEPHONE NUMBER MUST BE MORE THAN 10 DIGITS." + " ";
+            }
 
-            ////record the error
-            //if (Customer_Telephone.Length == 0)
-            //{
-            //    //record the error
-            //    Error = Error + "THE TELEPHONE CAN'T BE LEFT BLANK." + "";
-            //}
+            //record the error message  
+            if (Customer_Telephone.Length < 11 | Customer_Telephone.Length > 11)
+            {
+                //record the error
+                Error = Error + "THE EMAIL MUST ONLY BE 11 DIGITS" + " ";
 
-            ////record the error message  
-            //if (Customer_Telephone.Length < 11 | Customer_Telephone.Length > 11)
-            //{
-            //    //record the error
-            //    Error = Error + "THE TELEPHONE MUST ONLY BE 11 NUMBERS";
+            }
 
-            //}
-
+            return Error;
 
 
         }
