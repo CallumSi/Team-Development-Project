@@ -15,14 +15,14 @@ namespace VirginTestProject
         //create some test data to pass to the method 
         //TOTAL: 9 Properties including PK (Staff_ID) 
 
-        //string Staff_Title = "Dr"; // (1) 
-        //string Staff_Firstname = "Monica"; // (2) 
-        //string Staff_Lastname = "Geller"; // (3) 
-        //string Staff_Email = "MGeller@gmail.com"; // (4) 
-        //string Staff_Username = "MonGeller"; // (5) 
-        //string Staff_Password = "MG3007"; // (6) 
-        //string Staff_Role = "Doctor"; // (7) 
-        //string Staff_Status = "True"; // (8)
+        string Staff_Title = "Dr"; // (1) 
+        string Staff_Firstname = "Monica"; // (2) 
+        string Staff_Lastname = "Geller"; // (3) 
+        string Staff_Email = "MGeller@gmail.com"; // (4) 
+        string Staff_Username = "MonGeller"; // (5) 
+        string Staff_Password = "MG3007"; // (6) 
+        string Staff_Role = "Doctor"; // (7) 
+        string Staff_Status = "True"; // (8)
 
         [TestMethod]
         public void InstantiationOK()
@@ -158,6 +158,29 @@ namespace VirginTestProject
             AVHCStaff.Staff_Status = SomeStaff_Status;
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(AVHCStaff.Staff_Status, SomeStaff_Status);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Staff_Title = "Dr"; // (1) 
+            string Staff_Firstname = "Monica"; // (2) 
+            string Staff_Lastname = "Geller"; // (3) 
+            string Staff_Email = "MGeller@gmail.com"; // (4) 
+            string Staff_Username = "MonGeller"; // (5) 
+            string Staff_Password = "MG3007"; // (6) 
+            string Staff_Role = "Doctor"; // (7) 
+            string Staff_Status = "True"; // (8)
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+
         }
     }
 }

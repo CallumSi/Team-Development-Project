@@ -1,4 +1,6 @@
-﻿namespace VirginClassLibrary
+﻿using System;
+
+namespace VirginClassLibrary
 {
     public class clsVHCStaff
     {
@@ -28,5 +30,12 @@
 
         //Staff_Status Property
         public bool Staff_Status { get; set; }
+
+        public string Valid(string staff_Title, string staff_Firstname, string staff_Lastname, string staff_Email, string staff_Username, string staff_Password, string staff_Role, string staff_Status)
+        {
+            String Error = ""; 
+
+            return Error; 
+        }
     }
 }
