@@ -76,7 +76,7 @@ namespace VirginClassLibrary
             }
 
             //record the error message  
-            if (Customer_Street.Length < 20 | Customer_Street.Length > 50)
+            if (Customer_Street.Length < 5 | Customer_Street.Length > 50)
             {
                 //record the error
                 Error = Error + "THE STREET MUST BE BETWEEN 20 AND 50 CHARACTERS" + " ";
@@ -94,7 +94,7 @@ namespace VirginClassLibrary
             }
 
             //record the error message  
-            if (Customer_Address.Length < 30 | Customer_Address.Length > 50)
+            if (Customer_Address.Length < 15 | Customer_Address.Length > 50)
             {
                 //record the error
                 Error = Error + "THE ADDRESS MUST BE BETWEEN 30 AND 50 CHARACTERS";
