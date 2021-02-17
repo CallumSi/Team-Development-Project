@@ -79,21 +79,21 @@ namespace VirginClassLibrary
             mCustomerList.Add(TestItem);
         }
 
-        ////Add method
-        //public int Add()
-        //{
-        //    //adds a new record to the database based on the values of thisAddress
-        //    //connect to the database
-        //    clsDataConnection DB = new clsDataConnection();
-        //    //set the parameters for the stored procedure
-        //    //DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
-        //    DB.AddParameter("@CustomerFirstName", mThisCustomer.VMcustomerFirstName);
-        //    DB.AddParameter("@CustomerLastName", mThisCustomer.VMcustomerLastName);
-        //    DB.AddParameter("@CustomerEmail", mThisCustomer.VMcustomerEmail);
-        //    DB.AddParameter("@CustomerUsername", mThisCustomer.VMcustomerUsername);
-        //    DB.AddParameter("@CustomerPassword", mThisCustomer.VMcustomerPassword);
-        //    //execute the query returning the primary key value
-        //    return DB.Execute("sproc_tblVMCustomer_Insert");
-        //}
+        //Add method
+        public int Add()
+        {
+            //adds a new record to the database based on the values of thisAddress
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            DB.AddParameter("@CustomerFirstName", mThisCustomer.VMcustomerFirstName);
+            DB.AddParameter("@CustomerLastName", mThisCustomer.VMcustomerLastName);
+            DB.AddParameter("@CustomerEmail", mThisCustomer.VMcustomerEmail);
+            DB.AddParameter("@CustomerUsername", mThisCustomer.VMcustomerUsername);
+            DB.AddParameter("@CustomerPassword", mThisCustomer.VMcustomerPassword);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVMCustomer_Insert");
+        }
     }
 }
