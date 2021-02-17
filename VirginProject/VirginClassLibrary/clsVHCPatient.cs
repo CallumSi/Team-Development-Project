@@ -58,10 +58,10 @@ namespace VirginClassLibrary
 
             }
 
-            if (Patient_Title.Length < 1 | Patient_Title.Length > 5)
+            if (Patient_Title.Length < 2 | Patient_Title.Length > 5)
             {
                 //set the error message 
-                Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 5 CHARACTERS!" + " ";
+                Error = Error + "PATIENT TITLE MUST BE BETWEEN 2 TO 5 CHARACTERS!" + " ";
             }
 
 
@@ -195,13 +195,6 @@ namespace VirginClassLibrary
                 //set the error message 
                 Error = Error + "PATIENT TELEPHONE MUST BE BETWEEN 7 TO 15 DIGITS!" + " ";
             }
-
-
-
-
-
-
-
 
             //return any error messages
             return Error;
