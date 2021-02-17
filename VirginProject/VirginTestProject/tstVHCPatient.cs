@@ -230,6 +230,8 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method 
             string Patient_Title = "";
+            //create some test data to test the valid method 
+            Patient_Title = Patient_Title.PadLeft(1, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -246,7 +248,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(1, 'A');
+            Patient_Title = Patient_Title.PadLeft(2, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -263,7 +265,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(2, 'A');
+            Patient_Title = Patient_Title.PadLeft(3, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -331,7 +333,7 @@ namespace VirginTestProject
             //create a variable to store any error message
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(3, 'A');
+            Patient_Title = Patient_Title.PadLeft(4, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
