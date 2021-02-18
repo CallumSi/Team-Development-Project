@@ -84,21 +84,6 @@ namespace VirginTestProject
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(AUser.UserPassword, SomeUserPassword);
         }
-        [TestMethod]
-        public void UserPhoneNumberOk()
-        {
-            //create an instance of the class we want to create
-            clsForumUser AUser = new clsForumUser();
-            //create a variable to store the phone number of the user
-            string SomeUserPhoneNumber;
-            //assign user phone number to the variable
-            SomeUserPhoneNumber = "01234567890";
-            //try to send some data to the user password property
-            AUser.UserPhoneNumber = SomeUserPhoneNumber;
-            //check to see that the data in the variable and the property are the same
-            Assert.AreEqual(AUser.UserPhoneNumber, SomeUserPhoneNumber);
-        }
-
 
     }
 }

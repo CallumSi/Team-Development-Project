@@ -70,6 +70,8 @@
   <ItemGroup>
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="ForumAdminList.aspx" />
+    <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
@@ -93,6 +95,19 @@
     </Compile>
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
+    <Compile Include="ForumAdminList.aspx.cs">
+      <DependentUpon>ForumAdminList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminList.aspx.designer.cs">
+      <DependentUpon>ForumAdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAnAdmin.aspx.cs">
+      <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAnAdmin.aspx.designer.cs">
+      <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAnUser.aspx.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
