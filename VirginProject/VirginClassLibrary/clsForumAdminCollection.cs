@@ -3,21 +3,21 @@ using System;
 
 namespace VirginClassLibrary
 {
-    public class clsForumUserCollection
+    public class clsForumAdminCollection
     {
         //private data member for the list
-        List<clsForumUser> mUserList = new List<clsForumUser>();
-        public List<clsForumUser> UserList
+        List<clsForumAdmin> mAdminList = new List<clsForumAdmin>();
+        public List<clsForumAdmin> AdminList
         {
             get
             {
                 //return the private data
-                return mUserList;
+                return mAdminList;
             }
             set
             {
                 //set the private data
-                mUserList = value;
+                mAdminList = value;
             }
         }
         public int Count
@@ -25,17 +25,17 @@ namespace VirginClassLibrary
             get
             {
                 //return the count of the list
-                return mUserList.Count;
+                return mAdminList.Count;
             }
             set
             {
 
             }
         }
-        public clsForumUser ThisUser { get; set; }
+        public clsForumAdmin ThisAdmin { get; set; }
 
         //constructor for the class
-        public clsForumUserCollection()
+        public clsForumAdminCollection()
         {
             //var for the index 
             Int32 Index = 0;
@@ -44,28 +44,27 @@ namespace VirginClassLibrary
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the store procedure
-            DB.Execute("sproc_tblForumUser_SelectAll");
+            DB.Execute("sproc_tblForumAdmin_SelectAll");
             //get the count of records
             RecordCount = DB.Count;
             //while there are records to process
             while (Index < RecordCount)
             {
                 //create a blank user
-                clsForumUser AUser = new clsForumUser();
+                clsForumAdmin AAdmin = new clsForumAdmin();
                 //read in the fields from the current record
-                AUser.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserID"]);
-                AUser.UserFirstName = Convert.ToString(DB.DataTable.Rows[Index]["UserFirstName"]);
-                AUser.UserLastName = Convert.ToString(DB.DataTable.Rows[Index]["UserLastName"]);
-                AUser.UserPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["UserPhoneNumber"]);
-                AUser.UserEmail = Convert.ToString(DB.DataTable.Rows[Index]["UserEmailAddress"]);
-                AUser.UserPassword = Convert.ToString(DB.DataTable.Rows[Index]["UserPassword"]);
+                AAdmin.AdminID = Convert.ToInt32(DB.DataTable.Rows[Index]["AdminID"]);
+                AAdmin.AdminFirstName = Convert.ToString(DB.DataTable.Rows[Index]["AdminFirstName"]);
+                AAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
+                AAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
+                AAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
                 //add the record to the private data member
-                mUserList.Add(AUser);
+                mAdminList.Add(AAdmin);
                 //point at the next record
                 Index++;
             }
         }
-
-
     }
+   
+   
 }

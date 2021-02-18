@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsForumAdmin.cs" />
+    <Compile Include="clsForumAdminCollection.cs" />
     <Compile Include="clsForumComment.cs" />
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
