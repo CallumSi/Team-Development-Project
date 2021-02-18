@@ -203,7 +203,7 @@ namespace VirginTestProject
             string Patient_Firstname = "Lia"; // (2) 
             string Patient_Lastname = "Potter"; // (3) 
             string Patient_Address = "42 Western Road, Leicestershire"; // (4) 
-            string Patient_DOB = "01/01/2000"; // (5) 
+            string Patient_DOB = "01/01/2003"; // (5) 
             string Patient_Email = "LiaPotter@gmail.com"; // (6) 
             string Patient_Username = "LiaPotter1"; // (7) 
             string Patient_Password = "LiaP010101"; // (8) 
@@ -795,20 +795,37 @@ namespace VirginTestProject
 
         [TestMethod]
         //used to test the Patient_DOB property of the patient class 
-        public void Patient_DOBInvalidData()
+        public void Patient_DOBMin()
         {
             //create an instance of the patient class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
             string Error;
             //create a variable to store the date of birth of a patient 
-
+            DateTime SomePatient_DOB;
+            SomePatient_DOB = DateTime.Now.Date.AddYears(-18);
             //assign a patient date of birth to the variable 
-            Patient_DOB = "some rubbish data";
-
+            Patient_DOB = SomePatient_DOB.ToString();
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //check to see that the data in the variable and the property are the same
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
+
+        //[TestMethod]
+        ////used to test the Patient_DOB property of the patient class 
+        //public void Patient_DOBInvalidData()
+        //{
+        //    //create an instance of the patient class 
+        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
+        //    string Error;
+        //    //create a variable to store the date of birth of a patient 
+
+        //    //assign a patient date of birth to the variable 
+        //    Patient_DOB = "some rubbish data";
+
+        //    Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+        //    //check to see that the data in the variable and the property are the same
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
         ///// <summary>
         ///// TEST PLAN: Patient_Email Property
