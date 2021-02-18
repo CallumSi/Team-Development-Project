@@ -55,6 +55,7 @@
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsVCHCustomer.cs" />
+    <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVHCStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
