@@ -63,6 +63,7 @@
     <Compile Include="tstMarketplaceOfferCollection.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
     <Compile Include="tstVCHCustomer.cs" />
+    <Compile Include="tstVCHStaff.cs" />
     <Compile Include="tstVHCAppointment.cs" />
     <Compile Include="tstVHCAppointmentCollection.cs" />
     <Compile Include="tstVHCHospital.cs" />

@@ -165,7 +165,7 @@ namespace VirginTestProject
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
             //create some test data to assign to the address
-            string SomeAddress = "12 Florence Cresent, Leicestershire";
+            string SomeAddress = "12 Florence Crescent, Leicestershire";
             //assign the data to the property
             VCHCustomer.Address = SomeAddress;
             //test to see that the two values are the same
