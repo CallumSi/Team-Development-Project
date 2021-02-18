@@ -2,16 +2,25 @@
 {
     public class clsVCHStaff
     {
-        //staff FirstName property
-        public string FirstName { get; set; }
+        //staff first name property 
+        public string StaffFirstName { get; set; }
+        
+        //staff last name property 
+        public string StaffLastName { get; set; }
 
-        //staff LastName property
-        public string LastName { get; set; }
+        //staff address property 
+        public string StaffAddress { get; set; }
 
-        //staff Address property
-        public string Address { get; set; }
+        //staff postcode property 
+        public string StaffPostCode { get; set; }
 
-        //staff PhoneNumber property
-        public string PhoneNumber { get; set; }
+        //staff email property
+        public string StaffEmail { get; set; }
+
+        //staff password property
+        public string StaffPassword { get; set; }
+
+        //staff phone number property
+        public string StaffPhoneNumber { get; set; }
     }
 }

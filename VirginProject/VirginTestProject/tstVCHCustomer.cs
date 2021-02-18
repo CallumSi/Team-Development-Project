@@ -7,56 +7,75 @@ namespace VirginTestProject
     [TestClass]
     public class tstVCHCustomer
     {
+        //customer First Name property
+        string FirstName = "Dante";
+        //customer Last Name property
+        string LastName = "Alighieri";
+        //customer Address property
+        string Address = "12 Florence Cresent, Leicestershire";
+        //customer Postcode property
+        string PostCode = "LE13 2RV";
+        //customer Email property
+        string Email = "d.alighieri@outlook.com";
+        //customer Password property
+        string Password = "3InPuPa";
+        //customer Phone Number property
+        string PhoneNumber = "07912345678";
+
         [TestMethod]
         public void InstantiationOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //test to see that it exists
+            Assert.IsNotNull(VCHCustomer);
         }
 
         [TestMethod]
-        public void FirstNameOK()
+        public void FirstNamePropertyOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers first name 
-            string SomeFirstName;
-            //assign a FirstName to the variable
-            SomeFirstName = "Dante";
-            //try send data to the FirstName property
+            //create some test data to assign to the customers first name
+            string SomeFirstName = "Dante";
+            //assign the data to the property
             VCHCustomer.FirstName = SomeFirstName;
-            //check to see that the data in the variable and the property are the same
+            //test to see that the two values are the same
             Assert.AreEqual(VCHCustomer.FirstName, SomeFirstName);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void FirstNameMinLessOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //test the valid method with a 1 letter string
-            OK = VCHCustomer.Valid("D");
-            //assert the the outcome should be false
-            Assert.IsFalse(OK);
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string FirstName = "";
+            //pad string of characters
+            FirstName = FirstName.PadRight(1, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void FirstNamePlusOne()
+        public void FirstNameMaxPlusOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //create a variable to store the test data
-            string SomeText = "";
-            //pad the data to the required number of characters
-            SomeText = SomeText.PadLeft(31);
-            //test the valid method with a 31 letter string
-            OK = VCHCustomer.Valid(SomeText);
-            //assert the the outcome should be true
-            Assert.IsFalse(OK);
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string FirstName = "";
+            //pad string of characters
+            FirstName = FirstName.PadRight(31, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -64,61 +83,63 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //create a variable to store the test data
-            string SomeText = "";
-            //pad the data to the required number of characters
-            SomeText = SomeText.PadLeft(100);
-            //test the valid method with a 100 letter string
-            OK = VCHCustomer.Valid(SomeText);
-            //assert the the outcome should be true
-            Assert.IsFalse(OK);
-        }*/
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string FirstName = "";
+            //pad string of characters
+            FirstName = FirstName.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
         [TestMethod]
-        public void LastNameOK()
+        public void LastNamePropertyOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers first name 
-            string SomeLastName;
-            //assign a LastName to the variable
-            SomeLastName = "Alighieri";
-            //try send data to the LastName property
+            //create some test data to assign to the customers last name
+            string SomeLastName = "Alighieri";
+            //assign the data to the property
             VCHCustomer.LastName = SomeLastName;
-            //check to see that the data in the variable and the property are the same
+            //test to see that the two values are the same
             Assert.AreEqual(VCHCustomer.LastName, SomeLastName);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void LastNameMinLessOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //test the valid method with a 1 letter string
-            OK = VCHCustomer.Valid("A");
-            //assert the the outcome should be false
-            Assert.IsFalse(OK);
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string LastName = "";
+            //pad string of characters
+            LastName = LastName.PadRight(1, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void LastNamePlusOne()
+        public void LastNameMaxPlusOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //create a variable to store the test data
-            string SomeText = "";
-            //pad the data to the required number of characters
-            SomeText = SomeText.PadLeft(31);
-            //test the valid method with a 31 letter string
-            OK = VCHCustomer.Valid(SomeText);
-            //assert the the outcome should be true
-            Assert.IsFalse(OK);
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string LastName = "";
+            //pad string of characters
+            LastName = LastName.PadRight(31, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -126,99 +147,352 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to record the result of the validation test
-            Boolean OK;
-            //create a variable to store the test data
-            string SomeText = "";
-            //pad the data to the required number of characters
-            SomeText = SomeText.PadLeft(100);
-            //test the valid method with a 100 letter string
-            OK = VCHCustomer.Valid(SomeText);
-            //assert the the outcome should be true
-            Assert.IsFalse(OK);
-        }*/
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string LastName = "";
+            //pad string of characters
+            LastName = LastName.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
         [TestMethod]
-        public void AddressOK()
+        public void AddressPropertyOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers address
-            string SomeAddress;
-            //assign an Address to the variable
-            SomeAddress = "12 Florence Cresent, Leicestershire";
-            //try send data to the Address property
+            //create some test data to assign to the address
+            string SomeAddress = "12 Florence Crescent, Leicestershire";
+            //assign the data to the property
             VCHCustomer.Address = SomeAddress;
-            //check to see that the data in the variable and the property are the same
+            //test to see that the two values are the same
             Assert.AreEqual(VCHCustomer.Address, SomeAddress);
         }
 
         [TestMethod]
-        public void PhoneNumberOK()
+        public void AddressMinLessOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers phone number
-            string SomePhoneNumber;
-            //assign a PhoneNumber to the variable
-            SomePhoneNumber = "07912345678";
-            //try send data to the PhoneNumber property
-            VCHCustomer.PhoneNumber = SomePhoneNumber;
-            //check to see that the data in the variable and the property are the same
-            Assert.AreEqual(VCHCustomer.PhoneNumber, SomePhoneNumber);
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Address = "";
+            //pad string of characters
+            Address = Address.PadRight(2, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void EmailOK()
+        public void AddressMaxPlusOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers email
-            string SomeEmail;
-            //assign an Email to the variable
-            SomeEmail = "d.alighieri@gmail.co.uk";
-            //try send data to the Email property
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Address = "";
+            //pad string of characters
+            Address = Address.PadRight(51, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Address = "";
+            //pad string of characters
+            Address = Address.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodePropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the post code
+            string SomePostCode = "LE13 2RV";
+            //assign the data to the property
+            VCHCustomer.PostCode = SomePostCode;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHCustomer.PostCode, SomePostCode);
+        }
+
+        [TestMethod]
+        public void PostCodeMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PostCode = "";
+            //pad string of characters
+            PostCode = PostCode.PadRight(4, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PostCode = "";
+            //pad string of characters
+            PostCode = PostCode.PadRight(11, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PostCode = "";
+            //pad string of characters
+            PostCode = PostCode.PadRight(20, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailPropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the email address
+            string SomeEmail = "d.alighieri@outlook.com";
+            //assign the data to the property
             VCHCustomer.Email = SomeEmail;
-            //check to see that the data in the variable and the property are the same
+            //test to see that the two values are the same
             Assert.AreEqual(VCHCustomer.Email, SomeEmail);
         }
 
         [TestMethod]
-        public void PasswordOK()
+        public void EmailMinLessOne()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a variable to store the customers password
-            string SomePassword;
-            //assign a Password to the variable
-            SomePassword = "3booksInPuPa";
-            //try send data to the Password property
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Email = "";
+            //pad string of characters
+            Email = Email.PadRight(6, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Email = "";
+            //pad string of characters
+            Email = Email.PadRight(51, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Email = "";
+            //pad string of characters
+            Email = Email.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PasswordPropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the password
+            string SomePassword = "3InPuPa";
+            //assign the data to the property
             VCHCustomer.Password = SomePassword;
-            //check to see that the data in the variable and the property are the same
+            //test to see that the two values are the same
             Assert.AreEqual(VCHCustomer.Password, SomePassword);
         }
 
         [TestMethod]
-        //used to test the presence of the Valid method
+        public void PasswordMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Password = "";
+            //pad string of characters
+            Password = Password.PadRight(5, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PasswordMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Password = "";
+            //pad string of characters
+            Password = Password.PadRight(21, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PasswordExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Password = "";
+            //pad string of characters
+            Password = Password.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberPropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the phone number
+            string SomePhoneNumber = "07912345678";
+            //assign the data to the property
+            VCHCustomer.PhoneNumber = SomePhoneNumber;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHCustomer.PhoneNumber, SomePhoneNumber);
+        }
+
+        [TestMethod]
+        public void PhoneNumberMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PhoneNumber = "";
+            //pad string of characters
+            PhoneNumber = PhoneNumber.PadRight(10, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PhoneNumber = "";
+            //pad string of characters
+            PhoneNumber = PhoneNumber.PadRight(13, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNumberExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string PhoneNumber = "";
+            //pad string of characters
+            PhoneNumber = PhoneNumber.PadRight(20, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //test to see if the valid method exists
-            VCHCustomer.Valid("Dante", "Alighieri");
-            
-            /*//create an instance of the class
-            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create a string variable to store the validation
-            string Error = "";
-            //create some test data to test the valid method
+            //a string variable to store validation results
+            String Error = "";
+            //test data to test the method
             string FirstName = "Dante";
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName);
-            //Test to see that the result is OK (see if any error message is returned(
-            Assert.AreEqual(Error, "");*/
-
+            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Email, Password, PhoneNumber);
+            //test to check the result does pass and to see if any error message is returned
+            Assert.AreEqual(Error, "");
         }
+
     }
 }
-
