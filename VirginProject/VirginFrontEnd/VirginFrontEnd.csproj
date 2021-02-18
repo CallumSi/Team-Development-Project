@@ -76,6 +76,7 @@
     <Content Include="ForumUserViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
+    <Content Include="TEST.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,13 @@
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TEST.aspx.cs">
+      <DependentUpon>TEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TEST.aspx.designer.cs">
+      <DependentUpon>TEST.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
