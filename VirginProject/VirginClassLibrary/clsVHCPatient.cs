@@ -9,7 +9,7 @@ namespace VirginClassLibrary
         public int Patient_ID { get; set; }
 
         //Patient_Title Property 
-        public string Patient_Title { get; set;}
+        public string Patient_Title { get; set; }
 
         //Patient_Firstname Property 
         public string Patient_Firstname { get; set; }
@@ -46,7 +46,7 @@ namespace VirginClassLibrary
             //create a string variable to store data values
             String Error = "";
             //create a temporary variable to store data values
-            //DateTime DOBTemp;
+            DateTime DOBTemp;
 
             // (1) Patient Title Validation
 
@@ -58,11 +58,12 @@ namespace VirginClassLibrary
 
             }
 
-            if (Patient_Title.Length < 2 | Patient_Title.Length > 5)
+            if (Patient_Title.Length < 1 | Patient_Title.Length > 5)
             {
                 //set the error message 
-                Error = Error + "PATIENT TITLE MUST BE BETWEEN 2 TO 5 CHARACTERS!" + " ";
+                Error = Error + "PATIENT TITLE MUST BE BETWEEN 1 TO 5 CHARACTERS!" + " ";
             }
+
 
 
             // (2) Patient Firstname Validation
@@ -113,26 +114,26 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
             }
 
-            // (5) DOB Validation
-            //try
-            //{
-            //    //copy the patient DOB value to the DOBTemp variable
-            //    DOBTemp = Convert.ToDateTime(Patient_DOB);
+            //(5) DOB Validation
+            try
+            {
+                //copy the patient DOB value to the DOBTemp variable
+                DOBTemp = Convert.ToDateTime(Patient_DOB);
 
-            //    //check to see if the DOB is not more than 31st December 2003
-            //    if (DOBTemp > DateTime.MinValue(31 / 12 / 2003)) //****CHECK THIS****
-            //    {
-            //        //record the error
-            //        Error = Error + "YOU MUST BE OVER 18YRS!" + "  ";
-            //    }
+                //check to see if the patient is over 18yrs
+                if (DOBTemp < DateTime.Now.Date.AddYears(18))
+                {
+                    //record the error
+                    //Error = Error + "YOU MUST BE OVER 18YRS!" + "  ";
+                }
 
-            //}
+            }
 
-            //catch
-            //{
-            //    //record the error 
-            //    Error = Error + "THE PATIENT DATE OF BIRTH WAS NOT A VALID DATE : ";
-            //}
+            catch
+            {
+                //record the error 
+                Error = Error + "THE PATIENT DATE OF BIRTH WAS NOT A VALID DATE : ";
+            }
 
             // (6) Patient Email Validation
 

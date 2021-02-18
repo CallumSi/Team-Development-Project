@@ -32,7 +32,7 @@ namespace VirginTestProject
             //create an instance of the patient class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
             //test to see that it exists 
-            Assert.IsNotNull(AVHCPatient); 
+            Assert.IsNotNull(AVHCPatient);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace VirginTestProject
             //create an instance of the patient class 
             clsVHCPatient AVHCPatient = new clsVHCPatient();
             //create some test data to assign to the patient title property 
-            string SomePatient_Title = "Miss"; 
+            string SomePatient_Title = "Miss";
             //try to send some data to the patient title property
             AVHCPatient.Patient_Title = SomePatient_Title;
             //check to see that the data in the variable and the property are the same
@@ -105,21 +105,21 @@ namespace VirginTestProject
             Assert.AreEqual(AVHCPatient.Patient_Address, SomePatient_Address);
         }
 
-        //[TestMethod]
-        ////used to test the Patient_DOB property of the patient class 
-        //public void Patient_DOBPropertyOK()
-        //{
-        //    //create an instance of the patient class 
-        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
-        //    //create a variable to store the date of birth of a patient 
-        //    DateTime SomePatient_DOB;
-        //    //assign a patient date of birth to the variable 
-        //    SomePatient_DOB = Convert.ToDateTime("01/01/2003");
-        //    //try to send some data to the patient_DOB property
-        //    AVHCPatient.Patient_DOB = SomePatient_DOB;
-        //    //check to see that the data in the variable and the property are the same
-        //    Assert.AreEqual(AVHCPatient.Patient_DOB, SomePatient_DOB);
-        //}
+        [TestMethod]
+        //used to test the Patient_DOB property of the patient class 
+        public void Patient_DOBPropertyOK()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            //create a variable to store the date of birth of a patient 
+            DateTime SomePatient_DOB;
+            //assign a patient date of birth to the variable 
+            SomePatient_DOB = Convert.ToDateTime("01/01/2003");
+            //try to send some data to the patient_DOB property
+            AVHCPatient.Patient_DOB = SomePatient_DOB;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AVHCPatient.Patient_DOB, SomePatient_DOB);
+        }
 
         [TestMethod]
         //used to test the Patient_Email property of the patient class 
@@ -204,7 +204,7 @@ namespace VirginTestProject
             string Patient_Firstname = "Lia"; // (2) 
             string Patient_Lastname = "Potter"; // (3) 
             string Patient_Address = "42 Western Road, Leicestershire"; // (4) 
-            string Patient_DOB = "01/01/2000"; // (5) 
+            string Patient_DOB = "01/01/2003"; // (5) 
             string Patient_Email = "LiaPotter@gmail.com"; // (6) 
             string Patient_Username = "LiaPotter1"; // (7) 
             string Patient_Password = "LiaP010101"; // (8) 
@@ -230,8 +230,6 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method 
             string Patient_Title = "";
-            //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(1, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -248,7 +246,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(2, 'A');
+            Patient_Title = Patient_Title.PadLeft(1, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -265,7 +263,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(3, 'A');
+            Patient_Title = Patient_Title.PadLeft(2, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -333,7 +331,7 @@ namespace VirginTestProject
             //create a variable to store any error message
             string Patient_Title = "";
             //create some test data to test the valid method 
-            Patient_Title = Patient_Title.PadLeft(4, 'A');
+            Patient_Title = Patient_Title.PadLeft(3, 'A');
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
             //test to see that the result is correct 
@@ -498,7 +496,7 @@ namespace VirginTestProject
         ///// <summary>
         ///// TEST PLAN: Patient_Lastname Property
         ///// </summary>
-        
+
         [TestMethod]
         public void Patient_LastnameMinLessOne()
         {
@@ -774,6 +772,43 @@ namespace VirginTestProject
         ///// <summary>
         ///// TEST PLAN: Patient_DOB Property
         ///// </summary>
+
+
+        //[TestMethod]
+        ////used to test the Patient_DOB property of the patient class 
+        //public void Patient_DOBMinLessOne()
+        //{
+        //    //create an instance of the patient class 
+        //    clsVHCPatient AVHCPatient = new clsVHCPatient();
+        //    string Error;
+        //    //create a variable to store the date of birth of a patient 
+        //    DateTime SomePatient_DOB;
+        //    SomePatient_DOB = DateTime.Now.Date.AddYears(-18);
+        //    SomePatient_DOB = DateTime.Now.Date.AddDays(1);
+        //    //assign a patient date of birth to the variable 
+        //    Patient_DOB = SomePatient_DOB.ToString();
+
+        //    Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+        //    //check to see that the data in the variable and the property are the same
+        //    Assert.AreNotEqual(Error, "");
+        //}
+
+        [TestMethod]
+        //used to test the Patient_DOB property of the patient class 
+        public void Patient_DOBInvalidData()
+        {
+            //create an instance of the patient class 
+            clsVHCPatient AVHCPatient = new clsVHCPatient();
+            string Error;
+            //create a variable to store the date of birth of a patient 
+
+            //assign a patient date of birth to the variable 
+            Patient_DOB = "some rubbish data";
+
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            //check to see that the data in the variable and the property are the same
+            Assert.AreNotEqual(Error, "");
+        }
 
         ///// <summary>
         ///// TEST PLAN: Patient_Email Property
@@ -1328,6 +1363,5 @@ namespace VirginTestProject
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
-
     }
 }
