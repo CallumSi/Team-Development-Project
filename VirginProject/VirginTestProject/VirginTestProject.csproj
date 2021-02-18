@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RANDOMTEST.cs" />
     <Compile Include="tstForumAdmin.cs" />
     <Compile Include="tstForumAdminCollection.cs" />
     <Compile Include="tstForumComment.cs" />
