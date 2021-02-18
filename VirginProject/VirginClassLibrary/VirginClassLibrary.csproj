@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsForumAdmin.cs" />
+    <Compile Include="clsForumAdminCollection.cs" />
     <Compile Include="clsForumComment.cs" />
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsVCHCustomer.cs" />
+    <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVHCStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />

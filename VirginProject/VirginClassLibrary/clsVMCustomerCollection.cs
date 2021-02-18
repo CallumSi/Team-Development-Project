@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace VirginClassLibrary
 {
@@ -53,47 +54,76 @@ namespace VirginClassLibrary
             }
         }
 
+        //constructor for the class
         public clsVMCustomerCollection()
         {
-            //create the item of test data
-            clsVMCustomer TestItem = new clsVMCustomer();
-            //set its properties
-            TestItem.VMCustomerID = 1;
-            TestItem.VMcustomerFirstName = "Paul";
-            TestItem.VMcustomerLastName = "Pogba";
-            TestItem.VMcustomerEmail = "PPogba6@hotmail.co.uk";
-            TestItem.VMcustomerUsername = "MUFCForever";
-            TestItem.VMcustomerPassword = "PaulPogba6";
-            //add the item to the test item
-            mCustomerList.Add(TestItem);
-            //re initialise the object for some new data
-            TestItem = new clsVMCustomer();
-            //set its properties            
-            TestItem.VMCustomerID = 2;
-            TestItem.VMcustomerFirstName = "Sufiyaan";
-            TestItem.VMcustomerLastName = "Hussain";
-            TestItem.VMcustomerEmail = "SufiyaanHussain@yahoo.com";
-            TestItem.VMcustomerUsername = "SufiyaanHussain97";
-            TestItem.VMcustomerPassword = "ManUtd97";
-            //add the item to the test list
-            mCustomerList.Add(TestItem);
+            //object for the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //excute the stored procedure
+            DB.Execute("sproc_tblVMCustomer_SelectAll");
+            //populate the array list with the data table
+            PopulateArray(DB);
         }
 
-        //Add method
-        public int Add()
+        void PopulateArray(clsDataConnection DB)
         {
-            //adds a new record to the database based on the values of thisAddress
-            //connect to the database
+            //populates the array list based on the data table in the parameter DB
+            //var to store the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //get the count of the records
+            RecordCount = DB.Count;
+            //clear the private array list
+            mCustomerList = new List<clsVMCustomer>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank customer
+                clsVMCustomer ACustomer = new clsVMCustomer();
+                //read in the fields from the current record
+                ACustomer.VMCustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["VMCustomerID"]);
+                ACustomer.VMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[Index]["VMCustomerFirstName"]);
+                ACustomer.VMcustomerLastName = Convert.ToString(DB.DataTable.Rows[Index]["VMCustomerLastname"]);
+                ACustomer.VMcustomerEmail = Convert.ToString(DB.DataTable.Rows[Index]["VMCustomerEmail"]);
+                ACustomer.VMcustomerUsername = Convert.ToString(DB.DataTable.Rows[Index]["VMCustomerUsername"]);
+                ACustomer.VMcustomerPassword = Convert.ToString(DB.DataTable.Rows[Index]["VMCustomerPassword"]);
+                //add the record to the private data member
+                mCustomerList.Add(ACustomer);
+                //point to the next record
+                Index++;
+            }
+        }
+
+        ////Add method
+        //public int Add()
+        //{
+        //    //adds a new record to the database based on the values of thisAddress
+        //    //connect to the database
+        //    clsDataConnection DB = new clsDataConnection();
+        //    //set the parameters for the stored procedure
+        //    DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+        //    DB.AddParameter("@CustomerFirstName", mThisCustomer.VMcustomerFirstName);
+        //    DB.AddParameter("@CustomerLastName", mThisCustomer.VMcustomerLastName);
+        //    DB.AddParameter("@CustomerEmail", mThisCustomer.VMcustomerEmail);
+        //    DB.AddParameter("@CustomerUsername", mThisCustomer.VMcustomerUsername);
+        //    DB.AddParameter("@CustomerPassword", mThisCustomer.VMcustomerPassword);
+        //    //execute the query returning the primary key value
+        //    return DB.Execute("sproc_tblVMCustomer_Insert");
+        //}
+
+        public void FilterByUsername(string VMCustomerUsername)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
             clsDataConnection DB = new clsDataConnection();
-            //set the parameters for the stored procedure
-            //DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
-            DB.AddParameter("@CustomerFirstName", mThisCustomer.VMcustomerFirstName);
-            DB.AddParameter("@CustomerLastName", mThisCustomer.VMcustomerLastName);
-            DB.AddParameter("@CustomerEmail", mThisCustomer.VMcustomerEmail);
-            DB.AddParameter("@CustomerUsername", mThisCustomer.VMcustomerUsername);
-            DB.AddParameter("@CustomerPassword", mThisCustomer.VMcustomerPassword);
-            //execute the query returning the primary key value
-            return DB.Execute("sproc_tblVMCustomer_Insert");
+            //set the paramters for the sproc
+            DB.AddParameter("@VMCustomerUsername", VMCustomerUsername);
+            //execute the spoc
+            DB.Execute("sproc_tblVMCustomer_FilterByUsername");
+            //populate the array with the found data
+            PopulateArray(DB);
+
         }
     }
 }
