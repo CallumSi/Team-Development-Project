@@ -36,7 +36,7 @@ namespace VirginClassLibrary
             if (Customer_FirstName.Length == 1)
             {
                 //record the error
-                Error = Error + "THE FIRST NAME HAS TO BE MORE THAN 1 CHARACTER." + "";
+                Error = Error + "THE FIRST NAME MUST BE MORE THAN 1 CHARACTER." + "";
             }
 
             //record the error message  
@@ -54,7 +54,7 @@ namespace VirginClassLibrary
             if (Customer_LastName.Length == 1)
             {
                 //record the error
-                Error = Error + "THE LAST NAME HAS TO BE MORE THAN 1 CHARACTER." + " ";
+                Error = Error + "THE LAST NAME MUST BE MORE THAN 1 CHARACTER." + " ";
             }
 
             //record the error message  
@@ -72,7 +72,7 @@ namespace VirginClassLibrary
             if (Customer_Street.Length == 4)
             {
                 //record the error
-                Error = Error + "THE STREET HAS TO BE MORE THAN 5 CHARACTERS." + " ";
+                Error = Error + "THE STREET MUST BE MORE THAN 4 CHARACTERS." + " ";
             }
 
             //record the error message  
@@ -90,7 +90,7 @@ namespace VirginClassLibrary
             if (Customer_Address.Length == 19)
             {
                 //record the error
-                Error = Error + "THE ADDRESS HAS TO BE MORE THAN 19 CHARACTERS." + " ";
+                Error = Error + "THE ADDRESS MUST BE MORE THAN 19 CHARACTERS." + " ";
             }
 
             //record the error message  
@@ -107,7 +107,7 @@ namespace VirginClassLibrary
             if (Customer_Postcode.Length == 6)
             {
                 //record the error
-                Error = Error + "THE POSTCODE CAN'T BE LESS THAN 6 CHARACTERS." + " ";
+                Error = Error + "THE POSTCODE MUST BE MORE THAN 6 CHARACTERS." + " ";
             }
 
             //record the error message  
@@ -132,7 +132,7 @@ namespace VirginClassLibrary
             if (Customer_Email.Length < 20 | Customer_Email.Length > 50)
             {
                 //record the error
-                Error = Error + "THE EMAIL MUST BE BETWEEN 20 AN 50 CHARACTERS" + " ";
+                Error = Error + "THE EMAIL MUST BE BETWEEN 20 AND 50 CHARACTERS" + " ";
 
             }
 
@@ -150,7 +150,7 @@ namespace VirginClassLibrary
             if (Customer_Telephone.Length < 11 | Customer_Telephone.Length > 11)
             {
                 //record the error
-                Error = Error + "THE EMAIL MUST ONLY BE 11 DIGITS" + " ";
+                Error = Error + "THE TELEPHONE MUST ONLY BE 11 DIGITS" + " ";
 
             }
 

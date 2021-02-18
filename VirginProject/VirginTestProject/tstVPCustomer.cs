@@ -288,7 +288,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_FirstName = ""; //
             //create some test data to pass the valid method
-            Customer_FirstName = Customer_FirstName.PadLeft(10, 'J');
+            Customer_FirstName = Customer_FirstName.PadLeft(13, 'J');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -352,7 +352,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_LastName = ""; //
             //create some test data to pass the valid method
-            Customer_LastName = Customer_LastName.PadLeft(2, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(2, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -370,7 +370,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_LastName = ""; //
             //create some test data to pass the valid method
-            Customer_LastName = Customer_LastName.PadLeft(3, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(3, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -388,7 +388,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_LastName = ""; //
             //create some test data to pass the valid method
-            Customer_LastName = Customer_LastName.PadLeft(19, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(19, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -406,7 +406,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_LastName = ""; //
             //create some test data to pass the valid method
-            Customer_LastName = Customer_LastName.PadLeft(20, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(20, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -443,7 +443,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_LastName = ""; //
             //create some test data to pass the valid method
-            Customer_LastName = Customer_LastName.PadLeft(10, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(13, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -462,7 +462,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Customer_LastName = "";
             //create some test data to test the valid method
-            Customer_LastName = Customer_LastName.PadLeft(50, 'J');
+            Customer_LastName = Customer_LastName.PadLeft(50, 'D');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -1216,7 +1216,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Telephone = ""; //
             //create some test data to pass the valid method
-            Customer_Telephone = Customer_Telephone.PadLeft(7);
+            Customer_Telephone = Customer_Telephone.PadLeft(7, '0');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email, Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
