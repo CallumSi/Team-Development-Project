@@ -62,19 +62,6 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void CountPropertyOK()
-        {
-            //Create an instance of the class I want to create
-            clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //Assign the data to the property
-            allCustomers.Count = SomeCount;
-            //test to see that the two values are the same
-            Assert.AreEqual(allCustomers.Count, SomeCount);
-        }
-
-        [TestMethod]
         public void ListAndCountOK()
         {
             //create an instance of the clsVMCustomerCollection class
@@ -97,15 +84,6 @@ namespace VirginTestProject
             allCustomers.CustomerList = TestList;
             //test to see that the two values are the same
             Assert.AreEqual(allCustomers.Count, TestList.Count);
-        }
-
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            //create an instance of the class we want
-            clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(allCustomers.Count, 2);
         }
 
         //[TestMethod]
