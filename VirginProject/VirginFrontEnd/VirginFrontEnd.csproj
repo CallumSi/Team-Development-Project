@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AnMarketplaceUser.aspx" />
+    <Content Include="AnVMCustomer.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnUser.aspx" />
@@ -76,6 +77,8 @@
     <Content Include="ForumUserViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
+    <Content Include="VMCustomerDelete.aspx" />
+    <Content Include="VMCustomerList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +89,12 @@
     <Compile Include="AnMarketplaceUser.aspx.designer.cs">
       <DependentUpon>AnMarketplaceUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AnVMCustomer.aspx.cs">
+      <DependentUpon>AnVMCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMCustomer.aspx.designer.cs">
+      <DependentUpon>AnVMCustomer.aspx</DependentUpon>
     <Compile Include="ForumAdminList.aspx.cs">
       <DependentUpon>ForumAdminList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +145,20 @@
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VMCustomerDelete.aspx.cs">
+      <DependentUpon>VMCustomerDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMCustomerDelete.aspx.designer.cs">
+      <DependentUpon>VMCustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMCustomerList.aspx.cs">
+      <DependentUpon>VMCustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMCustomerList.aspx.designer.cs">
+      <DependentUpon>VMCustomerList.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
