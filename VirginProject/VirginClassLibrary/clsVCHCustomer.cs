@@ -108,7 +108,7 @@ namespace VirginClassLibrary
             if (Email.Length < 7)
             {
                 //return the following error message
-                return "Email cannot have less than 7 characters, please fill it in accordingly.";
+                return "An Email address cannot have less than 7 characters, please fill it in accordingly.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
