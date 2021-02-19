@@ -184,16 +184,16 @@ namespace VirginTestProject
 
         }
         [TestMethod]
-        public void CreatedByUserIDPropertyOk()
+        public void OwnerIDPropertyOk()
         {
             //create instance of Marketplace user
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //test data for property
             int TestData = 10;
             //assign data to the property
-            AnMarketplaceListing.CreatedByUserID = TestData;
+            AnMarketplaceListing.OwnerID = TestData;
             //test if values are equal 
-            Assert.AreEqual(AnMarketplaceListing.CreatedByUserID, TestData);
+            Assert.AreEqual(AnMarketplaceListing.OwnerID, TestData);
 
         }
 

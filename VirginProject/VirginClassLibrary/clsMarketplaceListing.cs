@@ -8,19 +8,234 @@ namespace VirginClassLibrary
 {
     public class clsMarketplaceListing
     {
-        public bool AllowBids { get; set; }
-        public bool AllowOffers { get; set; }
-        public string Category { get; set; }
-        public DateTime CloseDate { get; set; }
-        public string DeliveryType { get; set; }
-        public string Description { get; set; }
-        public string Img { get; set; }
-        public int ListingID { get; set; }
-        public string ListingName { get; set; }
-        public bool New { get; set; }
-        public decimal Price { get; set; }
-        public int Quantity { get; set; }
-        public int CreatedByUserID { get; set; }
+               
+
+        //private Data
+        private bool mAllowBids;
+        private bool mAllowOffers;
+        private string mCategory;
+        private DateTime mCloseDate;
+        private string mDeliveryType;
+        private string mDescription;
+        private string mImg;
+        private int mListingID;
+        private string mListingName;
+        private bool mNew;
+        private Decimal mPrice;
+        private int mQuantity;
+        private int mOwnerID;
+
+        //public data
+        public bool AllowBids
+        {
+            get
+            {
+                //return private data
+                return mAllowBids;
+            }
+            set
+            {
+                //set value to private data
+                mAllowBids = value;
+            }
+        }
+
+     
+        public bool AllowOffers
+        {
+            get
+            {
+                //return private data
+                return mAllowOffers;
+            }
+            set
+            {
+                //set value to private data
+                mAllowOffers = value;
+            }
+        }
+
+        public string Category
+        {
+            get
+            {
+                //return private data
+                return mCategory;
+            }
+            set
+            {
+                //set value to private data
+                mCategory = value;
+            }
+        }
+
+
+        public DateTime CloseDate
+        {
+            get
+            {
+                //return private data
+                return mCloseDate;
+            }
+            set
+            {
+                //set value to private data
+                mCloseDate = value;
+            }
+        }
+        
+        public string DeliveryType
+        {
+            get
+            {
+                //return private data
+                return mDeliveryType;
+            }
+            set
+            {
+                //set value to private data
+                mDeliveryType = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                //return private data
+                return mDescription;
+            }
+            set
+            {
+                //set value to private data
+                mDescription = value;
+            }
+        }
+        public string Img
+        {
+            get
+            {
+                //return private data
+                return mImg;
+            }
+            set
+            {
+                //set value to private data
+                mImg = value;
+            }
+        }
+        public int ListingID
+        {
+            get
+            {
+                //return private data
+                return mListingID;
+            }
+            set
+            {
+                //set value to private data
+                mListingID = value;
+            }
+        }
+        public string ListingName
+        {
+            get
+            {
+                //return private data
+                return mListingName;
+            }
+            set
+            {
+                //set value to private data
+                mListingName = value;
+            }
+        }
+        public bool New
+        {
+            get
+            {
+                //return private data
+                return mNew;
+            }
+            set
+            {
+                //set value to private data
+                mNew = value;
+            }
+        }
+
+        
+         public Decimal Price
+        {
+            get
+            {
+                //return private data
+                return mPrice;
+            }
+            set
+            {
+                //set value to private data
+                mPrice = value;
+            }
+        }
+        public int Quantity
+    {
+            get
+            {
+                //return private data
+                return mQuantity;
+            }
+            set
+            {
+            //set value to private data
+            mQuantity = value;
+            }
+        }
+        public int OwnerID
+        {
+            get
+            {
+                //return private data
+                return mOwnerID;
+            }
+            set
+            {
+                //set value to private data
+                mOwnerID = value;
+            }
+        }
+
+        public Boolean Find(int ListingID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("ListingID", ListingID);
+            //execute the sproc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                mCategory = Convert.ToString(DB.DataTable.Rows[0]["Category"]);
+                mCloseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["CloseDate"]);
+                mDeliveryType = Convert.ToString(DB.DataTable.Rows[0]["DeliveryType"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mImg = Convert.ToString(DB.DataTable.Rows[0]["Img"]);
+                mListingID = Convert.ToInt32(DB.DataTable.Rows[0]["ListingID"]);
+                mListingName = Convert.ToString(DB.DataTable.Rows[0]["ListingName"]);
+                mNew = Convert.ToBoolean(DB.DataTable.Rows[0]["New"]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
+                mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
+                mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["OwnerID"]);
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+
+        }
 
         public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {

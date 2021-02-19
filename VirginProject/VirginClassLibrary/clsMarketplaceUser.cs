@@ -127,7 +127,7 @@ namespace VirginClassLibrary
             //ad the parameter we use to search
             DB.AddParameter("UserID", UserID);
             //execute the sproc
-            DB.Execute("sproc_tblUser_FilterByUserID");
+            DB.Execute("sproc_tblMarketplaceUser_FilterByUserID");
             //if record found 
             if (DB.Count == 1)
             {
