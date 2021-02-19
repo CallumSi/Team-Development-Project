@@ -4,6 +4,9 @@ namespace VirginClassLibrary
 {
     public class clsVCHStaff
     {
+        //staff ID property
+        public int StaffID { get; set; }
+        
         //staff first name property 
         public string StaffFirstName { get; set; }
         

@@ -32,6 +32,19 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void StaffIDPropertyOK()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //create some test data to assign to the staffs ID 
+            Int32 SomeStaffID = 1;
+            //assign the data to the property
+            VCHStaff.StaffID = SomeStaffID;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHStaff.StaffID, SomeStaffID);
+        }
+
+        [TestMethod]
         public void StaffFirstNamePropertyOK()
         {
             //create an instance of the class
@@ -487,6 +500,12 @@ namespace VirginTestProject
             String Error = "";
             //test data to test the method
             string StaffFirstName = "Johann";
+            string StaffLastName = "Goethe";
+            string StaffAddress = "49 Frankfurt Lane, Leicester";
+            string StaffPostCode = "LE1 8WE";
+            string StaffEmail = "j.goethe@gmail.com";
+            string StaffPassword = "HeiMepGre1";
+            string StaffPhoneNumber = "07987654321";
             //invoke the method
             Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result does pass and to see if any error message is returned
