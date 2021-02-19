@@ -19,7 +19,7 @@
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 92px; top: 183px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtRating" runat="server" style="z-index: 1; left: 87px; top: 214px; position: absolute"></asp:TextBox>
         <asp:CheckBox ID="chkboxAdmin" runat="server" style="z-index: 1; left: 87px; top: 123px; position: absolute" />
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 47px; top: 286px; position: absolute" Text="Label"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 47px; top: 286px; position: absolute" Text="lblError"></asp:Label>
         <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 65px; top: 346px; position: absolute" Text="OK" OnClick="btnOk_Click" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 177px; top: 338px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 302px; top: 114px; position: absolute; width: 94px" Text="Line One"></asp:Label>

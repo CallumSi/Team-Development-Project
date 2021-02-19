@@ -14,7 +14,7 @@ namespace VirginFrontEnd
         Int32 UserID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the number of staff to be procvessed
+            //get the number of users to be procvessed
             UserID = Convert.ToInt32(Session["UserID"]);
             if (IsPostBack == false)
             {
