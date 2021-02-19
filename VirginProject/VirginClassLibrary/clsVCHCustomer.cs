@@ -4,6 +4,9 @@ namespace VirginClassLibrary
 {
     public class clsVCHCustomer
     {
+        //customer ID property
+        public int CustomerID { get; set; }
+        
         //customer First Name property
         public string FirstName { get; set; }
 
@@ -24,7 +27,7 @@ namespace VirginClassLibrary
 
         //customer Phone Number property
         public string PhoneNumber { get; set; }
-
+        
         //Valid Method
         public string Valid(string FirstName, string LastName, string Address, string PostCode, string Email, string Password, string PhoneNumber)
         {
