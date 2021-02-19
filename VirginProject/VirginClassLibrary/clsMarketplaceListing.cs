@@ -211,7 +211,7 @@ namespace VirginClassLibrary
             //ad the parameter we use to search
             DB.AddParameter("ListingID", ListingID);
             //execute the sproc
-            DB.Execute("sproc_tblUser_FilterByListingID");
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
             //if record found 
             if (DB.Count == 1)
             {
@@ -226,7 +226,7 @@ namespace VirginClassLibrary
                 mNew = Convert.ToBoolean(DB.DataTable.Rows[0]["New"]);
                 mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
                 mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
-                mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["mOwnerID"]);
+                mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["OwnerID"]);
                 return true;
             }
             else
