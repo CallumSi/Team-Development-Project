@@ -27,8 +27,8 @@ namespace VirginTestProject
             clsUser AnUser = new clsUser();
             string TestData = "Pass1#";
             //assign the data to the property
-            AnUser.Password = TestData;
-            Assert.AreEqual(AnUser.Password, TestData);
+            AnUser.UserPassword = TestData;
+            Assert.AreEqual(AnUser.UserPassword, TestData);
 
         }
     }
