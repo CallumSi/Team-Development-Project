@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirginClassLibrary
 {
-    class clsMarketplaceListingCollection
+    public class clsMarketplaceListingCollection
     {
         //declare private variables for use list
         List<clsMarketplaceListing> mListingList = new List<clsMarketplaceListing>();

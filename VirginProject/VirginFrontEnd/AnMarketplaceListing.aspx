@@ -26,8 +26,8 @@
         <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 111px; top: 365px; position: absolute" Text="New?"></asp:Label>
         <asp:CheckBox ID="chkboxNew" runat="server" style="z-index: 1; left: 182px; top: 369px; position: absolute" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 393px; top: 305px; position: absolute"></asp:Label>
-        <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 262px; top: 475px; position: absolute" Text="Ok" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 166px; top: 476px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 262px; top: 475px; position: absolute" Text="Ok" OnClick="btnOk_Click" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 166px; top: 476px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
     </form>
 </body>
 </html>
