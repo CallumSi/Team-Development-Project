@@ -64,6 +64,7 @@
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
+    <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
