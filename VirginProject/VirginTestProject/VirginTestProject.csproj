@@ -76,6 +76,7 @@
     <Compile Include="tstVMCustomer.cs" />
     <Compile Include="tstVMCustomerCollection.cs" />
     <Compile Include="tstVPCustomer.cs" />
+    <Compile Include="tstVPPhone.cs" />
     <Compile Include="tstVPStaff.cs" />
   </ItemGroup>
   <ItemGroup>
