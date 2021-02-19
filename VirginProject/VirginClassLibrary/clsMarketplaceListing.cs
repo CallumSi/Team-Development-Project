@@ -204,6 +204,38 @@ namespace VirginClassLibrary
             }
         }
 
+        public Boolean Find(int ListingID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("ListingID", ListingID);
+            //execute the sproc
+            DB.Execute("sproc_tblUser_FilterByListingID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                mCategory = Convert.ToString(DB.DataTable.Rows[0]["Category"]);
+                mCloseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["CloseDate"]);
+                mDeliveryType = Convert.ToString(DB.DataTable.Rows[0]["DeliveryType"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mImg = Convert.ToString(DB.DataTable.Rows[0]["Img"]);
+                mListingID = Convert.ToInt32(DB.DataTable.Rows[0]["ListingID"]);
+                mListingName = Convert.ToString(DB.DataTable.Rows[0]["ListingName"]);
+                mNew = Convert.ToBoolean(DB.DataTable.Rows[0]["New"]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
+                mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
+                mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["mOwnerID"]);
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+
+        }
 
         public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {
