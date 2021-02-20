@@ -31,7 +31,7 @@ namespace VirginClassLibrary
         //Car registration property
         public string CarRegistration { get; set; }
 
-        public string Valid(string CarMake, string CarModel)
+        public string Valid(string CarMake, string CarModel, string CarBody, string CarColour, string CarFuel, string CarRegistration)
         {
             //string variable to store the error message
             string Error = "";
@@ -39,13 +39,13 @@ namespace VirginClassLibrary
             if (CarMake.Length > 30)
             {
                 //return the following error message
-                return "Car Makes cannot exceed 30 characters, please fill it in accordingly.";
+                return "The entered Car Make is not applicable. Please enter a short Car Make.";
             }
             //if the car make length is less than 2 characters
             if (CarMake.Length < 2)
             {
                 //return the following error message
-                return "The Car Make is too short, please fill it in accordingly.";
+                return "The entered Car Make is not applicable. Please enter a longer Car Make.";
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -53,17 +53,73 @@ namespace VirginClassLibrary
             if (CarModel.Length > 30)
             {
                 //return the following error message
-                return "Car Models cannot exceed 30 characters, please fill it in accordingly.";
+                return "The entered Car Model is not applicable. Please enter a short Car Make.";
             }
             //if the car model length is less than 2 characters
             if (CarModel.Length < 2)
             {
                 //return the following error message
-                return "The Car Models is too short, please fill it in accordingly.";
+                return "The entered Car Make is not applicable. Please enter a longer Car Make.";
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
-            
+            //if the car body length is more than 20 characters
+            if (CarBody.Length > 20)
+            {
+                //return the following error message
+                return "The entered body type is not applicable. Please enter a correct body type.";
+            }
+            //if the car body length is less than 3 characters
+            if (CarBody.Length < 3)
+            {
+                //return the following error message
+                return "The entered body type is not applicable. Please enter a correct body type.";
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car colour length is more than 25 characters
+            if (CarColour.Length > 25)
+            {
+                //return the following error message
+                return "The entered colour is not applicable. Please enter a different colour.";
+            }
+            //if the car colour length is less than 2 characters
+            if (CarColour.Length < 2)
+            {
+                //return the following error message
+                return "The entered colour is not applicable. Please enter a different colour.";
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car fuel type length is more than 10 characters
+            if (CarFuel.Length > 10)
+            {
+                //return the following error message
+                return "The exclusively acceptable fuel types are Petrol, Diesel or Electric. Please enter the applicable fuel type.";
+            }
+            //if the car fuel type length is less than 6 characters
+            if (CarFuel.Length < 6)
+            {
+                //return the following error message
+                return "The exclusively acceptable fuel types are Petrol, Diesel or Electric. Please enter the applicable fuel type.";
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car registration length is more than 11 characters
+            if (CarRegistration.Length > 11)
+            {
+                //return the following error message
+                return "A registration number cannot exceed 11 characters. Please enter a shorter registration number.";
+            }
+            //if the car registrationlength is less than 2 characters
+            if (CarRegistration.Length < 2)
+            {
+                //return the following error message
+                return "A registration number must have at least 2 characters. Please enter a longer registration number.";
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+
             return Error;
         }
     }
