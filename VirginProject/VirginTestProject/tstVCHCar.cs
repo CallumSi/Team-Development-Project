@@ -7,24 +7,26 @@ namespace VirginTestProject
     [TestClass]
     public class tstVCHCar
     {
-        //Car ID property
-        int CarID = 1;
         //Car Make property
         string CarMake = "Volkswagen";
         //Car Model property
         string CarModel = "Golf R";
+
         /* //Car Engine size property
-        decimal CarEngine = 2.0M;
+        decimal CarEngine = 2.0M; */
+        
         //Car Body property
         string CarBody = "Hatchback";
         //Car Colour property
-        string CarColour = "Lapiz Blue"; 
+        string CarColour = "Lapiz Blue";
         //Car Fuel type property
-        string SomeCarFuel = "Petrol";
-        //Car weekly hire Price property
-        decimal CarPrice = 300.0M; 
+        string CarFuel = "Petrol";
+
+        /* //Car weekly hire Price property
+        decimal CarPrice = 300.0M;  */
+        
         //Car registration property
-        string CarRegistration = "VW19 GLF"; */
+        string CarRegistration = "VW19 GLF";
 
         [TestMethod]
         public void InstantationOK()
@@ -73,7 +75,7 @@ namespace VirginTestProject
             //pad string of characters
             CarMake = CarMake.PadRight(1, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -90,7 +92,7 @@ namespace VirginTestProject
             //pad string of characters
             CarMake = CarMake.PadRight(31, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -107,7 +109,7 @@ namespace VirginTestProject
             //pad string of characters
             CarMake = CarMake.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -137,7 +139,7 @@ namespace VirginTestProject
             //pad string of characters
             CarModel = CarModel.PadRight(1, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -154,7 +156,7 @@ namespace VirginTestProject
             //pad string of characters
             CarModel = CarModel.PadRight(31, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -171,7 +173,7 @@ namespace VirginTestProject
             //pad string of characters
             CarModel = CarModel.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -203,6 +205,57 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void CarBodyMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarBody = "";
+            //pad string of characters
+            CarBody = CarBody.PadRight(2, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarBodyMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarBody = "";
+            //pad string of characters
+            CarBody = CarBody.PadRight(21, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarBodyExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarBody = "";
+            //pad string of characters
+            CarBody = CarBody.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CarColourPropertyOK()
         {
             //create an instance of the class
@@ -216,6 +269,57 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void CarColourMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarColour = "";
+            //pad string of characters
+            CarColour = CarColour.PadRight(1, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarColourMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarColour = "";
+            //pad string of characters
+            CarColour = CarColour.PadRight(26, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarColourExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarColour = "";
+            //pad string of characters
+            CarColour = CarColour.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CarFuelPropertyOK()
         {
             //create an instance of the class
@@ -226,6 +330,57 @@ namespace VirginTestProject
             VCHCar.CarFuel = SomeCarFuel;
             //test to see that the two values are the same
             Assert.AreEqual(VCHCar.CarFuel, SomeCarFuel);
+        }
+
+        [TestMethod]
+        public void CarFuelMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarFuel = "";
+            //pad string of characters
+            CarFuel = CarFuel.PadRight(5, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarFuelMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarFuel = "";
+            //pad string of characters
+            CarFuel = CarFuel.PadRight(11, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarFuelExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarFuel = "";
+            //pad string of characters
+            CarFuel = CarFuel.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -255,6 +410,57 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void CarRegistrationMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarRegistration = "";
+            //pad string of characters
+            CarRegistration = CarRegistration.PadRight(1, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegistrationMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarRegistration = "";
+            //pad string of characters
+            CarRegistration = CarRegistration.PadRight(12, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegistrationExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string CarRegistration = "";
+            //pad string of characters
+            CarRegistration = CarRegistration.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
@@ -263,8 +469,15 @@ namespace VirginTestProject
             String Error = "";
             //test data to test the method
             string CarMake = "Volkswagen";
+            string CarModel = "Golf R";
+            //
+            string CarBody = "Hatchback";
+            string CarColour = "Lapiz Blue";
+            string CarFuel = "Petrol";
+            //
+            string CarRegistration = "VW19 GLF";
             //invoke the method
-            Error = VCHCar.Valid(CarMake, CarModel);
+            Error = VCHCar.Valid(CarMake, CarModel, CarBody, CarColour, CarFuel, CarRegistration);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
         }

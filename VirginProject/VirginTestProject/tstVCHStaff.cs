@@ -15,6 +15,8 @@ namespace VirginTestProject
         string StaffAddress = "49 Frankfurt Lane, Leicester";
         //staff postcode property 
         string StaffPostCode = "LE1 8WE";
+        //staff username property
+        string StaffUsername = "JohannGoethizzy";
         //staff email property
         string StaffEmail = "j.goethe@gmail.com";
         //staff password property
@@ -69,7 +71,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffFirstName = StaffFirstName.PadRight(1, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -86,7 +88,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffFirstName = StaffFirstName.PadRight(31, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -103,7 +105,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffFirstName = StaffFirstName.PadRight(100, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -133,7 +135,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffLastName = StaffLastName.PadRight(1, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -150,7 +152,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffLastName = StaffLastName.PadRight(31, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -167,7 +169,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffLastName = StaffLastName.PadRight(100, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -197,7 +199,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffAddress = StaffAddress.PadRight(2, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -214,7 +216,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffAddress = StaffAddress.PadRight(51, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -231,7 +233,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffAddress = StaffAddress.PadRight(100, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -261,7 +263,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPostCode = StaffPostCode.PadRight(4, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -278,7 +280,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPostCode = StaffPostCode.PadRight(11, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -295,7 +297,71 @@ namespace VirginTestProject
             //pad string of characters
             StaffPostCode = StaffPostCode.PadRight(20, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffUsernamePropertyOK()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //create some test data to assign to the email address
+            string SomeStaffUsername = "JohannGoethizzy";
+            //assign the data to the property
+            VCHStaff.StaffUsername = SomeStaffUsername;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHStaff.StaffUsername, SomeStaffUsername);
+        }
+
+        [TestMethod]
+        public void StaffUsernameMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string StaffUsername = "";
+            //pad string of characters
+            StaffUsername = StaffUsername.PadRight(1, 'a');
+            //invoke the method
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffUsernameMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string StaffUsername = "";
+            //pad string of characters
+            StaffUsername = StaffUsername.PadRight(31, 'a');
+            //invoke the method
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffUsernameExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string StaffUsername = "";
+            //pad string of characters
+            StaffUsername = StaffUsername.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -325,7 +391,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffEmail = StaffEmail.PadRight(6, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -342,7 +408,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffEmail = StaffEmail.PadRight(51, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -359,7 +425,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffEmail = StaffEmail.PadRight(100, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -389,7 +455,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPassword = StaffPassword.PadRight(5, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -406,7 +472,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPassword = StaffPassword.PadRight(21, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -423,7 +489,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPassword = StaffPassword.PadRight(100, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -452,7 +518,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPhoneNumber = StaffPhoneNumber.PadRight(10, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -469,7 +535,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPhoneNumber = StaffPhoneNumber.PadRight(13, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -486,7 +552,7 @@ namespace VirginTestProject
             //pad string of characters
             StaffPhoneNumber = StaffPhoneNumber.PadRight(20, 'a');
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -503,11 +569,12 @@ namespace VirginTestProject
             string StaffLastName = "Goethe";
             string StaffAddress = "49 Frankfurt Lane, Leicester";
             string StaffPostCode = "LE1 8WE";
+            string StaffUsername = "JohannGoethizzy";
             string StaffEmail = "j.goethe@gmail.com";
             string StaffPassword = "HeiMepGre1";
             string StaffPhoneNumber = "07987654321";
             //invoke the method
-            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
+            Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
         }
