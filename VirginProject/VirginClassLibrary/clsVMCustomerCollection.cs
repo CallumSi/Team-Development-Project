@@ -95,22 +95,48 @@ namespace VirginClassLibrary
             }
         }
 
-        ////Add method
-        //public int Add()
-        //{
-        //    //adds a new record to the database based on the values of thisAddress
-        //    //connect to the database
-        //    clsDataConnection DB = new clsDataConnection();
-        //    //set the parameters for the stored procedure
-        //    DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
-        //    DB.AddParameter("@CustomerFirstName", mThisCustomer.VMcustomerFirstName);
-        //    DB.AddParameter("@CustomerLastName", mThisCustomer.VMcustomerLastName);
-        //    DB.AddParameter("@CustomerEmail", mThisCustomer.VMcustomerEmail);
-        //    DB.AddParameter("@CustomerUsername", mThisCustomer.VMcustomerUsername);
-        //    DB.AddParameter("@CustomerPassword", mThisCustomer.VMcustomerPassword);
-        //    //execute the query returning the primary key value
-        //    return DB.Execute("sproc_tblVMCustomer_Insert");
-        //}
+        //Add method
+        public int Add()
+        {
+
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@VMCustomerFirstName", mThisCustomer.VMcustomerFirstName);
+            DB.AddParameter("@VMCustomerLastName", mThisCustomer.VMcustomerLastName);
+            DB.AddParameter("@VMCustomerEmail", mThisCustomer.VMcustomerEmail);
+            DB.AddParameter("@VMCustomerUsername", mThisCustomer.VMcustomerUsername);
+            DB.AddParameter("@VMCustomerPassword", mThisCustomer.VMcustomerPassword);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVMCustomer_Insert");
+        }
+
+        //Update method
+        public void Update()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@VMCustomerID", mThisCustomer.VMCustomerID);
+            DB.AddParameter("@VMCustomerFirstName", mThisCustomer.VMcustomerFirstName);
+            DB.AddParameter("@VMCustomerLastName", mThisCustomer.VMcustomerLastName);
+            DB.AddParameter("@VMCustomerEmail", mThisCustomer.VMcustomerEmail);
+            DB.AddParameter("@VMCustomerUsername", mThisCustomer.VMcustomerUsername);
+            DB.AddParameter("@VMCustomerPassword", mThisCustomer.VMcustomerPassword);
+            //execute the query returning the primary key value
+            DB.Execute("sproc_tblVMCustomer_Update");
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored procedure
+            DB.AddParameter("@VMCustomerID", mThisCustomer.VMCustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVMCustomer_Delete");
+        }
 
         public void FilterByUsername(string VMCustomerUsername)
         {

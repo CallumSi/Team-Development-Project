@@ -59,7 +59,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "Please select a record to Edit from the list";
+                lblError.Text = "Please select a record to edit from the list";
             }
         }
 
@@ -126,6 +126,7 @@ namespace VirginFrontEnd
 
         protected void btnApplyFilter_Click(object sender, EventArgs e)
         {
+            //display all Customer usernames
             DisplayUsername(txtFilterUsername.Text);
         }
     }
