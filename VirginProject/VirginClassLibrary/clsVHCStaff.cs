@@ -85,21 +85,21 @@ namespace VirginClassLibrary
                 Error = Error + "STAFF LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
-            //// (4) Patient Address Validation
+            // (4) Staff Role Validation
 
-            ////if patient address is blank 
-            //if (Patient_Address.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT ADDRESS CANNOT BE BLANK!" + " ";
+            //if staff role is blank 
+            if (Staff_Role.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF ROLE CANNOT BE BLANK!" + " ";
 
-            //}
+            }
 
-            //if (Patient_Address.Length < 1 | Patient_Address.Length > 100)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
-            //}
+            if (Staff_Role.Length < 1 | Staff_Role.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF ROLE MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            }
 
 
             //// (6) Patient Email Validation
