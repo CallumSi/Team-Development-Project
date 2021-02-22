@@ -15,7 +15,7 @@ namespace VirginTestProject
         //create some test data to pass to the method 
         //TOTAL: 9 Properties including PK (Staff_ID) 
 
-        string Staff_Title = "Dr"; // (1) 
+        string Staff_Title = "Dr"; //(1) 
         string Staff_Firstname = "Monica"; // (2) 
         string Staff_Lastname = "Geller"; // (3) 
         string Staff_Email = "MGeller@gmail.com"; // (4) 
@@ -324,5 +324,145 @@ namespace VirginTestProject
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
+
+        ///// <summary>
+        ///// TEST PLAN: Staff_Firstname Property
+        ///// </summary>
+
+        [TestMethod]
+        public void Staff_FirstnameMinLessOne()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMin()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(1, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMinPlusOne()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(2, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMaxLessOne()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(49, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMax()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(50, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMaxPlusOne()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(51, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameMid()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(26, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void Staff_FirstnameExtremeMax()
+        {
+            //create an instance of the staff class 
+            clsVHCStaff AVHCStaff = new clsVHCStaff();
+            //create a variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method 
+            string Staff_Firstname = "";
+            //create some test data to test the valid method 
+            Staff_Firstname = Staff_Firstname.PadLeft(100, 'A');
+            //invoke the method 
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+
+
     }
 }
