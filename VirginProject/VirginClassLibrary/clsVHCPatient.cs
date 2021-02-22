@@ -46,7 +46,7 @@ namespace VirginClassLibrary
             //create a string variable to store data values
             String Error = "";
             //create a temporary variable to store data values
-            DateTime DOBTemp;
+            //DateTime DOBTemp;
 
             // (1) Patient Title Validation
 

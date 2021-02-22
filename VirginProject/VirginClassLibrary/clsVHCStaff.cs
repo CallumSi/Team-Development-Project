@@ -53,21 +53,22 @@ namespace VirginClassLibrary
             }
 
 
-            //// (2) Patient Firstname Validation
+            // (2) Staff Firstname Validation
 
-            ////if patient firstname is blank 
-            //if (Patient_Firstname.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT FIRSTNAME CANNOT BE BLANK!" + " ";
+            //if staff firstname is blank 
+            if (Staff_Firstname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF FIRSTNAME CANNOT BE BLANK!" + " ";
 
-            //}
+            }
 
-            //if (Patient_Firstname.Length < 1 | Patient_Firstname.Length > 50)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
-            //}
+            if (Staff_Firstname.Length < 1 | Staff_Firstname.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            }
+
 
             //// (3) Patient Lastname Validation
 
