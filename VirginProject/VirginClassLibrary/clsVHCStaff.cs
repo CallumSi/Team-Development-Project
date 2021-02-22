@@ -69,22 +69,21 @@ namespace VirginClassLibrary
                 Error = Error + "STAFF FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
+            // (3) Staff Lastname Validation
 
-            //// (3) Patient Lastname Validation
+            //if staff lastname is blank 
+            if (Staff_Lastname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF LASTNAME CANNOT BE BLANK!" + " ";
 
-            ////if patient lastname is blank 
-            //if (Patient_Lastname.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT LASTNAME CANNOT BE BLANK!" + " ";
+            }
 
-            //}
-
-            //if (Patient_Lastname.Length < 1 | Patient_Lastname.Length > 50)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
-            //}
+            if (Staff_Lastname.Length < 1 | Staff_Lastname.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            }
 
             //// (4) Patient Address Validation
 
