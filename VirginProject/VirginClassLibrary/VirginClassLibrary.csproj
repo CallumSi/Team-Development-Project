@@ -57,6 +57,7 @@
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="clsUserCollection.cs" />
+    <Compile Include="clsVCHCar.cs" />
     <Compile Include="clsVCHCustomer.cs" />
     <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVHCStaff.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
+    <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
