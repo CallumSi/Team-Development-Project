@@ -102,21 +102,21 @@ namespace VirginClassLibrary
             }
 
 
-            //// (6) Patient Email Validation
+            // (6) Staff Email Validation
 
-            ////if patient email is blank 
-            //if (Patient_Email.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT EMAIL CANNOT BE BLANK!" + " ";
+            //if staff email is blank 
+            if (Staff_Email.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF EMAIL CANNOT BE BLANK!" + " ";
 
-            //}
+            }
 
-            //if (Patient_Email.Length < 11 | Patient_Email.Length > 50)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
-            //}
+            if (Staff_Email.Length < 11 | Staff_Email.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
+            }
 
             //// (7) Patient Username Validation
 
