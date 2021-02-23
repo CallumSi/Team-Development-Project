@@ -83,7 +83,7 @@ namespace VirginClassLibrary
 
         public int Add()
         {
-            //add a new record to the database based on the values of the mthisUser
+            //add a new record to the database based on the values of the mthisAdmin
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the paramaeters for the stored procedure
@@ -94,6 +94,17 @@ namespace VirginClassLibrary
             DB.AddParameter("@AdminUserName", mThisAdmin.AdminUserName);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblForumAdmin_Insert");
+        }
+
+        public void Delete()
+        {
+            //delete the record pointed to by thisAdmin
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@AdminID", mThisAdmin.AdminID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblForumAdmin_Delete");
         }
     }
    

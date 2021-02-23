@@ -107,5 +107,37 @@ namespace VirginTestProject
             //test to see that the two value are the same
             Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
         }
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create the item of test data
+            clsForumAdmin TestItem = new clsForumAdmin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.AdminID = 2;
+            TestItem.AdminUserName = "Tedward02";
+            TestItem.AdminFirstName = "Taf";
+            TestItem.AdminLastName = "Edward";
+            TestItem.AdminEmail = "Taf@hotmail.com";
+            TestItem.AdminPassword = "TafMan";
+            //set ThisUser to the test data
+            AllAdmins.ThisAdmin = TestItem;
+            //add the record
+            PrimaryKey = AllAdmins.Add();
+            //set the primary key of the test data
+            TestItem.AdminID = PrimaryKey;
+            //find the record
+            AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //delete the record
+            AllAdmins.Delete();
+            //now find the record
+            Boolean Found = AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //test to see that the two value are the same
+            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+
+        }
     }
 }
