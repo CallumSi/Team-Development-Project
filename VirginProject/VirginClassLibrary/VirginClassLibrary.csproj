@@ -64,6 +64,8 @@
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
+    <Compile Include="clsVMStaff.cs" />
+    <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />

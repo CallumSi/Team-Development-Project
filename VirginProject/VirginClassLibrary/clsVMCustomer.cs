@@ -169,8 +169,7 @@ namespace VirginClassLibrary
                 Error = Error + "Customer Lastname cannot be more than 55 characters" + " ";
             }
 
-            //  Customer Email Validation
-
+            //****************CUSTOMER EMAIL***********************// 
             //if customer email is blank 
             if (VMcustomerEmail.Length == 0)
             {
@@ -204,14 +203,14 @@ namespace VirginClassLibrary
             if (VMcustomerPassword.Length == 0)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be blank!" + " ";
+                Error = Error + "Customer Password cannot be blank!" + " ";
             }
 
-            //if the customer password is less than 1 and greater than 55 characters
+            //if the customer password is less than 7 and greater than 55 characters
             if (VMcustomerPassword.Length < 7 | VMcustomerPassword.Length > 55)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be more than 55 characters" + " ";
+                Error = Error + "Customer Password cannot be less than 7 and more than 55 characters" + " ";
             }
 
             //return any error messages
