@@ -81,5 +81,31 @@ namespace VirginTestProject
             //test to see the two values are the same
             Assert.AreEqual(AllAdmins.Count, TestList.Count);
         }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //Create an instance of the class I want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create an item of test data
+            clsForumAdmin TestItem = new clsForumAdmin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.AdminUserName = "TestAdmin";
+            TestItem.AdminFirstName = "Test";
+            TestItem.AdminLastName = "Admin";
+            TestItem.AdminEmail = "Admin@hotmail.com";
+            TestItem.AdminPassword = "Admin";
+            //set ThisUser to the test data
+            AllAdmins.ThisAdmin = TestItem;
+            //add the record
+            PrimaryKey = AllAdmins.Add();
+            //set the primary key of the test data
+            TestItem.AdminID = PrimaryKey;
+            //find the record
+            AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //test to see that the two value are the same
+            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+        }
     }
 }

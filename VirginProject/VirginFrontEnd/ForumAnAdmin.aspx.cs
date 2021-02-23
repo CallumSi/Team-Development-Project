@@ -14,22 +14,40 @@ namespace VirginFrontEnd
         {
 
         }
+        void Add()
+        {
+            //create an instance of the User book
+            clsForumAdminCollection AdminBook = new clsForumAdminCollection();
+            //validate the data on the web form
+            String Error = AdminBook.ThisAdmin.Valid(txtFirstName.Text, txtLastName.Text, txtEmailAddress.Text, txtPassword.Text, txtUsername.Text);
+            //if the data is OK then add it to the object
+            if (Error == "")
+            {
+                //get the data entered by the user
+                AdminBook.ThisAdmin.AdminUserName = txtUsername.Text;
+                AdminBook.ThisAdmin.AdminFirstName = txtFirstName.Text;
+                AdminBook.ThisAdmin.AdminLastName = txtLastName.Text;
+                AdminBook.ThisAdmin.AdminEmail = txtEmailAddress.Text;
+                AdminBook.ThisAdmin.AdminPassword = txtPassword.Text;
+                //add the record
+                AdminBook.Add();
+                //Redirect back to the main page
+                //Response.Redirect("ForumAdminList.aspx");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "There has been a problem with the information that's been entered. Please try again." + Error;
+            }
+
+
+
+        }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            //create a new instance of clsforumAdmin   
-            clsForumAdmin AnAdmin = new clsForumAdmin();
-            //capture the Admin ID
-            AnAdmin.AdminUserName = txtUsername.Text;
-            AnAdmin.AdminFirstName = txtFirstName.Text;
-            AnAdmin.AdminLastName = txtLastName.Text;
-            AnAdmin.AdminEmail = txtEmailAddress.Text;
-            AnAdmin.AdminPassword = txtPassword.Text;
-            //store the address in the session object
-            Session["AnAdmin"] = AnAdmin;
-            //redirect to the viewer page
+            Add();
             Response.Redirect("ForumAdminList.aspx");
-
         }
     }
 }

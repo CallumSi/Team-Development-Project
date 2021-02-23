@@ -22,6 +22,7 @@
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 366px; top: 425px; position: absolute; margin-top: 0px" Text="Cancel" />
         <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 316px; top: 121px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblUsername" runat="server" style="z-index: 1; left: 191px; top: 122px; position: absolute" Text="Username"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 198px; top: 513px; position: absolute" Text="[Error]"></asp:Label>
     </form>
 </body>
 </html>

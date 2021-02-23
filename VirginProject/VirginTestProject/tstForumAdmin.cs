@@ -7,6 +7,13 @@ namespace VirginTestProject
     [TestClass]
     public class tstForumAdmin
     {
+        ////create some test data to pass the method
+        //string AdminFirstname = "Robin";
+        //string AdinUserName = "RVP20";
+        //string AdminLastName = "Vanpersie";
+        //string UserEmailAddress = "RVP@gmail.com";
+        //string UserPassword = "United4RVP";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -97,5 +104,40 @@ namespace VirginTestProject
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(AAdmin.AdminPassword, SomeAdminPassword);
         }
+        //[TestMethod]
+        //public void FindMethodOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsForumAdmin AAdmin = new clsForumAdmin();
+        //    //boolean variable to store the result of the validation
+        //    Boolean found = false;
+        //    //create some test data to use with the method
+        //    Int32 AdminID = 1;
+        //    //invoke the method
+        //    found = AAdmin.Find(AdminID);
+        //    //test to see that the result is correct
+        //    Assert.IsTrue(found);
+        //}
+        //[TestMethod]
+        //public void TestAdminIDFound()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsForumAdmin AAdmin = new clsForumAdmin();
+        //    //boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //boolean variable to record if data is OK
+        //    Boolean OK = true;
+        //    //create some test data to use with the method
+        //    Int32 AdminID = 1;
+        //    //invoke the method
+        //    Found = AAdmin.Find(AdminID);
+        //    //check the Admin id
+        //    if (AAdmin.AdminID != 1)
+        //    {
+        //        OK = false;
+        //    }
+        //    //test to see that the result is correct
+        //    Assert.IsTrue(OK);
+        //}
     }
 }
