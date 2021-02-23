@@ -45,5 +45,20 @@ namespace VirginFrontEnd
             //redirect to the data entry page
             Response.Redirect("ForumAnAdmin.aspx");
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 AdminID;
+            if (lstForumAdmin.SelectedIndex != -1)
+            {
+                AdminID = Convert.ToInt32(lstForumAdmin.SelectedValue);
+                Session["AdminID"] = AdminID;
+                Response.Redirect("ForumAdminDelete.aspx");
+            }
+            else
+            {
+                lblError.Text = "Please select a record to delete.";
+            }
+        }
     }
 }

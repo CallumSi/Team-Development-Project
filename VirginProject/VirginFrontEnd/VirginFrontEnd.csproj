@@ -71,6 +71,7 @@
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnUser.aspx" />
@@ -106,6 +107,13 @@
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminDelete.aspx.cs">
+      <DependentUpon>ForumAdminDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminDelete.aspx.designer.cs">
+      <DependentUpon>ForumAdminDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAdminList.aspx.cs">
       <DependentUpon>ForumAdminList.aspx</DependentUpon>
