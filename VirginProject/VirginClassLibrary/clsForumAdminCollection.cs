@@ -106,7 +106,22 @@ namespace VirginClassLibrary
             //execute the stored procedure 
             DB.Execute("sproc_tblForumAdmin_Delete");
         }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisUser
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored procdure 
+            DB.AddParameter("@AdminID", mThisAdmin.AdminID);
+            DB.AddParameter("@AdminFirstName", mThisAdmin.AdminFirstName);
+            DB.AddParameter("@AdminLastName", mThisAdmin.AdminLastName);
+            DB.AddParameter("@AdminEmail", mThisAdmin.AdminEmail);
+            DB.AddParameter("@AdminPassword", mThisAdmin.AdminPassword);
+            DB.AddParameter("@AdminUserName", mThisAdmin.AdminUserName);
+            //execute the stored procedure
+            DB.Execute("sproc_tblForumAdmin_Update");
+        }
     }
-   
    
 }
