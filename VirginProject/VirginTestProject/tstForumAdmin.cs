@@ -28,6 +28,20 @@ namespace VirginTestProject
             Assert.AreEqual(AAdmin.AdminID, TestData);
         }
         [TestMethod]
+        public void AdminUserNamePropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //create a variable to store the user name of the Admin
+            string SomeAdminUserName;
+            //assign a Admin first name to the variable
+            SomeAdminUserName = "Asuldan01";
+            //try to send some data to the admin user name property
+            AAdmin.AdminUserName = SomeAdminUserName;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AAdmin.AdminUserName, SomeAdminUserName);
+        }
+        [TestMethod]
         public void AdminFirstNamePropertyOK()
         {
             //create an instance of the class we want to create

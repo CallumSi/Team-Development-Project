@@ -20,6 +20,7 @@ namespace VirginFrontEnd
             //create a new instance of clsforumAdmin   
             clsForumAdmin AnAdmin = new clsForumAdmin();
             //capture the Admin ID
+            AnAdmin.AdminUserName = txtUsername.Text;
             AnAdmin.AdminFirstName = txtFirstName.Text;
             AnAdmin.AdminLastName = txtLastName.Text;
             AnAdmin.AdminEmail = txtEmailAddress.Text;

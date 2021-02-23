@@ -27,6 +27,7 @@ namespace VirginTestProject
             clsForumAdmin TestItem = new clsForumAdmin();
             //set its properties
             TestItem.AdminID = 1;
+            TestItem.AdminUserName = "HMakda23";
             TestItem.AdminFirstName = "Husain";
             TestItem.AdminLastName = "Makda";
             TestItem.AdminEmail = "Husian@gmail.com";
@@ -47,6 +48,7 @@ namespace VirginTestProject
             clsForumAdmin TestAdmin = new clsForumAdmin();
             //set the properties of the test object
             TestAdmin.AdminID = 1;
+            TestAdmin.AdminUserName = "SCarol43";
             TestAdmin.AdminFirstName = "Samuel";
             TestAdmin.AdminLastName = "charol";
             TestAdmin.AdminEmail = "SaC@gmail.com";
@@ -67,6 +69,7 @@ namespace VirginTestProject
             clsForumAdmin TestItem = new clsForumAdmin();
             //set its properties
             TestItem.AdminID = 1;
+            TestItem.AdminUserName = "MNeuer3";
             TestItem.AdminFirstName = "Mauel";
             TestItem.AdminLastName = "Neuer";
             TestItem.AdminEmail = "MN@hotmail.com";

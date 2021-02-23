@@ -27,7 +27,7 @@ namespace VirginFrontEnd
                 //set the name of the primary key
                 lstForumAdmin.DataValueField = "AdminID";
                 //set the data field to display
-                lstForumAdmin.DataTextField = "AdminFirstName";
+                lstForumAdmin.DataTextField = "AdminUserName";
                 //bind the data to the list
                 lstForumAdmin.DataBind();
             }

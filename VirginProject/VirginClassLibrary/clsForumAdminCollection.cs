@@ -58,6 +58,7 @@ namespace VirginClassLibrary
                 AAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
                 AAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
                 AAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
+                AAdmin.AdminUserName = Convert.ToString(DB.DataTable.Rows[Index]["AdminUserName"]);
                 //add the record to the private data member
                 mAdminList.Add(AAdmin);
                 //point at the next record
