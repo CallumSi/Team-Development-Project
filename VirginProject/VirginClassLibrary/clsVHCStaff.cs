@@ -118,21 +118,21 @@ namespace VirginClassLibrary
                 Error = Error + "STAFF EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
             }
 
-            //// (7) Patient Username Validation
+            // (7) Staff Username Validation
 
-            ////if patient username is blank 
-            //if (Patient_Username.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT USERNAME CANNOT BE BLANK!" + " ";
+            //if staff username is blank 
+            if (Staff_Username.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF USERNAME CANNOT BE BLANK!" + " ";
 
-            //}
+            }
 
-            //if (Patient_Username.Length < 8 | Patient_Username.Length > 50)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
-            //}
+            if (Staff_Username.Length < 8 | Staff_Username.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
+            }
 
             //// (8) Patient Password Validation
 
