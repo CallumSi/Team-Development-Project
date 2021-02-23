@@ -27,7 +27,7 @@ namespace VirginFrontEnd
                 //set the name of the primary key
                 lstForumAdmin.DataValueField = "AdminID";
                 //set the data field to display
-                lstForumAdmin.DataTextField = "AdminFirstName";
+                lstForumAdmin.DataTextField = "AdminUserName";
                 //bind the data to the list
                 lstForumAdmin.DataBind();
             }
@@ -36,6 +36,14 @@ namespace VirginFrontEnd
         protected void lstForumAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            //store -1 into the session object to indicate this is a new record
+            Session["AdminID"] = -1;
+            //redirect to the data entry page
+            Response.Redirect("ForumAnAdmin.aspx");
         }
     }
 }

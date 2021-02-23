@@ -7,6 +7,8 @@ namespace VirginClassLibrary
     {
         //private data member for the list
         List<clsForumAdmin> mAdminList = new List<clsForumAdmin>();
+        //private data menmber thisAdmin
+        clsForumAdmin mThisAdmin = new clsForumAdmin();
         public List<clsForumAdmin> AdminList
         {
             get
@@ -32,7 +34,20 @@ namespace VirginClassLibrary
 
             }
         }
-        public clsForumAdmin ThisAdmin { get; set; }
+        public clsForumAdmin ThisAdmin
+        {
+            get
+            {
+                //return the private data
+                return mThisAdmin;
+            }
+            set
+            {
+                //set the private data
+                mThisAdmin = value;
+            }
+        }
+   
 
         //constructor for the class
         public clsForumAdminCollection()
@@ -58,11 +73,27 @@ namespace VirginClassLibrary
                 AAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
                 AAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
                 AAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
+                AAdmin.AdminUserName = Convert.ToString(DB.DataTable.Rows[Index]["AdminUserName"]);
                 //add the record to the private data member
                 mAdminList.Add(AAdmin);
                 //point at the next record
                 Index++;
             }
+        }
+
+        public int Add()
+        {
+            //add a new record to the database based on the values of the mthisUser
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramaeters for the stored procedure
+            DB.AddParameter("@AdminFirstName", mThisAdmin.AdminFirstName);
+            DB.AddParameter("@AdminLastName", mThisAdmin.AdminLastName);
+            DB.AddParameter("@AdminEmail", mThisAdmin.AdminEmail);
+            DB.AddParameter("@AdminPassword", mThisAdmin.AdminPassword);
+            DB.AddParameter("@AdminUserName", mThisAdmin.AdminUserName);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblForumAdmin_Insert");
         }
     }
    
