@@ -60,5 +60,28 @@ namespace VirginFrontEnd
                 lblError.Text = "Please select a record to delete.";
             }
         }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value of the record to be editied
+            Int32 AdminID;
+            //if a record has been selected from the list
+            if (lstForumAdmin.SelectedIndex != -1)
+            {
+                //get the primary key value of the record to edit
+                AdminID = Convert.ToInt32(lstForumAdmin.SelectedValue);
+                //store the data in the session object
+                Session["AdminID"] = AdminID;
+                //redirect to the edit page
+                Response.Redirect("ForumAnAdmin.aspx");
+            }
+            //if no recod has been selected
+            else
+            {
+                //display an error
+                lblError.Text = "Please make you select a record from the list";
+
+            }
+        }
     }
 }
