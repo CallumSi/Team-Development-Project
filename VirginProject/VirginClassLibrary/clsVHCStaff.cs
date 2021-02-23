@@ -134,36 +134,21 @@ namespace VirginClassLibrary
                 Error = Error + "STAFF USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
             }
 
-            //// (8) Patient Password Validation
+            // (8) Staff Password Validation
 
-            ////if patient password is blank 
-            //if (Patient_Password.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT PASSWORD CANNOT BE BLANK!" + " ";
-            //}
+            //if staff password is blank 
+            if (Staff_Password.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF PASSWORD CANNOT BE BLANK!" + " ";
 
-            //if (Patient_Password.Length < 8 | Patient_Password.Length > 50)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
-            //}
+            }
 
-            //// (9) Patient Telephone Validation
-
-            ////if patient telephone is blank 
-            //if (Patient_Telephone.Length == 0)
-            //{
-            //    //record the error 
-            //    Error = Error + "PATIENT TELEPHONE CANNOT BE BLANK!" + " ";
-            //}
-
-            //if (Patient_Telephone.Length < 7 | Patient_Telephone.Length > 15)
-            //{
-            //    //set the error message 
-            //    Error = Error + "PATIENT TELEPHONE MUST BE BETWEEN 7 TO 15 DIGITS!" + " ";
-            //}
-
+            if (Staff_Password.Length < 8 | Staff_Password.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
+            }
 
             //return any error messages
             return Error;
