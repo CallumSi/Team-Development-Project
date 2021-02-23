@@ -86,31 +86,31 @@ namespace VirginTestProject
             Assert.AreEqual(allCustomers.Count, TestList.Count);
         }
 
-        //[TestMethod]
-        //public void AddMethodOK()
-        //{
-        //    //create an instance of the clsVMCustomerCollection class
-        //    clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
-        //    //create the item of test data
-        //    clsVMCustomer TestItem = new clsVMCustomer();
-        //    //var to store the primary key
-        //    Int32 PrimaryKey = 0;
-        //    //set the properties of the test object
-        //    TestItem.VMcustomerFirstName = "Sufiyaan";
-        //    TestItem.VMcustomerLastName = "Hussain";
-        //    TestItem.VMcustomerEmail = "SufiyaanHussain@yahoo.com";
-        //    TestItem.VMcustomerUsername = "SufiyaanHussain97";
-        //    TestItem.VMcustomerPassword = "ManUtd97";
-        //    //set ThisCustomer to the test data
-        //    allCustomers.ThisCustomer = TestItem;
-        //    //add the record
-        //    PrimaryKey = allCustomers.Add();
-        //    //Set the primary key of the test data
-        //    TestItem.VMCustomerID = PrimaryKey;
-        //    //find the record
-        //    allCustomers.ThisCustomer.Find(PrimaryKey);
-        //    //test to see that the two values are the same
-        //    Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
-        //}
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the clsVMCustomerCollection class
+            clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
+            //create the item of test data
+            clsVMCustomer TestItem = new clsVMCustomer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set the properties of the test object
+            TestItem.VMcustomerFirstName = "Sufiyaan";
+            TestItem.VMcustomerLastName = "Hussain";
+            TestItem.VMcustomerEmail = "SufiyaanHussain@yahoo.com";
+            TestItem.VMcustomerUsername = "SufiyaanHussain97";
+            TestItem.VMcustomerPassword = "ManUtd97";
+            //set ThisCustomer to the test data
+            allCustomers.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = allCustomers.Add();
+            //Set the primary key of the test data
+            TestItem.VMCustomerID = PrimaryKey;
+            //find the record
+            allCustomers.ThisCustomer.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
+        }
     }
 }
