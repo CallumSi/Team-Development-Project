@@ -63,7 +63,6 @@
     <Compile Include="tstMarketplaceOfferCollection.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
     <Compile Include="tstUser.cs" />
-    <Compile Include="tstVCHCar.cs" />
     <Compile Include="tstVCHCustomer.cs" />
     <Compile Include="tstVCHStaff.cs" />
     <Compile Include="tstVHCAppointment.cs" />
@@ -77,7 +76,6 @@
     <Compile Include="tstVMCustomer.cs" />
     <Compile Include="tstVMCustomerCollection.cs" />
     <Compile Include="tstVPCustomer.cs" />
-    <Compile Include="tstVPPhone.cs" />
     <Compile Include="tstVPStaff.cs" />
   </ItemGroup>
   <ItemGroup>
