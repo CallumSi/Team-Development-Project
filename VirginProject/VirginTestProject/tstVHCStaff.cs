@@ -20,7 +20,7 @@ namespace VirginTestProject
         string Staff_Lastname = "Geller"; // (3) 
         string Staff_Email = "MGeller@gmail.com"; // (4) 
         string Staff_Username = "MonGeller"; // (5) 
-        string Staff_Password = "MG3007"; // (6) 
+        string Staff_Password = "MG30070956"; // (6) 
         string Staff_Role = "Doctor"; // (7) 
         string Staff_Status = "True"; // (8)
 
@@ -124,7 +124,7 @@ namespace VirginTestProject
             //create an instance of the staff class 
             clsVHCStaff AVHCStaff = new clsVHCStaff();
             //create a variable to store the password of a staff 
-            string SomeStaff_Password = "MG3007";
+            string SomeStaff_Password = "MG30070956";
             //try to send some data to the staff password property
             AVHCStaff.Staff_Password = SomeStaff_Password;
             //check to see that the data in the variable and the property are the same
@@ -173,7 +173,7 @@ namespace VirginTestProject
             string Staff_Lastname = "Geller"; // (3) 
             string Staff_Email = "MGeller@gmail.com"; // (4) 
             string Staff_Username = "MonGeller"; // (5) 
-            string Staff_Password = "MG3007"; // (6) 
+            string Staff_Password = "MG30070956"; // (6) 
             string Staff_Role = "Doctor"; // (7) 
             string Staff_Status = "True"; // (8)
             //invoke the method 
