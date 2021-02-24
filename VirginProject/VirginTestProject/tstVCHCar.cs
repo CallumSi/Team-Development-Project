@@ -42,7 +42,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs ID 
+            //create some test data to assign to the cars ID 
             Int32 SomeCarID = 1;
             //assign the data to the property
             VCHCar.CarID = SomeCarID;
@@ -55,7 +55,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs first name
+            //create some test data to assign to the cars make
             string SomeCarMake = "Volkswagen";
             //assign the data to the property
             VCHCar.CarMake = SomeCarMake;
@@ -119,7 +119,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs first name
+            //create some test data to assign to the cars model
             string SomeCarModel = "Golf R";
             //assign the data to the property
             VCHCar.CarModel = SomeCarModel;
@@ -183,7 +183,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs ID 
+            //create some test data to assign to the cars engine size
             decimal SomeCarEngine = 2.0M;
             //assign the data to the property
             VCHCar.CarEngine = SomeCarEngine;
@@ -196,7 +196,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs first name
+            //create some test data to assign to the cars body type
             string SomeCarBody = "Hatchback";
             //assign the data to the property
             VCHCar.CarBody = SomeCarBody;
@@ -260,7 +260,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs first name
+            //create some test data to assign to the cars colour
             string SomeCarColour = "Lapiz Blue";
             //assign the data to the property
             VCHCar.CarColour = SomeCarColour;
@@ -324,7 +324,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs ID 
+            //create some test data to assign to the cars fuel type
             string SomeCarFuel = "Petrol";
             //assign the data to the property
             VCHCar.CarFuel = SomeCarFuel;
@@ -388,7 +388,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs ID 
+            //create some test data to assign to the weeky hire cars price
             decimal SomeCarPrice = 250.0M;
             //assign the data to the property
             VCHCar.CarPrice = SomeCarPrice;
@@ -401,7 +401,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCar VCHCar = new clsVCHCar();
-            //create some test data to assign to the staffs first name
+            //create some test data to assign to the cars registration number
             string SomeCarRegistration = "VW19 GLF";
             //assign the data to the property
             VCHCar.CarRegistration = SomeCarRegistration;

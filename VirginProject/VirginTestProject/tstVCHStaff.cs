@@ -506,6 +506,7 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(VCHStaff.StaffPhoneNumber, SomeStaffPhoneNumber);
         }
+
         [TestMethod]
         public void StaffPhoneNumberMinLessOne()
         {

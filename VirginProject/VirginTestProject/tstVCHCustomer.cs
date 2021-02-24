@@ -38,7 +38,7 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
-            //create some test data to assign to the staffs ID 
+            //create some test data to assign to the customers ID 
             Int32 SomeCustomerID = 1;
             //assign the data to the property
             VCHCustomer.CustomerID = SomeCustomerID;
