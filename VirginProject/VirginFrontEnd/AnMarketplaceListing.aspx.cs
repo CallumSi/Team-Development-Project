@@ -11,7 +11,10 @@ namespace VirginFrontEnd
     {
         //variable to store the ListingID from session obect
         Int32 ListingID;
+        //variables genereated for insertion
         Int32 OwnerID = 1;
+        DateTime CloseDate = DateTime.Now.AddDays(7);
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -89,6 +92,7 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Img = txtImg.Text;
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
                 SomeListing.ThisListing.OwnerID = OwnerID;
+                SomeListing.ThisListing.CloseDate = CloseDate;
                 //then update the record
                 SomeListing.UpdateListing();
                 //then go back to the list page
@@ -124,7 +128,7 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Img = txtImg.Text;
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
                 SomeListing.ThisListing.OwnerID = OwnerID;
-
+                SomeListing.ThisListing.CloseDate = CloseDate;
                 //then add the record
                 SomeListing.AddListing();
                 //then go back to the list page
