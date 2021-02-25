@@ -50,6 +50,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname1.Text = SomeListing.ThisListing.ListingName;
                         listingprice1.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage1.ImageUrl = SomeListing.ThisListing.Img;
                         found1 = true;
                     }
                     else
@@ -77,6 +78,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname2.Text = SomeListing.ThisListing.ListingName;
                         listingprice2.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage2.ImageUrl = SomeListing.ThisListing.Img;
                         found2 = true;
                     }
                     else
@@ -104,6 +106,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname3.Text = SomeListing.ThisListing.ListingName;
                         listingprice3.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage3.ImageUrl = SomeListing.ThisListing.Img;
                         found3 = true;
                     }
                     else
@@ -131,6 +134,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname4.Text = SomeListing.ThisListing.ListingName;
                         listingprice4.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage4.ImageUrl = SomeListing.ThisListing.Img;
                         found4 = true;
                     }
                     else
@@ -158,6 +162,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname5.Text = SomeListing.ThisListing.ListingName;
                         listingprice5.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage5.ImageUrl = SomeListing.ThisListing.Img;
                         found5 = true;
                     }
                     else
@@ -185,6 +190,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname6.Text = SomeListing.ThisListing.ListingName;
                         listingprice6.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage6.ImageUrl = SomeListing.ThisListing.Img;
                         found6 = true;
                     }
                     else
@@ -212,6 +218,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname7.Text = SomeListing.ThisListing.ListingName;
                         listingprice7.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage7.ImageUrl = SomeListing.ThisListing.Img;
                         found7 = true;
                     }
                     else
@@ -239,6 +246,7 @@ namespace VirginFrontEnd
                         //display the data for this record
                         listingname8.Text = SomeListing.ThisListing.ListingName;
                         listingprice8.Text = SomeListing.ThisListing.Price.ToString();
+                        listingimage8.ImageUrl = SomeListing.ThisListing.Img;
                         found8 = true;
                     }
                     else
