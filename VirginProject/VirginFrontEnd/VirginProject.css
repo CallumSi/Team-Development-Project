@@ -1,0 +1,52 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); 
+
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px; 
+    font-family:'Poppins', sans-serif;
+}
+
+header {
+    background-color: #27183d;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #cc0000;
+}
+
+nav {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    position: fixed;
+    width: 20%;
+    height: 90%;
+    top: 10%;
+    left: 0%;
+}
+
+article {
+    background-color: #fff;
+    position: fixed;
+    width: 80%;
+    top: 10%;
+    left: 20%;
+    color: black;
+}
+
+footer {
+    background-color: #27183d;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 90%;
+    left: 0%;
+}
+
+#FooterText {
+    position: fixed;
+    left: 45%; 
+    top: 95%;
+}
