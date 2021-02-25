@@ -61,6 +61,7 @@
     <Compile Include="clsVCHCustomer.cs" />
     <Compile Include="clsVCHHire.cs" />
     <Compile Include="clsVCHStaff.cs" />
+    <Compile Include="clsVHCAppointment.cs" />
     <Compile Include="clsVHCHospital.cs" />
     <Compile Include="clsVHCStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
