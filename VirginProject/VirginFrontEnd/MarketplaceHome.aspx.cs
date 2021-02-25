@@ -267,5 +267,87 @@ namespace VirginFrontEnd
 
         }
 
+        Int32 FilterListing(string ListingNameFilter)
+        {
+            //declare variables
+            Int32 ListingID;
+            string ListingName;
+            string ListingImg;
+            string ListingPrice;
+            //create instance of collection class
+            clsMarketplaceListingCollection ListOfListings = new clsMarketplaceListingCollection();
+            ListOfListings.FilterByListingName(ListingNameFilter);
+            //variables to loop through list
+            Int32 RecordCount;
+            Int32 Index = 0;
+            //get count of filtered list
+            RecordCount = ListOfListings.Count;
+   
+           
+            //loop through the list adding them to the list boxes
+            while (Index < RecordCount && Index<9)
+            {
+                ListingID = ListOfListings.ListingList[Index].ListingID;
+                ListingName = ListOfListings.ListingList[Index].ListingName;
+                ListingPrice = ListOfListings.ListingList[Index].Price.ToString();
+                ListingImg = ListOfListings.ListingList[Index].Img;
+                if (Index == 0)
+                {
+                    listingimage1.ImageUrl = ListingImg;
+                    listingname1.Text = ListingName;
+                    listingprice1.Text = ListingPrice;
+                }
+                if (Index == 1)
+                {
+                    listingimage2.ImageUrl = ListingImg;
+                    listingname2.Text = ListingName;
+                    listingprice2.Text = ListingPrice;
+                }
+                if (Index == 2)
+                {
+                    listingimage3.ImageUrl = ListingImg;
+                    listingname3.Text = ListingName;
+                    listingprice3.Text = ListingPrice;
+                }
+                if (Index == 3)
+                {
+                    listingimage4.ImageUrl = ListingImg;
+                    listingname4.Text = ListingName;
+                    listingprice4.Text = ListingPrice;
+                }
+                if (Index == 4)
+                {
+                    listingimage5.ImageUrl = ListingImg;
+                    listingname5.Text = ListingName;
+                    listingprice5.Text = ListingPrice;
+                }
+                if (Index == 5)
+                {
+                    listingimage6.ImageUrl = ListingImg;
+                    listingname6.Text = ListingName;
+                    listingprice6.Text = ListingPrice;
+                }
+                if (Index == 6)
+                {
+                    listingimage7.ImageUrl = ListingImg;
+                    listingname7.Text = ListingName;
+                    listingprice7.Text = ListingPrice;
+                }
+                if (Index == 7)
+                {
+                    listingimage8.ImageUrl = ListingImg;
+                    listingname8.Text = ListingName;
+                    listingprice8.Text = ListingPrice;
+                }
+                Index++;
+            }
+            return RecordCount;
+
+        }
+
+        protected void btnApplySearch_Click(object sender, EventArgs e)
+        {
+            FilterListing(txtSearch.Text);
+        }
     }
 }

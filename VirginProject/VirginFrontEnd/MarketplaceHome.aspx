@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 119px; top: 44px; position: absolute" Text="Marketplace Home"></asp:Label>
         <asp:Label ID="lblEmail" runat="server" style="z-index: 1; left: 858px; top: 56px; position: absolute"></asp:Label>
-        <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1; left: 174px; top: 90px; position: absolute; margin-top: 9px; width: 169px;"></asp:TextBox>
+        <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1; left: 177px; top: 90px; position: absolute; margin-top: 9px; width: 169px;"></asp:TextBox>
         <asp:Button ID="btnClickHere" runat="server" style="z-index: 1; left: 252px; top: 132px; position: absolute; margin-top: 1px;" Text="Click Here" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 122px; top: 98px; position: absolute" Text="Search"></asp:Label>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 121px; top: 133px; position: absolute; right: 767px" Text="Want to sell a item"></asp:Label>
@@ -49,6 +49,8 @@
         <asp:Label ID="listingprice6" runat="server" style="z-index: 1; left: 333px; top: 604px; position: absolute"></asp:Label>
         
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 770px; top: 57px; position: absolute" Text="Logged in as:"></asp:Label>
+        
+        <asp:Button ID="btnApplySearch" runat="server" OnClick="btnApplySearch_Click" style="z-index: 1; left: 363px; top: 99px; position: absolute" Text="Go" />
         
     </form>
 </body>
