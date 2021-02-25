@@ -132,14 +132,13 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the databse to the private data variables
-                mAdmin = Convert.ToBoolean(DB.DataTable.Rows[0]["Admin"]);
                 mDeliveryAdressLineOne = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineOne"]);
                 mDeliveryAdressLineTwo = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineTwo"]);
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
-                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
-                mRating = Convert.ToInt32(DB.DataTable.Rows[0]["Rating"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]); 
                 mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
-                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                //mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+
                 return true;
             }
             else
@@ -152,11 +151,11 @@ namespace VirginClassLibrary
 
      
 
-        public string Valid(string anDeliveryAdressLineOne, string anDeliveryAdressLineTwo, string anPostCode, string anEmail, string anPassword, string anRating)
+        public string Valid(string anDeliveryAdressLineOne, string anDeliveryAdressLineTwo, string anPostCode, string anEmail)
         {
             //declare empty string 
             string ErrorMsg = "";
-            int ConvertedRating;
+            //int ConvertedRating;
             
 
             //check for blank string
@@ -168,15 +167,16 @@ namespace VirginClassLibrary
                     {
                         if (anEmail.Length>2 && anEmail.Length<51)
                         {
-                            if (anPassword.Length>2 && anPassword.Length < 51)
-                            {
-                                ErrorMsg += "";     
-                            }
-                            else
-                            {
-                                //return error message 
-                                ErrorMsg += "Password must be between 0 and 50 characters ";
-                            }
+                            //if (anPassword.Length>2 && anPassword.Length < 51)
+                            //{
+                            //    ErrorMsg += "";     
+                            //}
+                            //else
+                            //{
+                            //    //return error message 
+                            //    ErrorMsg += "Password must be between 0 and 50 characters ";
+                            //}
+                            ErrorMsg += "";
                         }
                         else
                         {
@@ -202,35 +202,35 @@ namespace VirginClassLibrary
                 ErrorMsg += "Delivery Line One must be between 0 and 46 characters";
             }
 
-            //try Convert Rating
-            try
-            {
-                if (anRating == "")
-                {
-                    ErrorMsg += "";
-                }
-                else
-                {
-                    ConvertedRating = Convert.ToInt32(anRating);
-                    if (ConvertedRating > -1 && ConvertedRating < 11)
-                    {
-                        ErrorMsg += "";
-                    }
-                    else
-                    {
-                        //return error message 
-                        ErrorMsg += "Rating must be out of ten ";
-                    }
-                }
+            ////try Convert Rating
+            //try
+            //{
+            //    if (anRating == "")
+            //    {
+            //        ErrorMsg += "";
+            //    }
+            //    else
+            //    {
+            //        ConvertedRating = Convert.ToInt32(anRating);
+            //        if (ConvertedRating > -1 && ConvertedRating < 11)
+            //        {
+            //            ErrorMsg += "";
+            //        }
+            //        else
+            //        {
+            //            //return error message 
+            //            ErrorMsg += "Rating must be out of ten ";
+            //        }
+            //    }
 
 
-            }
-            catch
-            {
-                //return error message 
-                ErrorMsg += "Rating must be int ";
+            //}
+            //catch
+            //{
+            //    //return error message 
+            //    ErrorMsg += "Rating must be int ";
 
-            }
+            //}
 
             //check for special characters
             if (TestForSpecialCharacters(anDeliveryAdressLineOne) == true)
@@ -248,16 +248,16 @@ namespace VirginClassLibrary
                 ErrorMsg += "PostCode must have no special characters";
 
             }
-            if (anRating!="" && TestForSpecialCharacters(anRating) == true)
-            {
-                ErrorMsg += "Rating must have no special characters";
+            //if (anRating!="" && TestForSpecialCharacters(anRating) == true)
+            //{
+            //    ErrorMsg += "Rating must have no special characters";
 
-            }
-            if (TestForSpecialCharacters(anPassword) == false)
-            {
-                ErrorMsg += "passsword must have 1 special character";
+            //}
+            //if (TestForSpecialCharacters(anPassword) == false)
+            //{
+            //    ErrorMsg += "passsword must have 1 special character";
 
-            }
+            //}
             //test email format
             if (anEmail != "")
             {

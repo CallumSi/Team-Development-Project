@@ -53,10 +53,7 @@ namespace VirginFrontEnd
             //find the record to update
             SomeUser.ThisUser.Find(UserID);
             //display the data for this record
-            chkboxAdmin.Checked = SomeUser.ThisUser.Admin;
             txtEmail.Text = SomeUser.ThisUser.Email;
-            txtPassword.Text = SomeUser.ThisUser.Password;
-            txtRating.Text = SomeUser.ThisUser.Rating.ToString();
             txtDeliveryAdressLineOne.Text = SomeUser.ThisUser.DeliveryAdressLineOne;
             txtDeliveryAdressLineTwo.Text = SomeUser.ThisUser.DeliveryAdressLineTwo;
             txtPostCode.Text = SomeUser.ThisUser.PostCode;
@@ -69,7 +66,7 @@ namespace VirginFrontEnd
             clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
             //ensure the data is valid by using the valid method
             string Error = "";
-            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text, txtPassword.Text, txtRating.Text);
+            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text);
             //if no error msg then add it to object
             if (Error == "")
             {
@@ -79,10 +76,7 @@ namespace VirginFrontEnd
 
                 //get the data from the form
                
-                SomeUser.ThisUser.Admin = chkboxAdmin.Checked;
                 SomeUser.ThisUser.Email = txtEmail.Text;
-                SomeUser.ThisUser.Password = txtPassword.Text;
-                SomeUser.ThisUser.Rating = Convert.ToInt32(txtRating.Text);
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
@@ -108,15 +102,12 @@ namespace VirginFrontEnd
             clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
             //ensure the data is valid by using the valid method
             string Error = "";
-            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text, txtPassword.Text, txtRating.Text);
+            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text);
             //if no error msg then add it to object
             if (Error == "")
             {
-                //get the data from the form
-                SomeUser.ThisUser.Admin = chkboxAdmin.Checked;
+                //get the data from the form        
                 SomeUser.ThisUser.Email = txtEmail.Text;
-                SomeUser.ThisUser.Password = txtPassword.Text;
-                SomeUser.ThisUser.Rating = Convert.ToInt32(txtRating.Text);
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
