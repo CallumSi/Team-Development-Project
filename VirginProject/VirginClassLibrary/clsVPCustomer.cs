@@ -25,6 +25,9 @@ namespace VirginClassLibrary
         //Customer Telephone Property
         public string Customer_Telephone { get; set; }
 
+        //Customer ID Property 
+        public int Customer_ID { get; set; }
+
         public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
         {
             string Error = "";

@@ -71,6 +71,7 @@
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
@@ -83,6 +84,7 @@
     <Content Include="MarketplaceListingViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
+    <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
@@ -110,6 +112,13 @@
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAdminDelete.aspx.cs">
       <DependentUpon>ForumAdminDelete.aspx</DependentUpon>
@@ -203,6 +212,13 @@
       <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VirginProject.Master.cs">
+      <DependentUpon>VirginProject.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginProject.Master.designer.cs">
+      <DependentUpon>VirginProject.Master</DependentUpon>
+    </Compile>
     <Compile Include="VMCustomerDelete.aspx.cs">
       <DependentUpon>VMCustomerDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="VirginProject.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

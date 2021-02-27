@@ -25,6 +25,8 @@ namespace VirginTestProject
         {
             //create an instance of the class
             clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //test to see that it exists
+            Assert.IsNotNull(AVPCustomer);
         }
 
         [TestMethod]
@@ -138,6 +140,25 @@ namespace VirginTestProject
              //check to see that the data in the variable and property are the same
              Assert.AreEqual(AVPCustomer.Customer_Telephone, SomeTelephone);
          }
+
+
+        [TestMethod]
+        //testing the property of ID of the class
+        public void CustomerIDPropertyOK()
+        {
+            //create an instance of a class
+            clsVPCustomer AVPCustomer = new clsVPCustomer();
+            //create a variable to store the id of the customer
+            Int32 SomeCustomerID;
+            //assign a ID to the variable
+            SomeCustomerID = 1;
+            //try to sent some data to the ID property
+            AVPCustomer.Customer_ID = SomeCustomerID;
+            //check to see that the data in the variable and property are the same
+            Assert.AreEqual(AVPCustomer.Customer_ID, SomeCustomerID);
+        }
+
+
 
         [TestMethod]
         //testing the valid method

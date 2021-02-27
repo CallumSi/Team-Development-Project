@@ -31,7 +31,7 @@ namespace VirginClassLibrary
         //Staff_Status Property
         public bool Staff_Status { get; set; }
 
-        public string Valid(string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role, string Staff_Status)
+        public string Valid (string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role, string Staff_Status)
         {   
             //create a string variable to store data values
             String Error = "";
@@ -85,7 +85,56 @@ namespace VirginClassLibrary
                 Error = Error + "STAFF LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
             }
 
-            // (4) Staff Role Validation
+            // (4) Staff Email Validation
+
+            //if staff email is blank 
+            if (Staff_Email.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF EMAIL CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Staff_Email.Length < 11 | Staff_Email.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
+            }
+
+            // (5) Staff Username Validation
+
+            //if staff username is blank 
+            if (Staff_Username.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF USERNAME CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Staff_Username.Length < 8 | Staff_Username.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
+            }
+
+            // (6) Staff Password Validation
+
+            //if staff password is blank 
+            if (Staff_Password.Length == 0)
+            {
+                //record the error 
+                Error = Error + "STAFF PASSWORD CANNOT BE BLANK!" + " ";
+
+            }
+
+            if (Staff_Password.Length < 8 | Staff_Password.Length > 50)
+            {
+                //set the error message 
+                Error = Error + "STAFF PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
+            }
+
+
+            // (7) Staff Role Validation
 
             //if staff role is blank 
             if (Staff_Role.Length == 0)
@@ -102,53 +151,7 @@ namespace VirginClassLibrary
             }
 
 
-            // (6) Staff Email Validation
-
-            //if staff email is blank 
-            if (Staff_Email.Length == 0)
-            {
-                //record the error 
-                Error = Error + "STAFF EMAIL CANNOT BE BLANK!" + " ";
-
-            }
-
-            if (Staff_Email.Length < 11 | Staff_Email.Length > 50)
-            {
-                //set the error message 
-                Error = Error + "STAFF EMAIL MUST BE BETWEEN 11 TO 50 CHARACTERS!" + " ";
-            }
-
-            // (7) Staff Username Validation
-
-            //if staff username is blank 
-            if (Staff_Username.Length == 0)
-            {
-                //record the error 
-                Error = Error + "STAFF USERNAME CANNOT BE BLANK!" + " ";
-
-            }
-
-            if (Staff_Username.Length < 8 | Staff_Username.Length > 50)
-            {
-                //set the error message 
-                Error = Error + "STAFF USERNAME MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
-            }
-
-            // (8) Staff Password Validation
-
-            //if staff password is blank 
-            if (Staff_Password.Length == 0)
-            {
-                //record the error 
-                Error = Error + "STAFF PASSWORD CANNOT BE BLANK!" + " ";
-
-            }
-
-            if (Staff_Password.Length < 8 | Staff_Password.Length > 50)
-            {
-                //set the error message 
-                Error = Error + "STAFF PASSWORD MUST BE BETWEEN 8 TO 50 CHARACTERS!" + " ";
-            }
+           
 
             //return any error messages
             return Error;

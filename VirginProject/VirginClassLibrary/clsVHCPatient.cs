@@ -45,9 +45,7 @@ namespace VirginClassLibrary
         {
             //create a string variable to store data values
             String Error = "";
-            //create a temporary variable to store data values
-            //DateTime DOBTemp;
-
+       
             // (1) Patient Title Validation
 
             //if patient title is blank 
@@ -113,27 +111,37 @@ namespace VirginClassLibrary
                 Error = Error + "PATIENT ADDRESS MUST BE BETWEEN 1 TO 100 CHARACTERS!" + " ";
             }
 
-            ////(5) DOB Validation
-            //try
-            //{
-            //    //copy the patient DOB value to the DOBTemp variable
-            //    DOBTemp = Convert.ToDateTime(Patient_DOB);
+            // (5) Patient DOB Validation
+   
+            //create a temporary variable to store data values
+            DateTime DateTemp;
 
-            //    //check to see if ...
-            //    if (DOBTemp < DateTime.Now.Date.AddYears(18))
-            //    {
-            //        //record the error
-            //        Error = Error + "YOU MUST BE OVER 18YRS!" + "  ";
+            // (5) Patient DOB Validation 
+            try
+            {
+                //copy the Patient_DOB value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(Patient_DOB);
 
-            //    }
+                //check to see if the patient dob is less than 100 years
+                if (DateTemp < DateTime.Now.Date.AddYears(-100))
+                {
+                    //record the error 
+                    Error = Error + "THE PATIENT DOB CANNOT BE IN THE PAST. PLEASE ENTER A VALID DATE!" + "  ";
+                }
 
-            //}
+                //check to see if the patient dob is greater than 100 years
+                if (DateTemp > DateTime.Now.Date.AddYears(100))
+                {
+                    //record the error
+                    Error = Error + "THE PATIENT DOB IS INVALID. PLEASE ENTER A VALID DATE!" + "  ";
+                }
+            }
 
-            //catch
-            //{
-            //    //record the error 
-            //    Error = Error + "THE PATIENT DATE OF BIRTH WAS NOT A VALID DATE : ";
-            //}
+            catch
+            {
+                //record the error 
+                Error = Error + " THE DATA WAS NOT A VALID DATE: ";
+            }
 
             // (6) Patient Email Validation
 

@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="VirginProject.master.cs" Inherits="VirginProject" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head id="Head1" runat="server">
+        <title>Sample Master Page</title>
+        <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <form id="form1" runat="server">
+ 
+             <header>
+               <h2> Virgin Media </h2> 
+            </header>
+ 
+            <article>
+                Your text here
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </article>
+ 
+            <nav>
+                Navigation links here
+            </nav>
+ 
+            <footer>
+                <div id ="FooterText">
+                    © 2021 Virgin Media | All Rights Reserved
+                </div>
+            </footer>
+        </form>
+    </body>
+</html>
