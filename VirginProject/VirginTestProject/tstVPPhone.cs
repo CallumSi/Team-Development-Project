@@ -8,6 +8,7 @@ namespace VirginTestProject
     public class tstVPPhone
     {
 
+        //testing phone properties 
         string Capacity = "128GB";
         string Colour = "Blue";
         string Description = "New iPhone 12 Pro Max";
