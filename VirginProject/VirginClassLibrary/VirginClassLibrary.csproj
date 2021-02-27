@@ -70,6 +70,7 @@
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
+    <Compile Include="clsVPDelivery.cs" />
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
