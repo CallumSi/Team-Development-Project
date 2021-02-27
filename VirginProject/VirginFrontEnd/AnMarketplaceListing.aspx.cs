@@ -12,7 +12,7 @@ namespace VirginFrontEnd
         //variable to store the ListingID from session obect
         Int32 ListingID;
         //variables genereated for insertion
-        Int32 OwnerID = 1;
+        Int32 UserID;
         DateTime CloseDate = DateTime.Now.AddDays(7);
        
         protected void Page_Load(object sender, EventArgs e)
@@ -20,10 +20,9 @@ namespace VirginFrontEnd
 
             //get the number of listings to be procvessed
             ListingID = Convert.ToInt32(Session["ListingID"]);
+            UserID = Convert.ToInt32(Session["UserID"]);
             if (IsPostBack == false)
-            {
-                //if not a new record 
-                if (ListingID != -1)
+            {  
                 {
                     //display the requeted record
                     DisplayData();
@@ -33,7 +32,7 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceListingList.aspx");
+            Response.Redirect("MarketplaceHome.aspx");
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
@@ -91,12 +90,12 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Price = Convert.ToDecimal(txtPrice.Text);
                 SomeListing.ThisListing.Img = txtImg.Text;
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
-                SomeListing.ThisListing.OwnerID = OwnerID;
+                SomeListing.ThisListing.OwnerID = UserID;
                 SomeListing.ThisListing.CloseDate = CloseDate;
                 //then update the record
                 SomeListing.UpdateListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceListingList.aspx");
+                Response.Redirect("MarketplaceHome.aspx");
 
             }
             else
@@ -127,12 +126,12 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Price = Convert.ToDecimal(txtPrice.Text);
                 SomeListing.ThisListing.Img = txtImg.Text;
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
-                SomeListing.ThisListing.OwnerID = OwnerID;
+                SomeListing.ThisListing.OwnerID = UserID;
                 SomeListing.ThisListing.CloseDate = CloseDate;
                 //then add the record
                 SomeListing.AddListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceListingList.aspx");
+                Response.Redirect("MarketplaceHome.aspx");
 
             }
             else

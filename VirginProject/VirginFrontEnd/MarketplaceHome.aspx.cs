@@ -10,16 +10,32 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceHome : System.Web.UI.Page
     {
-        int UserID;
+        Int32 UserID;
+        public int firstid;
+        public int secondid;
+        public int thirdid;
+        public int fourthid;
+        public int fithid;
+        public int sixthid;
+        public int seventhid;
+        public int eighthid;
+
         protected void Page_Load(object sender, EventArgs e)
         {
            
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
-            //display the User data
-            DisplayUserData();
-            //display the Listings
-            DisplayListings();
+           
+            if (IsPostBack == false)
+            {
+                {
+                    
+                    //display the User data
+                    DisplayUserData();
+                    //display the Listings
+                    DisplayListings();
+                }
+            }
         }
 
         void DisplayUserData()
@@ -34,7 +50,7 @@ namespace VirginFrontEnd
 
         }
 
-        void DisplayListings()
+       public void DisplayListings()
         {
             //create an instance of the user collection class
             clsMarketplaceListingCollection SomeListing = new clsMarketplaceListingCollection();
@@ -51,6 +67,7 @@ namespace VirginFrontEnd
                         listingname1.Text = SomeListing.ThisListing.ListingName;
                         listingprice1.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage1.ImageUrl = SomeListing.ThisListing.Img;
+                        firstid = SomeListing.ThisListing.ListingID;
                         found1 = true;
                     }
                     else
@@ -79,6 +96,7 @@ namespace VirginFrontEnd
                         listingname2.Text = SomeListing.ThisListing.ListingName;
                         listingprice2.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage2.ImageUrl = SomeListing.ThisListing.Img;
+                        secondid = SomeListing.ThisListing.ListingID;
                         found2 = true;
                     }
                     else
@@ -107,6 +125,7 @@ namespace VirginFrontEnd
                         listingname3.Text = SomeListing.ThisListing.ListingName;
                         listingprice3.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage3.ImageUrl = SomeListing.ThisListing.Img;
+                        thirdid = SomeListing.ThisListing.ListingID;
                         found3 = true;
                     }
                     else
@@ -135,6 +154,7 @@ namespace VirginFrontEnd
                         listingname4.Text = SomeListing.ThisListing.ListingName;
                         listingprice4.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage4.ImageUrl = SomeListing.ThisListing.Img;
+                        fourthid = SomeListing.ThisListing.ListingID;
                         found4 = true;
                     }
                     else
@@ -163,6 +183,7 @@ namespace VirginFrontEnd
                         listingname5.Text = SomeListing.ThisListing.ListingName;
                         listingprice5.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage5.ImageUrl = SomeListing.ThisListing.Img;
+                        fithid = SomeListing.ThisListing.ListingID;
                         found5 = true;
                     }
                     else
@@ -191,6 +212,7 @@ namespace VirginFrontEnd
                         listingname6.Text = SomeListing.ThisListing.ListingName;
                         listingprice6.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage6.ImageUrl = SomeListing.ThisListing.Img;
+                        sixthid = SomeListing.ThisListing.ListingID;
                         found6 = true;
                     }
                     else
@@ -219,6 +241,7 @@ namespace VirginFrontEnd
                         listingname7.Text = SomeListing.ThisListing.ListingName;
                         listingprice7.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage7.ImageUrl = SomeListing.ThisListing.Img;
+                        seventhid = SomeListing.ThisListing.ListingID;
                         found7 = true;
                     }
                     else
@@ -247,6 +270,7 @@ namespace VirginFrontEnd
                         listingname8.Text = SomeListing.ThisListing.ListingName;
                         listingprice8.Text = SomeListing.ThisListing.Price.ToString();
                         listingimage8.ImageUrl = SomeListing.ThisListing.Img;
+                        eighthid = SomeListing.ThisListing.ListingID;
                         found8 = true;
                     }
                     else
@@ -296,48 +320,56 @@ namespace VirginFrontEnd
                     listingimage1.ImageUrl = ListingImg;
                     listingname1.Text = ListingName;
                     listingprice1.Text = ListingPrice;
+                    firstid = ListingID;
                 }
                 if (Index == 1)
                 {
                     listingimage2.ImageUrl = ListingImg;
                     listingname2.Text = ListingName;
                     listingprice2.Text = ListingPrice;
+                    secondid = ListingID;
                 }
                 if (Index == 2)
                 {
                     listingimage3.ImageUrl = ListingImg;
                     listingname3.Text = ListingName;
                     listingprice3.Text = ListingPrice;
+                    thirdid = ListingID;
                 }
                 if (Index == 3)
                 {
                     listingimage4.ImageUrl = ListingImg;
                     listingname4.Text = ListingName;
                     listingprice4.Text = ListingPrice;
+                    fourthid = ListingID;
                 }
                 if (Index == 4)
                 {
                     listingimage5.ImageUrl = ListingImg;
                     listingname5.Text = ListingName;
                     listingprice5.Text = ListingPrice;
+                    fithid = ListingID;
                 }
                 if (Index == 5)
                 {
                     listingimage6.ImageUrl = ListingImg;
                     listingname6.Text = ListingName;
                     listingprice6.Text = ListingPrice;
+                    sixthid = ListingID;
                 }
                 if (Index == 6)
                 {
                     listingimage7.ImageUrl = ListingImg;
                     listingname7.Text = ListingName;
                     listingprice7.Text = ListingPrice;
+                    seventhid = ListingID;
                 }
                 if (Index == 7)
                 {
                     listingimage8.ImageUrl = ListingImg;
                     listingname8.Text = ListingName;
                     listingprice8.Text = ListingPrice;
+                    eighthid = ListingID;
                 }
                 Index++;
             }
@@ -348,6 +380,90 @@ namespace VirginFrontEnd
         protected void btnApplySearch_Click(object sender, EventArgs e)
         {
             FilterListing(txtSearch.Text);
+        }
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("AnMarketplaceListing.aspx"); 
+        }
+
+        
+        protected void listingbutton1_Click(object sender, EventArgs e)
+        {
+
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = firstid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton2_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = secondid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton3_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = thirdid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton4_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = fourthid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+
+        }
+
+        protected void listingbutton5_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = fithid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton6_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = sixthid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton7_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = seventhid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
+        }
+
+        protected void listingbutton8_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["ListingID"] = eighthid;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceListingViewer.aspx");
+
         }
     }
 }
