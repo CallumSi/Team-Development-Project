@@ -78,11 +78,14 @@
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
+    <Content Include="MarketplaceHome.aspx" />
     <Content Include="MarketplaceListingDelete.aspx" />
     <Content Include="MarketplaceListingList.aspx" />
+    <Content Include="MarketplaceListingViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
     <Content Include="VirginProject.css" />
+    <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
     <Content Include="Web.config" />
@@ -159,6 +162,13 @@
     <Compile Include="ForumUserViewer.aspx.designer.cs">
       <DependentUpon>ForumUserViewer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MarketplaceHome.aspx.cs">
+      <DependentUpon>MarketplaceHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceHome.aspx.designer.cs">
+      <DependentUpon>MarketplaceHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MarketplaceListingDelete.aspx.cs">
       <DependentUpon>MarketplaceListingDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -173,6 +183,13 @@
     <Compile Include="MarketplaceListingList.aspx.designer.cs">
       <DependentUpon>MarketplaceListingList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MarketplaceListingViewer.aspx.cs">
+      <DependentUpon>MarketplaceListingViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceListingViewer.aspx.designer.cs">
+      <DependentUpon>MarketplaceListingViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MarketplaceUserDelete.aspx.cs">
       <DependentUpon>MarketplaceUserDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,6 +203,13 @@
     </Compile>
     <Compile Include="MarketplaceUserList.aspx.designer.cs">
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceWelcome.aspx.cs">
+      <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceWelcome.aspx.designer.cs">
+      <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VirginProject.Master.cs">
