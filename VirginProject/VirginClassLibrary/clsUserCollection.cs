@@ -94,5 +94,29 @@ namespace VirginClassLibrary
 
         }
 
+        public int Add()
+        {
+            //add a new record to the database based on the values of the mthisAdmin
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramaeters for the stored procedure
+            DB.AddParameter("@UserName", mThisUser.UserName);
+            DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVMUser_Insert");
+        }
+
+        public void Update()
+        {
+            //update an existing record based on the values of thisUser
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored procdure 
+            DB.AddParameter("UserID", mThisUser.UserID);
+            DB.AddParameter("@UserName", mThisUser.UserName);
+            DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVMUser_Update");
+        }
     }
 }
