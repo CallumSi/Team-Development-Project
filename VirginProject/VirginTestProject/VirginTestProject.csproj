@@ -66,8 +66,10 @@
     <Compile Include="tstUserCollection.cs" />
     <Compile Include="tstVCHCar.cs" />
     <Compile Include="tstVCHCustomer.cs" />
+    <Compile Include="tstVCHCustomerCollection.cs" />
     <Compile Include="tstVCHHire.cs" />
     <Compile Include="tstVCHStaff.cs" />
+    <Compile Include="tstVCHStaffCollection.cs" />
     <Compile Include="tstVHCAppointment.cs" />
     <Compile Include="tstVHCAppointmentCollection.cs" />
     <Compile Include="tstVHCHospital.cs" />
