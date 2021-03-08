@@ -138,11 +138,11 @@ namespace VirginClassLibrary
             {
                 //record the error
                 Error = Error + "THE DATE IS NOT A VALID DATE";
-                
+
             }
 
 
-            return "";
+            return Error;
         }
     }
 }

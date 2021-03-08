@@ -69,7 +69,7 @@ namespace VirginTestProject
             AVPOrder.Delivery_Date = SomeDeliveryDate;
             //check to see the data in the variable and property are the same
             Assert.AreEqual(AVPOrder.Delivery_Date, SomeDeliveryDate);
-            
+
         }
 
         //testing the valid methid
@@ -88,185 +88,185 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
         }
 
-        ////***TESTING PROPERTIES***/
+        //***TESTING PROPERTIES***/
 
-        ///// <summary>
-        ///// //***TESTING PROPERTIES DELIVERY DATE***//
-        ///// </summary>
-        ///// 
+        /// <summary>
+        /// //***TESTING PROPERTIES DELIVERY DATE***//
+        /// </summary>
+        /// 
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMinLessOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(-101);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMinLessOne()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(-101);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreNotEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMin()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(-100);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMin()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(-100);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMinPlusOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(-99);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMinPlusOne()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(-99);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMaxLessOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(99);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMaxLessOne()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(99);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMax()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(100);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMax()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(100);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMaxPlusOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(101);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMaxPlusOne()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(101);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreNotEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateMid()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateMid()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void DeliveryDateExtremeMax()
-        //{
-        //    //create an instance of a class
-        //    clsVPOrder AVPOrder = new clsVPOrder();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    DateTime SomeDeliveryDate;
-        //    //set the date to todays date
-        //    SomeDeliveryDate = DateTime.Now.Date;
-        //    //create some test data to pass the valid method
-        //    SomeDeliveryDate = SomeDeliveryDate.AddYears(200);
-        //    //convert the date variable to string
-        //    string Delivery_Date = SomeDeliveryDate.ToString();
-        //    //invoke the method
-        //    Error = AVPOrder.Valid(Delivery_Date);
-        //    //test to see that results is OK, e.g no error message is returned 
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void DeliveryDateExtremeMax()
+        {
+            //create an instance of a class
+            clsVPOrder AVPOrder = new clsVPOrder();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            DateTime SomeDeliveryDate;
+            //set the date to todays date
+            SomeDeliveryDate = DateTime.Now.Date;
+            //create some test data to pass the valid method
+            SomeDeliveryDate = SomeDeliveryDate.AddYears(200);
+            //convert the date variable to string
+            string Delivery_Date = SomeDeliveryDate.ToString();
+            //invoke the method
+            Error = AVPOrder.Valid(Delivery_Date);
+            //test to see that results is OK, e.g no error message is returned 
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
