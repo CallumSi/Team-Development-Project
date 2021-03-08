@@ -71,11 +71,14 @@
     <Compile Include="clsVMCustomerCollection.cs" />
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
+    <Compile Include="clsVPCart.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPDelivery.cs" />
     <Compile Include="clsVPOrder.cs" />
+    <Compile Include="clsVPPayment.cs" />
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
+    <Compile Include="clsVPStock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
