@@ -59,8 +59,10 @@
     <Compile Include="clsUserCollection.cs" />
     <Compile Include="clsVCHCar.cs" />
     <Compile Include="clsVCHCustomer.cs" />
+    <Compile Include="clsVCHCustomerCollection.cs" />
     <Compile Include="clsVCHHire.cs" />
     <Compile Include="clsVCHStaff.cs" />
+    <Compile Include="clsVCHStaffCollection.cs" />
     <Compile Include="clsVHCAppointment.cs" />
     <Compile Include="clsVHCHospital.cs" />
     <Compile Include="clsVHCStaff.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPDelivery.cs" />
+    <Compile Include="clsVPOrder.cs" />
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
