@@ -22,6 +22,9 @@
         <asp:Label ID="lblPhoneNumber" runat="server" style="z-index: 1; left: 49px; top: 219px; position: absolute" Text="Phone Number"></asp:Label>
         <asp:Label ID="lblEmailAddress" runat="server" style="z-index: 1; left: 48px; top: 274px; position: absolute" Text="Email Address"></asp:Label>
         <asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 95px; top: 331px; position: absolute" Text="Password"></asp:Label>
+        <asp:Label ID="lblUserName" runat="server" style="z-index: 1; left: 85px; top: 50px; position: absolute" Text="Username"></asp:Label>
+        <asp:Label ID="lblUserError" runat="server" style="z-index: 1; left: 143px; top: 494px; position: absolute" Text="[Error]"></asp:Label>
+        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 205px; top: 49px; position: absolute"></asp:TextBox>
     </form>
 </body>
 </html>
