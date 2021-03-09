@@ -35,6 +35,12 @@ namespace VirginClassLibrary
         {
             //string variable to store the error message
             string Error = "";
+            //if the car make length is more than blank/null
+            if (CarMake.Length == 0)
+            {
+                //return the following error message
+                return "The Car Make may not be left empty. Please enter a Car Make.";
+            }
             //if the car make length is more than 30 characters
             if (CarMake.Length > 30)
             {
@@ -49,6 +55,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car model length is more than blank/null
+            if (CarModel.Length == 0)
+            {
+                //return the following error message
+                return "The Car Model may not be left empty. Please enter a Car Model.";
+            }
             //if the car model length is more than 30 characters
             if (CarModel.Length > 30)
             {
@@ -63,6 +75,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car body length is more than blank/null
+            if (CarBody.Length == 0)
+            {
+                //return the following error message
+                return "The body type may not be left empty. Please enter a body type.";
+            }
             //if the car body length is more than 20 characters
             if (CarBody.Length > 20)
             {
@@ -77,6 +95,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the car colour length is more than blank/null
+            if (CarColour.Length == 0)
+            {
+                //return the following error message
+                return "The colour may not be left empty. Please enter a colour.";
+            }
             //if the car colour length is more than 25 characters
             if (CarColour.Length > 25)
             {
@@ -91,6 +115,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the fuel type length is more than blank/null
+            if (CarFuel.Length == 0)
+            {
+                //return the following error message
+                return "The fuel type may not be left empty. Please enter a fuel type.";
+            }
             //if the car fuel type length is more than 10 characters
             if (CarFuel.Length > 10)
             {
@@ -105,6 +135,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the registration number length is more than blank/null
+            if (CarRegistration.Length == 0)
+            {
+                //return the following error message
+                return "The registration number may not be left empty. Please enter a registration number.";
+            }
             //if the car registration length is more than 11 characters
             if (CarRegistration.Length > 11)
             {
