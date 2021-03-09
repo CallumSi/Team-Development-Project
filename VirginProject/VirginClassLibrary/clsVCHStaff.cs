@@ -36,6 +36,12 @@ namespace VirginClassLibrary
         {
             //string variable to store the error message
             string Error = "";
+            //if the staffs first name length is blank
+            if (StaffFirstName.Length == 0)
+            {
+                //return the following error message
+                return "The  first name may not be blank. Please enter a First Name.";
+            }
             //if the staff first name length is more than 30 characters
             if (StaffFirstName.Length > 30)
             {
@@ -50,6 +56,12 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the staff last name length is blank
+            if (StaffLastName.Length == 0)
+            {
+                //return the following error message
+                return "The  last name may not be blank. Please enter a Last Name.";
+            }
             //if the staff last name length is more than 30 characters
             if (StaffLastName.Length > 30)
             {
@@ -64,6 +76,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the staff address length is blank
+            if (StaffAddress.Length == 0)
+            {
+                //return the following error message
+                return "The address may not be blank. Please enter an address.";
+            }
             //if the staff address length is more than 50 characters
             if (StaffAddress.Length > 50)
             {
@@ -78,6 +96,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the StaffPostCode length is blank
+            if (StaffPostCode.Length == 0)
+            {
+                //return the following error message
+                return "The postcode may not be blank. Please enter a postcode.";
+            }
             //if the StaffPostCode length is more than 10 characters
             if (StaffPostCode.Length > 10)
             {
@@ -92,6 +116,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the username length is blank
+            if (StaffUsername.Length == 0)
+            {
+                //return the following error message
+                return "The Username may not be blank. Please enter a Username.";
+            }
             //if the username length is more than 30 characters
             if (StaffUsername.Length > 30)
             {
@@ -106,6 +136,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the StaffEmail length is blank
+            if (StaffEmail.Length == 0)
+            {
+                //return the following error message
+                return "The Email address may not be blank. Please enter an Email address.";
+            }
             //if the StaffEmail length is more than 50 characters
             if (StaffEmail.Length > 50)
             {
@@ -120,6 +156,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the StaffPassword length is blank
+            if (StaffPassword.Length == 0)
+            {
+                //return the following error message
+                return "The Password may not be blank. Please enter a Password.";
+            }
             //if the StaffPassword length is more than 20 characters
             if (StaffPassword.Length > 20)
             {
@@ -134,6 +176,12 @@ namespace VirginClassLibrary
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
+            //if the StaffPhoneNumber length is blank
+            if (StaffPhoneNumber.Length == 0)
+            {
+                //return the following error message
+                return "The Phone number may not be blank. Please enter a Phone number.";
+            }
             //if the StaffPhoneNumber length is more than 12 characters
             if (StaffPhoneNumber.Length > 12)
             {
