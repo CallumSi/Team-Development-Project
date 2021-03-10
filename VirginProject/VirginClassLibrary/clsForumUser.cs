@@ -11,14 +11,15 @@ namespace VirginClassLibrary
         private string mUserFirstName;
         //pribate memeber for the User last nane
         private string mUserLastName;
-        //pribate memeber for the User phone number
-        private string mUserPhoneNumber;
         //pribate memeber for the User email
         private string mUserEmail;
         //pribate memeber for the User password
         private string mUserPassword;
+        //pribate memeber for the User phone number
+        private string mUserPhoneNumber;
         //pribate memeber for the User username
         private string mUserusername;
+
         //public property for user ID
         public int UserID
         {
@@ -61,20 +62,7 @@ namespace VirginClassLibrary
                 mUserLastName = value;
             }
         }
-        //public property for user phone number
-        public string UserPhoneNumber
-        {
-            get
-            {
-                //return the private data
-                return mUserPhoneNumber;
-            }
-            set
-            {
-                //set the value of the private data member
-                mUserPhoneNumber = value;
-            }
-        }
+
         //public property for user email address
         public string UserEmail
         {
@@ -101,6 +89,20 @@ namespace VirginClassLibrary
             {
                 //set the value of the private data member
                 mUserPassword = value;
+            }
+        }
+        //public property for user phone number
+        public string UserPhoneNumber
+        {
+            get
+            {
+                //return the private data
+                return mUserPhoneNumber;
+            }
+            set
+            {
+                //set the value of the private data member
+                mUserPhoneNumber = value;
             }
         }
         //public property for User username
@@ -139,9 +141,9 @@ namespace VirginClassLibrary
                 mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
                 mUserFirstName = Convert.ToString(DB.DataTable.Rows[0]["UserFirstName"]);
                 mUserLastName = Convert.ToString(DB.DataTable.Rows[0]["UserLastName"]);
-                mUserPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["UserPhoneNumber"]);
                 mUserEmail = Convert.ToString(DB.DataTable.Rows[0]["UserEmailAddress"]);
                 mUserPassword = Convert.ToString(DB.DataTable.Rows[0]["UserPassword"]);
+                mUserPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["UserPhoneNumber"]);
                 mUserusername = Convert.ToString(DB.DataTable.Rows[0]["Userusername"]);
                 //return that everything worked ok
                 return true;
@@ -188,33 +190,20 @@ namespace VirginClassLibrary
                 Error = Error + "The Last name can be 2 letter also it must be less than 15 letters : ";
             }
 
-            //if the Phone number is blank
-            if (UserPhoneNumber.Length == 0)
-            {
-                //record the error
-                Error = Error + "The phone number may not be blank : ";
-            }
-            //if the Phone number is more than 11
-            if (UserPhoneNumber.Length != 11)
-            {
-                //record the error
-                Error = Error + "The phone number has to be 11 numbers. ";
-            }
-
-            //if the email is blank
+            //if the Last name is blank
             if (UserEmail.Length == 0)
             {
                 //record the error
                 Error = Error + "The Email address may not be blank : ";
             }
             //if the email is more than 26 
-            if (UserEmail.Length > 26)
+            if (UserEmail.Length >= 25)
             {
                 //record the error
-                Error = Error + "The Email address has to 26 numbers ";
+                Error = Error + "The Email address has to be less than 25.  ";
             }
 
-            //if the password is blank
+            //if the Last name is blank
             if (UserPassword.Length == 0)
             {
                 //record the error
@@ -227,7 +216,20 @@ namespace VirginClassLibrary
                 Error = Error + "The password has to be less than 16 characters ";
             }
 
-            //if the Username is blank
+            //if the UserName is blank
+            if (UserPhoneNumber.Length == 0)
+            {
+                //record the error
+                Error = Error + "The phone number may not be blank : ";
+            }
+            //if the FirstName is more than 11
+            if (UserPhoneNumber.Length != 11)
+            {
+                //record the error
+                Error = Error + "The phone number has to be 11 numbers. ";
+            }
+
+            //if the Last name is blank
             if (Userusername.Length == 0)
             {
                 //record the error

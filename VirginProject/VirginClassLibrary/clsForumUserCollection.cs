@@ -62,27 +62,6 @@ namespace VirginClassLibrary
             DB.Execute("sproc_tblForumUser_SelectAll");
             //populate the array list with the data table
             PopulateArray(DB);
-
-            ////get the count of records
-            //RecordCount = DB.Count;
-            ////while there are records to process
-            //while (Index < RecordCount)
-            //{
-            //    //create a blank user
-            //    clsForumUser AUser = new clsForumUser();
-            //    //read in the fields from the current record
-            //    AUser.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserID"]);
-            //    AUser.UserFirstName = Convert.ToString(DB.DataTable.Rows[Index]["UserFirstName"]);
-            //    AUser.UserLastName = Convert.ToString(DB.DataTable.Rows[Index]["UserLastName"]);
-            //    AUser.UserPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["UserPhoneNumber"]);
-            //    AUser.UserEmail = Convert.ToString(DB.DataTable.Rows[Index]["UserEmailAddress"]);
-            //    AUser.UserPassword = Convert.ToString(DB.DataTable.Rows[Index]["UserPassword"]);
-            //    AUser.Userusername = Convert.ToString(DB.DataTable.Rows[Index]["Userusername"]);
-            //    //add the record to the private data member
-            //    mUserList.Add(AUser);
-            //    //point at the next record
-            //    Index++;
-            //}
         }
 
         public int Add()
@@ -93,9 +72,9 @@ namespace VirginClassLibrary
             //set the paramaeters for the stored procedure
             DB.AddParameter("@UserFirstName", mThisUser.UserFirstName);
             DB.AddParameter("@UserLastName", mThisUser.UserLastName);
-            DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
             DB.AddParameter("@UserEmailAddress", mThisUser.UserEmail);
             DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
             DB.AddParameter("@Userusername", mThisUser.Userusername);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblForumUser_Insert");
@@ -121,9 +100,9 @@ namespace VirginClassLibrary
             DB.AddParameter("@UserId", mThisUser.UserID);
             DB.AddParameter("@UserFirstName", mThisUser.UserFirstName);
             DB.AddParameter("@UserLastName", mThisUser.UserLastName);
-            DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
             DB.AddParameter("@UserEmailAddress", mThisUser.UserEmail);
             DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
             DB.AddParameter("@Userusername", mThisUser.Userusername);
             //execute the stored procedure
             DB.Execute("sproc_tblForumUser_Update");
@@ -162,9 +141,9 @@ namespace VirginClassLibrary
                 AnUser.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserId"]);
                 AnUser.UserFirstName = Convert.ToString(DB.DataTable.Rows[Index]["UserFirstName"]);
                 AnUser.UserLastName = Convert.ToString(DB.DataTable.Rows[Index]["UserLastName"]);
-                AnUser.UserPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["UserPhoneNumber"]);
                 AnUser.UserEmail = Convert.ToString(DB.DataTable.Rows[Index]["UserEmailAddress"]);
                 AnUser.UserPassword = Convert.ToString(DB.DataTable.Rows[Index]["UserPassword"]);
+                AnUser.UserPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["UserPhoneNumber"]);
                 AnUser.Userusername = Convert.ToString(DB.DataTable.Rows[Index]["Userusername"]);
                 mUserList.Add(AnUser);
                 //point at the next record

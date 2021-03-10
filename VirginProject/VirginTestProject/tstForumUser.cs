@@ -9,9 +9,9 @@ namespace VirginTestProject
     public class tstForumUser
     {
         //create some test data to pass the method
-        string UserFirstname = "Qasim";
+        string UserFirstName = "Qasim";
         string UserLastName = "Mohamed";
-        string UserEmailAddress = "MQ@gmail.com";
+        string UserEmail = "MQ@gmail.com";
         string UserPassword = "QQ55";
         string UserPhoneNumber = "12345678912";
         string Userusername = "QMohamed02";
@@ -268,7 +268,7 @@ namespace VirginTestProject
             //string variable to store any error message
             String Error = "";
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserEmailAddress, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -280,9 +280,9 @@ namespace VirginTestProject
             //String vairable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string UserFirstname = "";
+            string UserFirstName = "";
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserEmailAddress, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -295,9 +295,9 @@ namespace VirginTestProject
             //String vairable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string UserFirstname = "qwertyuioplkjhgf";
+            string UserFirstName = "qwertyuioplkjhgf";
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserEmailAddress, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -310,10 +310,10 @@ namespace VirginTestProject
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string UserFirstname = "";
-            UserFirstname = UserFirstname.PadRight(50, 'a'); //this should fail
+            string UserFirstName = "";
+            UserFirstName = UserFirstName.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserEmailAddress, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -342,7 +342,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserLastName = "a"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -356,7 +356,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserLastName = "aqwsderfgtyhjuik"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -371,7 +371,7 @@ namespace VirginTestProject
             string UserLastName = "";
             UserLastName = UserLastName.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -379,6 +379,7 @@ namespace VirginTestProject
         /// <summary>
         /// Phone number validation
         /// </summary>
+
         [TestMethod]
         public void UserPhoneNumberMinLessOne()
         {
@@ -389,7 +390,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserPhoneNumber = "1234567891"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -403,7 +404,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserPhoneNumber = "123456789123"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -418,7 +419,7 @@ namespace VirginTestProject
             string UserPhoneNumber = "";
             UserPhoneNumber = UserLastName.PadRight(20, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -435,9 +436,10 @@ namespace VirginTestProject
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string UserEmailAddress = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
+            string UserEmail = "";
+            UserEmail = UserEmail.PadRight(26, 'a');
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -449,10 +451,10 @@ namespace VirginTestProject
             //string variable to store any error message
             String Error = "";
             //create some test data to pass to the method
-            string UserEmailAddress = "";
-            UserEmailAddress = UserEmailAddress.PadRight(50, 'a'); //this should fail
+            string UserEmail = "";
+            UserEmail = UserEmail.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -471,7 +473,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserPassword = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -486,7 +488,7 @@ namespace VirginTestProject
             string UserPassword = "";
             UserPassword = UserPassword.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -505,7 +507,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Userusername = "aaa"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
 
         }
@@ -520,7 +522,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Userusername = "qwertyuiopasdfgh"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
 
         }
@@ -535,7 +537,7 @@ namespace VirginTestProject
             string Userusername = "";
             Userusername = Userusername.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstname, UserLastName, UserPhoneNumber, UserEmailAddress, UserPassword, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }

@@ -215,12 +215,12 @@ namespace VirginTestProject
             if (FilteredUsers.Count == 2)
             {
                 //check that the correct number of records are found
-                if (FilteredUsers.UserList[0].UserID != 4)
+                if (FilteredUsers.UserList[0].UserID != 6)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 6
-                if (FilteredUsers.UserList[1].UserID != 6)
+                if (FilteredUsers.UserList[1].UserID != 12)
                 {
                     OK = false;
                 }
