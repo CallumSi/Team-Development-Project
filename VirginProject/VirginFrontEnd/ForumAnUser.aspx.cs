@@ -37,12 +37,12 @@ namespace VirginFrontEnd
             //find the record to update
             UserBook.ThisUser.Find(UserId);
             //display the data for this record
-            txtUsername.Text = UserBook.ThisUser.Userusername;
             txtFirstName.Text = UserBook.ThisUser.UserFirstName;
             txtLastName.Text = UserBook.ThisUser.UserLastName;
-            txtPhoneNumber.Text = UserBook.ThisUser.UserPhoneNumber;
             txtEmailAddress.Text = UserBook.ThisUser.UserEmail;
             txtPassword.Text = UserBook.ThisUser.UserPassword;
+            txtPhoneNumber.Text = UserBook.ThisUser.UserPhoneNumber;
+            txtUsername.Text = UserBook.ThisUser.Userusername;
         }
         //event handler for the ok button
         protected void btnOK_Click(object sender, EventArgs e)
@@ -64,17 +64,17 @@ namespace VirginFrontEnd
             //create an instance of the User book
             clsForumUserCollection UserBook = new clsForumUserCollection();
             //validate the data on the web form
-            String Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtEmailAddress.Text, txtPassword.Text, txtUsername.Text);
+            String Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtEmailAddress.Text, txtPassword.Text, txtPhoneNumber.Text, txtUsername.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
                 //get the data entered by the user
-                UserBook.ThisUser.Userusername = txtUsername.Text;
                 UserBook.ThisUser.UserFirstName = txtFirstName.Text;
                 UserBook.ThisUser.UserLastName = txtLastName.Text;
-                UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
                 UserBook.ThisUser.UserEmail = txtEmailAddress.Text;
                 UserBook.ThisUser.UserPassword = txtPassword.Text;
+                UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
+                UserBook.ThisUser.Userusername = txtUsername.Text;
                 //add the record
                 UserBook.Add();
                 //Redirect back to the main page
@@ -93,19 +93,19 @@ namespace VirginFrontEnd
             //create an instance of the user book
             clsForumUserCollection UserBook = new clsForumUserCollection();
             //validate the data on the web form
-            String Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtEmailAddress.Text, txtPassword.Text, txtUsername.Text);
+            String Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtEmailAddress.Text, txtPassword.Text, txtPhoneNumber.Text, txtUsername.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
                 //find the record to update
                 UserBook.ThisUser.Find(UserId);
                 //get the data entered by the user
-                UserBook.ThisUser.Userusername = txtUsername.Text;
                 UserBook.ThisUser.UserFirstName = txtFirstName.Text;
                 UserBook.ThisUser.UserLastName = txtLastName.Text;
-                UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
                 UserBook.ThisUser.UserEmail = txtEmailAddress.Text;
                 UserBook.ThisUser.UserPassword = txtPassword.Text;
+                UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
+                UserBook.ThisUser.Userusername = txtUsername.Text;
                 //update the record 
                 UserBook.Update();
                 //Redirect back to the user list page

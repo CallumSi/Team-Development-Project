@@ -9,9 +9,9 @@ namespace VirginTestProject
     public class tstForumUser
     {
         //create some test data to pass the method
-        string UserFirstname = "Qasim";
+        string UserFirstName = "Qasim";
         string UserLastName = "Mohamed";
-        string UserEmailAddress = "MQ@gmail.com";
+        string UserEmail = "MQ@gmail.com";
         string UserPassword = "QQ55";
         string UserPhoneNumber = "12345678912";
         string Userusername = "QMohamed02";
@@ -260,7 +260,287 @@ namespace VirginTestProject
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
-       
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserFirstNameLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //String vairable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserFirstName = "";
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see the test is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void UserFirstNameMaxPlusOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //String vairable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserFirstName = "qwertyuioplkjhgf";
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see the test is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void UserFirstNameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserFirstName = "";
+            UserFirstName = UserFirstName.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        /// <summary>
+        /// Validation
+        /// </summary>
+
+        /// <summary>
+        /// First name validation.
+        /// </summary>
+        ///
+
+        /// <summary>
+        /// Last name validation
+        /// </summary>
+
+        [TestMethod]
+        public void UserLastNameMinLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserLastName = "a"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserLastNameMaxPlusOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserLastName = "aqwsderfgtyhjuik"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserLastNameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserLastName = "";
+            UserLastName = UserLastName.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Phone number validation
+        /// </summary>
+
+        [TestMethod]
+        public void UserPhoneNumberMinLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserPhoneNumber = "1234567891"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserPhoneNumberMinPlusOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserPhoneNumber = "123456789123"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserPhoneNumberExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserPhoneNumber = "";
+            UserPhoneNumber = UserLastName.PadRight(20, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Email Address
+        /// </summary>
+
+        [TestMethod]
+        public void UserEmailAddressMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserEmail = "";
+            UserEmail = UserEmail.PadRight(26, 'a');
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserEmailAddressExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserEmail = "";
+            UserEmail = UserEmail.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// Password
+        /// </summary>
+
+        [TestMethod]
+        public void UserPasswordMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserPassword = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void UserPasswordExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string UserPassword = "";
+            UserPassword = UserPassword.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// User name
+        /// </summary>
+
+        [TestMethod]
+        public void UserusernameMinLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Userusername = "aaa"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+
+        }
+
+        [TestMethod]
+        public void UserusernameMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Userusername = "qwertyuiopasdfgh"; //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+
+        }
+        [TestMethod]
+        public void UserusernameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumUser AnUser = new clsForumUser();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Userusername = "";
+            Userusername = Userusername.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
 
     }
 }
