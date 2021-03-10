@@ -223,7 +223,7 @@ namespace VirginClassLibrary
                 Error = Error + "The phone number may not be blank : ";
             }
             //if the FirstName is more than 11
-            if (UserPhoneNumber.Length > 11)
+            if (UserPhoneNumber.Length != 11)
             {
                 //record the error
                 Error = Error + "The phone number has to be 11 numbers. ";
