@@ -120,6 +120,19 @@ namespace VirginClassLibrary
             DB.Execute("sproc_tblMarketplaceListing_Update");
         }
 
+        public void FilterByUserID(string UserID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@UserID", UserID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByUserID");
+            //populate the array with the found data
+            PopulateArray(DB);
+        }
+
         public void FilterByListingName(string ListingName)
         {
             //add a new record to the database based on private data variables

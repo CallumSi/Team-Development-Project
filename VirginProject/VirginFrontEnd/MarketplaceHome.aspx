@@ -13,7 +13,7 @@
         <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1; left: 177px; top: 90px; position: absolute; margin-top: 9px; width: 169px;"></asp:TextBox>
         <asp:Button ID="btnClickHere" runat="server" style="z-index: 1; left: 252px; top: 132px; position: absolute; margin-top: 1px;" Text="Click Here" OnClick="btnClickHere_Click" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 122px; top: 98px; position: absolute" Text="Search"></asp:Label>
-        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 121px; top: 133px; position: absolute; right: 767px" Text="Want to sell a item"></asp:Label>
+        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 121px; top: 133px; position: absolute; right: 865px" Text="Want to sell a item"></asp:Label>
         <asp:Label ID="listingname1" runat="server" style="z-index: 1; left: 123px; top: 357px; position: absolute"></asp:Label>
         <asp:Label ID="listingprice1" runat="server" style="z-index: 1; left: 124px; top: 383px; position: absolute; right: 799px; height: 19px;"></asp:Label>
         <asp:Image ID="listingimage5" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 118px; top: 426px; position: absolute; height: 125px; width: 177px" />
@@ -34,7 +34,7 @@
         <asp:Image ID="listingimage1" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 123px; top: 213px; position: absolute; height: 126px; width: 170px; margin-top: 1px;" />
         <asp:Button ID="listingbutton2" runat="server" style="z-index: 1; left: 459px; top: 371px; position: absolute" Text="View" OnClick="listingbutton2_Click" />
         <asp:Label ID="listingprice5" runat="server" style="z-index: 1; left: 118px; top: 610px; position: absolute; right: 830px;"></asp:Label>
-        <asp:Image ID="listingimage6" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 331px; top: 431px; position: absolute; height: 122px; width: 175px; right: 639px; margin-top: 0px;" />
+        <asp:Image ID="listingimage6" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 331px; top: 432px; position: absolute; height: 122px; width: 175px; right: 608px; margin-top: 0px;" />
         <asp:Button ID="listingbutton1" runat="server" style="z-index: 1; left: 250px; top: 369px; position: absolute" Text="View" OnClick="listingbutton1_Click"  AutoPostBack="false"/>
         <asp:Label ID="listingname5" runat="server" style="z-index: 1; left: 120px; top: 577px; position: absolute"></asp:Label>
         <asp:Label ID="listingprice7" runat="server" style="z-index: 1; left: 537px; top: 602px; position: absolute"></asp:Label>
@@ -51,6 +51,8 @@
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 770px; top: 57px; position: absolute" Text="Logged in as:"></asp:Label>
         
         <asp:Button ID="btnApplySearch" runat="server" OnClick="btnApplySearch_Click" style="z-index: 1; left: 363px; top: 99px; position: absolute" Text="Go" />
+        
+        <asp:Button ID="btnMyAccount" runat="server" OnClick="btnMyAccount_Click" style="z-index: 1; left: 769px; top: 112px; position: absolute" Text="Your Account" />
         
     </form>
 </body>

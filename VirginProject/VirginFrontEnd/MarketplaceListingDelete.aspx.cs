@@ -16,7 +16,7 @@ namespace VirginFrontEnd
         {
             //retrieve the id from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
-            lblLoad.Text = "Are you sure you want to delete usewr with the ID:" + ListingID;
+            lblLoad.Text = "Are you sure you want to delete this listing  with the ID:" + ListingID;
         }
 
         protected void btnYes_Click(object sender, EventArgs e)

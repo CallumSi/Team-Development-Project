@@ -86,7 +86,10 @@
     <Content Include="MarketplaceListingList.aspx" />
     <Content Include="MarketplaceListingViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
+    <Content Include="MarketplaceUserFavoriteListings.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
+    <Content Include="MarketplaceUserProfile.aspx" />
+    <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginUserList.aspx" />
@@ -222,12 +225,33 @@
     <Compile Include="MarketplaceUserDelete.aspx.designer.cs">
       <DependentUpon>MarketplaceUserDelete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MarketplaceUserFavoriteListings.aspx.cs">
+      <DependentUpon>MarketplaceUserFavoriteListings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceUserFavoriteListings.aspx.designer.cs">
+      <DependentUpon>MarketplaceUserFavoriteListings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MarketplaceUserList.aspx.cs">
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MarketplaceUserList.aspx.designer.cs">
       <DependentUpon>MarketplaceUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceUserProfile.aspx.cs">
+      <DependentUpon>MarketplaceUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceUserProfile.aspx.designer.cs">
+      <DependentUpon>MarketplaceUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketPlaceUserYourListings.aspx.cs">
+      <DependentUpon>MarketPlaceUserYourListings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketPlaceUserYourListings.aspx.designer.cs">
+      <DependentUpon>MarketPlaceUserYourListings.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarketplaceWelcome.aspx.cs">
       <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>

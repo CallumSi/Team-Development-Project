@@ -32,7 +32,7 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
