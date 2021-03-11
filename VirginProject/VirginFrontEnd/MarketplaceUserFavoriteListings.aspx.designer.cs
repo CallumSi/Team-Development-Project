@@ -96,22 +96,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.ListBox lstYourListings;
 
         /// <summary>
-        /// btnEdit control.
+        /// btnRemoveFavorite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
-
-        /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Button btnRemoveFavorite;
 
         /// <summary>
         /// lblError control.

@@ -156,7 +156,7 @@ namespace VirginClassLibrary
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
             //populate the array with the found data
-            PopulateArray(DB);
+            PopulateFavorites(DB);
         }
 
         public void FilterByListingName(string ListingName)
@@ -210,6 +210,41 @@ namespace VirginClassLibrary
 
         }
 
+        void PopulateFavorites(clsDataConnection DB)
+        {
+            //populates array list based on database in paramater
+            //index vairables
+            Int32 Index = 0;
+            //vare to store the record count
+            Int32 RecordCount;
+            //get the record count
+            RecordCount = DB.Count;
+            
+            //loop through all the records
+            while (Index < RecordCount)
+            {
+                //create a blank record
+                clsMarketplaceListing AnListing = new clsMarketplaceListing();
+                //read the data and add the record
+                AnListing.ListingID = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingID"]);
+                AnListing.Category = Convert.ToString(DB.DataTable.Rows[Index]["Category"]);
+                AnListing.CloseDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["CloseDate"]);
+                AnListing.DeliveryType = Convert.ToString(DB.DataTable.Rows[Index]["DeliveryType"]);
+                AnListing.Description = Convert.ToString(DB.DataTable.Rows[Index]["Description"]);
+                AnListing.Img = Convert.ToString(DB.DataTable.Rows[Index]["Img"]);
+                AnListing.OwnerID = Convert.ToInt32(DB.DataTable.Rows[Index]["OwnerID"]);
+                AnListing.ListingName = Convert.ToString(DB.DataTable.Rows[Index]["ListingName"]);
+                AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
+                AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
+                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                //add the record 
+                mListingList.Add(AnListing);
+                //GO TO NEXT RECORD
+                Index++;
+            }
+
+        }
+
         void GetFavorites(clsDataConnection DB)
         {
             //populates favorite  list based on database in paramater
@@ -222,13 +257,14 @@ namespace VirginClassLibrary
             //get the record count
             RecordCount = DB.Count;
             //loop through all the records
+            //clear the list
+            mListingList = new List<clsMarketplaceListing>();
             while (Index < RecordCount)
             {
             
                 //read the data and add the record
                 ListingID = Convert.ToString(DB.DataTable.Rows[Index]["ListingID"]);
-                //add the record 
-                //FavoriteList.Add(ListingID);       
+                //add the record                
                 FilterByListingID(ListingID);
                 //GO TO NEXT RECORD
                 Index++;

@@ -32,51 +32,7 @@ namespace VirginFrontEnd
             Response.Redirect("AnMarketplaceListing.aspx");
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            //variable to store primary key of field you want to delete
-            Int32 ListingID;
-            //check if a record has been selected from the list
-            if (lstYourListings.SelectedIndex != -1)
-            {
-                //get primary key from selected
-                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
-                //store data in session object so we can pass it to next page
-                Session["ListingID"] = ListingID;
-                //redirect to delete page
-                Response.Redirect("MarketplaceListingDelete.aspx");
-
-            }
-            //if a record hasnt been selected from the listbox 
-            else
-            {
-                //display a error 
-                lblError.Text = "Please select a record to delete from the list ";
-            }
-        }
-
-        protected void btnEdit_Click(object sender, EventArgs e)
-        {
-            //variable to store primary key of field you want to edit
-            Int32 ListingID;
-            //check if a record has been selected from the list
-            if (lstYourListings.SelectedIndex != -1)
-            {
-                //get primary key from selected
-                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
-                //store data in session object so we can pass it to next page
-                Session["ListingID"] = ListingID;
-                //redirect to edit user details page
-                Response.Redirect("AnMarketplaceListing.aspx");
-
-            }
-            //if a record hasnt been selected from the listbox 
-            else
-            {
-                //display a error 
-                lblError.Text = "Please select a record to edit from the list ";
-            }
-        }
+  
 
         void DisplayListing()
         {
@@ -117,6 +73,43 @@ namespace VirginFrontEnd
             }
             return RecordCount;
 
+        }
+
+        protected void btnRemoveFavorite_Click(object sender, EventArgs e)
+        {
+            //variable to store primary key of field you want to delete
+            Int32 ListingID;
+            //check if a record has been selected from the list
+            if (lstYourListings.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                //store data in session object so we can pass it to next page
+                //call the funciton to delete the recrod
+                DeleteFavorite(ListingID, UserID);
+                //then go back to main page
+                Response.Redirect("MarketplaceUserFavoriteListings.aspx");
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error 
+                lblError.Text = "Please select a record to delete from the list ";
+            }
+        }
+
+        private void DeleteFavorite(int ListingID, int UserID)
+        {
+            //function for deleting records
+            
+            //first establish connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the sproc
+            DB.AddParameter("@ListingID", ListingID);
+            DB.AddParameter("@UserID", UserID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblMarketplaceListingFavorite_Delete");
         }
     }
 }
