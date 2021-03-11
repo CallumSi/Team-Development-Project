@@ -98,7 +98,7 @@ namespace VirginFrontEnd
             string ListingName;
             //create instance of collection class
             clsMarketplaceListingCollection ListOfListings = new clsMarketplaceListingCollection();
-            ListOfListings.FilterByUserID(UserIDFilter);
+            ListOfListings.FilterByUserFavorite(UserID.ToString());
             //variables to loop through list
             Int32 RecordCount;
             Int32 Index = 0;

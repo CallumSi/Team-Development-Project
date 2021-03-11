@@ -119,6 +119,19 @@ namespace VirginClassLibrary
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_Update");
         }
+        
+        public void FilterByUserFavorite(string UserID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@UserID", UserID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserFavorites_FilterByUserID");
+            //populate the array with the found data
+            GetFavorites(DB);
+        }
 
         public void FilterByUserID(string UserID)
         {
@@ -129,6 +142,19 @@ namespace VirginClassLibrary
             DB.AddParameter("@UserID", UserID);
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_FilterByUserID");
+            //populate the array with the found data
+            PopulateArray(DB);
+        }
+
+        public void FilterByListingID(string ListingID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("ListingID", ListingID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
             //populate the array with the found data
             PopulateArray(DB);
         }
@@ -181,6 +207,33 @@ namespace VirginClassLibrary
                 //GO TO NEXT RECORD
                 Index++;
             }
+
+        }
+
+        void GetFavorites(clsDataConnection DB)
+        {
+            //populates favorite  list based on database in paramater
+            //index vairables
+            Int32 Index = 0;
+            //vare to store the record count
+            Int32 RecordCount;
+            //Store id of listing
+            string ListingID;
+            //get the record count
+            RecordCount = DB.Count;
+            //loop through all the records
+            while (Index < RecordCount)
+            {
+            
+                //read the data and add the record
+                ListingID = Convert.ToString(DB.DataTable.Rows[Index]["ListingID"]);
+                //add the record 
+                //FavoriteList.Add(ListingID);       
+                FilterByListingID(ListingID);
+                //GO TO NEXT RECORD
+                Index++;
+            }
+
 
         }
     }
