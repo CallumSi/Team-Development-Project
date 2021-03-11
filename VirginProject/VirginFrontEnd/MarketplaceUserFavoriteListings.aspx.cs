@@ -86,7 +86,7 @@ namespace VirginFrontEnd
                 ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
                 //store data in session object so we can pass it to next page
                 //call the funciton to delete the recrod
-                DeleteFavorite(ListingID, UserID);
+                DeleteFavorite(ListingID);
                 //then go back to main page
                 Response.Redirect("MarketplaceUserFavoriteListings.aspx");
 
@@ -99,7 +99,7 @@ namespace VirginFrontEnd
             }
         }
 
-        private void DeleteFavorite(int ListingID, int UserID)
+        private void DeleteFavorite(int ListingID)
         {
             //function for deleting records
             
