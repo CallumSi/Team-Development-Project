@@ -15,7 +15,21 @@
             </header>
  
             <article>
-                 
+                 <ul>
+       
+                      <li>
+                          <asp:Label ID="Label3" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                          <asp:Label ID="lblEmail" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                       </li>
+                          <li><asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
+                              <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
+                              <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" Height="35px" />
+                          </li>
+                     
+                    
+                     
+                 </ul>
+
                    
                     
                     <asp:Image ID="imgListing" runat="server" style="z-index: 1;position:absolute;right:10px; top:100px; height: 200px; width: 303px" />

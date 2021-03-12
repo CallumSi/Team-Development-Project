@@ -22,6 +22,7 @@
                        </li>
                        <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                            <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
+                           <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" />
                        </li>
                                       
                         <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Marketplace Listing Details"></asp:Label>
@@ -69,9 +70,9 @@
                     </li>
                    <li>
                         
-                        <asp:Button ID="btnOk" runat="server" style="z-index: 1; " Text="Ok" OnClick="btnOk_Click" />
-                        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; " Text="Cancel" OnClick="btnCancel_Click" />
-                       <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
+                        <asp:Button ID="btnOk" CssClass="navButton" runat="server" style="z-index: 1; " Text="Ok" OnClick="btnOk_Click" />
+                        <asp:Button ID="btnCancel" CssClass="navButton" runat="server" style="z-index: 1; " Text="Cancel" OnClick="btnCancel_Click" />
+                       <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label>
                    </li>
                 </ul>
                                  

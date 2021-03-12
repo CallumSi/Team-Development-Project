@@ -24,6 +24,7 @@
                        </li>
                        <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                            <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
+                           <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" Height="35px" />
                        </li>
                                       
                     
@@ -36,8 +37,9 @@
                 <br />
            <asp:ListBox ID="lstYourListings" runat="server" style="z-index: 1; height: 184px; width: 440px; margin-top: 0px"></asp:ListBox>
                 <br />
-           <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" style="z-index: 1;" Text="Edit" />
-           <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" style="z-index: 1;" Text="Delete" />
+           <asp:Button ID="btnEdit"  CssClass="navButton" runat="server" OnClick="btnEdit_Click" style="z-index: 1;" Text="Edit" />
+           <asp:Button ID="btnDelete" CssClass="navButton" runat="server" OnClick="btnDelete_Click" style="z-index: 1;" Text="Delete" />
+            <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
            <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
             </article>
  

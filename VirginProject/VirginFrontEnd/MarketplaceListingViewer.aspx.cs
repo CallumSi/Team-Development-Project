@@ -72,6 +72,12 @@ namespace VirginFrontEnd
             lblSellerEmail.Text = SomeUser.ThisUser.Email;
         }
 
-
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceHome.aspx");
+        }
     }
 }

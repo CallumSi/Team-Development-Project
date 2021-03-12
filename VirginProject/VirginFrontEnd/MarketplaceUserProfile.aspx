@@ -22,6 +22,7 @@
                        </li>
                           <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                               <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
+                              <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" Height="35px" />
                           </li>
                                       
                      
@@ -32,6 +33,7 @@
                          <br />
                       <asp:Button ID="btnFavoritedListings" runat="server" CssClass="navButton" OnClick="btnFavoritedListings_Click" style="z-index: 1;" Text="Favorited Listings" />
                       <asp:Button ID="btnYourListings" runat="server" CssClass="navButton" OnClick="btnYourListings_Click" style="z-index: 1;" Text="Your Listings" />
+                      <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
         
             </article>
  
