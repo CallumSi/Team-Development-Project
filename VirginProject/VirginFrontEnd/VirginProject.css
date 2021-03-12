@@ -34,6 +34,7 @@ article {
     top: 10%;
     left: 20%;
     color: black;
+  
 }
 
 footer {
@@ -49,4 +50,57 @@ footer {
     position: fixed;
     left: 45%; 
     top: 95%;
+}
+
+
+.Button, .navButton {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 1em;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:bold;
+}
+
+ul {
+    display:flex;
+    list-style:none;
+    justify-content:space-between;
+    padding:0px;
+}
+.navButton {
+    
+    padding: 10px;
+    margin-top: 3px;
+    height: 35px;
+    font-size: 13px;
+    color: white;
+}
+
+.Listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    margin: 30px;
+    grid-auto-flow: dense;
+    overflow: scroll;
+    height: 70vh;
+}
+.Listings li {
+    
+}
+    
+.Listings li img {
+        width: 100%;
+        height: 50%;
+ }
+
+.AnListing {
+    display: flex;
+    flex-direction: column;
+    padding-top:50px;
+}
+.AnListing li{
+    padding :10px;
 }

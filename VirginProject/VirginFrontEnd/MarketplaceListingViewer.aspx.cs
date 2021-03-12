@@ -16,7 +16,15 @@ namespace VirginFrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of  the listing to be procvessed
-            ListingID = Convert.ToInt32(Session["ListingID"]);
+            try
+            {
+                ListingID = Convert.ToInt32(Request.QueryString["ListingID"]);
+            }
+            catch
+            {
+                ListingID = Convert.ToInt32(Session["ListingID"]);
+            }
+           
             UserID = Convert.ToInt32(Session["UserID"]);
             if (IsPostBack == false)
             {

@@ -140,5 +140,22 @@ namespace VirginFrontEnd
                 lblError.Text += "There were problems with the data entered: " + Error;
             }
         }
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("AnMarketplaceListing.aspx");
+        }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
     }
 }
