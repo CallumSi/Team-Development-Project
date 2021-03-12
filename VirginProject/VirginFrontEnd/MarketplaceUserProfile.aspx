@@ -26,7 +26,8 @@
                                       
                      
                  </ul>
-                       <asp:Label ID="Label1" runat="server" style="z-index: 1; " Text="Marketplace User Profile"></asp:Label>                
+                       <asp:Label ID="Label1" runat="server" style="z-index: 1; " Text="Marketplace User Profile"></asp:Label>
+                       <br />
                       <asp:Label ID="Label8" runat="server" style="z-index: 1; " Text="Where would you like to go?"></asp:Label>
                          <br />
                       <asp:Button ID="btnFavoritedListings" runat="server" CssClass="navButton" OnClick="btnFavoritedListings_Click" style="z-index: 1;" Text="Favorited Listings" />

@@ -111,6 +111,14 @@ namespace VirginFrontEnd
             //execute the stored procedure
             DB.Execute("sproc_tblMarketplaceListingFavorite_Delete");
         }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
     }
 }
 
