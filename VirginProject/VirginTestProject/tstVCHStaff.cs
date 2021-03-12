@@ -534,7 +534,7 @@ namespace VirginTestProject
             //create test data to test the method
             string StaffPhoneNumber = "";
             //pad string of characters
-            StaffPhoneNumber = StaffPhoneNumber.PadRight(13, 'a');
+            StaffPhoneNumber = StaffPhoneNumber.PadRight(12, 'a');
             //invoke the method
             Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffUsername, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned

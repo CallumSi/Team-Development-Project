@@ -534,7 +534,7 @@ namespace VirginTestProject
             //create test data to test the method
             string PhoneNumber = "";
             //pad string of characters
-            PhoneNumber = PhoneNumber.PadRight(13, 'a');
+            PhoneNumber = PhoneNumber.PadRight(12, 'a');
             //invoke the method
             Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
