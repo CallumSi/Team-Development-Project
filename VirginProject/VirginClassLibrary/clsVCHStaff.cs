@@ -182,11 +182,11 @@ namespace VirginClassLibrary
                 //return the following error message
                 return "The Phone number may not be blank. Please enter a Phone number.";
             }
-            //if the StaffPhoneNumber length is more than 12 characters
-            if (StaffPhoneNumber.Length > 12)
+            //if the StaffPhoneNumber length is more than 11 characters
+            if (StaffPhoneNumber.Length > 11)
             {
                 //return the following error message
-                return "Phone numbers may not exceed 12 numbers, please enter a shorter number.";
+                return "Phone numbers may not exceed 11 numbers, please enter a shorter number.";
             }
             //if the StaffPhoneNumber length is less than 11 characters 
             if (StaffPhoneNumber.Length < 11)

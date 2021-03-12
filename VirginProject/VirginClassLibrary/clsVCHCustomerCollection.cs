@@ -6,6 +6,8 @@ namespace VirginClassLibrary
     {
         //private data member for allCustomers list
         public List<clsVCHCustomer> mAllCustomers = new List<clsVCHCustomer>();
+        //private data member for thisCustomer
+        clsVCHCustomer mThisCustomer = new clsVCHCustomer();
 
         //public constructor for the class
         public clsVCHCustomerCollection()
@@ -65,6 +67,39 @@ namespace VirginClassLibrary
                 //assign the incoming value to the private data member
                 mAllCustomers = value;
             }
+        }
+
+        //public property for ThisCustomer
+        public clsVCHCustomer ThisCustomer
+        {
+            get
+            {
+                //return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                //set the private data
+                mThisCustomer = value;
+            }
+        }
+
+        public int Add()
+        {
+            //add a new customer record to the database, based on values of thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@Address", mThisCustomer.Address);
+            DB.AddParameter("@PostCode", mThisCustomer.PostCode);
+            DB.AddParameter("@Username", mThisCustomer.Username);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            DB.AddParameter("@Password", mThisCustomer.Password);
+            DB.AddParameter("@PhoneNumber", mThisCustomer.PhoneNumber);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVCHCustomer_Insert");
         }
         
     }
