@@ -17,6 +17,7 @@ namespace VirginTestProject
             Assert.IsNotNull(AllCustomers);
         }
 
+       
         [TestMethod]
         public void CountPropertyOK()
         {
@@ -29,9 +30,18 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllCustomers.Count, SomeCount);
         }
+        
+        [TestMethod]
+        public void TwoCustomersPresent()
+        {
+            //create an instance of the customer collection class
+            clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
+            //test to see the values ARE the same
+            Assert.AreEqual(Customers.Count, 2);
+        }     
 
         [TestMethod]
-        public void AllCustomersOK()
+        public void ListAndCountOK()
         {
             //create an instance of the customer collection class
             clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
@@ -54,9 +64,32 @@ namespace VirginTestProject
             //add the items to the test list
             TestList.Add(TestItem);
             //assign data to the properties
-            Customers.AllCustomers = TestList;
+            Customers.CustomerList = TestList;
             //test to see the values ARE the same
-            Assert.AreEqual(Customers.AllCustomers, TestList);
+            Assert.AreEqual(Customers.CustomerList, TestList);
+        }
+
+        [TestMethod]
+        public void ThisCustomerPropertyOK()
+        {
+            //create an instance of the customer collection class
+            clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
+            //test data to assign to the property
+            clsVCHCustomer TestCustomer = new clsVCHCustomer();
+            //set data properties
+            TestCustomer.CustomerID = 1;
+            TestCustomer.FirstName = "Dante";
+            TestCustomer.LastName = "Alighieri";
+            TestCustomer.Address = "12 Florence Cresent, Leicestershire";
+            TestCustomer.PostCode = "LE13 2RV";
+            TestCustomer.Username = "DanteAyyy";
+            TestCustomer.Email = "d.alighieri@outlook.com";
+            TestCustomer.Password = "3InPuPa";
+            TestCustomer.PhoneNumber = "07912345678";
+            //assign data to the properties
+            Customers.ThisCustomer = TestCustomer;
+            //test to see the values ARE the same
+            Assert.AreEqual(Customers.ThisCustomer, TestCustomer);
         }
 
         [TestMethod]
@@ -83,18 +116,10 @@ namespace VirginTestProject
             //add the items to the test list
             TestList.Add(TestItem);
             //assign data to the properties
-            Customers.AllCustomers = TestList;
+            Customers.CustomerList = TestList;
             //test to see the values ARE the same
             Assert.AreEqual(Customers.Count, TestList.Count);
         }
-
-        [TestMethod]
-        public void TwoCustomersPresent()
-        {
-            //create an instance of the customer collection class
-            clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
-            //test to see the values ARE the same
-            Assert.AreEqual(Customers.Count, 2);
-        }
+        
     }
 }
