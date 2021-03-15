@@ -580,5 +580,20 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //boolean variable to store validation results
+            Boolean found = false;
+            //test data to test the method
+            Int32 CustomerID = 1;
+            //invoke the method
+            found = VCHCustomer.Find(CustomerID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
+        }
+
     }
 }

@@ -12,7 +12,7 @@ namespace VirginFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         //function to add new customer records
@@ -38,7 +38,7 @@ namespace VirginFrontEnd
                 CustomerCollection.Add();
 
                 //once complete redirect the user back to the main page
-                //Response.Redirect("EnterRedirectionPageHere.aspx");//
+                Response.Redirect("VCHCustomerList.aspx");
             }
             else
             {
@@ -53,7 +53,7 @@ namespace VirginFrontEnd
             //add a new customer record
             Add();
             //once complete redirect the user back to the main page
-            //Response.Redirect("EnterRedirectionPageHere.aspx");//
+            Response.Redirect("VCHCustomerList.aspx");
         }
     }
 }
