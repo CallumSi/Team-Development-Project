@@ -4,33 +4,193 @@ namespace VirginClassLibrary
 {
     public class clsVCHCustomer
     {
+        //private customer ID property
+        private int mCustomerID;
+        //private customer First Name property
+        private string mFirstName;
+        //private customer Last Name property
+        private string mLastName;
+        //private customer Address property
+        private string mAddress;
+        //private customer Postcode property
+        private string mPostCode;
+        //private customer Username property
+        private string mUsername;
+        //private customer Email property
+        private string mEmail;
+        //private customer Password property
+        private string mPassword;
+        //private customer Phone Number property
+        private string mPhoneNumber;
+
         //customer ID property
-        public int CustomerID { get; set; }
-        
+        public int CustomerID
+        {
+            get
+            {
+                //return the private data
+                return mCustomerID;
+            }
+            set
+            {
+                //set the private data
+                mCustomerID = value;
+            }
+        }
+
         //customer First Name property
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                //return the private data
+                return mFirstName;
+            }
+            set
+            {
+                //set the private data
+                mFirstName = value;
+            }
+        }
 
         //customer Last Name property
-        public string LastName { get; set; }
-        
+        public string LastName
+        {
+            get
+            {
+                //return the private data
+                return mLastName;
+            }
+            set
+            {
+                //set the private data
+                mLastName = value;
+            }
+        }
+
         //customer Address property
-        public string Address { get; set; }
+        public string Address
+        {
+            get
+            {
+                //return the private data
+                return mAddress;
+            }
+            set
+            {
+                //set the private data
+                mAddress = value;
+            }
+        }
 
         //customer Postcode property
-        public string PostCode { get; set; }
+        public string PostCode
+        {
+            get
+            {
+                //return the private data
+                return mPostCode;
+            }
+            set
+            {
+                //set the private data
+                mPostCode = value;
+            }
+        }
 
         //customer Username property
-        public string Username { get; set; }
+        public string Username
+        {
+            get
+            {
+                //return the private data
+                return mUsername;
+            }
+            set
+            {
+                //set the private data
+                mUsername = value;
+            }
+        }
 
         //customer Email property
-        public string Email { get; set; }
+        public string Email
+        {
+            get
+            {
+                //return the private data
+                return mEmail;
+            }
+            set
+            {
+                //set the private data
+                mEmail = value;
+            }
+        }
 
         //customer Password property
-        public string Password { get; set; }
+        public string Password
+        {
+            get
+            {
+                //return the private data
+                return mPassword;
+            }
+            set
+            {
+                //set the private data
+                mPassword = value;
+            }
+        }
 
         //customer Phone Number property
-        public string PhoneNumber { get; set; }
-        
+        public string PhoneNumber
+        {
+            get
+            {
+                //return the private data
+                return mPhoneNumber;
+            }
+            set
+            {
+                //set the private data
+                mPhoneNumber = value;
+            }
+        }
+
+        public bool Find(int CustomerID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for CustomerID to search for
+            DB.AddParameter("@CustomerID", CustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHCustomer_FilterByCustomerID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mUsername = Convert.ToString(DB.DataTable.Rows[0]["Username"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["PhoneNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+
+        }
+
         //Valid Method
         public string Valid(string FirstName, string LastName, string Address, string PostCode, string Username, string Email, string Password, string PhoneNumber)
         {
