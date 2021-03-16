@@ -46,5 +46,26 @@ namespace VirginFrontEnd
             //once complete redirect the user back to the main page
             Response.Redirect("VCHACustomer.aspx");
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value
+            Int32 CustomerID;
+            //if a record has been selected from the list
+            if (lstCustomer.SelectedIndex != -1)
+            {
+                //retrieve intended delete records primary key
+                CustomerID = Convert.ToInt32(lstCustomer.SelectedValue);
+                //store the data in the session object
+                Session["CustomerID"] = CustomerID;
+                //redirect the delete page
+                Response.Redirect("VCHCustomerDelete.aspx");
+            }
+            else //if a user has not selected a customer record to delete
+            {
+                //display an error
+                lblError.Text = "Please select a Customer to delete from the list";
+            }
+        }
     }
 }

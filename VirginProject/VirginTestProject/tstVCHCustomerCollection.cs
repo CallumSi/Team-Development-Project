@@ -152,5 +152,40 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllCustomers.ThisCustomer, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the customer collection class
+            clsVCHCustomerCollection AllCustomers = new clsVCHCustomerCollection();
+            //test data to assign to the property
+            clsVCHCustomer TestItem = new clsVCHCustomer();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            TestItem.CustomerID = 1;
+            TestItem.FirstName = "Dante";
+            TestItem.LastName = "Alighieri";
+            TestItem.Address = "12 Florence Cresent, Leicestershire";
+            TestItem.PostCode = "LE13 2RV";
+            TestItem.Username = "DanteAyyy";
+            TestItem.Email = "d.alighieri@outlook.com";
+            TestItem.Password = "3InPuPa";
+            TestItem.PhoneNumber = "07912345678";
+            //set ThisCustomer to the test data
+            AllCustomers.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //set the primary key of the test data
+            TestItem.CustomerID = PrimaryKey;
+            //find the record
+            AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //delete the record
+            AllCustomers.Delete();
+            //find the record
+            Boolean Found = AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.IsFalse(Found);
+        }
     }
 }
