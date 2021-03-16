@@ -111,5 +111,16 @@ namespace VirginClassLibrary
             return DB.Execute("sproc_tblVCHCustomer_Insert");
         }
 
+        public void Delete()
+        {
+            //deletes indicated customer record according to thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHCustomer_Delete");
+        }
+        
     }
 }
