@@ -52,8 +52,6 @@ namespace VirginFrontEnd
         {
             //add a new customer record
             Add();
-            //once complete redirect the user back to the main page
-            Response.Redirect("VCHCustomerList.aspx");
         }
     }
 }

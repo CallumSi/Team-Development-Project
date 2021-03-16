@@ -200,19 +200,19 @@ namespace VirginClassLibrary
             if (FirstName.Length == 0)
             {
                 //return the following error message
-                return "The customers first name may not be blank. Please enter a First Name.";
+                return "Customer first names may not be blank. Please enter a First Name.";
             }
             //if the first name length is more than 30 characters
             if (FirstName.Length > 30)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a shorter name.";
+                return "The first name entered is not acceptable. Please try again with a shorter first name.";
             }
             //if the first name length is less than 2 characters
             if (FirstName.Length < 2)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a longer name.";
+                return "The first name entered is not acceptable. Please try again with a longer first name.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -220,19 +220,19 @@ namespace VirginClassLibrary
             if (LastName.Length == 0)
             {
                 //return the following error message
-                return "The customers last name may not be blank. Please enter a Last Name.";
+                return "Customer last names may not be blank. Please enter a Last Name.";
             }
             //if the last name length is more than 30 characters
             if (LastName.Length > 30)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a shorter name.";
+                return "The last name entered is not acceptable. Please try again with a shorter last name.";
             }
             //if the last name length is less than 2 characters 
             if (LastName.Length < 2)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a longer name.";
+                return "The last name entered is not acceptable. Please try again with a longer last name.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
