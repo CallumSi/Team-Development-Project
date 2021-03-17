@@ -5,7 +5,7 @@ namespace VirginClassLibrary
     public class clsMarketplaceUser
     {
 
-        //private data 
+        //private dataa 
         private bool mAdmin;
         private string mDeliveryAdressLineOne;
         private string mDeliveryAdressLineTwo;
