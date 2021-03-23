@@ -94,7 +94,7 @@ namespace VirginFrontEnd
             //if a record hasnt been selected from the listbox 
             else
             {
-                //display a error 
+                //display a error .
                 lblError.Text = "Please select a record to delete from the list ";
             }
         }
