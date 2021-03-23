@@ -18,6 +18,7 @@ namespace VirginFrontEnd
            
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
+
            
             if (IsPostBack == false)
             {
@@ -77,6 +78,7 @@ namespace VirginFrontEnd
                 ListingName = ListOfListings.ListingList[Index].ListingName;
                 ListingPrice = ListOfListings.ListingList[Index].Price.ToString();
                 ListingImg = ListOfListings.ListingList[Index].Img;
+                Index++;
              
               
             }

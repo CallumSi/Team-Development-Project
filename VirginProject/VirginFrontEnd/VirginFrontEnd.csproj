@@ -96,6 +96,7 @@
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
     <Content Include="Web.config" />
+    <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnMarketplaceListing.aspx.cs">
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="VMCustomerList.aspx.designer.cs">
       <DependentUpon>VMCustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceHome2.aspx.cs">
+      <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceHome2.aspx.designer.cs">
+      <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

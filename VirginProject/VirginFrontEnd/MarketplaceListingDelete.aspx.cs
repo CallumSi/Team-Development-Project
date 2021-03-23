@@ -24,13 +24,13 @@ namespace VirginFrontEnd
             //call the funciton to delete the recrod
             DeleteListing();
             //then go back to main page
-            Response.Redirect("MarketplaceListingList.aspx");
+            Response.Redirect("MarketplaceUserYourListings.aspx");
         }
 
         protected void btnNo_Click(object sender, EventArgs e)
         {
             //go back to main page
-            Response.Redirect("MarketplaceListingList.aspx");
+            Response.Redirect("MarketplaceUserYourListings.aspx");
         }
 
 
@@ -43,6 +43,21 @@ namespace VirginFrontEnd
             SomeListing.ThisListing.Find(ListingID);
             //delete the record
             SomeListing.DeleteListing();
+
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
 
         }
     }

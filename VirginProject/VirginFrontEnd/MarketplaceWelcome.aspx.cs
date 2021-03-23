@@ -26,7 +26,7 @@ namespace VirginFrontEnd
         protected void btnContinue_Click(object sender, EventArgs e)
         {
             Session["UserID"] = UserID;
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("MarketplaceHome2.aspx");
         }
     }
 }

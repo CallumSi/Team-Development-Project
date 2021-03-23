@@ -76,9 +76,9 @@
                    
                     
                     <li> <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; "></asp:TextBox>
-                    <asp:Button ID="Button1" runat="server" style="z-index: 1; " Text="Add to Cart" />
-                    <asp:Button ID="btnBuyNow" runat="server" style="z-index: 1; " Text="Buy Now" />
-                     <asp:Button ID="btnFavorite" runat="server" style="z-index: 1; " Text="Favorite" /></li>
+                    <asp:Button ID="Button1" runat="server" style="z-index: 1; " Text="Add to Cart" OnClick="Button1_Click" />
+                    <asp:Button ID="btnBuyNow" runat="server" style="z-index: 1; " Text="Buy Now" OnClick="btnBuyNow_Click" />
+                     <asp:Button ID="btnFavorite" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" /></li>
                    
                   
                     

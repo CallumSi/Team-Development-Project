@@ -79,5 +79,30 @@ namespace VirginFrontEnd
             //redirect to edit user details page
             Response.Redirect("MarketplaceHome.aspx");
         }
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnBuyNow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnFavorite_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

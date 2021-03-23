@@ -173,6 +173,11 @@ namespace VirginClassLibrary
 
         }
 
+        public void Clear()
+        {
+            mListingList.Clear();
+
+        }
 
         void PopulateArray(clsDataConnection DB)
         {
@@ -204,6 +209,7 @@ namespace VirginClassLibrary
                 AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]); 
                 //add the record 
                 mListingList.Add(AnListing);
+               
                 //GO TO NEXT RECORD
                 Index++;
             }
