@@ -25,14 +25,19 @@
                            <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
                            <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" />
                        </li>
-                                      
-                        <asp:Label ID="Label2" runat="server" style="z-index: 1;" Text="Marketplace Listing Details"></asp:Label>
-           
+                 </ul>    
+                
+                         <br />
+                        <asp:Label ID="Label2" runat="server" style="z-index: 1;" Text="Marketplace Listing Delete"></asp:Label>
+                         <br /> 
+                         <br /> 
                     
-                           <asp:Label ID="Label1"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Delete Listing"></asp:Label>
+                           
                         <asp:Label ID="lblLoad"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Are you sure you want to delete the selected Listing?"></asp:Label>
-                        <asp:Button ID="btnNo"  CssClass="navButton" runat="server" style="z-index: 1; left: 316px; top: 268px; position: absolute" Text="No" OnClick="btnNo_Click" />
-                        <asp:Button ID="btnYes" CssClass="navButton" runat="server" style="z-index: 1; left: 254px; top: 268px; position: absolute" Text="Yes" OnClick="btnYes_Click" />
+                        <br /> 
+                        <br /> 
+                        <asp:Button ID="btnNo"  CssClass="navButton" runat="server" style="z-index: 1; " Text="No" OnClick="btnNo_Click" />
+                        <asp:Button ID="btnYes" CssClass="navButton" runat="server" style="z-index: 1; " Text="Yes" OnClick="btnYes_Click" />
                     
                     
                     </article>

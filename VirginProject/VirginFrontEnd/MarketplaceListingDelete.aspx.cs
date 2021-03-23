@@ -12,11 +12,18 @@ namespace VirginFrontEnd
     {
         //var for ListingId of record to be deleted
         Int32 ListingID;
+        Int32 UserID;
+        string ListingName;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            UserID = Convert.ToInt32(Session["UserID"]);
             //retrieve the id from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
-            lblLoad.Text = "Are you sure you want to delete this listing  with the ID:" + ListingID;
+            ListingName = Convert.ToString(Session["ListingName"]);
+            
+            lblLoad.Text = "Are you sure you want to delete : " + ListingName;
+
         }
 
         protected void btnYes_Click(object sender, EventArgs e)
@@ -46,19 +53,37 @@ namespace VirginFrontEnd
 
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnMyAccount_Click(object sender, EventArgs e)
         {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceHome.aspx");
         }
 
         protected void btnClickHere_Click(object sender, EventArgs e)
         {
-
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("AnMarketplaceListing.aspx");
         }
     }
 }

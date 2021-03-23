@@ -36,6 +36,7 @@ namespace VirginFrontEnd
         {
             //variable to store primary key of field you want to edit
             Int32 ListingID;
+            Session["UserID"] = UserID;
             //check if a record has been selected from the list
             if (lstYourListings.SelectedIndex != -1)
             {
@@ -59,13 +60,17 @@ namespace VirginFrontEnd
         {
             //variable to store primary key of field you want to delete
             Int32 ListingID;
+            string ListingName;
+            Session["UserID"] = UserID;
             //check if a record has been selected from the list
             if (lstYourListings.SelectedIndex != -1)
             {
                 //get primary key from selected
                 ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                ListingName = lstYourListings.SelectedItem.ToString();
                 //store data in session object so we can pass it to next page
                 Session["ListingID"] = ListingID;
+                Session["ListingName"] = ListingName;  
                 //redirect to delete page
                 Response.Redirect("MarketplaceListingDelete.aspx");
 
