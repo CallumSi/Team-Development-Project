@@ -534,7 +534,7 @@ namespace VirginTestProject
             //create test data to test the method
             string PhoneNumber = "";
             //pad string of characters
-            PhoneNumber = PhoneNumber.PadRight(13, 'a');
+            PhoneNumber = PhoneNumber.PadRight(12, 'a');
             //invoke the method
             Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
@@ -578,6 +578,21 @@ namespace VirginTestProject
             Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //boolean variable to store validation results
+            Boolean found = false;
+            //test data to test the method
+            Int32 CustomerID = 1;
+            //invoke the method
+            found = VCHCustomer.Find(CustomerID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
         }
 
     }

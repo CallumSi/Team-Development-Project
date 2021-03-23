@@ -88,6 +88,9 @@
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserFavoriteListings.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
+    <Content Include="VCHACustomer.aspx" />
+    <Content Include="VCHCustomerDelete.aspx" />
+    <Content Include="VCHCustomerList.aspx" />
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VirginProject.css" />
@@ -262,6 +265,27 @@
       <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCHACustomer.aspx.cs">
+      <DependentUpon>VCHACustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHACustomer.aspx.designer.cs">
+      <DependentUpon>VCHACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCustomerDelete.aspx.cs">
+      <DependentUpon>VCHCustomerDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerDelete.aspx.designer.cs">
+      <DependentUpon>VCHCustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCustomerList.aspx.cs">
+      <DependentUpon>VCHCustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerList.aspx.designer.cs">
+      <DependentUpon>VCHCustomerList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VirginProject.Master.cs">
       <DependentUpon>VirginProject.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

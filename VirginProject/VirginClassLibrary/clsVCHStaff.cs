@@ -40,19 +40,19 @@ namespace VirginClassLibrary
             if (StaffFirstName.Length == 0)
             {
                 //return the following error message
-                return "The  first name may not be blank. Please enter a First Name.";
+                return "Staff first names may not be blank. Please enter a First Name.";
             }
             //if the staff first name length is more than 30 characters
             if (StaffFirstName.Length > 30)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a shorter name.";
+                return "The first name entered is not acceptable. Please try again with a shorter first name.";
             }
             //if the staff first name length is less than 2 characters
             if (StaffFirstName.Length < 2)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a longer name.";
+                return "The first name entered is not acceptable. Please try again with a longer first name.";
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -60,19 +60,19 @@ namespace VirginClassLibrary
             if (StaffLastName.Length == 0)
             {
                 //return the following error message
-                return "The  last name may not be blank. Please enter a Last Name.";
+                return "Staff last names may not be blank. Please enter a Last Name.";
             }
             //if the staff last name length is more than 30 characters
             if (StaffLastName.Length > 30)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a shorter name.";
+                return "The last name entered is not acceptable. Please try again with a shorter last name.";
             }
             //if the staff last name length is less than 2 characters
             if (StaffLastName.Length < 2)
             {
                 //return the following error message
-                return "The name entered is not acceptable. Please try again with a longer name.";
+                return "The last name entered is not acceptable. Please try again with a longer last name.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,11 +182,11 @@ namespace VirginClassLibrary
                 //return the following error message
                 return "The Phone number may not be blank. Please enter a Phone number.";
             }
-            //if the StaffPhoneNumber length is more than 12 characters
-            if (StaffPhoneNumber.Length > 12)
+            //if the StaffPhoneNumber length is more than 11 characters
+            if (StaffPhoneNumber.Length > 11)
             {
                 //return the following error message
-                return "Phone numbers may not exceed 12 numbers, please enter a shorter number.";
+                return "Phone numbers may not exceed 11 numbers, please enter a shorter number.";
             }
             //if the StaffPhoneNumber length is less than 11 characters 
             if (StaffPhoneNumber.Length < 11)
