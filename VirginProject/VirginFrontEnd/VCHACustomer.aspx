@@ -38,7 +38,7 @@
         <asp:TextBox ID="txtPhonenumber" runat="server" style="z-index: 1; left: 171px; top: 441px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 8px; top: 491px; position: absolute" Text="[lblError]"></asp:Label>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 7px; top: 543px; position: absolute" Text="OK" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 67px; top: 543px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 67px; top: 543px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
     </form>
 </body>
 </html>
