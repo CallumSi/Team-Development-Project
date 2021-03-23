@@ -5,14 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+ <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
+
+        
     <form id="form1" runat="server">
-        <div>
-        </div>
-        <asp:Label ID="Label1" runat="server" BackColor="#0066FF" BorderStyle="Solid" Font-Bold="True" Font-Names="Arial" Font-Size="Larger" style="z-index: 1; left: 396px; top: 82px; position: absolute; width: 279px" Text="Welcome to the Online Marketplace"></asp:Label>
-        <asp:Button ID="btnFirstTime" runat="server" OnClick="btnFirstTime_Click" style="z-index: 1; left: 575px; top: 339px; position: absolute" Text="First Time?" />
-        <asp:Button ID="btnContinue" runat="server" style="z-index: 1; left: 413px; top: 341px; position: absolute" Text="Continue " OnClick="btnContinue_Click" />
-    </form>
+             <header>
+               <h2> Virgin Media </h2> 
+            </header>
+ 
+            <article>
+               <h2> Welcome To The Online Marketplace </h2> 
+                <asp:Button ID="btnFirstTime" CssClass="Button" runat="server" OnClick="btnFirstTime_Click" style="z-index: 1; left: 575px; top: 339px; position: absolute" Text="First Time?" />
+                <asp:Button ID="btnContinue" CssClass="Button" runat="server" style="z-index: 1; left: 413px; top: 341px; position: absolute" Text="Continue " OnClick="btnContinue_Click" />
+    
+            </article>
+ 
+            <nav>
+                Navigation links here
+            </nav>
+            <footer>
+                <div id ="FooterText">
+                    © 2021 Virgin Media | All Rights Reserved
+                </div>
+            </footer>
+        </form>
 </body>
 </html>

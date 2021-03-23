@@ -5,53 +5,98 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="VirginProject.css" rel="stylesheet" />
+
 </head>
 <body>
+        
     <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 119px; top: 44px; position: absolute" Text="Marketplace Home"></asp:Label>
-        <asp:Label ID="lblEmail" runat="server" style="z-index: 1; left: 858px; top: 56px; position: absolute"></asp:Label>
-        <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1; left: 177px; top: 90px; position: absolute; margin-top: 9px; width: 169px;"></asp:TextBox>
-        <asp:Button ID="btnClickHere" runat="server" style="z-index: 1; left: 252px; top: 132px; position: absolute; margin-top: 1px;" Text="Click Here" OnClick="btnClickHere_Click" />
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 122px; top: 98px; position: absolute" Text="Search"></asp:Label>
-        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 121px; top: 133px; position: absolute; right: 767px" Text="Want to sell a item"></asp:Label>
-        <asp:Label ID="listingname1" runat="server" style="z-index: 1; left: 123px; top: 357px; position: absolute"></asp:Label>
-        <asp:Label ID="listingprice1" runat="server" style="z-index: 1; left: 124px; top: 383px; position: absolute; right: 799px; height: 19px;"></asp:Label>
-        <asp:Image ID="listingimage5" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 118px; top: 426px; position: absolute; height: 125px; width: 177px" />
-        <asp:Button ID="listingbutton6" runat="server" style="z-index: 1; left: 457px; top: 587px; position: absolute; width: 41px;" Text="View" OnClick="listingbutton6_Click" />
-        <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 122px; top: 170px; position: absolute; width: 111px;" Text="Suggested for you"></asp:Label>
-        <asp:Image ID="listingimage2" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 324px; top: 210px; position: absolute; height: 136px; width: 179px" />
-        <asp:Button ID="listingbutton5" runat="server" style="z-index: 1; left: 249px; top: 590px; position: absolute; height: 26px; width: 42px;" Text="View" OnClick="listingbutton5_Click" />
-        <asp:Label ID="listingname2" runat="server" style="z-index: 1; left: 327px; top: 356px; position: absolute; right: 619px;"></asp:Label>
-        <asp:Label ID="listingprice3" runat="server" style="z-index: 1; left: 541px; top: 389px; position: absolute"></asp:Label>
-        <asp:Image ID="listingimage7" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 536px; top: 427px; position: absolute; height: 129px; width: 175px" />
-        <asp:Button ID="listingbutton4" runat="server" style="z-index: 1; left: 875px; top: 373px; position: absolute" Text="View" OnClick="listingbutton4_Click" />
-        <asp:Label ID="listingname3" runat="server" style="z-index: 1; left: 541px; top: 354px; position: absolute"></asp:Label>
-        <asp:Label ID="listingname6" runat="server" style="z-index: 1; left: 332px; top: 570px; position: absolute; height: 19px;"></asp:Label>
-        <asp:Image ID="listingimage8" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 751px; top: 428px; position: absolute; height: 123px; width: 171px" />
-        <asp:Button ID="listingbutton3" runat="server" style="z-index: 1; left: 662px; top: 373px; position: absolute; height: 26px;" Text="View" OnClick="listingbutton3_Click" />
-        <asp:Label ID="listingname8" runat="server" style="z-index: 1; left: 753px; top: 571px; position: absolute"></asp:Label>
-        <asp:Label ID="listingprice8" runat="server" style="z-index: 1; left: 753px; top: 605px; position: absolute"></asp:Label>
-        <asp:Image ID="listingimage1" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 123px; top: 213px; position: absolute; height: 126px; width: 170px; margin-top: 1px;" />
-        <asp:Button ID="listingbutton2" runat="server" style="z-index: 1; left: 459px; top: 371px; position: absolute" Text="View" OnClick="listingbutton2_Click" />
-        <asp:Label ID="listingprice5" runat="server" style="z-index: 1; left: 118px; top: 610px; position: absolute; right: 830px;"></asp:Label>
-        <asp:Image ID="listingimage6" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 331px; top: 431px; position: absolute; height: 122px; width: 175px; right: 639px; margin-top: 0px;" />
-        <asp:Button ID="listingbutton1" runat="server" style="z-index: 1; left: 250px; top: 369px; position: absolute" Text="View" OnClick="listingbutton1_Click"  AutoPostBack="false"/>
-        <asp:Label ID="listingname5" runat="server" style="z-index: 1; left: 120px; top: 577px; position: absolute"></asp:Label>
-        <asp:Label ID="listingprice7" runat="server" style="z-index: 1; left: 537px; top: 602px; position: absolute"></asp:Label>
-        <asp:Image ID="listingimage3" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 537px; top: 213px; position: absolute; height: 127px; width: 171px" />
-        <asp:Button ID="listingbutton8" runat="server" style="z-index: 1; left: 878px; top: 587px; position: absolute" Text="View" OnClick="listingbutton8_Click" />
-        <asp:Label ID="listingname7" runat="server" style="z-index: 1; left: 537px; top: 573px; position: absolute"></asp:Label>
-        <asp:Label ID="listingprice2" runat="server" style="z-index: 1; left: 327px; top: 387px; position: absolute"></asp:Label>
-        <asp:Image ID="listingimage4" runat="server" ImageUrl=" http://placekitten.com/200/300" style="z-index: 1; left: 745px; top: 213px; position: absolute; height: 125px; width: 174px; margin-top: 2px;" />
-        <asp:Button ID="listingbutton7" runat="server" style="z-index: 1; left: 667px; top: 585px; position: absolute; height: 26px; right: 189px;" Text="View" OnClick="listingbutton7_Click" />
-        <asp:Label ID="listingname4" runat="server" style="z-index: 1; left: 747px; top: 353px; position: absolute; bottom: 335px;"></asp:Label>
-        <asp:Label ID="listingprice4" runat="server" style="z-index: 1; left: 748px; top: 383px; position: absolute"></asp:Label>
-        <asp:Label ID="listingprice6" runat="server" style="z-index: 1; left: 333px; top: 604px; position: absolute"></asp:Label>
-        
-        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 770px; top: 57px; position: absolute" Text="Logged in as:"></asp:Label>
-        
-        <asp:Button ID="btnApplySearch" runat="server" OnClick="btnApplySearch_Click" style="z-index: 1; left: 363px; top: 99px; position: absolute" Text="Go" />
-        
-    </form>
+             <header>
+               <h2> Virgin Media </h2> 
+            </header>
+          
+          
+             <article>
+                 <ul>
+       
+                      <li>
+                          <asp:Label ID="Label3" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                          <asp:Label ID="lblEmail" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                       </li>
+                          <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
+                              <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
+                              <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" />
+                          </li>
+                     
+                    
+                     
+                 </ul>
+
+                           <br />
+                          <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Marketplace Home"></asp:Label>             
+                          <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1;"></asp:TextBox>
+                          <asp:Button ID="btnSearch" CssClass="navButton" runat="server" style="z-index: 1;" Text="Search" OnClick="btnSearch_Click" />
+                            
+                 <ul>
+                    <li>
+                     <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="All listings" /></li> 
+                     <li><asp:Button ID="Button3" CssClass="navButton" runat="server" style="z-index: 1;" Text="Accepts offers"/></li>
+                     <li><asp:Button ID="Button4" CssClass="navButton" runat="server" style="z-index: 1;" Text="Auction" /></li>
+                     <li><asp:Button ID="Button5" CssClass="navButton" runat="server" style="z-index: 1;" Text="Buy it now" /></li>
+                 </ul>                            
+                 <%
+                    //create an instance of the Listing Colleciton
+                    VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+                    //create an index variable
+                    Int32 Index = 0;
+                    //get the count of records
+                    Int32 RecordCount = MyListings.Count;
+                    //loop through each record
+                    %>
+                    <ul class="Listings">
+                  
+                    <%
+                    while(Index < RecordCount)
+                    {
+                        %>
+                        <li>
+                            <%
+                            //write a listing to the browser
+                            Response.Write(MyListings.ListingList[Index].ListingName);
+                            Response.Write("<br>");
+                            Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
+                            Response.Write("<br>");
+                            Response.Write("Price: £" + MyListings.ListingList[Index].Price);
+                            Response.Write("<br>");
+                            Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
+                            Response.Write("<br>");
+                            %>
+                            
+                            <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>
+                              
+                            <%
+                            //increment the index
+                            Index++;
+                        %>
+                        
+                        </li>                
+                            <%
+                    }
+              %>
+
+                    </ul> 
+            </article>
+
+            <nav>
+                Navigation links here
+            </nav>
+            <footer>
+                <div id ="FooterText">
+                    © 2021 Virgin Media | All Rights Reserved
+                </div>
+            </footer>
+        </form>
 </body>
 </html>
+
+
