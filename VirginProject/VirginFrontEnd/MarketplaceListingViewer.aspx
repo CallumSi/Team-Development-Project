@@ -21,7 +21,7 @@
                           <asp:Label ID="Label3" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
                           <asp:Label ID="lblEmail" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
                        </li>
-                          <li><asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
+                          <li> 
                               <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
                               <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" Height="35px" />
                           </li>
@@ -67,7 +67,6 @@
                         <asp:Label ID="Label2" runat="server" style="z-index: 1; " Text="Price:"></asp:Label>
                         <asp:Label ID="lblPrice" runat="server" style="z-index: 1;"></asp:Label>
                         
-
                     </li>                     
                    
                     <li><asp:Label ID="label1" runat="server" style="z-index: 1; " Text="Time Left:"></asp:Label>
@@ -76,10 +75,11 @@
                    
                     
                     <li> <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; "></asp:TextBox>
-                    <asp:Button ID="Button1" runat="server" style="z-index: 1; " Text="Add to Cart" OnClick="Button1_Click" />
-                    <asp:Button ID="btnBuyNow" runat="server" style="z-index: 1; " Text="Buy Now" OnClick="btnBuyNow_Click" />
-                     <asp:Button ID="btnFavorite" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" /></li>
-                   
+                    <asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1; " Text="Add to Cart" />
+                    <asp:Button ID="btnBuyNow" CssClass="navButton" runat="server" style="z-index: 1; " Text="Buy Now" OnClick="btnBuyNow_Click" />
+                     <asp:Button ID="btnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" />
+                   <asp:Button ID="btnUnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="UnFavorite" OnClick="btnUnFavorite_Click"  />
+                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label></li>
                   
                     
                     

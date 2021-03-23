@@ -13,8 +13,12 @@ namespace VirginFrontEnd
         //variable to store the ListingID and UserID from session obect
         Int32 ListingID;
         Int32 UserID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //check for favorite
+            UserID = Convert.ToInt32(Session["UserID"]);
+            
             //get the number of  the listing to be procvessed
             try
             {
@@ -25,7 +29,7 @@ namespace VirginFrontEnd
                 ListingID = Convert.ToInt32(Session["ListingID"]);
             }
            
-            UserID = Convert.ToInt32(Session["UserID"]);
+           
             if (IsPostBack == false)
             {
                 {
@@ -33,6 +37,8 @@ namespace VirginFrontEnd
                     DisplayData();
                 }
             }
+
+            
         }
 
         void DisplayData()
@@ -70,6 +76,7 @@ namespace VirginFrontEnd
             SomeUser.ThisUser.Find(SomeListing.ThisListing.OwnerID);
             //display the data for this record
             lblSellerEmail.Text = SomeUser.ThisUser.Email;
+            CheckForFavorite();
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
@@ -82,18 +89,22 @@ namespace VirginFrontEnd
 
         protected void btnClickHere_Click(object sender, EventArgs e)
         {
-
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("AnMarketplaceListing.aspx");
         }
 
         protected void btnMyAccount_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         protected void btnBuyNow_Click(object sender, EventArgs e)
         {
@@ -102,7 +113,93 @@ namespace VirginFrontEnd
 
         protected void btnFavorite_Click(object sender, EventArgs e)
         {
+            AddFavorite();
+            
+        }
+
+        public int AddFavorite()
+        {
+            lblFavorite.Text = "Favorited!";
+            //used to add a new record into the database
+            //first establish connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@FavoritedBy", UserID);
+            DB.AddParameter("@ListingID",ListingID);
+            //execute the insert sproc
+            return DB.Execute("sproc_tblMarketplaceUserFavorites_Insert");
+            
 
         }
-    }
+
+        void CheckForFavorite()
+        {
+
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@UserID", UserID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserFavorites_FilterByUserID");
+            //populate the array with the found data;
+            //variables to loop through list
+            Int32 RecordCount;
+            Int32 Index = 0;
+            //get count of filtered list
+            RecordCount = DB.Count;
+            if (RecordCount == 0)
+            {
+
+                lblFavorite.Text = "Not Yet Favorited!";
+            }
+            else
+            {
+                //loop through the list adding them to the list box
+                while (Index < RecordCount)
+                {
+                    int tempListingID = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingID"]);
+                    if (ListingID == tempListingID)
+                    {
+                        lblFavorite.Text = "Watching!";
+                    }
+       
+                    Index++;
+                }
+            }
+            
+
+        }
+
+
+
+        protected void btnUnFavorite_Click(object sender, EventArgs e)
+        {
+                if(lblFavorite.Text!= "No longer Watching")
+            {
+                //call the funciton to delete the recrod
+                DeleteFavorite(ListingID);
+
+
+                lblFavorite.Text = "No longer Watching";
+
+            }
+
+              
+
+        }
+
+            private void DeleteFavorite(int ListingID)
+            {
+                //function for deleting records
+
+                //first establish connection
+                clsDataConnection DB = new clsDataConnection();
+                //set the parameters for the sproc
+                DB.AddParameter("@ListingID", ListingID);
+                DB.AddParameter("@UserID", UserID);
+                //execute the stored procedure
+                DB.Execute("sproc_tblMarketplaceListingFavorite_Delete");
+            }
+}
 }

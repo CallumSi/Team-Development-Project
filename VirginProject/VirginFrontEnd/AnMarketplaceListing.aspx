@@ -73,6 +73,7 @@
                         <asp:Button ID="btnOk" CssClass="navButton" runat="server" style="z-index: 1; " Text="Ok" OnClick="btnOk_Click" />
                         <asp:Button ID="btnCancel" CssClass="navButton" runat="server" style="z-index: 1; " Text="Cancel" OnClick="btnCancel_Click" />
                        <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label>
+                       
                    </li>
                 </ul>
                                  
