@@ -71,7 +71,7 @@ namespace VirginFrontEnd
             Session["ListingID"] = -1;
             Session["UserID"] = UserID;
             //redirect to user data entry page
-            Response.Redirect("AnMarketplaceListing.aspx");
+            Response.Redirect("MarketplaceListingType.aspx");
         }
 
         protected void btnApplySearch_Click(object sender, EventArgs e)

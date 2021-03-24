@@ -19,7 +19,7 @@
        
                       <li>
                           <asp:Label ID="Label7" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
-                          <asp:Label ID="Label4" runat="server" style="z-index: 1;"></asp:Label>
+                        <asp:Label ID="lblEmail" runat="server" style="z-index: 1;"></asp:Label>     
                        </li>
                        <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                            <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
@@ -30,7 +30,6 @@
                  </ul>
                          <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Favorited Listings"></asp:Label>
                          <br />
-                        <asp:Label ID="lblEmail" runat="server" style="z-index: 1;"></asp:Label>     
                        <asp:ListBox ID="lstYourListings" runat="server" style="z-index: 1; height: 184px; width: 440px; margin-top: 0px"></asp:ListBox>
                         <br />
                        <asp:Button ID="btnRemoveFavorite" runat="server" CssClass="navButton" OnClick="btnRemoveFavorite_Click" style="z-index: 1;" Text="RemoveFavorite" />                     

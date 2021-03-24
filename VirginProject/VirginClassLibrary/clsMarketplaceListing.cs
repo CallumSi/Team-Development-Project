@@ -24,6 +24,7 @@ namespace VirginClassLibrary
         private Decimal mPrice;
         private int mQuantity;
         private int mOwnerID;
+        private int mListingType;
 
         //public data
         public bool AllowBids
@@ -204,6 +205,20 @@ namespace VirginClassLibrary
             }
         }
 
+
+        public int ListingType
+        {
+            get
+            {
+                //return private data
+                return mListingType;
+            }
+            set
+            {
+                //set value to private data
+                mListingType = value;
+            }
+        }
         public Boolean Find(int ListingID)
         {
             //instantiate the data connection
@@ -227,6 +242,7 @@ namespace VirginClassLibrary
                 mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
                 mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
                 mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["OwnerID"]);
+                mListingType =Convert.ToInt32(DB.DataTable.Rows[0]["ListingType"]);
                 return true;
             }
             else

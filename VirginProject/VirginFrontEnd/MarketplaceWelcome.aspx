@@ -18,8 +18,8 @@
  
             <article>
                <h2> Welcome To The Online Marketplace </h2> 
-                <asp:Button ID="btnFirstTime" CssClass="Button" runat="server" OnClick="btnFirstTime_Click" style="z-index: 1; left: 575px; top: 339px; position: absolute" Text="First Time?" />
-                <asp:Button ID="btnContinue" CssClass="Button" runat="server" style="z-index: 1; left: 413px; top: 341px; position: absolute" Text="Continue " OnClick="btnContinue_Click" />
+                <asp:Button ID="btnFirstTime" CssClass="Button" runat="server" OnClick="btnFirstTime_Click" style="z-index: 1; left: 575px; top: 339px; position: fixed" Text="First Time?" />
+                <asp:Button ID="btnContinue" CssClass="Button" runat="server" style="z-index: 1; left: 413px; top: 341px; position: fixed" Text="Continue " OnClick="btnContinue_Click" />
     
             </article>
  

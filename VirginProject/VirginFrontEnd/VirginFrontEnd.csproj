@@ -84,6 +84,7 @@
     <Content Include="MarketplaceHome.aspx" />
     <Content Include="MarketplaceListingDelete.aspx" />
     <Content Include="MarketplaceListingList.aspx" />
+    <Content Include="MarketplaceListingType.aspx" />
     <Content Include="MarketplaceListingViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserFavoriteListings.aspx" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="MarketplaceListingList.aspx.designer.cs">
       <DependentUpon>MarketplaceListingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceListingType.aspx.cs">
+      <DependentUpon>MarketplaceListingType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceListingType.aspx.designer.cs">
+      <DependentUpon>MarketplaceListingType.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarketplaceListingViewer.aspx.cs">
       <DependentUpon>MarketplaceListingViewer.aspx</DependentUpon>

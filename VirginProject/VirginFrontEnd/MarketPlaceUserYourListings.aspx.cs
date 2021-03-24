@@ -19,6 +19,7 @@ namespace VirginFrontEnd
             {
                 //update the list box
                 DisplayListing();
+                DisplayUserData();
 
             }
         }
@@ -29,7 +30,7 @@ namespace VirginFrontEnd
             Session["ListingID"] = -1;
             Session["UserID"] = UserID;
             //redirect to user data entry page
-            Response.Redirect("AnMarketplaceListing.aspx");
+            Response.Redirect("MarketplaceListingType.aspx");
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -121,6 +122,17 @@ namespace VirginFrontEnd
                 Index++;
             }
             return RecordCount;
+
+        }
+        void DisplayUserData()
+        {
+            //create an instance of the user collection class
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            //find the record to update
+            SomeUser.ThisUser.Find(UserID);
+            //display the data for this record
+            lblEmail.Text = SomeUser.ThisUser.Email;
+
 
         }
 

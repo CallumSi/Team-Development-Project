@@ -65,7 +65,7 @@
         Session["ListingID"] = -1;
         Session["UserID"] = UserID;
         //redirect to user data entry page
-        Response.Redirect("AnMarketplaceListing.aspx");
+        Response.Redirect("MarketplaceListingType.aspx");
     }
 
 
@@ -231,6 +231,7 @@
               %>
 
                     </ul> 
+                
             </article>
 
             <nav>

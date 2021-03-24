@@ -94,7 +94,7 @@ namespace VirginFrontEnd
             Session["ListingID"] = -1;
             Session["UserID"] = UserID;
             //redirect to user data entry page
-            Response.Redirect("AnMarketplaceListing.aspx"); 
+            Response.Redirect("MarketplaceListingType.aspx"); 
         }
 
        
@@ -105,6 +105,7 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to next page
             Session["ListingID"] = 2;
+            Session["UserID"] = UserID;
             //redirect to edit user details page
             Response.Redirect("MarketplaceListingViewer.aspx");
         }

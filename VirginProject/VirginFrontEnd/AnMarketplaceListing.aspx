@@ -24,10 +24,10 @@
                            <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
                            <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" />
                        </li>
-                                      
-                        <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Marketplace Listing Details"></asp:Label>
+               
                  </ul>
-                                    
+                               
+                        <asp:Label ID="lblListingType" runat="server" style="z-index: 1;"></asp:Label>               
                     
                          <br />
                   <ul class="AnListing">

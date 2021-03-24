@@ -34,7 +34,9 @@ namespace VirginFrontEnd
             {
                 {
                     //display the requeted record
+                    DisplayUserData();
                     DisplayData();
+
                 }
             }
 
@@ -59,6 +61,8 @@ namespace VirginFrontEnd
                 lblCondition.Text = "Used";
 
             }
+
+           
             DateTime todaydatetime =  DateTime.Now;
             DateTime enddate = SomeListing.ThisListing.CloseDate;
             TimeSpan difference = enddate.Subtract(todaydatetime);
@@ -68,6 +72,21 @@ namespace VirginFrontEnd
             lblDeliveryType.Text = SomeListing.ThisListing.DeliveryType;
             lblDescription.Text = SomeListing.ThisListing.Description;
             imgListing.ImageUrl = SomeListing.ThisListing.Img;
+            if (SomeListing.ThisListing.ListingType == 1)
+            {
+              
+               
+                btnAddToCart.Visible = true;
+                btnBuyNow.Visible = true;
+                lblListingType.Text = "Listing Type: Instant Purchace";
+            }
+            if (SomeListing.ThisListing.ListingType == 2)
+            {
+                lstBids.Visible = true;
+                lblBidTitle.Visible = true;
+                btnBid.Visible = true;
+                lblListingType.Text = "Listing Type: Auction";
+            }
 
 
             // create an instance of the user collection class
@@ -79,6 +98,17 @@ namespace VirginFrontEnd
             CheckForFavorite();
         }
 
+        void DisplayUserData()
+        {
+            //create an instance of the user collection class
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            //find the record to update
+            SomeUser.ThisUser.Find(UserID);
+            //display the data for this record
+            lblEmail.Text = SomeUser.ThisUser.Email;
+
+
+        }
         protected void btnHome_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
@@ -201,5 +231,20 @@ namespace VirginFrontEnd
                 //execute the stored procedure
                 DB.Execute("sproc_tblMarketplaceListingFavorite_Delete");
             }
-}
+
+        protected void btnBid_Click(object sender, EventArgs e)
+        {
+             
+        }
+
+        protected void btnOffer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddToCart_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

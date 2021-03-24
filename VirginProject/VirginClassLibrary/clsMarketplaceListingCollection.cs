@@ -84,6 +84,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
             //execute the insert sproc
             return DB.Execute("sproc_tblMarketplaceListing_Insert");
 
@@ -115,6 +116,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
 
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_Update");
@@ -206,7 +208,8 @@ namespace VirginClassLibrary
                 AnListing.ListingName = Convert.ToString(DB.DataTable.Rows[Index]["ListingName"]);
                 AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
                 AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
-                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]); 
+                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
                 //add the record 
                 mListingList.Add(AnListing);
                
@@ -243,6 +246,7 @@ namespace VirginClassLibrary
                 AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
                 AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
                 AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
                 //add the record 
                 mListingList.Add(AnListing);
                 //GO TO NEXT RECORD
