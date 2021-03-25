@@ -42,8 +42,10 @@ footer {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 90%;
+    top: 70%;
     left: 0%;
+    margin-top: 94px;
+    margin-bottom: 15px;
 }
 
 #FooterText {

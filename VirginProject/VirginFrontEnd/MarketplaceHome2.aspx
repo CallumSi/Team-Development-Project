@@ -8,106 +8,147 @@
 
 <script runat="server">
 
-    Int32 UserID;
-    VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
-    VirginClassLibrary.clsMarketplaceListingCollection filteredlist;
-    bool trysearch = false;
-    protected void Page_Load(object sender, EventArgs e)
-    {
+            Int32 UserID;
+            VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+            VirginClassLibrary.clsMarketplaceListingCollection filteredlist;
+            bool trysearch = false;
+            protected void Page_Load(object sender, EventArgs e)
+            {
 
-        //get the User Id
-        UserID = Convert.ToInt32(Session["UserID"]);
+                //get the User Id
+                UserID = Convert.ToInt32(Session["UserID"]);
+
+
+                if (IsPostBack == false)
+                {
+                    {
+
+                        //display the User data
+                        DisplayUserData();
+                        //display the Listings
+                        //create an instance of the Listing Colleciton
+
+
+                    }
+                }
+            }
+
+            void DisplayUserData()
+            {
+                //create an instance of the user collection class
+                VirginClassLibrary.clsMarketplaceUserCollection SomeUser = new VirginClassLibrary.clsMarketplaceUserCollection();
+                //find the record to update
+                SomeUser.ThisUser.Find(UserID);
+                //display the data for this record
+                lblEmail.Text = SomeUser.ThisUser.Email;
+
+
+            }
+
+
+
+            VirginClassLibrary.clsMarketplaceListingCollection FilterListing(string ListingNameFilter)
+            {
+
+                //create instance of collection class
+                VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+                ListOfListings.FilterByListingName(ListingNameFilter);
+                return ListOfListings;
+
+            }
+
+
+
+            protected void btnClickHere_Click(object sender, EventArgs e)
+            {
+                //use session object to indicate new record
+                Session["ListingID"] = -1;
+                Session["UserID"] = UserID;
+                //redirect to user data entry page
+                Response.Redirect("MarketplaceListingType.aspx");
+            }
+
+
+            protected void Redirect_Click(object sender, EventArgs e)
+            {
+                //store data in session object so we can pass it to next page
+                Session["ListingID"] = 2;
+                //redirect to edit user details page
+                Response.Redirect("MarketplaceListingViewer.aspx");
+            }
+
+            protected void btnSearch_Click(object sender, EventArgs e)
+            {
+                if (txtSearch.Text != "")
+                {
+                    filteredlist = FilterListing(txtSearch.Text);
+                    trysearch = true;
+
+                }
+                else
+                {
+                    trysearch = false;
+                }
+
+            }
+
+            protected void btnMyAccount_Click(object sender, EventArgs e)
+            {
+                //store data in session object so we can pass it to next page
+                Session["UserID"] = UserID;
+                //redirect to edit user details page
+                Response.Redirect("MarketplaceUserProfile.aspx");
+            }
+
+            protected void btnHome_Click(object sender, EventArgs e)
+            {
+                //store data in session object so we can pass it to next page
+                Session["UserID"] = UserID;
+                //redirect to edit user details page
+                Response.Redirect("MarketplaceHome.aspx");
+            }
+
+            decimal GetHighestBid(int ListingID)
+            {
+
+                //first establish connection 
+                VirginClassLibrary.clsDataConnection DB = new VirginClassLibrary.clsDataConnection();
+                //set the paramters for the sproc
+                DB.AddParameter("@ListingID", ListingID);
+                //execute the spoc
+                DB.Execute("sproc_tblMarketplaceUserBids_FilterByListingID");
+                //populate the array with the found data;
+                //variables to loop through list
+                Int32 RecordCount;
+                Int32 Index = 0;
+                decimal highestbid = 0;
+                //get count of filtered list
+                RecordCount = DB.Count;
+                if (RecordCount != 0)
+                {
+
+
+                    //loop through the list adding them to the list box
+
+                    while (Index < RecordCount)
+                    {
+
+                        decimal tempbid = Convert.ToDecimal(DB.DataTable.Rows[Index]["BidAmount"]);
+                        if (tempbid > highestbid)
+                        {
+                            highestbid = tempbid;
+                        }
+
+
+                        Index++;
+                    }
+
+                }
+
+                return highestbid;
+            }
       
-
-        if (IsPostBack == false)
-        {
-            {
-
-                //display the User data
-                DisplayUserData();
-                //display the Listings
-                //create an instance of the Listing Colleciton
-
-
-            }
-        }
-    }
-
-    void DisplayUserData()
-    {
-        //create an instance of the user collection class
-        VirginClassLibrary.clsMarketplaceUserCollection SomeUser = new VirginClassLibrary.clsMarketplaceUserCollection();
-        //find the record to update
-        SomeUser.ThisUser.Find(UserID);
-        //display the data for this record
-        lblEmail.Text = SomeUser.ThisUser.Email;
-
-
-    }
-
-
-
-    VirginClassLibrary.clsMarketplaceListingCollection FilterListing(string ListingNameFilter)
-    {
-       
-        //create instance of collection class
-        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
-        ListOfListings.FilterByListingName(ListingNameFilter);
-        return  ListOfListings;
-
-    }
-
-
-
-    protected void btnClickHere_Click(object sender, EventArgs e)
-    {
-        //use session object to indicate new record
-        Session["ListingID"] = -1;
-        Session["UserID"] = UserID;
-        //redirect to user data entry page
-        Response.Redirect("MarketplaceListingType.aspx");
-    }
-
-
-    protected void Redirect_Click(object sender, EventArgs e)
-    {
-        //store data in session object so we can pass it to next page
-        Session["ListingID"] = 2;
-        //redirect to edit user details page
-        Response.Redirect("MarketplaceListingViewer.aspx");
-    }
-
-    protected void btnSearch_Click(object sender, EventArgs e)
-    {
-            if (txtSearch.Text != "")
-            { 
-            filteredlist = FilterListing(txtSearch.Text);
-            trysearch = true;
-
-            }
-            else
-            {
-                trysearch = false;
-            }
-
-    }
-
-    protected void btnMyAccount_Click(object sender, EventArgs e)
-    {
-        //store data in session object so we can pass it to next page
-        Session["UserID"] = UserID;
-        //redirect to edit user details page
-        Response.Redirect("MarketplaceUserProfile.aspx");
-    }
-
-    protected void btnHome_Click(object sender, EventArgs e)
-    {
-        //store data in session object so we can pass it to next page
-        Session["UserID"] = UserID;
-        //redirect to edit user details page
-        Response.Redirect("MarketplaceHome.aspx");
-    }
-
+    
 </script>
 
 
@@ -176,15 +217,39 @@
                         %>
                         <li>
                             <%
-                            //write a listing to the browser
-                            Response.Write(filteredlist.ListingList[Index2].ListingName);
-                            Response.Write("<br>");
-                            Response.Write("<img src='" + filteredlist.ListingList[Index2].Img+ "'/>");
-                            Response.Write("<br>");
-                            Response.Write("Price: £" + filteredlist.ListingList[Index2].Price);
-                            Response.Write("<br>");
-                            Response.Write("Ends:" + filteredlist.ListingList[Index2].CloseDate);
-                            Response.Write("<br>");
+                                //write a listing to the browser
+                                Response.Write(filteredlist.ListingList[Index2].ListingName);
+                                Response.Write("<br>");
+                                Response.Write("<img src='" + filteredlist.ListingList[Index2].Img+ "'/>");
+                                Response.Write("<br>");
+                                Response.Write("Start Price: £" + filteredlist.ListingList[Index2].Price);
+                                Response.Write("<br>");
+                                Response.Write("Ends:" + filteredlist.ListingList[Index2].CloseDate);
+                                Response.Write("<br>");
+                                if(MyListings.ListingList[Index].ListingType==1){
+                                    Response.Write("Buy Now");
+                                }
+                                if(MyListings.ListingList[Index].ListingType==2){
+                                    Response.Write("Bid Now");
+                                    Response.Write("<br>");
+                                    Response.Write("Current Bid : ");
+                                    if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
+                                    {
+                                        
+                                        Response.Write("£");
+                                        Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
+                                    }
+                                    else
+                                    {
+                                        Response.Write("No Bids yet");
+                                    }
+
+
+                                }
+                                if(MyListings.ListingList[Index].ListingType==3){
+                                    Response.Write("Offer Now");
+                                }
+                                Response.Write("<br>");
                             %>
                             
                             <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(filteredlist.ListingList[Index].ListingID);%>" > View</a>
@@ -205,15 +270,37 @@
                         %>
                         <li>
                             <%
-                            //write a listing to the browser
-                            Response.Write(MyListings.ListingList[Index].ListingName);
-                            Response.Write("<br>");
-                            Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
-                            Response.Write("<br>");
-                            Response.Write("Price: £" + MyListings.ListingList[Index].Price);
-                            Response.Write("<br>");
-                            Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
-                            Response.Write("<br>");
+                                //write a listing to the browser
+                                Response.Write(MyListings.ListingList[Index].ListingName);
+                                Response.Write("<br>");
+                                Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
+                                Response.Write("<br>");
+                                Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
+                                Response.Write("<br>");
+                                Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
+                                Response.Write("<br>");
+                                if(MyListings.ListingList[Index].ListingType==1){
+                                    Response.Write("Buy Now");
+                                }
+                                if(MyListings.ListingList[Index].ListingType==2){
+                                    Response.Write("Bid Now");
+                                    Response.Write("<br>");
+                                    Response.Write("Current Bid : ");
+                                    if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
+                                    {
+                                        Response.Write("£");
+                                        Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
+                                    }
+                                    else
+                                    {
+                                        Response.Write("No Bids yet");
+                                    }
+                                }
+                                if(MyListings.ListingList[Index].ListingType==3){
+                                    Response.Write("Offer Now");
+                                }
+                                Response.Write("<br>");
+
                             %>
                             
                             <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>

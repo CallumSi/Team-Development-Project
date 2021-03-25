@@ -87,15 +87,6 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Image imgListing;
 
         /// <summary>
-        /// lstBids control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstBids;
-
-        /// <summary>
         /// lblBidTitle control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBidTitle;
+
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
         /// lblListingName control.
@@ -285,6 +285,24 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Button btnBuyNow;
 
         /// <summary>
+        /// lblBidText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBidText;
+
+        /// <summary>
+        /// txtBid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBid;
+
+        /// <summary>
         /// btnBid control.
         /// </summary>
         /// <remarks>
@@ -328,5 +346,14 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFavorite;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

@@ -13,7 +13,7 @@ namespace VirginFrontEnd
         //variable to store the ListingID and UserID from session obect
         Int32 ListingID;
         Int32 UserID;
-
+        decimal highestbid;
         protected void Page_Load(object sender, EventArgs e)
         {
             //check for favorite
@@ -36,6 +36,7 @@ namespace VirginFrontEnd
                     //display the requeted record
                     DisplayUserData();
                     DisplayData();
+                   
 
                 }
             }
@@ -82,15 +83,23 @@ namespace VirginFrontEnd
             }
             if (SomeListing.ThisListing.ListingType == 2)
             {
-                lstBids.Visible = true;
+                lblBidText.Visible = true;
+                txtBid.Visible = true;
                 lblBidTitle.Visible = true;
                 btnBid.Visible = true;
                 lblListingType.Text = "Listing Type: Auction";
+                DisplayBids();
+            }
+            if (SomeListing.ThisListing.ListingType == 3)
+            {
+             
+                btnOffer.Visible = true;
+                lblListingType.Text = "Listing Type: Offers";
             }
 
 
             // create an instance of the user collection class
-             clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
             //find the record to update
             SomeUser.ThisUser.Find(SomeListing.ThisListing.OwnerID);
             //display the data for this record
@@ -98,6 +107,49 @@ namespace VirginFrontEnd
             CheckForFavorite();
         }
 
+
+        decimal DisplayBids()
+        {
+
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingID", ListingID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserBids_FilterByListingID");
+            //populate the array with the found data;
+            //variables to loop through list
+            Int32 RecordCount;
+            Int32 Index = 0;
+            //get count of filtered list
+            RecordCount = DB.Count;
+            if (RecordCount == 0)
+            {
+
+                lblBidTitle.Text = "No Bids Yet";
+            }
+            else
+            {
+                //loop through the list adding them to the list box
+               
+                while (Index < RecordCount)
+                {
+
+                    decimal tempbid = Convert.ToDecimal(DB.DataTable.Rows[Index]["BidAmount"]);
+                    if (tempbid > highestbid)
+                    {
+                        highestbid = tempbid;
+                    }
+
+
+                    Index++;
+                }
+                lblBidTitle.Text = highestbid.ToString();
+            }
+            return highestbid;
+        }
+
+   
         void DisplayUserData()
         {
             //create an instance of the user collection class
@@ -234,7 +286,35 @@ namespace VirginFrontEnd
 
         protected void btnBid_Click(object sender, EventArgs e)
         {
+            //used to add a new record into the database
+            //first establish connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+         
+            try
+            {
+                decimal tempbid = Convert.ToDecimal(txtBid.Text);
+                if (tempbid > Convert.ToDecimal(lblBidTitle.Text))
+                {
+                    DB.AddParameter("@BidAmount", txtBid.Text);
+                    DB.AddParameter("@UserID", UserID);
+                    DB.AddParameter("@ListingID", ListingID);
+                    DB.AddParameter("@TimePlaced", DateTime.Now);
+                    //execute the insert sproc
+                    DB.Execute("sproc_tblMarketplaceUserBids_Insert");
+                }
+                else
+                {
+                    lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text ;
+                }
              
+               
+            }
+            catch
+            {
+                lblError.Text = "Please enter a decimal"; 
+            }
+            DisplayBids();
         }
 
         protected void btnOffer_Click(object sender, EventArgs e)

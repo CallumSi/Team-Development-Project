@@ -34,8 +34,8 @@
                    
                     
                     <asp:Image ID="imgListing" runat="server" style="z-index: 1;position:absolute;right:10px; top:100px; height: 200px; width: 303px" />
-                    <asp:ListBox ID="lstBids" runat="server" style="z-index: 1;position:absolute;right:9px; top:340px; height: 184px; width: 302px; margin-top: 0px" Visible="False"></asp:ListBox>
-                    <asp:Label ID="lblBidTitle" runat="server" style="z-index: 1;position:absolute;right:9px; top:300px; height: 184px; width: 302px; margin-top: 0px" Visible="False">Current Bids</asp:Label>
+                    <asp:Label ID="lblBidTitle" runat="server" style="z-index: 1;position:absolute;right:8px; top:302px; height: 27px; width: 92px; margin-top: 0px" Visible="False"> </asp:Label>
+                    <asp:Label ID="Label7" runat="server" style="z-index: 1;position:absolute;right:132px; top:303px; height: 27px; width: 181px; margin-top: 0px">Current Highest Bid : </asp:Label>
                     <asp:Label ID="lblListingName" runat="server" style="z-index: 1;" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
                     <br />
                     <asp:Label ID="lblListingType" runat="server" style="z-index: 1; "></asp:Label>
@@ -70,8 +70,10 @@
                     </li>
                  
                     <li>  
-                        <asp:Label ID="Label2" runat="server" style="z-index: 1; " Text="Price:"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" style="z-index: 1; " Text="Start Price:"></asp:Label>
                         <asp:Label ID="lblPrice" runat="server" style="z-index: 1;"></asp:Label>
+                        
+                    
                         
                     </li>                     
                    
@@ -83,12 +85,15 @@
                     <li> 
                     <asp:Button ID="btnAddToCart" CssClass="navButton" runat="server" style="z-index: 1; " Text="Add to Cart" Visible="False" OnClick="btnAddToCart_Click" />
                     <asp:Button ID="btnBuyNow" CssClass="navButton" runat="server" style="z-index: 1; " Text="Buy Now" OnClick="btnBuyNow_Click" Visible="False" />
-                            <asp:Button ID="btnBid" CssClass="navButton" runat="server" style="z-index: 1; " Text="Bid" OnClick="btnBid_Click" Visible="False"  />
+                            <asp:Label ID="lblBidText" runat="server" style="z-index: 1; " Visible="False">Bid : </asp:Label>
+                         <asp:TextBox ID="txtBid" runat="server" Visible="False"></asp:TextBox>
+                          <asp:Button ID="btnBid" CssClass="navButton" runat="server" style="z-index: 1; " Text="Place Bid" OnClick="btnBid_Click" Visible="False"  />
                         <asp:Button ID="btnOffer" CssClass="navButton" runat="server" style="z-index: 1; " Text="Offer" OnClick="btnOffer_Click" Visible="False"  />
                      <asp:Button ID="btnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" />
                    <asp:Button ID="btnUnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="UnFavorite" OnClick="btnUnFavorite_Click"  />
                     
-                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label></li>
+                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label>
+                   <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label></li>
                   
                     
                     
