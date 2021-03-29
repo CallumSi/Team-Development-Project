@@ -93,6 +93,7 @@
     <Content Include="VCHCustomerList.aspx" />
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
+    <Content Include="VCHStaffList.aspx" />
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginUserList.aspx" />
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="VCHCustomerList.aspx.designer.cs">
       <DependentUpon>VCHCustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHStaffList.aspx.cs">
+      <DependentUpon>VCHStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHStaffList.aspx.designer.cs">
+      <DependentUpon>VCHStaffList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginProject.Master.cs">
       <DependentUpon>VirginProject.Master</DependentUpon>

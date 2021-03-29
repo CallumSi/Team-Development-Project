@@ -289,6 +289,5 @@ namespace VirginTestProject
             //test to see that there are no new customer records
             Assert.IsTrue(OK);
         }*/
-
     }
 }
