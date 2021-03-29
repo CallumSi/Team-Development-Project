@@ -22,6 +22,7 @@
         <asp:Label ID="lblUsername" runat="server" style="z-index: 1; left: 11px; top: 375px; position: absolute" Text="Please Enter a Customers Username"></asp:Label>
         </p>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 10px; top: 407px; position: absolute" Text="[lblError]"></asp:Label>
+        <asp:Button ID="btnAccess" runat="server" OnClick="btnAccess_Click" style="z-index: 1; left: 822px; top: 69px; position: absolute; height: 285px; width: 338px" Text="Click to Access Staff List - Temporary" />
     </form>
 </body>
 </html>

@@ -29,13 +29,13 @@ namespace VirginFrontEnd
             //set the name of the primary key
             lstCustomer.DataValueField = "CustomerID";
             //set the data field to display
-            lstCustomer.DataTextField = "FirstName" ;
-            /*
-            //set the data field to display
+            lstCustomer.DataTextField = "FirstName";
+
+            /*//set the data field to display
             lstCustomer.DataTextField = "Username";
             //set the data field to display
-            lstCustomer.DataTextField = "FirstName" + "Username";
-            */
+            lstCustomer.DataTextField = "FirstName" + "Username";*/
+
             //bind the data to the list
             lstCustomer.DataBind();
         }
@@ -144,6 +144,13 @@ namespace VirginFrontEnd
             }
             //return the count of records
             return RecordCount;
+        }
+
+        protected void btnAccess_Click(object sender, EventArgs e)
+        {
+            //once selected, I will be directed to the StaffList page
+            //this button is currently in place to avoid an error of null customers
+            Response.Redirect("VCHStaffList.aspx");
         }
     }
 }

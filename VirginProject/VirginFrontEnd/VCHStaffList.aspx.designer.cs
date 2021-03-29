@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHCustomerList {
+    public partial class VCHStaffList {
         
         /// <summary>
         /// form1 control.
@@ -19,105 +19,96 @@ namespace VirginFrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// lblCustomers control.
+        /// lblStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomers;
+        protected global::System.Web.UI.WebControls.Label lblStaff;
         
         /// <summary>
-        /// btnApply control.
+        /// btnApplyStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
+        protected global::System.Web.UI.WebControls.Button btnApplyStaff;
         
         /// <summary>
-        /// btnDisplayAll control.
+        /// btnDisplayAllStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
+        protected global::System.Web.UI.WebControls.Button btnDisplayAllStaff;
         
         /// <summary>
-        /// btnAdd control.
+        /// btnAddStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button btnAddStaff;
         
         /// <summary>
-        /// btnEdit control.
+        /// btnEditStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Button btnEditStaff;
         
         /// <summary>
-        /// btnDelete control.
+        /// btnDeleteStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Button btnDeleteStaff;
         
         /// <summary>
-        /// txtBxSearch control.
+        /// txtBxSearchStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBxSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtBxSearchStaff;
         
         /// <summary>
-        /// lstCustomer control.
+        /// lstStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstCustomer;
+        protected global::System.Web.UI.WebControls.ListBox lstStaff;
         
         /// <summary>
-        /// lblUsername control.
+        /// lblUsernameStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.Label lblUsernameStaff;
         
         /// <summary>
-        /// lblError control.
+        /// lblErrorStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-        
-        /// <summary>
-        /// btnAccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAccess;
+        protected global::System.Web.UI.WebControls.Label lblErrorStaff;
     }
 }

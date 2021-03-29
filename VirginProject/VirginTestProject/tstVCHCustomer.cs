@@ -595,5 +595,27 @@ namespace VirginTestProject
             Assert.IsTrue(found);
         }
 
+        //[TestMethod]
+        //public void TestCustomerNoFound()
+        //{
+        //    //create an instance of the class
+        //    clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+        //    //boolean variable to store validation results
+        //    Boolean Found = false;
+        //    //boolean variable to record if data is OK (assuming that it is)
+        //    Boolean OK = true;
+        //    //create test data to use with the method
+        //    Int32 CustomerID = 28;
+        //    //invoke the method
+        //    Found = VCHCustomer.Find(CustomerID);
+        //    //check the CustomerID
+        //    if (VCHCustomer.CustomerID !=28)
+        //    {
+        //        OK = false;
+        //    }
+        //    //test to see that the result is correct
+        //    Assert.IsTrue(OK);
+        //}
+
     }
 }

@@ -1,40 +1,28 @@
 ﻿using System.Collections.Generic;
+using VirginClassLibrary;
+using System;
 
 namespace VirginClassLibrary
 {
     public class clsVCHStaffCollection
     {
-        //private data member for allStaff list
-        public List<clsVCHStaff> mAllStaff = new List<clsVCHStaff>();
+        //private data member for the StaffList list
+        List<clsVCHStaff> mStaffList = new List<clsVCHStaff>();
 
-        //public constructor for the class
-        public clsVCHStaffCollection()
+        //public data member for the StaffList list
+        public List<clsVCHStaff> StaffList
         {
-            //create an instance of the class
-            clsVCHStaff VCHStaff = new clsVCHStaff();
-            //set the first customers details 
-            VCHStaff.StaffFirstName = "Johann";
-            VCHStaff.StaffLastName = "Goethe";
-            VCHStaff.StaffAddress = "49 Frankfurt Lane, Leicester";
-            VCHStaff.StaffPostCode = "LE1 8WE";
-            VCHStaff.StaffUsername = "JohannGoethizzy";
-            VCHStaff.StaffEmail = "j.goethe@gmail.com";
-            VCHStaff.StaffPassword = "HeiMepGre1";
-            VCHStaff.StaffPhoneNumber = "07987654321";
-            //add the first staff to the private list of customers
-            mAllStaff.Add(VCHStaff);
+            get
+            {
+                //return the private data
+                return mStaffList;
+            }
 
-            //set the second customers details 
-            VCHStaff.StaffFirstName = "Wolfgang";
-            VCHStaff.StaffLastName = "Mozart";
-            VCHStaff.StaffAddress = "56 Salzburg, Leicester";
-            VCHStaff.StaffPostCode = "LE9 1VI";
-            VCHStaff.StaffUsername = "AmadeusM";
-            VCHStaff.StaffEmail = "w.a-mozart@gmail.com";
-            VCHStaff.StaffPassword = "JoChryWoThMo5691";
-            VCHStaff.StaffPhoneNumber = "07943187625";
-            //add the second staff to the private list of customers
-            mAllStaff.Add(VCHStaff);
+            set
+            {
+                //set the private data 
+                mStaffList = value;
+            }
         }
 
         public int Count
@@ -42,7 +30,7 @@ namespace VirginClassLibrary
             get
             {
                 //return the count property of the private list
-                return mAllStaff.Count;
+                return mStaffList.Count;
             }
             set
             {
@@ -50,20 +38,40 @@ namespace VirginClassLibrary
             }
         }
 
-        //public property for allStaff
-        public List<clsVCHStaff> AllStaff
+        public clsVCHStaff ThisStaff { get; set; }
+
+        //public constructor for the class
+        public clsVCHStaffCollection()
         {
-            //getter sends data to requesting code
-            get
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_SelectAll");
+            //get the count of staff records
+            RecordCount = DB.Count;
+            //while there are records to process
+            while (Index < RecordCount)
             {
-                //return the private data member
-                return mAllStaff;
-            }
-            //setter accepts data from other object
-            set
-            {
-                //assign the incoming value to the private data member
-                mAllStaff = value;
+                //create a blank staff
+                clsVCHStaff AStaff = new clsVCHStaff();
+                //read in the fields from the curent record
+                AStaff.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);
+                AStaff.StaffFirstName = Convert.ToString(DB.DataTable.Rows[Index]["StaffFirstName"]);
+                AStaff.StaffLastName = Convert.ToString(DB.DataTable.Rows[Index]["StaffLastName"]);
+                AStaff.StaffAddress = Convert.ToString(DB.DataTable.Rows[Index]["StaffAddress"]);
+                AStaff.StaffPostCode = Convert.ToString(DB.DataTable.Rows[Index]["StaffPostCode"]);
+                AStaff.StaffUsername = Convert.ToString(DB.DataTable.Rows[Index]["StaffUsername"]);
+                AStaff.StaffEmail = Convert.ToString(DB.DataTable.Rows[Index]["StaffEmail"]);
+                AStaff.StaffPassword = Convert.ToString(DB.DataTable.Rows[Index]["StaffPassword"]);
+                AStaff.StaffPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["StaffPhoneNumber"]);
+                //add the record to the private data member
+                mStaffList.Add(AStaff);
+                //point at the next record
+                Index++;
             }
         }
     }
