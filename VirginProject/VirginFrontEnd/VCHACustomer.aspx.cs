@@ -63,7 +63,7 @@ namespace VirginFrontEnd
             }
         }
 
-        //function to add new customer records
+        //function to update existing customer records
         void Update()
         {
             //create an instance of the Customer 

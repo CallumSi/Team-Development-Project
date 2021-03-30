@@ -143,10 +143,121 @@ namespace VirginTestProject
         [TestMethod]
         public void TwoStaffPresent()
         {
-            //create an instance of the customer collection class
+            //create an instance of the staff collection class
             clsVCHStaffCollection AllStaff = new clsVCHStaffCollection();
             //test to see the values ARE the same
             Assert.AreEqual(AllStaff.Count, 2);
         }*/
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the staff collection class
+            clsVCHStaffCollection AllStaff = new clsVCHStaffCollection();
+            //test data to assign to the property
+            clsVCHStaff TestItem = new clsVCHStaff();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            TestItem.StaffID = 1;
+            TestItem.StaffFirstName = "Johann";
+            TestItem.StaffLastName = "Goethe";
+            TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
+            TestItem.StaffPostCode = "LE1 8WE";
+            TestItem.StaffUsername = "JohannGoethizzy";
+            TestItem.StaffEmail = "j.goethe@gmail.com";
+            TestItem.StaffPassword = "HeiMepGre1";
+            TestItem.StaffPhoneNumber = "07987654321";
+            //set ThisStaff to the test data
+            AllStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = AllStaff.Add();
+            //set the primary key of the test data
+            TestItem.StaffID = PrimaryKey;
+            //find the record
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllStaff.ThisStaff, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the staff collection class
+            clsVCHStaffCollection AllStaff = new clsVCHStaffCollection();
+            //test data to assign to the property
+            clsVCHStaff TestItem = new clsVCHStaff();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            TestItem.StaffID = 1;
+            TestItem.StaffFirstName = "Johann";
+            TestItem.StaffLastName = "Goethe";
+            TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
+            TestItem.StaffPostCode = "LE1 8WE";
+            TestItem.StaffUsername = "JohannGoethizzy";
+            TestItem.StaffEmail = "j.goethe@gmail.com";
+            TestItem.StaffPassword = "HeiMepGre1";
+            TestItem.StaffPhoneNumber = "07987654321";
+            //set ThisStaff to the test data
+            AllStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = AllStaff.Add();
+            //set the primary key of the test data
+            TestItem.StaffID = PrimaryKey;
+            //find the record
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            //delete the staff record
+            AllStaff.Delete();
+            //now find the staff record
+            Boolean Found = AllStaff.ThisStaff.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the staff collection class
+            clsVCHStaffCollection AllStaff = new clsVCHStaffCollection();
+            //test data to assign to the property
+            clsVCHStaff TestItem = new clsVCHStaff();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            TestItem.StaffID = 1;
+            TestItem.StaffFirstName = "Johann";
+            TestItem.StaffLastName = "Goethe";
+            TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
+            TestItem.StaffPostCode = "LE1 8WE";
+            TestItem.StaffUsername = "JohannGoethizzy";
+            TestItem.StaffEmail = "j.goethe@gmail.com";
+            TestItem.StaffPassword = "HeiMepGre1";
+            TestItem.StaffPhoneNumber = "07987654321";
+            //set ThisStaff to the test data
+            AllStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = AllStaff.Add();
+            //set the primary key of the test data
+            TestItem.StaffID = PrimaryKey;
+            //modify the test data in the following manner
+            TestItem.StaffID = 1;
+            TestItem.StaffFirstName = "Johann";
+            TestItem.StaffLastName = "Goethe";
+            TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
+            TestItem.StaffPostCode = "LE1 8WE";
+            TestItem.StaffUsername = "MrHighIQ";
+            TestItem.StaffEmail = "j.goethe@gmail.com";
+            TestItem.StaffPassword = "HeiMepGre1";
+            TestItem.StaffPhoneNumber = "07987654321";
+            //set the record based on the new test data
+            AllStaff.ThisStaff = TestItem;
+            //update the record
+            AllStaff.Update();
+            //find the record
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllStaff.ThisStaff, TestItem);
+        }
     }
 }
