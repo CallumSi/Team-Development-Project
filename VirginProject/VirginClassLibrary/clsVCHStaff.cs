@@ -1,37 +1,198 @@
 ﻿using System.Collections.Generic;
 using VirginClassLibrary;
 using System;
+using System.Linq;
+using System.Text;
 
 namespace VirginClassLibrary
 {
     public class clsVCHStaff
     {
-        //staff ID property
-        public int StaffID { get; set; }
-        
-        //staff first name property 
-        public string StaffFirstName { get; set; }
-        
-        //staff last name property 
-        public string StaffLastName { get; set; }
+        //private staff ID property
+        private int mStaffID;
+        //private staff first name property 
+        private string mStaffFirstName;
+        //private staff last name property 
+        private string mStaffLastName;
+        //private staff address property 
+        private string mStaffAddress;
+        //private staff postcode property 
+        private string mStaffPostCode;
+        //private staff username property
+        private string mStaffUsername;
+        //private staff email property
+        private string mStaffEmail;
+        //private staff password property
+        private string mStaffPassword;
+        //private staff phone number property
+        private string mStaffPhoneNumber;
 
-        //staff address property 
-        public string StaffAddress { get; set; }
+        //StaffID property
+        public int StaffID
+        {
+            get
+            {
+                //return the private data
+                return mStaffID;
+            }
+            set
+            {
+                //set the private data
+                mStaffID = value;
+            }
+        }
 
-        //staff postcode property 
-        public string StaffPostCode { get; set; }
+        //Staff First Name property
+        public string StaffFirstName
+        {
+            get
+            {
+                //return the private data
+                return mStaffFirstName;
+            }
+            set
+            {
+                //set the private data
+                mStaffFirstName = value;
+            }
+        }
 
-        //staff username property
-        public string StaffUsername { get; set; }
+        //Staff Last Name property
+        public string StaffLastName
+        {
+            get
+            {
+                //return the private data
+                return mStaffLastName;
+            }
+            set
+            {
+                //set the private data
+                mStaffLastName = value;
+            }
+        }
 
-        //staff email property
-        public string StaffEmail { get; set; }
+        //Staff Address property
+        public string StaffAddress
+        {
+            get
+            {
+                //return the private data
+                return mStaffAddress;
+            }
+            set
+            {
+                //set the private data
+                mStaffAddress = value;
+            }
+        }
 
-        //staff password property
-        public string StaffPassword { get; set; }
+        //Staff Postcode property
+        public string StaffPostCode
+        {
+            get
+            {
+                //return the private data
+                return mStaffPostCode;
+            }
+            set
+            {
+                //set the private data
+                mStaffPostCode = value;
+            }
+        }
 
-        //staff phone number property
-        public string StaffPhoneNumber { get; set; }
+        //Staff Username property
+        public string StaffUsername
+        {
+            get
+            {
+                //return the private data
+                return mStaffUsername;
+            }
+            set
+            {
+                //set the private data
+                mStaffUsername = value;
+            }
+        }
+
+        //Staff Email property
+        public string StaffEmail
+        {
+            get
+            {
+                //return the private data
+                return mStaffEmail;
+            }
+            set
+            {
+                //set the private data
+                mStaffEmail = value;
+            }
+        }
+
+        //Staff Password property
+        public string StaffPassword
+        {
+            get
+            {
+                //return the private data
+                return mStaffPassword;
+            }
+            set
+            {
+                //set the private data
+                mStaffPassword = value;
+            }
+        }
+
+        //Staff Phone Number property
+        public string StaffPhoneNumber
+        {
+            get
+            {
+                //return the private data
+                return mStaffPhoneNumber;
+            }
+            set
+            {
+                //set the private data
+                mStaffPhoneNumber = value;
+            }
+        }
+
+        public bool Find(int StaffID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for StaffID to search for
+            DB.AddParameter("@StaffID", StaffID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_FilterByStaffID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                mStaffFirstName = Convert.ToString(DB.DataTable.Rows[0]["StaffFirstName"]);
+                mStaffLastName = Convert.ToString(DB.DataTable.Rows[0]["StaffLastName"]);
+                mStaffAddress = Convert.ToString(DB.DataTable.Rows[0]["StaffAddress"]);
+                mStaffPostCode = Convert.ToString(DB.DataTable.Rows[0]["StaffPostCode"]);
+                mStaffUsername = Convert.ToString(DB.DataTable.Rows[0]["StaffUsername"]);
+                mStaffEmail = Convert.ToString(DB.DataTable.Rows[0]["StaffEmail"]);
+                mStaffPassword = Convert.ToString(DB.DataTable.Rows[0]["StaffPassword"]);
+                mStaffPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["StaffPhoneNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+        }
 
         //Valid Method
         public string Valid(string StaffFirstName, string StaffLastName, string StaffAddress, string StaffPostCode, string StaffUsername, string StaffEmail, string StaffPassword, string StaffPhoneNumber)
@@ -199,5 +360,6 @@ namespace VirginClassLibrary
 
             return Error;
         }
+        
     }
 }

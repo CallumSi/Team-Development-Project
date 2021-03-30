@@ -19,7 +19,7 @@ namespace VirginFrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// lblStaff control.
@@ -31,58 +31,58 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblStaff;
         
         /// <summary>
-        /// btnApplyStaff control.
+        /// btnApply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApplyStaff;
+        protected global::System.Web.UI.WebControls.Button btnApply;
         
         /// <summary>
-        /// btnDisplayAllStaff control.
+        /// btnDisplayAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAllStaff;
+        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
         
         /// <summary>
-        /// btnAddStaff control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddStaff;
+        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// btnEditStaff control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditStaff;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
         
         /// <summary>
-        /// btnDeleteStaff control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteStaff;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// txtBxSearchStaff control.
+        /// txtBxSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBxSearchStaff;
+        protected global::System.Web.UI.WebControls.TextBox txtBxSearch;
         
         /// <summary>
         /// lstStaff control.
@@ -94,21 +94,21 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.ListBox lstStaff;
         
         /// <summary>
-        /// lblUsernameStaff control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsernameStaff;
+        protected global::System.Web.UI.WebControls.Label lblUsername;
         
         /// <summary>
-        /// lblErrorStaff control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorStaff;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

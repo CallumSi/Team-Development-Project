@@ -8,6 +8,8 @@ namespace VirginClassLibrary
     {
         //private data member for the StaffList list
         List<clsVCHStaff> mStaffList = new List<clsVCHStaff>();
+        //private data member for thisStaff
+        clsVCHStaff mThisStaff = new clsVCHStaff();
 
         //public data member for the StaffList list
         public List<clsVCHStaff> StaffList
@@ -25,6 +27,22 @@ namespace VirginClassLibrary
             }
         }
 
+        //public data member for the ThisStaff list
+        public clsVCHStaff ThisStaff
+        {
+            get
+            {
+                //return the private data
+                return mThisStaff;
+            }
+
+            set
+            {
+                //set the private data 
+                mThisStaff = value;
+            }
+        }
+
         public int Count
         {
             get
@@ -37,8 +55,6 @@ namespace VirginClassLibrary
                 //returning to this one soon
             }
         }
-
-        public clsVCHStaff ThisStaff { get; set; }
 
         //public constructor for the class
         public clsVCHStaffCollection()
@@ -73,6 +89,54 @@ namespace VirginClassLibrary
                 //point at the next record
                 Index++;
             }
+        }
+
+        public int Add()
+        {
+            //add a new staff record to the database, based on values of thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@StaffFirstName", mThisStaff.StaffFirstName);
+            DB.AddParameter("@StaffLastName", mThisStaff.StaffLastName);
+            DB.AddParameter("@StaffAddress", mThisStaff.StaffAddress);
+            DB.AddParameter("@StaffPostCode", mThisStaff.StaffPostCode);
+            DB.AddParameter("@StaffUsername", mThisStaff.StaffUsername);
+            DB.AddParameter("@StaffEmail", mThisStaff.StaffEmail);
+            DB.AddParameter("@StaffPassword", mThisStaff.StaffPassword);
+            DB.AddParameter("@StaffPhoneNumber", mThisStaff.StaffPhoneNumber);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVCHStaff_Insert");
+        }
+
+        public void Delete()
+        {
+            //deletes a staff record as indicted by thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing staff record in the database, based on values of thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            DB.AddParameter("@StaffFirstName", mThisStaff.StaffFirstName);
+            DB.AddParameter("@StaffLastName", mThisStaff.StaffLastName);
+            DB.AddParameter("@StaffAddress", mThisStaff.StaffAddress);
+            DB.AddParameter("@StaffPostCode", mThisStaff.StaffPostCode);
+            DB.AddParameter("@StaffUsername", mThisStaff.StaffUsername);
+            DB.AddParameter("@StaffEmail", mThisStaff.StaffEmail);
+            DB.AddParameter("@StaffPassword", mThisStaff.StaffPassword);
+            DB.AddParameter("@StaffPhoneNumber", mThisStaff.StaffPhoneNumber);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_Update");
         }
     }
 }
