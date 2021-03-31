@@ -67,46 +67,69 @@ namespace VirginFrontEnd
             DateTime todaydatetime =  DateTime.Now;
             DateTime enddate = SomeListing.ThisListing.CloseDate;
             TimeSpan difference = enddate.Subtract(todaydatetime);
-            lblTimeLeft.Text = difference.ToString();
-            lblPrice.Text = SomeListing.ThisListing.Price.ToString();
-            lblQuantity.Text = SomeListing.ThisListing.Quantity.ToString();
-            lblDeliveryType.Text = SomeListing.ThisListing.DeliveryType;
-            lblDescription.Text = SomeListing.ThisListing.Description;
-            imgListing.ImageUrl = SomeListing.ThisListing.Img;
-            if (SomeListing.ThisListing.ListingType == 1)
+            if(difference.Seconds > 0)
             {
-              
-               
-                btnAddToCart.Visible = true;
-                btnBuyNow.Visible = true;
-                lblListingType.Text = "Listing Type: Instant Purchace";
+                lblTimeLeft.Text = string.Format("{0} days, {1} hours, {2} minutes, {3} seconds", difference.Days, difference.Hours, difference.Minutes, difference.Seconds);
+                lblPrice.Text = SomeListing.ThisListing.Price.ToString();
+                lblQuantity.Text = SomeListing.ThisListing.Quantity.ToString();
+                lblDeliveryType.Text = SomeListing.ThisListing.DeliveryType;
+                lblDescription.Text = SomeListing.ThisListing.Description;
+                imgListing.ImageUrl = SomeListing.ThisListing.Img;
+                if (SomeListing.ThisListing.ListingType == 1)
+                {
+
+
+                    btnAddToCart.Visible = true;
+                    btnBuyNow.Visible = true;
+                    lblListingType.Text = "Listing Type: Instant Purchace";
+                }
+                if (SomeListing.ThisListing.ListingType == 2)
+                {
+                    lblCurrentBidTitle.Visible = true;
+                    lblBidText.Visible = true;
+                    txtBid.Visible = true;
+                    lblBidTitle.Visible = true;
+                    btnBid.Visible = true;
+                    lblListingType.Text = "Listing Type: Auction";
+                    DisplayBids();
+                }
+                if (SomeListing.ThisListing.ListingType == 3)
+                {
+
+                    txtBid.Visible = true;
+                    btnOffer.Visible = true;
+                    lblListingType.Text = "Listing Type: Offers";
+                }
+
+
+                // create an instance of the user collection class
+                clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+                //find the record to update
+                SomeUser.ThisUser.Find(SomeListing.ThisListing.OwnerID);
+                //display the data for this record
+                lblSellerEmail.Text = SomeUser.ThisUser.Email;
+                CheckForFavorite();
             }
-            if (SomeListing.ThisListing.ListingType == 2)
+            else
             {
-                lblCurrentBidTitle.Visible = true;
-                lblBidText.Visible = true;
-                txtBid.Visible = true;
-                lblBidTitle.Visible = true;
-                btnBid.Visible = true;
-                lblListingType.Text = "Listing Type: Auction";
-                DisplayBids();
+                lblSellerEmailTitle.Visible = false;
+                lblCategoryTitle.Visible = false;
+                lblConditionTitle.Visible = false;
+                lblTimeLeftTitle.Visible = false;
+                lblDeliveryTypeTitle.Visible = false;
+                lblStartPriceTitle.Visible = false;
+                lblQuantityTitle.Visible = false;
+                lblDeliveryTypeTitle.Visible = false;
+                lblDescriptionTitle.Visible = false;
+                lblCondition.Visible = false;
+                lblListingName.Text = "Listing Ended";
+                imgListing.Visible = false;
+                lblCategory.Visible = false;
+                btnFavorite.Visible = false;
+                btnUnFavorite.Visible = false;
+
             }
-            if (SomeListing.ThisListing.ListingType == 3)
-            {   
-
-                txtBid.Visible = true;
-                btnOffer.Visible = true;
-                lblListingType.Text = "Listing Type: Offers";
-            }
-
-
-            // create an instance of the user collection class
-            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
-            //find the record to update
-            SomeUser.ThisUser.Find(SomeListing.ThisListing.OwnerID);
-            //display the data for this record
-            lblSellerEmail.Text = SomeUser.ThisUser.Email;
-            CheckForFavorite();
+            
         }
 
 

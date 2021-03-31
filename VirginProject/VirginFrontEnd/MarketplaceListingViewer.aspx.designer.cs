@@ -123,13 +123,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblListingType;
 
         /// <summary>
-        /// Label18 control.
+        /// lblSellerEmailTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Label lblSellerEmailTitle;
 
         /// <summary>
         /// lblSellerEmail control.
@@ -141,13 +141,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblSellerEmail;
 
         /// <summary>
-        /// Label5 control.
+        /// lblCategoryTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lblCategoryTitle;
 
         /// <summary>
         /// lblCategory control.
@@ -159,13 +159,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
-        /// Label6 control.
+        /// lblDeliveryTypeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label lblDeliveryTypeTitle;
 
         /// <summary>
         /// lblDeliveryType control.
@@ -177,13 +177,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblDeliveryType;
 
         /// <summary>
-        /// label23 control.
+        /// lblQuantityTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label23;
+        protected global::System.Web.UI.WebControls.Label lblQuantityTitle;
 
         /// <summary>
         /// lblQuantity control.
@@ -195,13 +195,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblQuantity;
 
         /// <summary>
-        /// Label4 control.
+        /// lblDescriptionTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblDescriptionTitle;
 
         /// <summary>
         /// lblDescription control.
@@ -213,13 +213,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblDescription;
 
         /// <summary>
-        /// Label10 control.
+        /// lblConditionTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label lblConditionTitle;
 
         /// <summary>
         /// lblCondition control.
@@ -231,13 +231,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblCondition;
 
         /// <summary>
-        /// Label2 control.
+        /// lblStartPriceTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblStartPriceTitle;
 
         /// <summary>
         /// lblPrice control.
@@ -249,13 +249,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblPrice;
 
         /// <summary>
-        /// label1 control.
+        /// lblTimeLeftTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
+        protected global::System.Web.UI.WebControls.Label lblTimeLeftTitle;
 
         /// <summary>
         /// lblTimeLeft control.

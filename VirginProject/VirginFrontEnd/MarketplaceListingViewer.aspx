@@ -42,42 +42,42 @@
      
                 <ul class="AnListing">
                     <li>
-                        <asp:Label ID="Label18" runat="server" style="z-index: 1; " Text="Seller:"></asp:Label>
+                        <asp:Label ID="lblSellerEmailTitle" runat="server" style="z-index: 1; " Text="Seller:"></asp:Label>
                     <asp:Label ID="lblSellerEmail" runat="server" style="z-index: 1; "></asp:Label>
                     </li>
                      
                     <li>
-                        <asp:Label ID="Label5" runat="server" style="z-index: 1; " Text="Category:"></asp:Label>
+                        <asp:Label ID="lblCategoryTitle" runat="server" style="z-index: 1; " Text="Category:"></asp:Label>
                         <asp:Label ID="lblCategory" runat="server" style="z-index: 1; "></asp:Label>
                     </li>
                     <li>
-                        <asp:Label ID="Label6" runat="server" style="z-index: 1;" Text="Delivery Type:"></asp:Label>
+                        <asp:Label ID="lblDeliveryTypeTitle" runat="server" style="z-index: 1;" Text="Delivery Type:"></asp:Label>
                         <asp:Label ID="lblDeliveryType" runat="server" style="z-index: 1; "></asp:Label>
                         
                     </li>
            
                     <li>
-                        <asp:Label ID="label23" runat="server" style="z-index: 1; " Text="Quantity:"></asp:Label>
+                        <asp:Label ID="lblQuantityTitle" runat="server" style="z-index: 1; " Text="Quantity:"></asp:Label>
                         <asp:Label ID="lblQuantity" runat="server" style="z-index: 1;"> </asp:Label>
                         
                     </li>
-                    <li>    <asp:Label ID="Label4" runat="server" style="z-index: 1; " Text="Description:"></asp:Label>
+                    <li>    <asp:Label ID="lblDescriptionTitle" runat="server" style="z-index: 1; " Text="Description:"></asp:Label>
                           <asp:Label ID="lblDescription" runat="server" style="z-index: 1; "></asp:Label>
                     </li>
-                    <li>      <asp:Label ID="Label10" runat="server" style="z-index: 1; " Text="Condition:"></asp:Label>
+                    <li>      <asp:Label ID="lblConditionTitle" runat="server" style="z-index: 1; " Text="Condition:"></asp:Label>
                           <asp:Label ID="lblCondition" runat="server" style="z-index: 1; "></asp:Label>
 
                     </li>
                  
                     <li>  
-                        <asp:Label ID="Label2" runat="server" style="z-index: 1; " Text="Start Price:"></asp:Label>
+                        <asp:Label ID="lblStartPriceTitle" runat="server" style="z-index: 1; " Text="Start Price:"></asp:Label>
                         <asp:Label ID="lblPrice" runat="server" style="z-index: 1;"></asp:Label>
                         
                     
                         
                     </li>                     
                    
-                    <li><asp:Label ID="label1" runat="server" style="z-index: 1; " Text="Time Left:"></asp:Label>
+                    <li><asp:Label ID="lblTimeLeftTitle" runat="server" style="z-index: 1; " Text="Time Left:"></asp:Label>
                         <asp:Label ID="lblTimeLeft" runat="server" style="z-index: 1; "></asp:Label>
                     </li>
                    

@@ -32,7 +32,7 @@
                          <br />
                   <ul class="AnListing">
                     <li>
-                         <asp:Label ID="Label2" runat="server" style="z-index: 1;" Text="Listing Name"></asp:Label>
+                         <asp:Label ID="lblListingNameTitle" runat="server" style="z-index: 1;" Text="Listing Name"></asp:Label>
                         <asp:TextBox ID="txtListingName" runat="server" style="z-index: 1; "></asp:TextBox>
                     </li>
                     <li>

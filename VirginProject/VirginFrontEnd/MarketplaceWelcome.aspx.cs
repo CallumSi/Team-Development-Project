@@ -11,6 +11,7 @@ namespace VirginFrontEnd
     {
         int UserID = 4;
         protected void Page_Load(object sender, EventArgs e)
+        
         {
             //check if user exisits
             //create an instance of the user collection class
