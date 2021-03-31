@@ -132,17 +132,17 @@ namespace VirginClassLibrary
             }
         }
 
-        //public void ReportByHospital(string Hospital_Name)
-        //{
-        //    //filters the records based on full or partial make
-        //    //connect to the database 
-        //    clsDataConnection DB = new clsDataConnection();
-        //    //send the hospital name parameter to the database 
-        //    DB.AddParameter("@Hospital_Name", Hospital_Name);
-        //    //execute the stored procedure 
-        //    DB.Execute("sproc_tblVHCHospital_FilterByHospital");
-        //    //populate the array list with the data table 
-        //    PopulateArray(DB);
-        //}
+        public void ReportByHospital(string Hospital_Name)
+        {
+            //filters the records based on full or partial make
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //send the hospital name parameter to the database 
+            DB.AddParameter("@Hospital_Name", Hospital_Name);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVHCHospital_FilterByHospital");
+            //populate the array list with the data table 
+            PopulateArray(DB);
+        }
     }
 }
