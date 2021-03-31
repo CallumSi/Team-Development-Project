@@ -174,6 +174,20 @@ namespace VirginClassLibrary
             PopulateArray(DB);
 
         }
+        public void FilterByListingType(int ListingType)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingType", ListingType);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingType");
+            //populate the array with the found data
+            PopulateArray(DB);
+
+        }
+
 
         public void Clear()
         {

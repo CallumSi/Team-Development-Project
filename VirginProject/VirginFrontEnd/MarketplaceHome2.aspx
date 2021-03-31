@@ -10,15 +10,15 @@
 
     Int32 UserID;
     VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
-    VirginClassLibrary.clsMarketplaceListingCollection filteredlist;
-    bool trysearch = false;
-     bool showEndedListings = false;
+    Boolean showEnded = false;
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
         //get the User Id
         UserID = Convert.ToInt32(Session["UserID"]);
-       
+        showEnded = Convert.ToBoolean(Session["ShowEnded"]);
 
         if (IsPostBack == false)
         {
@@ -28,7 +28,7 @@
                 DisplayUserData();
                 //display the Listings
                 //create an instance of the Listing Colleciton
-             
+
 
             }
         }
@@ -48,15 +48,6 @@
 
 
 
-    VirginClassLibrary.clsMarketplaceListingCollection FilterListing(string ListingNameFilter)
-    {
-
-        //create instance of collection class
-        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
-        ListOfListings.FilterByListingName(ListingNameFilter);
-        return ListOfListings;
-
-    }
 
 
 
@@ -80,16 +71,12 @@
 
     protected void btnSearch_Click(object sender, EventArgs e)
     {
-        if (txtSearch.Text != "")
-        {
-            filteredlist = FilterListing(txtSearch.Text);
-            trysearch = true;
 
-        }
-        else
-        {
-            trysearch = false;
-        }
+
+        //create instance of collection class
+        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        ListOfListings.FilterByListingName(txtSearch.Text);
+        MyListings = ListOfListings;
 
     }
 
@@ -152,7 +139,47 @@
 
     protected void btnEnded_Click(object sender, EventArgs e)
     {
-        showEndedListings = true;
+        showEnded = true;
+        Session["showEnded"] = showEnded;
+
+    }
+
+
+    protected void btnBuyItNow_Click(object sender, EventArgs e)
+    {
+
+        //create instance of collection class
+        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        ListOfListings.FilterByListingType(1);
+        MyListings = ListOfListings;
+    }
+
+    protected void btnAuction_Click(object sender, EventArgs e)
+    {
+
+        //create instance of collection class
+        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        ListOfListings.FilterByListingType(2);
+        MyListings = ListOfListings;
+    }
+
+    protected void btnAcceptsOffers_Click(object sender, EventArgs e)
+    {
+
+        //create instance of collection class
+        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        ListOfListings.FilterByListingType(3);
+        MyListings = ListOfListings;
+
+    }
+
+    protected void btnAllListings_Click(object sender, EventArgs e)
+    {
+
+        //create instance of collection class
+        VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        ListOfListings.FilterByListingName("");
+        MyListings = ListOfListings;
     }
 </script>
 
@@ -194,19 +221,20 @@
                             
                  <ul>
                     <li>
-                     <asp:Button ID="Button2" CssClass="navButton" runat="server" style="z-index: 1;" Text="All listings" /></li> 
-                     <li><asp:Button ID="Button3" CssClass="navButton" runat="server" style="z-index: 1;" Text="Accepts offers"/></li>
-                     <li><asp:Button ID="Button4" CssClass="navButton" runat="server" style="z-index: 1;" Text="Auction" /></li>
-                     <li><asp:Button ID="Button5" CssClass="navButton" runat="server" style="z-index: 1;" Text="Buy it now" /></li>
-                     <li><asp:Button ID="btnEnded" CssClass="navButton" runat="server" style="z-index: 1;" Text="Include Ended" OnClick="btnEnded_Click" /></li>
-                     <li><asp:Button ID="Button8" CssClass="navButton" runat="server" style="z-index: 1;" Text="Clear" /></li>
+                     <asp:Button ID="btnAllListings" CssClass="navButton" runat="server" style="z-index: 1;" Text="All listings" OnClick="btnAllListings_Click" /></li> 
+                     <li><asp:Button ID="btnAcceptsOffers" CssClass="navButton" runat="server" style="z-index: 1;" Text="Accepts offers" OnClick="btnAcceptsOffers_Click"/></li>
+                     <li><asp:Button ID="btnAuction" CssClass="navButton" runat="server" style="z-index: 1;" Text="Auction" OnClick="btnAuction_Click" /></li>
+                     <li><asp:Button ID="btnBuyItNow" CssClass="navButton" runat="server" style="z-index: 1;" Text="Buy it now" OnClick="btnBuyItNow_Click" /></li>
+                     <li><asp:Button ID="btnEnded" CssClass="navButton" runat="server" style="z-index: 1;" Text="Include Ended(click first)" OnClick="btnEnded_Click" /></li>
+                     <li></li>
                  </ul>                            
                  <%
                    
                     //create an index variable
-                    Int32 Index = 0;
-                     Int32 Index2 = 0;
+        
+                     Int32 Index = 0;
                     //get the count of records
+                    
                     Int32 RecordCount = MyListings.Count;
                     
                         //loop through each record
@@ -215,191 +243,139 @@
                     <ul class="Listings">
                     
                     <%
-                     if (trysearch == true)
+
+
+                        while(Index < RecordCount)
+
                         {
-                          Int32 RecordCount2 = filteredlist.Count;
-                          while(Index2 < RecordCount2)
-                                
-                    {
-                        %>
-                        <li>
-                            <%
-                                //write a listing to the browser
+                            DateTime todaydatetime =  DateTime.Now;
+                            DateTime enddate = MyListings.ListingList[Index].CloseDate;
+                            TimeSpan difference = enddate.Subtract(todaydatetime);
+                            if (showEnded == false)
+                            {
+                            
+                                                if (difference.Seconds < 0)
+                                                {
 
-                                Response.Write(filteredlist.ListingList[Index2].ListingName);
-                                Response.Write("<br>");
-                                Response.Write("<img src='" + filteredlist.ListingList[Index2].Img+ "'/>");
-                                Response.Write("<br>");
-                                Response.Write("Start Price: £" + filteredlist.ListingList[Index2].Price);
-                                Response.Write("<br>");
-                                DateTime todaydatetime =  DateTime.Now;
-                                DateTime enddate = MyListings.ListingList[Index].CloseDate;
-                                TimeSpan difference = enddate.Subtract(todaydatetime);
-                                if(difference.Seconds > 0 )
-                                {
-                                Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
-                                }
-                                else
-                                {
-                                Response.Write("Ended");
-                                }  
-                                Response.Write("<br>");
-                                if(MyListings.ListingList[Index].ListingType==1){
-                                    Response.Write("Buy Now");
-                                }
-                                if(MyListings.ListingList[Index].ListingType==2){
-                                    Response.Write("Bid Now");
-                                    Response.Write("<br>");
-                                    Response.Write("Current Bid : ");
-                                    if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
-                                    {
+
+                                                     %>
+                                                                            <li>
+                                                                                <%
+                                                                                    //write a listing to the browser
+
+                                                                                    Response.Write(MyListings.ListingList[Index].ListingName);
+                                                                                    Response.Write("<br>");
+                                                                                    Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
+                                                                                    Response.Write("<br>");
+                                                                                    Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
+                                                                                    Response.Write("<br>");
+                                                                
+                                                                                    if(difference.Seconds > 0 )
+                                                                                    {
+                                                                                    Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                    Response.Write("Ended");
+                                                                                    }  
+                                                                                    Response.Write("<br>");
+                                                                                    if(MyListings.ListingList[Index].ListingType==1){
+                                                                                        Response.Write("Buy Now");
+                                                                                    }
+                                                                                    if(MyListings.ListingList[Index].ListingType==2){
+                                                                                        Response.Write("Bid Now");
+                                                                                        Response.Write("<br>");
+                                                                                        Response.Write("Current Bid : ");
+                                                                                        if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
+                                                                                        {
                                         
-                                        Response.Write("£");
-                                        Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
-                                    }
-                                    else
-                                    {
-                                        Response.Write("No Bids yet");
-                                    }
+                                                                                            Response.Write("£");
+                                                                                            Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            Response.Write("No Bids yet");
+                                                                                        }
 
 
-                                }
-                                if(MyListings.ListingList[Index].ListingType==3){
-                                    Response.Write("Offer Now");
-                                }
-                                Response.Write("<br>");
-                            %>
+                                                                                    }
+                                                                                    if(MyListings.ListingList[Index].ListingType==3){
+                                                                                        Response.Write("Offer Now");
+                                                                                    }
+                                                                                    Response.Write("<br>");
+                                                                                %>
                             
-                            <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(filteredlist.ListingList[Index].ListingID);%>" > View</a>
-                              
-                            <%
-                            //increment the index
-                            Index2++;
-                        %>
-                        
-                        </li>                
-                            <%
-                    }
-                        }
-                    if (trysearch == false)
-                     {
-                         while(Index < RecordCount)
-                    {
-%>
-                        <li>
-                            <%
-                                DateTime todaydatetime =  DateTime.Now;
-                                DateTime enddate = MyListings.ListingList[Index].CloseDate;
-                                TimeSpan difference = enddate.Subtract(todaydatetime);
-                                if (showEndedListings == true)
-                                {
-                                //write a listing to the browser
-                                Response.Write(MyListings.ListingList[Index].ListingName);
-                                Response.Write("<br>");
-                                Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
-                                Response.Write("<br>");
-                                Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
-                                Response.Write("<br>");
-                                
-                                if(difference.Seconds > 0)
-                                {
-                                    Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
-                                }
-                                else
-                                {
-                                    Response.Write("Ended");
-                                }
-                                Response.Write("<br>");
-                                if(MyListings.ListingList[Index].ListingType==1){
-                                    Response.Write("Buy Now");
-                                }
-                                if(MyListings.ListingList[Index].ListingType==2){
-                                    Response.Write("Bid Now");
-                                    Response.Write("<br>");
-                                    Response.Write("Current Bid : ");
-                                    if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
-                                    {
-                                        Response.Write("£");
-                                        Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
-                                    }
-                                    else
-                                    {
-                                        Response.Write("No Bids yet");
-                                    }
-                                }
-                                if(MyListings.ListingList[Index].ListingType==3){
-                                    Response.Write("Offer Now");
-                                }
-                                Response.Write("<br>");
+                                                                                <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>
+                                                                          
+                                                                                <%
 
-                            %>
+                                                }            
+                            }
+                            else
+                            {
+
                             
-                            <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>
-                              
-                            <%
-                                }
-                                else
-                                {
-                                     if(difference.Seconds > 0)
-                                    {
-                                         //write a listing to the browser
-                                            Response.Write(MyListings.ListingList[Index].ListingName);
-                                            Response.Write("<br>");
-                                            Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
-                                            Response.Write("<br>");
-                                            Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
-                                            Response.Write("<br>");
-                                
-                                            if(difference.Seconds > 0)
-                                            {
-                                                Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
-                                            }
-                                            else
-                                            {
-                                                Response.Write("Ended");
-                                            }
-                                            Response.Write("<br>");
-                                            if(MyListings.ListingList[Index].ListingType==1){
-                                                Response.Write("Buy Now");
-                                            }
-                                            if(MyListings.ListingList[Index].ListingType==2){
-                                                Response.Write("Bid Now");
-                                                Response.Write("<br>");
-                                                Response.Write("Current Bid : ");
-                                                if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
-                                                {
-                                                    Response.Write("£");
-                                                    Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
-                                                }
-                                                else
-                                                {
-                                                    Response.Write("No Bids yet");
-                                                }
-                                            }
-                                            if(MyListings.ListingList[Index].ListingType==3){
-                                                Response.Write("Offer Now");
-                                            }
-                                            Response.Write("<br>");
+                                                        %>
+                                                        <li>
+                                                            <%
+                                                                //write a listing to the browser
 
-                                        %>
+                                                                Response.Write(MyListings.ListingList[Index].ListingName);
+                                                                Response.Write("<br>");
+                                                                Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
+                                                                Response.Write("<br>");
+                                                                Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
+                                                                Response.Write("<br>");
+                                                                
+                                                                if(difference.Seconds > 0 )
+                                                                {
+                                                                Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
+                                                                }
+                                                                else
+                                                                {
+                                                                Response.Write("Ended");
+                                                                }  
+                                                                Response.Write("<br>");
+                                                                if(MyListings.ListingList[Index].ListingType==1){
+                                                                    Response.Write("Buy Now");
+                                                                }
+                                                                if(MyListings.ListingList[Index].ListingType==2){
+                                                                    Response.Write("Bid Now");
+                                                                    Response.Write("<br>");
+                                                                    Response.Write("Current Bid : ");
+                                                                    if(GetHighestBid(MyListings.ListingList[Index].ListingID)!= 0)
+                                                                    {
+                                        
+                                                                        Response.Write("£");
+                                                                        Response.Write(GetHighestBid(MyListings.ListingList[Index].ListingID));
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        Response.Write("No Bids yet");
+                                                                    }
+
+
+                                                                }
+                                                                if(MyListings.ListingList[Index].ListingType==3){
+                                                                    Response.Write("Offer Now");
+                                                                }
+                                                                Response.Write("<br>");
+                                                            %>
                             
-                                        <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>
-                              
-                                        <%
-
-                                    }
-                                }
-                                
+                                                            <a href="MarketplaceListingViewer.aspx?ListingID=<%Response.Write(MyListings.ListingList[Index].ListingID);%>" > View</a>
+                                                            
+                                                            <%
+                            }
                             //increment the index
                             Index++;
                         %>
                         
-                        </li>                
-                            <%
-                    }
-            }
-                   
-              %>
+                                </li>                
+                                    <%
+                    
+                          }
+                              
+                        %>
 
                     </ul> 
                 
