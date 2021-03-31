@@ -104,14 +104,14 @@ namespace VirginClassLibrary
             }
         }
 
-        public bool Find(int VMCustomerID)
+        public Boolean Find(int VMCustomerID)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the CustomerID to search for
             DB.AddParameter("@VMCustomerID", VMCustomerID);
             //execute the stored procedure
-            DB.Execute("sproc_tblCustomer_FilterByVMCustomerID");
+            DB.Execute("sproc_tblVMCustomer_FilterByVMCustomerID");
             //if one record is found (there should be either one or zero!)
             if (DB.Count == 1)
             {

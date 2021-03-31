@@ -85,5 +85,98 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(allStaff.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the staff collection class 
+            clsVMStaffCollection allStaff = new clsVMStaffCollection();
+            //create the item of test data
+            clsVMStaff TestItem = new clsVMStaff();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set the properties of the test object
+            TestItem.VMstaffFirstName = "Harry";
+            TestItem.VMstaffLastName = "Potter";
+            TestItem.VMstaffEmail = "Potter@hotmail.com";
+            TestItem.VMstaffPassword = "Wizard123";
+            TestItem.VMstaffPosition = "Customer Service";
+            //set ThisCustomer to the test data
+            allStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = allStaff.Add();
+            //Set the primary key of the test data
+            TestItem.VMstaffID = PrimaryKey;
+            //find the record
+            allStaff.ThisStaff.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(allStaff.ThisStaff, TestItem);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the staff collection class 
+            clsVMStaffCollection allStaff = new clsVMStaffCollection();
+            //create the item of test data
+            clsVMStaff TestItem = new clsVMStaff();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set the properties of the test object
+            TestItem.VMstaffFirstName = "Harry";
+            TestItem.VMstaffLastName = "Potter";
+            TestItem.VMstaffEmail = "Potter@hotmail.com";
+            TestItem.VMstaffPassword = "Wizard123";
+            TestItem.VMstaffPosition = "Customer Service";
+            //set ThisCustomer to the test data
+            allStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = allStaff.Add();
+            //Set the primary key of the test data
+            TestItem.VMstaffID = PrimaryKey;
+            //mdoify the record
+            TestItem.VMstaffFirstName = "Hermione";
+            TestItem.VMstaffLastName = "Granger";
+            TestItem.VMstaffEmail = "PotionMaster@Gmail.co.uk";
+            TestItem.VMstaffPassword = "HGranger999";
+            TestItem.VMstaffPosition = "Customer Service";
+            //set the record based on the new test data
+            allStaff.ThisStaff = TestItem;
+            //Update the record
+            allStaff.Update();
+            //find the record
+            allStaff.ThisStaff.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(allStaff.ThisStaff, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the staff collection class 
+            clsVMStaffCollection allStaff = new clsVMStaffCollection();
+            //create the item of test data
+            clsVMStaff TestItem = new clsVMStaff();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set the properties of the test object
+            TestItem.VMstaffFirstName = "Hermione";
+            TestItem.VMstaffLastName = "Granger";
+            TestItem.VMstaffEmail = "PotionMaster@Gmail.co.uk";
+            TestItem.VMstaffPassword = "HGranger999";
+            TestItem.VMstaffPosition = "Customer Service";
+            //set the record based on the new test data
+            allStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = allStaff.Add();
+            //set the primary key of the test data
+            TestItem.VMstaffID = PrimaryKey;
+            //find the record
+            allStaff.ThisStaff.Find(PrimaryKey);
+            //delete the record
+            allStaff.Delete();
+            //test to see that the two values are the same
+            Assert.AreEqual(allStaff.ThisStaff, TestItem);
+        }
     }
 }
