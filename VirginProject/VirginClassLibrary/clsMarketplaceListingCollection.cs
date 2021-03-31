@@ -154,7 +154,7 @@ namespace VirginClassLibrary
             //first establish connection 
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
-            DB.AddParameter("ListingID", ListingID);
+            DB.AddParameter("@ListingID", ListingID);
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
             //populate the array with the found data

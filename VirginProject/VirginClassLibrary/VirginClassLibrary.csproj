@@ -49,10 +49,8 @@
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
     <Compile Include="clsForumUserCollection.cs" />
-    <Compile Include="clsMarketplaceBidCollection.cs" />
     <Compile Include="clsMarketplaceListing.cs" />
     <Compile Include="clsMarketplaceListingCollection.cs" />
-    <Compile Include="clsMarketplaceOfferCollection.cs" />
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsUser.cs" />

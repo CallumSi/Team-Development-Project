@@ -27,34 +27,7 @@ namespace VirginClassLibrary
         private int mListingType;
 
         //public data
-        public bool AllowBids
-        {
-            get
-            {
-                //return private data
-                return mAllowBids;
-            }
-            set
-            {
-                //set value to private data
-                mAllowBids = value;
-            }
-        }
-
-     
-        public bool AllowOffers
-        {
-            get
-            {
-                //return private data
-                return mAllowOffers;
-            }
-            set
-            {
-                //set value to private data
-                mAllowOffers = value;
-            }
-        }
+      
 
         public string Category
         {
@@ -395,11 +368,7 @@ namespace VirginClassLibrary
                 ErrorMsg += "Category must have no special characters";
 
             }
-            if (TestForSpecialCharacters(anDeliveryType) == true)
-            {
-                ErrorMsg += "Delivery Typeo must have no special characters";
-
-            }
+       
             if (TestForSpecialCharacters(anListingName) == true)
             {
                 ErrorMsg += "ListingName must have no special characters";

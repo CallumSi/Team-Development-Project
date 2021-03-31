@@ -9,7 +9,7 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceWelcome : System.Web.UI.Page
     {
-        int UserID = 4;
+        int UserID = 203;
         protected void Page_Load(object sender, EventArgs e)
         
         {
@@ -36,7 +36,7 @@ namespace VirginFrontEnd
         protected void btnFirstTime_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
+            Session["UserID"] = -1;
             //redirect to edit user details page
             Response.Redirect("AnMarketplaceUser.aspx");
         }
