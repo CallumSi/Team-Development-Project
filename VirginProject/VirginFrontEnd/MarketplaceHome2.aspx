@@ -139,7 +139,17 @@
 
     protected void btnEnded_Click(object sender, EventArgs e)
     {
-        showEnded = true;
+        if(  showEnded == true){
+            showEnded = false;
+           
+        }
+        else
+        {
+            showEnded = true;
+            
+        }
+
+
         Session["showEnded"] = showEnded;
 
     }
@@ -225,7 +235,7 @@
                      <li><asp:Button ID="btnAcceptsOffers" CssClass="navButton" runat="server" style="z-index: 1;" Text="Accepts offers" OnClick="btnAcceptsOffers_Click"/></li>
                      <li><asp:Button ID="btnAuction" CssClass="navButton" runat="server" style="z-index: 1;" Text="Auction" OnClick="btnAuction_Click" /></li>
                      <li><asp:Button ID="btnBuyItNow" CssClass="navButton" runat="server" style="z-index: 1;" Text="Buy it now" OnClick="btnBuyItNow_Click" /></li>
-                     <li><asp:Button ID="btnEnded" CssClass="navButton" runat="server" style="z-index: 1;" Text="Include Ended(click first)" OnClick="btnEnded_Click" /></li>
+                     <li><asp:Button ID="btnEnded" CssClass="navButton" runat="server" style="z-index: 1;" Text="Toggle Ended Listings" OnClick="btnEnded_Click" /></li>
                      <li></li>
                  </ul>                            
                  <%
@@ -254,7 +264,7 @@
                             if (showEnded == false)
                             {
                             
-                                                if (difference.Seconds < 0)
+                                                if (enddate > todaydatetime)
                                                 {
 
 
@@ -270,7 +280,7 @@
                                                                                     Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
                                                                                     Response.Write("<br>");
                                                                 
-                                                                                    if(difference.Seconds > 0 )
+                                                                                    if(enddate > todaydatetime)
                                                                                     {
                                                                                     Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
                                                                                     }

@@ -67,8 +67,7 @@ namespace VirginFrontEnd
             DateTime todaydatetime =  DateTime.Now;
             DateTime enddate = SomeListing.ThisListing.CloseDate;
             TimeSpan difference = enddate.Subtract(todaydatetime);
-            if(difference.Seconds > 0)
-            {
+          
                 lblTimeLeft.Text = string.Format("{0} days, {1} hours, {2} minutes, {3} seconds", difference.Days, difference.Hours, difference.Minutes, difference.Seconds);
                 lblPrice.Text = SomeListing.ThisListing.Price.ToString();
                 lblQuantity.Text = SomeListing.ThisListing.Quantity.ToString();
@@ -109,27 +108,30 @@ namespace VirginFrontEnd
                 //display the data for this record
                 lblSellerEmail.Text = SomeUser.ThisUser.Email;
                 CheckForFavorite();
-            }
-            else
+            if (enddate < todaydatetime)
             {
-                lblSellerEmailTitle.Visible = false;
-                lblCategoryTitle.Visible = false;
-                lblConditionTitle.Visible = false;
-                lblTimeLeftTitle.Visible = false;
-                lblDeliveryTypeTitle.Visible = false;
-                lblStartPriceTitle.Visible = false;
-                lblQuantityTitle.Visible = false;
-                lblDeliveryTypeTitle.Visible = false;
-                lblDescriptionTitle.Visible = false;
-                lblCondition.Visible = false;
-                lblListingName.Text = "Listing Ended";
-                imgListing.Visible = false;
-                lblCategory.Visible = false;
+                lblTimeLeft.Text = "Listing Ended";
                 btnFavorite.Visible = false;
                 btnUnFavorite.Visible = false;
-
             }
-            
+
+            //lblSellerEmailTitle.Visible = false;
+            //lblCategoryTitle.Visible = false;
+            //lblConditionTitle.Visible = false;
+            //lblTimeLeftTitle.Visible = false;
+            //lblDeliveryTypeTitle.Visible = false;
+            //lblStartPriceTitle.Visible = false;
+            //lblQuantityTitle.Visible = false;
+            //lblDeliveryTypeTitle.Visible = false;
+            //lblDescriptionTitle.Visible = false;
+            //lblCondition.Visible = false;
+            //lblListingName.Text = "Listing Ended";
+            //imgListing.Visible = false;
+            //lblCategory.Visible = false;
+
+
+            //}
+
         }
 
 

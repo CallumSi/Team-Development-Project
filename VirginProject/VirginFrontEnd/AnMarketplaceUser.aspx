@@ -42,13 +42,9 @@
                        
                     </li>
                        <li>
-                          <asp:Label ID="Label4" runat="server" style="z-index: 1;" Text="Password"></asp:Label>
-                          <asp:TextBox ID="txtPassword1" runat="server" style="z-index: 1;"></asp:TextBox>
                        
                     </li>
                        <li>
-                          <asp:Label ID="Label5" runat="server" style="z-index: 1;" Text="Repeat Password"></asp:Label>
-                          <asp:TextBox ID="txtPassword2" runat="server" style="z-index: 1;"></asp:TextBox>
                        
                     </li>
                     <li>

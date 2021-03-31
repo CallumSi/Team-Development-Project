@@ -36,17 +36,27 @@ namespace VirginFrontEnd
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             //variable to store primary key of field you want to edit
-            Int32 ListingID;
+            Int32 ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
             Session["UserID"] = UserID;
             //check if a record has been selected from the list
             if (lstYourListings.SelectedIndex != -1)
             {
-                //get primary key from selected
-                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
-                //store data in session object so we can pass it to next page
-                Session["ListingID"] = ListingID;
-                //redirect to edit user details page
-                Response.Redirect("AnMarketplaceListing.aspx");
+
+
+                if (CheckForBid(ListingID) ==false && CheckForOffer(ListingID) == false)
+                {
+                    //get primary key from selected
+                   
+                    //store data in session object so we can pass it to next page
+                    Session["ListingID"] = ListingID;
+                    //redirect to edit user details page
+                    Response.Redirect("AnMarketplaceListing.aspx");
+                }
+                else
+                {
+                    lblError.Text = "Please select a record with no  bids or offers ";
+                }
+              
 
             }
             //if a record hasnt been selected from the listbox 
@@ -57,6 +67,60 @@ namespace VirginFrontEnd
             }
         }
 
+        bool CheckForBid(Int32 ListingID)
+        {
+
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingID", ListingID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserBids_FilterByListingID");
+            //populate the array with the found data;
+            //variables to loop through list
+            Int32 RecordCount;
+           
+            //get count of filtered list
+            RecordCount = DB.Count;
+            if (RecordCount == 0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        bool CheckForOffer(int ListingID)
+        {
+
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingID", ListingID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUseroffers_FilterByListingID");
+            //populate the array with the found data;
+            //variables to loop through list
+            Int32 RecordCount;
+           
+            //get count of filtered list
+            RecordCount = DB.Count;
+            if (RecordCount == 0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+    
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             //variable to store primary key of field you want to delete

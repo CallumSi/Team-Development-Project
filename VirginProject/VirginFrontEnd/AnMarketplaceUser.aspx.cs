@@ -12,10 +12,12 @@ namespace VirginFrontEnd
     {
         //variable to store the UserID from session obect
         Int32 UserID;
+        string Password;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of users to be procvessed
             UserID = Convert.ToInt32(Session["UserID"]);
+         
             if (IsPostBack == false)
             {
                 //if not a new record 
