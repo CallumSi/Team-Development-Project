@@ -106,6 +106,7 @@ namespace VirginTestProject
             Assert.AreEqual(AllHospitals.ThisHospital, TestItem);
         }
 
+        [TestMethod]
         public void UpdateMethodOK()
         //Add Method
         {
@@ -139,7 +140,7 @@ namespace VirginTestProject
             Assert.AreEqual(AllHospitals.ThisHospital, TestItem);
         }
 
-
+        [TestMethod]
         public void DeleteMethodOK()
         //Add Method
         {
@@ -169,5 +170,70 @@ namespace VirginTestProject
             Assert.AreEqual(AllHospitals.ThisHospital, TestItem);
         }
 
+        //[TestMethod]
+        //public void ReportByHospitalMethodOK()
+        ////Report By Hospital Method 
+        //{
+        //    //create an instance of the hospital collection class 
+        //    clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
+        //    //create an instance of the filtered data
+        //    clsVHCHospitalCollection FilteredHospital = new clsVHCHospitalCollection();
+        //    //apply a blank string (Should return all hospitals) 
+        //    FilteredHospital.ReportByHospital("");
+        //    //test to see that the two values are the same 
+        //    Assert.AreEqual(AllHospitals.Count, FilteredHospital.Count);
+        //}
+
+
+        //[TestMethod]
+        //public void ReportByHospitalNoneFound()
+        ////Report By Hospital None Found Method 
+        //{
+        //    //create an instance of the filtered data           
+        //    clsVHCHospitalCollection FilteredHospital = new clsVHCHospitalCollection();
+        //    //apply a blank string (Should return all hospitals) 
+        //    FilteredHospital.ReportByHospital("xxxx");
+        //    //test to see that the two values are the same 
+        //    Assert.AreEqual(0, FilteredHospital.Count);
+        //}
+
+        ////********** DOUBLE CHECK THIS ************
+
+        //[TestMethod]
+        //public void ReportByHospitalTestDataFound()
+        ////Report By Hospital Test Data Found Method 
+        //{
+        //    //create an instance of the filtered data
+        //    clsVHCHospitalCollection FilteredHospital = new clsVHCHospitalCollection();
+        //    //var to store outcome
+        //    Boolean OK = true;
+        //    //apply a make that does exist
+        //    FilteredHospital.ReportByHospital("West Middlesex Hospital");
+        //    //check that the correct number of records are found
+        //    if (FilteredHospital.Count == 1)
+        //    {
+        //        //check that the first record id ID 36
+        //        if (FilteredHospital.HospitalList[0].Hospital_ID != 7)
+        //        {
+        //            OK = false;
+        //        }
+
+        //        //check that the first record is ID 37
+        //        if (FilteredHospital.HospitalList[1].Hospital_ID != 8)
+        //        {
+        //            OK = false;
+        //        }
+
+        //    }
+
+        //    else
+        //    {
+        //        OK = false;
+        //    }
+
+
+        //    //test to see that the two values are the same 
+        //    Assert.IsTrue(OK);
+        //}
     }
 }
