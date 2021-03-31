@@ -59,7 +59,7 @@ namespace VirginClassLibrary
         //Add Method
         public int Add()
         {
-            //adds a mew record to the database based on the values of mThisHospital
+            //adds a new record to the database based on the values of mThisHospital
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -67,17 +67,6 @@ namespace VirginClassLibrary
             DB.AddParameter("@Hospital_Place", mThisHospital.Hospital_Place);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVHCHospital_Insert");
-        }
-
-        public void Delete()
-        {
-            //deletes the record pointed to by thisHospital
-            //connect to the database
-            clsDataConnection DB = new clsDataConnection();
-            //set the parameter for the stored procedure
-            DB.AddParameter("@Hospital_ID", mThisHospital.Hospital_ID);
-            //execute the stored procedure
-            DB.Execute("sproc_tblVHCHospital_Delete");
         }
 
         public void Update()
@@ -92,6 +81,68 @@ namespace VirginClassLibrary
             DB.AddParameter("@Hospital_Place", mThisHospital.Hospital_Place);
             //execute the stored procedure 
             DB.Execute("sproc_tblVHCHospital_Update");
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisHospital
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored procedure
+            DB.AddParameter("@Hospital_ID", mThisHospital.Hospital_ID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVHCHospital_Delete");
+        }
+
+        public clsVHCHospitalCollection()
+        {
+
+            //object for the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the store procedure 
+            DB.Execute("sproc_tblVHCHospital_SelectAll");
+            //populate the array list with the data table 
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list 
+            mHospitalList = new List<clsVHCHospital>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank hospital 
+                clsVHCHospital AHospital = new clsVHCHospital();
+                //read in the fields from the current record
+                AHospital.Hospital_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Hospital_ID"]);
+                AHospital.Hospital_Name = Convert.ToString(DB.DataTable.Rows[Index]["Hospital_Name"]);
+                AHospital.Hospital_Place = Convert.ToString(DB.DataTable.Rows[Index]["Hospital_Place"]);
+                //add the record to the private data member 
+                mHospitalList.Add(AHospital);
+                //point at the next record
+                Index++;
+            }
+        }
+
+        public void ReportByHospital(string Hospital_Name)
+        {
+            //filters the records based on full or partial make
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //send the hospital name parameter to the database 
+            DB.AddParameter("@Hospital_Name", Hospital_Name);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVHCHospital_FilterByHospital");
+            //populate the array list with the data table 
+            PopulateArray(DB);
         }
     }
 }
