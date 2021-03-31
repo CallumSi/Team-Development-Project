@@ -12,7 +12,24 @@ namespace VirginFrontEnd
         int UserID = 4;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //check if user exisits
+            //create an instance of the user collection class
+            VirginClassLibrary.clsMarketplaceUserCollection SomeUser = new VirginClassLibrary.clsMarketplaceUserCollection();
+            //find the record to update
+            if (SomeUser.ThisUser.Find(UserID) == false)
+            {
+               
+                btnFirstTime.Text = "Create Account";
+                btnContinue.Visible = false;
+                UserID = -1;
+            }
+            else
+            {
+                btnFirstTime.Text = "Edit Account Details";
 
+            }
+
+     
         }
 
         protected void btnFirstTime_Click(object sender, EventArgs e)

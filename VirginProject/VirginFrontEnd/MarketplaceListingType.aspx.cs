@@ -60,13 +60,6 @@ namespace VirginFrontEnd
             Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
-            //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
-        }
 
         protected void btnInstantSale_Click(object sender, EventArgs e)
         {
@@ -96,6 +89,14 @@ namespace VirginFrontEnd
             Session["ListingType"] = 3;
             //redirect to user data entry page
             Response.Redirect("AnMarketplaceListing.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("Marketplacehome2.aspx");
         }
     }
 }

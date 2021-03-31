@@ -3,25 +3,85 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 34px; position: absolute" Text="Please Update your details"></asp:Label>
-        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 20px; top: 155px; position: absolute" Text="Email"></asp:Label>
-        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 92px; top: 153px; position: absolute"></asp:TextBox>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 22px; top: 296px; position: absolute"></asp:Label>
-        <asp:Button ID="btnOk" runat="server" style="z-index: 1; left: 114px; top: 348px; position: absolute" Text="OK" OnClick="btnOk_Click" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 210px; top: 347px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
-        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 16px; top: 187px; position: absolute; width: 94px" Text="Line One"></asp:Label>
-        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 20px; top: 221px; position: absolute" Text="Line Two"></asp:Label>
-        <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 17px; top: 257px; position: absolute" Text="PostCode"></asp:Label>
-        <asp:TextBox ID="txtDeliveryAdressLineOne" runat="server" style="z-index: 1; left: 92px; top: 188px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtDeliveryAdressLineTwo" runat="server" style="z-index: 1; left: 89px; top: 224px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 89px; top: 256px; position: absolute"></asp:TextBox>
-    </form>
-</body>
+      <head id="Head1" runat="server">
+        <title>Sample Master Page</title>
+        <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <form id="form2" runat="server">
+             <header>
+               <h2> Virgin Media </h2> 
+            </header>
+ 
+            <article>
+                <ul>
+       
+                      <li>
+                          <asp:Label ID="Label2" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                            <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Please Update your details"></asp:Label>
+                       </li>
+                  
+               
+                 </ul>
+                               
+                        
+                    
+                         <br />
+                  <ul class="AnListing">
+                    <li>
+                         <asp:Label ID="Label3" runat="server" style="z-index: 1;" Text="Email"></asp:Label>
+                         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; "></asp:TextBox>
+                    </li>
+                    <li>
+                        <asp:Label ID="Label7" runat="server" style="z-index: 1;" Text="Line One"></asp:Label>
+              <asp:TextBox ID="txtDeliveryAdressLineOne" runat="server" style="z-index: 1;"></asp:TextBox>
+                    </li>
+                    <li>
+                          <asp:Label ID="Label8" runat="server" style="z-index: 1;" Text="Line Two"></asp:Label>
+                          <asp:TextBox ID="txtDeliveryAdressLineTwo" runat="server" style="z-index: 1;"></asp:TextBox>
+                       
+                    </li>
+                       <li>
+                          <asp:Label ID="Label4" runat="server" style="z-index: 1;" Text="Password"></asp:Label>
+                          <asp:TextBox ID="txtPassword1" runat="server" style="z-index: 1;"></asp:TextBox>
+                       
+                    </li>
+                       <li>
+                          <asp:Label ID="Label5" runat="server" style="z-index: 1;" Text="Repeat Password"></asp:Label>
+                          <asp:TextBox ID="txtPassword2" runat="server" style="z-index: 1;"></asp:TextBox>
+                       
+                    </li>
+                    <li>
+              
+                        <asp:Label ID="Label9" runat="server" style="z-index: 1;" Text="PostCode"></asp:Label>
+                         <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1;"></asp:TextBox>
+                    </li>
+              
+                   <li>
+                        
+                         
+                        <asp:Label ID="lblError" runat="server" style="z-index: 1; "></asp:Label>
+                        <asp:Button ID="btnOk" CssClass="navButton" runat="server" style="z-index: 1;" Text="OK" OnClick="btnOk_Click" />
+                        <asp:Button ID="btnCancel" CssClass="navButton" runat="server" style="z-index: 1;" Text="Cancel" OnClick="btnCancel_Click" />
+                       
+                   </li>
+                </ul>
+                                 
+               
+            </article>
+ 
+            <nav>
+                Navigation links here
+            </nav>
+ 
+            <footer>
+                <div id ="FooterText">
+                    © 2021 Virgin Media | All Rights Reserved
+                </div>
+            </footer>
+        </form>
+    </body>
+       
 </html>
+
+

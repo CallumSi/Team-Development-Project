@@ -35,7 +35,7 @@
                     
                     <asp:Image ID="imgListing" runat="server" style="z-index: 1;position:absolute;right:10px; top:100px; height: 200px; width: 303px" />
                     <asp:Label ID="lblBidTitle" runat="server" style="z-index: 1;position:absolute;right:8px; top:302px; height: 27px; width: 92px; margin-top: 0px" Visible="False"> </asp:Label>
-                    <asp:Label ID="Label7" runat="server" style="z-index: 1;position:absolute;right:132px; top:303px; height: 27px; width: 181px; margin-top: 0px">Current Highest Bid : </asp:Label>
+                    <asp:Label ID="lblCurrentBidTitle" runat="server" style="z-index: 1;position:absolute;right:132px; top:303px; height: 27px; width: 181px; margin-top: 0px" Visible="False">Current Highest Bid : </asp:Label>
                     <asp:Label ID="lblListingName" runat="server" style="z-index: 1;" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
                     <br />
                     <asp:Label ID="lblListingType" runat="server" style="z-index: 1; "></asp:Label>
@@ -92,7 +92,9 @@
                      <asp:Button ID="btnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" />
                    <asp:Button ID="btnUnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="UnFavorite" OnClick="btnUnFavorite_Click"  />
                     
-                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label>
+                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label>                  
+                    <asp:Label ID="lblBidPlaced"  runat="server" style="z-index: 1;"></asp:Label>                   
+                    <asp:Label ID="lblOfferPlaced"  runat="server" style="z-index: 1;"></asp:Label>
                    <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label></li>
                   
                     

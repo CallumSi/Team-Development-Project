@@ -100,12 +100,12 @@
                 Response.Redirect("MarketplaceUserProfile.aspx");
             }
 
-            protected void btnHome_Click(object sender, EventArgs e)
+            protected void btnhome_Click(object sender, EventArgs e)
             {
                 //store data in session object so we can pass it to next page
                 Session["UserID"] = UserID;
                 //redirect to edit user details page
-                Response.Redirect("MarketplaceHome.aspx");
+                Response.Redirect("MarketplaceHome2.aspx");
             }
 
             decimal GetHighestBid(int ListingID)
@@ -175,7 +175,7 @@
                        </li>
                           <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                               <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
-                              <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1;" Text="Home" OnClick="btnHome_Click" />
+                              <asp:Button ID="btnhome" CssClass="navButton" runat="server" style="z-index: 1;" Text="home" OnClick="btnhome_Click" />
                           </li>
                      
                     
@@ -183,7 +183,7 @@
                  </ul>
 
                            <br />
-                          <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Marketplace Home"></asp:Label>             
+                          <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Marketplace home"></asp:Label>             
                           <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1;"></asp:TextBox>
                           <asp:Button ID="btnSearch" CssClass="navButton" runat="server" style="z-index: 1;" Text="Search" OnClick="btnSearch_Click" />
                             

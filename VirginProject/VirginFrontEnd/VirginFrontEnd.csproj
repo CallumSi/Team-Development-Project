@@ -81,11 +81,11 @@
     <Content Include="ForumUserDelete.aspx" />
     <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
-    <Content Include="MarketplaceHome.aspx" />
     <Content Include="MarketplaceListingDelete.aspx" />
     <Content Include="MarketplaceListingList.aspx" />
     <Content Include="MarketplaceListingType.aspx" />
     <Content Include="MarketplaceListingViewer.aspx" />
+    <Content Include="MarketplaceBidOfferViewer.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserFavoriteListings.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
@@ -195,13 +195,6 @@
     <Compile Include="ForumUserViewer.aspx.designer.cs">
       <DependentUpon>ForumUserViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MarketplaceHome.aspx.cs">
-      <DependentUpon>MarketplaceHome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MarketplaceHome.aspx.designer.cs">
-      <DependentUpon>MarketplaceHome.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MarketplaceListingDelete.aspx.cs">
       <DependentUpon>MarketplaceListingDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +222,13 @@
     </Compile>
     <Compile Include="MarketplaceListingViewer.aspx.designer.cs">
       <DependentUpon>MarketplaceListingViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceBidOfferViewer.aspx.cs">
+      <DependentUpon>MarketplaceBidOfferViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceBidOfferViewer.aspx.designer.cs">
+      <DependentUpon>MarketplaceBidOfferViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarketplaceUserDelete.aspx.cs">
       <DependentUpon>MarketplaceUserDelete.aspx</DependentUpon>

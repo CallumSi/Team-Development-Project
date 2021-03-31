@@ -96,13 +96,13 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblBidTitle;
 
         /// <summary>
-        /// Label7 control.
+        /// lblCurrentBidTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label lblCurrentBidTitle;
 
         /// <summary>
         /// lblListingName control.
@@ -346,6 +346,24 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFavorite;
+
+        /// <summary>
+        /// lblBidPlaced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBidPlaced;
+
+        /// <summary>
+        /// lblOfferPlaced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOfferPlaced;
 
         /// <summary>
         /// lblError control.

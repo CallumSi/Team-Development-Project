@@ -39,6 +39,9 @@ namespace VirginFrontEnd
             {
                 UpdateUser();
             }
+            Session["UserID"] = UserID;
+            Response.Redirect("MarketplaceHome2.aspx");
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -124,5 +127,7 @@ namespace VirginFrontEnd
                 lblError.Text += "There were problems with the data entered: " + Error;
             }
         }
+
+      
     }
 }

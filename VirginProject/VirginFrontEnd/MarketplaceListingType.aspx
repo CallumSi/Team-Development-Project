@@ -33,6 +33,7 @@
                     
                            
                         <br /> 
+                         <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Choose a listing type: "></asp:Label>
                         <br /> 
                         <asp:Button ID="btnInstantSale"  CssClass="navButton" runat="server" style="z-index: 1; " Text="InstantSale" OnClick="btnInstantSale_Click" />
                         <asp:Button ID="btnAuction" CssClass="navButton" runat="server" style="z-index: 1; " Text="Auction" OnClick="btnAuction_Click" />

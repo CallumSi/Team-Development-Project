@@ -46,7 +46,7 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("Marketplacehome2.aspx");
             Session["UserID"] = UserID;
         }
 
@@ -113,7 +113,7 @@ namespace VirginFrontEnd
                 //then update the record
                 SomeListing.UpdateListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceHome.aspx");
+                Response.Redirect("Marketplacehome2.aspx");
 
             }
             else
@@ -150,7 +150,7 @@ namespace VirginFrontEnd
                 //then add the record
                 SomeListing.AddListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceHome.aspx");
+                Response.Redirect("Marketplacehome2.aspx");
 
             }
             else
@@ -177,14 +177,7 @@ namespace VirginFrontEnd
             Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
-            //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
-        }
-
+ 
         void DisplayUserData()
         {
             //create an instance of the user collection class
@@ -195,6 +188,14 @@ namespace VirginFrontEnd
             lblEmail.Text = SomeUser.ThisUser.Email;
 
 
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("Marketplacehome2.aspx");
         }
     }
 }

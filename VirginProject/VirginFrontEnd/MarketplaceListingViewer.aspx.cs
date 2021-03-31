@@ -83,6 +83,7 @@ namespace VirginFrontEnd
             }
             if (SomeListing.ThisListing.ListingType == 2)
             {
+                lblCurrentBidTitle.Visible = true;
                 lblBidText.Visible = true;
                 txtBid.Visible = true;
                 lblBidTitle.Visible = true;
@@ -91,8 +92,9 @@ namespace VirginFrontEnd
                 DisplayBids();
             }
             if (SomeListing.ThisListing.ListingType == 3)
-            {
-             
+            {   
+
+                txtBid.Visible = true;
                 btnOffer.Visible = true;
                 lblListingType.Text = "Listing Type: Offers";
             }
@@ -149,7 +151,8 @@ namespace VirginFrontEnd
             return highestbid;
         }
 
-   
+        
+
         void DisplayUserData()
         {
             //create an instance of the user collection class
@@ -166,7 +169,7 @@ namespace VirginFrontEnd
             //store data in session object so we can pass it to next page
             Session["UserID"] = UserID;
             //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("MarketplaceHome2.aspx");
         }
 
         protected void btnClickHere_Click(object sender, EventArgs e)
@@ -293,8 +296,13 @@ namespace VirginFrontEnd
          
             try
             {
+                decimal temphighestbid = 0;
                 decimal tempbid = Convert.ToDecimal(txtBid.Text);
-                if (tempbid > Convert.ToDecimal(lblBidTitle.Text))
+                if(lblBidTitle.Text != "No Bids Yet")
+                {
+                    temphighestbid = Convert.ToDecimal(lblBidTitle.Text);
+                }
+                if (tempbid > Convert.ToDecimal(temphighestbid))
                 {
                     DB.AddParameter("@BidAmount", txtBid.Text);
                     DB.AddParameter("@UserID", UserID);
@@ -302,6 +310,7 @@ namespace VirginFrontEnd
                     DB.AddParameter("@TimePlaced", DateTime.Now);
                     //execute the insert sproc
                     DB.Execute("sproc_tblMarketplaceUserBids_Insert");
+                    lblBidPlaced.Text = "Bid Placed!";
                 }
                 else
                 {
@@ -315,11 +324,36 @@ namespace VirginFrontEnd
                 lblError.Text = "Please enter a decimal"; 
             }
             DisplayBids();
+            
         }
 
         protected void btnOffer_Click(object sender, EventArgs e)
         {
+            //used to add a new record into the database
+            //first establish connection
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
 
+            try
+            {
+                decimal tempoffer = Convert.ToDecimal(txtBid.Text);
+               
+                    DB.AddParameter("@OfferAmount", txtBid.Text);
+                    DB.AddParameter("@UserID", UserID);
+                    DB.AddParameter("@ListingID", ListingID);
+                    DB.AddParameter("@Status", 1);
+                    DB.AddParameter("@TimePlaced", DateTime.Now);
+                //execute the insert sproc
+                DB.Execute("sproc_tblMarketplaceUserOffers_Insert");
+
+                 lblOfferPlaced.Text = "Offer Placed !";
+            }
+            catch
+            {
+                lblError.Text = "Please enter a decimal";
+            }
+            DisplayBids();
+           
         }
 
         protected void btnAddToCart_Click(object sender, EventArgs e)

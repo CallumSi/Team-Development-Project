@@ -157,7 +157,34 @@ namespace VirginFrontEnd
             //store data in session object so we can pass it to next page
             Session["UserID"] = UserID;
             //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("MarketplaceHome2.aspx");
         }
+
+        protected void ViewBidOffer_Click(object sender, EventArgs e)
+        {
+          
+                //variable to store primary key of field you want to edit
+                Int32 ListingID;
+                Session["UserID"] = UserID;
+                //check if a record has been selected from the list
+                if (lstYourListings.SelectedIndex != -1)
+                {
+                    //get primary key from selected
+                    ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                    //store data in session object so we can pass it to next page
+                    Session["ListingID"] = ListingID;
+                    //redirect to edit user details page
+                    Response.Redirect("MarketplaceBidOfferViewer.aspx");
+
+                }
+                //if a record hasnt been selected from the listbox 
+                else
+                {
+                    //display a error 
+                    lblError.Text = "Please select a record to edit from the list ";
+                }
+            }
+        
     }
 }
+
