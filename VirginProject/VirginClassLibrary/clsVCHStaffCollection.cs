@@ -59,16 +59,25 @@ namespace VirginClassLibrary
         //public constructor for the class
         public clsVCHStaffCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
             DB.Execute("sproc_tblVCHStaff_SelectAll");
-            //get the count of staff records
+            //populate the array list wit the data table
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of the records
             RecordCount = DB.Count;
+            //clear the private array list
+            mStaffList = new List<clsVCHStaff>();
             //while there are records to process
             while (Index < RecordCount)
             {
@@ -137,6 +146,19 @@ namespace VirginClassLibrary
             DB.AddParameter("@StaffPhoneNumber", mThisStaff.StaffPhoneNumber);
             //execute the stored procedure
             DB.Execute("sproc_tblVCHStaff_Update");
+        }
+
+        public void ReportByStaffUsername(string StaffUsername)
+        {
+            //filter staff records according to complete or partial Username
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the Username parameter for this stored procedure
+            DB.AddParameter("@StaffUsername", StaffUsername);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_FilterByUsername");
+            //populate the array list wit the data table
+            PopulateArray(DB);
         }
     }
 }

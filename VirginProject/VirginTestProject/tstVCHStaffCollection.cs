@@ -259,5 +259,61 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllStaff.ThisStaff, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByStaffUsernameMethodOK()
+        {
+            //create an instance of the staff collection class
+            clsVCHStaffCollection AllStaff = new clsVCHStaffCollection();
+            //create an instance of the data to filter
+            clsVCHStaffCollection FilteredStaff = new clsVCHStaffCollection();
+            //apply a blank string (all customer records should be returned)
+            FilteredStaff.ReportByStaffUsername("");
+            //test to see that both values ARE the same
+            Assert.AreEqual(AllStaff.Count, FilteredStaff.Count);
+        }
+
+        [TestMethod]
+        public void ReportByStaffUsernameNoneFound()
+        {
+            //create an instance of the data to filter
+            clsVCHStaffCollection FilteredStaff = new clsVCHStaffCollection();
+            //data variable of a none existent staff Username
+            FilteredStaff.ReportByStaffUsername("HeyThisDoesn'tExist");
+            //test to see that no matching staff usernames are found 
+            Assert.AreEqual(0, FilteredStaff.Count);
+        }
+
+        [TestMethod]
+        public void ReportByStaffUsernameTestDataFound()
+        {
+            //create an instance of the data to filter
+            clsVCHStaffCollection FilteredStaff = new clsVCHStaffCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a data variable of a none existent staff Username
+            FilteredStaff.ReportByStaffUsername("BrickBoy");
+            //check that the correct number of staff records are found
+            if (FilteredStaff.Count == 2)
+            {
+                //check that the first staff record is StaffID 6
+                if (FilteredStaff.StaffList[0].StaffID != 6)
+                {
+                    OK = false;
+                }
+                //check that the first staff record is StaffID 7
+                if (FilteredStaff.StaffList[1].StaffID != 7)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see that there are no new staff records
+            Assert.IsTrue(OK);
+        }
     }
 }
