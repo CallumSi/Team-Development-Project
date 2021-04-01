@@ -40,6 +40,17 @@ namespace VirginClassLibrary
             }
         }
 
+        //constructor for the class
+        public clsVMStaffCollection()
+        {
+            //object for the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //excute the stored procedure
+            DB.Execute("sproc_tblVMStaff_SelectAll");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+
         //public property for count
         public int Count
         {

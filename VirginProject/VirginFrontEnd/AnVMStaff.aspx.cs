@@ -13,35 +13,34 @@ namespace VirginFrontEnd
         Int32 VMStaffID;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-                //get the number of Customers to be processed
-                VMStaffID = Convert.ToInt32(Session["VMStaffID"]);
-                if (IsPostBack == false)
-                {
-                    //populate the list of Customers
-                    DisplayVMStaff();
-                    //if this is not a new record
-                    if (VMStaffID != -1)
-                    {
-                        //display the current data for the record
-                        DisplayVMStaff();
-                    }
-                }
 
-                void DisplayVMStaff()
+            //get the number of Customers to be processed
+            VMStaffID = Convert.ToInt32(Session["VMStaffID"]);
+            if (IsPostBack == false)
+            {
+                //populate the list of Customers
+                DisplayVMStaff();
+                //if this is not a new record
+                if (VMStaffID !=-1)
                 {
-                    //create an instance of the customer class
-                    clsVMStaffCollection AllStaff = new clsVMStaffCollection();
-                    //find the record to update
-                    AllStaff.ThisStaff.Find(VMStaffID);
-                    //display the data for this record
-                    txtVMStaffFirstname.Text = AllStaff.ThisStaff.VMstaffFirstName;
-                    txtVMStaffLastname.Text = AllStaff.ThisStaff.VMstaffLastName;
-                    txtVMStaffEmail.Text = AllStaff.ThisStaff.VMstaffEmail;
-                    txtVMStaffPassword.Text = AllStaff.ThisStaff.VMstaffPassword;
-                    txtVMStaffPosition.Text = AllStaff.ThisStaff.VMstaffPosition;
+                    //display the current data for the record
+                    DisplayVMStaff();
                 }
             }
+        }
+        void DisplayVMStaff()
+        {
+            //create an instance of the customer class
+            clsVMStaffCollection AllStaff = new clsVMStaffCollection();
+            //find the record to update
+            AllStaff.ThisStaff.Find(VMStaffID);
+            //display the data for this record
+            txtVMStaffFirstname.Text = AllStaff.ThisStaff.VMstaffFirstName;
+            txtVMStaffLastname.Text = AllStaff.ThisStaff.VMstaffLastName;
+            txtVMStaffEmail.Text = AllStaff.ThisStaff.VMstaffEmail;
+            txtVMStaffPassword.Text = AllStaff.ThisStaff.VMstaffPassword;
+            txtVMStaffPosition.Text = AllStaff.ThisStaff.VMstaffPosition;
+        }
 
         protected void btnOkay_Click(object sender, EventArgs e)
         {
