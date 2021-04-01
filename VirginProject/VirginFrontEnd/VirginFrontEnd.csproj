@@ -73,6 +73,7 @@
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="AnVMStaff.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
@@ -101,6 +102,8 @@
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
+    <Content Include="VMStaffDelete.aspx" />
+    <Content Include="VMStaffList.aspx" />
     <Content Include="Web.config" />
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
@@ -140,6 +143,13 @@
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMStaff.aspx.cs">
+      <DependentUpon>AnVMStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMStaff.aspx.designer.cs">
+      <DependentUpon>AnVMStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -344,6 +354,20 @@
     </Compile>
     <Compile Include="MarketplaceHome2.aspx.designer.cs">
       <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMStaffDelete.aspx.cs">
+      <DependentUpon>VMStaffDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMStaffDelete.aspx.designer.cs">
+      <DependentUpon>VMStaffDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMStaffList.aspx.cs">
+      <DependentUpon>VMStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMStaffList.aspx.designer.cs">
+      <DependentUpon>VMStaffList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

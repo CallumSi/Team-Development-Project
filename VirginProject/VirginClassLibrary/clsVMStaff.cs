@@ -4,12 +4,136 @@ namespace VirginClassLibrary
 {
     public class clsVMStaff
     {
-        public int VMstaffID { get; set; }
-        public string VMstaffFirstName { get; set; }
-        public string VMstaffLastName { get; set; }
-        public string VMstaffEmail { get; set; }
-        public string VMstaffPassword { get; set; }
-        public string VMstaffPosition { get; set; }
+        //Unique Customer Identifier
+        //private data member for the StaffID property
+        private Int32 mVMStaffID;
+        //Common Customer Attributes
+        String mVMstaffFirstName;
+        String mVMstaffLastName;
+        String mVMstaffEmail;
+        String mVMstaffPassword;
+        String mVMstaffPosition;
+
+        //Public property for StaffID
+        public int VMstaffID
+        {
+            get
+            {
+                //return the private data
+                return mVMStaffID;
+            }
+            set
+            {
+                //set the private data
+                mVMStaffID = value;
+            }
+        }
+
+        //Public property for staff firstname
+        public string VMstaffFirstName
+        {
+            get
+            {
+                //return the private data
+                return mVMstaffFirstName;
+            }
+            set
+            {
+                //set the private data
+                mVMstaffFirstName = value;
+            }
+        }
+
+        //Public property for staff lastname
+        public string VMstaffLastName
+        {
+            get
+            {
+                //return the private data
+                return mVMstaffLastName;
+            }
+            set
+            {
+                //set the private data
+                mVMstaffLastName = value;
+            }
+        }
+
+        //Public property for staff email
+        public string VMstaffEmail
+        {
+            get
+            {
+                //return the private data
+                return mVMstaffEmail;
+            }
+            set
+            {
+                //set the private data
+                mVMstaffEmail = value;
+            }
+        }
+
+
+        //Public property for staff password
+        public string VMstaffPassword
+        {
+            get
+            {
+                //return the private data
+                return mVMstaffPassword;
+            }
+            set
+            {
+                //set the private data
+                mVMstaffPassword = value;
+            }
+        }
+
+        //mVMstaffPosition
+        public string VMstaffPosition
+        {
+            get
+            {
+                //return the private data
+                return mVMstaffPosition;
+            }
+            set
+            {
+                //set the private data
+                mVMstaffPosition = value;
+            }
+        }
+
+        public Boolean Find(int VMStaffID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the CustomerID to search for
+            DB.AddParameter("@VMStaffID", VMstaffID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVMStaff_FilterByVMStaffID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mVMStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["VMStaffID"]);
+                mVMstaffFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMStaffFirstName"]);
+                mVMstaffLastName = Convert.ToString(DB.DataTable.Rows[0]["VMStaffLastName"]);
+                mVMstaffEmail = Convert.ToString(DB.DataTable.Rows[0]["VMStaffEmail"]);
+                mVMstaffPassword = Convert.ToString(DB.DataTable.Rows[0]["VMStaffPassword"]);
+                mVMstaffPosition = Convert.ToString(DB.DataTable.Rows[0]["VMStaffPosition"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+        }
+
 
         public string Valid(string VMstaffFirstName, string VMstaffLastName, string VMstaffEmail, string VMstaffPassword, string VMstaffPosition)
         {
