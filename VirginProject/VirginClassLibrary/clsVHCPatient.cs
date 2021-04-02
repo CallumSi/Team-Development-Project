@@ -4,41 +4,243 @@ namespace VirginClassLibrary
 {
     public class clsVHCPatient
     {
+        //private data member for the Patient_ID property 
+        private int mPatient_ID;
+
+        //private data member for the Patient_Title property 
+        private string mPatient_Title;
+
+        //private data member for the Patient_Firstname property 
+        private string mPatient_Firstname;
+
+        //private data member for the Patient_Lastname property 
+        private string mPatient_Lastname;
+
+        //private data member for the Patient_Address property 
+        private string mPatient_Address;
+
+        //private data member for the Patient_DOB property 
+        private DateTime mPatient_DOB;
+
+        //private data member for the Patient_Email property 
+        private string mPatient_Email;
+
+        //private data member for the Patient_Username property 
+        private string mPatient_Username;
+
+        //private data member for the Patient_Password property 
+        private string mPatient_Password;
+
+        //private data member for the Patient_Telephone property 
+        private string mPatient_Telephone;
+
+        //private data member for the Patient_Status property 
+        private bool mPatient_Status;
+
 
         //Patient_ID Property
-        public int Patient_ID { get; set; }
+        public int Patient_ID
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_ID;
+            }
+
+            set
+            {
+                mPatient_ID = value;
+            }
+        }
 
         //Patient_Title Property 
-        public string Patient_Title { get; set;}
+        public string Patient_Title
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Title;
+            }
+
+            set
+            {
+                mPatient_Title = value;
+            }
+        }
 
         //Patient_Firstname Property 
-        public string Patient_Firstname { get; set; }
+        public string Patient_Firstname
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Firstname;
+            }
+
+            set
+            {
+                mPatient_Firstname = value;
+            }
+        }
 
         //Patient_Lastname Property 
-        public string Patient_Lastname { get; set; }
+        public string Patient_Lastname
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Lastname;
+            }
+
+            set
+            {
+                mPatient_Lastname = value;
+            }
+        }
 
         //Patient_Address Property 
-        public string Patient_Address { get; set; }
+        public string Patient_Address
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Address;
+            }
+
+            set
+            {
+                mPatient_Address = value;
+            }
+        }
 
         //Patient_DOB Property
-        public DateTime Patient_DOB { get; set; }
+        public DateTime Patient_DOB
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_DOB;
+            }
+
+            set
+            {
+                mPatient_DOB = value;
+            }
+        }
 
         //Patient_Email Property 
-        public string Patient_Email { get; set; }
+        public string Patient_Email
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Email;
+            }
+
+            set
+            {
+                mPatient_Email = value;
+            }
+        }
 
         //Patient_Username Property
-        public string Patient_Username { get; set; }
+        public string Patient_Username
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Username;
+            }
+
+            set
+            {
+                mPatient_Username = value;
+            }
+        }
 
         //Patient_Password Property 
-        public string Patient_Password { get; set; }
+        public string Patient_Password
+
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Password;
+            }
+
+            set
+            {
+                mPatient_Password = value;
+            }
+
+        }
 
         //Patient_Telephone Property
-        public string Patient_Telephone { get; set; }
+        public string Patient_Telephone
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Telephone;
+            }
+
+            set
+            {
+                mPatient_Telephone = value;
+            }
+        }
 
         //Patient_Status Property
-        public bool Patient_Status { get; set; }
+        public bool Patient_Status
+        {
+            get
+            {
+                //return the private data 
+                return mPatient_Status;
+            }
 
+            set
+            {
+                mPatient_Status = value;
+            }
+        }
 
+        public bool Find(int Patient_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Patient_ID to search for
+            DB.AddParameter("@Patient_ID", Patient_ID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVHCPatient_FilterByVHCPatientID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);
+                mPatient_Title = Convert.ToString(DB.DataTable.Rows[0]["Patient_Title"]);
+                mPatient_Firstname = Convert.ToString(DB.DataTable.Rows[0]["Patient_Firstname"]);
+                mPatient_Lastname = Convert.ToString(DB.DataTable.Rows[0]["Patient_Lastname"]);
+                mPatient_Address = Convert.ToString(DB.DataTable.Rows[0]["Patient_Address"]);
+                mPatient_DOB = Convert.ToDateTime(DB.DataTable.Rows[0]["Patient_DOB"]);
+                mPatient_Email = Convert.ToString(DB.DataTable.Rows[0]["Patient_Email"]);
+                mPatient_Username = Convert.ToString(DB.DataTable.Rows[0]["Patient_Username"]);
+                mPatient_Password = Convert.ToString(DB.DataTable.Rows[0]["Patient_Password"]);
+                mPatient_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Patient_Telephone"]);
+                mPatient_Status = Convert.ToBoolean(DB.DataTable.Rows[0]["Patient_Status"]);
+
+                //return that everything worked OK
+                return true;
+            }
+
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+
+        }
 
 
         public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone, string Patient_Status)
@@ -208,5 +410,7 @@ namespace VirginClassLibrary
             //return any error messages
             return Error;
         }
+
+       
     }
 }
