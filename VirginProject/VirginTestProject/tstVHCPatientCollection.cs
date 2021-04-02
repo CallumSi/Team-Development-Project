@@ -72,5 +72,37 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(AllPatients.ThisPatient, TestPatient);
         }
+
+        [TestMethod]
+        public void ListAndCountOK()
+        {
+            //create an instance of the patient collection class 
+            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
+            //create some test data to assign to the property
+            //in this case the data needs to be a list of objects
+            List<clsVHCPatient> TestList = new List<clsVHCPatient>();
+            //add an item to the list
+            //create the item of test data
+            clsVHCPatient TestItem = new clsVHCPatient();
+            //set its properties
+            TestItem.Patient_ID = 1;
+            TestItem.Patient_Title = "Miss";
+            TestItem.Patient_Firstname = "Lia";
+            TestItem.Patient_Lastname = "Potter";
+            TestItem.Patient_Address = "42 Western Road, Leicestershire";
+            TestItem.Patient_DOB = DateTime.Now.Date;
+            TestItem.Patient_Email = "LiaPotter@gmail.com";
+            TestItem.Patient_Username = "LiaPotter1";
+            TestItem.Patient_Password = "LiaP010101";
+            TestItem.Patient_Telephone = "01164891276";
+            TestItem.Patient_Telephone = "01164891276";
+            TestItem.Patient_Status = true;
+            //add the item to the test list
+            TestList.Add(TestItem);
+            //assign the data to the property
+            AllPatients.PatientList = TestList;
+            //test to see that the two values are the same
+            Assert.AreEqual(AllPatients.Count, TestList.Count);
+        }
     }
 }

@@ -40,5 +40,18 @@ namespace VirginClassLibrary
 
             }
         }
+
+        public int Count
+        {
+            get
+            {
+                //return the count of the list
+                return mPatientList.Count;
+            }
+            set
+            {
+
+            }
+        }
     }
 }
