@@ -74,7 +74,6 @@ namespace VirginClassLibrary
             //update an existing record based on the values of thisHospital
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
-
             //set the parameters for the stored procedure 
             DB.AddParameter("@Hospital_ID", mThisHospital.Hospital_ID);
             DB.AddParameter("@Hospital_Name", mThisHospital.Hospital_Name);

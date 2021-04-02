@@ -120,7 +120,7 @@ namespace VirginTestProject
             TestItem.Hospital_ID = 1;
             TestItem.Hospital_Name = "West Middlesex Hospital";
             TestItem.Hospital_Place = "West London";
-            //set ThisPhone to the test data 
+            //set ThisHospital to the test data 
             AllHospitals.ThisHospital = TestItem;
             //add the record 
             PrimaryKey = AllHospitals.Add();
@@ -136,7 +136,7 @@ namespace VirginTestProject
             AllHospitals.Update();
             //find the record
             AllHospitals.ThisHospital.Find(PrimaryKey);
-            //test to see ThisPhone matches the test data
+            //test to see ThisHospital matches the test data
             Assert.AreEqual(AllHospitals.ThisHospital, TestItem);
         }
 
