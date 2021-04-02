@@ -105,7 +105,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public Boolean Find(int VMStaffID)
+        public bool Find(int VMstaffID)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
