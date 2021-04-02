@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using VirginClassLibrary;
 
 namespace VirginTestProject
 {
@@ -7,8 +8,12 @@ namespace VirginTestProject
     public class tstVHCPatientCollection
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstantiationOK()
         {
+            //create an instance of the patient collection class 
+            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
+            //test to see that it exists 
+            Assert.IsNotNull(AllPatients);
         }
     }
 }
