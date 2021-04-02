@@ -98,7 +98,6 @@ namespace VirginClassLibrary
         //Add method
         public int Add()
         {
-
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
@@ -149,7 +148,6 @@ namespace VirginClassLibrary
             DB.Execute("sproc_tblVMCustomer_FilterByUsername");
             //populate the array with the found data
             PopulateArray(DB);
-
         }
     }
 }

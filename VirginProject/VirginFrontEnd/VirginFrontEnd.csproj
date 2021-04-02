@@ -73,6 +73,7 @@
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="AnVMPayment.aspx" />
     <Content Include="AnVMStaff.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
@@ -103,6 +104,8 @@
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
+    <Content Include="VMPaymentDelete.aspx" />
+    <Content Include="VMPaymentList.aspx" />
     <Content Include="VMStaffDelete.aspx" />
     <Content Include="VMStaffList.aspx" />
     <Content Include="Web.config" />
@@ -144,6 +147,13 @@
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMPayment.aspx.cs">
+      <DependentUpon>AnVMPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMPayment.aspx.designer.cs">
+      <DependentUpon>AnVMPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnVMStaff.aspx.cs">
       <DependentUpon>AnVMStaff.aspx</DependentUpon>
@@ -362,6 +372,20 @@
     </Compile>
     <Compile Include="MarketplaceHome2.aspx.designer.cs">
       <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMPaymentDelete.aspx.cs">
+      <DependentUpon>VMPaymentDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMPaymentDelete.aspx.designer.cs">
+      <DependentUpon>VMPaymentDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMPaymentList.aspx.cs">
+      <DependentUpon>VMPaymentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMPaymentList.aspx.designer.cs">
+      <DependentUpon>VMPaymentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMStaffDelete.aspx.cs">
       <DependentUpon>VMStaffDelete.aspx</DependentUpon>

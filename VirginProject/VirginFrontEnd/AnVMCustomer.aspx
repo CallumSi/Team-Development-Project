@@ -8,8 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
         <asp:Label ID="lblAnVMCustomer" runat="server" Font-Bold="True" ForeColor="#CC0000" style="z-index: 1; left: 371px; top: 60px; position: absolute" Text="VIRGIN MOVIES CUSTOMER"></asp:Label>
         <asp:Label ID="lblVMcustomerFirstname" runat="server" BorderStyle="None" Font-Bold="True" style="z-index: 1; left: 215px; top: 153px; position: absolute" Text="CUSTOMER FIRSTNAME: "></asp:Label>
         <asp:Label ID="lblVMcustomerLastname" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 203px; position: absolute" Text="CUSTOMER LASTNAME: "></asp:Label>
