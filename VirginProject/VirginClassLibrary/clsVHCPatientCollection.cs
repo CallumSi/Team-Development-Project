@@ -24,5 +24,21 @@ namespace VirginClassLibrary
                 mPatientList = value;
             }
         }
+
+        public clsVHCPatient ThisPatient
+        {
+            get
+            {
+                //return the private data 
+                return mThisPatient;
+            }
+
+            set
+            {
+                //set the private data 
+                mThisPatient = value;
+
+            }
+        }
     }
 }
