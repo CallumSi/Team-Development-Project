@@ -230,5 +230,68 @@ namespace VirginTestProject
             //test to see that the two values are the same 
             Assert.AreEqual(AllPatients.ThisPatient, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByPatientMethodOK()
+        //Report By Patient Method 
+        {
+            //create an instance of the patient collection class 
+            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
+            //create an instance of the filtered data
+            clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
+            //apply a blank string (Should return all patients) 
+            FilteredPatient.ReportByPatient("");
+            //test to see that the two values are the same 
+            Assert.AreEqual(AllPatients.Count, FilteredPatient.Count);
+        }
+
+        [TestMethod]
+        public void ReportByPatientNoneFound()
+        //Report By Patient None Found Method 
+        {
+            //create an instance of the filtered data           
+            clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
+            //apply a blank string (Should return all patients) 
+            FilteredPatient.ReportByPatient("xxxx");
+            //test to see that the two values are the same 
+            Assert.AreEqual(0, FilteredPatient.Count);
+        }
+
+        [TestMethod]
+        public void ReportByPatientTestDataFound()
+        //Report By Patient Test Data Found Method 
+        {
+            //create an instance of the filtered data           
+            clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a make that does exist
+            FilteredPatient.ReportByPatient("21/01/1998");
+            //check that the correct number of records are found
+            if (FilteredPatient.Count == 1)
+            {
+                //check that the first record id ID 1
+                if (FilteredPatient.PatientList[0].Patient_ID != 1)
+                {
+                    OK = false;
+                }
+
+                //check that the last record is ID 2
+                if (FilteredPatient.PatientList[1].Patient_ID != 2)
+                {
+                    OK = false;
+                }
+
+            }
+
+            else
+            {
+                OK = false;
+            }
+
+
+            //test to see that the two values are the same 
+            Assert.IsTrue(OK);
+        }
     }
 }

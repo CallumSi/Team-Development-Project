@@ -242,7 +242,6 @@ namespace VirginClassLibrary
 
         }
 
-
         public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone, string Patient_Status)
         {
             //create a string variable to store data values

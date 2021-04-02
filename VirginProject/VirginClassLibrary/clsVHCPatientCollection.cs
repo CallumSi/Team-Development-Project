@@ -105,5 +105,64 @@ namespace VirginClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_tblVHCPatient_Delete");
         }
+
+        public clsVHCPatientCollection()
+        {
+
+            //object for the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the store procedure 
+            DB.Execute("sproc_tblVHCPatient_SelectAll");
+            //populate the array list with the data table 
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list 
+            mPatientList = new List<clsVHCPatient>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank hospital 
+                clsVHCPatient APatient = new clsVHCPatient();
+                //read in the fields from the current record
+                APatient.Patient_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Patient_ID"]);
+                APatient.Patient_Title = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Title"]);
+                APatient.Patient_Firstname = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Firstname"]);
+                APatient.Patient_Lastname = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Lastname"]);
+                APatient.Patient_Address = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Address"]);
+                APatient.Patient_DOB = Convert.ToDateTime(DB.DataTable.Rows[Index]["Patient_DOB"]);
+                APatient.Patient_Email = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Email"]);
+                APatient.Patient_Username = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Username"]);
+                APatient.Patient_Password = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Password"]);
+                APatient.Patient_Telephone = Convert.ToString(DB.DataTable.Rows[Index]["Patient_Telephone"]);
+                APatient.Patient_Status = Convert.ToBoolean(DB.DataTable.Rows[Index]["Patient_Status"]);
+                //add the record to the private data member 
+                mPatientList.Add(APatient);
+                //point at the next record
+                Index++;
+            }
+        }
+
+        public void ReportByPatient(string Patient_DOB)
+        {
+            //filters the records based on full or partial make
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //send the patient DOB parameter to the database 
+            DB.AddParameter("@Patient_DOB", Patient_DOB);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVHCPatient_FilterByPatientDOB");
+            //populate the array list with the data table 
+            PopulateArray(DB);
+        }
     }
 }
