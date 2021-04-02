@@ -191,5 +191,44 @@ namespace VirginTestProject
             //test to see ThisPatient matches the test data
             Assert.AreEqual(AllPatients.ThisPatient, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        //Add Method
+        {
+            //create an instance of the patient collection class 
+            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
+            //create some test data to assign to the property
+            clsVHCPatient TestItem = new clsVHCPatient();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set its properties 
+            TestItem.Patient_ID = 1;
+            TestItem.Patient_Title = "Miss";
+            TestItem.Patient_Firstname = "Lia";
+            TestItem.Patient_Lastname = "Potter";
+            TestItem.Patient_Address = "42 Western Road, Leicestershire";
+            TestItem.Patient_DOB = DateTime.Now.Date;
+            TestItem.Patient_Email = "LiaPotter@gmail.com";
+            TestItem.Patient_Username = "LiaPotter1";
+            TestItem.Patient_Password = "LiaP010101";
+            TestItem.Patient_Telephone = "01164891276";
+            TestItem.Patient_Telephone = "01164891276";
+            TestItem.Patient_Status = true;
+            //set ThisPatient to the test data 
+            AllPatients.ThisPatient = TestItem;
+            //add the record 
+            PrimaryKey = AllPatients.Add();
+            //set the primary key of the test data 
+            TestItem.Patient_ID = PrimaryKey;
+            //find the record 
+            AllPatients.ThisPatient.Find(PrimaryKey);
+            //delete the record 
+            AllPatients.Delete();
+            //now find the record 
+            Boolean Found = AllPatients.ThisPatient.Find(PrimaryKey);
+            //test to see that the two values are the same 
+            Assert.AreEqual(AllPatients.ThisPatient, TestItem);
+        }
     }
 }

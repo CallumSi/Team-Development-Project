@@ -94,5 +94,16 @@ namespace VirginClassLibrary
             //execute the stored procedure 
             DB.Execute("sproc_tblVHCPatient_Update");
         }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisPatient
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameter for the stored procedure
+            DB.AddParameter("@Patient_ID", mThisPatient.Patient_ID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVHCPatient_Delete");
+        }
     }
 }
