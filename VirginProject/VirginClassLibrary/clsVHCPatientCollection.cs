@@ -152,7 +152,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public void ReportByPatient(string Patient_DOB)
+        public void ReportByPatient(DateTime Patient_DOB)
         {
             //filters the records based on full or partial make
             //connect to the database 

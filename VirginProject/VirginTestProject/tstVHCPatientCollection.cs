@@ -233,7 +233,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
             //apply a blank string (Should return all patients) 
-            FilteredPatient.ReportByPatient("");
+            FilteredPatient.ReportByPatient(DateTime.MinValue);
             //test to see that the two values are the same 
             Assert.AreEqual(AllPatients.Count, FilteredPatient.Count);
         }
@@ -245,7 +245,7 @@ namespace VirginTestProject
             //create an instance of the filtered data           
             clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
             //apply a blank string (Should return all patients) 
-            FilteredPatient.ReportByPatient("xxxx");
+            FilteredPatient.ReportByPatient(Convert.ToDateTime("08/11/1997"));
             //test to see that the two values are the same 
             Assert.AreEqual(0, FilteredPatient.Count);
         }
@@ -259,18 +259,18 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a make that does exist
-            FilteredPatient.ReportByPatient("21/01/1998");
+            FilteredPatient.ReportByPatient(Convert.ToDateTime("09/11/1997"));
             //check that the correct number of records are found
-            if (FilteredPatient.Count == 1)
+            if (FilteredPatient.Count == 2)
             {
-                //check that the first record id ID 1
-                if (FilteredPatient.PatientList[0].Patient_ID != 1)
+                //check that the first record id ID 7
+                if (FilteredPatient.PatientList[0].Patient_ID != 4)
                 {
                     OK = false;
                 }
 
-                //check that the last record is ID 2
-                if (FilteredPatient.PatientList[1].Patient_ID != 2)
+                //check that the last record is ID 11
+                if (FilteredPatient.PatientList[1].Patient_ID != 5)
                 {
                     OK = false;
                 }
