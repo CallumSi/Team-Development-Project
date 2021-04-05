@@ -37,7 +37,6 @@ namespace VirginTestProject
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
             TestItem.Patient_Telephone = "01164891276";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //add the item to the test list
             TestList.Add(TestItem);
@@ -64,7 +63,6 @@ namespace VirginTestProject
             TestPatient.Patient_Email = "LiaPotter@gmail.com";
             TestPatient.Patient_Username = "LiaPotter1";
             TestPatient.Patient_Password = "LiaP010101";
-            TestPatient.Patient_Telephone = "01164891276";
             TestPatient.Patient_Telephone = "01164891276";
             TestPatient.Patient_Status = true;
             //assign the data to the property
@@ -95,7 +93,6 @@ namespace VirginTestProject
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
             TestItem.Patient_Telephone = "01164891276";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //add the item to the test list
             TestList.Add(TestItem);
@@ -125,7 +122,6 @@ namespace VirginTestProject
             TestItem.Patient_Email = "LiaPotter@gmail.com";
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //set ThisPatient to the test data 
@@ -161,7 +157,6 @@ namespace VirginTestProject
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
             TestItem.Patient_Telephone = "01164891276";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
@@ -179,7 +174,6 @@ namespace VirginTestProject
             TestItem.Patient_Email = "LiaPotter@gmail.com";
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //set the record based on the new test data
@@ -212,7 +206,6 @@ namespace VirginTestProject
             TestItem.Patient_Email = "LiaPotter@gmail.com";
             TestItem.Patient_Username = "LiaPotter1";
             TestItem.Patient_Password = "LiaP010101";
-            TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Telephone = "01164891276";
             TestItem.Patient_Status = true;
             //set ThisPatient to the test data 
