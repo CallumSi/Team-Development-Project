@@ -233,7 +233,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
             //apply a blank string (Should return all patients) 
-            FilteredPatient.ReportByPatient(DateTime.MinValue);
+            //FilteredPatient.ReportByPatient(); **** DATE CANNOT BE NULL ****
             //test to see that the two values are the same 
             Assert.AreEqual(AllPatients.Count, FilteredPatient.Count);
         }
@@ -259,7 +259,7 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a make that does exist
-            FilteredPatient.ReportByPatient(Convert.ToDateTime("09/11/1997"));
+            FilteredPatient.ReportByPatient(Convert.ToDateTime("11/09/1997"));
             //check that the correct number of records are found
             if (FilteredPatient.Count == 2)
             {
