@@ -179,5 +179,60 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(allStaff.ThisStaff, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByFirstNameMethodOK()
+        {
+            //create an instance of the staff collection class 
+            clsVMStaffCollection allStaff = new clsVMStaffCollection();
+            // create an instance of the filtered data
+            clsVMStaffCollection FilteredVMSFirstName = new clsVMStaffCollection();
+            //apply a blank string (should return all records)
+            FilteredVMSFirstName.FilterByFirstName("");
+            //test to see that the two values are the same
+            Assert.AreEqual(allStaff.Count, FilteredVMSFirstName.Count);
+        }
+
+        [TestMethod]
+        public void ReportByFirstNameNoneFound()
+        {
+            // create an instance of the filtered data
+            clsVMStaffCollection FilteredVMSFirstName = new clsVMStaffCollection();
+            //apply a firstname that doesnt exist
+            FilteredVMSFirstName.FilterByFirstName("Hello");
+            //test to see that the two values are the same
+            Assert.AreEqual(0, FilteredVMSFirstName.Count);
+        }
+
+        [TestMethod]
+        public void ReportByFirstNameTestDataFound()
+        {
+            // create an instance of the filtered data
+            clsVMStaffCollection FilteredVMSFirstName = new clsVMStaffCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply a username that does exist
+            FilteredVMSFirstName.FilterByFirstName("Sufiyaan");
+            //check that the correct number of records are found
+            if (FilteredVMSFirstName.Count == 2)
+            {
+                //check that the first record is ID 80
+                if (FilteredVMSFirstName.StaffList[0].VMstaffID != 17)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 82
+                if (FilteredVMSFirstName.StaffList[1].VMstaffID != 28)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }

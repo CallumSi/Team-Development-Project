@@ -179,5 +179,60 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByUsernameMethodOK()
+        {
+            //create an instance of the clsVMCustomerCollection class
+            clsVMCustomerCollection AllCustomers = new clsVMCustomerCollection();
+            // create an instance of the filtered data
+            clsVMCustomerCollection FilteredVMCUsernames = new clsVMCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredVMCUsernames.FilterByUsername("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomers.Count, FilteredVMCUsernames.Count);
+        }
+
+        [TestMethod]
+        public void ReportByUsernameNoneFound()
+        {
+            // create an instance of the filtered data
+            clsVMCustomerCollection FilteredVMCUsernames = new clsVMCustomerCollection();
+            //apply a username that doesnt exist
+            FilteredVMCUsernames.FilterByUsername("Hello");
+            //test to see that the two values are the same
+            Assert.AreEqual(0, FilteredVMCUsernames.Count);
+        }
+
+        [TestMethod]
+        public void ReportByUsernameTestDataFound()
+        {
+            // create an instance of the filtered data
+            clsVMCustomerCollection FilteredVMCUsernames = new clsVMCustomerCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply a username that does exist
+            FilteredVMCUsernames.FilterByUsername("LaPoiche");
+            //check that the correct number of records are found
+            if (FilteredVMCUsernames.Count == 2)
+            {
+                //check that the first record is ID 80
+                if (FilteredVMCUsernames.CustomerList[0].VMCustomerID != 80)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 82
+                if (FilteredVMCUsernames.CustomerList[1].VMCustomerID != 82)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }
