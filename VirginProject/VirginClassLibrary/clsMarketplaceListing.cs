@@ -11,8 +11,6 @@ namespace VirginClassLibrary
                
 
         //private Data
-        private bool mAllowBids;
-        private bool mAllowOffers;
         private string mCategory;
         private DateTime mCloseDate;
         private string mDeliveryType;

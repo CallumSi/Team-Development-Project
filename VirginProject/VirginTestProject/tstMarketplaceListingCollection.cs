@@ -45,9 +45,8 @@ namespace VirginTestProject
             //test are equal 
             Assert.AreEqual(Listings.ListingList, TestList);
 
-
-
         }
+
 
         [TestMethod]
         public void ThisListingPropertyOK()
@@ -76,7 +75,7 @@ namespace VirginTestProject
             Assert.AreEqual(Listings.ThisListing, Listing);
         }
 
-
+        [TestMethod]
         public void CountPropertyOK()
         {
             //Create an instance of the class
