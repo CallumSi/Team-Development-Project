@@ -65,12 +65,14 @@ footer {
     font-weight:bold;
 }
 
-ul {
-    display:flex;
+li {
+ 
     list-style:none;
     justify-content:space-between;
     padding:0px;
 }
+
+
 .navButton {
     
     padding: 10px;
