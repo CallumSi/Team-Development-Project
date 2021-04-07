@@ -187,5 +187,107 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.IsFalse(Found);
         }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the customer collection class
+            clsVCHCustomerCollection AllCustomers = new clsVCHCustomerCollection();
+            //test data to assign to the property
+            clsVCHCustomer TestItem = new clsVCHCustomer();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            TestItem.CustomerID = 1;
+            TestItem.FirstName = "Dante";
+            TestItem.LastName = "Alighieri";
+            TestItem.Address = "12 Florence Cresent, Leicestershire";
+            TestItem.PostCode = "LE13 2RV";
+            TestItem.Username = "DanteAyyy";
+            TestItem.Email = "d.alighieri@outlook.com";
+            TestItem.Password = "3InPuPa";
+            TestItem.PhoneNumber = "07912345678";
+            //set ThisCustomer to the test data
+            AllCustomers.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //set the primary key of the test data
+            TestItem.CustomerID = PrimaryKey;
+            //modify the test data in the following manner
+            TestItem.CustomerID = 1;
+            TestItem.FirstName = "Dante";
+            TestItem.LastName = "Alighieri";
+            TestItem.Address = "12 Florence Cresent, Leicestershire";
+            TestItem.PostCode = "LE13 2RV";
+            TestItem.Username = "King_of_Florence";
+            TestItem.Email = "d.alighieri@outlook.com";
+            TestItem.Password = "3InPuPa";
+            TestItem.PhoneNumber = "07912345678";
+            //set the record based on the new test data
+            AllCustomers.ThisCustomer = TestItem;
+            //update the record
+            AllCustomers.Update();
+            //find the record
+            AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllCustomers.ThisCustomer, TestItem);
+        }
+
+        [TestMethod]
+        public void ReportByUsernameMethodOK()
+        {
+            //create an instance of the customer collection class
+            clsVCHCustomerCollection AllCustomers = new clsVCHCustomerCollection();
+            //create an instance of the data to filter
+            clsVCHCustomerCollection FilteredCustomers = new clsVCHCustomerCollection();
+            //apply a blank string (all customer records should be returned)
+            FilteredCustomers.ReportByUsername("");
+            //test to see that both values ARE the same
+            Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void ReportByUsernameNoneFound()
+        {
+            //create an instance of the data to filter
+            clsVCHCustomerCollection FilteredCustomers = new clsVCHCustomerCollection();
+            //data variable of a none existent Username
+            FilteredCustomers.ReportByUsername("HelloThisDoesn'tExist");
+            //test to see that no matching customer usernames are found 
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+
+        /*
+        [TestMethod]
+        public void ReportByUsernameTestDataFound()
+        {
+            //create an instance of the data to filter
+            clsVCHCustomerCollection FilteredCustomers = new clsVCHCustomerCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a data variable of a none existent Username
+            FilteredCustomers.ReportByUsername("HelloThisDoesn'tExist");
+            //check that the correct number of customer records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                //check that the first customer record is CustomerID 2
+                if (FilteredCustomers.CustomerList[0].CustomerID !=2)
+                {
+                    OK = false;
+                }
+                //check that the first customer record is CustomerID 3
+                if (FilteredCustomers.CustomerList[1].CustomerID != 3)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+
+            //test to see that there are no new customer records
+            Assert.IsTrue(OK);
+        }*/
     }
 }

@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHCustomerList {
+    public partial class AnVMPayment {
         
         /// <summary>
         /// form1 control.
@@ -22,85 +22,67 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblCustomers control.
+        /// lblAnVMPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomers;
+        protected global::System.Web.UI.WebControls.Label lblAnVMPayment;
         
         /// <summary>
-        /// btnApply control.
+        /// lblPaymentStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
+        protected global::System.Web.UI.WebControls.Label lblPaymentStatus;
         
         /// <summary>
-        /// btnDisplayAll control.
+        /// lblPaymentType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
+        protected global::System.Web.UI.WebControls.Label lblPaymentType;
         
         /// <summary>
-        /// btnAdd control.
+        /// txtPaymentType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.TextBox txtPaymentType;
         
         /// <summary>
-        /// btnEdit control.
+        /// chkPaymentStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.CheckBox chkPaymentStatus;
         
         /// <summary>
-        /// btnDelete control.
+        /// btnOkay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Button btnOkay;
         
         /// <summary>
-        /// txtBxSearch control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBxSearch;
-        
-        /// <summary>
-        /// lstCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstCustomer;
-        
-        /// <summary>
-        /// lblUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// lblError control.
