@@ -13,6 +13,7 @@
              <header>
                <h2> Virgin Media </h2> 
             </header>
+         
  
             <article>
                 <ul>
@@ -41,6 +42,9 @@
                            
                  <li> 
                      <asp:Button ID="btnVirginForum"   CssClass="navButton" runat="server" style="z-index: 1;" Text="Virgin Forum" Height="45px" Width="159px" />
+                    
+                     <asp:Button ID="btnLogOut" runat="server" style="z-index: 1; left: 199px; top: 254px; position: absolute" Text="Log Out" />
+                    
                  </li>
                 </ul>
             </article>
