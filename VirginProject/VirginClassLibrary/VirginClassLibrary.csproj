@@ -65,10 +65,14 @@
     <Compile Include="clsVCHStaffCollection.cs" />
     <Compile Include="clsVHCAppointment.cs" />
     <Compile Include="clsVHCHospital.cs" />
+    <Compile Include="clsVHCHospitalCollection.cs" />
+    <Compile Include="clsVHCPatientCollection.cs" />
     <Compile Include="clsVHCStaff.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
+    <Compile Include="clsVMPayment.cs" />
+    <Compile Include="clsVMPaymentCollection.cs" />
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCart.cs" />

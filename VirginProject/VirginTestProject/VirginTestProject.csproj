@@ -79,6 +79,8 @@
     <Compile Include="tstVHCStaffCollection.cs" />
     <Compile Include="tstVMCustomer.cs" />
     <Compile Include="tstVMCustomerCollection.cs" />
+    <Compile Include="tstVMPayment.cs" />
+    <Compile Include="tstVMPaymentCollection.cs" />
     <Compile Include="tstVMStaff.cs" />
     <Compile Include="tstVMStaffCollection.cs" />
     <Compile Include="tstVPCart.cs" />
