@@ -11,12 +11,10 @@ namespace VirginFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        
         }
 
-
-
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnSignUp_Click(object sender, EventArgs e)
         {
             //create an instance of the security class
             clsSecurity Sec = new clsSecurity();

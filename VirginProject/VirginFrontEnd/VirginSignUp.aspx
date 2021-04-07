@@ -42,7 +42,7 @@
                            
                     </li>
                     <li>            
-                           <asp:Button ID="btnLogin" CssClass="navButton" runat="server" style="z-index: 1;" Text="Log In" Height="45px" OnClick="btnLogin_Click" Width="87px" />
+                           <asp:Button ID="btnSignUp" CssClass="navButton" runat="server" OnClick="btnSignUp_Click" style="z-index: 1;" Text="Sign Up" Height="46px" />
                     </li>
                 </ul>
             </article>
