@@ -63,14 +63,12 @@ footer {
     font-weight:bold;
 }
 
-li {
- 
+ul {
+    display:flex;
     list-style:none;
     justify-content:space-between;
     padding:0px;
 }
-
-
 .navButton {
     
     padding: 10px;
