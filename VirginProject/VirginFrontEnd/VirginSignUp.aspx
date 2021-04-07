@@ -18,7 +18,7 @@
                 <ul>
              
                 <li>
-                <asp:Label ID="lblUsername" runat="server" style="z-index: 1;" Text="UserName"></asp:Label>
+                       <asp:Label ID="lblUserName" runat="server" style="z-index: 1;" Text="User Name"></asp:Label>
                 <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1;"></asp:TextBox>
                </li>
               
@@ -37,9 +37,9 @@
                 </li>
                 <li>
                 <asp:Label ID="lblError" runat="server" style="z-index: 1; "></asp:Label>
-                           
+                    
                  
-                           
+                    
                     </li>
                     <li>            
                            <asp:Button ID="btnSignUp" CssClass="navButton" runat="server" OnClick="btnSignUp_Click" style="z-index: 1;" Text="Sign Up" Height="46px" />

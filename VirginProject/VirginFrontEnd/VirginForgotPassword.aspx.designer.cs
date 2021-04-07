@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VirginSignUp {
+    public partial class VirginForgotPassword {
         
         /// <summary>
         /// Head1 control.
@@ -31,13 +31,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblUserName control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.WebControls.Label lblUsername;
         
         /// <summary>
         /// txtUsername control.
@@ -112,12 +112,21 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnSignUp control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignUp;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
