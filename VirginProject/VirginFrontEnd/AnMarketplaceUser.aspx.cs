@@ -12,10 +12,12 @@ namespace VirginFrontEnd
     {
         //variable to store the UserID from session obect
         Int32 UserID;
+        string Password;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of users to be procvessed
             UserID = Convert.ToInt32(Session["UserID"]);
+         
             if (IsPostBack == false)
             {
                 //if not a new record 
@@ -39,11 +41,14 @@ namespace VirginFrontEnd
             {
                 UpdateUser();
             }
+            Session["UserID"] = UserID;
+            Response.Redirect("MarketplaceHome2.aspx");
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceUserList.aspx");
+            Response.Redirect("MarketplaceWelcome.aspx");
         }
 
         void DisplayData()
@@ -84,7 +89,8 @@ namespace VirginFrontEnd
                 //then update the record
                 SomeUser.UpdateUser();
                 //then go back to the list page
-                Response.Redirect("MarketplaceUserList.aspx");
+                Session["UserID"] = UserID;
+                Response.Redirect("MarketplaceHome2.aspx");
 
             }
             else
@@ -115,7 +121,8 @@ namespace VirginFrontEnd
                 //then add the record
                 SomeUser.AddUser();
                 //then go back to the list page
-                Response.Redirect("MarketplaceUserList.aspx");
+                Session["UserID"] = SomeUser.ThisUser.UserID;
+                Response.Redirect("MarketplaceHome2.aspx");
 
             }
             else
@@ -124,5 +131,7 @@ namespace VirginFrontEnd
                 lblError.Text += "There were problems with the data entered: " + Error;
             }
         }
+
+      
     }
 }

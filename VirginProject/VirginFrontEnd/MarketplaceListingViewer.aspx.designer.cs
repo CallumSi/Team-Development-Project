@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class MarketplaceListingViewer
-    {
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class MarketplaceListingViewer {
+        
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// lblEmail control.
         /// </summary>
@@ -49,7 +47,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail;
-
+        
+        /// <summary>
+        /// btnClickHere control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClickHere;
+        
         /// <summary>
         /// Button6 control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button6;
-
+        
         /// <summary>
         /// btnHome control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnHome;
-
+        
         /// <summary>
         /// imgListing control.
         /// </summary>
@@ -76,7 +83,25 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgListing;
-
+        
+        /// <summary>
+        /// lblBidTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBidTitle;
+        
+        /// <summary>
+        /// lblCurrentBidTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCurrentBidTitle;
+        
         /// <summary>
         /// lblListingName control.
         /// </summary>
@@ -85,16 +110,25 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblListingName;
-
+        
         /// <summary>
-        /// Label18 control.
+        /// lblListingType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
-
+        protected global::System.Web.UI.WebControls.Label lblListingType;
+        
+        /// <summary>
+        /// lblSellerEmailTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSellerEmailTitle;
+        
         /// <summary>
         /// lblSellerEmail control.
         /// </summary>
@@ -103,16 +137,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSellerEmail;
-
+        
         /// <summary>
-        /// Label5 control.
+        /// lblCategoryTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-
+        protected global::System.Web.UI.WebControls.Label lblCategoryTitle;
+        
         /// <summary>
         /// lblCategory control.
         /// </summary>
@@ -121,16 +155,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCategory;
-
+        
         /// <summary>
-        /// Label6 control.
+        /// lblDeliveryTypeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-
+        protected global::System.Web.UI.WebControls.Label lblDeliveryTypeTitle;
+        
         /// <summary>
         /// lblDeliveryType control.
         /// </summary>
@@ -139,16 +173,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDeliveryType;
-
+        
         /// <summary>
-        /// label23 control.
+        /// lblQuantityTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label23;
-
+        protected global::System.Web.UI.WebControls.Label lblQuantityTitle;
+        
         /// <summary>
         /// lblQuantity control.
         /// </summary>
@@ -157,16 +191,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblQuantity;
-
+        
         /// <summary>
-        /// Label4 control.
+        /// lblDescriptionTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
+        protected global::System.Web.UI.WebControls.Label lblDescriptionTitle;
+        
         /// <summary>
         /// lblDescription control.
         /// </summary>
@@ -175,16 +209,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescription;
-
+        
         /// <summary>
-        /// Label10 control.
+        /// lblConditionTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
-
+        protected global::System.Web.UI.WebControls.Label lblConditionTitle;
+        
         /// <summary>
         /// lblCondition control.
         /// </summary>
@@ -193,16 +227,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCondition;
-
+        
         /// <summary>
-        /// Label2 control.
+        /// lblStartPriceTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
+        protected global::System.Web.UI.WebControls.Label lblStartPriceTitle;
+        
         /// <summary>
         /// lblPrice control.
         /// </summary>
@@ -211,16 +245,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrice;
-
+        
         /// <summary>
-        /// label1 control.
+        /// lblTimeLeftTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
-
+        protected global::System.Web.UI.WebControls.Label lblTimeLeftTitle;
+        
         /// <summary>
         /// lblTimeLeft control.
         /// </summary>
@@ -229,25 +263,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTimeLeft;
-
+        
         /// <summary>
-        /// TextBox1 control.
+        /// btnAddToCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
+        protected global::System.Web.UI.WebControls.Button btnAddToCart;
+        
         /// <summary>
         /// btnBuyNow control.
         /// </summary>
@@ -256,7 +281,43 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuyNow;
-
+        
+        /// <summary>
+        /// lblBidText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBidText;
+        
+        /// <summary>
+        /// txtBid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBid;
+        
+        /// <summary>
+        /// btnBid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBid;
+        
+        /// <summary>
+        /// btnOffer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOffer;
+        
         /// <summary>
         /// btnFavorite control.
         /// </summary>
@@ -265,7 +326,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFavorite;
-
+        
         /// <summary>
         /// btnUnFavorite control.
         /// </summary>
@@ -274,7 +335,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUnFavorite;
-
+        
         /// <summary>
         /// lblFavorite control.
         /// </summary>
@@ -283,5 +344,50 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFavorite;
+        
+        /// <summary>
+        /// lblBidPlaced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBidPlaced;
+        
+        /// <summary>
+        /// lblOfferPlaced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOfferPlaced;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// lblQuant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuant;
+        
+        /// <summary>
+        /// txtQTY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQTY;
     }
 }

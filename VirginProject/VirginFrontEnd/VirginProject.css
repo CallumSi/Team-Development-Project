@@ -34,7 +34,7 @@ article {
     top: 5%;
     left: 20%;
     color: black;
-    height: 366px;
+ 
 }
 
 footer {
@@ -42,8 +42,10 @@ footer {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 90%;
+    top: 85%;
     left: 0%;
+    margin-top: 94px;
+    margin-bottom: 15px;
 }
 
 #FooterText {
@@ -82,21 +84,24 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1rem;
-    margin: 30px;
+  
     grid-auto-flow: dense;
     overflow: scroll;
     height: 58vh;
     padding-bottom: 30px;
+    z-index:10;
+    background-color:white;
+    border:30px solid white;
 }
 
 .Listings li {
-       
- }
+    background-color: white;
+}
 
-    .Listings li img {
-        width: 100%;
-        height: 30vh;
-        object-fit: cover;
+.Listings li img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
     }
 
 .AnListing {

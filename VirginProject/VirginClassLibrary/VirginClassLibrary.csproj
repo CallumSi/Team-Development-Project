@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsMarketplaceCartItem.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsForumAdmin.cs" />
     <Compile Include="clsForumAdminCollection.cs" />
@@ -49,12 +50,11 @@
     <Compile Include="clsForumPost.cs" />
     <Compile Include="clsForumUser.cs" />
     <Compile Include="clsForumUserCollection.cs" />
-    <Compile Include="clsMarketplaceBidCollection.cs" />
     <Compile Include="clsMarketplaceListing.cs" />
     <Compile Include="clsMarketplaceListingCollection.cs" />
-    <Compile Include="clsMarketplaceOfferCollection.cs" />
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
+    <Compile Include="clsMarketplaceOrder.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="clsUserCollection.cs" />
     <Compile Include="clsVCHCar.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="clsVPStock.cs" />
+    <Compile Include="clsMarketplaceCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,8 +24,27 @@ namespace VirginFrontEnd
             
             lblLoad.Text = "Are you sure you want to delete : " + ListingName;
 
+            if (IsPostBack == false)
+            {
+                {
+                    //display the requeted record
+                    DisplayUserData();
+                  
+                }
+            }
         }
 
+        void DisplayUserData()
+        {
+            //create an instance of the user collection class
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            //find the record to update
+            SomeUser.ThisUser.Find(UserID);
+            //display the data for this record
+            lblEmail.Text = SomeUser.ThisUser.Email;
+
+
+        }
         protected void btnYes_Click(object sender, EventArgs e)
         {
             //call the funciton to delete the recrod
@@ -69,13 +88,6 @@ namespace VirginFrontEnd
             Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
-            //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
-        }
 
         protected void btnClickHere_Click(object sender, EventArgs e)
         {
@@ -83,7 +95,15 @@ namespace VirginFrontEnd
             Session["ListingID"] = -1;
             Session["UserID"] = UserID;
             //redirect to user data entry page
-            Response.Redirect("AnMarketplaceListing.aspx");
+            Response.Redirect("MarketplaceListingType.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("Marketplacehome2.aspx");
         }
     }
 }

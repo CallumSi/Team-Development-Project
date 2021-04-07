@@ -84,6 +84,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
             //execute the insert sproc
             return DB.Execute("sproc_tblMarketplaceListing_Insert");
 
@@ -115,6 +116,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
 
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_Update");
@@ -152,7 +154,7 @@ namespace VirginClassLibrary
             //first establish connection 
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
-            DB.AddParameter("ListingID", ListingID);
+            DB.AddParameter("@ListingID", ListingID);
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
             //populate the array with the found data
@@ -172,6 +174,20 @@ namespace VirginClassLibrary
             PopulateArray(DB);
 
         }
+        public void FilterByListingType(int ListingType)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingType", ListingType);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingType");
+            //populate the array with the found data
+            PopulateArray(DB);
+
+        }
+
 
         public void Clear()
         {
@@ -206,7 +222,8 @@ namespace VirginClassLibrary
                 AnListing.ListingName = Convert.ToString(DB.DataTable.Rows[Index]["ListingName"]);
                 AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
                 AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
-                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]); 
+                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
                 //add the record 
                 mListingList.Add(AnListing);
                
@@ -243,6 +260,7 @@ namespace VirginClassLibrary
                 AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
                 AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
                 AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
                 //add the record 
                 mListingList.Add(AnListing);
                 //GO TO NEXT RECORD

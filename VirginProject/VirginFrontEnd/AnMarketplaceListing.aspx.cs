@@ -14,25 +14,40 @@ namespace VirginFrontEnd
         //variables genereated for insertion
         Int32 UserID;
         DateTime CloseDate = DateTime.Now.AddDays(7);
-       
+        Int32 ListingType;
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {  
 
             //get the number of listings to be procvessed
             ListingID = Convert.ToInt32(Session["ListingID"]);
             UserID = Convert.ToInt32(Session["UserID"]);
+            ListingType = Convert.ToInt32(Session["listingType"]);
+            if (ListingType == 1)
+            {
+                lblListingType.Text = "Instant Sale Type Listing";
+            }
+            if (ListingType == 2)
+            {
+                lblListingType.Text = "Auction Type Listing ";
+            }
+            if (ListingType == 3)
+            {
+                lblListingType.Text = "Best Offer Type Listing";
+            }
             if (IsPostBack == false)
             {  
                 {
                     //display the requeted record
                     DisplayData();
+                    DisplayUserData();
                 }
             }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("Marketplacehome2.aspx");
+            Session["UserID"] = UserID;
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
@@ -41,10 +56,12 @@ namespace VirginFrontEnd
             {
                 //add the new record
                 AddListing();
+                Session["UserID"] = UserID;
             }
             else
             {
                 UpdateListing();
+                Session["UserID"] = UserID;
             }
         }
 
@@ -64,6 +81,7 @@ namespace VirginFrontEnd
             txtPrice.Text = SomeListing.ThisListing.Price.ToString();
             txtImg.Text = SomeListing.ThisListing.Img;
             txtListingName.Text = SomeListing.ThisListing.ListingName;
+           
         }
 
         public void UpdateListing()
@@ -95,7 +113,7 @@ namespace VirginFrontEnd
                 //then update the record
                 SomeListing.UpdateListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceHome.aspx");
+                Response.Redirect("Marketplacehome2.aspx");
 
             }
             else
@@ -128,10 +146,11 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
                 SomeListing.ThisListing.OwnerID = UserID;
                 SomeListing.ThisListing.CloseDate = CloseDate;
+                SomeListing.ThisListing.ListingType = ListingType;
                 //then add the record
                 SomeListing.AddListing();
                 //then go back to the list page
-                Response.Redirect("MarketplaceHome.aspx");
+                Response.Redirect("Marketplacehome2.aspx");
 
             }
             else
@@ -147,7 +166,7 @@ namespace VirginFrontEnd
             Session["ListingID"] = -1;
             Session["UserID"] = UserID;
             //redirect to user data entry page
-            Response.Redirect("AnMarketplaceListing.aspx");
+            Response.Redirect("MarketplaceListingType.aspx");
         }
 
         protected void btnMyAccount_Click(object sender, EventArgs e)
@@ -158,12 +177,25 @@ namespace VirginFrontEnd
             Response.Redirect("MarketplaceUserProfile.aspx");
         }
 
+ 
+        void DisplayUserData()
+        {
+            //create an instance of the user collection class
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            //find the record to update
+            SomeUser.ThisUser.Find(UserID);
+            //display the data for this record
+            lblEmail.Text = SomeUser.ThisUser.Email;
+
+
+        }
+
         protected void btnHome_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
             Session["UserID"] = UserID;
             //redirect to edit user details page
-            Response.Redirect("MarketplaceHome.aspx");
+            Response.Redirect("Marketplacehome2.aspx");
         }
     }
 }
