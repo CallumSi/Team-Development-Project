@@ -11,9 +11,12 @@ namespace VirginFrontEnd
    
     public partial class MarketplaceViewCart : System.Web.UI.Page
     {
+        Int32 UserID;
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the User Id
+            UserID = Convert.ToInt32(Session["UserID"]);
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             //display the cart contents
@@ -30,35 +33,72 @@ namespace VirginFrontEnd
         {
             Int32 Index = 0;
             Int32 Count = MyCart.Products.Count;
-            Response.Write("<table border =\"1\">");
-            Response.Write("<tr>");
-            Response.Write("<td>");
+            string itemname;
+
+   
             Response.Write("Product Id");
-            Response.Write("</td>");
-            Response.Write("<td>");
+ 
             Response.Write("Quantity");
-            Response.Write("</td>");
-            Response.Write("<td>");
-            Response.Write("");
-            Response.Write("</td>");
-            Response.Write("</tr>");
-            Response.Write("</tr>");
+       
+            if(Count == 0)
+            {
+               lblError.Text = ("Shopping Cart Empty");
+            }
             while (Index < Count)
             {
-                Response.Write("<tr>");
-                Response.Write("<td>");
-                Response.Write(MyCart.Products[Index].ProductID);
-                Response.Write("</td>");
-                Response.Write("<td>");
-                Response.Write(MyCart.Products[Index].QTY);
-                Response.Write("</td>");
-                Response.Write("<td>");
-                Response.Write("<a href=\"Remove.aspx?Index=" + Index + "\">Remove</a>");
-                Response.Write("</td>");
-                Response.Write("</tr>");
+                clsMarketplaceListing AnListing = new clsMarketplaceListing();
+                AnListing.Find((MyCart.Products[Index].ProductID));
+                itemname = AnListing.ListingName;
+                string lstitem = itemname + " x" + (MyCart.Products[Index].QTY).ToString();
+                lstShoppingCart.Items.Add(lstitem);
                 Index++;
             }
-            Response.Write("</table>");
+        
+        }
+
+        protected void btnContinueShopping_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MarketplaceHome2.aspx");
+        }
+
+        protected void btnMarketplaceCheckout_Click(object sender, EventArgs e)
+        {
+            if(lstShoppingCart.Items.Count != 0)
+            {
+                //store data in session object so we can pass it to next page
+                Session["UserID"] = UserID;
+                Response.Redirect("MarketplaceCheckout.aspx");
+            }
+            else
+            {
+                lblError.Text = " Please add items to cart first!";
+            }
+           
+        }
+
+        protected void btnhome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceHome2.aspx");
+        }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("MarketplaceListingType.aspx");
         }
     }
 }

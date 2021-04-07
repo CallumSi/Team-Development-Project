@@ -14,7 +14,7 @@
                <h2> Virgin Media </h2> 
             </header>
  
-            <article>
+            <article class="row">
                <ul>
        
                       <li>
