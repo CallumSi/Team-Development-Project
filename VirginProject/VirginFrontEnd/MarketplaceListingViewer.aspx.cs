@@ -14,10 +14,15 @@ namespace VirginFrontEnd
         Int32 ListingID;
         Int32 UserID;
         decimal highestbid;
+        clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             //check for favorite
             UserID = Convert.ToInt32(Session["UserID"]);
+
+            //upon loading the page you need to read in the cart from the session object
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
+            //you also need to get the product id from the query string
             
             //get the number of  the listing to be procvessed
             try
@@ -29,6 +34,8 @@ namespace VirginFrontEnd
                 ListingID = Convert.ToInt32(Session["ListingID"]);
             }
            
+
+
            
             if (IsPostBack == false)
             {
@@ -43,6 +50,14 @@ namespace VirginFrontEnd
 
             
         }
+
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
+        }
+
+
 
         void DisplayData()
         {
@@ -383,7 +398,16 @@ namespace VirginFrontEnd
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-
+            //create a new instance of clsCartItem
+            clsMarketplaceCartItem AnItem = new clsMarketplaceCartItem();
+            //set the product id
+            AnItem.ProductID = ListingID;
+            //set the quantity
+            AnItem.QTY = Convert.ToInt32(txtQTY.Text);
+            //add the item to the cart's products collection
+            MyCart.Products.Add(AnItem);
+            //go back to shopping
+            Response.Redirect("MarketplaceHome2.aspx");
         }
     }
 }

@@ -97,7 +97,9 @@
                     <asp:Label ID="lblOfferPlaced"  runat="server" style="z-index: 1;"></asp:Label>
                    <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label></li>
                   
-                    
+                     <asp:Label ID="lblQuant" runat="server" style="z-index: 1; " Visible="true">Quantity: </asp:Label>
+                         <asp:TextBox ID="txtQTY" runat="server" Visible="True"></asp:TextBox>
+               
                     
 
                 </ul>

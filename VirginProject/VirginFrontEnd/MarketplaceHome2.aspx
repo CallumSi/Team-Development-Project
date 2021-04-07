@@ -12,13 +12,24 @@
     VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
     Boolean showEnded = false;
 
-
+    VirginClassLibrary.clsMarketplaceCart MyCart = new VirginClassLibrary.clsMarketplaceCart();
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        //upon loading the page read the session object
+        MyCart = (VirginClassLibrary.clsMarketplaceCart)Session["MyCart"];
+        if (MyCart ==null)
+        {
+            MyCart = new VirginClassLibrary.clsMarketplaceCart();
+        }
+        //then you can display how many items are in your cart
+        lblCartCount.Text = MyCart.Products.Count.ToString();
+
 
         //get the User Id
         UserID = Convert.ToInt32(Session["UserID"]);
         showEnded = Convert.ToBoolean(Session["ShowEnded"]);
+
 
         if (IsPostBack == false)
         {
@@ -33,6 +44,13 @@
             }
         }
     }
+    protected void Page_UnLoad(object sender, EventArgs e)
+    {
+        //save the cart
+        Session["MyCart"] = MyCart;
+    }
+
+
 
     void DisplayUserData()
     {
@@ -141,12 +159,12 @@
     {
         if(  showEnded == true){
             showEnded = false;
-           
+
         }
         else
         {
             showEnded = true;
-            
+
         }
 
 
@@ -191,6 +209,11 @@
         ListOfListings.FilterByListingName("");
         MyListings = ListOfListings;
     }
+
+    protected void btnViewCart_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MarketplaceViewcart.aspx");
+    }
 </script>
 
 
@@ -218,6 +241,8 @@
                           <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                               <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
                               <asp:Button ID="btnhome" CssClass="navButton" runat="server" style="z-index: 1;" Text="home" OnClick="btnhome_Click" />
+                              <asp:Button ID="btnViewCart" CssClass="navButton" runat="server" style="z-index: 1;" Text="ViewCart" OnClick="btnViewCart_Click" />
+                              <asp:Label ID="lblCartCount" runat="server"></asp:Label>
                           </li>
                      
                     
@@ -381,7 +406,7 @@
                         %>
                         
                                 </li>                
-                                    <%
+                                                            <%
                     
                           }
                               
