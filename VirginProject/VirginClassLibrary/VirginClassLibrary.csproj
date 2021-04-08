@@ -70,6 +70,7 @@
     <Compile Include="clsVHCStaff.cs" />
     <Compile Include="clsVMCart.cs" />
     <Compile Include="clsVMCartItem.cs" />
+    <Compile Include="clsVHCStaffCollection.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
