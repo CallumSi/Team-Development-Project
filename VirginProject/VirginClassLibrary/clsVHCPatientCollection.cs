@@ -7,7 +7,7 @@ namespace VirginClassLibrary
     {
         //private data member for the list
         List<clsVHCPatient> mPatientList = new List<clsVHCPatient>();
-        //private data member thisHospital
+        //private data member thisPatient
         clsVHCPatient mThisPatient = new clsVHCPatient();
 
         public List<clsVHCPatient> PatientList
