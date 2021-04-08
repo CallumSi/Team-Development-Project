@@ -106,12 +106,16 @@
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginUserList.aspx" />
+    <Content Include="VMCheckout.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
+    <Content Include="VMHome.aspx" />
     <Content Include="VMPaymentDelete.aspx" />
     <Content Include="VMPaymentList.aspx" />
     <Content Include="VMStaffDelete.aspx" />
     <Content Include="VMStaffList.aspx" />
+    <Content Include="VMThanks.aspx" />
+    <Content Include="VMViewCart.aspx" />
     <Content Include="Web.config" />
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
@@ -384,6 +388,13 @@
     <Compile Include="VirginUserList.aspx.designer.cs">
       <DependentUpon>VirginUserList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VMCheckout.aspx.cs">
+      <DependentUpon>VMCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMCheckout.aspx.designer.cs">
+      <DependentUpon>VMCheckout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VMCustomerDelete.aspx.cs">
       <DependentUpon>VMCustomerDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -404,6 +415,13 @@
     </Compile>
     <Compile Include="MarketplaceHome2.aspx.designer.cs">
       <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMHome.aspx.cs">
+      <DependentUpon>VMHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMHome.aspx.designer.cs">
+      <DependentUpon>VMHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMPaymentDelete.aspx.cs">
       <DependentUpon>VMPaymentDelete.aspx</DependentUpon>
@@ -432,6 +450,20 @@
     </Compile>
     <Compile Include="VMStaffList.aspx.designer.cs">
       <DependentUpon>VMStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMThanks.aspx.cs">
+      <DependentUpon>VMThanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMThanks.aspx.designer.cs">
+      <DependentUpon>VMThanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMViewCart.aspx.cs">
+      <DependentUpon>VMViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMViewCart.aspx.designer.cs">
+      <DependentUpon>VMViewCart.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

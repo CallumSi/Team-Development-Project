@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirginClassLibrary
 {
-    class clsVMCart
+    public class clsVMCart
     {
         List<clsVMCartItem> mMovies = new List<clsVMCartItem>();
 
