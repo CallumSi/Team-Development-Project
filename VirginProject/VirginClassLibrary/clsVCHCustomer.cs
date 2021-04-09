@@ -211,6 +211,7 @@ namespace VirginClassLibrary
             {
                 //return the following error message
                 return "The first name entered is not acceptable. Please try again with a shorter first name.";
+                return "The customers first name may not exceed 30 characters, please fill it in accordingly.";
             }
             //if the first name length is less than 2 characters
             if (FirstName.Length < 2)
@@ -250,13 +251,13 @@ namespace VirginClassLibrary
             if (Address.Length > 50)
             {
                 //return the following error message
-                return "The address entered holds too many characters. Please enter a shorter address and do not include a postcode.";
+                return "An address may not exceed 50 characters, please fill it in accordingly.";
             }
             //if the address length is less than 3 characters 
             if (Address.Length < 3)
             {
                 //return the following error message
-                return "The address entered is too short. Please enter a longer address and do not include a postcode.";
+                return "An address may not be blank, please fill it in accordingly.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -270,7 +271,7 @@ namespace VirginClassLibrary
             if (PostCode.Length > 10)
             {
                 //return the following error message
-                return "The postcode entered holds too many characters. Please enter a shorter postcode.";
+                return "Postcodes cannot exceed 10 characters, please fill it in accordingly.";
             }
             //if the post code length is less than 5 characters 
             if (PostCode.Length < 5)
@@ -310,13 +311,13 @@ namespace VirginClassLibrary
             if (Email.Length > 50)
             {
                 //return the following error message
-                return "Email addresses cannot exceed 50 characters, please enter a shorter email address.";
+                return "An Email address cannot exceed 50 characters, please fill it in accordingly.";
             }
             //if the Email length is less than 7 characters 
             if (Email.Length < 7)
             {
                 //return the following error message
-                return "Email addresses require at least 7 characters, please enter a longer email address.";
+                return "An Email address cannot have less than 7 characters, please fill it in accordingly.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -330,13 +331,13 @@ namespace VirginClassLibrary
             if (Password.Length > 20)
             {
                 //return the following error message
-                return "Passwords may not exceed 20 characters, please enter a shorter password.";
+                return "Passwords may not exceed 20 characters, please fill it in accordingly.";
             }
             //if the Password length is less than 6 characters 
             if (Password.Length < 6)
             {
                 //return the following error message
-                return "Passwords require at least 6 characters, please enter a longer password.";
+                return "Passwords cannot have less than 6 characters, please fill it in accordingly.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -356,7 +357,7 @@ namespace VirginClassLibrary
             if (PhoneNumber.Length < 11)
             {
                 //return the following error message
-                return "Phone numbers require at 11 numbers, please enter a longer number.";
+                return "Phone numbers cannot have less than 11 characters, please fill it in accordingly.";
             }
 
             return Error;

@@ -108,7 +108,7 @@ namespace VirginTestProject
 
         [TestMethod]
         public void UpdateMethodOK()
-        //Add Method
+        //Update Method
         {
             //create an instance of the hospital collection class 
             clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
@@ -142,7 +142,7 @@ namespace VirginTestProject
 
         [TestMethod]
         public void DeleteMethodOK()
-        //Add Method
+        //Delete Method
         {
             //create an instance of the hospital collection class 
             clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();

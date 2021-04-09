@@ -61,6 +61,7 @@
     <Compile Include="tstMarketplaceUserCollection.cs" />
     <Compile Include="tstMarketplaceListingCollection.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
+    <Compile Include="tstVMMovie.cs" />
     <Compile Include="tstUser.cs" />
     <Compile Include="tstUserCollection.cs" />
     <Compile Include="tstVCHCar.cs" />

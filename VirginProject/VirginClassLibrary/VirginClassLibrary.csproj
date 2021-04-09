@@ -68,9 +68,14 @@
     <Compile Include="clsVHCHospitalCollection.cs" />
     <Compile Include="clsVHCPatientCollection.cs" />
     <Compile Include="clsVHCStaff.cs" />
+    <Compile Include="clsVMCart.cs" />
+    <Compile Include="clsVMCartItem.cs" />
+    <Compile Include="clsVHCStaffCollection.cs" />
     <Compile Include="clsVMCustomer.cs" />
     <Compile Include="clsVHCPatient.cs" />
     <Compile Include="clsVMCustomerCollection.cs" />
+    <Compile Include="clsVMMovie.cs" />
+    <Compile Include="clsVMOrder.cs" />
     <Compile Include="clsVMPayment.cs" />
     <Compile Include="clsVMPaymentCollection.cs" />
     <Compile Include="clsVMStaff.cs" />
