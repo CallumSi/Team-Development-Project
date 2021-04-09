@@ -101,6 +101,7 @@
     <Content Include="VCHDefault.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
+    <Content Include="VirginForgotPassword.aspx" />
     <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginLogIn.aspx" />
     <Content Include="VirginProject.css" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="VCHStaffList.aspx.designer.cs">
       <DependentUpon>VCHStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VirginForgotPassword.aspx.cs">
+      <DependentUpon>VirginForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginForgotPassword.aspx.designer.cs">
+      <DependentUpon>VirginForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginHomePage.aspx.cs">
       <DependentUpon>VirginHomePage.aspx</DependentUpon>
