@@ -245,18 +245,18 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a make that does exist
-            FilteredStaff.ReportByStaff("Monica");
+            FilteredStaff.ReportByStaff("Mati");
             //check that the correct number of records are found
             if (FilteredStaff.Count == 2)
             {
                 //check that the first record id ID 2
-                if (FilteredStaff.StaffList[0].Staff_ID != 1)
+                if (FilteredStaff.StaffList[0].Staff_ID != 20)
                 {
                     OK = false;
                 }
 
                 //check that the last record is ID 20
-                if (FilteredStaff.StaffList[1].Staff_ID != 20)
+                if (FilteredStaff.StaffList[1].Staff_ID != 22)
                 {
                     OK = false;
                 }
