@@ -345,7 +345,7 @@ namespace VirginFrontEnd
                 }
                 if (tempbid > Convert.ToDecimal(temphighestbid))
                 {
-                    DB.AddParameter("@BidAmount", txtBid.Text);
+                    DB.AddParameter("@BidAmount", tempbid);
                     DB.AddParameter("@UserID", UserID);
                     DB.AddParameter("@ListingID", ListingID);
                     DB.AddParameter("@TimePlaced", DateTime.Now);

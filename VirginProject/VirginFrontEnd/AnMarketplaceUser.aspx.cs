@@ -126,6 +126,7 @@ namespace VirginFrontEnd
                 //then add the record
                 SomeUser.AddUser();
                 //then go back to the list page
+                SomeUser.ThisUser.FindByOriginal(OriginalID);
                 Session["UserID"] = SomeUser.ThisUser.UserID;
                 Response.Redirect("MarketplaceHome2.aspx");
 
