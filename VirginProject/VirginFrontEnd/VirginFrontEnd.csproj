@@ -104,6 +104,7 @@
     <Content Include="VCHDefault.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
+    <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginUserList.aspx" />
@@ -383,6 +384,13 @@
     </Compile>
     <Compile Include="VCHStaffList.aspx.designer.cs">
       <DependentUpon>VCHStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VirginHomePage.aspx.cs">
+      <DependentUpon>VirginHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginHomePage.aspx.designer.cs">
+      <DependentUpon>VirginHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginProject.Master.cs">
       <DependentUpon>VirginProject.Master</DependentUpon>
