@@ -12,10 +12,13 @@ namespace VirginFrontEnd
     {
         Int32 UserID;
         Int32 ListingID;
+        clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the User Id
+
             UserID = Convert.ToInt32(Session["UserID"]);
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
             ListingID = Convert.ToInt32(Session["ListingID"]);
             if (IsPostBack == false)
             {
@@ -69,6 +72,11 @@ namespace VirginFrontEnd
 
                
             }
+        }
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
         }
 
         private void DisplayUserData()

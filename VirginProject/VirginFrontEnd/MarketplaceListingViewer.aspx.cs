@@ -50,7 +50,7 @@ namespace VirginFrontEnd
 
             
         }
-
+     
         protected void Page_UnLoad(object sender, EventArgs e)
         {
             //you must also save the cart every time the unload event takes place
@@ -94,7 +94,8 @@ namespace VirginFrontEnd
 
 
                     btnAddToCart.Visible = true;
-                    btnBuyNow.Visible = true;
+                    lblQuant.Visible = true;
+                    txtQTY.Visible = true;
                     lblListingType.Text = "Listing Type: Instant Purchace";
                 }
                 if (SomeListing.ThisListing.ListingType == 2)
@@ -403,11 +404,30 @@ namespace VirginFrontEnd
             //set the product id
             AnItem.ProductID = ListingID;
             //set the quantity
-            AnItem.QTY = Convert.ToInt32(txtQTY.Text);
-            //add the item to the cart's products collection
-            MyCart.Products.Add(AnItem);
-            //go back to shopping
-            Response.Redirect("MarketplaceHome2.aspx");
+            try
+            {
+                Int32 listingquantity = Convert.ToInt32(lblQuantity.Text);
+                Int32 yourquantity = Convert.ToInt32(txtQTY.Text);
+
+                if ( yourquantity <= listingquantity && yourquantity > 0)
+                {
+                    AnItem.QTY = Convert.ToInt32(txtQTY.Text);
+                    //add the item to the cart's products collection
+                    MyCart.Products.Add(AnItem);
+                    //go back to shopping
+                    Response.Redirect("MarketplaceHome2.aspx");
+                }
+                else
+                {
+                    lblError.Text = "Please enter a valid quantity";
+                }
+                
+            }
+            catch
+            {
+                lblError.Text = "Please enter a integer";
+            }
+            
         }
     }
 }

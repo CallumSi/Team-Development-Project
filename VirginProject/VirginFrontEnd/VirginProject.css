@@ -5,6 +5,7 @@ body {
     color: #DBDBDB;
     font-size: 18px; 
     font-family:'Poppins', sans-serif;
+
 }
 
 header {
@@ -65,12 +66,23 @@ footer {
     font-weight:bold;
 }
 
-ul {
-    display:flex;
-    list-style:none;
-    justify-content:space-between;
-    padding:0px;
+li {
+    list-style: none;
 }
+
+.row {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.column {
+    list-style: none;
+    padding: 0px;
+}
+
+
 .navButton {
     
     padding: 10px;
@@ -107,8 +119,10 @@ ul {
 .AnListing {
     display: flex;
     flex-direction: column;
-    padding-top:50px;
+    padding-top: 50px;
+    list-style: none;
 }
 .AnListing li{
     padding :10px;
+    list-style: none;
 }
