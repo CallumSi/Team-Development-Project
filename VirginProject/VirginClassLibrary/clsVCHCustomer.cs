@@ -196,7 +196,7 @@ namespace VirginClassLibrary
         }
 
         //Valid Method
-        public string Valid(string FirstName, string LastName, string Address, string PostCode, string Email, string Password, string PhoneNumber)
+        public string Valid(string FirstName, string LastName, string Address, string PostCode, string Username, string Email, string Password, string PhoneNumber)
         {
             //string variable to store the error message
             string Error = "";
