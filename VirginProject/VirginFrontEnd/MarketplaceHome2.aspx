@@ -232,13 +232,14 @@
           
           
              <article>
-                 <ul>
+                 <ul class ="row">
        
-                      <li>
+                            <li>
                           <asp:Label ID="Label3" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
                           <asp:Label ID="lblEmail" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
-                       </li>
-                          <li><asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
+                            </li>
+                          <li>
+                              <asp:Button ID="Button1" CssClass="navButton" runat="server" style="z-index: 1;" Text="Sell" OnClick="btnClickHere_Click" />
                               <asp:Button ID="Button6" CssClass="navButton" runat="server" style="z-index: 1;" Text="MyAccount" OnClick="btnMyAccount_Click" />
                               <asp:Button ID="btnhome" CssClass="navButton" runat="server" style="z-index: 1;" Text="home" OnClick="btnhome_Click" />
                               <asp:Button ID="btnViewCart" CssClass="navButton" runat="server" style="z-index: 1;" Text="ViewCart" OnClick="btnViewCart_Click" />
@@ -254,7 +255,7 @@
                           <asp:TextBox ID="txtSearch" runat="server" style="z-index: 1;"></asp:TextBox>
                           <asp:Button ID="btnSearch" CssClass="navButton" runat="server" style="z-index: 1;" Text="Search" OnClick="btnSearch_Click" />
                             
-                 <ul>
+                 <ul class ="row">
                     <li>
                      <asp:Button ID="btnAllListings" CssClass="navButton" runat="server" style="z-index: 1;" Text="All listings" OnClick="btnAllListings_Click" /></li> 
                      <li><asp:Button ID="btnAcceptsOffers" CssClass="navButton" runat="server" style="z-index: 1;" Text="Accepts offers" OnClick="btnAcceptsOffers_Click"/></li>

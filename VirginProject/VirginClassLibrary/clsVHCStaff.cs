@@ -245,9 +245,9 @@ namespace VirginClassLibrary
             }
 
 
-            // (2) Staff Firstname Validation
+            //// (2) Staff Firstname Validation
 
-            //if staff firstname is blank 
+            //if Staff firstname is blank 
             if (Staff_Firstname.Length == 0)
             {
                 //record the error 

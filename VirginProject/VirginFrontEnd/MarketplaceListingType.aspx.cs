@@ -13,10 +13,10 @@ namespace VirginFrontEnd
         //var for ListingId of record to be deleted
         Int32 ListingID;
         Int32 UserID;
-      
+        clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
             UserID = Convert.ToInt32(Session["UserID"]);
             //retrieve the id from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
@@ -32,6 +32,13 @@ namespace VirginFrontEnd
 
 
         }
+
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
+        }
+
         void DisplayUserData()
         {
             //create an instance of the user collection class

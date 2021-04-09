@@ -15,9 +15,10 @@ namespace VirginFrontEnd
         Int32 UserID;
         DateTime CloseDate = DateTime.Now.AddDays(7);
         Int32 ListingType;
+        clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
-        {  
-
+        {
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
             //get the number of listings to be procvessed
             ListingID = Convert.ToInt32(Session["ListingID"]);
             UserID = Convert.ToInt32(Session["UserID"]);
@@ -42,6 +43,13 @@ namespace VirginFrontEnd
                     DisplayUserData();
                 }
             }
+        }
+       
+       
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
