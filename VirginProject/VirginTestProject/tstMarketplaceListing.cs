@@ -8,6 +8,24 @@ namespace VirginTestProject
     public class tstMarketplaceListing
     {
         //Testing Class 
+
+
+        //some good data to use - data entered by user has string data type
+
+        String AnCategory = "Cookie Jar";
+        DateTime AnCloseDate = DateTime.Now.AddDays(7);
+        String AnDeliveryType = "First Class";
+        String AnDescription = "Includes Audio when opening";
+        String AnImg = @"http://placekitten.com/200/300";
+        int AnListingID = 1;
+        String AnListingName = "Shrek Cookie Jar";
+        bool New = true;
+        String AnPrice = "10.22";
+        String AnQuantity = "1";
+        int AnOwnerID = 1;
+        int AnListingType = 2;
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -18,37 +36,7 @@ namespace VirginTestProject
         }
 
 
-        //Testing Properties
-        [TestMethod]
-        public void AllowBidsPropertyOK()
-        {
-            //create instance of Marketplace user
-            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
-            //test data for property
-            Boolean TestData = true;
-            //assign data to the property
-            AnMarketplaceListing.AllowBids = TestData;
-            //test if values are equal 
-            Assert.AreEqual(AnMarketplaceListing.AllowBids, TestData);
-
-
-        }
-
-
-        [TestMethod]
-        public void AllowOffersPropertyOK()
-        {
-            //create instance of Marketplace user
-            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
-            //test data for property
-            Boolean TestData = true;
-            //assign data to the property
-            AnMarketplaceListing.AllowOffers = TestData;
-            //test if values are equal 
-            Assert.AreEqual(AnMarketplaceListing.AllowOffers, TestData);
-
-
-        }
+       
 
 
         [TestMethod]
@@ -65,7 +53,22 @@ namespace VirginTestProject
 
 
         }
-      
+
+        [TestMethod]
+        public void CloseDateOK()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //test data for property
+            DateTime TestData = new DateTime(2000, 12, 12);
+            //assign data to the property
+            AnMarketplaceListing.CloseDate = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AnMarketplaceListing.CloseDate, TestData);
+
+
+        }
+
 
         [TestMethod]
         public void DeliveryTypePropertyOK()
@@ -198,23 +201,28 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void CloseDateOK()
+        public void ListingTypePropertyOk()
         {
             //create instance of Marketplace user
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //test data for property
-            DateTime TestData = new DateTime(2000, 12, 12);
+            int TestData = 10;
             //assign data to the property
-            AnMarketplaceListing.CloseDate = TestData;
+            AnMarketplaceListing.ListingType = TestData;
             //test if values are equal 
-            Assert.AreEqual(AnMarketplaceListing.CloseDate, TestData);
-
+            Assert.AreEqual(AnMarketplaceListing.ListingType, TestData);
 
         }
 
 
 
         //Testing the validmethod 
+
+
+      
+       
+
+
 
         [TestMethod]
         public void ValidMethodOK()
@@ -224,13 +232,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+          
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure no error msg
@@ -251,13 +253,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            String AnCategory = "";         
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -272,14 +268,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
+            //some test data to insert into the valid method        
             String AnDeliveryType = "";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -294,14 +284,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
+            //some test data to insert into the valid method      
             String AnDescription = "";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -316,14 +300,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
+            //some test data to insert into the valid method      
             String AnImg = "";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure no error msg - can be blank
@@ -338,14 +316,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            //some test data to insert into the valid method           
+            String AnListingName = "";         
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -360,14 +332,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
+            //some test data to insert into the valid method   
             String AnPrice = "";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -383,12 +349,6 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "Cookie Jar";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
             String AnQuantity = "";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -410,13 +370,23 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            String AnCategory = "A";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryTypeMinBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryType = "A";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -432,13 +402,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            String AnDescription = "A";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -454,13 +418,8 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = "";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            String AnImg = "A/";
+
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -475,14 +434,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            //some test data to insert into the valid method       
+            String AnListingName = "S";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -497,14 +450,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+            //some test data to insert into the valid method     
+            String AnPrice = "0.01";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -520,12 +467,6 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
             String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -546,12 +487,7 @@ namespace VirginTestProject
             //some test data to insert into the valid method 
             String AnCategory = "";
             AnCategory += AnCategory.PadRight(30, 'A');
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
+    
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -560,6 +496,22 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void DeliveryTypeMaxBoundary()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method   
+            String AnDeliveryType = "";
+            AnDeliveryType += AnDeliveryType.PadRight(30, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+
+        }
+        [TestMethod]
         public void DescriptionMaxBoundary()
         {
             //create instance of Marketplace user
@@ -567,14 +519,8 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "Cookie jar";
-            String AnDeliveryType = "First Class";
             String AnDescription = "";
             AnDescription+=AnDescription.PadRight(75, 'A');
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -590,15 +536,9 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
             String AnImg = "/";
             AnImg += AnImg.PadRight(199, 'A');
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
-            //test the valid method with the test data
+             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
             Assert.AreEqual(Error, "");
@@ -613,14 +553,8 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
             String AnListingName = "";
             AnListingName += AnListingName.PadRight(30, 'A');
-            String AnPrice = "10.00";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -636,13 +570,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
             String AnPrice = "1000000000.00";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -658,12 +586,6 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
             String AnQuantity = "1000";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -698,6 +620,22 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void DeliveryType()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryType = "";
+            AnDeliveryType += AnDeliveryType.PadRight(31, 'A');
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
         public void DescriptionMaxPlusOne()
         {
             //create instance of Marketplace user
@@ -705,14 +643,8 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "Cookie jar";
-            String AnDeliveryType = "First Class";
             String AnDescription = "";
             AnDescription += AnDescription.PadRight(76, 'A');
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -728,14 +660,8 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
             String AnImg = "/";
             AnImg += AnImg.PadRight(200, 'A');
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -750,15 +676,9 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
+            //some test data to insert into the valid method      
             String AnListingName = "";
             AnListingName += AnListingName.PadRight(31, 'A');
-            String AnPrice = "10.00";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -774,13 +694,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
             String AnPrice = "1000000000.01";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -796,12 +710,6 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
             String AnQuantity = "1001";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -821,16 +729,26 @@ namespace VirginTestProject
             String Error = "";
             //some test data to insert into the valid method 
             String AnCategory = "C%";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
             Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void DeliveryTypeSpecial()
+        {
+            //create instance of Marketplace user
+            clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String AnDeliveryType = "C%";
+            //test the valid method with the test data
+            Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -842,13 +760,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class%";
             String AnDescription = "Includes Audio when opening&";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -863,14 +775,6 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = "";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -885,14 +789,8 @@ namespace VirginTestProject
             clsMarketplaceListing AnMarketplaceListing = new clsMarketplaceListing();
             //string to store if result isvalid 
             String Error = "";
-            //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
+            //some test data to insert into the valid method   
             String AnListingName = "Shrek Cookie Jar%";
-            String AnPrice = "10.22";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -908,13 +806,7 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
             String AnPrice = "10.22&";
-            String AnQuantity = "1";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
             //Test to ensure  error msg
@@ -930,12 +822,6 @@ namespace VirginTestProject
             //string to store if result isvalid 
             String Error = "";
             //some test data to insert into the valid method 
-            String AnCategory = "C";
-            String AnDeliveryType = "First Class";
-            String AnDescription = "Includes Audio when opening";
-            String AnImg = @"C:\Users\Callum\Images\img.png";
-            String AnListingName = "Shrek Cookie Jar";
-            String AnPrice = "10.22";
             String AnQuantity = "1&";
             //test the valid method with the test data
             Error = AnMarketplaceListing.Valid(AnCategory, AnDeliveryType, AnDescription, AnImg, AnListingName, AnPrice, AnQuantity);
@@ -943,10 +829,6 @@ namespace VirginTestProject
             Assert.AreNotEqual(Error, "");
 
         }
-
-
-
-
 
 
     }

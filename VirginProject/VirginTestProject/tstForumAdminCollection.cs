@@ -27,6 +27,7 @@ namespace VirginTestProject
             clsForumAdmin TestItem = new clsForumAdmin();
             //set its properties
             TestItem.AdminID = 1;
+            TestItem.AdminUserName = "HMakda23";
             TestItem.AdminFirstName = "Husain";
             TestItem.AdminLastName = "Makda";
             TestItem.AdminEmail = "Husian@gmail.com";
@@ -47,6 +48,7 @@ namespace VirginTestProject
             clsForumAdmin TestAdmin = new clsForumAdmin();
             //set the properties of the test object
             TestAdmin.AdminID = 1;
+            TestAdmin.AdminUserName = "SCarol43";
             TestAdmin.AdminFirstName = "Samuel";
             TestAdmin.AdminLastName = "charol";
             TestAdmin.AdminEmail = "SaC@gmail.com";
@@ -67,6 +69,7 @@ namespace VirginTestProject
             clsForumAdmin TestItem = new clsForumAdmin();
             //set its properties
             TestItem.AdminID = 1;
+            TestItem.AdminUserName = "MNeuer3";
             TestItem.AdminFirstName = "Mauel";
             TestItem.AdminLastName = "Neuer";
             TestItem.AdminEmail = "MN@hotmail.com";
@@ -77,6 +80,103 @@ namespace VirginTestProject
             AllAdmins.AdminList = TestList;
             //test to see the two values are the same
             Assert.AreEqual(AllAdmins.Count, TestList.Count);
+        }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //Create an instance of the class I want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create an item of test data
+            clsForumAdmin TestItem = new clsForumAdmin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.AdminUserName = "TestAdmin";
+            TestItem.AdminFirstName = "Test";
+            TestItem.AdminLastName = "Admin";
+            TestItem.AdminEmail = "Admin@hotmail.com";
+            TestItem.AdminPassword = "Admin";
+            //set ThisUser to the test data
+            AllAdmins.ThisAdmin = TestItem;
+            //add the record
+            PrimaryKey = AllAdmins.Add();
+            //set the primary key of the test data
+            TestItem.AdminID = PrimaryKey;
+            //find the record
+            AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //test to see that the two value are the same
+            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+        }
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create the item of test data
+            clsForumAdmin TestItem = new clsForumAdmin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.AdminID = 2;
+            TestItem.AdminUserName = "Tedward02";
+            TestItem.AdminFirstName = "Taf";
+            TestItem.AdminLastName = "Edward";
+            TestItem.AdminEmail = "Taf@hotmail.com";
+            TestItem.AdminPassword = "TafMan";
+            //set ThisUser to the test data
+            AllAdmins.ThisAdmin = TestItem;
+            //add the record
+            PrimaryKey = AllAdmins.Add();
+            //set the primary key of the test data
+            TestItem.AdminID = PrimaryKey;
+            //find the record
+            AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //delete the record
+            AllAdmins.Delete();
+            //now find the record
+            Boolean Found = AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //test to see that the two value are the same
+            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create the item of test data
+            clsForumAdmin TestItem = new clsForumAdmin();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.AdminID = 2;
+            TestItem.AdminUserName = "Tedward02";
+            TestItem.AdminFirstName = "Taf";
+            TestItem.AdminLastName = "Edward";
+            TestItem.AdminEmail = "Taf@hotmail.com";
+            TestItem.AdminPassword = "TafMan";
+            //set ThisUser to the test data
+            AllAdmins.ThisAdmin = TestItem;
+            //add the record
+            PrimaryKey = AllAdmins.Add();
+            //set the primary key of the test data
+            TestItem.AdminID = PrimaryKey;
+            //modify the record
+            TestItem.AdminUserName = "JB";
+            TestItem.AdminFirstName = "Jim";
+            TestItem.AdminLastName = "Bob";
+            TestItem.AdminEmail = "Jim@hotmail.com";
+            TestItem.AdminPassword = "JimBob";
+            //set the record based on the new test data
+            AllAdmins.ThisAdmin = TestItem;
+            //Update the record
+            AllAdmins.Update();
+            //find the record
+            AllAdmins.ThisAdmin.Find(PrimaryKey);
+            //test to see ThisUser matches the test data
+            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+
         }
     }
 }

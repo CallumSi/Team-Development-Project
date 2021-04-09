@@ -132,20 +132,20 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
         }
 
-        //[TestMethod]
-        //public void FindMethodOK()
-        //{
-        //    //create an instance of the class we want to create
-        //    clsVMCustomer ACustomer = new clsVMCustomer();
-        //    //boolean variable to store the result of the valdation
-        //    Boolean Found = false;
-        //    //create some test data to use with the method
-        //    Int32 VMCustomerID = 1;
-        //    //invoke the method
-        //    Found = ACustomer.Find(VMCustomerID);
-        //    //test to see that the result is correct
-        //    Assert.IsTrue(Found);
-        //}
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsVMCustomer ACustomer = new clsVMCustomer();
+            //boolean variable to store the result of the valdation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 VMCustomerID = 4;
+            //invoke the method
+            Found = ACustomer.Find(VMCustomerID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
 
         [TestMethod]
         public void VMcustomerFirstNameMinLessOne()
@@ -621,7 +621,7 @@ namespace VirginTestProject
         }
 
         [TestMethod]
-        public void VMcustomerPasswordLastNameMin()
+        public void VMcustomerPasswordMin()
         {
             //create an instance of the customer class
             clsVMCustomer ACustomer = new clsVMCustomer();

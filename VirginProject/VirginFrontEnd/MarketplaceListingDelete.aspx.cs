@@ -12,25 +12,51 @@ namespace VirginFrontEnd
     {
         //var for ListingId of record to be deleted
         Int32 ListingID;
+        Int32 UserID;
+        string ListingName;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            UserID = Convert.ToInt32(Session["UserID"]);
             //retrieve the id from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
-            lblLoad.Text = "Are you sure you want to delete usewr with the ID:" + ListingID;
+            ListingName = Convert.ToString(Session["ListingName"]);
+            
+            lblLoad.Text = "Are you sure you want to delete : " + ListingName;
+
+            if (IsPostBack == false)
+            {
+                {
+                    //display the requeted record
+                    DisplayUserData();
+                  
+                }
+            }
         }
 
+        void DisplayUserData()
+        {
+            //create an instance of the user collection class
+            clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
+            //find the record to update
+            SomeUser.ThisUser.Find(UserID);
+            //display the data for this record
+            lblEmail.Text = SomeUser.ThisUser.Email;
+
+
+        }
         protected void btnYes_Click(object sender, EventArgs e)
         {
             //call the funciton to delete the recrod
             DeleteListing();
             //then go back to main page
-            Response.Redirect("MarketplaceListingList.aspx");
+            Response.Redirect("MarketplaceUserYourListings.aspx");
         }
 
         protected void btnNo_Click(object sender, EventArgs e)
         {
             //go back to main page
-            Response.Redirect("MarketplaceListingList.aspx");
+            Response.Redirect("MarketplaceUserYourListings.aspx");
         }
 
 
@@ -44,6 +70,40 @@ namespace VirginFrontEnd
             //delete the record
             SomeListing.DeleteListing();
 
+        }
+
+        protected void btnMyAccount_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("MarketplaceUserProfile.aspx");
+        }
+
+
+        protected void btnClickHere_Click(object sender, EventArgs e)
+        {
+            //use session object to indicate new record
+            Session["ListingID"] = -1;
+            Session["UserID"] = UserID;
+            //redirect to user data entry page
+            Response.Redirect("MarketplaceListingType.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["UserID"] = UserID;
+            //redirect to edit user details page
+            Response.Redirect("Marketplacehome2.aspx");
         }
     }
 }

@@ -12,10 +12,12 @@ namespace VirginFrontEnd
     {
         //variable to store the UserID from session obect
         Int32 UserID;
+        string Password;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of users to be procvessed
             UserID = Convert.ToInt32(Session["UserID"]);
+         
             if (IsPostBack == false)
             {
                 //if not a new record 
@@ -39,11 +41,14 @@ namespace VirginFrontEnd
             {
                 UpdateUser();
             }
+            Session["UserID"] = UserID;
+            Response.Redirect("MarketplaceHome2.aspx");
+
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MarketplaceUserList.aspx");
+            Response.Redirect("MarketplaceWelcome.aspx");
         }
 
         void DisplayData()
@@ -53,10 +58,7 @@ namespace VirginFrontEnd
             //find the record to update
             SomeUser.ThisUser.Find(UserID);
             //display the data for this record
-            chkboxAdmin.Checked = SomeUser.ThisUser.Admin;
             txtEmail.Text = SomeUser.ThisUser.Email;
-            txtPassword.Text = SomeUser.ThisUser.Password;
-            txtRating.Text = SomeUser.ThisUser.Rating.ToString();
             txtDeliveryAdressLineOne.Text = SomeUser.ThisUser.DeliveryAdressLineOne;
             txtDeliveryAdressLineTwo.Text = SomeUser.ThisUser.DeliveryAdressLineTwo;
             txtPostCode.Text = SomeUser.ThisUser.PostCode;
@@ -69,7 +71,7 @@ namespace VirginFrontEnd
             clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
             //ensure the data is valid by using the valid method
             string Error = "";
-            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text, txtPassword.Text, txtRating.Text);
+            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text);
             //if no error msg then add it to object
             if (Error == "")
             {
@@ -79,10 +81,7 @@ namespace VirginFrontEnd
 
                 //get the data from the form
                
-                SomeUser.ThisUser.Admin = chkboxAdmin.Checked;
                 SomeUser.ThisUser.Email = txtEmail.Text;
-                SomeUser.ThisUser.Password = txtPassword.Text;
-                SomeUser.ThisUser.Rating = Convert.ToInt32(txtRating.Text);
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
@@ -90,7 +89,8 @@ namespace VirginFrontEnd
                 //then update the record
                 SomeUser.UpdateUser();
                 //then go back to the list page
-                Response.Redirect("MarketplaceUserList.aspx");
+                Session["UserID"] = UserID;
+                Response.Redirect("MarketplaceHome2.aspx");
 
             }
             else
@@ -108,15 +108,12 @@ namespace VirginFrontEnd
             clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
             //ensure the data is valid by using the valid method
             string Error = "";
-            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text, txtPassword.Text, txtRating.Text);
+            Error = SomeUser.ThisUser.Valid(txtDeliveryAdressLineOne.Text, txtDeliveryAdressLineTwo.Text, txtPostCode.Text, txtEmail.Text);
             //if no error msg then add it to object
             if (Error == "")
             {
-                //get the data from the form
-                SomeUser.ThisUser.Admin = chkboxAdmin.Checked;
+                //get the data from the form        
                 SomeUser.ThisUser.Email = txtEmail.Text;
-                SomeUser.ThisUser.Password = txtPassword.Text;
-                SomeUser.ThisUser.Rating = Convert.ToInt32(txtRating.Text);
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
@@ -124,7 +121,8 @@ namespace VirginFrontEnd
                 //then add the record
                 SomeUser.AddUser();
                 //then go back to the list page
-                Response.Redirect("MarketplaceUserList.aspx");
+                Session["UserID"] = SomeUser.ThisUser.UserID;
+                Response.Redirect("MarketplaceHome2.aspx");
 
             }
             else
@@ -133,5 +131,7 @@ namespace VirginFrontEnd
                 lblError.Text += "There were problems with the data entered: " + Error;
             }
         }
+
+      
     }
 }

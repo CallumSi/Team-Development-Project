@@ -427,6 +427,7 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(VCHStaff.StaffPhoneNumber, SomeStaffPhoneNumber);
         }
+
         [TestMethod]
         public void StaffPhoneNumberMinLessOne()
         {
@@ -454,7 +455,7 @@ namespace VirginTestProject
             //create test data to test the method
             string StaffPhoneNumber = "";
             //pad string of characters
-            StaffPhoneNumber = StaffPhoneNumber.PadRight(13, 'a');
+            StaffPhoneNumber = StaffPhoneNumber.PadRight(12, 'a');
             //invoke the method
             Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result doesn't pass and an error message is returned
@@ -491,6 +492,21 @@ namespace VirginTestProject
             Error = VCHStaff.Valid(StaffFirstName, StaffLastName, StaffAddress, StaffPostCode, StaffEmail, StaffPassword, StaffPhoneNumber);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHStaff VCHStaff = new clsVCHStaff();
+            //boolean variable to store validation results
+            Boolean Found = false;
+            //test data to test the method
+            Int32 StaffID = 1;
+            //invoke the method
+            Found = VCHStaff.Find(StaffID);
+            //test to see that the results are correct
+            Assert.IsTrue(Found);
         }
     }
 }

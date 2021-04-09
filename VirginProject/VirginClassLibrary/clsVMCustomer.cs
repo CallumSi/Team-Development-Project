@@ -104,34 +104,34 @@ namespace VirginClassLibrary
             }
         }
 
-        //public bool Find(int VMCustomerID)
-        //{
-        //    //create an instance of the data connection
-        //    clsDataConnection DB = new clsDataConnection();
-        //    //add the parameter for the CustomerID to search for
-        //    DB.AddParameter("@VMCustomerID", VMCustomerID);
-        //    //execute the stored procedure
-        //    DB.Execute("sproc_tblCustomer_FilterByCustomerID");
-        //    //if one record is found (there should be either one or zero!)
-        //    if (DB.Count == 1)
-        //    {
-        //        //copy the data from the database to the private data members
-        //        mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
-        //        mVMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerFirstName"]);
-        //        mVMcustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerLastName"]);
-        //        mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
-        //        mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
-        //        mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
-        //        //return that everything worked OK
-        //        return true;
-        //    }
-        //    //if no record was found
-        //    else
-        //    {
-        //        //return false indicating a problem
-        //        return false;
-        //    }
-        //}
+        public bool Find(int VMCustomerID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the CustomerID to search for
+            DB.AddParameter("@VMCustomerID", VMCustomerID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVMCustomer_FilterByVMCustomerID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
+                mVMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerFirstName"]);
+                mVMcustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerLastName"]);
+                mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
+                mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
+                mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
+                //return that everything worked OK
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+        }
 
         public string Valid(string VMcustomerFirstName, string VMcustomerLastName, string VMcustomerEmail, string VMcustomerUsername, string VMcustomerPassword)
         {
@@ -143,14 +143,14 @@ namespace VirginClassLibrary
             if (VMcustomerFirstName.Length == 0)
             {
                 //return error message 
-                Error = Error + "Customer Firstname cannot be blank!";
+                Error = Error + "Customer Firstname cannot be blank!" + " ";
             }
 
             //if the customer firstname is less than 1 and greater than 55 characters
             if (VMcustomerFirstName.Length < 1 | VMcustomerFirstName.Length > 55)
             {
                 //return error message 
-                Error = Error + "Customer Firstname cannot be more than 55 characters";
+                Error = Error + "Customer Firstname cannot be more than 55 characters" + " ";
 
             }
 
@@ -166,11 +166,10 @@ namespace VirginClassLibrary
             if (VMcustomerLastName.Length < 1 | VMcustomerLastName.Length > 55)
             {
                 //return error message 
-                Error = Error + "Customer Lastname cannot be more than 55 characters";
+                Error = Error + "Customer Lastname cannot be more than 55 characters" + " ";
             }
 
-            //  Customer Email Validation
-
+            //****************CUSTOMER EMAIL***********************// 
             //if customer email is blank 
             if (VMcustomerEmail.Length == 0)
             {
@@ -189,14 +188,14 @@ namespace VirginClassLibrary
             if (VMcustomerUsername.Length == 0)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be blank!";
+                Error = Error + "Customer Username cannot be blank!" + " ";
             }
 
             //if the customer username is less than 1 and greater than 55 characters
             if (VMcustomerUsername.Length < 1 | VMcustomerUsername.Length > 55)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be more than 55 characters";
+                Error = Error + "Customer Username cannot be more than 55 characters" + " ";
             }
 
             //****************CUSTOMER PASSWORD***********************// 
@@ -204,14 +203,14 @@ namespace VirginClassLibrary
             if (VMcustomerPassword.Length == 0)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be blank!";
+                Error = Error + "Customer Password cannot be blank!" + " ";
             }
 
-            //if the customer password is less than 1 and greater than 55 characters
+            //if the customer password is less than 7 and greater than 55 characters
             if (VMcustomerPassword.Length < 7 | VMcustomerPassword.Length > 55)
             {
                 //return error message 
-                Error = Error + "Customer Username cannot be more than 55 characters";
+                Error = Error + "Customer Password cannot be less than 7 and more than 55 characters" + " ";
             }
 
             //return any error messages

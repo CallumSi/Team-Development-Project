@@ -84,6 +84,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
             //execute the insert sproc
             return DB.Execute("sproc_tblMarketplaceListing_Insert");
 
@@ -115,9 +116,49 @@ namespace VirginClassLibrary
             DB.AddParameter("@New", mThisListing.New);
             DB.AddParameter("@Price", mThisListing.Price);
             DB.AddParameter("@Quantity", mThisListing.Quantity);
+            DB.AddParameter("@ListingType", mThisListing.ListingType);
 
             //execute the spoc
             DB.Execute("sproc_tblMarketplaceListing_Update");
+        }
+        
+        public void FilterByUserFavorite(string UserID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@UserID", UserID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserFavorites_FilterByUserID");
+            //populate the array with the found data
+            GetFavorites(DB);
+        }
+
+        public void FilterByUserID(string UserID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@UserID", UserID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByUserID");
+            //populate the array with the found data
+            PopulateArray(DB);
+        }
+
+        public void FilterByListingID(string ListingID)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingID", ListingID);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingID");
+            //populate the array with the found data
+            PopulateFavorites(DB);
         }
 
         public void FilterByListingName(string ListingName)
@@ -133,7 +174,26 @@ namespace VirginClassLibrary
             PopulateArray(DB);
 
         }
+        public void FilterByListingType(int ListingType)
+        {
+            //add a new record to the database based on private data variables
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@ListingType", ListingType);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceListing_FilterByListingType");
+            //populate the array with the found data
+            PopulateArray(DB);
 
+        }
+
+
+        public void Clear()
+        {
+            mListingList.Clear();
+
+        }
 
         void PopulateArray(clsDataConnection DB)
         {
@@ -162,12 +222,78 @@ namespace VirginClassLibrary
                 AnListing.ListingName = Convert.ToString(DB.DataTable.Rows[Index]["ListingName"]);
                 AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
                 AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
-                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]); 
+                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
+                //add the record 
+                mListingList.Add(AnListing);
+               
+                //GO TO NEXT RECORD
+                Index++;
+            }
+
+        }
+
+        void PopulateFavorites(clsDataConnection DB)
+        {
+            //populates array list based on database in paramater
+            //index vairables
+            Int32 Index = 0;
+            //vare to store the record count
+            Int32 RecordCount;
+            //get the record count
+            RecordCount = DB.Count;
+            
+            //loop through all the records
+            while (Index < RecordCount)
+            {
+                //create a blank record
+                clsMarketplaceListing AnListing = new clsMarketplaceListing();
+                //read the data and add the record
+                AnListing.ListingID = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingID"]);
+                AnListing.Category = Convert.ToString(DB.DataTable.Rows[Index]["Category"]);
+                AnListing.CloseDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["CloseDate"]);
+                AnListing.DeliveryType = Convert.ToString(DB.DataTable.Rows[Index]["DeliveryType"]);
+                AnListing.Description = Convert.ToString(DB.DataTable.Rows[Index]["Description"]);
+                AnListing.Img = Convert.ToString(DB.DataTable.Rows[Index]["Img"]);
+                AnListing.OwnerID = Convert.ToInt32(DB.DataTable.Rows[Index]["OwnerID"]);
+                AnListing.ListingName = Convert.ToString(DB.DataTable.Rows[Index]["ListingName"]);
+                AnListing.New = Convert.ToBoolean(DB.DataTable.Rows[Index]["New"]);
+                AnListing.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
+                AnListing.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
+                AnListing.ListingType = Convert.ToInt32(DB.DataTable.Rows[Index]["ListingType"]);
                 //add the record 
                 mListingList.Add(AnListing);
                 //GO TO NEXT RECORD
                 Index++;
             }
+
+        }
+
+        void GetFavorites(clsDataConnection DB)
+        {
+            //populates favorite  list based on database in paramater
+            //index vairables
+            Int32 Index = 0;
+            //vare to store the record count
+            Int32 RecordCount;
+            //Store id of listing
+            string ListingID;
+            //get the record count
+            RecordCount = DB.Count;
+            //loop through all the records
+            //clear the list
+            mListingList = new List<clsMarketplaceListing>();
+            while (Index < RecordCount)
+            {
+            
+                //read the data and add the record
+                ListingID = Convert.ToString(DB.DataTable.Rows[Index]["ListingID"]);
+                //add the record                
+                FilterByListingID(ListingID);
+                //GO TO NEXT RECORD
+                Index++;
+            }
+
 
         }
     }

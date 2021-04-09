@@ -4,13 +4,29 @@ namespace VirginClassLibrary
 {
     public class clsVPStaff
     {
+        //Staff First Name Property
         public string Staff_FirstName { get; set; }
+
+        //Staff Last Name Property
         public string Staff_LastName { get; set; }
+
+        //Staff Street Property
         public string Staff_Street { get; set; }
+
+        //Staff Address Property
         public string Staff_Address { get; set; }
+
+        //Staff Postcode Property
         public string Staff_Postcode { get; set; }
+
+        //Staff Email Property
         public string Staff_Email { get; set; }
+
+        //Staff Telephone Property
         public string Staff_Telephone { get; set; }
+
+        //Staff ID Property
+        public int Staff_ID { get; set; }
 
         public string Valid(string Staff_FirstName, string Staff_LastName, string Staff_Street, string Staff_Address, string Staff_Postcode, string Staff_Email, string Staff_Telephone)
         {
@@ -32,8 +48,7 @@ namespace VirginClassLibrary
                 Error = Error + "THE FIRST NAME MUST BE BETWEEN 2 AND 20 CHARACTERS." + "";
             }
             
-
-
+            
 
             //***VALIDATION LAST NAME***//
 

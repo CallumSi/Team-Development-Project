@@ -8,8 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
         <asp:Label ID="lblAnVMCustomer" runat="server" Font-Bold="True" ForeColor="#CC0000" style="z-index: 1; left: 371px; top: 60px; position: absolute" Text="VIRGIN MOVIES CUSTOMER"></asp:Label>
         <asp:Label ID="lblVMcustomerFirstname" runat="server" BorderStyle="None" Font-Bold="True" style="z-index: 1; left: 215px; top: 153px; position: absolute" Text="CUSTOMER FIRSTNAME: "></asp:Label>
         <asp:Label ID="lblVMcustomerLastname" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 203px; position: absolute" Text="CUSTOMER LASTNAME: "></asp:Label>
@@ -21,8 +19,8 @@
         <asp:TextBox ID="txtVMcustomerEmail" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 258px; position: absolute; width: 274px"></asp:TextBox>
         <asp:TextBox ID="txtVMcustomerUsername" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 303px; position: absolute; width: 274px"></asp:TextBox>
         <asp:TextBox ID="txtVMcustomerPassword" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 351px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:Button ID="btnOkay" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 450px; top: 420px; position: absolute; width: 136px; right: 848px" Text="OKAY" />
-        <asp:Button ID="btnCancel" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 598px; top: 420px; position: absolute; width: 136px" Text="CANCEL" />
+        <asp:Button ID="btnOkay" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 450px; top: 420px; position: absolute; width: 136px; right: 848px" Text="OKAY" OnClick="btnOkay_Click" />
+        <asp:Button ID="btnCancel" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 598px; top: 420px; position: absolute; width: 136px" Text="CANCEL" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" Font-Bold="True" style="z-index: 1; left: 217px; top: 486px; position: absolute; width: 517px"></asp:Label>
     </form>
 </body>

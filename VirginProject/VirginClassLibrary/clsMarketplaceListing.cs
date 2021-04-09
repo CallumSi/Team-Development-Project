@@ -11,8 +11,6 @@ namespace VirginClassLibrary
                
 
         //private Data
-        private bool mAllowBids;
-        private bool mAllowOffers;
         private string mCategory;
         private DateTime mCloseDate;
         private string mDeliveryType;
@@ -24,36 +22,10 @@ namespace VirginClassLibrary
         private Decimal mPrice;
         private int mQuantity;
         private int mOwnerID;
+        private int mListingType;
 
         //public data
-        public bool AllowBids
-        {
-            get
-            {
-                //return private data
-                return mAllowBids;
-            }
-            set
-            {
-                //set value to private data
-                mAllowBids = value;
-            }
-        }
-
-     
-        public bool AllowOffers
-        {
-            get
-            {
-                //return private data
-                return mAllowOffers;
-            }
-            set
-            {
-                //set value to private data
-                mAllowOffers = value;
-            }
-        }
+      
 
         public string Category
         {
@@ -204,6 +176,20 @@ namespace VirginClassLibrary
             }
         }
 
+
+        public int ListingType
+        {
+            get
+            {
+                //return private data
+                return mListingType;
+            }
+            set
+            {
+                //set value to private data
+                mListingType = value;
+            }
+        }
         public Boolean Find(int ListingID)
         {
             //instantiate the data connection
@@ -227,6 +213,7 @@ namespace VirginClassLibrary
                 mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
                 mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
                 mOwnerID = Convert.ToInt32(DB.DataTable.Rows[0]["OwnerID"]);
+                mListingType =Convert.ToInt32(DB.DataTable.Rows[0]["ListingType"]);
                 return true;
             }
             else
@@ -379,11 +366,7 @@ namespace VirginClassLibrary
                 ErrorMsg += "Category must have no special characters";
 
             }
-            if (TestForSpecialCharacters(anDeliveryType) == true)
-            {
-                ErrorMsg += "Delivery Typeo must have no special characters";
-
-            }
+       
             if (TestForSpecialCharacters(anListingName) == true)
             {
                 ErrorMsg += "ListingName must have no special characters";
