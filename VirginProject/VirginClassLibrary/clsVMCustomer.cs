@@ -116,7 +116,7 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
+                //mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
                 mVMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerFirstName"]);
                 mVMcustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerLastName"]);
                 mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
