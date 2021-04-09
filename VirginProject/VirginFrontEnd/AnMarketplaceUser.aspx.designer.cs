@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class AnMarketplaceUser
-    {
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class AnMarketplaceUser {
+        
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+        
         /// <summary>
         /// form2 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -40,7 +38,16 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
+        /// <summary>
+        /// lblOriginalID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOriginalID;
+        
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-
+        
         /// <summary>
         /// txtDeliveryAdressLineOne control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDeliveryAdressLineOne;
-
+        
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-
+        
         /// <summary>
         /// txtDeliveryAdressLineTwo control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDeliveryAdressLineTwo;
-
+        
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -112,7 +119,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-
+        
         /// <summary>
         /// txtPostCode control.
         /// </summary>
@@ -121,7 +128,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPostCode;
-
+        
         /// <summary>
         /// lblError control.
         /// </summary>
@@ -130,7 +137,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
-
+        
         /// <summary>
         /// btnOk control.
         /// </summary>
@@ -139,7 +146,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOk;
-
+        
         /// <summary>
         /// btnCancel control.
         /// </summary>

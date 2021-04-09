@@ -12,12 +12,14 @@ namespace VirginFrontEnd
     {
         //variable to store the UserID from session obect
         Int32 UserID;
-        string Password;
+        Int32 OriginalID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of users to be procvessed
             UserID = Convert.ToInt32(Session["UserID"]);
-         
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
+            lblOriginalID.Text = "New User";
             if (IsPostBack == false)
             {
                 //if not a new record 
@@ -25,6 +27,7 @@ namespace VirginFrontEnd
                 {
                     //display the requeted record
                     DisplayData();
+                    lblOriginalID.Text = OriginalID.ToString();
                 }
             }
 
@@ -85,6 +88,7 @@ namespace VirginFrontEnd
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
+                
 
                 //then update the record
                 SomeUser.UpdateUser();
@@ -117,6 +121,7 @@ namespace VirginFrontEnd
                 SomeUser.ThisUser.DeliveryAdressLineOne = txtDeliveryAdressLineOne.Text;
                 SomeUser.ThisUser.DeliveryAdressLineTwo = txtDeliveryAdressLineTwo.Text;
                 SomeUser.ThisUser.PostCode = txtPostCode.Text;
+                SomeUser.ThisUser.OriginalID = OriginalID;
 
                 //then add the record
                 SomeUser.AddUser();
