@@ -245,37 +245,37 @@ namespace VirginClassLibrary
             }
 
 
-            // (2) Staff Firstname Validation
+            //// (2) Patient Firstname Validation
 
-            //if staff firstname is blank 
-            if (Staff_Firstname.Length == 0)
-            {
-                //record the error 
-                Error = Error + "STAFF FIRSTNAME CANNOT BE BLANK!" + " ";
+            ////if patient firstname is blank 
+            //if (Patient_Firstname.Length == 0)
+            //{
+            //    //record the error 
+            //    Error = Error + "PATIENT FIRSTNAME CANNOT BE BLANK!" + " ";
 
-            }
+            //}
 
-            if (Staff_Firstname.Length < 1 | Staff_Firstname.Length > 50)
-            {
-                //set the error message 
-                Error = Error + "STAFF FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
-            }
+            //if (Patient_Firstname.Length < 1 | Patient_Firstname.Length > 50)
+            //{
+            //    //set the error message 
+            //    Error = Error + "PATIENT FIRSTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            //}
 
-            // (3) Staff Lastname Validation
+            //// (3) Patient Lastname Validation
 
-            //if staff lastname is blank 
-            if (Staff_Lastname.Length == 0)
-            {
-                //record the error 
-                Error = Error + "STAFF LASTNAME CANNOT BE BLANK!" + " ";
+            ////if patient lastname is blank 
+            //if (Patient_Lastname.Length == 0)
+            //{
+            //    //record the error 
+            //    Error = Error + "PATIENT LASTNAME CANNOT BE BLANK!" + " ";
 
-            }
+            //}
 
-            if (Staff_Lastname.Length < 1 | Staff_Lastname.Length > 50)
-            {
-                //set the error message 
-                Error = Error + "STAFF LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
-            }
+            //if (Patient_Lastname.Length < 1 | Patient_Lastname.Length > 50)
+            //{
+            //    //set the error message 
+            //    Error = Error + "PATIENT LASTNAME MUST BE BETWEEN 1 TO 50 CHARACTERS!" + " ";
+            //}
 
             // (4) Staff Email Validation
 
