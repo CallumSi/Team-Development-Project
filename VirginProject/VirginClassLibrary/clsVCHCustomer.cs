@@ -211,7 +211,6 @@ namespace VirginClassLibrary
             {
                 //return the following error message
                 return "The first name entered is not acceptable. Please try again with a shorter first name.";
-                return "The customers first name may not exceed 30 characters, please fill it in accordingly.";
             }
             //if the first name length is less than 2 characters
             if (FirstName.Length < 2)
