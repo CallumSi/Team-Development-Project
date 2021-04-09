@@ -11,8 +11,10 @@ namespace VirginFrontEnd
     public partial class MarketplaceUserFavoriteListings : System.Web.UI.Page
     {
         Int32 UserID;
+        clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
             if (IsPostBack == false)
@@ -23,6 +25,11 @@ namespace VirginFrontEnd
             }
         }
 
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
+        }
         protected void btnClickHere_Click(object sender, EventArgs e)
         {
             //use session object to indicate new record

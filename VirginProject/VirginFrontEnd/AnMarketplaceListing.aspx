@@ -14,7 +14,7 @@
             </header>
  
             <article>
-                <ul>
+                <ul class ="row">
        
                       <li>
                           <asp:Label ID="Label7" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
