@@ -105,6 +105,8 @@
     <Content Include="VirginLogIn.aspx" />
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
+    <Content Include="VirginSignUp.aspx" />
+    <Content Include="VirginSignUpSuccess.aspx" />
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMCheckout.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
@@ -403,6 +405,20 @@
     </Compile>
     <Compile Include="VirginProject.Master.designer.cs">
       <DependentUpon>VirginProject.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VirginSignUp.aspx.cs">
+      <DependentUpon>VirginSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginSignUp.aspx.designer.cs">
+      <DependentUpon>VirginSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VirginSignUpSuccess.aspx.cs">
+      <DependentUpon>VirginSignUpSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginSignUpSuccess.aspx.designer.cs">
+      <DependentUpon>VirginSignUpSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginUserList.aspx.cs">
       <DependentUpon>VirginUserList.aspx</DependentUpon>
