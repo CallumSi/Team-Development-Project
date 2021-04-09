@@ -75,6 +75,7 @@
     <Content Include="AnVMCustomer.aspx" />
     <Content Include="AnVMPayment.aspx" />
     <Content Include="AnVMStaff.aspx" />
+    <Content Include="AnVPStaff.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
@@ -116,6 +117,8 @@
     <Content Include="VMStaffList.aspx" />
     <Content Include="VMThanks.aspx" />
     <Content Include="VMViewCart.aspx" />
+    <Content Include="VPStaffDelete.aspx" />
+    <Content Include="VPStaffList.aspx" />
     <Content Include="Web.config" />
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
@@ -169,6 +172,13 @@
     </Compile>
     <Compile Include="AnVMStaff.aspx.designer.cs">
       <DependentUpon>AnVMStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnVPStaff.aspx.cs">
+      <DependentUpon>AnVPStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVPStaff.aspx.designer.cs">
+      <DependentUpon>AnVPStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -464,6 +474,20 @@
     </Compile>
     <Compile Include="VMViewCart.aspx.designer.cs">
       <DependentUpon>VMViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPStaffDelete.aspx.cs">
+      <DependentUpon>VPStaffDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPStaffDelete.aspx.designer.cs">
+      <DependentUpon>VPStaffDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPStaffList.aspx.cs">
+      <DependentUpon>VPStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPStaffList.aspx.designer.cs">
+      <DependentUpon>VPStaffList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

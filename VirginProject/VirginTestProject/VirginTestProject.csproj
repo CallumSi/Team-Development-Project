@@ -86,11 +86,13 @@
     <Compile Include="tstVMStaffCollection.cs" />
     <Compile Include="tstVPCart.cs" />
     <Compile Include="tstVPCustomer.cs" />
+    <Compile Include="tstVPCustomerCollection.cs" />
     <Compile Include="tstVPDelivery.cs" />
     <Compile Include="tstVPOrder.cs" />
     <Compile Include="tstVPPayment.cs" />
     <Compile Include="tstVPPhone.cs" />
     <Compile Include="tstVPStaff.cs" />
+    <Compile Include="tstVPStaffCollection.cs" />
     <Compile Include="tstVPStock.cs" />
   </ItemGroup>
   <ItemGroup>
