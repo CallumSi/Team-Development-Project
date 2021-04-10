@@ -52,7 +52,7 @@ namespace VirginTestProject
             //create an instance of the appointment class 
             clsVHCAppointment AVHCAppointment = new clsVHCAppointment();
             //create a variable to store the date of a appointment 
-            string Appointment_Date = DateTime.Now.Date.ToString(); // (1) 
+            DateTime Appointment_Date = DateTime.Now.Date; // (1) 
             //try to send some data to the appointment date property
             AVHCAppointment.Appointment_Date = Appointment_Date;
             //check to see that the data in the variable and the property are the same
