@@ -61,7 +61,6 @@
     <Compile Include="tstMarketplaceUserCollection.cs" />
     <Compile Include="tstMarketplaceListingCollection.cs" />
     <Compile Include="tstMarketplaceUser.cs" />
-    <Compile Include="tstVMMovie.cs" />
     <Compile Include="tstUser.cs" />
     <Compile Include="tstUserCollection.cs" />
     <Compile Include="tstVCHCar.cs" />
@@ -80,17 +79,20 @@
     <Compile Include="tstVHCStaffCollection.cs" />
     <Compile Include="tstVMCustomer.cs" />
     <Compile Include="tstVMCustomerCollection.cs" />
+    <Compile Include="tstVMMovie.cs" />
     <Compile Include="tstVMPayment.cs" />
     <Compile Include="tstVMPaymentCollection.cs" />
     <Compile Include="tstVMStaff.cs" />
     <Compile Include="tstVMStaffCollection.cs" />
     <Compile Include="tstVPCart.cs" />
     <Compile Include="tstVPCustomer.cs" />
+    <Compile Include="tstVPCustomerCollection.cs" />
     <Compile Include="tstVPDelivery.cs" />
     <Compile Include="tstVPOrder.cs" />
     <Compile Include="tstVPPayment.cs" />
     <Compile Include="tstVPPhone.cs" />
     <Compile Include="tstVPStaff.cs" />
+    <Compile Include="tstVPStaffCollection.cs" />
     <Compile Include="tstVPStock.cs" />
   </ItemGroup>
   <ItemGroup>
