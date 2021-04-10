@@ -157,7 +157,7 @@ namespace VirginClassLibrary
             //add the parameter for the StaffID to search
             DB.AddParameter("@Staff_ID", Staff_ID);
             //execute the stored procedure 
-            DB.Execute("sproc_tblVPStaff_FilterByStaffID]");
+            DB.Execute("sproc_tblVPStaff_FilterByStaffID");
             //if one record is found 
             if (DB.Count == 1)
             {
