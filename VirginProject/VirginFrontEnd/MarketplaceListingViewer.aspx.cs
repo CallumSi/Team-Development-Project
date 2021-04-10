@@ -25,19 +25,10 @@ namespace VirginFrontEnd
             //you also need to get the product id from the query string
 
             //get the number of  the listing to be procvessed
-         
 
 
                 ListingID = Convert.ToInt32(Request.QueryString["ListingID"]);
-      
-  
-            
-                
-      
-           
 
-
-           
             if (IsPostBack == false)
             {
                 {
@@ -387,17 +378,27 @@ namespace VirginFrontEnd
 
             try
             {
+
                 decimal tempoffer = Convert.ToDecimal(txtBid.Text);
-               
+                //check if too many decimal places
+                if (Decimal.Round(tempoffer, 2) == tempoffer)
+                {
+
+
                     DB.AddParameter("@OfferAmount", txtBid.Text);
                     DB.AddParameter("@UserID", UserID);
                     DB.AddParameter("@ListingID", ListingID);
                     DB.AddParameter("@Status", 1);
                     DB.AddParameter("@TimePlaced", DateTime.Now);
-                //execute the insert sproc
-                DB.Execute("sproc_tblMarketplaceUserOffers_Insert");
+                    //execute the insert sproc
+                    DB.Execute("sproc_tblMarketplaceUserOffers_Insert");
 
-                 lblOfferPlaced.Text = "Offer Placed !";
+                    lblOfferPlaced.Text = "Offer Placed !";
+                }
+                else
+                {
+                    lblError.Text = "Please enter a offer with 2 decimal places;";
+                }
             }
             catch
             {

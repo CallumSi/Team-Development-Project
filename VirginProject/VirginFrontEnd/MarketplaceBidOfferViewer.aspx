@@ -14,8 +14,8 @@
                <h2> Virgin Media </h2> 
             </header>
  
-            <article class="row">
-               <ul>
+            <article>
+               <ul class="row">
        
                       <li>
                           <asp:Label ID="Label7" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
@@ -28,17 +28,25 @@
                                       
                     
                  </ul>
+                <ul >
+                    <li>
                          <asp:Label ID="lblTitle" runat="server" style="z-index: 1;" Text=""></asp:Label>
-                         <br />
+                      </li>
+                    <li>
                        <asp:ListBox ID="lstBidOffers" runat="server" style="z-index: 1; height: 184px; width: 440px; margin-top: 0px"></asp:ListBox>
-
-                        <br />
+                    </li>
+                     <li>
                        <asp:Button ID="btnAccept" runat="server" CssClass="navButton" OnClick="btnAccept_Click" style="z-index: 1;" Text="Accept Offer" Visible="False" />                     
                         <asp:Button ID="btnDeclineOffer" runat="server" CssClass="navButton" style="z-index: 1;" Text="DeclineOffer" OnClick="btnDeclineOffer_Click" Visible="False" />
-                  <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
-                         <br />
+                 </li>
+                    <li>
+                    <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
+          </li>
+                    <li>
                        <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
-            </article>
+                </li>
+                    </ul>
+                    </article>
  
             <nav>
                 Navigation links here

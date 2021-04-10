@@ -134,6 +134,7 @@ namespace VirginFrontEnd
             Int32 Index = 0;
             Int32 tempOfferID;
             decimal tempOfferAmount;
+            Int32 tempStatus;
             //get count of filtered list
             RecordCount = DB.Count;
             //clear the list box
@@ -143,8 +144,22 @@ namespace VirginFrontEnd
             {
                 tempOfferID = Convert.ToInt32(DB.DataTable.Rows[Index]["OfferID"]);
                 tempOfferAmount = Convert.ToDecimal(DB.DataTable.Rows[Index]["OfferAmount"]);
+                tempStatus = Convert.ToInt32(DB.DataTable.Rows[Index]["Status"]);
                 ListItem NewListing = new ListItem("£" + tempOfferAmount, tempOfferID.ToString());
-                lstBidOffers.Items.Add(NewListing);
+                //check if offer already accepted   
+                if (tempStatus == 1)
+                {
+                    lstBidOffers.Items.Add(NewListing);
+                }
+                if(tempStatus == 2)
+                {
+                    btnAccept.Visible = false;
+                    btnDeclineOffer.Visible = false;
+                    lstBidOffers.Visible = false;
+                    lblTitle.Visible = false;
+                    lblError.Text = "A previous offer has already been accepted";
+                }
+           
                 Index++;
             }
             return RecordCount;
@@ -172,7 +187,28 @@ namespace VirginFrontEnd
 
         protected void btnDeclineOffer_Click(object sender, EventArgs e)
         {
+            //variable to store primary key of field you want to delete
+            Int32 OfferID;
+            bool Accepted = false;
+            //check if a record has been selected from the list
+            if (lstBidOffers.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                OfferID = Convert.ToInt32(lstBidOffers.SelectedValue);
+                //store data in session object so we can pass it to next page
+                Session["OfferID"] = OfferID;
+                Session["Accepted"] = Accepted;
+                //then go to listing page
+                Response.Redirect("MarketplaceOfferReply.aspx");
 
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record  from the list ";
+            }
         }
 
 
@@ -204,7 +240,28 @@ namespace VirginFrontEnd
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
+            //variable to store primary key of field you want to delete
+            Int32 OfferID;
+            bool Accepted = true;
+            //check if a record has been selected from the list
+            if (lstBidOffers.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                OfferID = Convert.ToInt32(lstBidOffers.SelectedValue);
+                //store data in session object so we can pass it to next page
+                Session["OfferID"] = OfferID;
+                Session["Accepted"] = Accepted;
+                //then go to listing page
+                Response.Redirect("MarketplaceOfferReply.aspx");
 
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record  from the list ";
+            }
         }
     }
   
