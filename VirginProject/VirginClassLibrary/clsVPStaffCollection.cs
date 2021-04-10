@@ -7,10 +7,10 @@ namespace VirginClassLibrary
     {
 
         //private data member for the list
-        List<clsVPStaff> mStaffList = new List<clsVPStaff>();
-
+       List<clsVPStaff> mStaffList = new List<clsVPStaff>();
         //private data member ThisStaff
         clsVPStaff mThisStaff = new clsVPStaff();
+        
         //public property for the staff list
         public List<clsVPStaff> StaffList
         {

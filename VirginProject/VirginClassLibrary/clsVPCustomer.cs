@@ -4,31 +4,202 @@ namespace VirginClassLibrary
 {
     public class clsVPCustomer
     {
+
+        //private data member for the Customer ID property
+        private Int32 mCustomer_ID;
+        //Customer Attributes 
+        String mCustomer_FirstName;
+        String mCustomer_LastName;
+        String mCustomer_Street;
+        String mCustomer_Address;
+        String mCustomer_Postcode;
+        String mCustomer_Email;
+        String mCustomer_Telephone;
+        
+
         //Customer Address Property
-        public string Customer_Address { get; set; }
+        public string Customer_Address
+
+        {
+       
+            get
+            {
+                //return the private data 
+               return mCustomer_Address;
+            }
+
+            set
+            {
+                //set the private data
+                mCustomer_Address = value;
+
+            }
+
+        }
 
         //Customer  Email Property
-        public string Customer_Email { get; set; }
+        public string Customer_Email
+
+        {
+            get
+            {
+                //return the private data
+                return mCustomer_Email;
+            } 
+                
+            set
+            {
+                //set the private data
+                mCustomer_Email = value;
+            }
+
+        }
+
 
         //Customer First Name Property
-        public string Customer_FirstName { get;set; }
+        public string Customer_FirstName
+
+        {
+            get
+            {
+                //return the private data
+                return mCustomer_FirstName;
+            }
+                
+           set
+            {
+                //set the private data
+                mCustomer_FirstName = value;
+            }
+
+        }
 
         //Customer Last Name Property
-        public string Customer_LastName { get; set; }
+        public string Customer_LastName
+        {
+
+            get
+            {
+                //return the private data
+                return mCustomer_LastName;
+
+            }
+
+            set
+            {
+                //set the private data
+                mCustomer_LastName = value;
+            }
+
+        }
 
         //Customer Postcode Property
-        public string Customer_Postcode { get; set; }
+        public string Customer_Postcode
+
+        {
+            get
+            {
+                //return the private data
+                return mCustomer_Postcode;
+
+            }
+
+            set
+            {
+                //set the private data
+                mCustomer_Postcode = value;
+            }
+        }
 
         //Customer Street Property
-        public string Customer_Street { get; set; }
+        public string Customer_Street
+
+        {
+            get
+            {
+                //return the private data
+                return mCustomer_Street;
+            }
+
+            set
+            {
+                mCustomer_Street = value;
+            }
+
+        }
 
         //Customer Telephone Property
-        public string Customer_Telephone { get; set; }
+        public string Customer_Telephone
+
+        {
+
+            get
+            {
+                //return the private data
+                return mCustomer_Telephone;
+            }
+                
+            set
+            {
+                mCustomer_Telephone = value;
+            }
+
+        }
 
         //Customer ID Property 
-        public int Customer_ID { get; set; }
+        public int Customer_ID
 
-        public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
+        {
+
+            get
+            {
+                //return the private data
+                return mCustomer_ID;
+            }
+
+
+            set
+            {
+                mCustomer_ID = value;
+            }
+        }
+
+
+
+        public bool Find(int Customer_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Customer_ID to search
+            DB.AddParameter("@Customer_ID", Customer_ID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVPCustomer_FilterByCustomerID");
+            //if one record is found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                Customer_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Customer_ID"]);
+                Customer_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Customer_FirstName"]);
+                Customer_LastName = Convert.ToString(DB.DataTable.Rows[0]["Customer_LastName"]);
+                Customer_Street = Convert.ToString(DB.DataTable.Rows[0]["Customer_Street"]);
+                Customer_Address = Convert.ToString(DB.DataTable.Rows[0]["Customer_Address"]);
+                Customer_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Customer_Postcode"]);
+                Customer_Email = Convert.ToString(DB.DataTable.Rows[0]["Customer_Email"]);
+                Customer_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Customer_Telephone"]);
+                //return that everything works
+                return true;
+            }
+            //if no record was found 
+            else
+            {
+                //return false indicating a problem 
+                return false;
+            }
+        }
+
+       
+
+            public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
         {
             string Error = "";
 

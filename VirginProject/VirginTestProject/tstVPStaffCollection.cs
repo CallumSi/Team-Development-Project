@@ -233,7 +233,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVPStaffCollection FilteredFirstName = new clsVPStaffCollection();
             //apply a first name that doesnt exists
-            FilteredFirstName.FilterByStaffFirstName("John");
+            FilteredFirstName.FilterByStaffFirstName("Taf");
             //test to see that the two values are the same
             Assert.AreEqual(0, FilteredFirstName.Count);
             
@@ -247,7 +247,7 @@ namespace VirginTestProject
             //var to store outcome 
             Boolean OK = true;
             //apply a first name that doesn't exists 
-            FilteredFirstName.FilterByStaffFirstName("John");
+            FilteredFirstName.FilterByStaffFirstName("Jane");
             //check that the correct number of records are found 
             if (FilteredFirstName.Count == 2)
             {
@@ -256,8 +256,9 @@ namespace VirginTestProject
                 {
                     OK = false;
                 }
+
                 //check that the last record ID is 2 
-                if (FilteredFirstName.StaffList[1].Staff_ID != 2)
+                if (FilteredFirstName.StaffList[1].Staff_ID != 2 )
                 {
                     OK = false;
                 }
