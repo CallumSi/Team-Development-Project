@@ -33,7 +33,7 @@
                        <asp:ListBox ID="lstBidOffers" runat="server" style="z-index: 1; height: 184px; width: 440px; margin-top: 0px"></asp:ListBox>
 
                         <br />
-                       <asp:Button ID="btnAccept" runat="server" CssClass="navButton" OnClick="btnRemoveFavorite_Click" style="z-index: 1;" Text="Accept Offer" Visible="False" />                     
+                       <asp:Button ID="btnAccept" runat="server" CssClass="navButton" OnClick="btnAccept_Click" style="z-index: 1;" Text="Accept Offer" Visible="False" />                     
                         <asp:Button ID="btnDeclineOffer" runat="server" CssClass="navButton" style="z-index: 1;" Text="DeclineOffer" OnClick="btnDeclineOffer_Click" Visible="False" />
                   <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
                          <br />

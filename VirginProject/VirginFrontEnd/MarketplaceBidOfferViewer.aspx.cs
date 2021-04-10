@@ -175,10 +175,7 @@ namespace VirginFrontEnd
 
         }
 
-        protected void btnRemoveFavorite_Click(object sender, EventArgs e)
-        {
 
-        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -203,6 +200,11 @@ namespace VirginFrontEnd
             Session["UserID"] = UserID;
             //redirect to user data entry page
             Response.Redirect("MarketplaceListingType.aspx");
+        }
+
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
+
         }
     }
   
