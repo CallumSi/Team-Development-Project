@@ -31,6 +31,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Arm";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4; 
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -52,6 +55,9 @@ namespace VirginTestProject
             TestAppointment.Appointment_Date = DateTime.Now.Date;
             TestAppointment.Appointment_Time = "09:00";
             TestAppointment.Appointment_Description = "Broken Arm";
+            TestAppointment.Hospital_ID = 1;
+            TestAppointment.Patient_ID = 4;
+            TestAppointment.Staff_ID = 4;
             //assign the data to the property
             AllAppointments.ThisAppointment = TestAppointment;
             //test to see that the two values are the same
@@ -74,6 +80,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Arm";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -97,6 +106,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Arm";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4;
             //set ThisPatient to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
@@ -124,6 +136,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Arm";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4;
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
@@ -135,6 +150,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Leg";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4;
             //set the record based on the new test data
             AllAppointments.ThisAppointment = TestItem;
             //update the method 
@@ -160,6 +178,9 @@ namespace VirginTestProject
             TestItem.Appointment_Date = DateTime.Now.Date;
             TestItem.Appointment_Time = "09:00";
             TestItem.Appointment_Description = "Broken Arm";
+            TestItem.Hospital_ID = 1;
+            TestItem.Patient_ID = 4;
+            TestItem.Staff_ID = 4;
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
@@ -211,18 +232,18 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a make that does exist
-            FilteredAppointment.ReportByAppointment(Convert.ToDateTime("25/04/2020"));
+            FilteredAppointment.ReportByAppointment(Convert.ToDateTime("21/01/1998"));
             //check that the correct number of records are found
             if (FilteredAppointment.Count == 2)
             {
-                //check that the first record id ID 7
-                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 4)
+                //check that the first record id ID 15
+                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 15)
                 {
                     OK = false;
                 }
 
-                //check that the last record is ID 11
-                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 5)
+                //check that the last record is ID 16
+                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 16)
                 {
                     OK = false;
                 }

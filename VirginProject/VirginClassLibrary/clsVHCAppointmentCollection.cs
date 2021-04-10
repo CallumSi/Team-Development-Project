@@ -63,6 +63,9 @@ namespace VirginClassLibrary
             DB.AddParameter("@Appointment_Date", mThisAppointment.Appointment_Date);
             DB.AddParameter("@Appointment_Time", mThisAppointment.Appointment_Time);
             DB.AddParameter("@Appointment_Description", mThisAppointment.Appointment_Description);
+            DB.AddParameter("@Hospital_ID", mThisAppointment.Hospital_ID);
+            DB.AddParameter("@Patient_ID", mThisAppointment.Patient_ID);
+            DB.AddParameter("@Staff_ID", mThisAppointment.Staff_ID);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVHCAppointment_Insert");
         }
@@ -77,6 +80,10 @@ namespace VirginClassLibrary
             DB.AddParameter("@Appointment_Date", mThisAppointment.Appointment_Date);
             DB.AddParameter("@Appointment_Time", mThisAppointment.Appointment_Time);
             DB.AddParameter("@Appointment_Description", mThisAppointment.Appointment_Description);
+            DB.AddParameter("@Hospital_ID", mThisAppointment.Hospital_ID);
+            DB.AddParameter("@Patient_ID", mThisAppointment.Patient_ID);
+            DB.AddParameter("@Staff_ID", mThisAppointment.Staff_ID);
+
             //execute the stored procedure 
             DB.Execute("sproc_tblVHCAppointment_Update");
         }
@@ -124,6 +131,9 @@ namespace VirginClassLibrary
                 AnAppointment.Appointment_Date = Convert.ToDateTime(DB.DataTable.Rows[Index]["Appointment_Date"]);
                 AnAppointment.Appointment_Time = Convert.ToString(DB.DataTable.Rows[Index]["Appointment_Time"]);
                 AnAppointment.Appointment_Description= Convert.ToString(DB.DataTable.Rows[Index]["Appointment_Description"]);
+                AnAppointment.Hospital_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Hospital_ID"]);
+                AnAppointment.Patient_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Patient_ID"]);
+                AnAppointment.Staff_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Staff_ID"]);
                 //add the record to the private data member 
                 mAppointmentList.Add(AnAppointment);
                 //point at the next record
