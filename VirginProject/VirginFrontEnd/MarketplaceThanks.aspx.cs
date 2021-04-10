@@ -9,11 +9,13 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceThanks : System.Web.UI.Page
     {
+        //variable to store user id 
         Int32 UserID;
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //clear cart
+            //clear cart as user has checked out 
             MyCart = new clsMarketplaceCart();
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);

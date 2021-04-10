@@ -11,7 +11,9 @@ namespace VirginFrontEnd
    
     public partial class MarketplaceViewCart : System.Web.UI.Page
     {
+        //variable to store the users id 
         Int32 UserID;
+        //create an instance of the shopping cart
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,23 +33,26 @@ namespace VirginFrontEnd
 
         void DisplayCart()
         {
+            //cerate some variables 
             Int32 Index = 0;
             Int32 Count = MyCart.Products.Count;
             string itemname;
 
-   
+            //display the id and qquantity    
             Response.Write("Product Id");
- 
             Response.Write("Quantity");
-       
+            //if the car is empty tell the user
             if(Count == 0)
             {
                lblError.Text = ("Shopping Cart Empty");
             }
+            //for each item in the cart
             while (Index < Count)
             {
                 clsMarketplaceListing AnListing = new clsMarketplaceListing();
+                //find the listing 
                 AnListing.Find((MyCart.Products[Index].ProductID));
+                //add the item to the list box 
                 itemname = AnListing.ListingName;
                 string lstitem = itemname + " x" + (MyCart.Products[Index].QTY).ToString();
                 lstShoppingCart.Items.Add(lstitem);
@@ -58,6 +63,8 @@ namespace VirginFrontEnd
 
         protected void btnContinueShopping_Click(object sender, EventArgs e)
         {
+            //take the uer back to the homepage
+            Session["UserID"] = UserID;
             Response.Redirect("MarketplaceHome2.aspx");
         }
 

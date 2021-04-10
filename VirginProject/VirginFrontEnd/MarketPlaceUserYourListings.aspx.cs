@@ -10,7 +10,9 @@ namespace VirginFrontEnd
 {
     public partial class MarketPlaceUserYourListings : System.Web.UI.Page
     {
+        //variable to store the users id 
         Int32 UserID;
+        //create an instance of the shopping cart
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {

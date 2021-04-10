@@ -9,17 +9,28 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceOfferReply : System.Web.UI.Page
     {
+
+        //create some variables to store offer id and user id 
         Int32 UserID;
         Int32 OfferID;
+
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //see if the offer was accepted or not 
             bool Accepted = Convert.ToBoolean(Session["Accepted"]);
+            //get the cart 
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
             //get the offer ID
             OfferID = Convert.ToInt32(Session["OfferID"]);
+
+            //based on if the offer is accepted call the correct methods
             if (Accepted == true)
             {
                 lblAccepted.Text = "Accepted";

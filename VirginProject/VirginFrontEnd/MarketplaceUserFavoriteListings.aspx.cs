@@ -10,7 +10,9 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceUserFavoriteListings : System.Web.UI.Page
     {
+        //variable to store user id 
         Int32 UserID;
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +23,7 @@ namespace VirginFrontEnd
             {
                 //update the list box
                 DisplayListing();
+                //display the users data
                 DisplayUserData();
             }
         }
@@ -40,7 +43,6 @@ namespace VirginFrontEnd
         }
 
   
-
         void DisplayListing()
         {
             //create an instance of the use collection
@@ -120,7 +122,7 @@ namespace VirginFrontEnd
         private void DeleteFavorite(int ListingID)
         {
             //function for deleting records
-            
+         
             //first establish connection
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the sproc

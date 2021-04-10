@@ -10,25 +10,27 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceOfferViewer : System.Web.UI.Page
     {
+        //variables to store session object 
         Int32 UserID;
         Int32 ListingID;
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the User Id
+            //get the User Id, cart ,listing id 
 
             UserID = Convert.ToInt32(Session["UserID"]);
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             ListingID = Convert.ToInt32(Session["ListingID"]);
+
+
             if (IsPostBack == false)
             {
                 //update the list box
+                 //check if the listing is bids or offer
                 Int32 ListingType = BidOrOffer(ListingID);
-
-
+                //if offer listing 
                 if (ListingType== 3) {
-
-
                     Int32 RecordCount = DisplayOffers();
                     if (RecordCount == 0)
                     {
@@ -40,11 +42,10 @@ namespace VirginFrontEnd
                         lblTitle.Text = "Offers:";
                         btnAccept.Visible = true;
                         btnDeclineOffer.Visible = true;
-                    }
-                    
-                    
-
+                    }    
                 }
+
+                // if listing for bids
                 if(ListingType == 2)
                 {
                     Int32 RecordCount = DisplayBids();
@@ -62,14 +63,14 @@ namespace VirginFrontEnd
 
 
                 }
+                // if buy it now
                 if (ListingType != 3 && ListingType != 2)
                 {
                     lstBidOffers.Visible = false;
                     lblError.Text = "No bids or offers available for this listing type";
                 }
-               
+               //display the users data 
                 DisplayUserData();
-
                
             }
         }
@@ -158,8 +159,7 @@ namespace VirginFrontEnd
                     lstBidOffers.Visible = false;
                     lblTitle.Visible = false;
                     lblError.Text = "A previous offer has already been accepted";
-                }
-           
+                }       
                 Index++;
             }
             return RecordCount;
@@ -173,7 +173,6 @@ namespace VirginFrontEnd
             //find the record to update
             SomeListing.ThisListing.Find(ListingID);
             Int32 listingtype = SomeListing.ThisListing.ListingType;
-          
             return listingtype;
         }
 
@@ -200,8 +199,6 @@ namespace VirginFrontEnd
                 Session["Accepted"] = Accepted;
                 //then go to listing page
                 Response.Redirect("MarketplaceOfferReply.aspx");
-
-
             }
             //if a record hasnt been selected from the listbox 
             else
