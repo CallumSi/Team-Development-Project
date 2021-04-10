@@ -14,15 +14,21 @@ namespace VirginFrontEnd
         Int32 ListingID;
         Int32 UserID;
         string ListingName;
+
+        //create an instance of the shopping cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
+
+        //when the page loads
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //get the cart and user id from the session object 
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             UserID = Convert.ToInt32(Session["UserID"]);
-            //retrieve the id from session object
+            //retrieve the id and listing  from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
             ListingName = Convert.ToString(Session["ListingName"]);
-            
+            //update the label text
             lblLoad.Text = "Are you sure you want to delete : " + ListingName;
 
             if (IsPostBack == false)

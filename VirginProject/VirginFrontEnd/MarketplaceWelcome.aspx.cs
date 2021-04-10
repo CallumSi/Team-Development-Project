@@ -9,7 +9,9 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceWelcome : System.Web.UI.Page
     {
-        int UserID = 1;
+        //vairables to store original id and user id
+        int OriginalID = 134;
+        int UserID;
         protected void Page_Load(object sender, EventArgs e)
         
         {
@@ -17,16 +19,20 @@ namespace VirginFrontEnd
             //create an instance of the user collection class
             VirginClassLibrary.clsMarketplaceUserCollection SomeUser = new VirginClassLibrary.clsMarketplaceUserCollection();
             //find the record to update
-            if (SomeUser.ThisUser.Find(UserID) == false)
+            if (SomeUser.ThisUser.FindByOriginal(OriginalID) == false)
             {
-               
+               //change button text to create account and ididcate new yser
                 btnFirstTime.Text = "Create Account";
                 btnContinue.Visible = false;
                 UserID = -1;
+                
             }
             else
             {
+                //button changed for edit account details
                 btnFirstTime.Text = "Edit Account Details";
+                SomeUser.ThisUser.FindByOriginal(OriginalID);
+                UserID = SomeUser.ThisUser.UserID;
 
             }
 
@@ -36,13 +42,15 @@ namespace VirginFrontEnd
         protected void btnFirstTime_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["UserID"] = -1;
+            Session["UserID"] = UserID;
+            Session["OriginalID"] = OriginalID;
             //redirect to edit user details page
             Response.Redirect("AnMarketplaceUser.aspx");
         }
 
         protected void btnContinue_Click(object sender, EventArgs e)
         {
+            //take the user to the home page
             Session["UserID"] = UserID;
             Response.Redirect("MarketplaceHome2.aspx");
         }

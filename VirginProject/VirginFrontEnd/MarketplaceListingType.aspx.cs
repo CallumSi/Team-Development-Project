@@ -10,27 +10,25 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceListingType : System.Web.UI.Page
     {
-        //var for ListingId of record to be deleted
+        //var for ListingId and User id
         Int32 ListingID;
         Int32 UserID;
+        //create an isntance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //retrieve the listingid, userid and cart from session object
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             UserID = Convert.ToInt32(Session["UserID"]);
-            //retrieve the id from session object
             ListingID = Convert.ToInt32(Session["ListingID"]);
-
             if (IsPostBack == false)
             {
                 {
-                    //display the requeted record
+                    //display the users data 
                     DisplayUserData();
 
                 }
             }
-
-
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)

@@ -13,38 +13,23 @@ namespace VirginFrontEnd
         //variable to store the ListingID and UserID from session obect
         Int32 ListingID;
         Int32 UserID;
+        //var to store the highest buidder
         decimal highestbid;
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //check for favorite
+            //get the users id  and listing id  and cart from session object 
             UserID = Convert.ToInt32(Session["UserID"]);
-
-            //upon loading the page you need to read in the cart from the session object
+            ListingID = Convert.ToInt32(Request.QueryString["ListingID"]);
             MyCart = (clsMarketplaceCart)Session["MyCart"];
-            //you also need to get the product id from the query string
-            
-            //get the number of  the listing to be procvessed
-            try
-            {
-                ListingID = Convert.ToInt32(Request.QueryString["ListingID"]);
-            }
-            catch
-            {
-                ListingID = Convert.ToInt32(Session["ListingID"]);
-            }
            
 
-
-           
             if (IsPostBack == false)
             {
                 {
-                    //display the requeted record
+                    //display the requeted record and user 
                     DisplayUserData();
                     DisplayData();
-                   
-
                 }
             }
 
@@ -57,17 +42,16 @@ namespace VirginFrontEnd
             Session["MyCart"] = MyCart;
         }
 
-
-
         void DisplayData()
         {
             //create an instance of the lisint collection class
             clsMarketplaceListingCollection SomeListing = new clsMarketplaceListingCollection();
-            //find the record to update
+            //find the record to display
             SomeListing.ThisListing.Find(ListingID);
             //display the data for this record
             lblListingName.Text = SomeListing.ThisListing.ListingName;
             lblCategory.Text = SomeListing.ThisListing.Category;
+            //check if the lising is new
             if (SomeListing.ThisListing.New == true)
             {
                 lblCondition.Text = "New";
@@ -78,21 +62,21 @@ namespace VirginFrontEnd
 
             }
 
-           
-            DateTime todaydatetime =  DateTime.Now;
-            DateTime enddate = SomeListing.ThisListing.CloseDate;
-            TimeSpan difference = enddate.Subtract(todaydatetime);
-          
+                //find the time difference 
+                DateTime todaydatetime =  DateTime.Now;
+                DateTime enddate = SomeListing.ThisListing.CloseDate;
+                TimeSpan difference = enddate.Subtract(todaydatetime);
+                //display the listings details 
                 lblTimeLeft.Text = string.Format("{0} days, {1} hours, {2} minutes, {3} seconds", difference.Days, difference.Hours, difference.Minutes, difference.Seconds);
                 lblPrice.Text = SomeListing.ThisListing.Price.ToString();
                 lblQuantity.Text = SomeListing.ThisListing.Quantity.ToString();
                 lblDeliveryType.Text = SomeListing.ThisListing.DeliveryType;
                 lblDescription.Text = SomeListing.ThisListing.Description;
                 imgListing.ImageUrl = SomeListing.ThisListing.Img;
+
+                //displayes that are based on listing types 
                 if (SomeListing.ThisListing.ListingType == 1)
                 {
-
-
                     btnAddToCart.Visible = true;
                     lblQuant.Visible = true;
                     txtQTY.Visible = true;
@@ -116,44 +100,28 @@ namespace VirginFrontEnd
                     lblListingType.Text = "Listing Type: Offers";
                 }
 
-
+                //indicate who created the listing 
                 // create an instance of the user collection class
                 clsMarketplaceUserCollection SomeUser = new clsMarketplaceUserCollection();
                 //find the record to update
                 SomeUser.ThisUser.Find(SomeListing.ThisListing.OwnerID);
                 //display the data for this record
                 lblSellerEmail.Text = SomeUser.ThisUser.Email;
+
+                //check to see if the logged in user has favorited the listing 
                 CheckForFavorite();
-            if (enddate < todaydatetime)
-            {
-                lblTimeLeft.Text = "Listing Ended";
-                btnFavorite.Visible = false;
-                btnUnFavorite.Visible = false;
-            }
-
-            //lblSellerEmailTitle.Visible = false;
-            //lblCategoryTitle.Visible = false;
-            //lblConditionTitle.Visible = false;
-            //lblTimeLeftTitle.Visible = false;
-            //lblDeliveryTypeTitle.Visible = false;
-            //lblStartPriceTitle.Visible = false;
-            //lblQuantityTitle.Visible = false;
-            //lblDeliveryTypeTitle.Visible = false;
-            //lblDescriptionTitle.Visible = false;
-            //lblCondition.Visible = false;
-            //lblListingName.Text = "Listing Ended";
-            //imgListing.Visible = false;
-            //lblCategory.Visible = false;
-
-
-            //}
-
+                //if need be indicate the listing has ended 
+                if (enddate < todaydatetime)
+                {
+                    lblTimeLeft.Text = "Listing Ended";
+                    btnFavorite.Visible = false;
+                    btnUnFavorite.Visible = false;
+                }
         }
 
-
+        //display highest bid for the listing 
         decimal DisplayBids()
         {
-
             //first establish connection 
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
@@ -168,13 +136,11 @@ namespace VirginFrontEnd
             RecordCount = DB.Count;
             if (RecordCount == 0)
             {
-
                 lblBidTitle.Text = "No Bids Yet";
             }
             else
             {
-                //loop through the list adding them to the list box
-               
+                //loop through the list to find highest bid
                 while (Index < RecordCount)
                 {
 
@@ -183,16 +149,12 @@ namespace VirginFrontEnd
                     {
                         highestbid = tempbid;
                     }
-
-
                     Index++;
                 }
                 lblBidTitle.Text = highestbid.ToString();
             }
             return highestbid;
         }
-
-        
 
         void DisplayUserData()
         {
@@ -202,7 +164,6 @@ namespace VirginFrontEnd
             SomeUser.ThisUser.Find(UserID);
             //display the data for this record
             lblEmail.Text = SomeUser.ThisUser.Email;
-
 
         }
         protected void btnHome_Click(object sender, EventArgs e)
@@ -239,6 +200,7 @@ namespace VirginFrontEnd
 
         protected void btnFavorite_Click(object sender, EventArgs e)
         {
+            //add to users list of favourites 
             AddFavorite();
             
         }
@@ -301,20 +263,16 @@ namespace VirginFrontEnd
 
         protected void btnUnFavorite_Click(object sender, EventArgs e)
         {
-                if(lblFavorite.Text!= "No longer Watching")
+            if(lblFavorite.Text!= "No longer Watching")
             {
                 //call the funciton to delete the recrod
                 DeleteFavorite(ListingID);
-
-
                 lblFavorite.Text = "No longer Watching";
 
             }
-
-              
+ 
 
         }
-
             private void DeleteFavorite(int ListingID)
             {
                 //function for deleting records
@@ -330,7 +288,7 @@ namespace VirginFrontEnd
 
         protected void btnBid_Click(object sender, EventArgs e)
         {
-            //used to add a new record into the database
+            //used to add a bid if the bid amount is higer that the existing bid
             //first establish connection
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
@@ -339,31 +297,47 @@ namespace VirginFrontEnd
             {
                 decimal temphighestbid = 0;
                 decimal tempbid = Convert.ToDecimal(txtBid.Text);
-                if(lblBidTitle.Text != "No Bids Yet")
+                //check if too many decimal places
+                if(Decimal.Round(tempbid, 2) == tempbid)
                 {
-                    temphighestbid = Convert.ToDecimal(lblBidTitle.Text);
-                }
-                if (tempbid > Convert.ToDecimal(temphighestbid))
-                {
-                    DB.AddParameter("@BidAmount", txtBid.Text);
-                    DB.AddParameter("@UserID", UserID);
-                    DB.AddParameter("@ListingID", ListingID);
-                    DB.AddParameter("@TimePlaced", DateTime.Now);
-                    //execute the insert sproc
-                    DB.Execute("sproc_tblMarketplaceUserBids_Insert");
-                    lblBidPlaced.Text = "Bid Placed!";
+                    if (lblBidTitle.Text != "No Bids Yet")
+                    {
+                        temphighestbid = Convert.ToDecimal(lblBidTitle.Text);
+                    }
+
+                    //if the bid enteered is higer than existing bid add it to the database
+                    if (tempbid > Convert.ToDecimal(temphighestbid))
+                    {
+                        DB.AddParameter("@BidAmount", tempbid);
+                        DB.AddParameter("@UserID", UserID);
+                        DB.AddParameter("@ListingID", ListingID);
+                        DB.AddParameter("@TimePlaced", DateTime.Now);
+                        //execute the insert sproc
+                        DB.Execute("sproc_tblMarketplaceUserBids_Insert");
+                        lblBidPlaced.Text = "Bid Placed!";
+                        lblError.Text = "";
+                    }
+                    else
+                    {
+                        //error message
+                        lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text;
+                    }
                 }
                 else
                 {
-                    lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text ;
-                }
-             
+                    //error message
+                    lblError.Text = "Please enter a bid with 2 decimal places";
+                }               
                
             }
+           
             catch
             {
+                //error message
                 lblError.Text = "Please enter a decimal"; 
             }
+
+            //display the new bid
             DisplayBids();
             
         }
@@ -374,23 +348,33 @@ namespace VirginFrontEnd
             //first establish connection
             clsDataConnection DB = new clsDataConnection();
             //set the paramters for the sproc
-
+            //make sure offer is in correct format 
             try
             {
+
                 decimal tempoffer = Convert.ToDecimal(txtBid.Text);
-               
+                //check if too many decimal places
+                if (Decimal.Round(tempoffer, 2) == tempoffer)
+                {
                     DB.AddParameter("@OfferAmount", txtBid.Text);
                     DB.AddParameter("@UserID", UserID);
                     DB.AddParameter("@ListingID", ListingID);
                     DB.AddParameter("@Status", 1);
                     DB.AddParameter("@TimePlaced", DateTime.Now);
-                //execute the insert sproc
-                DB.Execute("sproc_tblMarketplaceUserOffers_Insert");
-
-                 lblOfferPlaced.Text = "Offer Placed !";
+                    //execute the insert sproc
+                    DB.Execute("sproc_tblMarketplaceUserOffers_Insert");
+                    //inidicate offer placed
+                    lblOfferPlaced.Text = "Offer Placed !";
+                }
+                else
+                {
+                    //error message
+                    lblError.Text = "Please enter a offer with 2 decimal places;";
+                }
             }
             catch
             {
+                //error message
                 lblError.Text = "Please enter a decimal";
             }
             DisplayBids();
@@ -419,12 +403,14 @@ namespace VirginFrontEnd
                 }
                 else
                 {
+                    //error message
                     lblError.Text = "Please enter a valid quantity";
                 }
                 
             }
             catch
             {
+                //error message
                 lblError.Text = "Please enter a integer";
             }
             

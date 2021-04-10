@@ -10,25 +10,27 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceOfferViewer : System.Web.UI.Page
     {
+        //variables to store session object 
         Int32 UserID;
         Int32 ListingID;
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the User Id
+            //get the User Id, cart ,listing id 
 
             UserID = Convert.ToInt32(Session["UserID"]);
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             ListingID = Convert.ToInt32(Session["ListingID"]);
+
+
             if (IsPostBack == false)
             {
                 //update the list box
+                 //check if the listing is bids or offer
                 Int32 ListingType = BidOrOffer(ListingID);
-
-
+                //if offer listing 
                 if (ListingType== 3) {
-
-
                     Int32 RecordCount = DisplayOffers();
                     if (RecordCount == 0)
                     {
@@ -40,11 +42,10 @@ namespace VirginFrontEnd
                         lblTitle.Text = "Offers:";
                         btnAccept.Visible = true;
                         btnDeclineOffer.Visible = true;
-                    }
-                    
-                    
-
+                    }    
                 }
+
+                // if listing for bids
                 if(ListingType == 2)
                 {
                     Int32 RecordCount = DisplayBids();
@@ -62,14 +63,14 @@ namespace VirginFrontEnd
 
 
                 }
+                // if buy it now
                 if (ListingType != 3 && ListingType != 2)
                 {
                     lstBidOffers.Visible = false;
                     lblError.Text = "No bids or offers available for this listing type";
                 }
-               
+               //display the users data 
                 DisplayUserData();
-
                
             }
         }
@@ -134,6 +135,7 @@ namespace VirginFrontEnd
             Int32 Index = 0;
             Int32 tempOfferID;
             decimal tempOfferAmount;
+            Int32 tempStatus;
             //get count of filtered list
             RecordCount = DB.Count;
             //clear the list box
@@ -143,8 +145,21 @@ namespace VirginFrontEnd
             {
                 tempOfferID = Convert.ToInt32(DB.DataTable.Rows[Index]["OfferID"]);
                 tempOfferAmount = Convert.ToDecimal(DB.DataTable.Rows[Index]["OfferAmount"]);
+                tempStatus = Convert.ToInt32(DB.DataTable.Rows[Index]["Status"]);
                 ListItem NewListing = new ListItem("£" + tempOfferAmount, tempOfferID.ToString());
-                lstBidOffers.Items.Add(NewListing);
+                //check if offer already accepted   
+                if (tempStatus == 1)
+                {
+                    lstBidOffers.Items.Add(NewListing);
+                }
+                if(tempStatus == 2)
+                {
+                    btnAccept.Visible = false;
+                    btnDeclineOffer.Visible = false;
+                    lstBidOffers.Visible = false;
+                    lblTitle.Visible = false;
+                    lblError.Text = "A previous offer has already been accepted";
+                }       
                 Index++;
             }
             return RecordCount;
@@ -158,7 +173,6 @@ namespace VirginFrontEnd
             //find the record to update
             SomeListing.ThisListing.Find(ListingID);
             Int32 listingtype = SomeListing.ThisListing.ListingType;
-          
             return listingtype;
         }
 
@@ -172,13 +186,29 @@ namespace VirginFrontEnd
 
         protected void btnDeclineOffer_Click(object sender, EventArgs e)
         {
-
+            //variable to store primary key of field you want to delete
+            Int32 OfferID;
+            bool Accepted = false;
+            //check if a record has been selected from the list
+            if (lstBidOffers.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                OfferID = Convert.ToInt32(lstBidOffers.SelectedValue);
+                //store data in session object so we can pass it to next page
+                Session["OfferID"] = OfferID;
+                Session["Accepted"] = Accepted;
+                //then go to listing page
+                Response.Redirect("MarketplaceOfferReply.aspx");
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record  from the list ";
+            }
         }
 
-        protected void btnRemoveFavorite_Click(object sender, EventArgs e)
-        {
 
-        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -203,6 +233,32 @@ namespace VirginFrontEnd
             Session["UserID"] = UserID;
             //redirect to user data entry page
             Response.Redirect("MarketplaceListingType.aspx");
+        }
+
+        protected void btnAccept_Click(object sender, EventArgs e)
+        {
+            //variable to store primary key of field you want to delete
+            Int32 OfferID;
+            bool Accepted = true;
+            //check if a record has been selected from the list
+            if (lstBidOffers.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                OfferID = Convert.ToInt32(lstBidOffers.SelectedValue);
+                //store data in session object so we can pass it to next page
+                Session["OfferID"] = OfferID;
+                Session["Accepted"] = Accepted;
+                //then go to listing page
+                Response.Redirect("MarketplaceOfferReply.aspx");
+
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record  from the list ";
+            }
         }
     }
   

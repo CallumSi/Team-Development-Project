@@ -7,18 +7,43 @@ using System.Web.UI.WebControls;
 using VirginClassLibrary;
 namespace VirginFrontEnd
 {
-    public partial class MarketplaceThanks : System.Web.UI.Page
+    public partial class MarketplaceOfferReply : System.Web.UI.Page
     {
-        //variable to store user id 
+
+        //create some variables to store offer id and user id 
         Int32 UserID;
+        Int32 OfferID;
+
         //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //clear cart as user has checked out 
-            MyCart = new clsMarketplaceCart();
+
+            //see if the offer was accepted or not 
+            bool Accepted = Convert.ToBoolean(Session["Accepted"]);
+            //get the cart 
+            MyCart = (clsMarketplaceCart)Session["MyCart"];
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
+            //get the offer ID
+            OfferID = Convert.ToInt32(Session["OfferID"]);
+
+            //based on if the offer is accepted call the correct methods
+            if (Accepted == true)
+            {
+                lblAccepted.Text = "Accepted";
+                AcceptOffer(OfferID);
+            }
+            else
+            {
+                lblAccepted.Text = "Offer Declined";
+                DeclineOffer(OfferID);
+            }
+
+
+
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
@@ -49,6 +74,31 @@ namespace VirginFrontEnd
             Session["UserID"] = UserID;
             //redirect to edit user details page
             Response.Redirect("MarketplaceHome2.aspx");
+        }
+
+
+        public void AcceptOffer(int OfferID)
+        {
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@OfferID", OfferID);
+            DB.AddParameter("@Status", 2);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserOffers_Update");
+
+        }
+
+        public void DeclineOffer(int OfferID)
+        {
+
+            //first establish connection 
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramters for the sproc
+            DB.AddParameter("@OfferID", OfferID);
+            DB.AddParameter("@Status", 3);
+            //execute the spoc
+            DB.Execute("sproc_tblMarketplaceUserOffers_Update");
         }
     }
 }

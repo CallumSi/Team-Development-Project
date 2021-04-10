@@ -87,6 +87,7 @@
     <Content Include="MarketplaceListingType.aspx" />
     <Content Include="MarketplaceListingViewer.aspx" />
     <Content Include="MarketplaceBidOfferViewer.aspx" />
+    <Content Include="MarketplaceOfferReply.aspx" />
     <Content Include="MarketplaceThanks.aspx" />
     <Content Include="MarketplaceUserDelete.aspx" />
     <Content Include="MarketplaceUserFavoriteListings.aspx" />
@@ -279,6 +280,13 @@
     </Compile>
     <Compile Include="MarketplaceBidOfferViewer.aspx.designer.cs">
       <DependentUpon>MarketplaceBidOfferViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarketplaceOfferReply.aspx.cs">
+      <DependentUpon>MarketplaceOfferReply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarketplaceOfferReply.aspx.designer.cs">
+      <DependentUpon>MarketplaceOfferReply.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarketplaceThanks.aspx.cs">
       <DependentUpon>MarketplaceThanks.aspx</DependentUpon>

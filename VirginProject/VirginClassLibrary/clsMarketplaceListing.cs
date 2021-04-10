@@ -8,8 +8,7 @@ namespace VirginClassLibrary
 {
     public class clsMarketplaceListing
     {
-               
-
+          
         //private Data
         private string mCategory;
         private DateTime mCloseDate;
@@ -23,10 +22,7 @@ namespace VirginClassLibrary
         private int mQuantity;
         private int mOwnerID;
         private int mListingType;
-
-        //public data
-      
-
+        //public data with getters/setters
         public string Category
         {
             get
@@ -190,6 +186,8 @@ namespace VirginClassLibrary
                 mListingType = value;
             }
         }
+
+        //find method to get the requested listings details
         public Boolean Find(int ListingID)
         {
             //instantiate the data connection
@@ -223,15 +221,16 @@ namespace VirginClassLibrary
             }
 
         }
-
+        // validate the data input
         public string Valid(string anCategory, string anDeliveryType, string anDescription, string anImg, string anListingName, string anPrice, string anQuantity)
         {
             //declare empty string 
             string ErrorMsg = "";
+            //create some variables for later
             int ConvertedQuantity;
             decimal ConvertedPrice;
 
-            //check for blank string
+            //Validsation to ensure all lengths correct
             if (anCategory.Length > 0 && anCategory.Length < 31)
             {
                 if (anDeliveryType.Length > 0 && anDeliveryType.Length < 31)
@@ -245,13 +244,11 @@ namespace VirginClassLibrary
                                 if(anImg.Length>-1 && anImg.Length<201)
                                 {
                                     ErrorMsg += "";
-
                                 }
                                 else
                                 {
                                     //return error message
                                     ErrorMsg += "Img cannot exceed 200 characters";
-
                                 }
                            }
                            else
@@ -287,6 +284,8 @@ namespace VirginClassLibrary
             }
 
 
+            //method to ensure quanity is an integer in the correct range 
+
             try
             {
                 if (anQuantity == "")
@@ -306,8 +305,6 @@ namespace VirginClassLibrary
                         ErrorMsg += "quantity must be out of 1000 ";
                     }
                 }
-
-
             }
             catch
             {
@@ -315,8 +312,7 @@ namespace VirginClassLibrary
                 ErrorMsg += "Quantity  must be int ";
 
             }
-
-            //check money in range
+            //check money in correct format and in range
             try
             {
                 ConvertedPrice = Convert.ToDecimal(anPrice);
@@ -326,7 +322,6 @@ namespace VirginClassLibrary
                     if (ConvertedPrice > 0m && ConvertedPrice < 1000000000.01m)
                     {
                         ErrorMsg += "";
-
                     }
                     else
                     {
@@ -344,20 +339,6 @@ namespace VirginClassLibrary
                 ErrorMsg += "Price must be a decimal and not blank";
             }
 
-
-            ////test email format
-            //if (anEmail != "")
-            //{
-
-            //    try
-            //    {
-            //        var EmailTest = new System.Net.Mail.MailAddress(anEmail);
-            //    }
-            //    catch
-            //    {
-            //        ErrorMsg += "Email must be in the correct format";
-            //    }
-            //}
 
 
             //check for special characters
@@ -389,32 +370,32 @@ namespace VirginClassLibrary
 
             }
 
-
-
-
+            //return any errors that mnay have occured 
             return ErrorMsg;
 
         }
 
-
+        //function to check if special charaters are in string
 
         private bool TestForSpecialCharacters(string TestData)
         {
             bool ContainsSpecial = false;
+            //loop through each letter
             foreach (var i in TestData)
             {
+                //check if it is letter or whitespalce
                 if (char.IsLetterOrDigit(i) || char.IsWhiteSpace(i) == true)
                 {
                     ContainsSpecial = false;
                 }
                 else
                 {
+                    //otherwise return true
                     ContainsSpecial = true;
                     break;
-                }
+               }
 
             }
-
             return ContainsSpecial;
         }
     }

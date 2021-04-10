@@ -34,7 +34,9 @@ namespace VirginFrontEnd
             {
                 //save the card no
                 MyCart.CardNo = txtCardNo.Text;
+                //call checkout function 
                 MyCart.Checkout();
+                //redirect to thankyou page
                 Response.Redirect("MarketplaceThanks.aspx");
             }
             else

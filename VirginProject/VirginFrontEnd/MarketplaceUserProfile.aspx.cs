@@ -10,10 +10,13 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceUserProfile : System.Web.UI.Page
     {
+        //variable to store the users id 
         Int32 UserID;
+        //create an instance of the shopping cart
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get thecart 
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
@@ -24,7 +27,7 @@ namespace VirginFrontEnd
 
                     //display the User data
                     DisplayUserData();
-                    //display the Listings
+            
                     
                 }
             }

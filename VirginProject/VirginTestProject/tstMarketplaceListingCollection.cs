@@ -243,25 +243,7 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredListings.Count);
         }
 
-        //listing id
-        //[TestMethod]
-        //public void FilterByListingIDFound()
-        //{
 
-        //    //create an instance of the filtered data
-        //    clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-        //    FilteredListings.FilterByListingID("13");
-        //    //test to see that the two values are the same
-        //    Assert.AreEqual(1, FilteredListings.Count);
-        //}
-        //[TestMethod]
-        //public void FilterByListingIDNotFound()
-        //{
-
-        //    clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-        //    FilteredListings.FilterByListingID("242");
-        //    Assert.AreEqual(0, FilteredListings.Count);
-        //}
 
         //listing name
         [TestMethod]
