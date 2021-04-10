@@ -23,16 +23,17 @@ namespace VirginFrontEnd
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsMarketplaceCart)Session["MyCart"];
             //you also need to get the product id from the query string
-            
+
             //get the number of  the listing to be procvessed
-            try
-            {
+         
+
+
                 ListingID = Convert.ToInt32(Request.QueryString["ListingID"]);
-            }
-            catch
-            {
-                ListingID = Convert.ToInt32(Session["ListingID"]);
-            }
+      
+  
+            
+                
+      
            
 
 
@@ -339,25 +340,34 @@ namespace VirginFrontEnd
             {
                 decimal temphighestbid = 0;
                 decimal tempbid = Convert.ToDecimal(txtBid.Text);
-                if(lblBidTitle.Text != "No Bids Yet")
+                //check if too many decimal places
+                if(Decimal.Round(tempbid, 2) == tempbid)
                 {
-                    temphighestbid = Convert.ToDecimal(lblBidTitle.Text);
-                }
-                if (tempbid > Convert.ToDecimal(temphighestbid))
-                {
-                    DB.AddParameter("@BidAmount", tempbid);
-                    DB.AddParameter("@UserID", UserID);
-                    DB.AddParameter("@ListingID", ListingID);
-                    DB.AddParameter("@TimePlaced", DateTime.Now);
-                    //execute the insert sproc
-                    DB.Execute("sproc_tblMarketplaceUserBids_Insert");
-                    lblBidPlaced.Text = "Bid Placed!";
+                    if (lblBidTitle.Text != "No Bids Yet")
+                    {
+                        temphighestbid = Convert.ToDecimal(lblBidTitle.Text);
+                    }
+                    if (tempbid > Convert.ToDecimal(temphighestbid))
+                    {
+                        DB.AddParameter("@BidAmount", tempbid);
+                        DB.AddParameter("@UserID", UserID);
+                        DB.AddParameter("@ListingID", ListingID);
+                        DB.AddParameter("@TimePlaced", DateTime.Now);
+                        //execute the insert sproc
+                        DB.Execute("sproc_tblMarketplaceUserBids_Insert");
+                        lblBidPlaced.Text = "Bid Placed!";
+                        lblError.Text = "";
+                    }
+                    else
+                    {
+                        lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text;
+                    }
+               
                 }
                 else
                 {
-                    lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text ;
-                }
-             
+                    lblError.Text = "Please enter a bid with 2 decimal places";
+                }               
                
             }
             catch

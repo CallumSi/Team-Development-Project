@@ -153,6 +153,31 @@ namespace VirginFrontEnd
             //redirect to edit user details page
             Response.Redirect("MarketplaceHome2.aspx");
         }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            //variable to store primary key of field you want to delete
+            Int32 ListingID;
+            //check if a record has been selected from the list
+            if (lstYourListings.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                //store data in session object so we can pass it to next page
+                
+               
+                //then go to listing page
+                Response.Redirect("MarketplaceListingViewer.aspx?ListingID=" + ListingID);
+
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record to delete from the list ";
+            }
+        }
     }
 }
 
