@@ -42,7 +42,7 @@ namespace VirginTestProject
             //check to see the data in the variable and property are the same
             Assert.AreEqual(AVPDelivery.Delivery_ID, SomeDeliveryID);
         }
-
+        
         //testing the property order id (FK)
         [TestMethod]
         public void OrderIDPropertyOK()

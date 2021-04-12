@@ -86,7 +86,7 @@ namespace VirginClassLibrary
             //while there are records to process
             while (Index < RecordCount)
             {
-                //create a blank staff
+                //create a blank customer
                 clsVPCustomer ACustomer = new clsVPCustomer();
                 //read in the field from the current records
                 ACustomer.Customer_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Customer_ID"]);

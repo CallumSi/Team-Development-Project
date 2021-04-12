@@ -85,12 +85,16 @@
     <Compile Include="tstVMStaff.cs" />
     <Compile Include="tstVMStaffCollection.cs" />
     <Compile Include="tstVPCart.cs" />
+    <Compile Include="tstVPCartCollection.cs" />
     <Compile Include="tstVPCustomer.cs" />
     <Compile Include="tstVPCustomerCollection.cs" />
     <Compile Include="tstVPDelivery.cs" />
+    <Compile Include="tstVPDeliveryCollection.cs" />
     <Compile Include="tstVPOrder.cs" />
+    <Compile Include="tstVPOrderLine.cs" />
     <Compile Include="tstVPPayment.cs" />
     <Compile Include="tstVPPhone.cs" />
+    <Compile Include="tstVPPhoneCollection.cs" />
     <Compile Include="tstVPStaff.cs" />
     <Compile Include="tstVPStaffCollection.cs" />
     <Compile Include="tstVPStock.cs" />

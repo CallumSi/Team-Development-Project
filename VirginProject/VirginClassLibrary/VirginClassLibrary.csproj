@@ -83,12 +83,15 @@
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCart.cs" />
+    <Compile Include="clsVPCartCollection.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPCustomerCollection.cs" />
     <Compile Include="clsVPDelivery.cs" />
+    <Compile Include="clsVPDeliveryCollection.cs" />
     <Compile Include="clsVPOrder.cs" />
     <Compile Include="clsVPPayment.cs" />
     <Compile Include="clsVPPhone.cs" />
+    <Compile Include="clsVPPhoneCollection.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="clsVPStaffCollection.cs" />
     <Compile Include="clsVPStock.cs" />

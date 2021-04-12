@@ -163,7 +163,6 @@ namespace VirginClassLibrary
             //execute the stored procedure
             return DB.Execute("sproc_tblVPStaff_Update");
 
-
         }
 
     }
