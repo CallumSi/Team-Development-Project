@@ -143,12 +143,23 @@ footer {
 }
 
 .lblHospitalSection {
-    position: absolute;
+    position: fixed;
     top: 81px;
-    left: 265px;
+    left: 465px;
     z-index: 1;
     font-weight: bold;
     font-size: 30px;
     color: #cc0000;
 }
+
+.lblAddHospitalSection {
+    position: fixed;
+    top: 81px;
+    left: 565px;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 30px;
+    color: green;
+}
+
 

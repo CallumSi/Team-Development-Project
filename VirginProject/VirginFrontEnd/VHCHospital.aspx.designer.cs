@@ -42,22 +42,22 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.WebControls.Label lblHospitalSection;
 
         /// <summary>
-        /// Button7 control.
+        /// Home_Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button7;
+        protected global::System.Web.UI.WebControls.Button Home_Button;
 
         /// <summary>
-        /// Button1 control.
+        /// Hospital_AddButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Hospital_AddButton;
 
         /// <summary>
         /// Button2 control.
@@ -94,14 +94,5 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button5;
-
-        /// <summary>
-        /// Button6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
     }
 }
