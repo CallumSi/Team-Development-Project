@@ -1,0 +1,154 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #27183d;
+    height: 3%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #DBDBDB;
+}
+
+h2{
+    position:fixed;
+    top:-3%;
+    left:1%;
+}
+nav {
+    background-color: #cc0000; 
+    position: fixed;
+    width: 15%;
+    height: 85%;
+    top: 8%;
+    left: 0%;
+}
+
+article {
+    position: fixed;
+    color: black;
+    left: 16%;
+    top: 10%;
+    height: 499px;
+    width: 83%;
+    bottom: 169px;
+    background-color: white;
+}
+
+footer {
+    background-color: #27183d;
+    position: fixed;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    left: -4%;
+    top: 78%;
+    height: 7%;
+    width: 105%;
+}
+
+#FooterText {
+    position: fixed;
+    left: 45%;
+    top: 95%;
+    font-size:10pt;
+}
+
+.Home {
+    position: fixed;
+    top: 74px;
+    left: 17px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    color: white;
+    font-weight: bold;
+    background-color: #27183D;
+}
+
+.AddHospital {
+    position: fixed;
+    top: 137px;
+    left: 19px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.EditHospital {
+    position: fixed;
+    top: 204px;
+    left: 20px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.DeleteHospital {
+    position: fixed;
+    top: 270px;
+    left: 20px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.ListHospitals {
+    position: fixed;
+    top: 336px;
+    left: 19px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.FilterHospitals {
+    position: fixed;
+    top: 407px;
+    left: 20px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.HospitalBack {
+    position: fixed;
+    top: 475px;
+    left: 20px;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    color: white;
+    font-weight: bold;
+    background-color: #27183D;
+}
+
+.lblHospitalSection {
+    position: absolute;
+    top: 81px;
+    left: 265px;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 30px;
+    color: #cc0000;
+}
+
