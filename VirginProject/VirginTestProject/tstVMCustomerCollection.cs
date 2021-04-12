@@ -66,7 +66,6 @@ namespace VirginTestProject
         {
             //create an instance of the clsVMCustomerCollection class
             clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
-            //create some test data to assign to the property
             //in this case the data needs to be a list of objects
             List<clsVMCustomer> TestList = new List<clsVMCustomer>();
             //add an item to the list
