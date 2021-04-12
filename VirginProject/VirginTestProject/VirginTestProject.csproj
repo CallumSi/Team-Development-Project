@@ -64,6 +64,7 @@
     <Compile Include="tstUser.cs" />
     <Compile Include="tstUserCollection.cs" />
     <Compile Include="tstVCHCar.cs" />
+    <Compile Include="tstVCHCarCollection.cs" />
     <Compile Include="tstVCHCustomer.cs" />
     <Compile Include="tstVCHCustomerCollection.cs" />
     <Compile Include="tstVCHHire.cs" />

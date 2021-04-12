@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
@@ -25,6 +26,12 @@ namespace VirginFrontEnd
         {
             //direct me to the customer list page
             Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
         }
     }
 }
