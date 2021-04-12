@@ -73,11 +73,7 @@ namespace VirginClassLibrary
             }
 
         }
-
-
-
-
-
+        
 
         public string Valid(string Products)
         {

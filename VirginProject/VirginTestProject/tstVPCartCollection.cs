@@ -200,13 +200,13 @@ using System.Collections.Generic;
             if (FilteredProducts.Count == 2)
             {
                 //check to see the first record ID is 1
-                if (FilteredProducts.CartList[0].CartNo != 1)
+                if (FilteredProducts.CartList[0].CartNo != 2)
                 {
                     OK = false;
                 }
 
                 //check that the last record ID is 2 
-                if (FilteredProducts.CartList[1].CartNo != 2)
+                if (FilteredProducts.CartList[1].CartNo != 3)
                 {
                     OK = false;
                 }
