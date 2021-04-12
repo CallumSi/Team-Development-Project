@@ -21,13 +21,12 @@
         </article>
 
         <nav>
-            <asp:Button ID="Button7" runat="server" CssClass="Home" Text="HOME"/>
-            <asp:Button ID="Button1" runat="server" CssClass="AddHospital" Text="Add Hospital"/>
+            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click"/>
+            <asp:Button ID="Hospital_AddButton" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="Button1_Click"/>
             <asp:Button ID="Button2" runat="server" CssClass="EditHospital" Text="Edit Hospital"/>
             <asp:Button ID="Button3" runat="server" CssClass="DeleteHospital" Text="Delete Hospital"/>
             <asp:Button ID="Button4" runat="server" CssClass="ListHospitals" Text="List Hospitals"/>
             <asp:Button ID="Button5" runat="server" CssClass="FilterHospitals" Text="Filter Hospital"/>
-            <asp:Button ID="Button6" runat="server" CssClass="HospitalBack" Text="BACK!"/>
         </nav>
 
 
