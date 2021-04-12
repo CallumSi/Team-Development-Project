@@ -209,7 +209,6 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(AllStaff.ThisStaff, TestItem);
           
-
         }
 
      
@@ -270,10 +269,7 @@ namespace VirginTestProject
 
             //test to see that there are no records
             Assert.IsTrue(OK);
-
-
-
-
+            
         }
     }
 }

@@ -200,6 +200,8 @@ namespace VirginTestProject
             PrimaryKey = AllCustomer.Add();
             //set the primary key of the test data 
             TestItem.Customer_ID = PrimaryKey;
+            //find the record
+            AllCustomer.ThisCustomer.Find(PrimaryKey);
             //delete the record
             AllCustomer.Delete();
             //test to see that the two values are the same
