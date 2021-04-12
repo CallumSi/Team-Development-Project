@@ -38,7 +38,7 @@ namespace VirginFrontEnd
             //use session object to indicate new record
             Session["VMMovieID"] = -1;
             //redirect to user data entry page
-            Response.Redirect("AnVMCustomer.aspx");
+            Response.Redirect("VMStaffAddMovie.aspx");
         }
 
         protected void btnUpdateMovie_Click(object sender, EventArgs e)

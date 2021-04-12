@@ -139,3 +139,163 @@ li {
     text-align: center;
 }
 
+/*################## STAFF MOVIE ADD CSS #####################*/
+
+
+/*.lblAddMovieTitle {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    color: black;
+}*/
+
+.lblMovieTitle {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 220px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblGenre {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 320px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieDuration {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 420px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieRating {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 520px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieReleaseDate {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 620px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.txtMovieTitle {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 217px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 317px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieDuration {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 417px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieRating {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 517px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieReleaseDate {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 617px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnStaffMovieOK {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 695px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnStaffMovieCancel {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 695px;
+    left: 1100px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+
+.lblStaffAddMovieError {
+    z-index: 1;
+    width: 30%;
+    position: fixed;
+    top: 750px;
+    left: 730px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
