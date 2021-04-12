@@ -33,13 +33,22 @@ namespace VirginFrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblAddHospitalSection control.
+        /// lblHospital_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddHospitalSection;
+        protected global::System.Web.UI.WebControls.Label lblHospital_Name;
+
+        /// <summary>
+        /// lblHospital_Place control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHospital_Place;
 
         /// <summary>
         /// Home_Button control.

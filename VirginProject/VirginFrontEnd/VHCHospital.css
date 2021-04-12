@@ -1,12 +1,7 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+﻿/* Font Style from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-body {
-    background-color: #CCCCCC;
-    color: #DBDBDB;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Header Section*/
 header {
     background-color: #27183d;
     height: 3%;
@@ -18,11 +13,45 @@ header {
     color: #DBDBDB;
 }
 
-h2{
-    position:fixed;
-    top:-3%;
-    left:1%;
+/* Virgin Healthcare:Hospital Title*/
+h2 {
+    position: fixed;
+    top: -3%;
+    left: 1%;
 }
+
+/* Headers 3/4 Shared Attributes*/
+h3, h4 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #cc0000;
+    text-align: center;
+}
+
+/* Each Page Title (Hospital/Patient/Staff/Appointment)*/
+h3 {
+    position: fixed;
+    top: 81px;
+    left: 470px;
+}
+
+/* Each Page Sub Title (Add/Edit/Delete/List & Filter)*/
+h4 {
+    position: fixed;
+    top: 81px;
+    left: 570px;
+}
+
+
+/* Body Section*/
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Navigation Section*/
 nav {
     background-color: #cc0000; 
     position: fixed;
@@ -32,6 +61,66 @@ nav {
     left: 0%;
 }
 
+/*Navigation Buttons*/
+.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .FilterHospitals {
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+    /*Navigation Buttons - Hover Effect*/
+    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .FilterHospitals:hover {
+        background-color: #27183D;
+        color: white;
+    }
+
+/*Home Navigation Button*/
+.Home {
+    position: fixed;
+    top: 74px;
+    left: 17px;
+}
+
+/*Add Hospital Navigation Button*/
+.AddHospital {
+    position: fixed;
+    top: 137px;
+    left: 19px;
+}
+
+/*Edit Navigation Button*/
+.EditHospital {
+    position: fixed;
+    top: 204px;
+    left: 20px;
+}
+
+/*Delete Navigation Button*/
+.DeleteHospital {
+    position: fixed;
+    top: 270px;
+    left: 20px;
+}
+
+/*List Navigation Button*/
+.ListHospitals {
+    position: fixed;
+    top: 336px;
+    left: 19px;
+}
+
+/*Filter Navigation Button*/
+.FilterHospitals {
+    position: fixed;
+    top: 407px;
+    left: 20px;
+}
+
+/*Article Section*/
 article {
     position: fixed;
     color: black;
@@ -43,6 +132,7 @@ article {
     background-color: white;
 }
 
+/*Footer Section*/
 footer {
     background-color: #27183d;
     position: fixed;
@@ -61,105 +151,5 @@ footer {
     font-size:10pt;
 }
 
-.Home {
-    position: fixed;
-    top: 74px;
-    left: 17px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    color: white;
-    font-weight: bold;
-    background-color: #27183D;
-}
-
-.AddHospital {
-    position: fixed;
-    top: 137px;
-    left: 19px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-.EditHospital {
-    position: fixed;
-    top: 204px;
-    left: 20px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-.DeleteHospital {
-    position: fixed;
-    top: 270px;
-    left: 20px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-.ListHospitals {
-    position: fixed;
-    top: 336px;
-    left: 19px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-.FilterHospitals {
-    position: fixed;
-    top: 407px;
-    left: 20px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-.HospitalBack {
-    position: fixed;
-    top: 475px;
-    left: 20px;
-    z-index: 1;
-    width: 150px;
-    height: 50px;
-    font-size: 10pt;
-    color: white;
-    font-weight: bold;
-    background-color: #27183D;
-}
-
-.lblHospitalSection {
-    position: fixed;
-    top: 81px;
-    left: 465px;
-    z-index: 1;
-    font-weight: bold;
-    font-size: 30px;
-    color: #cc0000;
-}
-
-.lblAddHospitalSection {
-    position: fixed;
-    top: 81px;
-    left: 565px;
-    z-index: 1;
-    font-weight: bold;
-    font-size: 30px;
-    color: green;
-}
 
 
