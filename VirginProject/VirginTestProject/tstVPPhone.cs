@@ -16,8 +16,8 @@ namespace VirginTestProject
         string Model = "12 Pro Max";
         string Price = "1250.00";
         string StockStatus = "True";
-
-
+        
+        
         [TestMethod]
         public void InstantiationOK()
         {

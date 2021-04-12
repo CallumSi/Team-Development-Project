@@ -222,8 +222,8 @@ namespace VirginTestProject
             clsVPDeliveryCollection AllDelivery = new clsVPDeliveryCollection();
             //create an instance of the filtered data 
             clsVPDeliveryCollection FilteredDeliveryDate = new clsVPDeliveryCollection ();
-            //apply a blank string (should return all records)
-            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("12/04/2021"));
+            ////apply a blank string (should return all records)
+            //FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("12/04/2021"));
             //test to see that two values are the same 
             Assert.AreEqual(AllDelivery.Count, FilteredDeliveryDate.Count);
         }
@@ -234,7 +234,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVPDeliveryCollection FilteredDeliveryDate = new clsVPDeliveryCollection();
             //apply a delivery date that doesnt exists
-            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("25/12/2021"));
+            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("25/12/2020"));
             //test to see that the two values are the same
             Assert.AreEqual(0, FilteredDeliveryDate.Count);
 
@@ -252,14 +252,14 @@ namespace VirginTestProject
             //check that the correct number of records are found 
             if (FilteredDeliveryDate.Count == 2)
             {
-                //check to see the first record ID is 1
-                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 1)
+                //check to see the first record ID 
+                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 14)
                 {
                     OK = false;
                 }
 
-                //check that the last record ID is 2 
-                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 2)
+                //check that the last record ID  
+                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 16)
                 {
                     OK = false;
                 }
