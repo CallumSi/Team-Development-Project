@@ -117,10 +117,11 @@
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
     <Content Include="VMHome.aspx" />
-    <Content Include="VMMovie.aspx" />
+    <Content Include="VMStaffMovie.aspx" />
     <Content Include="VMMovie.css" />
     <Content Include="VMPaymentDelete.aspx" />
     <Content Include="VMPaymentList.aspx" />
+    <Content Include="VMStaffAddMovie.aspx" />
     <Content Include="VMStaffDelete.aspx" />
     <Content Include="VMStaffList.aspx" />
     <Content Include="VMThanks.aspx" />
@@ -497,12 +498,12 @@
     <Compile Include="VMHome.aspx.designer.cs">
       <DependentUpon>VMHome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VMMovie.aspx.cs">
-      <DependentUpon>VMMovie.aspx</DependentUpon>
+    <Compile Include="VMStaffMovie.aspx.cs">
+      <DependentUpon>VMStaffMovie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VMMovie.aspx.designer.cs">
-      <DependentUpon>VMMovie.aspx</DependentUpon>
+    <Compile Include="VMStaffMovie.aspx.designer.cs">
+      <DependentUpon>VMStaffMovie.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMPaymentDelete.aspx.cs">
       <DependentUpon>VMPaymentDelete.aspx</DependentUpon>
@@ -517,6 +518,13 @@
     </Compile>
     <Compile Include="VMPaymentList.aspx.designer.cs">
       <DependentUpon>VMPaymentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMStaffAddMovie.aspx.cs">
+      <DependentUpon>VMStaffAddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMStaffAddMovie.aspx.designer.cs">
+      <DependentUpon>VMStaffAddMovie.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMStaffDelete.aspx.cs">
       <DependentUpon>VMStaffDelete.aspx</DependentUpon>

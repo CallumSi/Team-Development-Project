@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VMMovie.aspx.cs" Inherits="VirginFrontEnd.VMMovie" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VMStaffMovie.aspx.cs" Inherits="VirginFrontEnd.VMMovie" %>
 
 <!DOCTYPE html>
 
