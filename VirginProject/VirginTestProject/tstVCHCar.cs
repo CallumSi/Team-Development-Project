@@ -23,8 +23,9 @@ namespace VirginTestProject
         string CarFuel = "Petrol";
 
         /* //Car weekly hire Price property
-        decimal CarPrice = 300.0M;  */
-        
+        decimal CarPrice = 300.0M;  
+        possible decimal testing solution - www.dotnetperls.com/decimal */
+
         //Car registration property
         string CarRegistration = "VW19 GLF";
 
