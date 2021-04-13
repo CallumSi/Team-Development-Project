@@ -77,7 +77,14 @@
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
+    <Content Include="ForumAnComment.aspx" />
+    <Content Include="ForumAnPost.aspx" />
     <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumCommentDelete.aspx" />
+    <Content Include="ForumCommentList.aspx" />
+    <Content Include="ForumPostDelete.aspx" />
+    <Content Include="ForumPostList.aspx" />
+    <Content Include="ForumStyleSheet.css" />
     <Content Include="ForumUserDelete.aspx" />
     <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
@@ -220,12 +227,54 @@
     <Compile Include="ForumAnAdmin.aspx.designer.cs">
       <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForumAnComment.aspx.cs">
+      <DependentUpon>ForumAnComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAnComment.aspx.designer.cs">
+      <DependentUpon>ForumAnComment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAnPost.aspx.cs">
+      <DependentUpon>ForumAnPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAnPost.aspx.designer.cs">
+      <DependentUpon>ForumAnPost.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForumAnUser.aspx.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ForumAnUser.aspx.designer.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumCommentDelete.aspx.cs">
+      <DependentUpon>ForumCommentDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumCommentDelete.aspx.designer.cs">
+      <DependentUpon>ForumCommentDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumCommentList.aspx.cs">
+      <DependentUpon>ForumCommentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumCommentList.aspx.designer.cs">
+      <DependentUpon>ForumCommentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumPostDelete.aspx.cs">
+      <DependentUpon>ForumPostDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumPostDelete.aspx.designer.cs">
+      <DependentUpon>ForumPostDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumPostList.aspx.cs">
+      <DependentUpon>ForumPostList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumPostList.aspx.designer.cs">
+      <DependentUpon>ForumPostList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumUserDelete.aspx.cs">
       <DependentUpon>ForumUserDelete.aspx</DependentUpon>
@@ -608,6 +657,9 @@
       <Project>{fddf02e7-d5af-46af-9f54-b2ba46d8603e}</Project>
       <Name>VirginClassLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VHCImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

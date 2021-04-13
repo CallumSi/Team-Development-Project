@@ -151,11 +151,20 @@ li {
     color: black;
 }*/
 
+.articleAddMovie {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 30%;
+    top: 20%;
+    left: 50%;
+    color: black;
+}
+
 .lblMovieTitle {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 220px;
+    top: 280px;
     left: 630px;
     font-size: medium;
     font-weight: bold;
@@ -167,7 +176,7 @@ li {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 320px;
+    top: 340px;
     left: 630px;
     font-size: medium;
     font-weight: bold;
@@ -179,7 +188,7 @@ li {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 420px;
+    top: 400px;
     left: 630px;
     font-size: medium;
     font-weight: bold;
@@ -191,7 +200,7 @@ li {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 520px;
+    top: 460px;
     left: 630px;
     font-size: medium;
     font-weight: bold;
@@ -203,7 +212,19 @@ li {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 620px;
+    top: 520px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieImage {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 580px;
     left: 630px;
     font-size: medium;
     font-weight: bold;
@@ -215,7 +236,7 @@ li {
     z-index: 1;
     width: 290px;
     position: fixed;
-    top: 217px;
+    top: 278px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -226,7 +247,7 @@ li {
     z-index: 1;
     width: 290px;
     position: fixed;
-    top: 317px;
+    top: 337px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -237,7 +258,7 @@ li {
     z-index: 1;
     width: 290px;
     position: fixed;
-    top: 417px;
+    top: 397px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -248,7 +269,7 @@ li {
     z-index: 1;
     width: 290px;
     position: fixed;
-    top: 517px;
+    top: 457px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -259,7 +280,18 @@ li {
     z-index: 1;
     width: 290px;
     position: fixed;
-    top: 617px;
+    top: 517px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieImage {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 577px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -270,7 +302,7 @@ li {
     z-index: 1;
     width: 125px;
     position: fixed;
-    top: 695px;
+    top: 620px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -281,19 +313,18 @@ li {
     z-index: 1;
     width: 125px;
     position: fixed;
-    top: 695px;
+    top: 620px;
     left: 1100px;
     font-size: medium;
     font-weight: bold;
     color: black;
 }
 
-
 .lblStaffAddMovieError {
     z-index: 1;
     width: 30%;
     position: fixed;
-    top: 750px;
+    top: 670px;
     left: 730px;
     font-size: medium;
     font-weight: bold;

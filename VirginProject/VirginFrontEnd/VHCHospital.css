@@ -62,7 +62,7 @@ nav {
 }
 
 /*Navigation Buttons*/
-.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .FilterHospitals {
+.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .FilterHospitals, .btnSubmit {
     z-index: 1;
     width: 150px;
     height: 50px;
@@ -151,5 +151,92 @@ footer {
     font-size:10pt;
 }
 
+/*VHCHospital - Add Section Labels*/
+.lblHospital_Name {
+    position: absolute;
+    top: 176px;
+    left: 295px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
 
+.lblHospital_Place {
+    position: absolute;
+    top: 230px;
+    left: 290px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
 
+/*Hospital Name Textbox*/
+.txtHospitalName {
+    position: absolute;
+    top: 178px;
+    left: 475px;
+    font-style: italic;
+    width: 250px;
+    height: 20px;
+    color:dimgray;
+}
+
+/*Hospital Place DropDownList*/
+.ddlHospitalPlace {
+    position: absolute;
+    top: 230px;
+    left: 475px;
+    font-style: italic;
+    width: 257px;
+    height: 25px;
+    color: dimgray;
+}
+
+/* Submit Button */
+.btnSubmit {
+    position: fixed;
+    top: 350px;
+    left: 700px;
+}
+
+ /* Submit Hover Button */
+ .btnSubmit:hover {
+    background-color: darkgreen;
+    color: white;
+ }
+
+/* Close Button */
+.btnClose {
+    position: fixed;
+    top: 75px;
+    left: 1200px;
+    z-index: 1;
+    width: 50px;
+    height: 25px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* VHC Logo Image */
+img {
+    position: fixed;
+    top: 60px;
+    left: 460px;
+    width: 550px;
+    height: 550px;
+}
+
+/* OptionMessage */
+#OptionMessage {
+    position: fixed;
+    top: 500px;
+    left: 500px;
+    font-style: italic;
+    color: dimgray;
+}

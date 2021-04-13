@@ -7,22 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class VHCHospitalAdd
-    {
-
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class ForumPostList {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,68 +20,95 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
-        /// lblHospital_Name control.
+        /// lstPostlistbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Name;
-
+        protected global::System.Web.UI.WebControls.ListBox lstPostlistbox;
+        
         /// <summary>
-        /// lblHospital_Place control.
+        /// lblFilterByPostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Place;
-
+        protected global::System.Web.UI.WebControls.Label lblFilterByPostTitle;
+        
         /// <summary>
-        /// txtHospital_Name control.
+        /// txtFilterByPostTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHospital_Name;
-
+        protected global::System.Web.UI.WebControls.TextBox txtFilterByPostTitle;
+        
         /// <summary>
-        /// ddlHospitalPlace control.
+        /// btnApply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHospitalPlace;
-
+        protected global::System.Web.UI.WebControls.Button btnApply;
+        
         /// <summary>
-        /// btnSubmit control.
+        /// btnDisplayAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-
+        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
+        
         /// <summary>
-        /// btnClose control.
+        /// btnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
-
+        protected global::System.Web.UI.WebControls.Button btnAdd;
+        
         /// <summary>
-        /// Home_Button control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Home_Button;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
+        
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
+        
+        /// <summary>
+        /// btnComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComment;
+        
+        /// <summary>
+        /// lblPostError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPostError;
     }
 }

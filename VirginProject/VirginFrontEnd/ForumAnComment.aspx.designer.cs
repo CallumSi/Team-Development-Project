@@ -7,22 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class VHCHospitalAdd
-    {
-
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class ForumAnComment {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,68 +20,68 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
-        /// lblHospital_Name control.
+        /// lblThreadTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Name;
-
+        protected global::System.Web.UI.WebControls.Label lblThreadTitle;
+        
         /// <summary>
-        /// lblHospital_Place control.
+        /// lblTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Place;
-
+        protected global::System.Web.UI.WebControls.Label lblTitle;
+        
         /// <summary>
-        /// txtHospital_Name control.
+        /// lblComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHospital_Name;
-
+        protected global::System.Web.UI.WebControls.Label lblComment;
+        
         /// <summary>
-        /// ddlHospitalPlace control.
+        /// txtComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlHospitalPlace;
-
+        protected global::System.Web.UI.WebControls.TextBox txtComment;
+        
         /// <summary>
-        /// btnSubmit control.
+        /// btnOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-
+        protected global::System.Web.UI.WebControls.Button btnOK;
+        
         /// <summary>
-        /// btnClose control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
-
+        protected global::System.Web.UI.WebControls.Button btnCancel;
+        
         /// <summary>
-        /// Home_Button control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Home_Button;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }
