@@ -39,11 +39,7 @@ namespace VirginFrontEnd
                 txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
                 txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
                 txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
- 
-
-
             }
-
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -128,15 +124,9 @@ namespace VirginFrontEnd
             Response.Redirect("VMStaffMovie.aspx");
         }
 
-        protected void btnUpdateMovie_Click(object sender, EventArgs e)
+        protected void btnStaffHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VMStaffMovie.aspx");
-        }
-
-        protected void btnDeleteMovie_Click()
-        {
-            Response.Redirect("VMStaffMovie.aspx");
-            
         }
     }
 }

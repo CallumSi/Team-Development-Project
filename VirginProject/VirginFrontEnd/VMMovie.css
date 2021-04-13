@@ -50,24 +50,56 @@ footer {
 #FooterText {
     position: fixed;
     left: 45%;
-    top: 95%;
+    top: 96%;
 }
 
-li {
-    list-style: none;
-}
-
-
-.Button, .navButton {
-    background-color: white;
+/*Buttons*/
+.btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome, .btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie, .btnStaffUpdateMovie, .btnVMStaffDeleteMovie {
     padding: 20px;
-    left: 10px;
     border-radius: 2px;
     font-size: 1em;
     font-family: 'Lexend', sans-serif;
     font-weight: bold;
+    width: 170px;
 }
 
+.btnStaffHome {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+/*######## STAFF MOVIE NAV BUTTONS #########*/
+.btnStaffAddMovie {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnStaffUpdateMovie {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnVMStaffDeleteMovie {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+/*######## DELETE MOVIE NAV BUTTONS #########*/
+.btnDeleteHome {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnDeleteViewCart {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+/*################## STAFF MOVIE CSS #####################*/
 .lblFilterGenre {
     z-index: 1;
     width: 129px;
@@ -141,16 +173,6 @@ li {
 
 /*################## STAFF MOVIE ADD CSS #####################*/
 
-
-/*.lblAddMovieTitle {
-    background-color: #CCCCCC;
-    position: fixed;
-    width: 30%;
-    top: 50%;
-    left: 50%;
-    color: black;
-}*/
-
 .articleAddMovie {
     background-color: #CCCCCC;
     position: fixed;
@@ -158,6 +180,7 @@ li {
     top: 20%;
     left: 50%;
     color: black;
+    font-weight: bold;
 }
 
 .lblMovieTitle {
@@ -326,6 +349,53 @@ li {
     position: fixed;
     top: 670px;
     left: 730px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+/*################## STAFF MOVIE DELETE CSS #####################*/
+
+
+.articleDeleteMovie {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 30%;
+    top: 20%;
+    left: 49%;
+    color: black;
+    font-weight: bold;
+}
+
+.lblMovieDeleteConfirm {
+    z-index: 1;
+    width: 500px;
+    position: fixed;
+    top: 260px;
+    left: 750px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.btnMovieDeleteYes {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 320px;
+    left: 880px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnMovieDeleteCancel {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 320px;
+    left: 1090px;
     font-size: medium;
     font-weight: bold;
     color: black;

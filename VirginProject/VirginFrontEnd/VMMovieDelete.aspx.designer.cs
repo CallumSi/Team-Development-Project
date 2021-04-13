@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMMovie {
+    public partial class VMMovieDelete {
         
         /// <summary>
         /// Head1 control.
@@ -22,93 +22,57 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// lstMovies control.
+        /// lblStaffDeleteMovie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstMovies;
+        protected global::System.Web.UI.WebControls.Label lblStaffDeleteMovie;
         
         /// <summary>
-        /// lblFilterGenre control.
+        /// lblMovieDeleteConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFilterGenre;
+        protected global::System.Web.UI.WebControls.Label lblMovieDeleteConfirm;
         
         /// <summary>
-        /// txtFilterGenre control.
+        /// btnYES control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterGenre;
+        protected global::System.Web.UI.WebControls.Button btnYES;
         
         /// <summary>
-        /// btnApplyFilter control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApplyFilter;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
-        /// btnDisplayAll control.
+        /// btnDeleteHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-        
-        /// <summary>
-        /// btnAddMovie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddMovie;
-        
-        /// <summary>
-        /// btnUpdateMovie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateMovie;
-        
-        /// <summary>
-        /// btnDeleteMovie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteMovie;
+        protected global::System.Web.UI.WebControls.Button btnDeleteHome;
     }
 }
