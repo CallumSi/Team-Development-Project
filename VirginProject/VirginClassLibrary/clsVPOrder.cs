@@ -4,10 +4,89 @@ namespace VirginClassLibrary
 {
     public class clsVPOrder
     {
-        public int Order_ID { get; set; }
-        public int Customer_ID { get; set; }
-        public DateTime Delivery_Date { get; set; }
 
+        //private data member for OrderID property
+        private Int32 mOrder_ID;
+        //Order Attributes
+        Int32 mCustomer_ID;
+        DateTime mDelivery_Date;
+
+
+        public int Order_ID
+
+        {
+            get
+            {
+                //return the private data 
+                return mOrder_ID;
+            }
+                set
+            {
+                //set the private data
+                mOrder_ID = value;
+            }
+
+        }
+        public int Customer_ID
+
+        {
+            get
+            {
+                //return the private data
+                return mCustomer_ID;
+            }
+                set
+            {
+                //set the private data 
+                mCustomer_ID = value;
+            }
+                
+                }
+        public DateTime Delivery_Date
+
+        {
+            get
+            {
+                //return the private data 
+                return mDelivery_Date;
+            }
+            set
+            {
+                //set the private 
+                mDelivery_Date = value; 
+            }
+                
+                }
+
+        
+        public bool Find(int Order_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the StaffID to search
+            DB.AddParameter("@Order_ID", Order_ID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVPOrder_FilterByOrderID");
+            //if one record is found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                Order_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Order_ID"]);
+                Customer_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Customer_ID"]);
+                Delivery_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Delivery_Date"]);
+                //return that everything works
+                return true;
+            }
+            //if no record was found 
+            else
+            {
+                //return false indicating a problem 
+                return false;
+            }
+
+        }
+
+        
         public string Valid(string Delivery_Date)
         {
             string Error = "";

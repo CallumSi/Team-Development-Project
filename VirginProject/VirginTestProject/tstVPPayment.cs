@@ -22,6 +22,22 @@ namespace VirginTestProject
             Assert.IsNotNull(AVPPayment);
         }
 
+        //testing the property of the id payment id
+        [TestMethod]
+        public void PaymentIDPropertyOK()
+        {
+            //create an instance of the class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a variable to store the card no of the payment
+            Int32 SomePaymentID;
+            //assign an ID to the variable
+            SomePaymentID = 1;
+            //try to send some data to the id property 
+            AVPPayment.Payment_ID = SomePaymentID;
+            //check to see the data in the variable and property are the same
+            Assert.AreEqual(AVPPayment.Payment_ID, SomePaymentID);
+        }
+
 
         //testing the property card no
         [TestMethod]

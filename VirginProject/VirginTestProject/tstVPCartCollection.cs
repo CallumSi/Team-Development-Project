@@ -3,6 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VirginClassLibrary;
 using System.Collections.Generic;
 
+namespace VirginTestProject
+{
+
+
     [TestClass]
     public class tstVPCartCollection
     {
@@ -160,66 +164,7 @@ using System.Collections.Generic;
             //test to see that the two values are the same
             Assert.AreEqual(AllCart.ThisCart, TestItem);
         }
-
-
-        [TestMethod]
-        public void ReportByProductsMethod()
-        {
-            //create an instance of the filtered data
-            clsVPCartCollection AllCart = new clsVPCartCollection();
-            //create an instance of the filtered data 
-            clsVPCartCollection FilteredProducts = new clsVPCartCollection();
-            //apply a blank string (should return all records)
-            FilteredProducts.FilterByProducts("");
-            //test to see that two values are the same 
-            Assert.AreEqual(AllCart.Count, FilteredProducts.Count);
-        }
-
-        [TestMethod]
-        public void ReportByProductsNoneFound()
-        {
-            //create an instance of the filtered data
-            clsVPCartCollection FilteredProducts = new clsVPCartCollection();
-            //apply a product that doesnt exists
-            FilteredProducts.FilterByProducts("Nokia 900 RM");
-            //test to see that the two values are the same
-            Assert.AreEqual(0, FilteredProducts.Count);
-
-        }
-
-        [TestMethod]
-        public void ReportByProductsTestDataFound()
-        {
-            //create an instance of the filtered data
-            clsVPCartCollection FilteredProducts = new clsVPCartCollection();
-            //var to store outcome 
-            Boolean OK = true;
-            //apply a product that doesn't exists 
-            FilteredProducts.FilterByProducts("Alcatel D450");
-            //check that the correct number of records are found 
-            if (FilteredProducts.Count == 2)
-            {
-                //check to see the first record ID is 1
-                if (FilteredProducts.CartList[0].CartNo != 2)
-                {
-                    OK = false;
-                }
-
-                //check that the last record ID is 2 
-                if (FilteredProducts.CartList[1].CartNo != 3)
-                {
-                    OK = false;
-                }
-            }
-            else
-            {
-                OK = false;
-            }
-
-            //test to see that there are no records
-            Assert.IsTrue(OK);
-
-        }
-
+        
+    }
 }
 
