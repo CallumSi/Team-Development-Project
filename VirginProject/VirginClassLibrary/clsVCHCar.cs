@@ -4,32 +4,192 @@ namespace VirginClassLibrary
 {
     public class clsVCHCar
     {
+        //private property for CarID
+        private int mCarID;
+        //Car Make property
+        private string mCarMake;
+        //Car Model property
+        private string mCarModel;
+        //Car Engine size property
+        private Decimal mCarEngine;
+        //Car Body property
+        private string mCarBody;
+        //Car Colour property
+        private string mCarColour;
+        //Car Fuel type property
+        private string mCarFuel;
+        //Car weekly hire Price property
+        private Decimal mCarPrice;
+        //Car registration property
+        private string mCarRegistration;
+
         //Car ID property
-        public int CarID { get; set; }
+        public int CarID
+        {
+            get
+            {
+                //return the private data
+                return mCarID;
+            }
+            set
+            {
+                //set the private data
+                mCarID = value;
+            }
+        }
 
         //Car Make property
-        public string CarMake { get; set; }
+        public string CarMake
+        {
+            get
+            {
+                //return the private data
+                return mCarMake;
+            }
+            set
+            {
+                //set the private data
+                mCarMake = value;
+            }
+        }
 
         //Car Model property
-        public string CarModel { get; set; }
+        public string CarModel
+        {
+            get
+            {
+                //return the private data
+                return mCarModel;
+            }
+            set
+            {
+                //set the private data
+                mCarModel = value;
+            }
+        }
 
         //Car Engine size property
-        public Decimal CarEngine { get; set; }
+        public Decimal CarEngine
+        {
+            get
+            {
+                //return the private data
+                return mCarEngine;
+            }
+            set
+            {
+                //set the private data
+                mCarEngine = value;
+            }
+        }
         
         //Car Body property
-        public string CarBody { get; set; }
+        public string CarBody
+        {
+            get
+            {
+                //return the private data
+                return mCarBody;
+            }
+            set
+            {
+                //set the private data
+                mCarBody = value;
+            }
+        }
 
         //Car Colour property
-        public string CarColour { get; set; }
+        public string CarColour
+        {
+            get
+            {
+                //return the private data
+                return mCarColour;
+            }
+            set
+            {
+                //set the private data
+                mCarColour = value;
+            }
+        }
 
         //Car Fuel type property
-        public string CarFuel { get; set; }
+        public string CarFuel
+        {
+            get
+            {
+                //return the private data
+                return mCarFuel;
+            }
+            set
+            {
+                //set the private data
+                mCarFuel = value;
+            }
+        }
 
         //Car weekly hire Price property
-        public Decimal CarPrice { get; set; }
+        public Decimal CarPrice
+        {
+            get
+            {
+                //return the private data
+                return mCarPrice;
+            }
+            set
+            {
+                //set the private data
+                mCarPrice = value;
+            }
+        }
 
         //Car registration property
-        public string CarRegistration { get; set; }
+        public string CarRegistration
+        {
+            get
+            {
+                //return the private data
+                return mCarRegistration;
+            }
+            set
+            {
+                //set the private data
+                mCarRegistration = value;
+            }
+        }
+
+        //find method for CarID
+        public bool Find(int CarID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for CarID to search for
+            DB.AddParameter("@CarID", CarID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHCar_FilterByCarID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mCarID = Convert.ToInt32(DB.DataTable.Rows[0]["CarID"]);
+                mCarMake = Convert.ToString(DB.DataTable.Rows[0]["CarMake"]);
+                mCarModel = Convert.ToString(DB.DataTable.Rows[0]["CarModel"]);
+                mCarEngine = Convert.ToDecimal(DB.DataTable.Rows[0]["CarEngine"]);
+                mCarBody = Convert.ToString(DB.DataTable.Rows[0]["CarBody"]);
+                mCarColour = Convert.ToString(DB.DataTable.Rows[0]["CarColour"]);
+                mCarFuel = Convert.ToString(DB.DataTable.Rows[0]["CarFuel"]);
+                mCarPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["CarPrice"]);
+                mCarRegistration = Convert.ToString(DB.DataTable.Rows[0]["CarRegistration"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+        }
 
         public string Valid(string CarMake, string CarModel, string CarEngine, string CarBody, string CarColour, string CarFuel, string CarPrice, string CarRegistration)
         {
@@ -226,7 +386,7 @@ namespace VirginClassLibrary
                         }
                         else
                         {
-                            Error += "Car hire price must be between £0.0 and £999.99";
+                            Error += "Car hire price must be between £50.00 and £999.99";
                         }
                     }
                     else
