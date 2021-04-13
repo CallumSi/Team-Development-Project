@@ -99,6 +99,7 @@ namespace VirginClassLibrary
                 APhone.Model = Convert.ToString(DB.DataTable.Rows[Index]["Model"]);
                 APhone.Price = Convert.ToDecimal(DB.DataTable.Rows[Index]["Price"]);
                 APhone.StockStatus = Convert.ToBoolean(DB.DataTable.Rows[Index]["StockStatus"]);
+                APhone.Quantity = Convert.ToInt32(DB.DataTable.Rows[Index]["Quantity"]);
                 //add the record to the private data member
                 mPhoneList.Add(APhone);
                 //point to the next record
@@ -136,6 +137,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Model", mThisPhone.Model);
             DB.AddParameter("@Price", mThisPhone.Price);
             DB.AddParameter("@StockStatus", mThisPhone.StockStatus);
+            DB.AddParameter("@Quantity", mThisPhone.Quantity);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVPPhone_Insert");
         }
@@ -166,6 +168,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Model", mThisPhone.Model);
             DB.AddParameter("@Price", mThisPhone.Price);
             DB.AddParameter("@StockStatus", mThisPhone.StockStatus);
+            DB.AddParameter("@Quantity", mThisPhone.Quantity);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVPPhone_Update");
         }

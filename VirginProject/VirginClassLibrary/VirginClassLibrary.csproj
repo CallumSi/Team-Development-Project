@@ -93,12 +93,13 @@
     <Compile Include="clsVPDelivery.cs" />
     <Compile Include="clsVPDeliveryCollection.cs" />
     <Compile Include="clsVPOrder.cs" />
+    <Compile Include="clsVPOrderCollection.cs" />
     <Compile Include="clsVPPayment.cs" />
+    <Compile Include="clsVPPaymentCollection.cs" />
     <Compile Include="clsVPPhone.cs" />
     <Compile Include="clsVPPhoneCollection.cs" />
     <Compile Include="clsVPStaff.cs" />
     <Compile Include="clsVPStaffCollection.cs" />
-    <Compile Include="clsVPStock.cs" />
     <Compile Include="clsMarketplaceCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

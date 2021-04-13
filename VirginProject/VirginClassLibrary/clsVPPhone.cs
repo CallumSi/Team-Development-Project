@@ -14,6 +14,7 @@ namespace VirginClassLibrary
         String mModel;
         Decimal mPrice;
         Boolean mStockStatus;
+        Int32 mQuantity; 
 
         
         //Phone Capacity Property
@@ -158,6 +159,22 @@ namespace VirginClassLibrary
 
         }
 
+        public int Quantity
+
+        {
+            get
+            {
+                // return the private data
+                return mQuantity;
+            }
+                
+                set
+            {
+                //set the private data 
+                mQuantity = value;
+            }
+                
+                }
 
         public bool Find(int PhoneID)
         {
@@ -179,6 +196,7 @@ namespace VirginClassLibrary
                 Model = Convert.ToString(DB.DataTable.Rows[0]["Model"]);
                 Price = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
                 StockStatus = Convert.ToBoolean(DB.DataTable.Rows[0]["StockStatus"]);
+                Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
                 //return that everything works
                 return true;
             }
@@ -191,7 +209,7 @@ namespace VirginClassLibrary
 
         }
         
-        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string StockStatus)
+        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string StockStatus, string Quantity)
         {
             string Error = "";
 
@@ -281,6 +299,12 @@ namespace VirginClassLibrary
                 Error = Error + "THE MODEL MUST BE BETWEEN 2 AND 30 CHARACTERS" + "";
             }
 
+            //***VALIDATION PRICE***//
+
+
+
+
+            //***QUANTITY***//
 
 
             return Error;

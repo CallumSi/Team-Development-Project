@@ -38,6 +38,7 @@ namespace VirginTestProject
             TestItem.Model = "12 Pro Max";
             TestItem.Price = 1250.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 1;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property 
@@ -63,6 +64,7 @@ namespace VirginTestProject
             TestPhone.Model = "12 Pro Max";
             TestPhone.Price = 1250.00m;
             TestPhone.StockStatus = true;
+            TestPhone.Quantity = 1;
             //assign the data to the property 
             AllPhone.ThisPhone = TestPhone;
             //test to see that two values are the same
@@ -90,6 +92,7 @@ namespace VirginTestProject
             TestItem.Model = "12 Pro Max";
             TestItem.Price = 1250.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 1;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property 
@@ -117,6 +120,7 @@ namespace VirginTestProject
             TestItem.Model = "12 Pro Max";
             TestItem.Price = 1250.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 1;
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
@@ -147,6 +151,7 @@ namespace VirginTestProject
             TestItem.Model = "12 Pro Max";
             TestItem.Price = 1250.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 1;
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
@@ -162,6 +167,7 @@ namespace VirginTestProject
             TestItem.Model = "Galaxy Mini XC50";
             TestItem.Price = 1000.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 2;
             //set the record based on the new test data
             AllPhone.ThisPhone = TestItem;
             //update the record
@@ -192,6 +198,7 @@ namespace VirginTestProject
             TestItem.Model = "12 Pro Max";
             TestItem.Price = 1250.00m;
             TestItem.StockStatus = true;
+            TestItem.Quantity = 1;
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
@@ -245,13 +252,13 @@ namespace VirginTestProject
             if (FilteredMake.Count == 2)
             {
                 //check to see the first record ID is 1
-                if (FilteredMake.PhoneList[0].PhoneID != 14)
+                if (FilteredMake.PhoneList[0].PhoneID != 3)
                 {
                     OK = false;
                 }
 
                 //check that the last record ID is 2 
-                if (FilteredMake.PhoneList[1].PhoneID != 16)
+                if (FilteredMake.PhoneList[1].PhoneID != 8)
                 {
                     OK = false;
                 }
