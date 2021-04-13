@@ -26,20 +26,21 @@ namespace VirginFrontEnd
                     DisplayVMMovie();
                 }
             }
+        }
 
-            void DisplayVMMovie()
-            {
-                //create an instance of the movie class
-                clsVMMovieCollection allMovies = new clsVMMovieCollection();
-                //find the record to update
-                allMovies.ThisMovie.Find(VMMovieID);
-                //display the data for this record
-                txtMovieTitle.Text = allMovies.ThisMovie.VMmovieTitle;
-                txtMovieGenre.Text = allMovies.ThisMovie.VMmovieGenre;
-                txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
-                txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
-                txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
-            }
+        void DisplayVMMovie()
+        {
+            //create an instance of the movie class
+            clsVMMovieCollection allMovies = new clsVMMovieCollection();
+            //find the record to update
+            allMovies.ThisMovie.Find(VMMovieID);
+            //display the data for this record
+            txtMovieTitle.Text = allMovies.ThisMovie.VMmovieTitle;
+            txtMovieGenre.Text = allMovies.ThisMovie.VMmovieGenre;
+            txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
+            txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
+            txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
+            txtMovieImage.Text = allMovies.ThisMovie.VMImage;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -104,7 +105,6 @@ namespace VirginFrontEnd
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
                 allMovies.ThisMovie.VMImage = txtMovieImage.Text;
-
 
                 //add the record
                 allMovies.Update();

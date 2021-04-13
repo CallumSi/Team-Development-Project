@@ -29,13 +29,6 @@ namespace VirginFrontEnd
             allMovies.Delete();
         }
 
-        protected void btnYES_Click(object sender, EventArgs e)
-        {
-            //delete the record
-            DeleteMovie();
-            //redirect to the main page
-            Response.Redirect("VMStaffMovie.aspx");
-        }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
@@ -45,6 +38,14 @@ namespace VirginFrontEnd
 
         protected void btnDeleteHome_Click(object sender, EventArgs e)
         {
+            Response.Redirect("VMStaffMovie.aspx");
+        }
+
+        protected void btnYES_Click(object sender, EventArgs e)
+        {
+            //delete the record
+            DeleteMovie();
+            //redirect to the main page
             Response.Redirect("VMStaffMovie.aspx");
         }
     }

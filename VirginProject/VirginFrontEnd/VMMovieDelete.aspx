@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <form id="form2" runat="server">
+    <form id="form1" runat="server">
         <header>
             <h2>Virgin Media Staff Delete Movie </h2>
         </header>
