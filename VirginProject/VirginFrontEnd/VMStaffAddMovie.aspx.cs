@@ -39,6 +39,9 @@ namespace VirginFrontEnd
                 txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
                 txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
                 txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
+ 
+
+
             }
 
         }
@@ -64,7 +67,7 @@ namespace VirginFrontEnd
             //create an instance of the movie class
             clsVMMovieCollection allMovies = new clsVMMovieCollection();
             //validate the data on the web form
-            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text);
+            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text); 
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -73,7 +76,7 @@ namespace VirginFrontEnd
                 allMovies.ThisMovie.VMmovieDuration = Convert.ToInt32(txtMovieDuration.Text);
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
-
+                allMovies.ThisMovie.VMImage = txtMovieImage.Text;
                 //add the record
                 allMovies.Add();
                 //redirect to the main page
@@ -92,7 +95,7 @@ namespace VirginFrontEnd
             //create an instance of the movie class
             clsVMMovieCollection allMovies = new clsVMMovieCollection();
             //validate the data on the web form
-            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text);
+            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -104,6 +107,8 @@ namespace VirginFrontEnd
                 allMovies.ThisMovie.VMmovieDuration = Convert.ToInt32(txtMovieDuration.Text);
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
+                allMovies.ThisMovie.VMImage = txtMovieImage.Text;
+
 
                 //add the record
                 allMovies.Update();
@@ -131,7 +136,7 @@ namespace VirginFrontEnd
         protected void btnDeleteMovie_Click()
         {
             Response.Redirect("VMStaffMovie.aspx");
-
+            
         }
     }
 }
