@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VHCHospitalAdd.aspx.cs" Inherits="VirginFrontEnd.VHCHospitalAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VHCHospitalEdit.aspx.cs" Inherits="VirginFrontEnd.VHCHospitalEdit" %>
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 <head id="Head1" runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virgin Healthcare - Add Section</title>
+    <title>Virgin Healthcare - Edit Section</title>
     <link href="VHCHospital.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -19,7 +19,7 @@
         </header>
         <%--ARTICLE SECTION--%>
         <article>
-            <h4>ADD HOSPITAL SECTION </h4>
+            <h4>EDIT HOSPITAL SECTION </h4>
             <%--LABEL:HOSPITAL NAME--%>
             <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>
 
@@ -46,7 +46,7 @@
 
             <%--BUTTON: SUBMIT--%>
             <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
-                    <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click1" />
+                    <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
             </article>
 
         <%--NAVIGATION SECTION--%>
