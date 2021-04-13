@@ -124,7 +124,7 @@ namespace VirginFrontEnd
             }
             else
             {
-                //update the record
+                //update the staff record
                 Update();
             }
         }
