@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsForumCommentCollection.cs" />
     <Compile Include="clsForumPostCollection.cs" />
     <Compile Include="clsMarketplaceCartItem.cs" />
     <Compile Include="clsDataConnection.cs" />
