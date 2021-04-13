@@ -19,8 +19,7 @@
         </header>
         <%--ARTICLE SECTION--%>
         <article>
-            <h4>ADD HOSPITAL SECTION </h4>
-
+            <h4>ADD HOSPITAL SECTION! </h4>
             <%--LABEL:HOSPITAL NAME--%>
             <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>
 
