@@ -77,8 +77,11 @@
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
+    <Content Include="ForumAnComment.aspx" />
     <Content Include="ForumAnPost.aspx" />
     <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumCommentDelete.aspx" />
+    <Content Include="ForumCommentList.aspx" />
     <Content Include="ForumPostDelete.aspx" />
     <Content Include="ForumPostList.aspx" />
     <Content Include="ForumStyleSheet.css" />
@@ -222,6 +225,13 @@
     <Compile Include="ForumAnAdmin.aspx.designer.cs">
       <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForumAnComment.aspx.cs">
+      <DependentUpon>ForumAnComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAnComment.aspx.designer.cs">
+      <DependentUpon>ForumAnComment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForumAnPost.aspx.cs">
       <DependentUpon>ForumAnPost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +245,20 @@
     </Compile>
     <Compile Include="ForumAnUser.aspx.designer.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumCommentDelete.aspx.cs">
+      <DependentUpon>ForumCommentDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumCommentDelete.aspx.designer.cs">
+      <DependentUpon>ForumCommentDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumCommentList.aspx.cs">
+      <DependentUpon>ForumCommentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumCommentList.aspx.designer.cs">
+      <DependentUpon>ForumCommentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumPostDelete.aspx.cs">
       <DependentUpon>ForumPostDelete.aspx</DependentUpon>
