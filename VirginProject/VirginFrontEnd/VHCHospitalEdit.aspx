@@ -44,15 +44,15 @@
                 <asp:ListItem>Peterborough</asp:ListItem>
             </asp:DropDownList>
 
-            <%--BUTTON: SUBMIT--%>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
-                    <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
-            </article>
+            <%--BUTTON: UPDATE--%>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="UPDATE" />
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
+        </article>
 
         <%--NAVIGATION SECTION--%>
         <nav>
             <%--BUTTON: HOME--%>
-            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click" />
+            <asp:Button ID="Home_Button_Edit" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Edit_Click" />
         </nav>
 
         <%--FOOTER SECTION--%>

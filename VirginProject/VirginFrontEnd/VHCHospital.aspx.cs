@@ -23,5 +23,11 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VHCHospital.aspx");
         }
+
+        protected void btnEditHospital_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospitalEdit.aspx");
+
+        }
     }
 }
