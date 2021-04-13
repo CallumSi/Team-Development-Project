@@ -18,13 +18,13 @@
                 <ul>
                 <li>
                    
-                    <asp:ListBox ID="lstComment" runat="server" style="z-index: 1;"></asp:ListBox>
+                    <asp:ListBox ID="lstComment" runat="server" style="z-index: 1;" Height="278px" Width="593px"></asp:ListBox>
                    
                </li>
                 <li>
-                  <asp:Button ID="btnEdit" runat="server" style="z-index: 1;" Text="Edit Comment" OnClick="btnEdit_Click" />
+                    <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1;" Text="Add New Post" />
+                    <asp:Button ID="btnEdit" runat="server" style="z-index: 1;" Text="Edit Comment" OnClick="btnEdit_Click" />
                    <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: " Text="Delete Comment" OnClick="btnDelete_Click" />
-                  <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1;" Text="Add New Post" />
                 </li>
                  <li>
                      <asp:Label ID="lblError" runat="server" style="z-index: 1; "></asp:Label>
