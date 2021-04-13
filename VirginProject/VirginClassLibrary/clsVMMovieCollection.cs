@@ -26,7 +26,7 @@ namespace VirginClassLibrary
         //private data member thisMovie
         clsVMMovie mThisMovie = new clsVMMovie();
 
-        //public property for ThisCustomer
+        //public property for ThisMovie
         public clsVMMovie ThisMovie
         {
             get
