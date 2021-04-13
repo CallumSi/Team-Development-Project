@@ -12,7 +12,7 @@ header {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 0%;
+    top: 1%;
     left: 0%;
     padding: 15px;
     color: #cc0000;
@@ -31,10 +31,10 @@ article {
     background-color: #fff;
     position: fixed;
     width: 80%;
-    top: 15%;
+    top: 10%;
     left: 20%;
     color: black;
-    height: 76px;
+    height: 400px;
 }
 
 footer {
@@ -42,7 +42,7 @@ footer {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 75%;
+    top: 82%;
     left: 0%;
     margin-top: 94px;
     margin-bottom: 15px;
