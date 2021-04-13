@@ -19,7 +19,7 @@
         </header>
         <%--ARTICLE SECTION--%>
         <article>
-            <h3>WELCOME TO THE HOSPITAL SECTION </h3>
+            <h3>WELCOME TO THE HOSPITAL SECTION!</h3>
             <%--OPTION MESSAGE--%>
             <p id="OptionMessage">Please select one of the options on the left hand side </p>
 
