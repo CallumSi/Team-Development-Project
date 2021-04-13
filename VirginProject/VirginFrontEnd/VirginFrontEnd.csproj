@@ -79,6 +79,7 @@
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnPost.aspx" />
     <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumPostDelete.aspx" />
     <Content Include="ForumPostList.aspx" />
     <Content Include="ForumStyleSheet.css" />
     <Content Include="ForumUserDelete.aspx" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="ForumAnUser.aspx.designer.cs">
       <DependentUpon>ForumAnUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumPostDelete.aspx.cs">
+      <DependentUpon>ForumPostDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumPostDelete.aspx.designer.cs">
+      <DependentUpon>ForumPostDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumPostList.aspx.cs">
       <DependentUpon>ForumPostList.aspx</DependentUpon>
