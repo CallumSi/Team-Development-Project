@@ -47,6 +47,7 @@
             <%--BUTTON: SUBMIT--%>
             <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
                     <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click1" />
+            <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
             </article>
 
         <%--NAVIGATION SECTION--%>

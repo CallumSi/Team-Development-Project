@@ -19,7 +19,7 @@
         </header>
         <%--ARTICLE SECTION--%>
         <article>
-            <h3>WELCOME TO THE HOSPITAL SECTION!</h3>
+            <h3>WELCOME TO THE HOSPITAL SECTION</h3>
             <%--OPTION MESSAGE--%>
             <p id="OptionMessage">Please select one of the options on the left hand side </p>
 
@@ -33,7 +33,7 @@
             <%--BUTTON: ADD HOSPITAL--%>
             <asp:Button ID="Hospital_AddButton" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="Button1_Click" />
             <%--BUTTON: EDIT HOSPITAL--%>
-            <asp:Button ID="Button2" runat="server" CssClass="EditHospital" Text="Edit Hospital" />
+            <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Hospital" OnClick="btnEditHospital_Click" />
             <%--BUTTON: DELETE HOSPITAL--%>
             <asp:Button ID="Button3" runat="server" CssClass="DeleteHospital" Text="Delete Hospital" />
             <%--BUTTON: LIST HOSPITAL--%>
