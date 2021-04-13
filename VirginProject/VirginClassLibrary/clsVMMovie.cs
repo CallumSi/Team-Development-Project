@@ -13,6 +13,7 @@ namespace VirginClassLibrary
         Int32 mVMmovieDuration;
         Int32 mVMmovieRating;
         DateTime mVMmovieReleaseDate;
+        String mVMImage;
 
 
         //Public property for MovieID
@@ -105,6 +106,21 @@ namespace VirginClassLibrary
             }
         }
 
+        public string VMImage
+        {
+            get
+            {
+                //return the private data
+                return mVMImage;
+            }
+
+            set
+            {
+                //set the private data
+                mVMImage = value;
+            }
+        }
+
         public bool Find(int VMMovieID)
         {
             //create an instance of the data connection
@@ -122,6 +138,7 @@ namespace VirginClassLibrary
                 mVMmovieDuration = Convert.ToInt32(DB.DataTable.Rows[0]["VMMovieDuration"]);
                 mVMmovieRating = Convert.ToInt32(DB.DataTable.Rows[0]["VMMovieRating"]);
                 mVMmovieReleaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["VMMovieReleaseDate"]);
+                mVMImage = Convert.ToString(DB.DataTable.Rows[0]["VMImage"]);
                 //return that everything worked OK
                 return true;
             }
@@ -133,7 +150,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public string Valid(string VMmovieTitle, string VMmovieGenre, string VMmovieDuration, string VMmovieRating, string VMmovieReleaseDate)
+        public string Valid(string VMmovieTitle, string VMmovieGenre, string VMmovieDuration, string VMmovieRating, string VMmovieReleaseDate, string VMImage)
         {
             //create a string variable to store the error message
             String Error = "";
@@ -231,6 +248,18 @@ namespace VirginClassLibrary
             catch
             {
                 Error = Error + "Movie Release Date was invalid" + " ";
+            }
+
+            //**************** MOVIE IMAGE ***********************// 
+            //test to see if the movie image has zero characters
+            if (VMImage.Length < 0)
+            {
+                //return error message 
+                Error = Error + "Movie Image cannot be blank!" + " ";
+            }
+            if (VMImage.Length < 5 | VMImage.Length > 200)
+            {
+                Error = Error + "Movie Release Date was invalid. Movie Image cannot be blank or exceed 200 characters" + " ";
             }
 
             //return any error messages
