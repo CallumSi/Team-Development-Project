@@ -17,7 +17,6 @@
         <header>
             <h2>Virgin Healthcare: Hospital</h2>
         </header>
-
         <%--ARTICLE SECTION--%>
         <article>
             <h3>WELCOME TO THE HOSPITAL SECTION </h3>
