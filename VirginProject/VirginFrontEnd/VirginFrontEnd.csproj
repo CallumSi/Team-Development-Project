@@ -79,6 +79,7 @@
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnPost.aspx" />
     <Content Include="ForumAnUser.aspx" />
+    <Content Include="ForumStyleSheet.css" />
     <Content Include="ForumUserDelete.aspx" />
     <Content Include="ForumUserList.aspx" />
     <Content Include="ForumUserViewer.aspx" />
