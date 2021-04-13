@@ -13,6 +13,7 @@ namespace VirginTestProject
         string VMmovieDuration = "139";
         string VMmovieRating = "10";
         string VMmovieReleaseDate = DateTime.Now.Date.ToString();
+        string VMImage = @"http://placeimg.com/640/360/any";
 
         [TestMethod]
         public void InstantationOK()
@@ -107,6 +108,19 @@ namespace VirginTestProject
         }
 
         [TestMethod]
+        public void VMmovieImagePropertyOK()
+        {
+            //create an instance of the movie class
+            clsVMMovie AMovie = new clsVMMovie();
+            //test data for property
+            string TestData = "H:/COMPUTING/Year 3/IMAT 3903 - Team Development Project/MovieImageTest/DummyImage.png";
+            //assign data to the property
+            AMovie.VMImage = TestData;
+            //test if values are equal 
+            Assert.AreEqual(AMovie.VMImage, TestData);
+        }
+
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the movie class
@@ -114,7 +128,7 @@ namespace VirginTestProject
             //create a string variable to store the result of the validation
             String Error = "";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -144,7 +158,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             String VMmovieTitle = "";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -159,7 +173,7 @@ namespace VirginTestProject
             //create some test data to pass the method
             string VMmovieTitle = "T";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -174,7 +188,7 @@ namespace VirginTestProject
             //create some test data to pass the method
             string VMmovieTitle = "T-";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -191,7 +205,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieTitle = VMmovieTitle.PadRight(54, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -208,7 +222,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieTitle = VMmovieTitle.PadLeft(22, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -225,7 +239,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieTitle = VMmovieTitle.PadLeft(56, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -242,7 +256,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieTitle = VMmovieTitle.PadLeft(100, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -257,7 +271,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             String VMmovieGenre = "Wa";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -272,7 +286,7 @@ namespace VirginTestProject
             //create some test data to pass the method
             string VMmovieGenre = "War";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -287,7 +301,7 @@ namespace VirginTestProject
             //create some test data to pass the method
             string VMmovieGenre = "War";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -304,7 +318,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieGenre = VMmovieGenre.PadRight(54, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -321,7 +335,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieGenre = VMmovieGenre.PadLeft(22, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -338,7 +352,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieGenre = VMmovieGenre.PadLeft(56, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -355,7 +369,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             VMmovieGenre = VMmovieGenre.PadLeft(100, 'A');
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -370,7 +384,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -385,7 +399,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "0";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -400,7 +414,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "1";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -415,7 +429,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "299";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -430,7 +444,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "150";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -445,7 +459,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "301";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -460,7 +474,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieDuration = "600";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -475,7 +489,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -490,7 +504,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "0";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -505,7 +519,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "1";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -520,7 +534,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "9";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -535,7 +549,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "5";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -550,7 +564,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "11";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -565,7 +579,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string VMmovieRating = "100";
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -586,7 +600,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -607,7 +621,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -628,7 +642,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -649,7 +663,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -670,7 +684,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreEqual(Error, "");
         }
@@ -691,7 +705,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
             Assert.AreNotEqual(Error, "");
         }
@@ -712,8 +726,71 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string VMmovieReleaseDate = SomeVMmovieReleaseDate_DOB.ToString();
             //invoke the method
-            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate);
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
             //Test to see that the result is OK i.e no error message returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMImageMinLessOne()
+        {
+            //create an instance of the movie class
+            clsVMMovie AMovie = new clsVMMovie();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method      
+            String VMImage = "";
+            //test the valid method with the test data
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
+            //Test to ensure no error msg - can be blank
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMImageMin()
+        {
+            //create an instance of the movie class
+            clsVMMovie AMovie = new clsVMMovie();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            String VMImage = "AAAAA";
+            //test the valid method with the test data
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void VMImageMax()
+        {
+            //create an instance of the movie class
+            clsVMMovie AMovie = new clsVMMovie();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            string VMImage = "";
+            VMImage = VMImage.PadRight(200, 'A');
+            //test the valid method with the test data
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
+            //Test to ensure  error msg
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void VMImageMaxPlusOne()
+        {
+            //create an instance of the movie class
+            clsVMMovie AMovie = new clsVMMovie();
+            //string to store if result isvalid 
+            String Error = "";
+            //some test data to insert into the valid method 
+            string VMImage = "";
+            VMImage = VMImage.PadRight(201, 'A');
+            //test the valid method with the test data
+            Error = AMovie.Valid(VMmovieTitle, VMmovieGenre, VMmovieDuration, VMmovieRating, VMmovieReleaseDate, VMImage);
+            //Test to ensure  error msg
             Assert.AreNotEqual(Error, "");
         }
     }
