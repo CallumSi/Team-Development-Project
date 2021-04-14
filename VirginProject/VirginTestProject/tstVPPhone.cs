@@ -1106,9 +1106,9 @@ namespace VirginTestProject
             //create a string variable to store the validation 
             String Error = "";
             //create some test data to test the valid method 
-            string Price = "3000.00";
+            string AnPrice = "3000.00";
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, AnPrice, StockStatus,Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
