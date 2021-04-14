@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VMStaffMovie.aspx.cs" Inherits="VirginFrontEnd.VMMovie" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnVMStaffMovie.aspx.cs" Inherits="VirginFrontEnd.VMMovie" %>
 
 <!DOCTYPE html>
 
@@ -29,9 +29,19 @@
         <asp:Label ID="lblError" runat="server" Text="" CssClass="lblError"></asp:Label>
 
         <nav>
-            <asp:Button ID="btnAddMovie" CssClass="btnStaffAddMovie" runat="server" Text="Add Movie" OnClick="btnAddMovie_Click" />
-            <asp:Button ID="btnUpdateMovie" CssClass="btnStaffUpdateMovie" runat="server" Text="Update Movie" OnClick="btnUpdateMovie_Click" />
-            <asp:Button ID="btnDeleteMovie" CssClass="btnVMStaffDeleteMovie" runat="server" Text="Delete Movie" OnClick="btnDeleteMovie_Click" />
+            <ul>
+                <li>
+
+                    <asp:Button ID="btnAddMovie" CssClass="navButton" runat="server" Text="Add Movie" Width="159px" left="100px" OnClick="btnAddMovie_Click" />
+
+                    <asp:Button ID="btnUpdateMovie" CssClass="navButton" runat="server" Text="Update Movie" Width="159px" OnClick="btnUpdateMovie_Click" />
+
+                    <asp:Button ID="btnDeleteMovie" CssClass="navButton" runat="server" Text="Delete Movie" Width="159px" OnClick="btnDeleteMovie_Click" />
+
+                    <asp:Button ID="btnViewCart" CssClass="navButton" runat="server" Text="View Cart" Width="159px" />
+
+                </li>
+            </ul>
         </nav>
 
         <footer>

@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMMovie {
+    public partial class VirginCustomerMovieList {
         
         /// <summary>
         /// Head1 control.
@@ -85,30 +85,48 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnAddMovie control.
+        /// btnViewMovie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddMovie;
+        protected global::System.Web.UI.WebControls.Button btnViewMovie;
         
         /// <summary>
-        /// btnUpdateMovie control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateMovie;
+        protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// btnDeleteMovie control.
+        /// btnViewCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteMovie;
+        protected global::System.Web.UI.WebControls.Button btnViewCart;
+        
+        /// <summary>
+        /// btnEditAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditAccount;
+        
+        /// <summary>
+        /// btnLogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogOut;
     }
 }

@@ -7,7 +7,7 @@ namespace VirginClassLibrary
     {
         //private data member for the list
 
-        public List<clsVMMovie> mMovieList = new List<clsVMMovie>();
+        List<clsVMMovie> mMovieList = new List<clsVMMovie>();
 
         public List<clsVMMovie> MovieList
         {
@@ -24,9 +24,9 @@ namespace VirginClassLibrary
         }
 
         //private data member thisMovie
-        public clsVMMovie mThisMovie = new clsVMMovie();
+        clsVMMovie mThisMovie = new clsVMMovie();
 
-        //public property for ThisCustomer
+        //public property for ThisMovie
         public clsVMMovie ThisMovie
         {
             get
@@ -110,7 +110,6 @@ namespace VirginClassLibrary
             DB.AddParameter("@VMMovieRating", mThisMovie.VMmovieRating);
             DB.AddParameter("@VMMovieReleaseDate", mThisMovie.VMmovieReleaseDate);
             DB.AddParameter("@VMImage", mThisMovie.VMImage);
-
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVMMovie_Insert");
         }
@@ -134,7 +133,6 @@ namespace VirginClassLibrary
 
         public void Delete()
         {
-            //deletes the record pointed to by thisCustomer
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameter for the stored procedure
