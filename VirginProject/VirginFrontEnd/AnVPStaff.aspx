@@ -10,8 +10,8 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblStaffFirstName" runat="server" style="z-index: 1; left: 31px; top: 73px; position: absolute" Text="First Name"></asp:Label>
         <asp:Label ID="lblStaffLastName" runat="server" style="z-index: 1; left: 33px; top: 118px; position: absolute" Text="LastName"></asp:Label>
-        <asp:Label ID="lblStaffStreet" runat="server" style="z-index: 1; left: 34px; top: 165px; position: absolute" Text="Street"></asp:Label>
-        <asp:Label ID="lblStaffAddres" runat="server" style="z-index: 1; left: 36px; top: 208px; position: absolute" Text="Address"></asp:Label>
+        <asp:Label ID="lblStaffStreet" runat="server" style="z-index: 1; left: 32px; top: 165px; position: absolute" Text="Street"></asp:Label>
+        <asp:Label ID="lblStaffAddres" runat="server" style="z-index: 1; left: 32px; top: 208px; position: absolute" Text="Address"></asp:Label>
         <asp:Label ID="lblStaffPostcode" runat="server" style="z-index: 1; left: 40px; top: 260px; position: absolute" Text="Postcode"></asp:Label>
         <asp:Label ID="lblStaffEmail" runat="server" style="z-index: 1; left: 43px; top: 311px; position: absolute; bottom: 327px" Text="Email"></asp:Label>
         <asp:Label ID="lblStaffTelephone" runat="server" style="z-index: 1; left: 41px; top: 362px; position: absolute" Text="Telephone"></asp:Label>

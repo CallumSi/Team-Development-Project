@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace VirginClassLibrary
 {
@@ -8,7 +13,7 @@ namespace VirginClassLibrary
         private Int32 mCartNo;
         //Cart Attributes
         String mProducts;
-
+        
         //CartNo Property
         public int CartNo
 
@@ -47,17 +52,8 @@ namespace VirginClassLibrary
 
         }
 
-
-        ////method to checkout 
-        //public void Checkout()
-        //{
-        //    //create an instance of the order class
-        //    clsVPOrder Order = new clsVPOrder();
-        //    //invoke the ProcessCart method
-        //    Order.ProcessCart(this);
-        //}
-
-
+     
+        
         public bool Find(int CartNo)
         {
             //create an instance of the data connection
