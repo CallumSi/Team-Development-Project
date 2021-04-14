@@ -30,7 +30,7 @@
             <%--LIST BOX: HOSPITAL--%>
             <asp:ListBox ID="lstHospital" runat="server" CssClass="lstHospital"></asp:ListBox>
             <%--LABEL: ERROR--%>
-            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text="⚠️ SYSTEM MESSAGES "></asp:Label>
+            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
             <%--TEXTBOX: HOSPITAL SEARCH--%>
             <asp:TextBox ID="txtHospitalSearch" runat="server" CssClass="txtHospitalSearch"></asp:TextBox>
             <%--BUTTON: CLOSE--%>

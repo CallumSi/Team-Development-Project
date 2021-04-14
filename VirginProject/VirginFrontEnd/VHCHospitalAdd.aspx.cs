@@ -29,7 +29,54 @@ namespace VirginFrontEnd
             }
         }
 
-         void DisplayHospitals()
+        //function for adding new records
+        void Add()
+        {
+            //create an instance of the hospital class
+            clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
+            //validate the data on the web form
+            String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
+            //if the data is OK then add it to the object
+            if (Error == "")
+            {
+                AllHospitals.ThisHospital.Hospital_Name = txtHospital_Name.Text;
+                AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
+                //add the record
+                AllHospitals.Add();
+                //redirect to the main page
+                Response.Redirect("VHCHospital.aspx");
+            }
+
+            else
+            {
+                //report an error
+                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+            }
+        }
+
+
+        void Update()
+        {
+            //create an instance of the hospital class
+            VirginClassLibrary.clsVHCHospitalCollection AllHospitals = new VirginClassLibrary.clsVHCHospitalCollection();
+            //validate the data on the web form
+            String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
+            //if the data is OK then add it to the object
+            if (Error == "")
+            {
+                //find the record to update 
+                AllHospitals.ThisHospital.Find(Hospital_ID);
+                //get the data entered by the user 
+                AllHospitals.ThisHospital.Hospital_Name = txtHospital_Name.Text;
+                AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
+                //update the record 
+                AllHospitals.Update();
+                //all done so redirect back to the main page 
+                Response.Redirect("VHCHospital.aspx");
+            }
+        }
+
+        void DisplayHospitals()
         {
             //create an instance of the hospital class
             clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
@@ -52,71 +99,24 @@ namespace VirginFrontEnd
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+
             if (Hospital_ID == -1)
             {
                 //Add the new record
                 Add();
-
             }
 
             else
             {
-                //Update the record
+                ////Update the record
                 Update();
             }
         }
 
-        //function for adding new records
-        void Add()
-        {
-            //create an instance of the hospital class
-            VirginClassLibrary.clsVHCHospitalCollection AllHospitals = new VirginClassLibrary.clsVHCHospitalCollection();
-            //validate the data on the web form
-            String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
-            //if the data is OK then add it to the object
-            if (Error == "")
-            {
-                AllHospitals.ThisHospital.Hospital_Name = txtHospital_Name.Text;
-                AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
-                //add the record
-                AllHospitals.Add();
-                //redirect to the main page
-                Response.Redirect("VHCHospital.aspx");
-            }
-
-            else
-            {
-                //report an error
-                lblError.Text = "There are problems with the data entered : " + "  " + Error;
-            }
-        }
         
-
-         void Update()
-         {
-            //create an instance of the hospital class
-            VirginClassLibrary.clsVHCHospitalCollection AllHospitals = new VirginClassLibrary.clsVHCHospitalCollection();
-            //validate the data on the web form
-            String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
-            //if the data is OK then add it to the object
-            if (Error == "")
-            {
-                //find the record to update 
-                AllHospitals.ThisHospital.Find(Hospital_ID);
-                //get the data entered by the user 
-                AllHospitals.ThisHospital.Hospital_Name = txtHospital_Name.Text;
-                AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
-                //update the record 
-                AllHospitals.Update();
-                //all done so redirect back to the main page 
-                Response.Redirect("VHCHospital.aspx");
-            }
-         }
-
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
-
         }
     }
     

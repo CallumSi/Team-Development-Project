@@ -11,7 +11,7 @@ namespace VirginFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
@@ -21,6 +21,7 @@ namespace VirginFrontEnd
 
         protected void btnAddHospital_Click(object sender, EventArgs e)
         {
+            Session["Hospital_ID"] = -1;
             Response.Redirect("VHCHospitalAdd.aspx");
         }
 

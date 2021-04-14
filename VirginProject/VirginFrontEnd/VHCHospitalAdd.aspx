@@ -36,11 +36,11 @@
             <%--TEXTBOX:HOSPITAL PLACE--%>    
             <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospital_Place">Enter Hospital Place</asp:TextBox>
             <%--BUTTON: SUBMIT--%>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" />
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
             <%--BUTTON: CLOSE--%>
             <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
             <%--LABEL:ERROR MESSAGE--%>
-            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text="⚠️ SYSTEM MESSAGES "></asp:Label>
+            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
         </article>
 
         <%--FOOTER SECTION--%>
