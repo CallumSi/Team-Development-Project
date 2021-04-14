@@ -152,7 +152,7 @@ namespace VirginClassLibrary
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("Staff_ID", mThisStaff.Staff_ID);
+            DB.AddParameter("@Staff_ID", mThisStaff.Staff_ID);
             DB.AddParameter("@Staff_FirstName", mThisStaff.Staff_FirstName);
             DB.AddParameter("@Staff_LastName", mThisStaff.Staff_LastName);
             DB.AddParameter("@Staff_Street", mThisStaff.Staff_Street);

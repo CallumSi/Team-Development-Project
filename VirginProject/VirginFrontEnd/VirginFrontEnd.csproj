@@ -73,6 +73,7 @@
     <Content Include="AnVMPayment.aspx" />
     <Content Include="AnVMStaff.aspx" />
     <Content Include="AnVPStaff.aspx" />
+    <Content Include="AnVPCustomer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminList.aspx" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="AnVPStaff.aspx.designer.cs">
       <DependentUpon>AnVPStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnVPCustomer.aspx.cs">
+      <DependentUpon>AnVPCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVPCustomer.aspx.designer.cs">
+      <DependentUpon>AnVPCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

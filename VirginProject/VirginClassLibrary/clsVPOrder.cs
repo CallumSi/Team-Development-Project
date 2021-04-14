@@ -11,6 +11,22 @@ namespace VirginClassLibrary
         Int32 mCustomer_ID;
         DateTime mDelivery_Date;
 
+        //public void ProcessCart (clsVPOrder ShoppingCart)
+        //{
+        //    ///at this point all the data has been captured by the presentation layer
+        //    ///this is the stage where all of the data is passed to the data layer via the two stored procedures like so
+        //    ///
+
+        //    //first we add the order to the database using data from the cart's private data member s
+        //    //connect to the database
+        //    clsDataConnection DB = new clsDataConnection();
+        //    //pass the data as parameters to the data layer
+        //    DB.AddParameter(Delivery_Date, DateTime.Now);
+        //    DB.AddParameter()
+        //}
+
+
+
 
         public int Order_ID
 

@@ -18,7 +18,7 @@ namespace VirginFrontEnd
             Staff_ID = Convert.ToInt32(Session["Staff_ID"]);
             if (IsPostBack == false)
             {
-                //populate the list of customer
+                //populate the list of staff
                 DisplayStaff();
                 //if this is not a new record
                 if (Staff_ID !=-1) 
@@ -51,22 +51,22 @@ namespace VirginFrontEnd
         void Add()
         {
             //create an instance of the staff list
-            clsVPStaffCollection AllStaff = new clsVPStaffCollection();
+            clsVPStaffCollection StaffCollection = new clsVPStaffCollection();
             //validate the data on the web form
-            string Error = AllStaff.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
+            string Error = StaffCollection.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
             //if the data is ok then add it to the object
             if (Error == "")
             {
                 //get the data entered by the user 
-                AllStaff.ThisStaff.Staff_FirstName = txtStaffFirstName.Text;
-                AllStaff.ThisStaff.Staff_LastName = txtStaffLastName.Text;
-                AllStaff.ThisStaff.Staff_Street = txtStaffStreet.Text;
-                AllStaff.ThisStaff.Staff_Address = txtStaffAddress.Text;
-                AllStaff.ThisStaff.Staff_Postcode = txtStaffPostcode.Text;
-                AllStaff.ThisStaff.Staff_Email = txtStaffEmail.Text;
-                AllStaff.ThisStaff.Staff_Telephone = txtStaffTelephone.Text;
+                StaffCollection.ThisStaff.Staff_FirstName = txtStaffFirstName.Text;
+                StaffCollection.ThisStaff.Staff_LastName = txtStaffLastName.Text;
+                StaffCollection.ThisStaff.Staff_Street = txtStaffStreet.Text;
+                StaffCollection.ThisStaff.Staff_Address = txtStaffAddress.Text;
+                StaffCollection.ThisStaff.Staff_Postcode = txtStaffPostcode.Text;
+                StaffCollection.ThisStaff.Staff_Email = txtStaffEmail.Text;
+                StaffCollection.ThisStaff.Staff_Telephone = txtStaffTelephone.Text;
                 //add the record
-                AllStaff.Add();
+                StaffCollection.Add();
                 //redirect back to the main page
                 Response.Redirect("VPStaffList.aspx");
             }
