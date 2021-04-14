@@ -29,7 +29,7 @@ namespace VirginFrontEnd
             //lblMovieDuration.Text = VMmovieReleaseDate.ToString();
             //get the customersid and movieid  and cart from session object 
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
-            VMMovieID = Convert.ToInt32(Request.QueryString["ListingID"]);
+            VMMovieID = Convert.ToInt32(Session["VMMovieID"]);
             MyCart = (clsVMCart)Session["MyCart"];
 
             if (IsPostBack == false)

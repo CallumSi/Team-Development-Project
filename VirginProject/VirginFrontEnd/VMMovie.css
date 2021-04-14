@@ -557,14 +557,6 @@ footer {
     width: 303px;
 }
 
-.row {
-   list-style:none;
-   background-color:blue;
-   top: 5%;
-   right: 20%;
-
-}
-
 .btnAddToCart {
     z-index: 1;
     width: 180px;
@@ -576,6 +568,12 @@ footer {
     color: black;
 }
 
+.lblUsername{
+    position:fixed;
+    top:80px; 
+    left:500px; 
+    background:yellow;
+}
 /*.Movies {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -604,3 +602,39 @@ footer {
     height: 30vh;
     object-fit: cover;
 }*/
+/*############ CUSTOMER SHOPPING CART ##############*/
+.lstShoppingCart {
+    top: 300px;
+    left: 100px;
+    height: 293px;
+    width: 553px;
+}
+
+.btnContinueShopping, .btnVMovieCheckout {
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 170px;
+}
+
+.btnContinueShopping {
+    position: fixed;
+    top: 700px;
+    left: 300px; 
+}
+
+.btnVMovieCheckout {
+    position: fixed;
+    top: 700px;
+    left: 500px;
+}
+
+.lblCheckoutError {
+    position: fixed;
+    top: 710px;
+    left: 680px;
+    width: 500px; 
+}
+
+/*############# CUSTOMER CHECKOUT ########################*/
