@@ -32,9 +32,9 @@
             <%--LABEL:HOSPITAL PLACE--%>
             <asp:Label ID="lblHospital_Place" runat="server" CssClass="lblHospital_Place" Text="HOSPITAL PLACE : "></asp:Label>
             <%--TEXTBOX:HOSPITAL NAME--%>     
-            <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospital_Name">Enter Hospital Name</asp:TextBox>
+            <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospital_Name"></asp:TextBox>
             <%--TEXTBOX:HOSPITAL PLACE--%>    
-            <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospital_Place">Enter Hospital Place</asp:TextBox>
+            <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospital_Place"></asp:TextBox>
             <%--BUTTON: SUBMIT--%>
             <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
             <%--BUTTON: CLOSE--%>

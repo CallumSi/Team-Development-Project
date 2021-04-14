@@ -1,6 +1,7 @@
 ﻿/* Font Style from Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /* Header Section*/
 header {
     background-color: #27183d;
@@ -43,7 +44,6 @@ h4 {
     left: 850px;
 }
 
-
 /* Body Section*/
 body {
     background-color: #CCCCCC;
@@ -63,7 +63,7 @@ nav {
 }
 
 /*Navigation Buttons*/
-.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords {
+.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords, .btnYes, .btnNo {
     z-index: 1;
     width: 200px;
     height: 50px;
@@ -77,6 +77,32 @@ nav {
         background-color: #27183D;
         color: white;
     }
+
+/*Hospital Delete Page - Yes Button*/
+.btnYes {
+    position: fixed;
+    top: 500px;
+    left: 855px;
+}
+
+/*Hospital Delete Page - Yes Button Hover*/
+.btnYes:hover {
+    background-color: green;
+    color: white;
+}
+
+/*Hospital Delete Page - No Button*/
+.btnNo {
+    position: fixed;
+    top: 500px;
+    left: 1155px;
+}
+
+/*Hospital Delete Page - No Button Hover*/
+.btnNo:hover {
+    background-color: red;
+    color: white;
+}
 
 /*Home Navigation Button*/
 .Home {
@@ -96,21 +122,20 @@ nav {
 .EditHospital {
     position: fixed;
     top: 250px;
-    left: 45px;
+    left: 1600px;
 }
 
 /*Delete Navigation Button*/
 .DeleteHospital {
     position: fixed;
     top: 325px;
-    left: 45px;
-    bottom: 282px;
+    left: 1600px;
 }
 
 /*List Navigation Button*/
 .ListHospitals {
     position: fixed;
-    top: 400px;
+    top: 250px;
     left: 45px;
 }
 
@@ -127,6 +152,14 @@ nav {
     top: 325px;
     left: 1370px;
 }
+
+/*Total Records Button*/
+.btnTotalRecords {
+    position: fixed;
+    top: 400px;
+    left: 1370px;
+}
+
 /*Article Section*/
 article {
     position: fixed;
@@ -191,21 +224,30 @@ footer {
     font-family: 'Share Tech Mono', monospace;
 }
 
+/*Delete Error Message Label*/
+.lblDeleteErrorMessage {
+    position: absolute;
+    top: 230px;
+    left: 350px;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: darkorange;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Filter Hospital Label*/
 .lblFilterHospital {
     position: absolute;
     top: 487px;
-    left: 330px;
+    left: 375px;
     color: black;
     font-weight: bolder;
     font-size: 20px;
     letter-spacing: 1px;
 }
 
-.btnTotalRecords {
-    position: fixed;
-    top: 400px;
-    left: 1370px;
-}
 /*Hospital ListBox*/
 .lstHospital {
     background-color: #eeecef;
@@ -221,8 +263,8 @@ footer {
 .txtHospitalSearch {
     position: fixed;
     top: 580px;
-    left: 850px;
-    width: 490px;
+    left: 900px;
+    width: 400px;
     height: 30px;
     font-size: 18px;
     background-color:#e8e5e5;
@@ -230,10 +272,10 @@ footer {
 /*Hospital Name Textbox*/
 .txtHospital_Name {
     position: absolute;
-    top: 205px;
+    top: 200px;
     left: 730px;
-    width: 250px;
-    height: 20px;
+    width: 257px;
+    height: 25px;
 }
 
 /*Hospital Place Textbox*/
@@ -261,8 +303,8 @@ footer {
 /* Close Button */
 .btnClose {
     position: fixed;
-    top: 110px;
-    left: 1825px;
+    top: 109px;
+    left: 1823px;
     z-index: 1;
     width: 60px;
     height: 35px;
