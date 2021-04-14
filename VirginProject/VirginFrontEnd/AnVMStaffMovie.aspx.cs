@@ -38,7 +38,7 @@ namespace VirginFrontEnd
             //use session object to indicate new record
             Session["VMMovieID"] = -1;
             //redirect to user data entry page
-            Response.Redirect("AnVMStaffAddMovie.aspx");
+            Response.Redirect("VMStaffAddMovie.aspx");
         }
 
         protected void btnUpdateMovie_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace VirginFrontEnd
                 //store the data in the session object
                 Session["VMMovieID"] = VMMovieID;
                 //redirect to the edit page
-                Response.Redirect("AnVMStaffAddMovie.aspx");
+                Response.Redirect("AnVMCustomer.aspx");
             }
             //if no record has been selected
             else
@@ -75,7 +75,7 @@ namespace VirginFrontEnd
                 //store the data in the session object
                 Session["VMMovieID"] = VMMovieID;
                 //redirect to the delete page
-                Response.Redirect("VMMovieDelete.aspx");
+                Response.Redirect("VMCustomerDelete.aspx");
             }
             //if no record has been selected
             else

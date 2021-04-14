@@ -305,38 +305,40 @@ namespace VirginClassLibrary
 
             //***VALIDATION PRICE***//
 
-            if (Price.Length > 0)
-            {
                 try
                 {
                     ConvertedPrice = Convert.ToDecimal(Price);
                     int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
                     if (decimalplaces == 2)
                     {
-                        if (ConvertedPrice > 100.00m && ConvertedPrice < 2000.00m)
+                        if (ConvertedPrice >= 100.00m && ConvertedPrice < 2000.01m)
                         {
                             Error += "";
                         }
-                    }
+                        else
+                        {
+                            Error += "THE PRICE MUST BE BETWEEN £100.00 AND £2000.00";
+                        }
+                }
                     else
                     {
-                        Error += "The price must be between £100.00 and £2000.00";
+                        Error += "THE PRICE MUST HAVE 2 DECIMAL PLACES";
                     }
                 }
                 catch
                 {
-                    Error += "The price must not be left blank";
+                    Error += "THE PRICE MUST NOT BE LEFT BLANK";
                 }
 
-            }
+          
 
-            //***QUANTITY***//
+            //*** VALIDATION QUANTITY***//
 
             try
             {
                 if (Quantity == "")
                 {
-                    Error += "Please Enter a Quantity";
+                    Error += "PLEASE ENTER A QUANTITY";
                 }
                 else
                 {
@@ -348,14 +350,14 @@ namespace VirginClassLibrary
                     else
                     {
                         //return error message 
-                        Error += "The quantity must be out of 5 ";
+                        Error += "THE QUANTITY LIMIT IS 5";
                     }
                 }
             }
             catch
             {
                 //return error message 
-                Error += "The quantity must not be left blank ";
+                Error += "THE QUANTITY MUST NOT BE LEFT BLANK";
 
             }
 

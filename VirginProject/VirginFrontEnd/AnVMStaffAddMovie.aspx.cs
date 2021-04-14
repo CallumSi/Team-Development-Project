@@ -26,24 +26,21 @@ namespace VirginFrontEnd
                     DisplayVMMovie();
                 }
             }
+        }
 
-            void DisplayVMMovie()
-            {
-                //create an instance of the movie class
-                clsVMMovieCollection allMovies = new clsVMMovieCollection();
-                //find the record to update
-                allMovies.ThisMovie.Find(VMMovieID);
-                //display the data for this record
-                txtMovieTitle.Text = allMovies.ThisMovie.VMmovieTitle;
-                txtMovieGenre.Text = allMovies.ThisMovie.VMmovieGenre;
-                txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
-                txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
-                txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
- 
-
-
-            }
-
+        void DisplayVMMovie()
+        {
+            //create an instance of the movie class
+            clsVMMovieCollection allMovies = new clsVMMovieCollection();
+            //find the record to update
+            allMovies.ThisMovie.Find(VMMovieID);
+            //display the data for this record
+            txtMovieTitle.Text = allMovies.ThisMovie.VMmovieTitle;
+            txtMovieGenre.Text = allMovies.ThisMovie.VMmovieGenre;
+            txtMovieDuration.Text = allMovies.ThisMovie.VMmovieDuration.ToString();
+            txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
+            txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
+            txtMovieImage.Text = allMovies.ThisMovie.VMImage;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -102,13 +99,13 @@ namespace VirginFrontEnd
                 //find the record to update
                 allMovies.ThisMovie.Find(VMMovieID);
                 //get the data entered by the user
+                allMovies.ThisMovie.VMMovieID = VMMovieID;
                 allMovies.ThisMovie.VMmovieTitle = txtMovieTitle.Text;
                 allMovies.ThisMovie.VMmovieGenre = txtMovieGenre.Text;
                 allMovies.ThisMovie.VMmovieDuration = Convert.ToInt32(txtMovieDuration.Text);
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
                 allMovies.ThisMovie.VMImage = txtMovieImage.Text;
-
 
                 //add the record
                 allMovies.Update();
@@ -128,15 +125,9 @@ namespace VirginFrontEnd
             Response.Redirect("VMStaffMovie.aspx");
         }
 
-        protected void btnUpdateMovie_Click(object sender, EventArgs e)
+        protected void btnStaffHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VMStaffMovie.aspx");
-        }
-
-        protected void btnDeleteMovie_Click()
-        {
-            Response.Redirect("VMStaffMovie.aspx");
-            
         }
     }
 }

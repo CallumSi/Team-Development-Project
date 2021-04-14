@@ -10,6 +10,7 @@ namespace VirginFrontEnd
 {
     public partial class VMCheckout : System.Web.UI.Page
     {
+        Int32 VMCustomerID;
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,32 @@ namespace VirginFrontEnd
             {
                 lblError.Text = "Payment details not valid";
             }
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
+            //redirect to home page
+            Response.Redirect("VirginCustomerMovieList.aspx");
+        }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
+            //redirect to view cart page
+            Response.Redirect("VMViewCart.aspx");
+        }
+
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

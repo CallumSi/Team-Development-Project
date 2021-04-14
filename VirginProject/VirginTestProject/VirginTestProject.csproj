@@ -96,7 +96,6 @@
     <Compile Include="tstVPDelivery.cs" />
     <Compile Include="tstVPDeliveryCollection.cs" />
     <Compile Include="tstVPOrder.cs" />
-    <Compile Include="tstVPOrderLine.cs" />
     <Compile Include="tstVPPayment.cs" />
     <Compile Include="tstVPPaymentCollection.cs" />
     <Compile Include="tstVPPhone.cs" />

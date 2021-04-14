@@ -8,7 +8,7 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class VMMovie : System.Web.UI.Page
+    public partial class VirginCustomerMovieList : System.Web.UI.Page
     {
         Int32 VMMovieID;
 
@@ -33,55 +33,40 @@ namespace VirginFrontEnd
             lstMovies.DataBind();
         }
 
-        protected void btnAddMovie_Click(object sender, EventArgs e)
-        {
-            //use session object to indicate new record
-            Session["VMMovieID"] = -1;
-            //redirect to user data entry page
-            Response.Redirect("AnVMStaffAddMovie.aspx");
-        }
-
-        protected void btnUpdateMovie_Click(object sender, EventArgs e)
+        protected void btnViewMovie_Click(object sender, EventArgs e)
         {
             //var to store the primary key value of the record to be edited
             Int32 VMMovieID;
+            //String VMmovieTitle;
+            //String VMmovieGenre;
+            //Int32 VMmovieDuration;
+            //Int32 VMmovieRating;
+            //DateTime VMmovieReleaseDate;
             //if a record has been selected from the list
             if (lstMovies.SelectedIndex != -1)
             {
                 //get the primary key of the record to edit
                 VMMovieID = Convert.ToInt32(lstMovies.SelectedValue);
+                //VMmovieTitle = lstMovies.SelectedItem.Text;
+                //VMmovieGenre = lstMovies.SelectedItem.Text;
+                //VMmovieDuration = Convert.ToInt32(lstMovies.SelectedValue);
+                //VMmovieRating = Convert.ToInt32(lstMovies.SelectedValue);
+                //VMmovieReleaseDate = Convert.ToDateTime(lstMovies.ToString());
                 //store the data in the session object
                 Session["VMMovieID"] = VMMovieID;
+                //Session["VMMovieTitle"] = VMmovieTitle;
+                //Session["VMMovieGenre"] = VMmovieGenre;
+                //Session["VMMovieDuration"] = VMmovieDuration;
+                //Session["VMMovieRating"] = VMmovieRating;
+                //Session["VMMovieReleaseDate"] = VMmovieReleaseDate;
                 //redirect to the edit page
-                Response.Redirect("AnVMStaffAddMovie.aspx");
+                Response.Redirect("VMMovieViewer.aspx");
             }
             //if no record has been selected
             else
             {
                 //display an error 
-                lblError.Text = "Please select a record to edit from the list";
-            }
-        }
-
-        protected void btnDeleteMovie_Click(object sender, EventArgs e)
-        {
-            //var to store the primary key value of the record to be deleted
-            Int32 VMMovieID;
-            //if a record has been selected from the list
-            if (lstMovies.SelectedIndex != -1)
-            {
-                //get the primary key of the record to delete
-                VMMovieID = Convert.ToInt32(lstMovies.SelectedValue);
-                //store the data in the session object
-                Session["VMMovieID"] = VMMovieID;
-                //redirect to the delete page
-                Response.Redirect("VMMovieDelete.aspx");
-            }
-            //if no record has been selected
-            else
-            {
-                //display an error 
-                lblError.Text = "Please select a record to delete from the list";
+                lblError.Text = "Please select a movie to view from the list";
             }
         }
 
@@ -127,6 +112,26 @@ namespace VirginFrontEnd
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
             DisplayVMMovie();
+        }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginCustomerMovieList.aspx");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿/* Font Style from Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 /* Header Section*/
 header {
     background-color: #27183d;
@@ -63,7 +63,7 @@ nav {
 }
 
 /*Navigation Buttons*/
-.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit {
+.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords {
     z-index: 1;
     width: 200px;
     height: 50px;
@@ -72,8 +72,8 @@ nav {
     transition-duration: 0.5s;
 }
 
-    /*Navigation Buttons - Hover Effect*/
-    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover {
+ /*Navigation Buttons - Hover Effect*/
+    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover {
         background-color: #27183D;
         color: white;
     }
@@ -104,6 +104,7 @@ nav {
     position: fixed;
     top: 325px;
     left: 45px;
+    bottom: 282px;
 }
 
 /*List Navigation Button*/
@@ -113,6 +114,19 @@ nav {
     left: 45px;
 }
 
+/*Display All Button*/
+.btnDisplayAllHospitals {
+    position: fixed;
+    top: 250px;
+    left:1370px;
+}
+
+/*Apply Hospital Filter Button*/
+.btnHospitalApplyFilter {
+    position: fixed;
+    top: 325px;
+    left: 1370px;
+}
 /*Article Section*/
 article {
     position: fixed;
@@ -137,14 +151,15 @@ footer {
     width: 105%;
 }
 
+/*Footer Information*/
 #FooterText {
     position: fixed;
-    left: 45%;
-    top: 95%;
+    left: 900px;
+    top: 900px;
     font-size:10pt;
 }
 
-/*VHCHospital - Add Section Labels*/
+/*Hosptial Name Label*/
 .lblHospital_Name {
     position: absolute;
     top: 200px;
@@ -154,6 +169,7 @@ footer {
     font-size:20px;
 }
 
+/*Hosptial Place Label*/
 .lblHospital_Place {
     position: absolute;
     top: 270px;
@@ -162,26 +178,71 @@ footer {
     letter-spacing: 2px;
 }
 
+/*Error Message Label*/
+.lblErrorMessage {
+    position: absolute;
+    top: 700px;
+    left: 25px;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #cc0000;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.lblFilterHospital {
+    position: absolute;
+    top: 487px;
+    left: 330px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.btnTotalRecords {
+    position: fixed;
+    top: 400px;
+    left: 1370px;
+}
+/*Hospital ListBox*/
+.lstHospital {
+    background-color: #eeecef;
+    position: fixed;
+    top: 250px;
+    left: 550px;
+    width: 800px;
+    height: 300px;
+    font-size: 18px;
+}
+
+/*Hospital Search Textbox*/
+.txtHospitalSearch {
+    position: fixed;
+    top: 580px;
+    left: 850px;
+    width: 490px;
+    height: 30px;
+    font-size: 18px;
+    background-color:#e8e5e5;
+}
 /*Hospital Name Textbox*/
-.txtHospitalName {
+.txtHospital_Name {
     position: absolute;
     top: 205px;
     left: 730px;
-    font-style: italic;
     width: 250px;
     height: 20px;
-    color:dimgray;
 }
 
-/*Hospital Place DropDownList*/
-.ddlHospitalPlace {
+/*Hospital Place Textbox*/
+.txtHospital_Place {
     position: absolute;
     top: 270px;
     left: 730px;
-    font-style: italic;
     width: 257px;
     height: 25px;
-    color: dimgray;
 }
 
 /* Submit Button */
