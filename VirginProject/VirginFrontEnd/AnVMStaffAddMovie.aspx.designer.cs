@@ -94,6 +94,15 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblMovieImage;
         
         /// <summary>
+        /// lblMoviePrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoviePrice;
+        
+        /// <summary>
         /// txtMovieTitle control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMovieImage;
+        
+        /// <summary>
+        /// txtMoviePrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoviePrice;
         
         /// <summary>
         /// btnOK control.

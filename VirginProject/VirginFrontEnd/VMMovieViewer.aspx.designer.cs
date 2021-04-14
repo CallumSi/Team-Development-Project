@@ -139,6 +139,24 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblMovieReleaseDate;
         
         /// <summary>
+        /// lblMoviePriceTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoviePriceTitle;
+        
+        /// <summary>
+        /// lblMoviePrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoviePrice;
+        
+        /// <summary>
         /// btnAddToCart control.
         /// </summary>
         /// <remarks>

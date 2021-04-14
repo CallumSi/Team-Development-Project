@@ -45,6 +45,12 @@
                     <asp:Label ID="lblMovieReleaseDate" runat="server" Style="z-index: 1;"></asp:Label>
                 </li>
 
+                <li>
+                    <asp:Label ID="lblMoviePriceTitle" runat="server" Text="Movie Price: " CssClass="lblPriceViewer"></asp:Label>
+                    <asp:Label ID="lblMoviePrice" runat="server" Style="z-index: 1"></asp:Label>
+
+                </li>
+
                 <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" />
 
                 <li>

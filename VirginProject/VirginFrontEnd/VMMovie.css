@@ -284,6 +284,18 @@ footer {
     text-align: right;
 }
 
+.lblMoviePrice {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 640px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
 .txtMovieTitle {
     z-index: 1;
     width: 290px;
@@ -350,11 +362,22 @@ footer {
     color: black;
 }
 
+.txtMoviePrice {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 637px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
 .btnStaffMovieOK {
     z-index: 1;
     width: 125px;
     position: fixed;
-    top: 620px;
+    top: 710px;
     left: 930px;
     font-size: medium;
     font-weight: bold;
@@ -365,7 +388,7 @@ footer {
     z-index: 1;
     width: 125px;
     position: fixed;
-    top: 620px;
+    top: 710px;
     left: 1100px;
     font-size: medium;
     font-weight: bold;
@@ -376,7 +399,7 @@ footer {
     z-index: 1;
     width: 30%;
     position: fixed;
-    top: 670px;
+    top: 750px;
     left: 730px;
     font-size: medium;
     font-weight: bold;
@@ -544,7 +567,7 @@ footer {
     padding-top: 50px;
     list-style: none;
 }
-.AnMovie li {
+.li {
     padding: 10px;
     list-style: none;
 }
@@ -574,6 +597,8 @@ footer {
     left:500px; 
     background:yellow;
 }
+
+.lbl
 /*.Movies {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

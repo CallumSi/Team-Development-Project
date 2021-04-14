@@ -14,6 +14,7 @@ namespace VirginClassLibrary
         Int32 mVMmovieRating;
         DateTime mVMmovieReleaseDate;
         String mVMImage;
+        Decimal mVMmoviePrice;
 
 
         //Public property for MovieID
@@ -121,6 +122,20 @@ namespace VirginClassLibrary
             }
         }
 
+        public decimal VMmoviePrice
+        {
+            get
+            {
+                //return the private data
+                return mVMmoviePrice;
+            }
+            set
+            {
+                //set the private data
+                mVMmoviePrice = value;
+            }
+        }
+
         public bool Find(int VMMovieID)
         {
             //create an instance of the data connection
@@ -140,6 +155,7 @@ namespace VirginClassLibrary
                 mVMmovieRating = Convert.ToInt32(DB.DataTable.Rows[0]["VMMovieRating"]);
                 mVMmovieReleaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["VMMovieReleaseDate"]);
                 mVMImage = Convert.ToString(DB.DataTable.Rows[0]["VMImage"]);
+                VMmoviePrice = Convert.ToDecimal(DB.DataTable.Rows[0]["VMMoviePrice"]);
                 //return that everything worked OK
                 return true;
             }
@@ -151,8 +167,10 @@ namespace VirginClassLibrary
             }
         }
 
-        public string Valid(string VMmovieTitle, string VMmovieGenre, string VMmovieDuration, string VMmovieRating, string VMmovieReleaseDate, string VMImage)
+        public string Valid(string VMmovieTitle, string VMmovieGenre, string VMmovieDuration, string VMmovieRating, string VMmovieReleaseDate, string VMImage, string VMmoviePrice)
         {
+
+
             //create a string variable to store the error message
             String Error = "";
 
@@ -263,6 +281,22 @@ namespace VirginClassLibrary
                 Error = Error + "Movie Release Date was invalid. Movie Image cannot be blank or exceed 200 characters" + " ";
             }
 
+            //**************** MOVIE PRICE ***********************// 
+
+            try
+            {
+                decimal PriceTemp = Convert.ToDecimal(VMmoviePrice);
+                if (PriceTemp < 5.01m | PriceTemp > 100.01m)
+                {
+                    //set the error message
+                    Error = Error + "Movie Price must be between £5 and £100" + " ";
+                }
+            }
+            catch
+            {
+                //record the error message 
+                Error = Error + "The data was not a valid price : ";
+            }
             //return any error messages
             return Error;
         }

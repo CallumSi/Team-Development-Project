@@ -41,6 +41,7 @@ namespace VirginFrontEnd
             txtMovieRating.Text = allMovies.ThisMovie.VMmovieRating.ToString();
             txtMovieReleaseDate.Text = allMovies.ThisMovie.VMmovieReleaseDate.ToString();
             txtMovieImage.Text = allMovies.ThisMovie.VMImage;
+            txtMoviePrice.Text = allMovies.ThisMovie.VMmoviePrice.ToString();
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace VirginFrontEnd
             //create an instance of the movie class
             clsVMMovieCollection allMovies = new clsVMMovieCollection();
             //validate the data on the web form
-            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text); 
+            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text, txtMoviePrice.Text); 
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -74,6 +75,7 @@ namespace VirginFrontEnd
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
                 allMovies.ThisMovie.VMImage = txtMovieImage.Text;
+                allMovies.ThisMovie.VMmoviePrice = Convert.ToDecimal(txtMoviePrice.Text);
                 //add the record
                 allMovies.Add();
                 //redirect to the main page
@@ -92,7 +94,7 @@ namespace VirginFrontEnd
             //create an instance of the movie class
             clsVMMovieCollection allMovies = new clsVMMovieCollection();
             //validate the data on the web form
-            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text);
+            String Error = allMovies.ThisMovie.Valid(txtMovieTitle.Text, txtMovieGenre.Text, txtMovieDuration.Text, txtMovieRating.Text, txtMovieReleaseDate.Text, txtMovieImage.Text, txtMoviePrice.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -106,6 +108,7 @@ namespace VirginFrontEnd
                 allMovies.ThisMovie.VMmovieRating = Convert.ToInt32(txtMovieRating.Text);
                 allMovies.ThisMovie.VMmovieReleaseDate = Convert.ToDateTime(txtMovieReleaseDate.Text);
                 allMovies.ThisMovie.VMImage = txtMovieImage.Text;
+                allMovies.ThisMovie.VMmoviePrice = Convert.ToDecimal(txtMoviePrice.Text);
 
                 //add the record
                 allMovies.Update();

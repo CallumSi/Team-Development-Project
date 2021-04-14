@@ -34,6 +34,7 @@ namespace VirginTestProject
             TestItem.VMmovieRating = 10;
             TestItem.VMmovieReleaseDate = Convert.ToDateTime("09/04/2021");
             TestItem.VMImage = @"http://placeimg.com/640/360/any";
+            TestItem.VMmoviePrice = 20;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -57,6 +58,7 @@ namespace VirginTestProject
             TestMovie.VMmovieRating = 8;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("15/05/2020");
             TestMovie.VMImage = @"http://placeimg.com/640/360/any";
+            TestMovie.VMmoviePrice = 10;
             //assign the data to the property
             allMovies.ThisMovie = TestMovie;
             //test to see that the two values are the same
@@ -79,6 +81,7 @@ namespace VirginTestProject
             TestMovie.VMmovieRating = 8;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("15/05/2020");
             TestMovie.VMImage = @"http://placeimg.com/640/360/any";
+            TestMovie.VMmoviePrice = 10;
             //add the item to the test list
             TestList.Add(TestMovie);
             //assign the data to the property
@@ -102,7 +105,8 @@ namespace VirginTestProject
             TestMovie.VMmovieDuration = 140;
             TestMovie.VMmovieRating = 7;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("01/01/2021");
-            TestMovie.VMImage = "https://dummyimage.com/300x300/000/fff";
+            TestMovie.VMImage = "http://placekitten.com/200/300";
+            TestMovie.VMmoviePrice = 35;
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
@@ -131,6 +135,7 @@ namespace VirginTestProject
             TestMovie.VMmovieRating = 8;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("15/05/2020");
             TestMovie.VMImage = @"http://placeimg.com/640/360/any";
+            TestMovie.VMmoviePrice = 35;
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
@@ -144,6 +149,7 @@ namespace VirginTestProject
             TestMovie.VMmovieRating = 10;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("01/01/2003");
             TestMovie.VMImage = @"https://dummyimage.com/300x300/000/fff";
+            TestMovie.VMmoviePrice = 55;
             //set the record based on the new test data
             allMovies.ThisMovie = TestMovie;
             //Update the record
@@ -171,6 +177,7 @@ namespace VirginTestProject
             TestMovie.VMmovieRating = 8;
             TestMovie.VMmovieReleaseDate = Convert.ToDateTime("15/05/2020");
             TestMovie.VMImage = @"http://placeimg.com/640/360/any";
+            TestMovie.VMmoviePrice = 10;
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
