@@ -42,20 +42,21 @@ namespace VirginFrontEnd
             }
         }
 
-            void DisplayMovieData()
-            {
-                //create an instance of the movie collection class
-                clsVMMovieCollection SomeMovie = new clsVMMovieCollection();
-                //find the movie to display
-                SomeMovie.ThisMovie.Find(VMMovieID);
-                //display the data for this record
-                lblMovieTitle.Text = SomeMovie.ThisMovie.VMmovieTitle;
-                lblMovieGenre.Text = SomeMovie.ThisMovie.VMmovieGenre;
-                lblMovieDuration.Text = SomeMovie.ThisMovie.VMmovieDuration.ToString();
-                lblMovieRating.Text = SomeMovie.ThisMovie.VMmovieRating.ToString();
-                lblMovieReleaseDate.Text = SomeMovie.ThisMovie.VMmovieReleaseDate.ToString();
-                MovieImage.ImageUrl = SomeMovie.ThisMovie.VMImage;
-            }
+        void DisplayMovieData()
+        {
+            //create an instance of the movie collection class
+            clsVMMovieCollection SomeMovie = new clsVMMovieCollection();
+            //find the movie to display
+            SomeMovie.ThisMovie.Find(VMMovieID);
+            //display the data for this record
+            lblMovieTitle.Text = SomeMovie.ThisMovie.VMmovieTitle;
+            lblMovieGenre.Text = SomeMovie.ThisMovie.VMmovieGenre;
+            lblMovieDuration.Text = SomeMovie.ThisMovie.VMmovieDuration.ToString();
+            lblMovieRating.Text = SomeMovie.ThisMovie.VMmovieRating.ToString();
+            lblMovieReleaseDate.Text = SomeMovie.ThisMovie.VMmovieReleaseDate.ToString();
+            MovieImage.ImageUrl = SomeMovie.ThisMovie.VMImage;
+            lblMoviePrice.Text = SomeMovie.ThisMovie.VMmoviePrice.ToString();
+        }
         
         void DisplayCustomerData()
         {
@@ -90,16 +91,19 @@ namespace VirginFrontEnd
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
         }
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
+
             //create a new instance of clsCartItem
             clsVMCartItem AnItem = new clsVMCartItem();
             //set the movie id

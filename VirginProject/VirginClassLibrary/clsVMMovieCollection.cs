@@ -90,6 +90,7 @@ namespace VirginClassLibrary
                 AMovie.VMmovieRating = Convert.ToInt32(DB.DataTable.Rows[Index]["VMMovieRating"]);
                 AMovie.VMmovieReleaseDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["VMMovieReleaseDate"]);
                 AMovie.VMImage = Convert.ToString(DB.DataTable.Rows[Index]["VMImage"]);
+                AMovie.VMmoviePrice = Convert.ToDecimal(DB.DataTable.Rows[Index]["VMMoviePrice"]);
                 //add the record to the private data member
                 mMovieList.Add(AMovie);
                 //point to the next record
@@ -110,6 +111,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@VMMovieRating", mThisMovie.VMmovieRating);
             DB.AddParameter("@VMMovieReleaseDate", mThisMovie.VMmovieReleaseDate);
             DB.AddParameter("@VMImage", mThisMovie.VMImage);
+            DB.AddParameter("@VMMoviePrice", mThisMovie.VMmoviePrice);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVMMovie_Insert");
         }
@@ -127,6 +129,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@VMMovieRating", mThisMovie.VMmovieRating);
             DB.AddParameter("@VMMovieReleaseDate", mThisMovie.VMmovieReleaseDate);
             DB.AddParameter("@VMImage", mThisMovie.VMImage);
+            DB.AddParameter("@VMMoviePrice", mThisMovie.VMmoviePrice);
             //execute the query returning the primary key value
             DB.Execute("sproc_tblVMMovie_Update");
         }

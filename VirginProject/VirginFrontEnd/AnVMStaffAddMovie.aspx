@@ -24,12 +24,14 @@
         <asp:Label ID="lblMovieRating" runat="server" Text="Movie Rating (score out of 10): " CssClass="lblMovieRating"></asp:Label>
         <asp:Label ID="lblMovieReleaseDate" runat="server" Text="Movie Release Date: " CssClass="lblMovieReleaseDate"></asp:Label>
         <asp:Label ID="lblMovieImage" runat="server" Text="Movie Image URL: " CssClass="lblMovieImage"></asp:Label>
+        <asp:Label ID="lblMoviePrice" runat="server" Text="Movie Price: " CssClass="lblMoviePrice"></asp:Label>
         <asp:TextBox ID="txtMovieTitle" runat="server" CssClass="txtMovieTitle"></asp:TextBox>
         <asp:TextBox ID="txtMovieGenre" runat="server" CssClass="txtMovieGenre"></asp:TextBox>
         <asp:TextBox ID="txtMovieDuration" runat="server" CssClass="txtMovieDuration"></asp:TextBox>
         <asp:TextBox ID="txtMovieRating" runat="server" CssClass="txtMovieRating"></asp:TextBox>
         <asp:TextBox ID="txtMovieReleaseDate" runat="server" CssClass="txtMovieReleaseDate"></asp:TextBox>
         <asp:TextBox ID="txtMovieImage" runat="server" CssClass="txtMovieImage"></asp:TextBox>
+        <asp:TextBox ID="txtMoviePrice" runat="server" CssClass="txtMoviePrice"></asp:TextBox>
         <asp:Button ID="btnOK" runat="server" Text="OKAY" CssClass="btnStaffMovieOK" OnClick="btnOK_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnStaffMovieCancel" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" Text="" CssClass="lblStaffAddMovieError"></asp:Label>

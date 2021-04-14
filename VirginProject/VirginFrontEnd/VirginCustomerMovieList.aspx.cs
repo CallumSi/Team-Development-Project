@@ -8,10 +8,11 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+   
     public partial class VirginCustomerMovieList : System.Web.UI.Page
     {
         Int32 VMMovieID;
-
+        Int32 VMCustomerID;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -37,28 +38,13 @@ namespace VirginFrontEnd
         {
             //var to store the primary key value of the record to be edited
             Int32 VMMovieID;
-            //String VMmovieTitle;
-            //String VMmovieGenre;
-            //Int32 VMmovieDuration;
-            //Int32 VMmovieRating;
-            //DateTime VMmovieReleaseDate;
             //if a record has been selected from the list
             if (lstMovies.SelectedIndex != -1)
             {
                 //get the primary key of the record to edit
                 VMMovieID = Convert.ToInt32(lstMovies.SelectedValue);
-                //VMmovieTitle = lstMovies.SelectedItem.Text;
-                //VMmovieGenre = lstMovies.SelectedItem.Text;
-                //VMmovieDuration = Convert.ToInt32(lstMovies.SelectedValue);
-                //VMmovieRating = Convert.ToInt32(lstMovies.SelectedValue);
-                //VMmovieReleaseDate = Convert.ToDateTime(lstMovies.ToString());
                 //store the data in the session object
                 Session["VMMovieID"] = VMMovieID;
-                //Session["VMMovieTitle"] = VMmovieTitle;
-                //Session["VMMovieGenre"] = VMmovieGenre;
-                //Session["VMMovieDuration"] = VMmovieDuration;
-                //Session["VMMovieRating"] = VMmovieRating;
-                //Session["VMMovieReleaseDate"] = VMmovieReleaseDate;
                 //redirect to the edit page
                 Response.Redirect("VMMovieViewer.aspx");
             }
@@ -116,21 +102,27 @@ namespace VirginFrontEnd
 
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
+            Response.Redirect("VMViewCart.aspx");
         }
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
+            //store data in session object so we can pass it to next page
+            Session["VMCustomer"] = VMCustomerID;
             Response.Redirect("VirginCustomerMovieList.aspx");
         }
     }
