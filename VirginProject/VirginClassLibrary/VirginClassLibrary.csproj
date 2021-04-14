@@ -59,6 +59,7 @@
     <Compile Include="clsMarketplaceOrder.cs" />
     <Compile Include="clsVCHCarCollection.cs" />
     <Compile Include="clsVCHHire.cs" />
+    <Compile Include="clsVCHHireCollection.cs" />
     <Compile Include="clsVMMovieCollection.cs" />
     <Compile Include="clsSecurity.cs" />
     <Compile Include="clsUser.cs" />

@@ -143,8 +143,11 @@ namespace VirginTestProject
             TestItem.PhoneNumber = "07912345678";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
-            //add the record
-            PrimaryKey = AllCustomers.Add();
+            /* 
+            commented out to prevent constant-reduplication of customer record into data table
+            "//add the record
+            PrimaryKey = AllCustomers.Add();" 
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //find the record
@@ -209,8 +212,11 @@ namespace VirginTestProject
             TestItem.PhoneNumber = "07912345678";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
-            //add the record
-            PrimaryKey = AllCustomers.Add();
+            /* 
+            commented out to prevent constant-reduplication of customer record into data table
+            "//add the record
+            PrimaryKey = AllCustomers.Add();" 
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //modify the test data in the following manner
