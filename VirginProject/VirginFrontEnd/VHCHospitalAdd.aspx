@@ -28,27 +28,18 @@
 
             <%--TEXTBOX:HOSPITAL NAME--%>
             <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospitalName">Enter Hospital Name</asp:TextBox>
+            <%--TEXTBOX:HOSPITAL PLACE--%>
+            <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospitalPlace">Enter Hospital Place</asp:TextBox>
 
-            <%--DROPDOWNLIST:HOSPITAL PLACE--%>
-            <asp:DropDownList ID="ddlHospitalPlace" runat="server" CssClass="ddlHospitalPlace">
-                <asp:ListItem>London</asp:ListItem>
-                <asp:ListItem>Leicester</asp:ListItem>
-                <asp:ListItem>Manchester</asp:ListItem>
-                <asp:ListItem>Birmingham</asp:ListItem>
-                <asp:ListItem>Portsmouth</asp:ListItem>
-                <asp:ListItem>Coventry</asp:ListItem>
-                <asp:ListItem>Rugby</asp:ListItem>
-                <asp:ListItem>Liverpool</asp:ListItem>
-                <asp:ListItem>Newcastle</asp:ListItem>
-                <asp:ListItem>Derby</asp:ListItem>
-                <asp:ListItem>Peterborough</asp:ListItem>
-            </asp:DropDownList>
 
             <%--BUTTON: SUBMIT--%>
             <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
-                    <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click1" />
-            <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
-            </article>
+            <%--BUTTON: CLOSE--%>
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click1" />
+            <%--LABEL:ERROR MESSAGE--%>
+            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text="Error Messages: "></asp:Label>
+
+        </article>
 
         <%--NAVIGATION SECTION--%>
         <nav>

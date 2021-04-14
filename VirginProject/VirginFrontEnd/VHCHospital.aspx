@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virgin Healthcare</title>
     <link href="VHCHospital.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            left: 0%;
+            top: 0%;
+            bottom: 696px;
+        }
+    </style>
 </head>
 
 <%--BODY SECTION--%>
@@ -18,7 +25,7 @@
             <h2>Virgin Healthcare: Hospital</h2>
         </header>
         <%--ARTICLE SECTION--%>
-        <article>
+        <article class="auto-style1">
             <h3>WELCOME TO THE HOSPITAL SECTION</h3>
             <%--OPTION MESSAGE--%>
             <p id="OptionMessage">Please select one of the options on the left hand side </p>
@@ -35,11 +42,9 @@
             <%--BUTTON: EDIT HOSPITAL--%>
             <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Hospital" OnClick="btnEditHospital_Click" />
             <%--BUTTON: DELETE HOSPITAL--%>
-            <asp:Button ID="Button3" runat="server" CssClass="DeleteHospital" Text="Delete Hospital" />
+            <asp:Button ID="btnDeleteHospital" runat="server" CssClass="DeleteHospital" Text="Delete Hospital" />
             <%--BUTTON: LIST HOSPITAL--%>
-            <asp:Button ID="Button4" runat="server" CssClass="ListHospitals" Text="List Hospitals" />
-            <%--BUTTON: FILTER HOSPITAL--%>
-            <asp:Button ID="Button5" runat="server" CssClass="FilterHospitals" Text="Filter Hospital" />
+            <asp:Button ID="btnHospitalList" runat="server" CssClass="ListHospitals" Text="List Hospitals" OnClick="btnHospitalList_Click"/>
         </nav>
         <%--FOOTER SECTION--%>
         <footer>
