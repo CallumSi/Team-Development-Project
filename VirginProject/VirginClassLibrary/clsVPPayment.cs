@@ -111,9 +111,9 @@ namespace VirginClassLibrary
         {
             string Error = "";
 
-            ////// create some variable for later use
-            //int ConvertedCardNo;
-            //int ConvertedSecurityNo;
+            //// create some variable for later use
+            int ConvertedCardNo;
+            int ConvertedSecurityNo;
 
             //***VALIDATION EXPIRY DATE***//
 
@@ -148,7 +148,7 @@ namespace VirginClassLibrary
             }
 
 
-            //***VALIDATION CARDNO***//
+            ////***VALIDATION CARDNO***//
 
             //if (CardNo.Length > 0)
             //{
@@ -161,7 +161,7 @@ namespace VirginClassLibrary
             //                return "THE CARDNO MUST BE 16 DIGITS ONLY";
             //            }
             //        }
-                    
+
             //    }
             //    catch
             //    {
@@ -170,33 +170,44 @@ namespace VirginClassLibrary
             //}
 
 
-            //try
-            //{
-            //    if (CardNo == "")
-            //    {
-            //        Error += "PLEASE ENTER A CARDNO";
-            //    }
-            //    else
-            //    {
-            //        ConvertedCardNo = Convert.ToInt32(CardNo);
-            //        if (ConvertedCardNo > 0 && ConvertedCardNo < 17)
-            //        {
-            //            Error += "";
-            //        }
-            //        else
-            //        {
-            //            //return error message 
-            //            Error += "THE CARDNO MUST ONLY BE 16 DIGITS ";
-            //        }
-            //    }
-            //}
-            //catch
-            //{
-            //    //return error message 
-            //    Error += "THE CARDNO MUST NOT BE LEFT BLANK ";
+            try
+            {
+                if (CardNo.Length == 16)
+                {
+                    ConvertedCardNo = Convert.ToInt32(CardNo);
+                   
+                }
+                else
+                {
+                    Error += "PLEASE ENSURE THE CARDNO IS 16 DIGITS";
+                }
+            }
+            catch
+            {
+                //return error message 
+                Error += "THE CARDNO MUST BE ONLY DIGITS";
 
-            //}
+            }
 
+
+            try
+            {
+                if (SecurityNo.Length == 3)
+                {
+                    ConvertedSecurityNo = Convert.ToInt32(SecurityNo);
+
+                }
+                else
+                {
+                    Error += "PLEASE ENSURE THE SECURITYNO IS 3 DIGITS";
+                }
+            }
+            catch
+            {
+                //return error message 
+                Error += "THE SECURITYNO MUST BE ONLY DIGITS";
+
+            }
 
 
             //***VALIDATION SECURITYNO***//
@@ -249,9 +260,6 @@ namespace VirginClassLibrary
             //        return "THE SECURITYNO MUST NOT BE LEFT BLANK";
             //    }
             //}
-
-
-
 
             return Error;
         }
