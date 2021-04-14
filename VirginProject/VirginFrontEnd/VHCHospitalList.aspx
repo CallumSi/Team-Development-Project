@@ -40,7 +40,7 @@
             <%--BUTTON: APPLY HOSPITAL FILTER--%>
             <asp:Button ID="btnHospitalApplyFilter" runat="server" CssClass="btnHospitalApplyFilter" Text="Apply Filter" OnClick="btnHospitalApplyFilter_Click" />
             <%--LABEL: FILTER HOSPITAL--%>
-            <asp:Label ID="lblFilterHospital" runat="server" CssClass="lblFilterHospital" Text="Enter full hospital name : "></asp:Label>
+            <asp:Label ID="lblFilterHospital" runat="server" CssClass="lblFilterHospital" Text="Filter By Location : "></asp:Label>
              <%--BUTTON: TOTAL NUMBER OF RECORD/S--%>
             <asp:Button ID="btnTotalRecords" runat="server" CssClass="btnTotalRecords" Text="No.Record/s" OnClick="btnTotalRecords_Click" />
         </article>
