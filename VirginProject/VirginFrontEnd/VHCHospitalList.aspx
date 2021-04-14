@@ -22,6 +22,7 @@
         <nav>
             <%--BUTTON: HOME--%>
             <asp:Button ID="btnListHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnListHome_Click" />
+
         </nav>
 
         <%--ARTICLE SECTION--%>
@@ -41,8 +42,14 @@
             <asp:Button ID="btnHospitalApplyFilter" runat="server" CssClass="btnHospitalApplyFilter" Text="Apply Filter" OnClick="btnHospitalApplyFilter_Click" />
             <%--LABEL: FILTER HOSPITAL--%>
             <asp:Label ID="lblFilterHospital" runat="server" CssClass="lblFilterHospital" Text="Filter By Location : "></asp:Label>
-             <%--BUTTON: TOTAL NUMBER OF RECORD/S--%>
+            <%--BUTTON: TOTAL NUMBER OF RECORD/S--%>
             <asp:Button ID="btnTotalRecords" runat="server" CssClass="btnTotalRecords" Text="No.Record/s" OnClick="btnTotalRecords_Click" />
+            <%--BUTTON: EDIT HOSPITAL--%>
+            <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Record" />
+            <%--BUTTON: DELETE HOSPITAL--%>
+            <asp:Button ID="btnDeleteHospital" runat="server" CssClass="DeleteHospital" Text="Delete Record" OnClick="btnDeleteHospital_Click" />
+
+
         </article>
 
         <%--FOOTER SECTION--%>

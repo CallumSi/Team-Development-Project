@@ -112,5 +112,16 @@ namespace VirginFrontEnd
             RecordCount = DisplayHospital("");
             lblError.Text = RecordCount + " Records Found ";
         }
+
+        protected void btnEditHospital_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospitalAdd.aspx");
+        }
+
+        protected void btnDeleteHospital_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospitalDelete.aspx");
+
+        }
     }
 }

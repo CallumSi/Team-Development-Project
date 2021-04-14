@@ -24,17 +24,7 @@ namespace VirginFrontEnd
             Session["Hospital_ID"] = -1;
             Response.Redirect("VHCHospitalAdd.aspx");
         }
-
-        protected void btnEditHospital_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospitalEdit.aspx");
-        }
-
-        protected void btnDeleteHospital_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospitalDelete.aspx");
-        }
-
+        
         protected void btnListHospital_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospitalList.aspx");

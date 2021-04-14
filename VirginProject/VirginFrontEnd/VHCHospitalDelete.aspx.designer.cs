@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VHCHospital {
+    public partial class VHCHospitalDelete {
         
         /// <summary>
         /// Head1 control.
@@ -31,30 +31,39 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnHome control.
+        /// Home_Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Button Home_Button;
         
         /// <summary>
-        /// btnAddHospital control.
+        /// btnYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddHospital;
+        protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
-        /// btnListHospital control.
+        /// btnNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListHospital;
+        protected global::System.Web.UI.WebControls.Button btnNo;
+        
+        /// <summary>
+        /// lblDeleteConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeleteConfirm;
     }
 }
