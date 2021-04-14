@@ -4,100 +4,72 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-        <title>Listing</title>
-        <link href="VirginProject.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
-            </header>
- 
-            <article>
+    <title>Listing</title>
+    <link href="VMMovie.css" rel="stylesheet" type="text/css" />
 
-                    <asp:Image ID="imgListing" runat="server" style="z-index: 1;position:absolute;right:10px; top:100px; height: 200px; width: 303px" />
-                    <asp:Label ID="lblBidTitle" runat="server" style="z-index: 1;position:absolute;right:217px; top:348px; height: 27px; width: 92px; margin-top: 0px" Visible="False"> </asp:Label>
-                    <asp:Label ID="lblCurrentBidTitle" runat="server" style="z-index: 1;position:absolute;right:130px; top:312px; height: 27px; width: 181px; margin-top: 0px" Visible="False">Current Highest Bid : </asp:Label>
-                    <asp:Label ID="lblListingName" runat="server" style="z-index: 1;" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <h2>Virgin Media </h2>
+        </header>
+
+        <article>
+            <ul class="row">
+                <li>
+                    <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="Welcome "></asp:Label>
+
+                </li>
+            </ul>
+            <asp:Image ID="MovieImage" runat="server" CssClass="MovieImage" />
+            <ul class="AnMovie">
+                <li>
+                    <asp:Label ID="lblMovieNameTitle" runat="server" Text="Movie Title: " CssClass="lblTitleViwer"></asp:Label>
+                    <asp:Label ID="lblMovieTitle" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+                <li>
+                    <asp:Label ID="lblMovieGenreTitle" runat="server" Text="Movie Genre: " CssClass="lblGenreViwer"></asp:Label>
+                    <asp:Label ID="lblMovieGenre" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+                <li>
+                    <asp:Label ID="lblMovieDurationTitle" runat="server" Text="Movie Duration: " CssClass="lblDurationViwer"></asp:Label>
+                    <asp:Label ID="lblMovieDuration" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+                <li>
+                    <asp:Label ID="lblMovieRatingTitle" runat="server" Text="Movie Rating: " CssClass="lblRatingViwer"></asp:Label>
+                    <asp:Label ID="lblMovieRating" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+                <li>
+                    <asp:Label ID="lblMovieReleaseDateTitle" runat="server" Text="Movie Title: " CssClass="lblReleaseDateViwer"></asp:Label>
+                    <asp:Label ID="lblMovieReleaseDate" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+
+                <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" />
+
+                <li>
+                    <asp:Label ID="lblQuantity" runat="server" Style="z-index: 1;" Visible="true">Quantity: </asp:Label>
+                    <asp:TextBox ID="txtQTY" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="lblListingType" runat="server" style="z-index: 1; "></asp:Label>
-     
-                <ul class="AnListing">
-                    <li>
-                        <asp:Label ID="lblSellerEmailTitle" runat="server" style="z-index: 1; " Text="Seller:"></asp:Label>
-                    <asp:Label ID="lblSellerEmail" runat="server" style="z-index: 1; "></asp:Label>
-                    </li>
-                     
-                    <li>
-                        <asp:Label ID="lblCategoryTitle" runat="server" style="z-index: 1; " Text="Category:"></asp:Label>
-                        <asp:Label ID="lblCategory" runat="server" style="z-index: 1; "></asp:Label>
-                    </li>
-                    <li>
-                        <asp:Label ID="lblDeliveryTypeTitle" runat="server" style="z-index: 1;" Text="Delivery Type:"></asp:Label>
-                        <asp:Label ID="lblDeliveryType" runat="server" style="z-index: 1; "></asp:Label>
-                        
-                    </li>
-           
-                    <li>
-                        <asp:Label ID="lblQuantityTitle" runat="server" style="z-index: 1; " Text="Quantity:"></asp:Label>
-                        <asp:Label ID="lblQuantity" runat="server" style="z-index: 1;"> </asp:Label>
-                        
-                    </li>
-                    <li>    <asp:Label ID="lblDescriptionTitle" runat="server" style="z-index: 1; " Text="Description:"></asp:Label>
-                          <asp:Label ID="lblDescription" runat="server" style="z-index: 1; "></asp:Label>
-                    </li>
-                    <li>      <asp:Label ID="lblConditionTitle" runat="server" style="z-index: 1; " Text="Condition:"></asp:Label>
-                          <asp:Label ID="lblCondition" runat="server" style="z-index: 1; "></asp:Label>
-
-                    </li>
-                 
-                    <li>  
-                        <asp:Label ID="lblStartPriceTitle" runat="server" style="z-index: 1; " Text="Start Price:"></asp:Label>
-                        <asp:Label ID="lblPrice" runat="server" style="z-index: 1;"></asp:Label>
-                        
-                    
-                        
-                    </li>                     
-                   
-                    <li><asp:Label ID="lblTimeLeftTitle" runat="server" style="z-index: 1; " Text="Time Left:"></asp:Label>
-                        <asp:Label ID="lblTimeLeft" runat="server" style="z-index: 1; "></asp:Label>
-                    </li>
-                   
-                    
-                    <li> 
-                    <asp:Label ID="lblQuant" runat="server" style="z-index: 1; " Visible="false">Quantity: </asp:Label>
-                    <asp:TextBox ID="txtQTY" runat="server" Visible="false"></asp:TextBox>
-               
-                    <asp:Button ID="btnAddToCart" CssClass="navButton" runat="server" style="z-index: 1; " Text="Add to Cart" Visible="False" OnClick="btnAddToCart_Click" />
-                    <asp:Label ID="lblBidText" runat="server" style="z-index: 1; " Visible="False">Bid : </asp:Label>
-                    <asp:TextBox ID="txtBid" runat="server" Visible="False"></asp:TextBox>
-                    <asp:Button ID="btnBid" CssClass="navButton" runat="server" style="z-index: 1; " Text="Place Bid" OnClick="btnBid_Click" Visible="False"  />
-                    <asp:Button ID="btnOffer" CssClass="navButton" runat="server" style="z-index: 1; " Text="Offer" OnClick="btnOffer_Click" Visible="False"  />
-                    <asp:Button ID="btnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="Favorite" OnClick="btnFavorite_Click" />
-                    <asp:Button ID="btnUnFavorite" CssClass="navButton" runat="server" style="z-index: 1; " Text="UnFavorite" OnClick="btnUnFavorite_Click"  />
-                    <asp:Label ID="lblFavorite"  runat="server" style="z-index: 1;"></asp:Label>                  
-                    <asp:Label ID="lblBidPlaced"  runat="server" style="z-index: 1;"></asp:Label>                   
-                    <asp:Label ID="lblOfferPlaced"  runat="server" style="z-index: 1;"></asp:Label>
                     <br />
-                        <asp:Label ID="lblError"  runat="server" style="z-index: 1;"></asp:Label></li>
-                    
-                    
+                    <asp:Label ID="lblError" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
 
-                </ul>
-                   
-     
-            </article>
- 
-            <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-        </form>
-    </body>
+            </ul>
+        </article>
+
+        <nav>
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnCustomerHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnViewCart" CssClass="btnCustomerCart" runat="server" Text="View Shopping Cart" OnClick="btnViewCart_Click" />
+            <asp:Button ID="btnEditAccount" CssClass="btnEditAccount" runat="server" Text="Edit Account Details" OnClick="btnEditAccount_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnCustomerLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+    </form>
+</body>
 </html>

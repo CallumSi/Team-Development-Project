@@ -31,211 +31,112 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// imgListing control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgListing;
+        protected global::System.Web.UI.WebControls.Label lblUsername;
         
         /// <summary>
-        /// lblBidTitle control.
+        /// MovieImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBidTitle;
+        protected global::System.Web.UI.WebControls.Image MovieImage;
         
         /// <summary>
-        /// lblCurrentBidTitle control.
+        /// lblMovieNameTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCurrentBidTitle;
+        protected global::System.Web.UI.WebControls.Label lblMovieNameTitle;
         
         /// <summary>
-        /// lblListingName control.
+        /// lblMovieTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListingName;
+        protected global::System.Web.UI.WebControls.Label lblMovieTitle;
         
         /// <summary>
-        /// lblListingType control.
+        /// lblMovieGenreTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblListingType;
+        protected global::System.Web.UI.WebControls.Label lblMovieGenreTitle;
         
         /// <summary>
-        /// lblSellerEmailTitle control.
+        /// lblMovieGenre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSellerEmailTitle;
+        protected global::System.Web.UI.WebControls.Label lblMovieGenre;
         
         /// <summary>
-        /// lblSellerEmail control.
+        /// lblMovieDurationTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSellerEmail;
+        protected global::System.Web.UI.WebControls.Label lblMovieDurationTitle;
         
         /// <summary>
-        /// lblCategoryTitle control.
+        /// lblMovieDuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoryTitle;
+        protected global::System.Web.UI.WebControls.Label lblMovieDuration;
         
         /// <summary>
-        /// lblCategory control.
+        /// lblMovieRatingTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategory;
+        protected global::System.Web.UI.WebControls.Label lblMovieRatingTitle;
         
         /// <summary>
-        /// lblDeliveryTypeTitle control.
+        /// lblMovieRating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeliveryTypeTitle;
+        protected global::System.Web.UI.WebControls.Label lblMovieRating;
         
         /// <summary>
-        /// lblDeliveryType control.
+        /// lblMovieReleaseDateTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeliveryType;
+        protected global::System.Web.UI.WebControls.Label lblMovieReleaseDateTitle;
         
         /// <summary>
-        /// lblQuantityTitle control.
+        /// lblMovieReleaseDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantityTitle;
-        
-        /// <summary>
-        /// lblQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
-        
-        /// <summary>
-        /// lblDescriptionTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescriptionTitle;
-        
-        /// <summary>
-        /// lblDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
-        
-        /// <summary>
-        /// lblConditionTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConditionTitle;
-        
-        /// <summary>
-        /// lblCondition control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCondition;
-        
-        /// <summary>
-        /// lblStartPriceTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartPriceTitle;
-        
-        /// <summary>
-        /// lblPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrice;
-        
-        /// <summary>
-        /// lblTimeLeftTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTimeLeftTitle;
-        
-        /// <summary>
-        /// lblTimeLeft control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTimeLeft;
-        
-        /// <summary>
-        /// lblQuant control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuant;
-        
-        /// <summary>
-        /// txtQTY control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQTY;
+        protected global::System.Web.UI.WebControls.Label lblMovieReleaseDate;
         
         /// <summary>
         /// btnAddToCart control.
@@ -247,85 +148,22 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnAddToCart;
         
         /// <summary>
-        /// lblBidText control.
+        /// lblQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBidText;
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
         
         /// <summary>
-        /// txtBid control.
+        /// txtQTY control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBid;
-        
-        /// <summary>
-        /// btnBid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBid;
-        
-        /// <summary>
-        /// btnOffer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOffer;
-        
-        /// <summary>
-        /// btnFavorite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFavorite;
-        
-        /// <summary>
-        /// btnUnFavorite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUnFavorite;
-        
-        /// <summary>
-        /// lblFavorite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFavorite;
-        
-        /// <summary>
-        /// lblBidPlaced control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBidPlaced;
-        
-        /// <summary>
-        /// lblOfferPlaced control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOfferPlaced;
+        protected global::System.Web.UI.WebControls.TextBox txtQTY;
         
         /// <summary>
         /// lblError control.
@@ -335,5 +173,41 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// btnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHome;
+        
+        /// <summary>
+        /// btnViewCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewCart;
+        
+        /// <summary>
+        /// btnEditAccount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditAccount;
+        
+        /// <summary>
+        /// btnLogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogOut;
     }
 }

@@ -113,6 +113,7 @@
     <Content Include="VHCHospital.aspx" />
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
+    <Content Include="VirginCustomerMovieList.aspx" />
     <Content Include="VirginForgotPassword.aspx" />
     <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginLogIn.aspx" />
@@ -124,7 +125,6 @@
     <Content Include="VMCheckout.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
-    <Content Include="VMCustomerMovieList.aspx" />
     <Content Include="VMMovieDelete.aspx" />
     <Content Include="VMMovieViewer.aspx" />
     <Content Include="VMStaffMovie.aspx" />
@@ -473,6 +473,13 @@
     <Compile Include="VHCHospitalAdd.aspx.designer.cs">
       <DependentUpon>VHCHospitalAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VirginCustomerMovieList.aspx.cs">
+      <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginCustomerMovieList.aspx.designer.cs">
+      <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VirginForgotPassword.aspx.cs">
       <DependentUpon>VirginForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -549,13 +556,6 @@
     </Compile>
     <Compile Include="MarketplaceHome2.aspx.designer.cs">
       <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VMCustomerMovieList.aspx.cs">
-      <DependentUpon>VMCustomerMovieList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VMCustomerMovieList.aspx.designer.cs">
-      <DependentUpon>VMCustomerMovieList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMMovieDelete.aspx.cs">
       <DependentUpon>VMMovieDelete.aspx</DependentUpon>

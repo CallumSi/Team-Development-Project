@@ -99,6 +99,7 @@ namespace VirginFrontEnd
                 //find the record to update
                 allMovies.ThisMovie.Find(VMMovieID);
                 //get the data entered by the user
+                allMovies.ThisMovie.VMMovieID = VMMovieID;
                 allMovies.ThisMovie.VMmovieTitle = txtMovieTitle.Text;
                 allMovies.ThisMovie.VMmovieGenre = txtMovieGenre.Text;
                 allMovies.ThisMovie.VMmovieDuration = Convert.ToInt32(txtMovieDuration.Text);
