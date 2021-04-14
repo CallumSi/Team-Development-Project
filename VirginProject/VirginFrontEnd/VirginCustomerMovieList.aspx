@@ -14,6 +14,7 @@
         <header>
             <h2>Virgin Media Movie List</h2>
         </header>
+        
         <asp:ListBox ID="lstMovies" runat="server" CssClass="lstCustomerFilms"></asp:ListBox>
 
 
@@ -36,6 +37,7 @@
                 © 2021 Virgin Media | All Rights Reserved
             </div>
         </footer>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
     </form>
 </body>
 </html>
