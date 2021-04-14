@@ -20,10 +20,8 @@ namespace VirginClassLibrary
         private DateTime mHireCollectionDate;
         //private property for HireReturnDate
         private DateTime mHireReturnDate;
-        //private property for HireAddress
-        private string mHireAddress;
-        //private property for HirePostCode
-        private string mHirePostCode;
+        //private property for HireLocation
+        private string mHireLocation;
         //private property for DriverAge
         private int mDriverAge;
         //private property for DriverLicenseNumber
@@ -107,23 +105,23 @@ namespace VirginClassLibrary
             }
         }
 
-        //Hire Address property
-        public string HireAddress
+        //Hire Location property
+        public string HireLocation
         {
             get
             {
                 //return the private data 
-                return mHireAddress;
+                return mHireLocation;
             }
 
             set
             {
                 //set the private data
-                mHireAddress = value;
+                mHireLocation = value;
             }
         }
 
-        //Hire PostCode property
+        /*//Hire PostCode property
         public string HirePostCode
         {
             get
@@ -137,7 +135,7 @@ namespace VirginClassLibrary
                 //set the private data
                 mHirePostCode = value;
             }
-        }
+        }*/
 
         //DriverAge property 
         public int DriverAge
@@ -171,7 +169,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public string Valid(string HireCollectionDate, string HireReturnDate, string HireAddress, string HirePostCode, string DriverAge, string DriverLicenseNumber)
+        public string Valid(string HireCollectionDate, string HireReturnDate, string HireLocation, string DriverAge, string DriverLicenseNumber)
         {
             //string variable to store the error message
             string Error = "";
@@ -241,27 +239,27 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
-            //if the hire address length is blank
-            if (HireAddress.Length == 0)
+            //if the hire location length is blank
+            if (HireLocation.Length == 0)
             {
                 //return the following error message
-                return "The address may not be blank. Please enter an address.";
+                return "The hire location may not be blank. Please enter a hire location.";
             }
-            //if the hire address length is more than 50 characters
-            if (HireAddress.Length > 50)
+            //if the hire location length is more than 70 characters
+            if (HireLocation.Length > 70)
             {
                 //return the following error message
-                return "The address entered holds too many characters. Please enter a shorter address and do not include a postcode.";
+                return "The hire location entered holds too many characters. Please enter a shorter hire location.";
             }
-            //if the hire address length is less than 3 characters 
-            if (HireAddress.Length < 3)
+            //if the hire location length is less than 5 characters 
+            if (HireLocation.Length < 5)
             {
                 //return the following error message
-                return "The address entered is too short. Please enter a longer address and do not include a postcode.";
+                return "The hire location entered is too short. Please enter a longer hire location.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////
-            //if the HirePostCode length is blank
+            /*//if the HirePostCode length is blank
             if (HirePostCode.Length == 0)
             {
                 //return the following error message
@@ -278,7 +276,7 @@ namespace VirginClassLibrary
             {
                 //return the following error message
                 return "The postcode entered is too short. Please enter a longer postcode.";
-            }
+            }*/
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
             if (DriverAge.Length > 0)

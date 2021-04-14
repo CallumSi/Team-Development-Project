@@ -37,7 +37,7 @@ namespace VirginFrontEnd
             //create an instance of the car collection class
             clsVCHCarCollection CarCollection = new clsVCHCarCollection();
             //validate the data on the web front
-            String Error = CarCollection.ThisCar.Valid(txtCarMake.Text, txtCarModel.Text, txtCarEngine.Text, txtCarBody.Text, txtCarColour.Text, txtCarFuel.Text, txtCarPrice.Text, txtCarRegistration.Text);
+            String Error = CarCollection.ThisCar.Valid(txtCarMake.Text, txtCarModel.Text, txtCarEngine.Text, ddlCarBody.SelectedValue.ToString(), txtCarColour.Text, ddlFuelType.SelectedValue.ToString(), txtCarPrice.Text, txtCarRegistration.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
@@ -45,9 +45,9 @@ namespace VirginFrontEnd
                 CarCollection.ThisCar.CarMake = txtCarMake.Text;
                 CarCollection.ThisCar.CarModel = txtCarModel.Text;
                 CarCollection.ThisCar.CarEngine = Convert.ToDecimal(txtCarEngine.Text);
-                CarCollection.ThisCar.CarBody = txtCarBody.Text;
+                CarCollection.ThisCar.CarBody = Convert.ToString(ddlCarBody.SelectedValue.ToString());
                 CarCollection.ThisCar.CarColour = txtCarColour.Text;
-                CarCollection.ThisCar.CarFuel = txtCarFuel.Text;
+                CarCollection.ThisCar.CarFuel = Convert.ToString(ddlFuelType.SelectedValue.ToString());
                 CarCollection.ThisCar.CarPrice = Convert.ToDecimal(txtCarPrice.Text);
                 CarCollection.ThisCar.CarRegistration = txtCarRegistration.Text;
                 //add the new car record
@@ -73,9 +73,9 @@ namespace VirginFrontEnd
             txtCarMake.Text = CarCollection.ThisCar.CarMake;
             txtCarModel.Text = CarCollection.ThisCar.CarModel;
             txtCarEngine.Text = CarCollection.ThisCar.CarEngine.ToString();
-            txtCarBody.Text = CarCollection.ThisCar.CarBody;
+            ddlCarBody.SelectedValue = CarCollection.ThisCar.CarBody;
             txtCarColour.Text = CarCollection.ThisCar.CarColour;
-            txtCarFuel.Text = CarCollection.ThisCar.CarFuel;
+            ddlFuelType.SelectedValue = CarCollection.ThisCar.CarFuel;
             txtCarPrice.Text = CarCollection.ThisCar.CarPrice.ToString();
             txtCarRegistration.Text = CarCollection.ThisCar.CarRegistration;
         }
@@ -86,7 +86,7 @@ namespace VirginFrontEnd
             //create an instance of the car collection class
             clsVCHCarCollection CarCollection = new clsVCHCarCollection();
             //validate the data on the web front
-            String Error = CarCollection.ThisCar.Valid(txtCarMake.Text, txtCarModel.Text, txtCarEngine.Text, txtCarBody.Text, txtCarColour.Text, txtCarFuel.Text, txtCarPrice.Text, txtCarRegistration.Text);
+            String Error = CarCollection.ThisCar.Valid(txtCarMake.Text, txtCarModel.Text, txtCarEngine.Text, ddlCarBody.SelectedValue.ToString(), txtCarColour.Text, ddlFuelType.SelectedValue.ToString(), txtCarPrice.Text, txtCarRegistration.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
@@ -96,9 +96,9 @@ namespace VirginFrontEnd
                 CarCollection.ThisCar.CarMake = txtCarMake.Text;
                 CarCollection.ThisCar.CarModel = txtCarModel.Text;
                 CarCollection.ThisCar.CarEngine = Convert.ToDecimal(txtCarEngine.Text);
-                CarCollection.ThisCar.CarBody = txtCarBody.Text;
+                CarCollection.ThisCar.CarBody = Convert.ToString(ddlCarBody.SelectedValue.ToString());
                 CarCollection.ThisCar.CarColour = txtCarColour.Text;
-                CarCollection.ThisCar.CarFuel = txtCarFuel.Text;
+                CarCollection.ThisCar.CarFuel = Convert.ToString(ddlFuelType.SelectedValue.ToString());
                 CarCollection.ThisCar.CarPrice = Convert.ToDecimal(txtCarPrice.Text);
                 CarCollection.ThisCar.CarRegistration = txtCarRegistration.Text;
                 //update the existing car record

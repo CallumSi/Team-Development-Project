@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHACar {
+    public partial class VCHAHire {
         
         /// <summary>
         /// form1 control.
@@ -22,148 +22,148 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblCarMake control.
+        /// lblHireID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarMake;
+        protected global::System.Web.UI.WebControls.Label lblHireID;
         
         /// <summary>
-        /// lblCarModel control.
+        /// lblCarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarModel;
+        protected global::System.Web.UI.WebControls.Label lblCarID;
         
         /// <summary>
-        /// lblCarEngine control.
+        /// lblCustomerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarEngine;
+        protected global::System.Web.UI.WebControls.Label lblCustomerID;
         
         /// <summary>
-        /// lblCarBody control.
+        /// lblHireCollectionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarBody;
+        protected global::System.Web.UI.WebControls.Label lblHireCollectionDate;
         
         /// <summary>
-        /// lblCarColour control.
+        /// lblHireReturnDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarColour;
+        protected global::System.Web.UI.WebControls.Label lblHireReturnDate;
         
         /// <summary>
-        /// lblCarFuel control.
+        /// lblHireCollectionReturnLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarFuel;
+        protected global::System.Web.UI.WebControls.Label lblHireCollectionReturnLocation;
         
         /// <summary>
-        /// lblCarPrice control.
+        /// lblDriverAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarPrice;
+        protected global::System.Web.UI.WebControls.Label lblDriverAge;
         
         /// <summary>
-        /// lblCarRegistration control.
+        /// lblDriverLicenseNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarRegistration;
+        protected global::System.Web.UI.WebControls.Label lblDriverLicenseNumber;
         
         /// <summary>
-        /// txtCarMake control.
+        /// lblHireIDInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarMake;
+        protected global::System.Web.UI.WebControls.Label lblHireIDInput;
         
         /// <summary>
-        /// txtCarModel control.
+        /// lblCarIDInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarModel;
+        protected global::System.Web.UI.WebControls.Label lblCarIDInput;
         
         /// <summary>
-        /// txtCarEngine control.
+        /// lblCustomerIDInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarEngine;
+        protected global::System.Web.UI.WebControls.Label lblCustomerIDInput;
         
         /// <summary>
-        /// ddlCarBody control.
+        /// txtHireCollectionDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCarBody;
+        protected global::System.Web.UI.WebControls.TextBox txtHireCollectionDate;
         
         /// <summary>
-        /// txtCarColour control.
+        /// txtHireReturnDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarColour;
+        protected global::System.Web.UI.WebControls.TextBox txtHireReturnDate;
         
         /// <summary>
-        /// ddlFuelType control.
+        /// txtHireCollectionReturnLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFuelType;
+        protected global::System.Web.UI.WebControls.TextBox txtHireCollectionReturnLocation;
         
         /// <summary>
-        /// txtCarPrice control.
+        /// txtDriverAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtDriverAge;
         
         /// <summary>
-        /// txtCarRegistration control.
+        /// txtDriverLicenseNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCarRegistration;
+        protected global::System.Web.UI.WebControls.TextBox txtDriverLicenseNumber;
         
         /// <summary>
         /// lblError control.

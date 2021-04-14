@@ -143,8 +143,11 @@ namespace VirginTestProject
             TestItem.CarRegistration = "VW19 GLF";
             //set ThisCar to the test data
             AllCars.ThisCar = TestItem;
-            //add the record
-            PrimaryKey = AllCars.Add();
+            /* 
+            commented out to prevent constant-reduplication of car record into data table
+            "//add the record
+            PrimaryKey = AllCars.Add();" 
+            */
             //set the primary key of the test data
             TestItem.CarID = PrimaryKey;
             //find the record
@@ -209,8 +212,11 @@ namespace VirginTestProject
             TestItem.CarRegistration = "VW19 GLF";
             //set ThisCar to the test data
             AllCars.ThisCar = TestItem;
-            //add the record
-            PrimaryKey = AllCars.Add();
+            /* 
+            commented out to prevent constant-reduplication of car record into data table
+            "//add the record
+            PrimaryKey = AllCars.Add();" 
+            */
             //set the primary key of the test data
             TestItem.CarID = PrimaryKey;
             //modify the test data in the following manner

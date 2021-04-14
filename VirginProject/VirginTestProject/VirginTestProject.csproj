@@ -70,6 +70,7 @@
     <Compile Include="tstVCHCustomer.cs" />
     <Compile Include="tstVCHCustomerCollection.cs" />
     <Compile Include="tstVCHHire.cs" />
+    <Compile Include="tstVCHHireCollection.cs" />
     <Compile Include="tstVCHStaff.cs" />
     <Compile Include="tstVCHStaffCollection.cs" />
     <Compile Include="tstVHCAppointment.cs" />

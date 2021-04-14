@@ -19,7 +19,7 @@
         <asp:TextBox ID="txtBxSearch" runat="server" Height="30px" style="z-index: 1; left: 15px; top: 440px; position: absolute"></asp:TextBox>
         <p>
         <asp:ListBox ID="lstCars" runat="server" Height="300px" Width="800px" style="z-index: 1; left: 15px; top: 60px; position: absolute"></asp:ListBox>
-        <asp:Label ID="lblCarModel" runat="server" style="z-index: 1; left: 15px; top: 365px; position: absolute" Text="Please Enter a Car Body Type"></asp:Label>
+        <asp:Label ID="lblCarBody" runat="server" style="z-index: 1; left: 15px; top: 365px; position: absolute" Text="Please Enter a Car Body Type"></asp:Label>
         </p>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 15px; top: 405px; position: absolute" Text="[lblError]"></asp:Label>
         </form>
