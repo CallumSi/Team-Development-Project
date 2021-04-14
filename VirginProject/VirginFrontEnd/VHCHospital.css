@@ -1,6 +1,7 @@
 ﻿/* Font Style from Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 /* Header Section*/
 header {
     background-color: #27183d;
@@ -43,7 +44,6 @@ h4 {
     left: 850px;
 }
 
-
 /* Body Section*/
 body {
     background-color: #CCCCCC;
@@ -78,24 +78,27 @@ nav {
         color: white;
     }
 
+/*Hospital Delete Page - Yes Button*/
 .btnYes {
     position: fixed;
     top: 500px;
     left: 855px;
 }
 
+/*Hospital Delete Page - Yes Button Hover*/
+.btnYes:hover {
+    background-color: green;
+    color: white;
+}
+
+/*Hospital Delete Page - No Button*/
 .btnNo {
     position: fixed;
     top: 500px;
     left: 1155px;
 }
 
-.btnYes:hover {
-    background-color: green;
-    color: white;
-}
-
-
+/*Hospital Delete Page - No Button Hover*/
 .btnNo:hover {
     background-color: red;
     color: white;
@@ -149,6 +152,14 @@ nav {
     top: 325px;
     left: 1370px;
 }
+
+/*Total Records Button*/
+.btnTotalRecords {
+    position: fixed;
+    top: 400px;
+    left: 1370px;
+}
+
 /*Article Section*/
 article {
     position: fixed;
@@ -225,6 +236,8 @@ footer {
     color: darkorange;
     font-family: 'Share Tech Mono', monospace;
 }
+
+/*Filter Hospital Label*/
 .lblFilterHospital {
     position: absolute;
     top: 487px;
@@ -235,11 +248,6 @@ footer {
     letter-spacing: 1px;
 }
 
-.btnTotalRecords {
-    position: fixed;
-    top: 400px;
-    left: 1370px;
-}
 /*Hospital ListBox*/
 .lstHospital {
     background-color: #eeecef;
