@@ -87,18 +87,29 @@ namespace VirginFrontEnd
         //Apply Button
         protected void btnHospitalApplyFilter_Click(object sender, EventArgs e)
         {
-            //declare var to store the record count 
-            Int32 RecordCount;
-            RecordCount = DisplayHospital(txtHospitalSearch.Text);
-            lblError.Text = RecordCount + " Record/s Found ";
+
+            if (txtHospitalSearch.Text.Length == 0)
+            {
+                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE ENTER A VALID LOCATION";
+            }
+
+            else
+            {
+                Int32 RecordCount;
+                RecordCount = DisplayHospital(txtHospitalSearch.Text);
+                lblError.Text = RecordCount + " Records Found ";
+            }
         }
 
         //Total Records Button
         protected void btnTotalRecords_Click(object sender, EventArgs e)
         {
+            //display all hospitals
+            DisplayHospital("");
+
             //declare var to store the record count 
             Int32 RecordCount;
-            RecordCount = DisplayHospital(txtHospitalSearch.Text);
+            RecordCount = DisplayHospital("");
             lblError.Text = RecordCount + " Records Found ";
         }
     }

@@ -206,11 +206,11 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a make that does exist
-            FilteredHospital.ReportByHospital("East Middlesex Hospital");
+            FilteredHospital.ReportByHospital("East London");
             //check that the correct number of records are found
             if (FilteredHospital.Count == 2)
             {
-                //check that the first record id ID 2
+                //check that the first record id ID 1
                 if (FilteredHospital.HospitalList[0].Hospital_ID != 1)
                 {
                     OK = false;
