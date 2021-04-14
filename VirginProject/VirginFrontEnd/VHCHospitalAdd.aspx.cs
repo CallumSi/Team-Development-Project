@@ -113,8 +113,11 @@ namespace VirginFrontEnd
             }
          }
 
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospital.aspx");
 
-
+        }
     }
     
 }

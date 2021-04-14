@@ -17,29 +17,6 @@
         <header>
             <h2>Virgin Healthcare: Hospital</h2>
         </header>
-        <%--ARTICLE SECTION--%>
-        <article>
-            <h4>ADD HOSPITAL SECTION </h4>
-            <%--LABEL:HOSPITAL NAME--%>
-            <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>
-
-            <%--LABEL:HOSPITAL PLACE--%>
-            <asp:Label ID="lblHospital_Place" runat="server" CssClass="lblHospital_Place" Text="HOSPITAL PLACE : "></asp:Label>
-
-            <%--TEXTBOX:HOSPITAL NAME--%>
-            <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospitalName">Enter Hospital Name</asp:TextBox>
-            <%--TEXTBOX:HOSPITAL PLACE--%>
-            <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospitalPlace">Enter Hospital Place</asp:TextBox>
-
-
-            <%--BUTTON: SUBMIT--%>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
-            <%--BUTTON: CLOSE--%>
-            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click1" />
-            <%--LABEL:ERROR MESSAGE--%>
-            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text="Error Messages: "></asp:Label>
-
-        </article>
 
         <%--NAVIGATION SECTION--%>
         <nav>
@@ -47,10 +24,30 @@
             <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click" />
         </nav>
 
+        <%--ARTICLE SECTION--%>
+        <article>
+            <h4>ADD HOSPITAL SECTION </h4>
+            <%--LABEL:HOSPITAL NAME--%>
+            <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>
+            <%--LABEL:HOSPITAL PLACE--%>
+            <asp:Label ID="lblHospital_Place" runat="server" CssClass="lblHospital_Place" Text="HOSPITAL PLACE : "></asp:Label>
+            <%--TEXTBOX:HOSPITAL NAME--%>     
+            <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospital_Name">Enter Hospital Name</asp:TextBox>
+            <%--TEXTBOX:HOSPITAL PLACE--%>    
+            <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospital_Place">Enter Hospital Place</asp:TextBox>
+            <%--BUTTON: SUBMIT--%>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" />
+            <%--BUTTON: CLOSE--%>
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
+            <%--LABEL:ERROR MESSAGE--%>
+            <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text="⚠️ SYSTEM MESSAGES "></asp:Label>
+        </article>
+
         <%--FOOTER SECTION--%>
         <footer>
             <div id="FooterText">© 2021 Virgin Media | All Rights Reserved </div>
         </footer>
+
     </form>
 </body>
 </html>
