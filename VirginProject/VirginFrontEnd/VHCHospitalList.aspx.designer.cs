@@ -31,6 +31,15 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// btnListHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListHome;
+        
+        /// <summary>
         /// lstHospital control.
         /// </summary>
         /// <remarks>
@@ -38,24 +47,6 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lstHospital;
-        
-        /// <summary>
-        /// btnDisplayAllHospitals control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAllHospitals;
-        
-        /// <summary>
-        /// btnApplyHospital control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApplyHospital;
         
         /// <summary>
         /// lblError control.
@@ -76,12 +67,48 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtHospitalSearch;
         
         /// <summary>
-        /// Home_Button_List control.
+        /// btnListClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Home_Button_List;
+        protected global::System.Web.UI.WebControls.Button btnListClose;
+        
+        /// <summary>
+        /// btnDisplayAllHospitals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDisplayAllHospitals;
+        
+        /// <summary>
+        /// btnHospitalApplyFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHospitalApplyFilter;
+        
+        /// <summary>
+        /// lblFilterHospital control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFilterHospital;
+        
+        /// <summary>
+        /// btnTotalRecords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTotalRecords;
     }
 }

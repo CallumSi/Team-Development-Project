@@ -14,25 +14,30 @@ namespace VirginFrontEnd
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospitalAdd.aspx");
-        }
-
-        protected void Home_Button_Click(object sender, EventArgs e)
+        protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
+        }
+
+        protected void btnAddHospital_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospitalAdd.aspx");
         }
 
         protected void btnEditHospital_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospitalEdit.aspx");
-
         }
 
-        protected void btnHospitalList_Click(object sender, EventArgs e)
+        protected void btnDeleteHospital_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospitalDelete.aspx");
+        }
+
+        protected void btnListHospital_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospitalList.aspx");
+
         }
     }
 }
