@@ -190,6 +190,8 @@ namespace VirginClassLibrary
         {
             string Error = "";
 
+            //// create some variable for later use
+            int ConvertedHouse_No;
 
             //***VALIDATION TITLE***//
 
@@ -310,6 +312,35 @@ namespace VirginClassLibrary
             {
                 //record the error
                 Error = Error + "THE DATE IS NOT A VALID DATE";
+
+            }
+
+            //***VALIDATION HOUSE_NO***//
+
+            try
+            {
+                if (House_No == "")
+                {
+                    Error += "PLEASE ENTER A HOUSENO";
+                }
+                else
+                {
+                    ConvertedHouse_No = Convert.ToInt32(House_No);
+                    if (ConvertedHouse_No > 0 && ConvertedHouse_No < 1001)
+                    {
+                        Error += "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        Error += "THE HOUSENO MUST BE BETWEEN 1 AND 1000 ";
+                    }
+                }
+            }
+            catch
+            {
+                //return error message 
+                Error += "THE HOUSENO MUST NOT BE LEFT BLANK";
 
             }
 

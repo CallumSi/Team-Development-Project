@@ -22,7 +22,7 @@ namespace VirginClassLibrary
                 set
             {
                 //set the private data
-                OrderList = value;
+                mOrderList = value;
             }
 
         }

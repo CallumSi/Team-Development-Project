@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System;
-using VirginClassLibrary;
-
 
 namespace VirginClassLibrary
 {
@@ -50,7 +48,7 @@ namespace VirginClassLibrary
             get
             {
                 //return the private data 
-                return Count;
+                return mCartList.Count;
             }
             set
             {
