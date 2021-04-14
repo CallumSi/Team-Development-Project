@@ -54,10 +54,13 @@ footer {
 }
 
 /*Buttons*/
-.btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome, .btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie, .btnStaffUpdateMovie, .btnVMStaffDeleteMovie {
+.btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome,
+.btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
+.btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
+.btnEditAccount, .btnCustomerLogOut {
     padding: 20px;
     border-radius: 2px;
-    font-size: 1em;
+    font-size: 13px;
     font-family: 'Lexend', sans-serif;
     font-weight: bold;
     width: 170px;
@@ -86,6 +89,7 @@ footer {
     top: 350px;
     left: 30px;
 }
+
 /*######## DELETE MOVIE NAV BUTTONS #########*/
 .btnDeleteHome {
     position: fixed;
@@ -96,6 +100,25 @@ footer {
 .btnDeleteViewCart {
     position: fixed;
     top: 250px;
+    left: 30px;
+}
+
+/*######## CUSTOMER FILM NAV BUTTONS #########*/
+.btnCustomerCart {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnEditAccount {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnCustomerLogOut {
+    position: fixed;
+    top: 350px;
     left: 30px;
 }
 
@@ -399,4 +422,98 @@ footer {
     font-size: medium;
     font-weight: bold;
     color: black;
+}
+
+/*################## CUSTOMER FILM LIST ################## */
+.lblFilterFilmGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 150px;
+    left: 330px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtFilterFilmGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 147px;
+    left: 470px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnApplyFilmFilter {
+    z-index: 1;
+    width: 120px;
+    position: fixed;
+    top: 145px;
+    left: 780px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lstCustomerFilms {
+    width: 800px;
+    height:400px;
+    position: fixed;
+    top: 230px;
+    left: 300px;
+}
+
+.lblMovieCount {
+    z-index: 1;
+    width: 200px;
+    position: fixed;
+    top: 150px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblFilmDescription {
+    z-index: 1;
+    width: 400px;
+    height:200px;
+    position: fixed;
+    top: 230px;
+    left: 1150px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.Movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+    overflow: scroll;
+    height: 476px;
+    padding-bottom: 30px;
+    z-index:10;
+    background-color:white;
+    border:30px solid white;
+    width: 1284px;
+    margin-left: 457px;
+    margin-right: 0px;
+    margin-top: 206px;
+}
+
+    .Movies li {
+    background-color: white;
+    list-style:none;
+}
+
+
+.Movies li VMImage {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
 }

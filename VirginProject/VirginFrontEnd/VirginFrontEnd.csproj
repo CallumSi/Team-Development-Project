@@ -124,8 +124,9 @@
     <Content Include="VMCheckout.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
-    <Content Include="VMHome.aspx" />
+    <Content Include="VMCustomerMovieList.aspx" />
     <Content Include="VMMovieDelete.aspx" />
+    <Content Include="VMMovieViewer.aspx" />
     <Content Include="VMStaffMovie.aspx" />
     <Content Include="VMMovie.css" />
     <Content Include="VMPaymentDelete.aspx" />
@@ -549,12 +550,12 @@
     <Compile Include="MarketplaceHome2.aspx.designer.cs">
       <DependentUpon>MarketplaceHome2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VMHome.aspx.cs">
-      <DependentUpon>VMHome.aspx</DependentUpon>
+    <Compile Include="VMCustomerMovieList.aspx.cs">
+      <DependentUpon>VMCustomerMovieList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VMHome.aspx.designer.cs">
-      <DependentUpon>VMHome.aspx</DependentUpon>
+    <Compile Include="VMCustomerMovieList.aspx.designer.cs">
+      <DependentUpon>VMCustomerMovieList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMMovieDelete.aspx.cs">
       <DependentUpon>VMMovieDelete.aspx</DependentUpon>
@@ -562,6 +563,13 @@
     </Compile>
     <Compile Include="VMMovieDelete.aspx.designer.cs">
       <DependentUpon>VMMovieDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMMovieViewer.aspx.cs">
+      <DependentUpon>VMMovieViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMMovieViewer.aspx.designer.cs">
+      <DependentUpon>VMMovieViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMStaffMovie.aspx.cs">
       <DependentUpon>VMStaffMovie.aspx</DependentUpon>

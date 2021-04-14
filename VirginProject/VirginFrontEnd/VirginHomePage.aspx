@@ -19,7 +19,7 @@
                 <ul>
 
                         <li>
-                          <asp:Button ID="btnVirginMovies" CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Movies" Height="45px" Width="154px" />
+                          <asp:Button ID="btnVirginMovies" CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Movies" Height="45px" Width="154px" OnClick="btnVirginMovies_Click" />
                      </li>
                      <li>
                    
