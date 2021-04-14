@@ -496,6 +496,7 @@
     </Compile>
     <Compile Include="VirginCustomerMovieList.aspx.designer.cs">
       <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VHCHospitalList.aspx.cs">
       <DependentUpon>VHCHospitalList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -664,7 +665,7 @@
     <Compile Include="VPStaffList.aspx.designer.cs">
       <DependentUpon>VPStaffList.aspx</DependentUpon>
     </Compile>
-  </ItemGroup>
+  </ItemGroup> 
   <ItemGroup>
     <Content Include="VirginProject.Master" />
     <None Include="packages.config" />
