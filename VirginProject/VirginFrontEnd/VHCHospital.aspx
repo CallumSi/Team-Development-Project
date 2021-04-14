@@ -25,10 +25,6 @@
             <asp:Button ID="btnHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnHome_Click" />
             <%--BUTTON: ADD HOSPITAL--%>
             <asp:Button ID="btnAddHospital" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="btnAddHospital_Click" />
-            <%--BUTTON: EDIT HOSPITAL--%>
-            <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Hospital" OnClick="btnEditHospital_Click" />
-            <%--BUTTON: DELETE HOSPITAL--%>
-            <asp:Button ID="btnDeleteHospital" runat="server" CssClass="DeleteHospital" Text="Delete Hospital" OnClick="btnDeleteHospital_Click" />
             <%--BUTTON: LIST HOSPITAL--%>
             <asp:Button ID="btnListHospital" runat="server" CssClass="ListHospitals" Text="List Hospitals" OnClick="btnListHospital_Click" />
         </nav>
