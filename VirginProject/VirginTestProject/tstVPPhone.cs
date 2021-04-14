@@ -16,6 +16,7 @@ namespace VirginTestProject
         string Model = "12 Pro Max";
         string Price = "1250.00";
         string StockStatus = "True";
+        string Quantity = "1";
         
         
         [TestMethod]
@@ -170,6 +171,23 @@ namespace VirginTestProject
             Assert.AreEqual(AVPPhone.PhoneID, SomePhoneID);
         }
 
+        [TestMethod]
+
+        //testing the stock status property
+        public void QuantityPropertyOK()
+        {
+            //create an instance of the class
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a variable to store the id of the phone
+            Int32 SomeQuantity;
+            //assign a id to the variable 
+            SomeQuantity = 1;
+            //try to send some data to id property
+            AVPPhone.Quantity = SomeQuantity;
+            //check to see that the data in the variable property are the same
+            Assert.AreEqual(AVPPhone.Quantity, SomeQuantity);
+        }
+
 
         [TestMethod]
 
@@ -188,8 +206,9 @@ namespace VirginTestProject
             string Model = "12 Pro Max";
             string Price = "1250.00";
             string StockStatus = "True";
+            string Quantity = "1";
             //invoke the method 
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned 
             Assert.AreEqual(Error, "");
         }
@@ -214,7 +233,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(3, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -232,7 +251,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(4, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -250,7 +269,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(5, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -268,7 +287,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(4, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -286,7 +305,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(5, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -304,7 +323,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(6, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -322,7 +341,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(4, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -340,7 +359,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Capacity = Capacity.PadLeft(20, '1');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -366,7 +385,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(1, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -384,7 +403,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(2, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -402,7 +421,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(3, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -420,7 +439,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(9, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -438,7 +457,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(10, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -456,7 +475,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(11, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -474,7 +493,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(6, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -492,7 +511,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Colour = Colour.PadLeft(50, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -518,7 +537,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(4, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -536,7 +555,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(5, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -554,7 +573,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(6, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -572,7 +591,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(49, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -590,7 +609,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(50, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -609,7 +628,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(51, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -627,7 +646,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(30, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -645,7 +664,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Description = Description.PadLeft(100, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -672,7 +691,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(3, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -690,7 +709,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(4, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -708,7 +727,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(5, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -726,7 +745,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(14, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -744,7 +763,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(15, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -763,7 +782,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(16, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -781,7 +800,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(10, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -799,7 +818,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Make = Make.PadLeft(50, 'A');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -825,7 +844,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(1, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -843,7 +862,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(2, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -861,7 +880,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(3, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -879,7 +898,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(29, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -897,7 +916,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(30, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -916,7 +935,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(31, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -934,7 +953,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(16, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -952,7 +971,7 @@ namespace VirginTestProject
             //create some test data to pass the valid method
             Model = Model.PadLeft(1000, 'I');
             //invoke the method
-            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -965,150 +984,274 @@ namespace VirginTestProject
         /// </summary>
         /// 
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMinLessOne()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(1, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMinLessOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "99.9"; 
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMin()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(2, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMin()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "100.00"; 
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMinPlusOne()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(3, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMinPlusOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "100.01";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the model method
-        //public void PriceMaxLessOne()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(29, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the model method
+        public void PriceMaxLessOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "1999.99";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMax()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(30, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMax()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "2000.00"; 
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMaxPlusOne()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(31, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMaxPlusOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "2000.01"; 
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceMid()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(16, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceMid()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "1050.00"; 
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the price method
-        //public void PriceExtremeMax()
-        //{
-        //    //create an instance of a class 
-        //    clsVPPhone AVPPhone = new clsVPPhone();
-        //    //create a string variable to store the validation 
-        //    String Error = "";
-        //    //create some test data to test the valid method 
-        //    string Price = ""; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    Price = Price.PadLeft(1000, 'I');
-        //    //invoke the method
-        //    Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus);
-        //    //test to see the results is OK, e.g no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the price method
+        public void PriceExtremeMax()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "3000.00";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus,Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        //***TESTING PROPERTIES***/
+
+        /// <summary>
+        /// //***TESTING PROPERTIES QUANTITY***//
+        /// </summary>
+        /// 
+
+        [TestMethod]
+        //testing the quanity method
+        public void QuantityMinLessOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMin()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "1";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMinPlusOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "2";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMaxLessOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "4";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMax()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "5";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMaxPlusOne()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Price = "6";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the quantity method
+        public void QuantityMid()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "3";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the price method
+        public void QuantityExtremeMax()
+        {
+            //create an instance of a class 
+            clsVPPhone AVPPhone = new clsVPPhone();
+            //create a string variable to store the validation 
+            String Error = "";
+            //create some test data to test the valid method 
+            string Quantity = "20";
+            //invoke the method
+            Error = AVPPhone.Valid(Capacity, Colour, Description, Make, Model, Price, StockStatus, Quantity);
+            //test to see the results is OK, e.g no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+
 
     }
 }

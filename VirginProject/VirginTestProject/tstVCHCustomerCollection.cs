@@ -257,7 +257,7 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredCustomers.Count);
         }
 
-        /*
+        
         [TestMethod]
         public void ReportByUsernameTestDataFound()
         {
@@ -265,18 +265,18 @@ namespace VirginTestProject
             clsVCHCustomerCollection FilteredCustomers = new clsVCHCustomerCollection();
             //var to store outcome
             Boolean OK = true;
-            //apply a data variable of a none existent Username
-            FilteredCustomers.ReportByUsername("HelloThisDoesn'tExist");
+            //apply a data variable of an existent Username
+            FilteredCustomers.ReportByUsername("XXXXXXXXX");
             //check that the correct number of customer records are found
             if (FilteredCustomers.Count == 2)
             {
-                //check that the first customer record is CustomerID 2
-                if (FilteredCustomers.CustomerList[0].CustomerID !=2)
+                //check that the first customer record is CustomerID 29
+                if (FilteredCustomers.CustomerList[0].CustomerID != 29)
                 {
                     OK = false;
                 }
-                //check that the first customer record is CustomerID 3
-                if (FilteredCustomers.CustomerList[1].CustomerID != 3)
+                //check that the second customer record is CustomerID 40
+                if (FilteredCustomers.CustomerList[1].CustomerID != 40)
                 {
                     OK = false;
                 }
@@ -288,6 +288,6 @@ namespace VirginTestProject
 
             //test to see that there are no new customer records
             Assert.IsTrue(OK);
-        }*/
+        }
     }
 }

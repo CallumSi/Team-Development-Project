@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirginFrontEnd
-{
-
-
-    public partial class VHCHospital
-    {
-
+namespace VirginFrontEnd {
+    
+    
+    public partial class VHCHospital {
+        
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,59 +29,50 @@ namespace VirginFrontEnd
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
-        /// Home_Button control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Home_Button;
-
+        protected global::System.Web.UI.WebControls.Button btnHome;
+        
         /// <summary>
-        /// Hospital_AddButton control.
+        /// btnAddHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Hospital_AddButton;
-
+        protected global::System.Web.UI.WebControls.Button btnAddHospital;
+        
         /// <summary>
-        /// Button2 control.
+        /// btnEditHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
+        protected global::System.Web.UI.WebControls.Button btnEditHospital;
+        
         /// <summary>
-        /// Button3 control.
+        /// btnDeleteHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-
+        protected global::System.Web.UI.WebControls.Button btnDeleteHospital;
+        
         /// <summary>
-        /// Button4 control.
+        /// btnListHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
-
-        /// <summary>
-        /// Button5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.Button btnListHospital;
     }
 }

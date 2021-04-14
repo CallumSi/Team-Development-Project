@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VirginClassLibrary;
+using System.Collections.Generic;
+
 
 namespace VirginTestProject
 {
@@ -20,6 +22,22 @@ namespace VirginTestProject
             clsVPPayment AVPPayment = new clsVPPayment();
             //test to see that it exists
             Assert.IsNotNull(AVPPayment);
+        }
+
+        //testing the property of the id payment id
+        [TestMethod]
+        public void PaymentIDPropertyOK()
+        {
+            //create an instance of the class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a variable to store the card no of the payment
+            Int32 SomePaymentID;
+            //assign an ID to the variable
+            SomePaymentID = 1;
+            //try to send some data to the id property 
+            AVPPayment.Payment_ID = SomePaymentID;
+            //check to see the data in the variable and property are the same
+            Assert.AreEqual(AVPPayment.Payment_ID, SomePaymentID);
         }
 
 
@@ -87,6 +105,143 @@ namespace VirginTestProject
             Assert.AreEqual(Error, "");
 
         }
+
+        //***TESTING PROPERTIES***/
+
+        /// <summary>
+        /// //***TESTING PROPERTIES CARDNO***//
+        /// </summary>
+        /// 
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMinLessOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMin()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "0000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMinPlusOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "00000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMaxLessOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMax()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "0000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMaxPlusOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "000000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoMid()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "00000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void CardNoExtremeMax()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string CardNo = "000000000000000000000000000000";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
 
         //***TESTING PROPERTIES***/
 
@@ -262,5 +417,145 @@ namespace VirginTestProject
             //test to see the results is OK, e.g no error message is returned
             Assert.AreNotEqual(Error, "");
         }
+
+
+
+        //***TESTING PROPERTIES***/
+
+        /// <summary>
+        /// //***TESTING PROPERTIES SECURITYNO***//
+        /// </summary>
+        /// 
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMinLessOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "99";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMin()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "999";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMinPlusOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "9999";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMaxLessOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "99";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMax()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "999";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMaxPlusOne()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "9999";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoMid()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "99";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //testing the valid method
+        public void SecurityNoExtremeMax()
+        {
+            //create an instance of a class
+            clsVPPayment AVPPayment = new clsVPPayment();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string SecurityNo = "9999999999";
+            //invoke the method
+            Error = AVPPayment.Valid(CardNo, ExpiryDate, SecurityNo);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }

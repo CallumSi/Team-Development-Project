@@ -14,6 +14,7 @@ namespace VirginClassLibrary
         String mModel;
         Decimal mPrice;
         Boolean mStockStatus;
+        Int32 mQuantity; 
 
         
         //Phone Capacity Property
@@ -158,6 +159,22 @@ namespace VirginClassLibrary
 
         }
 
+        public int Quantity
+
+        {
+            get
+            {
+                // return the private data
+                return mQuantity;
+            }
+                
+                set
+            {
+                //set the private data 
+                mQuantity = value;
+            }
+                
+                }
 
         public bool Find(int PhoneID)
         {
@@ -179,6 +196,7 @@ namespace VirginClassLibrary
                 Model = Convert.ToString(DB.DataTable.Rows[0]["Model"]);
                 Price = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
                 StockStatus = Convert.ToBoolean(DB.DataTable.Rows[0]["StockStatus"]);
+                Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
                 //return that everything works
                 return true;
             }
@@ -191,9 +209,13 @@ namespace VirginClassLibrary
 
         }
         
-        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string StockStatus)
+        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string StockStatus, string Quantity)
         {
             string Error = "";
+
+            // create some variable for later use
+            decimal  ConvertedPrice;
+            int ConvertedQuantity;
 
             //***VALIDATION CAPACITY***//
 
@@ -281,9 +303,67 @@ namespace VirginClassLibrary
                 Error = Error + "THE MODEL MUST BE BETWEEN 2 AND 30 CHARACTERS" + "";
             }
 
+            //***VALIDATION PRICE***//
 
+                try
+                {
+                    ConvertedPrice = Convert.ToDecimal(Price);
+                    int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
+                    if (decimalplaces == 2)
+                    {
+                        if (ConvertedPrice >= 100.00m && ConvertedPrice < 2000.01m)
+                        {
+                            Error += "";
+                        }
+                        else
+                        {
+                            Error += "THE PRICE MUST BE BETWEEN £100.00 AND £2000.00";
+                        }
+                }
+                    else
+                    {
+                        Error += "THE PRICE MUST HAVE 2 DECIMAL PLACES";
+                    }
+                }
+                catch
+                {
+                    Error += "THE PRICE MUST NOT BE LEFT BLANK";
+                }
+
+          
+
+            //*** VALIDATION QUANTITY***//
+
+            try
+            {
+                if (Quantity == "")
+                {
+                    Error += "PLEASE ENTER A QUANTITY";
+                }
+                else
+                {
+                    ConvertedQuantity = Convert.ToInt32(Quantity);
+                    if (ConvertedQuantity > 0 && ConvertedQuantity < 6)
+                    {
+                        Error += "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        Error += "THE QUANTITY LIMIT IS 5";
+                    }
+                }
+            }
+            catch
+            {
+                //return error message 
+                Error += "THE QUANTITY MUST NOT BE LEFT BLANK";
+
+            }
 
             return Error;
+
+        }
+         
         }
     }
-}

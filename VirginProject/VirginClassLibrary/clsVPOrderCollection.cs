@@ -3,43 +3,42 @@ using System;
 
 namespace VirginClassLibrary
 {
-    public class clsVPCartCollection
+    public class clsVPOrderCollection
     {
-        //private data member for the list 
-        List<clsVPCart> mCartList = new List<clsVPCart>();
-        //private data member for ThisCart 
-        clsVPCart mThisCart = new clsVPCart();
+        //private data member for the list
+        List<clsVPOrder> mOrderList = new List<clsVPOrder>();
+        //private data member ThisOrder
+        clsVPOrder mThisOrder = new clsVPOrder();
 
-        //public property for the cart list
-        public List<clsVPCart> CartList
+
+        public List<clsVPOrder> OrderList
+
         {
             get
             {
-                //return the private data 
-                return mCartList;
+                //return the private data
+                return mOrderList;
             }
-            set
+                set
             {
-                //set the private data 
-                mCartList = value;
+                //set the private data
+                mOrderList = value;
             }
 
         }
-        public clsVPCart ThisCart
+        public clsVPOrder ThisOrder
 
         {
             get
             {
-                //return the private data 
-                return mThisCart;
+                //return the private data
+                return mThisOrder;
             }
-
-            set
+                set
             {
-                //set the private data 
-                mThisCart = value;
+                //set the private data
+                mThisOrder = value;
             }
-
 
         }
         public int Count
@@ -47,28 +46,25 @@ namespace VirginClassLibrary
         {
             get
             {
-                //return the private data 
-                return mCartList.Count;
+                //return the private data
+                return mOrderList.Count;
             }
-            set
+                set
             {
-                //we shall worry about this later 
-
+                //we shall worry about this later
             }
-
         }
 
         //contructor for the class
-        public clsVPCartCollection()
+        public clsVPOrderCollection()
         {
             //object for the data connection 
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
-            DB.Execute("sproc_tblVPCart_SelectAll");
+            DB.Execute("sproc_tblVPOrder_SelectAll");
             //populate the array list with the data table
             PopulateArray(DB);
         }
-
 
         void PopulateArray(clsDataConnection DB)
         {
@@ -80,58 +76,59 @@ namespace VirginClassLibrary
             //get the count of the records
             RecordCount = DB.Count;
             //clesr the private array list 
-            mCartList = new List<clsVPCart>();
+            mOrderList = new List<clsVPOrder>();
             //while there are records to process
             while (Index < RecordCount)
             {
-                //create a blank cart
-                clsVPCart ACart = new clsVPCart();
+                //create a blank staff
+                clsVPOrder AOrder = new clsVPOrder();
                 //read in the field from the current records
-                ACart.CartNo = Convert.ToInt32(DB.DataTable.Rows[Index]["CartNo"]);
-                ACart.Products = Convert.ToString(DB.DataTable.Rows[Index]["Products"]);
+                AOrder.Order_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Order_ID"]);
+                AOrder.Customer_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Customer_ID"]);
+                AOrder.Delivery_Date = Convert.ToDateTime(DB.DataTable.Rows[Index]["Delivery_Date"]);
                 //add the record to the private data member
-                mCartList.Add(ACart);
+                mOrderList.Add(AOrder);
                 //point to the next record
                 Index++;
-
             }
+
         }
 
-        public void FilterByProducts(string Products)
+        public void FilterByCustomerID(Int32 Customer_ID)
         {
-            //filters the records based on a full or partials products
+            //filters the records based on a full or partials first name
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
-            //send the Products parameter to the database
-            DB.AddParameter("@Products", Products);
+            //send the FirstName parameter to the database
+            DB.AddParameter("@Customer_ID", Customer_ID);
             //execute the stored procedure 
-            DB.Execute("sproc_tblVPCart_FilterByProducts");
+            DB.Execute("sproc_tblVPOrder_FilterByCustomerID");
             //populate the aray list with the data table
             PopulateArray(DB);
         }
 
-
         public int Add()
         {
-            //adds a new record to the database based on the values of mThisCart
+            //adds a new record to the database based on the values of mThisStaff
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@Products", mThisCart.Products);
+            DB.AddParameter("@Customer_ID", mThisOrder.Customer_ID);
+            DB.AddParameter("@Delivery_Date", mThisOrder.Delivery_Date);
             //execute the query returning the primary key value
-            return DB.Execute("sproc_tblVPCart_Insert");
+            return DB.Execute("sproc_tblVPOrder_Insert");
 
         }
 
         public void Delete()
         {
-            //deletes the record pointed to by ThisCart
+            //deletes the record pointed to by ThisStaff
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@CartNo", mThisCart.CartNo);
+            DB.AddParameter("@Order_ID", mThisOrder.Order_ID);
             //execute the stored procedure
-            DB.Execute("sproc_tblVPCart_Delete");
+            DB.Execute("sproc_tblVPOrder_Delete");
         }
 
         public int Update()
@@ -140,10 +137,11 @@ namespace VirginClassLibrary
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("CartNo", mThisCart.CartNo);
-            DB.AddParameter("@Products", mThisCart.Products);
+            DB.AddParameter("Order_ID", mThisOrder.Order_ID);
+            DB.AddParameter("@Customer_ID", mThisOrder.Customer_ID);
+            DB.AddParameter("@Delivery_Date", mThisOrder.Delivery_Date);
             //execute the stored procedure
-            return DB.Execute("sproc_tblVPCart_Update");
+            return DB.Execute("sproc_tblVPOrder_Update");
 
         }
     }

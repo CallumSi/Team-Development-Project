@@ -162,6 +162,7 @@ namespace VirginClassLibrary
             }
         }
 
+        //find method StaffID
         public bool Find(int StaffID)
         {
             //create an instance of the data connection

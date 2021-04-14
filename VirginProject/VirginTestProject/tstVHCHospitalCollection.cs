@@ -28,12 +28,12 @@ namespace VirginTestProject
             List<clsVHCHospital> TestList = new List<clsVHCHospital>();
             //create the item of test data
             clsVHCHospital TestItem = new clsVHCHospital();
-                //set its properties
-                TestItem.Hospital_ID = 1;
-                TestItem.Hospital_Name = "West Middlesex Hospital";
-                TestItem.Hospital_Place = "West London";
-                //add the item to the test list
-                TestList.Add(TestItem);
+            //set its properties
+            TestItem.Hospital_ID = 1;
+            TestItem.Hospital_Name = "West Middlesex Hospital";
+            TestItem.Hospital_Place = "West London";
+            //add the item to the test list
+            TestList.Add(TestItem);
                 //assign the data to the property
                 AllHospitals.HospitalList = TestList;
                 //test to see that the two values are the same
@@ -97,7 +97,7 @@ namespace VirginTestProject
             //set ThisHospital to the test data 
             AllHospitals.ThisHospital = TestItem;
             //add the record 
-            PrimaryKey = AllHospitals.Add();
+            //PrimaryKey = AllHospitals.Add(); *** REMOVED DUE TO REDUNDANT DATA ***
             //set the primary key of the test data 
             TestItem.Hospital_ID = PrimaryKey;
             //find the record 
@@ -123,7 +123,7 @@ namespace VirginTestProject
             //set ThisHospital to the test data 
             AllHospitals.ThisHospital = TestItem;
             //add the record 
-            PrimaryKey = AllHospitals.Add();
+            //PrimaryKey = AllHospitals.Add();  *** REMOVED DUE TO REDUNDANT DATA ***
             //set the primary key of the test data 
             TestItem.Hospital_ID = PrimaryKey;
             //modify the test data 

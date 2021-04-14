@@ -291,7 +291,7 @@ namespace VirginTestProject
             clsVCHStaffCollection FilteredStaff = new clsVCHStaffCollection();
             //var to store outcome
             Boolean OK = true;
-            //apply a data variable of a none existent staff Username
+            //apply a data variable of an existent staff Username
             FilteredStaff.ReportByStaffUsername("BrickBoy");
             //check that the correct number of staff records are found
             if (FilteredStaff.Count == 2)
@@ -301,8 +301,8 @@ namespace VirginTestProject
                 {
                     OK = false;
                 }
-                //check that the first staff record is StaffID 7
-                if (FilteredStaff.StaffList[1].StaffID != 7)
+                //check that the first staff record is StaffID 187
+                if (FilteredStaff.StaffList[1].StaffID != 187)
                 {
                     OK = false;
                 }

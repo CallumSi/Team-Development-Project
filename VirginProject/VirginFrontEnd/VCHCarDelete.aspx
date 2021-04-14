@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHStaffDelete.aspx.cs" Inherits="VirginFrontEnd.VCHStaffDelete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHCarDelete.aspx.cs" Inherits="VirginFrontEnd.VCHCarDelete" %>
 
 <!DOCTYPE html>
 
@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        </div>
-        <asp:Label ID="lblDeleteStaff" runat="server" Text="Confirm deleting the selected Staff"></asp:Label>
+            <asp:Label ID="lblDeleteCar" runat="server" Text="Confirm deleting the selected Car"></asp:Label>
         <asp:Button ID="btnDelete" runat="server" Height="40px" Width="75px" OnClick="btnDelete_Click" style="z-index: 1; left: 10px; top: 90px; position: absolute" Text="Delete" />
         <asp:Button ID="btnCancel" runat="server" Height="40px" Width="75px" OnClick="btnCancel_Click" style="z-index: 1; left: 115px; top: 90px; position: absolute" Text="Cancel" />
+        </div>
     </form>
 </body>
 </html>

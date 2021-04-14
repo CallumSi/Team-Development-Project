@@ -97,11 +97,12 @@
     <Compile Include="tstVPOrder.cs" />
     <Compile Include="tstVPOrderLine.cs" />
     <Compile Include="tstVPPayment.cs" />
+    <Compile Include="tstVPPaymentCollection.cs" />
     <Compile Include="tstVPPhone.cs" />
     <Compile Include="tstVPPhoneCollection.cs" />
     <Compile Include="tstVPStaff.cs" />
     <Compile Include="tstVPStaffCollection.cs" />
-    <Compile Include="tstVPStock.cs" />
+    <Compile Include="tstVPOrderCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VirginClassLibrary\VirginClassLibrary.csproj">

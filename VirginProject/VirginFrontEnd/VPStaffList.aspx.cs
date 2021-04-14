@@ -39,7 +39,7 @@ namespace VirginFrontEnd
             //store -1 into the session object to indicate this is a new record
             Session["Staff_ID"] = -1;
             //redirect to the data entry page
-            Response.Redirect("VPStaff.aspx");
+            Response.Redirect("AnVPStaff.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace VirginFrontEnd
                 //store the data in the session object 
                 Session["Staff_ID"] = Staff_ID;
                 //redirect to the delete page 
-                Response.Redirect("VPStaff.aspx");
+                Response.Redirect("AnVPStaff.aspx");
             }
             else
             {

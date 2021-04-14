@@ -247,19 +247,19 @@ namespace VirginTestProject
             clsVPDeliveryCollection FilteredDeliveryDate = new clsVPDeliveryCollection();
             //var to store outcome 
             Boolean OK = true;
-            //apply a deliverydate that doesn't exists 
-            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("16/05/2021"));
+            //apply a deliverydate that does exists 
+            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("10/11/2021"));
             //check that the correct number of records are found 
             if (FilteredDeliveryDate.Count == 2)
             {
                 //check to see the first record ID 
-                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 14)
+                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 102)
                 {
                     OK = false;
                 }
 
                 //check that the last record ID  
-                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 16)
+                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 103)
                 {
                     OK = false;
                 }

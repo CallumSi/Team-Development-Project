@@ -100,8 +100,10 @@
     <Content Include="MarketplaceUserFavoriteListings.aspx" />
     <Content Include="MarketplaceUserList.aspx" />
     <Content Include="MarketplaceViewCart.aspx" />
+    <Content Include="VCHACar.aspx" />
     <Content Include="VCHACustomer.aspx" />
     <Content Include="VCHAStaff.aspx" />
+    <Content Include="VCHCarDelete.aspx" />
     <Content Include="VCHCarList.aspx" />
     <Content Include="VCHCustomerDelete.aspx" />
     <Content Include="VCHCustomerList.aspx" />
@@ -114,6 +116,7 @@
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
     <Content Include="VirginCustomerMovieList.aspx" />
+    <Content Include="VHCHospitalList.aspx" />
     <Content Include="VirginForgotPassword.aspx" />
     <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginLogIn.aspx" />
@@ -403,6 +406,13 @@
       <DependentUpon>MarketplaceWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCHACar.aspx.cs">
+      <DependentUpon>VCHACar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHACar.aspx.designer.cs">
+      <DependentUpon>VCHACar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VCHACustomer.aspx.cs">
       <DependentUpon>VCHACustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -416,6 +426,13 @@
     </Compile>
     <Compile Include="VCHAStaff.aspx.designer.cs">
       <DependentUpon>VCHAStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCarDelete.aspx.cs">
+      <DependentUpon>VCHCarDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCarDelete.aspx.designer.cs">
+      <DependentUpon>VCHCarDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHCarList.aspx.cs">
       <DependentUpon>VCHCarList.aspx</DependentUpon>
@@ -479,6 +496,12 @@
     </Compile>
     <Compile Include="VirginCustomerMovieList.aspx.designer.cs">
       <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
+    <Compile Include="VHCHospitalList.aspx.cs">
+      <DependentUpon>VHCHospitalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCHospitalList.aspx.designer.cs">
+      <DependentUpon>VHCHospitalList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginForgotPassword.aspx.cs">
       <DependentUpon>VirginForgotPassword.aspx</DependentUpon>
@@ -657,6 +680,9 @@
       <Project>{fddf02e7-d5af-46af-9f54-b2ba46d8603e}</Project>
       <Name>VirginClassLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VHCImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

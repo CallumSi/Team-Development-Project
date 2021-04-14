@@ -48,6 +48,16 @@ namespace VirginClassLibrary
         }
 
 
+        ////method to checkout 
+        //public void Checkout()
+        //{
+        //    //create an instance of the order class
+        //    clsVPOrder Order = new clsVPOrder();
+        //    //invoke the ProcessCart method
+        //    Order.ProcessCart(this);
+        //}
+
+
         public bool Find(int CartNo)
         {
             //create an instance of the data connection
