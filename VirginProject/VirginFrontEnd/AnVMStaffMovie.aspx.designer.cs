@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VHCHospitalAdd {
+    public partial class VMMovie {
         
         /// <summary>
         /// Head1 control.
@@ -31,67 +31,49 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Home_Button control.
+        /// lstMovies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Home_Button;
+        protected global::System.Web.UI.WebControls.ListBox lstMovies;
         
         /// <summary>
-        /// lblHospital_Name control.
+        /// lblFilterGenre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Name;
+        protected global::System.Web.UI.WebControls.Label lblFilterGenre;
         
         /// <summary>
-        /// lblHospital_Place control.
+        /// txtFilterGenre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHospital_Place;
+        protected global::System.Web.UI.WebControls.TextBox txtFilterGenre;
         
         /// <summary>
-        /// txtHospital_Name control.
+        /// btnApplyFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHospital_Name;
+        protected global::System.Web.UI.WebControls.Button btnApplyFilter;
         
         /// <summary>
-        /// txtHospital_Place control.
+        /// btnDisplayAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHospital_Place;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
-        /// btnClose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
         
         /// <summary>
         /// lblError control.
@@ -101,5 +83,41 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// btnAddMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddMovie;
+        
+        /// <summary>
+        /// btnUpdateMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateMovie;
+        
+        /// <summary>
+        /// btnDeleteMovie control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteMovie;
+        
+        /// <summary>
+        /// btnViewCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnViewCart;
     }
 }

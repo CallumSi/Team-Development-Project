@@ -133,6 +133,7 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
+                mVMMovieID = Convert.ToInt32(DB.DataTable.Rows[0]["VMMovieID"]);
                 mVMmovieTitle = Convert.ToString(DB.DataTable.Rows[0]["VMMovieTitle"]);
                 mVMmovieGenre = Convert.ToString(DB.DataTable.Rows[0]["VMMovieGenre"]);
                 mVMmovieDuration = Convert.ToInt32(DB.DataTable.Rows[0]["VMMovieDuration"]);

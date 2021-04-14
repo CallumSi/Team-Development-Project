@@ -39,7 +39,7 @@ namespace VirginFrontEnd
         }
 
       Int32 DisplayHospital(string HospitalFilter)
-        {
+      {
             Int32 Hospital_ID; //Var to store the primary key  
             String Hospital_Name; //Var to store the Hospital Name
             String Hospital_Place; //Var to store the Hospital Place 
@@ -57,30 +57,60 @@ namespace VirginFrontEnd
                 Hospital_Name = HospitalSearch.HospitalList[Index].Hospital_Name; //get Hospital Name
                 Hospital_Place = HospitalSearch.HospitalList[Index].Hospital_Place; //get Hospital Place
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Hospital_Name + " " + Hospital_Place + " ", Hospital_ID.ToString());
+                ListItem NewEntry = new ListItem("[" + Hospital_ID +"] "+ Hospital_Name + " - " + Hospital_Place + " ", Hospital_ID.ToString());
                 lstHospital.Items.Add(NewEntry);
                 Index++;
             }
             return RecordCount; //return the count of records found
-        }
+      }
 
-        protected void Home_Button_List_Click(object sender, EventArgs e)
+        //Close button
+        protected void btnListClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
         }
 
+        //Home Button
+        protected void btnListHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCHospital.aspx");
+
+        }
+
+        //Display All Button
         protected void btnDisplayAllHospitals_Click(object sender, EventArgs e)
         {
             //display all hospitals
             DisplayHospital("");
         }
 
-        protected void btnApplyHospital_Click(object sender, EventArgs e)
+        //Apply Button
+        protected void btnHospitalApplyFilter_Click(object sender, EventArgs e)
         {
+
+            if (txtHospitalSearch.Text.Length == 0)
+            {
+                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE ENTER A VALID LOCATION";
+            }
+
+            else
+            {
+                Int32 RecordCount;
+                RecordCount = DisplayHospital(txtHospitalSearch.Text);
+                lblError.Text = RecordCount + " Records Found ";
+            }
+        }
+
+        //Total Records Button
+        protected void btnTotalRecords_Click(object sender, EventArgs e)
+        {
+            //display all hospitals
+            DisplayHospital("");
+
             //declare var to store the record count 
             Int32 RecordCount;
-            RecordCount = DisplayHospital(txtHospitalSearch.Text);
-            lblError.Text = RecordCount + " Record Found ";
+            RecordCount = DisplayHospital("");
+            lblError.Text = RecordCount + " Records Found ";
         }
     }
 }
