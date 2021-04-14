@@ -111,6 +111,10 @@ namespace VirginClassLibrary
         {
             string Error = "";
 
+            ////// create some variable for later use
+            //int ConvertedCardNo;
+            //int ConvertedSecurityNo;
+
             //***VALIDATION EXPIRY DATE***//
 
             DateTime DateTemp;
@@ -142,6 +146,112 @@ namespace VirginClassLibrary
                 Error = Error + "THE DATE IS NOT A VALID DATE";
 
             }
+
+
+            //***VALIDATION CARDNO***//
+
+            //if (CardNo.Length > 0)
+            //{
+            //    try
+            //    {
+            //        Int32 TempCardNo = Convert.ToInt32(CardNo);
+            //        {
+            //            if (TempCardNo < 16)
+            //            {
+            //                return "THE CARDNO MUST BE 16 DIGITS ONLY";
+            //            }
+            //        }
+                    
+            //    }
+            //    catch
+            //    {
+            //        return "THE CARDNO MUST NOT BE LEFT BLANK";
+            //    }
+            //}
+
+
+            //try
+            //{
+            //    if (CardNo == "")
+            //    {
+            //        Error += "PLEASE ENTER A CARDNO";
+            //    }
+            //    else
+            //    {
+            //        ConvertedCardNo = Convert.ToInt32(CardNo);
+            //        if (ConvertedCardNo > 0 && ConvertedCardNo < 17)
+            //        {
+            //            Error += "";
+            //        }
+            //        else
+            //        {
+            //            //return error message 
+            //            Error += "THE CARDNO MUST ONLY BE 16 DIGITS ";
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    //return error message 
+            //    Error += "THE CARDNO MUST NOT BE LEFT BLANK ";
+
+            //}
+
+
+
+            //***VALIDATION SECURITYNO***//
+
+            //try
+            //{
+            //    if (SecurityNo == "")
+            //    {
+            //        Error += "PLEASE ENTER A SECURITYNO";
+            //    }
+            //    else
+            //    {
+            //        ConvertedSecurityNo = Convert.ToInt32(SecurityNo);
+            //        if (ConvertedSecurityNo > 2 && ConvertedSecurityNo < 4)
+            //        {
+            //            Error += "";
+            //        }
+            //        else
+            //        {
+            //            return error message
+            //            Error += "THE SECURITYNO MUST ONLY BE 3 DIGITS";
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    return error message
+            //    Error += "THE SECURITYNO MUST NOT BE LEFT BLANK";
+
+            //}
+
+
+            ////***VALIDATION SECURITYNO***//
+
+            //if (SecurityNo.Length > 0)
+            //{
+            //    try
+            //    {
+            //        Int32 TempSecurityNo = Convert.ToInt32(SecurityNo);
+            //        {
+            //            if (TempSecurityNo < 3)
+            //            {
+            //                return "THE SECURITY MUST BE 3 DIGITS ONLY";
+            //            }
+            //        }
+
+            //    }
+            //    catch
+            //    {
+            //        return "THE SECURITYNO MUST NOT BE LEFT BLANK";
+            //    }
+            //}
+
+
+
 
             return Error;
         }

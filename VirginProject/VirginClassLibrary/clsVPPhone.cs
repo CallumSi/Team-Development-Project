@@ -213,6 +213,10 @@ namespace VirginClassLibrary
         {
             string Error = "";
 
+            // create some variable for later use
+            decimal  ConvertedPrice;
+            int ConvertedQuantity;
+
             //***VALIDATION CAPACITY***//
 
             //record the error
@@ -301,13 +305,63 @@ namespace VirginClassLibrary
 
             //***VALIDATION PRICE***//
 
+            if (Price.Length > 0)
+            {
+                try
+                {
+                    ConvertedPrice = Convert.ToDecimal(Price);
+                    int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
+                    if (decimalplaces == 2)
+                    {
+                        if (ConvertedPrice > 100.00m && ConvertedPrice < 2000.00m)
+                        {
+                            Error += "";
+                        }
+                    }
+                    else
+                    {
+                        Error += "The price must be between £100.00 and £2000.00";
+                    }
+                }
+                catch
+                {
+                    Error += "The price must not be left blank";
+                }
 
-
+            }
 
             //***QUANTITY***//
 
+            try
+            {
+                if (Quantity == "")
+                {
+                    Error += "Please Enter a Quantity";
+                }
+                else
+                {
+                    ConvertedQuantity = Convert.ToInt32(Quantity);
+                    if (ConvertedQuantity > 0 && ConvertedQuantity < 6)
+                    {
+                        Error += "";
+                    }
+                    else
+                    {
+                        //return error message 
+                        Error += "The quantity must be out of 5 ";
+                    }
+                }
+            }
+            catch
+            {
+                //return error message 
+                Error += "The quantity must not be left blank ";
+
+            }
 
             return Error;
+
+        }
+         
         }
     }
-}
