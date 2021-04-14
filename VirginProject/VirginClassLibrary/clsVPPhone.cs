@@ -311,14 +311,18 @@ namespace VirginClassLibrary
                     int decimalplaces = BitConverter.GetBytes(decimal.GetBits(ConvertedPrice)[3])[2];
                     if (decimalplaces == 2)
                     {
-                        if (ConvertedPrice > 100.00m && ConvertedPrice < 2000.01m)
+                        if (ConvertedPrice >= 100.00m && ConvertedPrice < 2000.01m)
                         {
                             Error += "";
                         }
-                    }
+                        else
+                        {
+                            Error += "THE PRICE MUST BE BETWEEN £100.00 AND £2000.00";
+                        }
+                }
                     else
                     {
-                        Error += "THE PRICE MUST BE BETWEEN £100.00 AND £2000.00";
+                        Error += "THE PRICE MUST HAVE 2 DECIMAL PLACES";
                     }
                 }
                 catch
