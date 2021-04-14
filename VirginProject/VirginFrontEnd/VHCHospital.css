@@ -63,7 +63,7 @@ nav {
 }
 
 /*Navigation Buttons*/
-.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .FilterHospitals, .btnSubmit {
+.Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit {
     z-index: 1;
     width: 200px;
     height: 50px;
@@ -73,7 +73,7 @@ nav {
 }
 
     /*Navigation Buttons - Hover Effect*/
-    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .FilterHospitals:hover {
+    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover {
         background-color: #27183D;
         color: white;
     }
@@ -110,13 +110,6 @@ nav {
 .ListHospitals {
     position: fixed;
     top: 400px;
-    left: 45px;
-}
-
-/*Filter Navigation Button*/
-.FilterHospitals {
-    position: fixed;
-    top: 475px;
     left: 45px;
 }
 

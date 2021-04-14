@@ -116,6 +116,7 @@
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
     <Content Include="VHCHospitalEdit.aspx" />
+    <Content Include="VHCHospitalList.aspx" />
     <Content Include="VirginForgotPassword.aspx" />
     <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginLogIn.aspx" />
@@ -494,6 +495,13 @@
     </Compile>
     <Compile Include="VHCHospitalEdit.aspx.designer.cs">
       <DependentUpon>VHCHospitalEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCHospitalList.aspx.cs">
+      <DependentUpon>VHCHospitalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCHospitalList.aspx.designer.cs">
+      <DependentUpon>VHCHospitalList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginForgotPassword.aspx.cs">
       <DependentUpon>VirginForgotPassword.aspx</DependentUpon>
