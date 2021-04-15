@@ -13,6 +13,8 @@ namespace VirginFrontEnd
 
         //var to store the primary ket of the record to be deleted
         Int32 Staff_ID;
+
+
         //event handler for the load event
         protected void Page_Load(object sender, EventArgs e)
         {
