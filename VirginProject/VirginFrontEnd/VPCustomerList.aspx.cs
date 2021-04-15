@@ -8,7 +8,7 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class VPStaffList : System.Web.UI.Page
+    public partial class VPCustomerList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,45 +16,45 @@ namespace VirginFrontEnd
             if (IsPostBack == false)
             {
                 //update the list box
-                DisplayVPStaff();
+                DisplayVPCustomer();
             }
         }
 
-        void DisplayVPStaff()
+        void DisplayVPCustomer()
         {
             //create an instance of the staff collection 
-            clsVPStaffCollection AllStaff = new clsVPStaffCollection();
-            //set the data source to the staff in staff collection 
-            lstStaff.DataSource = AllStaff.StaffList;
+            clsVPCustomerCollection AllCustomer = new clsVPCustomerCollection();
+            //set the data source to the customer in customer collection 
+            lstCustomer.DataSource = AllCustomer.CustomerList;
             //set the same of the primary key
-            lstStaff.DataValueField = "Staff_ID";
+            lstCustomer.DataValueField = "Customer_ID";
             //set the data field to display
-            lstStaff.DataTextField = "Staff_FirstName";
+            lstCustomer.DataTextField = "Customer_FirstName";
             //bind the data to the list
-            lstStaff.DataBind(); 
+            lstCustomer.DataBind();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             //store -1 into the session object to indicate this is a new record
-            Session["Staff_ID"] = -1;
+            Session["Customer_ID"] = -1;
             //redirect to the data entry page
-            Response.Redirect("AnVPStaff.aspx");
+            Response.Redirect("AnVPCustomer.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             //var to store the primary key value of the record to be deleted
-            Int32 Staff_ID;
+            Int32 Customer_ID;
             //if the record has been selected from the list 
-            if (lstStaff.SelectedIndex != -1)
+            if (lstCustomer.SelectedIndex != -1)
             {
                 //get the primary key value of the record to delete
-                Staff_ID = Convert.ToInt32(lstStaff.SelectedValue);
+                Customer_ID = Convert.ToInt32(lstCustomer.SelectedValue);
                 //store the data in the session object 
-                Session["Staff_ID"] = Staff_ID;
+                Session["Customer_ID"] = Customer_ID;
                 //redirect to the delete page 
-                Response.Redirect("VPStaffDelete.aspx");
+                Response.Redirect("VPCustomerDelete.aspx");
             }
             else
             {
@@ -67,16 +67,16 @@ namespace VirginFrontEnd
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             //var to store the primary key value of the record to be deleted
-            Int32 Staff_ID;
+            Int32 Customer_ID;
             //if the record has been selected from the list 
-            if (lstStaff.SelectedIndex != -1)
+            if (lstCustomer.SelectedIndex != -1)
             {
                 //get the primary key value of the record to delete
-                Staff_ID = Convert.ToInt32(lstStaff.SelectedValue);
+                Customer_ID = Convert.ToInt32(lstCustomer.SelectedValue);
                 //store the data in the session object 
-                Session["Staff_ID"] = Staff_ID;
+                Session["Customer_ID"] = Customer_ID;
                 //redirect to the delete page 
-                Response.Redirect("AnVPStaff.aspx");
+                Response.Redirect("AnVPCustomer.aspx");
             }
             else
             {
@@ -86,8 +86,6 @@ namespace VirginFrontEnd
             }
         }
 
-        
-
         protected void btnApply_Click(object sender, EventArgs e)
         {
             DisplayFirstName(txtSearchFirstName.Text);
@@ -95,43 +93,41 @@ namespace VirginFrontEnd
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
-            ////display all staff first name
+            //display all the customers first name
             DisplayFirstName("");
         }
 
-        Int32 DisplayFirstName(string VPStaffFilter)
+        Int32 DisplayFirstName(string VPCustomerFilter)
         {
-            Int32 Staff_ID;
-            string Staff_FirstName; //this one is declared in the collections and tests
+            Int32 Customer_ID;
+            string Customer_FirstName; //this one is declared in the collections and tests
             //create an instance of the staff collection
-            clsVPStaffCollection StaffFirstName = new clsVPStaffCollection();
-            //invoke the staff first name filter
-            StaffFirstName.FilterByStaffFirstName(VPStaffFilter);
+            clsVPCustomerCollection CustomerFirstName = new clsVPCustomerCollection();
+            //invoke the customer first name filter
+            CustomerFirstName.FilterByCustomerFirstName(VPCustomerFilter);
             //var to store the count of record
             Int32 RecordCount;
             //var to store the index for the loop
             Int32 Index = 0;
             //get the count record
-            RecordCount = StaffFirstName.Count;
+            RecordCount = CustomerFirstName.Count;
             //clear the list box
-            lstStaff.Items.Clear();
+            lstCustomer.Items.Clear();
             //while there are records to process
             while (Index < RecordCount)
             {
                 //get the primary key 
-                Staff_ID = StaffFirstName.StaffList[Index].Staff_ID;
+                Customer_ID = CustomerFirstName.CustomerList[Index].Customer_ID;
                 //get the first name
-                Staff_FirstName = StaffFirstName.StaffList[Index].Staff_FirstName;
+                Customer_FirstName = CustomerFirstName.CustomerList[Index].Customer_FirstName;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Staff_FirstName + "", Staff_ID.ToString());
+                ListItem NewEntry = new ListItem(Customer_FirstName + "", Customer_ID.ToString());
                 //add the staff to the list
-                lstStaff.Items.Add(NewEntry);
+                lstCustomer.Items.Add(NewEntry);
                 //move the index to the next record
                 Index++;
             }
             return RecordCount;
         }
-
-
     }
 }

@@ -31,7 +31,7 @@ namespace VirginTestProject
             clsVPOrder TestItem = new clsVPOrder();
             //set its properties
             TestItem.Order_ID = 1;
-            TestItem.Customer_ID = 1;
+            TestItem.Customer_ID = 5;
             TestItem.Delivery_Date = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
@@ -52,7 +52,7 @@ namespace VirginTestProject
             clsVPOrder TestOrder = new clsVPOrder();
             //set the properties of the test object
             TestOrder.Order_ID = 1;
-            TestOrder.Customer_ID = 1;
+            TestOrder.Customer_ID = 5;
             TestOrder.Delivery_Date = DateTime.Now.Date;
             //assign the data to the property 
             AllOrder.ThisOrder = TestOrder;
@@ -74,7 +74,7 @@ namespace VirginTestProject
             clsVPOrder TestItem = new clsVPOrder();
             //set it's properties
             TestItem.Order_ID = 1;
-            TestItem.Customer_ID = 1;
+            TestItem.Customer_ID = 5;
             TestItem.Delivery_Date = DateTime.Now.Date;
             //add the item to the test list
             TestList.Add(TestItem);
@@ -96,7 +96,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Order_ID = 1;
-            TestItem.Customer_ID = 1;
+            TestItem.Customer_ID = 5;
             TestItem.Delivery_Date = DateTime.Now.Date;
             //set ThisOrder to the test data 
             AllOrder.ThisOrder = TestItem;
@@ -121,7 +121,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Order_ID = 1;
-            TestItem.Customer_ID = 1;
+            TestItem.Customer_ID = 5;
             TestItem.Delivery_Date = DateTime.Now.Date;
             //set ThisOrder to the test data 
             AllOrder.ThisOrder = TestItem;
@@ -130,9 +130,9 @@ namespace VirginTestProject
             //set the primary key of the test data 
             TestItem.Order_ID = PrimaryKey;
             //modify the test data
-            TestItem.Order_ID = 2;
-            TestItem.Customer_ID = 2;
-            TestItem.Delivery_Date = DateTime.Now.Date;
+            TestItem.Order_ID = 1;
+            TestItem.Customer_ID = 5;
+            TestItem.Delivery_Date = DateTime.Now.Date.AddDays(5);
             //set the record based on the new test data 
             AllOrder.ThisOrder = TestItem;
             //update the record
@@ -155,7 +155,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Order_ID = 1;
-            TestItem.Customer_ID = 1;
+            TestItem.Customer_ID = 5;
             TestItem.Delivery_Date = DateTime.Now.Date;
             //set ThisOrder to the test data 
             AllOrder.ThisOrder = TestItem;

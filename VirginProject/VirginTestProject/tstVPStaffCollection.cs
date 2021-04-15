@@ -122,8 +122,11 @@ namespace VirginTestProject
             TestItem.Staff_Telephone = "98765432101";
             //set ThisStaff to the test data 
             AllStaff.ThisStaff = TestItem;
-            //add the record
-            PrimaryKey = AllStaff.Add();
+            /* 
+            commented out to prevent constant-reduplication of staff record into data table
+            "//add the record
+            PrimaryKey = AllStaff.Add(); " 
+             */
             //set the primary key of the test data 
             TestItem.Staff_ID = PrimaryKey;
             //find the record
@@ -153,8 +156,11 @@ namespace VirginTestProject
             TestItem.Staff_Telephone = "98765432101";
             //set ThisStaff to the test data 
             AllStaff.ThisStaff = TestItem;
-            //add the record
-            PrimaryKey = AllStaff.Add();
+            /* 
+            commented out to prevent constant-reduplication of staff record into data table
+            "//add the record
+            PrimaryKey = AllStaff.Add();" 
+            */
             //set the primary key of the test data 
             TestItem.Staff_ID = PrimaryKey;
             //modify the test data

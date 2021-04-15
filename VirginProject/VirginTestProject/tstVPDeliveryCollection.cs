@@ -114,7 +114,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
+            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -124,8 +124,11 @@ namespace VirginTestProject
             TestItem.Delivery_Date = DateTime.Now.Date;
             //set ThisDelivery to the test data 
             AllDelivery.ThisDelivery = TestItem;
-            //add the record
-            PrimaryKey = AllDelivery.Add();
+            /* 
+            commented out to prevent constant-reduplication of delivery record into data table
+            "//add the record
+            PrimaryKey = AllDelivery.Add();" 
+            */
             //set the primary key of the test data 
             TestItem.Delivery_ID = PrimaryKey;
             //find the record
@@ -146,7 +149,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
+            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -156,13 +159,16 @@ namespace VirginTestProject
             TestItem.Delivery_Date = DateTime.Now.Date;
             //set ThisDelivery to the test data 
             AllDelivery.ThisDelivery = TestItem;
-            //add the record
-            PrimaryKey = AllDelivery.Add();
+            /* 
+            commented out to prevent constant-reduplication of delivery record into data table
+            "//add the record
+            PrimaryKey = AllDelivery.Add(); " 
+             */
             //set the primary key of the test data 
             TestItem.Delivery_ID = PrimaryKey;
             //modify the test data
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
+            TestItem.Order_ID = 11;
             TestItem.Title = "Mr";
             TestItem.FirstName = "James";
             TestItem.LastName = "Bond";
@@ -193,7 +199,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
+            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -248,18 +254,18 @@ namespace VirginTestProject
             //var to store outcome 
             Boolean OK = true;
             //apply a deliverydate that does exists 
-            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("10/11/2021"));
+            FilteredDeliveryDate.FilterByDeliveryDate(Convert.ToDateTime("15/04/2021"));
             //check that the correct number of records are found 
             if (FilteredDeliveryDate.Count == 2)
             {
                 //check to see the first record ID 
-                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 102)
+                if (FilteredDeliveryDate.DeliveryList[0].Delivery_ID != 175)
                 {
                     OK = false;
                 }
 
                 //check that the last record ID  
-                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 103)
+                if (FilteredDeliveryDate.DeliveryList[1].Delivery_ID != 176)
                 {
                     OK = false;
                 }

@@ -32,7 +32,7 @@ namespace VirginTestProject
             //create a variable to store the order id of the order
             Int32 SomeOrderID;
             //assign an ID to the variable
-            SomeOrderID = 1100;
+            SomeOrderID = 1;
             //try to send some data to the id property 
             AVPOrder.Order_ID = SomeOrderID;
             //test to see that it exists
@@ -49,7 +49,7 @@ namespace VirginTestProject
             //create a variable to store the customer id of the order
             Int32 SomeCustomerID;
             //assign an ID to the variable
-            SomeCustomerID = 1;
+            SomeCustomerID = 1100;
             //try to send some data to the id property 
             AVPOrder.Customer_ID = SomeCustomerID;
             //test to see that it exists
