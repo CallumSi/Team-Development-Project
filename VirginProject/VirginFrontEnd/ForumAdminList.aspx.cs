@@ -32,6 +32,8 @@ namespace VirginFrontEnd
             lstForumAdmin.DataTextField = "AdminUserName";
             //bind the data to the list
             lstForumAdmin.DataBind();
+            //clear the list box
+            lstForumAdmin.Items.Clear();
         }
 
         protected void lstForumAdmin_SelectedIndexChanged(object sender, EventArgs e)

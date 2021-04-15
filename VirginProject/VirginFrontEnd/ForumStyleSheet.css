@@ -17,6 +17,10 @@ header {
     padding: 15px;
     color: #cc0000;
 }
+h1 {
+    color: #cc0000;
+    text-align:center;
+}
 
 nav {
     background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
@@ -70,6 +74,7 @@ ul {
 
 li {
     list-style: none;
+    text-align:center;
 }
 
 .row {
