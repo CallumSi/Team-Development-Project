@@ -10,6 +10,7 @@ namespace VirginFrontEnd
 {
     public partial class VHCHospitalAdd : System.Web.UI.Page
     {
+        //Declare Hospital Primary Key
         Int32 Hospital_ID;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace VirginFrontEnd
                 //add the record
                 AllHospitals.Add();
                 //redirect to the main page
-                Response.Redirect("VHCHospital.aspx");
+                Response.Redirect("VHCHospitalList.aspx");
             }
 
             else
@@ -58,7 +59,7 @@ namespace VirginFrontEnd
         void Update()
         {
             //create an instance of the hospital class
-            VirginClassLibrary.clsVHCHospitalCollection AllHospitals = new VirginClassLibrary.clsVHCHospitalCollection();
+            clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
             //validate the data on the web form
             String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
             //if the data is OK then add it to the object
@@ -71,8 +72,7 @@ namespace VirginFrontEnd
                 AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
                 //update the record 
                 AllHospitals.Update();
-                //all done so redirect back to the main page 
-                Response.Redirect("VHCHospital.aspx");
+                Response.Redirect("VHCHospitalList.aspx");
             }
         }
 
@@ -87,16 +87,13 @@ namespace VirginFrontEnd
             txtHospital_Place.Text = AllHospitals.ThisHospital.Hospital_Place;
         }
 
+        //Home Button
         protected void Home_Button_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
         }
 
-        protected void btnClose_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospital.aspx");
-        }
-
+        //Submit Button
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -112,8 +109,8 @@ namespace VirginFrontEnd
                 Update();
             }
         }
-
-        
+  
+        //Close Button
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");

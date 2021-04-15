@@ -21,7 +21,7 @@ namespace VirginFrontEnd
                 //populate the list of staff
                 DisplayStaff();
                 //if this is not a new record
-                if (Staff_ID !=-1) 
+                if (Staff_ID != -1) 
                 {
                     //display the current data for the record
                     DisplayStaff();
@@ -51,22 +51,22 @@ namespace VirginFrontEnd
         void Add()
         {
             //create an instance of the staff list
-            clsVPStaffCollection StaffCollection = new clsVPStaffCollection();
+            clsVPStaffCollection AllStaff = new clsVPStaffCollection();
             //validate the data on the web form
-            string Error = StaffCollection.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
+            string Error = AllStaff.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
             //if the data is ok then add it to the object
             if (Error == "")
             {
                 //get the data entered by the user 
-                StaffCollection.ThisStaff.Staff_FirstName = txtStaffFirstName.Text;
-                StaffCollection.ThisStaff.Staff_LastName = txtStaffLastName.Text;
-                StaffCollection.ThisStaff.Staff_Street = txtStaffStreet.Text;
-                StaffCollection.ThisStaff.Staff_Address = txtStaffAddress.Text;
-                StaffCollection.ThisStaff.Staff_Postcode = txtStaffPostcode.Text;
-                StaffCollection.ThisStaff.Staff_Email = txtStaffEmail.Text;
-                StaffCollection.ThisStaff.Staff_Telephone = txtStaffTelephone.Text;
+                AllStaff.ThisStaff.Staff_FirstName = txtStaffFirstName.Text;
+                AllStaff.ThisStaff.Staff_LastName = txtStaffLastName.Text;
+                AllStaff.ThisStaff.Staff_Street = txtStaffStreet.Text;
+                AllStaff.ThisStaff.Staff_Address = txtStaffAddress.Text;
+                AllStaff.ThisStaff.Staff_Postcode = txtStaffPostcode.Text;
+                AllStaff.ThisStaff.Staff_Email = txtStaffEmail.Text;
+                AllStaff.ThisStaff.Staff_Telephone = txtStaffTelephone.Text;
                 //add the record
-                StaffCollection.Add();
+                AllStaff.Add();
                 //redirect back to the main page
                 Response.Redirect("VPStaffList.aspx");
             }
@@ -80,7 +80,7 @@ namespace VirginFrontEnd
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            if (Staff_ID == 1)
+            if (Staff_ID == -1)
             {
                 //add a new record
                 Add();
@@ -97,7 +97,7 @@ namespace VirginFrontEnd
             //create an instance of the staff 
             clsVPStaffCollection AllStaff = new clsVPStaffCollection();
             //validate the data on the web form 
-            string Error = AllStaff.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
+            String Error = AllStaff.ThisStaff.Valid(txtStaffFirstName.Text, txtStaffLastName.Text, txtStaffStreet.Text, txtStaffAddress.Text, txtStaffPostcode.Text, txtStaffEmail.Text, txtStaffTelephone.Text);
             //if the data is ok then add it to the object 
             if (Error == "")
             {

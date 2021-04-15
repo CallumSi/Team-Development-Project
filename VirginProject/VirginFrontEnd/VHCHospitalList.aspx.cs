@@ -31,7 +31,6 @@ namespace VirginFrontEnd
             lstHospital.DataSource = AllHospitals.HospitalList;
             //set the name of the primary key 
             lstHospital.DataValueField = "Hospital_ID";
-
             //set the data field to display 
             lstHospital.DataTextField = "Hospital_Name";
             //bind the data to the list 
@@ -74,7 +73,6 @@ namespace VirginFrontEnd
         protected void btnListHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
-
         }
 
         //Display All Button
@@ -97,7 +95,7 @@ namespace VirginFrontEnd
             {
                 Int32 RecordCount;
                 RecordCount = DisplayHospital(txtHospitalSearch.Text);
-                lblError.Text = RecordCount + " Records Found ";
+                lblError.Text = RecordCount + " RECORDS FOUND ";
             }
         }
 
@@ -110,17 +108,54 @@ namespace VirginFrontEnd
             //declare var to store the record count 
             Int32 RecordCount;
             RecordCount = DisplayHospital("");
-            lblError.Text = RecordCount + " Records Found ";
+            lblError.Text = RecordCount + " RECORDS FOUND ";
         }
 
+        //Edit Button
         protected void btnEditHospital_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospitalAdd.aspx");
+            //var to store the primary key value of the record to be edited
+            Int32 Hospital_ID;
+            //if a record has been selected from the list
+            if (lstHospital.SelectedIndex != -1)
+            {
+                //get the primary key of the record to edit
+                Hospital_ID = Convert.ToInt32(lstHospital.SelectedValue);
+                //store the data in the session object
+                Session["Hospital_ID"] = Hospital_ID;
+                //redirect to the edit page
+                Response.Redirect("VHCHospitalAdd.aspx");
+            }
+
+            //if no record has been selected
+            else
+            {
+                //display an error 
+                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
+            }
         }
 
         protected void btnDeleteHospital_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospitalDelete.aspx");
+            //var to store the primary key value of the record to be deleted
+            Int32 Hospital_ID;
+            //if a record has been selected from the list
+            if (lstHospital.SelectedIndex != -1)
+            {
+                //get the primary key of the record to delete
+                Hospital_ID = Convert.ToInt32(lstHospital.SelectedValue);
+                //store the data in the session object
+                Session["Hospital_ID"] = Hospital_ID;
+                //redirect to the delete page
+                Response.Redirect("VHCHospitalDelete.aspx");
+            }
+
+            //if no record has been selected
+            else
+            {
+                //display an error 
+                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
+            }
 
         }
     }

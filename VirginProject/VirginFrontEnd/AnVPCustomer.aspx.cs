@@ -56,9 +56,51 @@ namespace VirginFrontEnd
             {
                 //get the data entered by the user
                 AllCustomer.ThisCustomer.Customer_FirstName = txtCustomerFirstName.Text;
-
+                AllCustomer.ThisCustomer.Customer_LastName = txtCustomerLastName.Text;
+                AllCustomer.ThisCustomer.Customer_Street = txtCustomerStreet.Text;
+                AllCustomer.ThisCustomer.Customer_Address = txtCustomerAddress.Text;
+                AllCustomer.ThisCustomer.Customer_Postcode = txtCustomerPostcode.Text;
+                AllCustomer.ThisCustomer.Customer_Email = txtCustomerEmail.Text;
+                AllCustomer.ThisCustomer.Customer_Telephone = txtCustomerTelephone.Text;
+                //add the record
+                AllCustomer.Add();
+                //redirect back to the main page
+                Response.Redirect("VPCustomerList.aspx");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "There were problems with the data entered, please try again" + Error;
             }
         }
-      
-    }
+
+        //protected void btnOK_Click(object sender, EventArgs e)
+        //{
+        //    if (Customer_ID == -1)
+        //    {
+        //        //add a new record
+        //        Add();
+        //    }
+        //    else
+        //    {
+        //        //update the record
+        //        Update();
+        //    }
+        }
+
+    //    void Update()
+    //    {
+    //        //create an instance of the staff 
+    //        clsVPCustomerCollection AllCustomer = new clsVPCustomerCollection();
+    //        //validate the data on the web form 
+    //        String Error = AllCustomer.ThisCustomer.Valid(txtCustomerFirstName.Text, txtCustomerLastName.Text, txtCustomerStreet.Text, txtCustomerAddress.Text, txtCustomerPostcode.Text, txtCustomerEmail.Text, txtCustomerTelephone.Text);
+    //        //if the data is ok then add it to the object
+    //        if (Error == "")
+    //        {
+    //            //find the record to update 
+    //            AllCustomer.ThisCustomer.cus
+
+    //        }
+    //    }
+    //}
 }
