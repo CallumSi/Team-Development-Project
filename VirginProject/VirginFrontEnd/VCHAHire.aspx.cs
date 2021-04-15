@@ -33,19 +33,102 @@ namespace VirginFrontEnd
 
         void DisplayHire()
         {
-            /*//create an instance of the car hire collection class
+            //create an instance of the car hire collection class
             clsVCHHireCollection HireCollection = new clsVCHHireCollection();
             //find the HireID for the record to be updated
             HireCollection.ThisHire.Find(HireID);
             //display the data for this record
-            txtCarMake.Text = HireCollection.ThisHire.CarMake;
-            txtCarModel.Text = HireCollection.ThisHire.CarModel;
-            txtCarEngine.Text = HireCollection.ThisHire.CarEngine.ToString();
-            ddlCarBody.SelectedValue = HireCollection.ThisHire.CarBody;
-            txtCarColour.Text = HireCollection.ThisHire.CarColour;
-            ddlFuelType.SelectedValue = HireCollection.ThisHire.CarFuel;
-            txtCarPrice.Text = HireCollection.ThisHire.CarPrice.ToString();
-            txtCarRegistration.Text = HireCollection.ThisHire.CarRegistration;*/
+            txtCarID.Text = HireCollection.ThisHire.CarID.ToString();
+            txtCustomerID.Text = HireCollection.ThisHire.CustomerID.ToString();
+            txtHireCollectionDate.Text = HireCollection.ThisHire.HireCollectionDate.ToString();
+            txtHireReturnDate.Text = HireCollection.ThisHire.HireReturnDate.ToString();
+            ddlHireLocation.SelectedValue = HireCollection.ThisHire.HireLocation;
+            txtDriverAge.Text = HireCollection.ThisHire.DriverAge.ToString();
+            txtDriverLicenseNumber.Text = HireCollection.ThisHire.DriverLicenseNumber;
+        }
+
+        //function to add new car hire records
+        void Add()
+        {
+            //create an instance of the car hire collection class
+            clsVCHHireCollection HireCollection = new clsVCHHireCollection();
+            //validate the data on the web front
+            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), txtDriverAge.Text, txtDriverLicenseNumber.Text);
+            //if the data is correct/OK then it'll be added to the object
+            if (Error == "")
+            {
+                //get the data entered by the user
+                HireCollection.ThisHire.CarID = Convert.ToInt32(txtCarID.Text);
+                HireCollection.ThisHire.CustomerID = Convert.ToInt32(txtCustomerID.Text);
+                HireCollection.ThisHire.HireCollectionDate = Convert.ToDateTime(txtHireCollectionDate.Text);
+                HireCollection.ThisHire.HireReturnDate = Convert.ToDateTime(txtHireReturnDate.Text);
+                HireCollection.ThisHire.HireLocation = Convert.ToString(ddlHireLocation.SelectedValue.ToString());
+                HireCollection.ThisHire.DriverAge = Convert.ToInt32(txtDriverAge.Text);
+                HireCollection.ThisHire.DriverLicenseNumber = txtDriverLicenseNumber.Text;
+                //add the new car hire record
+                HireCollection.Add();
+
+                //once complete redirect the user to the car hire list page
+                Response.Redirect("VCHHireList.aspx");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "The inputted data is not acceptable. " + Error;
+            }
+        }
+
+        //function to update existing car hire records
+        void Update()
+        {
+            //create an instance of the car hire collection class
+            clsVCHHireCollection HireCollection = new clsVCHHireCollection();
+            //validate the data on the web front
+            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), txtDriverAge.Text, txtDriverLicenseNumber.Text);
+            //if the data is correct/OK then it'll be added to the object
+            if (Error == "")
+            {
+                //find the record to update/edit
+                HireCollection.ThisHire.Find(HireID);
+                //get the data entered by the user
+                HireCollection.ThisHire.CarID = Convert.ToInt32(txtCarID.Text);
+                HireCollection.ThisHire.CustomerID = Convert.ToInt32(txtCustomerID.Text);
+                HireCollection.ThisHire.HireCollectionDate = Convert.ToDateTime(txtHireCollectionDate.Text);
+                HireCollection.ThisHire.HireReturnDate = Convert.ToDateTime(txtHireReturnDate.Text);
+                HireCollection.ThisHire.HireLocation = Convert.ToString(ddlHireLocation.SelectedValue.ToString());
+                HireCollection.ThisHire.DriverAge = Convert.ToInt32(txtDriverAge.Text);
+                HireCollection.ThisHire.DriverLicenseNumber = txtDriverLicenseNumber.Text;
+                //update the existing car hire record
+                HireCollection.Update();
+
+                //once complete redirect the user to the car hire list page
+                Response.Redirect("VCHHireList.aspx");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "The inputted data is not acceptable. " + Error;
+            }
+        }
+
+        protected void btnOK_Click(object sender, EventArgs e)
+        {
+            if (HireID == -1)
+            {
+                //add the new car record
+                Add();
+            }
+            else
+            {
+                //update the car record
+                Update();
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            //redirect the user to the car list page, without having added or edited a car hire record
+            Response.Redirect("VCHHireList.aspx");
         }
     }
 }

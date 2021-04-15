@@ -16,39 +16,40 @@
         </header>
 
         <article>
-            <ul class="row">
-                <li>
-                    <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="Welcome "></asp:Label>
 
-                </li>
-            </ul>
+            <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="" CssClass="lblUsername"></asp:Label>
             <asp:Image ID="MovieImage" runat="server" CssClass="MovieImage" />
             <ul class="AnMovie">
                 <li>
                     <asp:Label ID="lblMovieNameTitle" runat="server" Text="Movie Title: " CssClass="lblTitleViwer"></asp:Label>
                     <asp:Label ID="lblMovieTitle" runat="server" Style="z-index: 1;"></asp:Label>
+                                    <br /><br />
                 </li>
                 <li>
                     <asp:Label ID="lblMovieGenreTitle" runat="server" Text="Movie Genre: " CssClass="lblGenreViwer"></asp:Label>
                     <asp:Label ID="lblMovieGenre" runat="server" Style="z-index: 1;"></asp:Label>
+                                    <br /><br />
                 </li>
                 <li>
                     <asp:Label ID="lblMovieDurationTitle" runat="server" Text="Movie Duration: " CssClass="lblDurationViwer"></asp:Label>
                     <asp:Label ID="lblMovieDuration" runat="server" Style="z-index: 1;"></asp:Label>
+                                    <br /><br />
                 </li>
                 <li>
                     <asp:Label ID="lblMovieRatingTitle" runat="server" Text="Movie Rating: " CssClass="lblRatingViwer"></asp:Label>
                     <asp:Label ID="lblMovieRating" runat="server" Style="z-index: 1;"></asp:Label>
+                                    <br /><br />
                 </li>
                 <li>
-                    <asp:Label ID="lblMovieReleaseDateTitle" runat="server" Text="Movie Title: " CssClass="lblReleaseDateViwer"></asp:Label>
+                    <asp:Label ID="lblMovieReleaseDateTitle" runat="server" Text="Movie Release Date: " CssClass="lblReleaseDateViwer"></asp:Label>
                     <asp:Label ID="lblMovieReleaseDate" runat="server" Style="z-index: 1;"></asp:Label>
+                                    <br /><br />
                 </li>
 
                 <li>
                     <asp:Label ID="lblMoviePriceTitle" runat="server" Text="Movie Price: " CssClass="lblPriceViewer"></asp:Label>
                     <asp:Label ID="lblMoviePrice" runat="server" Style="z-index: 1"></asp:Label>
-
+                                    <br /><br />
                 </li>
 
                 <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddToCart_Click" />

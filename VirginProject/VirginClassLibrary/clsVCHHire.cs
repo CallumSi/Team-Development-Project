@@ -14,7 +14,7 @@ namespace VirginClassLibrary
         //private property for CarID
         private int mCarID;
         //foreign key
-        //private property for customerID
+        //private property for CustomerID
         private int mCustomerID;
         //private property for HireCollectionDate
         private DateTime mHireCollectionDate;
@@ -169,6 +169,38 @@ namespace VirginClassLibrary
             }
         }
 
+        //find method for HireID
+        public bool Find(int HireID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for HireID to search for
+            DB.AddParameter("@HireID", HireID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHHire_FilterByHireID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mHireID = Convert.ToInt32(DB.DataTable.Rows[0]["HireID"]);
+                mCarID = Convert.ToInt32(DB.DataTable.Rows[0]["CarID"]);
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mHireCollectionDate = Convert.ToDateTime(DB.DataTable.Rows[0]["HireCollectionDate"]);
+                mHireReturnDate = Convert.ToDateTime(DB.DataTable.Rows[0]["HireReturnDate"]);
+                mHireLocation = Convert.ToString(DB.DataTable.Rows[0]["HireLocation"]);
+                mDriverAge = Convert.ToInt32(DB.DataTable.Rows[0]["DriverAge"]);
+                mDriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[0]["DriverLicenseNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+        }
+
         public string Valid(string HireCollectionDate, string HireReturnDate, string HireLocation, string DriverAge, string DriverLicenseNumber)
         {
             //string variable to store the error message
@@ -178,6 +210,8 @@ namespace VirginClassLibrary
             DateTime DateTemp1;
             DateTime DateTemp2;
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////
+
             //check hire collection date is in correct format and in range
             if (HireCollectionDate.Length > 0)
             {
@@ -186,10 +220,10 @@ namespace VirginClassLibrary
                     //assign HireCollectionDate date to the DateTemp1 variable
                     DateTemp1 = Convert.ToDateTime(HireCollectionDate);
                     //check to see the Hire Collection is not in the past
-                    if (DateTemp1 < DateTime.Now.Date)
+                    if (DateTemp1 < DateTime.Now.Date.AddDays(1))
                     {
                         //record the error 
-                        return "A car hire collection cannot take place with a past date. Please enter a valid date.";
+                        return "A car hire collection must be dated between tomorrows date or six months from today. Please enter a valid date.";
                     }
 
                     //check to see if a Hire Collection is further than 6 months (180 days) away
@@ -208,16 +242,20 @@ namespace VirginClassLibrary
             }
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
+
             
+
             //check hire return date is in correct format and in range
             if (HireReturnDate.Length > 0)
             {
                 try
                 {
+                    //assign HireCollectionDate date to the DateTemp1 variable
+                    DateTemp1 = Convert.ToDateTime(HireCollectionDate);
                     //assign HireReturnDate date to the DateTemp2 variable
                     DateTemp2 = Convert.ToDateTime(HireReturnDate);
                     //check to see the Hire Return is not in the past + is at least 7 days after the Hire Collection Date
-                    if (DateTemp2 < DateTime.Now.Date.AddDays(7))
+                    if (DateTemp2 < DateTime.Now.Date.AddDays(8))
                     {
                         //record the error 
                         return "A car hire return cannot take place with a past date and must be dated a week from the current date. Please enter a valid date.";
@@ -228,6 +266,12 @@ namespace VirginClassLibrary
                     {
                         //record the error
                         return "A car hire return date may not be 8 months more than the current date. Please enter a valid date.";
+                    }
+
+                    if (DateTemp2 < DateTemp1)
+                    {
+                        //record the error
+                        return "A car hire return date may not be sooner than a car hire collection date. Please enter a valid date.";
                     }
                 }
 
@@ -243,19 +287,19 @@ namespace VirginClassLibrary
             if (HireLocation.Length == 0)
             {
                 //return the following error message
-                return "The hire location may not be blank. Please enter a hire location.";
+                return "The hire location may not be blank. Please select an appropriate hire location from the listed options.";
             }
             //if the hire location length is more than 70 characters
             if (HireLocation.Length > 70)
             {
                 //return the following error message
-                return "The hire location entered holds too many characters. Please enter a shorter hire location.";
+                return "The hire location entered holds too many characters. Please select an appropriate hire location from the listed options.";
             }
             //if the hire location length is less than 5 characters 
             if (HireLocation.Length < 5)
             {
                 //return the following error message
-                return "The hire location entered is too short. Please enter a longer hire location.";
+                return "The hire location entered is too short. Please select an appropriate hire location from the listed options.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////

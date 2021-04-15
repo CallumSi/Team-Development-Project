@@ -131,7 +131,7 @@ namespace VirginClassLibrary
 
         public int Add()
         {
-            //add a new staff record to the database, based on values of thisStaff
+            //add a new staff record to the database, based on values of thisCar
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure

@@ -13,20 +13,10 @@ namespace VirginFrontEnd
         //variable to store the MovieID and CustomerID from session obect
         Int32 VMMovieID;
         Int32 VMCustomerID;
-        //String VMmovieTitle;
-        //String VMmovieGenre;
-        //Int32 VMmovieDuration;
-        //Int32 VMmovieRating;
-        //DateTime VMmovieReleaseDate;
-
         //create an instance of the clsVMCart
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //lblMovieTitle.Text = VMmovieTitle;
-            //lblMovieGenre.Text = VMmovieGenre;
-            //lblMovieDuration.Text = VMmovieDuration.ToString();
-            //lblMovieDuration.Text = VMmovieReleaseDate.ToString();
             //get the customersid and movieid  and cart from session object 
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
             VMMovieID = Convert.ToInt32(Session["VMMovieID"]);
@@ -77,28 +67,27 @@ namespace VirginFrontEnd
         protected void btnHome_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
-            //redirect to edit user details page
+            Session["VMCustomerID"] = VMCustomerID;
+            //redirect to the movie details page
             Response.Redirect("VirginCustomerMovieList.aspx");
         }
 
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Session["VMCustomerID"] = VMCustomerID;
             Response.Redirect("VMViewCart.aspx");
         }
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Session["VMCustomerID"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Response.Redirect("VirginLogIn.aspx");
         }
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
@@ -107,17 +96,17 @@ namespace VirginFrontEnd
             //create a new instance of clsCartItem
             clsVMCartItem AnItem = new clsVMCartItem();
             //set the movie id
-            AnItem.MovieID = VMMovieID;
+            AnItem.ProductID = VMMovieID;
             try
             {
                 Int32 Moviequantity = Convert.ToInt32(lblQuantity.Text);
                 Int32 yourquantity = Convert.ToInt32(txtQTY.Text);
 
-                if ( yourquantity<= Moviequantity && yourquantity > 0)
+                if ( yourquantity <= Moviequantity && yourquantity > 0)
                 {
                 AnItem.QTY = Convert.ToInt32(txtQTY.Text);
                 //add the item to the cart's movie collection
-                MyCart.Movies.Add(AnItem);
+                MyCart.Products.Add(AnItem);
                 //go back to shopping
                 Response.Redirect("VirginCustomerMovieList.aspx");
                 }

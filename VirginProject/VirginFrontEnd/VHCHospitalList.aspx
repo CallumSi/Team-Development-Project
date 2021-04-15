@@ -21,8 +21,7 @@
         <%--NAVIGATION SECTION--%>
         <nav>
             <%--BUTTON: HOME--%>
-            <asp:Button ID="btnListHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnListHome_Click" />
-
+            <asp:Button ID="btnListHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnListHome_Click" /> 
         </nav>
 
         <%--ARTICLE SECTION--%>
@@ -45,11 +44,9 @@
             <%--BUTTON: TOTAL NUMBER OF RECORD/S--%>
             <asp:Button ID="btnTotalRecords" runat="server" CssClass="btnTotalRecords" Text="No.Record/s" OnClick="btnTotalRecords_Click" />
             <%--BUTTON: EDIT HOSPITAL--%>
-            <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Record" />
+            <asp:Button ID="btnEditHospital" runat="server" CssClass="EditHospital" Text="Edit Record" OnClick="btnEditHospital_Click" />
             <%--BUTTON: DELETE HOSPITAL--%>
             <asp:Button ID="btnDeleteHospital" runat="server" CssClass="DeleteHospital" Text="Delete Record" OnClick="btnDeleteHospital_Click" />
-
-
         </article>
 
         <%--FOOTER SECTION--%>

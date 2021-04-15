@@ -157,7 +157,7 @@ namespace VirginTestProject
             //set ThisHospital to the test data 
             AllHospitals.ThisHospital = TestItem;
             //add the record 
-            PrimaryKey = AllHospitals.Add();
+            //PrimaryKey = AllHospitals.Add(); *** REMOVED DUE TO REDUNDANT DATA ***
             //set the primary key of the test data 
             TestItem.Hospital_ID = PrimaryKey;
             //find the record 
