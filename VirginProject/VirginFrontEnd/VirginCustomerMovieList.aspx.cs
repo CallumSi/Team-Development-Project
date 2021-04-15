@@ -103,26 +103,25 @@ namespace VirginFrontEnd
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Session["VMCustomerID"] = VMCustomerID;
             Response.Redirect("VMViewCart.aspx");
         }
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Session["VMCustomerID"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Response.Redirect("VirginLogIn.aspx");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
             //store data in session object so we can pass it to next page
-            Session["VMCustomer"] = VMCustomerID;
+            Session["VMCustomerID"] = VMCustomerID;
             Response.Redirect("VirginCustomerMovieList.aspx");
         }
     }

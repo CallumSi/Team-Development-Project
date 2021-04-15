@@ -17,7 +17,7 @@
 
         <article>
 
-            <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="Welcome " CssClass="lblUsername"></asp:Label>
+            <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="" CssClass="lblUsername"></asp:Label>
             <asp:Image ID="MovieImage" runat="server" CssClass="MovieImage" />
             <ul class="AnMovie">
                 <li>

@@ -37,8 +37,10 @@
         <asp:Label ID="lblError" runat="server" Text="" CssClass="lblStaffAddMovieError"></asp:Label>
 
         <nav>
-            <asp:Button ID="btnStaffHome" runat="server" CssClass="btnStaffHome" Text="Home" OnClick="btnStaffHome_Click" />
-
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" />
+            <asp:Button ID="btnLogOut" CssClass="btnStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnAddMovieStaff" Text="Add Movie" />
         </nav>
 
           <footer>
