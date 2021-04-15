@@ -121,6 +121,58 @@ namespace VirginTestProject
             Assert.AreEqual(AllComments.ThisComment, TestItem);
 
         }
+        [TestMethod]
+        public void ReportByCommentMessageMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumCommentCollection AllComments = new clsForumCommentCollection();
+            //create an instance of the filtered data
+            clsForumCommentCollection FilteredComments = new clsForumCommentCollection();
+            //apply a blank string(should return all records)
+            FilteredComments.ReportByCommentMessage("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllComments.Count, FilteredComments.Count);
+        }
+        [TestMethod]
+        public void ReportByCommentMessageeNoneFound()
+        {
+            //create an instance of the filtered data
+            clsForumCommentCollection FilteredComments = new clsForumCommentCollection();
+            //apply a username that does not exist
+            FilteredComments.ReportByCommentMessage("xxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredComments.Count);
+        }
+        [TestMethod]
+        public void ReportByUserusernameTestDataFound()
+        {
+            //create an instance of filtered data
+            clsForumCommentCollection FilteredComments = new clsForumCommentCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a username that doesn't exist
+            FilteredComments.ReportByCommentMessage("GoodBye");
+            //check that the correct number of records 
+            if (FilteredComments.Count == 2)
+            {
+                //check that the correct number of records are found
+                if (FilteredComments.CommentList[0].CommentID != 26)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 7
+                if (FilteredComments.CommentList[1].CommentID != 27)
+                {
+                    OK = false;
+                }
 
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }

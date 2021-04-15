@@ -84,5 +84,50 @@ namespace VirginFrontEnd
         {
             Response.Redirect("ForumPostList.aspx");
         }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            //display only comment message
+            DisplayFilterCommentMessage(txtFilterByComment.Text);
+        }
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            DisplayComments();
+        }
+        Int32 DisplayFilterCommentMessage(string CommentMessageFilter)
+        {
+            //int to store the primary key
+            Int32 CommentID;
+            //string Comment message
+            string CommentMessage;
+            //create an instance of the post collection class
+            clsForumCommentCollection CommentBook = new clsForumCommentCollection();
+            CommentBook.ReportByCommentMessage(CommentMessageFilter);
+            //count of records
+            Int32 RecordCount;
+            //index for the loop
+            Int32 Index = 0;
+            //get the count of records
+            RecordCount = CommentBook.Count;
+            //clear the list box
+            lstComment.Items.Clear();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //get the CommentID 
+                CommentID = CommentBook.CommentList[Index].CommentID;
+                //get the CommentMessage
+                CommentMessage = CommentBook.CommentList[Index].CommentMessage;
+                //create a new entry for the list box
+                ListItem NewEntry = new ListItem(CommentMessage + "", CommentID.ToString());
+                //add the user to the list
+                lstComment.Items.Add(NewEntry);
+                //move the indext to the next record
+                Index++;
+            }
+            //return the count of records
+            return RecordCount;
+        }
     }
 }

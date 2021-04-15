@@ -66,6 +66,17 @@ namespace VirginClassLibrary
             //populate the array list with the data table
             PopulateArray(DB);
         }
+        public void ReportByCommentMessage(string CommentMessage)
+        {
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //sent the Userusername parameter to the database
+            DB.AddParameter("@CommentMessage", CommentMessage);
+            //execute the stored procedure
+            DB.Execute("sproc_tblForumComment_FilterbyCommentMessage");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
         void PopulateArray(clsDataConnection DB)
         {
 
