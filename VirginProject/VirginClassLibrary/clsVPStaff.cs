@@ -162,14 +162,14 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                Staff_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Staff_ID"]);
-                Staff_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Staff_FirstName"]);
-                Staff_LastName = Convert.ToString(DB.DataTable.Rows[0]["Staff_LastName"]);
-                Staff_Street = Convert.ToString(DB.DataTable.Rows[0]["Staff_Street"]);
-                Staff_Address = Convert.ToString(DB.DataTable.Rows[0]["Staff_Address"]);
-                Staff_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Staff_Postcode"]);
-                Staff_Email = Convert.ToString(DB.DataTable.Rows[0]["Staff_Email"]);
-                Staff_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Staff_Telephone"]);
+                mStaff_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Staff_ID"]);
+                mStaff_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Staff_FirstName"]);
+                mStaff_LastName = Convert.ToString(DB.DataTable.Rows[0]["Staff_LastName"]);
+                mStaff_Street = Convert.ToString(DB.DataTable.Rows[0]["Staff_Street"]);
+                mStaff_Address = Convert.ToString(DB.DataTable.Rows[0]["Staff_Address"]);
+                mStaff_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Staff_Postcode"]);
+                mStaff_Email = Convert.ToString(DB.DataTable.Rows[0]["Staff_Email"]);
+                mStaff_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Staff_Telephone"]);
                 //return that everything works
                 return true;
             }

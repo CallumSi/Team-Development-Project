@@ -7,7 +7,7 @@ namespace VirginClassLibrary
     {
 
         //private data member for the list
-       List<clsVPStaff> mStaffList = new List<clsVPStaff>();
+       public List<clsVPStaff> mStaffList = new List<clsVPStaff>();
         //private data member ThisStaff
         clsVPStaff mThisStaff = new clsVPStaff();
         
@@ -146,7 +146,7 @@ namespace VirginClassLibrary
             DB.Execute("sproc_tblVPStaff_Delete");
         }
 
-        public int Update()
+        public void Update()
         {
             //updates an existing record based on the values of mThisStaff
             //connect to the database 
@@ -161,7 +161,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Staff_Email", mThisStaff.Staff_Email);
             DB.AddParameter("@Staff_Telephone", mThisStaff.Staff_Telephone);
             //execute the stored procedure
-            return DB.Execute("sproc_tblVPStaff_Update");
+            DB.Execute("sproc_tblVPStaff_Update");
 
         }
 

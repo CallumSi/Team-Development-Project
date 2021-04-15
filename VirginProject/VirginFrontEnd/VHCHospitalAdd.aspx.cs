@@ -10,6 +10,7 @@ namespace VirginFrontEnd
 {
     public partial class VHCHospitalAdd : System.Web.UI.Page
     {
+        //Declare Hospital Primary Key
         Int32 Hospital_ID;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace VirginFrontEnd
         void Update()
         {
             //create an instance of the hospital class
-            VirginClassLibrary.clsVHCHospitalCollection AllHospitals = new VirginClassLibrary.clsVHCHospitalCollection();
+            clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
             //validate the data on the web form
             String Error = AllHospitals.ThisHospital.Valid(txtHospital_Name.Text, txtHospital_Place.Text);
             //if the data is OK then add it to the object
