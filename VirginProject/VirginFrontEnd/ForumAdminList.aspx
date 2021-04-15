@@ -22,8 +22,8 @@
                          <asp:TextBox ID="txtFilterFirstName" runat="server" style="z-index: 1;" Height="31px" Width="276px"></asp:TextBox>
                     </li>
                     <li> 
-                        <asp:Button ID="btnApply" runat="server" style="z-index: 1;" Text="Apply" />
-                        <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1;" Text="Display All" />
+                        <asp:Button ID="btnApply" runat="server" style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" />
+                        <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1;" Text="Display All" OnClick="btnDisplayAll_Click1" />
                     </li>
                     <li>                   
                        <asp:Button ID="btnAdd" runat="server" style="z-index: 1; " Text="Add" OnClick="btnAdd_Click" />

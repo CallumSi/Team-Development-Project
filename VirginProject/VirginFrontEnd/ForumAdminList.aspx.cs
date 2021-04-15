@@ -85,13 +85,14 @@ namespace VirginFrontEnd
             }
         }
 
-        protected void btnApply_Click(object sender, EventArgs e)
+
+        protected void btnApply_Click1(object sender, EventArgs e)
         {
             //display only usernames
             DisplayFilterAdminUser(txtFilterFirstName.Text);
         }
 
-        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        protected void btnDisplayAll_Click1(object sender, EventArgs e)
         {
             //display all username
             DisplayAdmin();

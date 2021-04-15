@@ -38,7 +38,7 @@
                     </li>
                     <li>
                          <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1;" Text="OK" />
-                         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; " Text="Cancel" />
+                         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; " Text="Cancel" OnClick="btnCancel_Click1" />
                     </li>
                     <li>
                         <asp:Label ID="lblError" runat="server" style="z-index: 1;" Text="[Error]"></asp:Label>
