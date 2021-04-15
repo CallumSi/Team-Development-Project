@@ -32,6 +32,8 @@ namespace VirginFrontEnd
             lstUserListBox.DataTextField = "Userusername";
             //bind the data to the list
             lstUserListBox.DataBind();
+            //clear the list box
+            lstUserListBox.Items.Clear();
         }
 
         Int32 DisplayFilterUserusername(string UserusernameFilter)

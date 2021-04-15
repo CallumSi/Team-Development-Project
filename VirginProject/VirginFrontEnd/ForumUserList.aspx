@@ -31,7 +31,7 @@
                       <asp:Button ID="btnDelete" runat="server" style="z-index: 1;" Text="Delete" OnClick="btnDelete_Click1" />
                     </li>
                     <li>
-                         <asp:Label ID="lblError" runat="server" style="z-index: 1;" Text="[lblError]"></asp:Label>
+                         <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
                     </li>
 
                 </ul>
