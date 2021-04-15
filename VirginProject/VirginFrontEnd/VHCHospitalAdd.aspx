@@ -13,6 +13,7 @@
 <%--BODY SECTION--%>
 <body>
     <form id="form1" runat="server">
+
         <%--HEADER SECTION--%>
         <header>
             <h2>Virgin Healthcare: Hospital</h2>
@@ -31,9 +32,9 @@
             <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>
             <%--LABEL:HOSPITAL PLACE--%>
             <asp:Label ID="lblHospital_Place" runat="server" CssClass="lblHospital_Place" Text="HOSPITAL PLACE : "></asp:Label>
-            <%--TEXTBOX:HOSPITAL NAME--%>     
+            <%--TEXTBOX:HOSPITAL NAME--%>
             <asp:TextBox ID="txtHospital_Name" runat="server" CssClass="txtHospital_Name"></asp:TextBox>
-            <%--TEXTBOX:HOSPITAL PLACE--%>    
+            <%--TEXTBOX:HOSPITAL PLACE--%>
             <asp:TextBox ID="txtHospital_Place" runat="server" CssClass="txtHospital_Place"></asp:TextBox>
             <%--BUTTON: SUBMIT--%>
             <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />

@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+/*** HTML STRUCTURE ***/
+
 /* Header Section*/
 header {
     background-color: #27183d;
@@ -62,6 +64,40 @@ nav {
     left: 0%;
 }
 
+/*Article Section*/
+article {
+    position: fixed;
+    color: black;
+    left: 16%;
+    top: 10%;
+    height: 759px;
+    width: 83%;
+    bottom: 169px;
+    background-color: white;
+}
+
+/*Footer Section*/
+footer {
+    background-color: #27183d;
+    position: fixed;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    left: -4%;
+    top: 83%;
+    height: 7%;
+    width: 105%;
+}
+
+/*Footer Information*/
+#FooterText {
+    position: fixed;
+    left: 900px;
+    top: 900px;
+    font-size: 10pt;
+}
+
+/*** BUTTONS ***/
+
 /*Navigation Buttons*/
 .Home, .AddHospital, .EditHospital, .DeleteHospital, .ListHospitals, .btnSubmit, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords, .btnYes, .btnNo {
     z-index: 1;
@@ -73,35 +109,9 @@ nav {
 }
 
  /*Navigation Buttons - Hover Effect*/
-    .Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover {
-        background-color: #27183D;
-        color: white;
-    }
-
-/*Hospital Delete Page - Yes Button*/
-.btnYes {
-    position: fixed;
-    top: 500px;
-    left: 855px;
-}
-
-/*Hospital Delete Page - Yes Button Hover*/
-.btnYes:hover {
-    background-color: green;
-    color: white;
-}
-
-/*Hospital Delete Page - No Button*/
-.btnNo {
-    position: fixed;
-    top: 500px;
-    left: 1155px;
-}
-
-/*Hospital Delete Page - No Button Hover*/
-.btnNo:hover {
-    background-color: red;
-    color: white;
+.Home:hover, .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover {
+     background-color: #27183D;
+     color: white;
 }
 
 /*Home Navigation Button*/
@@ -160,37 +170,66 @@ nav {
     left: 1370px;
 }
 
-/*Article Section*/
-article {
+/*Hospital Delete Page - Yes Button*/
+.btnYes {
     position: fixed;
-    color: black;
-    left: 16%;
-    top: 10%;
-    height: 759px;
-    width: 83%;
-    bottom: 169px;
-    background-color: white;
+    top: 500px;
+    left: 855px;
 }
 
-/*Footer Section*/
-footer {
-    background-color: #27183d;
-    position: fixed;
-    margin-top: 94px;
-    margin-bottom: 15px;
-    left: -4%;
-    top: 83%;
-    height: 7%;
-    width: 105%;
+/*Hospital Delete Page - Yes Button Hover*/
+.btnYes:hover {
+    background-color: green;
+    color: white;
 }
 
-/*Footer Information*/
-#FooterText {
+/*Hospital Delete Page - No Button*/
+.btnNo {
     position: fixed;
-    left: 900px;
-    top: 900px;
-    font-size:10pt;
+    top: 500px;
+    left: 1155px;
 }
+
+/*Hospital Delete Page - No Button Hover*/
+.btnNo:hover {
+     background-color: red;
+    color: white;
+}
+
+/* Submit Button */
+.btnSubmit {
+    position: fixed;
+    top: 450px;
+    left: 950px;
+}
+
+/* Submit Hover Button */
+.btnSubmit:hover {
+     background-color: darkgreen;
+    color: white;
+}
+
+/* Close Button */
+.btnClose {
+    position: fixed;
+    top: 109px;
+    left: 1823px;
+    z-index: 1;
+    width: 60px;
+    height: 35px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/*** TOOLBOX E.G. LABELS/TEXTBOXES/IMAGE/LISTBOX ***/
 
 /*Hosptial Name Label*/
 .lblHospital_Name {
@@ -285,39 +324,6 @@ footer {
     left: 730px;
     width: 257px;
     height: 25px;
-}
-
-/* Submit Button */
-.btnSubmit {
-    position: fixed;
-    top: 450px;
-    left: 950px;
-}
-
- /* Submit Hover Button */
- .btnSubmit:hover {
-    background-color: darkgreen;
-    color: white;
- }
-
-/* Close Button */
-.btnClose {
-    position: fixed;
-    top: 109px;
-    left: 1823px;
-    z-index: 1;
-    width: 60px;
-    height: 35px;
-    font-size: 10pt;
-    font-weight: bold;
-    border-radius: 12px;
-    transition-duration: 0.5s;
-}
-
-/* Close Hover Button */
-.btnClose:hover {
-    background-color: #cc0000;
-    color: white;
 }
 
 /* VHC Logo Image */

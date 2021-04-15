@@ -21,19 +21,18 @@
         <%--NAVIGATION SECTION--%>
         <nav>
             <%--BUTTON: HOME--%>
-            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click"/>
+            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click" />
         </nav>
 
         <%--ARTICLE SECTION--%>
         <article>
             <h4>DELETE HOSPITAL SECTION </h4>
-
+            <%--BUTTON: YES--%>
             <asp:Button ID="btnYes" runat="server" CssClass="btnYes" Text="YES" OnClick="btnYes_Click" />
-
+            <%--BUTTON: NO--%>
             <asp:Button ID="btnNo" runat="server" CssClass="btnNo" Text="NO" OnClick="btnNo_Click" />
-
+            <%--LABEL: DELETE CONFIRM--%>
             <asp:Label ID="lblDeleteConfirm" runat="server" CssClass="lblDeleteErrorMessage" Text=" ⚠️ ARE YOU SURE YOU WANT TO DELETE THIS RECORD?"></asp:Label>
-
         </article>
 
         <%--FOOTER SECTION--%>

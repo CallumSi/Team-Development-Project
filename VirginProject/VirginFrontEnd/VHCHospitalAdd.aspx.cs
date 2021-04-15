@@ -45,7 +45,7 @@ namespace VirginFrontEnd
                 //add the record
                 AllHospitals.Add();
                 //redirect to the main page
-                Response.Redirect("VHCHospital.aspx");
+                Response.Redirect("VHCHospitalList.aspx");
             }
 
             else
@@ -72,8 +72,7 @@ namespace VirginFrontEnd
                 AllHospitals.ThisHospital.Hospital_Place = txtHospital_Place.Text;
                 //update the record 
                 AllHospitals.Update();
-                //all done so redirect back to the main page 
-                Response.Redirect("VHCHospital.aspx");
+                Response.Redirect("VHCHospitalList.aspx");
             }
         }
 
@@ -88,16 +87,13 @@ namespace VirginFrontEnd
             txtHospital_Place.Text = AllHospitals.ThisHospital.Hospital_Place;
         }
 
+        //Home Button
         protected void Home_Button_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
         }
 
-        protected void btnClose_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospital.aspx");
-        }
-
+        //Submit Button
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -113,8 +109,8 @@ namespace VirginFrontEnd
                 Update();
             }
         }
-
-        
+  
+        //Close Button
         protected void btnClose_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
