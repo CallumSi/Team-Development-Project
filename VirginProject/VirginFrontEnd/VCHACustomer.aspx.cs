@@ -135,5 +135,11 @@ namespace VirginFrontEnd
             //redirect the user to the customer list page, without having added or edited a customer record
             Response.Redirect("VCHCustomerList.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect me to the home page, this offers links to all system pages
+            Response.Redirect("VCHCustomerOrStaffSelection.aspx");
+        }
     }
 }
