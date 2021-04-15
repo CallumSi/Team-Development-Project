@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 10px; top: 25px; position: absolute" Text="Home" OnClick="btnHome_Click" />
         <asp:Label ID="lblHireID" runat="server" style="position: absolute; z-index: 1; left: 10px; top: 100px" Text="Hire Identification:"></asp:Label>
         <span class="auto-style1">
         <asp:Label ID="lblCarID" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute" Text="Car Identification:"></asp:Label>

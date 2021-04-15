@@ -81,8 +81,19 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllHires.Count, SomeCount);
         }
+        
+        [TestMethod]
+        public void TwoHiresPresent()
+        {
+            //create an instance of the car hire colllection class
+            clsVCHHireCollection AllHires = new clsVCHHireCollection();
+            //test to see the values ARE the same
+            Assert.AreEqual(AllHires.Count, 2);
+        }
 
-            [TestMethod]
+        */
+
+        [TestMethod]
         public void ListAndCountOK()
         {
             //create an instance of the car hire colllection class
@@ -97,8 +108,8 @@ namespace VirginTestProject
             TestItem.HireID = 1;
             TestItem.CarID = 1;
             TestItem.CustomerID = 1;
-            TestItem.HireCollectionDate = DateTime.Now.Date;
-            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(7);
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
             TestItem.DriverAge = 26;
             TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
@@ -109,18 +120,6 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllHires.Count, TestList.Count);
         }
-
-        
-        [TestMethod]
-        public void TwoHiresPresent()
-        {
-            //create an instance of the car hire colllection class
-            clsVCHHireCollection AllHires = new clsVCHHireCollection();
-            //test to see the values ARE the same
-            Assert.AreEqual(AllHires.Count, 2);
-        }
-
-        */
 
         [TestMethod]
         public void AddMethodOK()
@@ -264,6 +263,37 @@ namespace VirginTestProject
             FilteredHireLocation.ReportByHireLocation("ThisDoesntExist");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredHireLocation.Count);
+        }
+
+        [TestMethod]
+        public void ReportByHireLocationTestDataFound()
+        {
+            //create an instance of the data to filter
+            clsVCHHireCollection FilteredHireLocation = new clsVCHHireCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply an existent body type
+            FilteredHireLocation.ReportByHireLocation("5 Tamworth Road, Tamworth, STS B783RH");
+            //check that the correct number of records are found
+            if (FilteredHireLocation.Count == 2)
+            {
+                //check that the first record ID is 12
+                if (FilteredHireLocation.HireList[0].HireID != 12)
+                {
+                    OK = false;
+                }
+                //check that the second record ID is 15
+                if (FilteredHireLocation.HireList[1].HireID != 15)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
         }
     }
 }

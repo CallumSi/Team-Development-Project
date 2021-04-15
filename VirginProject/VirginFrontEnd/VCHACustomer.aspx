@@ -18,6 +18,7 @@
     <form id="form1" runat="server" style="z-index: 1">
         <div>
         </div>
+        <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 10px; top: 25px; position: absolute" Text="Home" OnClick="btnHome_Click" />
         <asp:Label ID="lblFirstName" runat="server" style="position: absolute; z-index: 1; left: 8px; top: 98px" Text="First Name:"></asp:Label>
         <span class="auto-style1">
         <asp:Label ID="lblLastName" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute" Text="Last Name:"></asp:Label>
