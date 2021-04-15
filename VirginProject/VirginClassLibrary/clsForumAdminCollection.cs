@@ -47,38 +47,42 @@ namespace VirginClassLibrary
                 mThisAdmin = value;
             }
         }
-   
+
 
         //constructor for the class
         public clsForumAdminCollection()
         {
-            //var for the index 
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
+            ////var for the index 
+            //Int32 Index = 0;
+            ////var to store the record count
+            //Int32 RecordCount = 0;
+
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the store procedure
             DB.Execute("sproc_tblForumAdmin_SelectAll");
-            //get the count of records
-            RecordCount = DB.Count;
-            //while there are records to process
-            while (Index < RecordCount)
-            {
-                //create a blank user
-                clsForumAdmin AAdmin = new clsForumAdmin();
-                //read in the fields from the current record
-                AAdmin.AdminID = Convert.ToInt32(DB.DataTable.Rows[Index]["AdminID"]);
-                AAdmin.AdminFirstName = Convert.ToString(DB.DataTable.Rows[Index]["AdminFirstName"]);
-                AAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
-                AAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
-                AAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
-                AAdmin.AdminUserName = Convert.ToString(DB.DataTable.Rows[Index]["AdminUserName"]);
-                //add the record to the private data member
-                mAdminList.Add(AAdmin);
-                //point at the next record
-                Index++;
-            }
+            //populate the array list with the data table
+            PopulateArray(DB);
+
+            ////get the count of records
+            //RecordCount = DB.Count;
+            ////while there are records to process
+            //while (Index < RecordCount)
+            //{
+            //    //create a blank user
+            //    clsForumAdmin AAdmin = new clsForumAdmin();
+            //    //read in the fields from the current record
+            //    AAdmin.AdminID = Convert.ToInt32(DB.DataTable.Rows[Index]["AdminID"]);
+            //    AAdmin.AdminFirstName = Convert.ToString(DB.DataTable.Rows[Index]["AdminFirstName"]);
+            //    AAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
+            //    AAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
+            //    AAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
+            //    AAdmin.AdminUserName = Convert.ToString(DB.DataTable.Rows[Index]["AdminUserName"]);
+            //    //add the record to the private data member
+            //    mAdminList.Add(AAdmin);
+            //    //point at the next record
+            //    Index++;
+            //}
         }
 
         public int Add()
@@ -122,6 +126,47 @@ namespace VirginClassLibrary
             //execute the stored procedure
             DB.Execute("sproc_tblForumAdmin_Update");
         }
+        public void ReportByAdminUsername(string AdminUserName)
+        {
+            //connect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //sent the Userusername parameter to the database
+            DB.AddParameter("@AdminUserName", AdminUserName);
+            //execute the stored procedure
+            DB.Execute("sproc_tblForumAdmin_FilterbyUsername");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+        void PopulateArray(clsDataConnection DB)
+        {
+
+            //populate the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count record
+            RecordCount = DB.Count;
+            //clear the private array list
+            mAdminList = new List<clsForumAdmin>();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank Admin
+                clsForumAdmin AnAdmin = new clsForumAdmin();
+                //read in the fields from the current record
+                AnAdmin.AdminID = Convert.ToInt32(DB.DataTable.Rows[Index]["AdminID"]);
+                AnAdmin.AdminFirstName = Convert.ToString(DB.DataTable.Rows[Index]["AdminFirstName"]);
+                AnAdmin.AdminLastName = Convert.ToString(DB.DataTable.Rows[Index]["AdminLastName"]);
+                AnAdmin.AdminEmail = Convert.ToString(DB.DataTable.Rows[Index]["AdminEmail"]);
+                AnAdmin.AdminPassword = Convert.ToString(DB.DataTable.Rows[Index]["AdminPassword"]);
+                AnAdmin.AdminUserName = Convert.ToString(DB.DataTable.Rows[Index]["AdminUserName"]);
+                mAdminList.Add(AnAdmin);
+                //point at the next record
+                Index++;
+            }
+        }
+
     }
-   
+
 }
