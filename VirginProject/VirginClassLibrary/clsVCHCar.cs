@@ -340,7 +340,7 @@ namespace VirginClassLibrary
             if (CarFuel.Length == 0)
             {
                 //return the following error message
-                return "The fuel type may not be left empty. Please enter a fuel type.";
+                return "The fuel type may not be left empty. Please select a fuel type.";
             }
             //if the car fuel type length is more than 10 characters
             if (CarFuel.Length > 10)

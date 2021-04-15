@@ -33,5 +33,11 @@ namespace VirginFrontEnd
             //direct me to the car list page
             Response.Redirect("VCHCarList.aspx");
         }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
+        }
     }
 }

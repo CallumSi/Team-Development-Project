@@ -56,19 +56,17 @@ namespace VirginClassLibrary
             }
         }
 
-        //constructor for the class
-        public clsVCHHireCollection()
+        void PopulateArray(clsDataConnection DB)
         {
+            //populate the array list based on the data table in the parameter DB
             //var for the index
             Int32 Index = 0;
             //var to store the record count
-            Int32 RecordCount = 0;
-            //object for data connection
-            clsDataConnection DB = new clsDataConnection();
-            //execute stored procedure
-            DB.Execute("sproc_tblVCHHire_SelectAll");
+            Int32 RecordCount;
             //get the record count
             RecordCount = DB.Count;
+            //clear the private array list
+            mHireList = new List<clsVCHHire>();
             //while there are records to process
             while (Index < RecordCount)
             {
@@ -88,6 +86,18 @@ namespace VirginClassLibrary
                 //point at the next record
                 Index++;
             }
+        }
+
+        //constructor for the class
+        public clsVCHHireCollection()
+        {
+            
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute stored procedure
+            DB.Execute("sproc_tblVCHHire_SelectAll");
+            //populate the array list with the data
+            PopulateArray(DB);
 
             /*//create item of test data
             clsVCHHire TestItem = new clsVCHHire();
@@ -115,6 +125,65 @@ namespace VirginClassLibrary
             TestItem.DriverLicenseNumber = "STONES895523RH00A";
             //add the item to the hire list
             mHireList.Add(TestItem);*/
+        }
+
+        public int Add()
+        {
+            //add a new hire record to the database, based on values of ThisHire
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@CarID", mThisHire.CarID);
+            DB.AddParameter("@CustomerID", mThisHire.CustomerID);
+            DB.AddParameter("@HireCollectionDate", mThisHire.HireCollectionDate);
+            DB.AddParameter("@HireReturnDate", mThisHire.HireReturnDate);
+            DB.AddParameter("@HireLocation", mThisHire.HireLocation);
+            DB.AddParameter("@DriverAge", mThisHire.DriverAge);
+            DB.AddParameter("@DriverLicenseNumber", mThisHire.DriverLicenseNumber);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblVCHHire_Insert");
+        }
+
+        public void Delete()
+        {
+            //deletes a car hire record as indicted by ThisHire
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@HireID", mThisHire.HireID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHHire_Delete");
+        }
+
+        public void Update()
+        {
+            //update an existing car hite record in the database, based on values of thisCar
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set parameters for the stored procedure
+            DB.AddParameter("@HireID", mThisHire.HireID);
+            DB.AddParameter("@CarID", mThisHire.CarID);
+            DB.AddParameter("@CustomerID", mThisHire.CustomerID);
+            DB.AddParameter("@HireCollectionDate", mThisHire.HireCollectionDate);
+            DB.AddParameter("@HireReturnDate", mThisHire.HireReturnDate);
+            DB.AddParameter("@HireLocation", mThisHire.HireLocation);
+            DB.AddParameter("@DriverAge", mThisHire.DriverAge);
+            DB.AddParameter("@DriverLicenseNumber", mThisHire.DriverLicenseNumber);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHHire_Update");
+        }
+
+        public void ReportByHireLocation(string HireLocation)
+        {
+            //filter car hire records according to complete or partial Hire Location
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the car body parameter for this stored procedure
+            DB.AddParameter("@HireLocation", HireLocation);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHHire_FilterByHireLocation");
+            //populate the array list wit the data table
+            PopulateArray(DB);
         }
     }
 }
