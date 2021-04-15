@@ -18,19 +18,20 @@ namespace VirginFrontEnd
                 //update the list box
                 DisplayAdmin();
             }
-            void DisplayAdmin()
-            {
-                //create an instance of the County Collection
-                clsForumAdminCollection Admins = new clsForumAdminCollection();
-                //set the data source to the list of countries in the collection
-                lstForumAdmin.DataSource = Admins.AdminList;
-                //set the name of the primary key
-                lstForumAdmin.DataValueField = "AdminID";
-                //set the data field to display
-                lstForumAdmin.DataTextField = "AdminUserName";
-                //bind the data to the list
-                lstForumAdmin.DataBind();
-            }
+            
+        }
+        void DisplayAdmin()
+        {
+            //create an instance of the County Collection
+            clsForumAdminCollection Admins = new clsForumAdminCollection();
+            //set the data source to the list of countries in the collection
+            lstForumAdmin.DataSource = Admins.AdminList;
+            //set the name of the primary key
+            lstForumAdmin.DataValueField = "AdminID";
+            //set the data field to display
+            lstForumAdmin.DataTextField = "AdminUserName";
+            //bind the data to the list
+            lstForumAdmin.DataBind();
         }
 
         protected void lstForumAdmin_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +83,60 @@ namespace VirginFrontEnd
                 lblError.Text = "Please make you select a record from the list";
 
             }
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            //display only usernames
+            DisplayFilterAdminUser(txtFilterFirstName.Text);
+        }
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            //display all username
+            DisplayAdmin();
+        }
+        Int32 DisplayFilterAdminUser(string AdminUser)
+        {
+            //int to store the primary key
+            Int32 AdminID;
+            //string username 
+            string AdminUserName;
+            //string firstname
+            string AdminFirstName;
+            //string last name
+            string AdminLastName;
+            //create an instance of the user collection class
+            clsForumAdminCollection AdminBook = new clsForumAdminCollection();
+            AdminBook.ReportByAdminUsername(AdminUser);
+            //count of records
+            Int32 RecordCount;
+            //index for the loop
+            Int32 Index = 0;
+            //get the count of records
+            RecordCount = AdminBook.Count;
+            //clear the list box
+            lstForumAdmin.Items.Clear();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //get the User id
+                AdminID = AdminBook.AdminList[Index].AdminID;
+                //get the username 
+                AdminUserName = AdminBook.AdminList[Index].AdminUserName;
+                //get the first name
+                AdminFirstName = AdminBook.AdminList[Index].AdminFirstName;
+                //get the last name
+                AdminLastName = AdminBook.AdminList[Index].AdminLastName;
+                //create a new entry for the list box
+                ListItem NewEntry = new ListItem(AdminUserName + "" + AdminFirstName + "" + AdminLastName, AdminID.ToString());
+                //add the user to the list
+                lstForumAdmin.Items.Add(NewEntry);
+                //move the indext to the next record
+                Index++;
+            }
+            //return the count of records
+            return RecordCount;
         }
     }
 }
