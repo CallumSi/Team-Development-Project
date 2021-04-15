@@ -4,15 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class VirginLogIn : System.Web.UI.Page
+    public partial class ForumAdminLogIn : System.Web.UI.Page
     {
-        private clsSecurity mSec;
+        private clsForumAdminSecurity mSec;
 
 
-        public clsSecurity Sec
+        public clsForumAdminSecurity Sec
         {
             get
             {
@@ -21,12 +22,7 @@ namespace VirginFrontEnd
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            mSec = new clsSecurity();
-        }
-
-        protected void btnForgotPassword_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VirginForgotPassword.aspx");
+            mSec = new clsForumAdminSecurity();
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -36,7 +32,7 @@ namespace VirginFrontEnd
             //if there were no errors
             if (Error == true)
             {
-                Response.Redirect("VirginHomePage.aspx");
+                Response.Redirect("ForumAdminHomePage.aspx");
             }
             else
 
@@ -48,13 +44,12 @@ namespace VirginFrontEnd
 
         protected void btnSignUp_Click1(object sender, EventArgs e)
         {
-
-            Response.Redirect("VirginSignUp.aspx");
+            Response.Redirect("ForumAdminSignUp.aspx");
         }
 
-        protected void btnForumAdmin_Click(object sender, EventArgs e)
+        protected void btnForgotPassword_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ForumAdminLogIn.aspx");
+            Response.Redirect("ForumAdminForgotPassword.aspx");
         }
     }
 }

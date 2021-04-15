@@ -12,10 +12,14 @@ header {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 1%;
+    top: 0%;
     left: 0%;
     padding: 15px;
     color: #cc0000;
+}
+h1 {
+    color: #cc0000;
+    text-align:center;
 }
 
 nav {
@@ -31,7 +35,7 @@ article {
     background-color: #fff;
     position: fixed;
     width: 80%;
-    top: 10%;
+    top: 15%;
     left: 20%;
     color: black;
     height: 381px;
@@ -42,7 +46,7 @@ footer {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 85%;
+    top: 75%;
     left: 0%;
     margin-top: 94px;
     margin-bottom: 15px;
@@ -64,9 +68,13 @@ footer {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
+ul {
+    align-content:center;
+}
 
 li {
     list-style: none;
+    text-align:center;
 }
 
 .row {

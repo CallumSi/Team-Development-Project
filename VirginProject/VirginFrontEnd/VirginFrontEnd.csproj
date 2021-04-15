@@ -76,7 +76,12 @@
     <Content Include="AnVPCustomer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
+    <Content Include="ForumAdminForgotPassword.aspx" />
+    <Content Include="ForumAdminHomePage.aspx" />
     <Content Include="ForumAdminList.aspx" />
+    <Content Include="ForumAdminLogIn.aspx" />
+    <Content Include="ForumAdminSignUp.aspx" />
+    <Content Include="ForumAdminSignUpSuccess.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnComment.aspx" />
     <Content Include="ForumAnPost.aspx" />
@@ -227,12 +232,47 @@
     <Compile Include="ForumAdminDelete.aspx.designer.cs">
       <DependentUpon>ForumAdminDelete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForumAdminForgotPassword.aspx.cs">
+      <DependentUpon>ForumAdminForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForumAdminForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminHomePage.aspx.cs">
+      <DependentUpon>ForumAdminHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminHomePage.aspx.designer.cs">
+      <DependentUpon>ForumAdminHomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForumAdminList.aspx.cs">
       <DependentUpon>ForumAdminList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ForumAdminList.aspx.designer.cs">
       <DependentUpon>ForumAdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminLogIn.aspx.cs">
+      <DependentUpon>ForumAdminLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminLogIn.aspx.designer.cs">
+      <DependentUpon>ForumAdminLogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminSignUp.aspx.cs">
+      <DependentUpon>ForumAdminSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminSignUp.aspx.designer.cs">
+      <DependentUpon>ForumAdminSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminSignUpSuccess.aspx.cs">
+      <DependentUpon>ForumAdminSignUpSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminSignUpSuccess.aspx.designer.cs">
+      <DependentUpon>ForumAdminSignUpSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAnAdmin.aspx.cs">
       <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
