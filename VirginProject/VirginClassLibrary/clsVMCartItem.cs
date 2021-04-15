@@ -15,17 +15,17 @@ namespace VirginClassLibrary
             //
         }
 
-        private Int32 mMovieID;
-        public Int32 MovieID
+        private Int32 mProductID;
+        public Int32 ProductID
         {
             get
             {
-                return mMovieID;
+                return mProductID;
             }
 
             set
             {
-                mMovieID = value;
+                mProductID = value;
             }
         }
 

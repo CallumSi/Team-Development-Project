@@ -107,17 +107,17 @@ namespace VirginFrontEnd
             //create a new instance of clsCartItem
             clsVMCartItem AnItem = new clsVMCartItem();
             //set the movie id
-            AnItem.MovieID = VMMovieID;
+            AnItem.ProductID = VMMovieID;
             try
             {
                 Int32 Moviequantity = Convert.ToInt32(lblQuantity.Text);
                 Int32 yourquantity = Convert.ToInt32(txtQTY.Text);
 
-                if ( yourquantity<= Moviequantity && yourquantity > 0)
+                if ( yourquantity <= Moviequantity && yourquantity > 0)
                 {
                 AnItem.QTY = Convert.ToInt32(txtQTY.Text);
                 //add the item to the cart's movie collection
-                MyCart.Movies.Add(AnItem);
+                MyCart.Products.Add(AnItem);
                 //go back to shopping
                 Response.Redirect("VirginCustomerMovieList.aspx");
                 }

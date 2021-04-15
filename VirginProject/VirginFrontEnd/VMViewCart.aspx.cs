@@ -34,10 +34,10 @@ namespace VirginFrontEnd
             clsVMCart MyCart = new clsVMCart();
             //cerate some variables 
             Int32 Index = 0;
-            Int32 Count = MyCart.Movies.Count;
+            Int32 Count = MyCart.Products.Count;
             string Moviename;
 
-            //display the id and qquantity    
+            //display the movie id and quantity    
             Response.Write("Movie ID");
             Response.Write("Quantity");
             //if the cart is empty tell the user
@@ -50,10 +50,10 @@ namespace VirginFrontEnd
             {
                 clsVMMovie AnMovie = new clsVMMovie();
                 //find the listing 
-                AnMovie.Find((MyCart.Movies[Index].MovieID));
+                AnMovie.Find((MyCart.Products[Index].ProductID));
                 //add the item to the list box 
                 Moviename = AnMovie.VMmovieTitle;
-                string lstitem = Moviename + " x" + (MyCart.Movies[Index].QTY).ToString();
+                string lstitem = Moviename + " x" + (MyCart.Products[Index].QTY).ToString();
                 lstShoppingCart.Items.Add(lstitem);
                 Index++;
             }
