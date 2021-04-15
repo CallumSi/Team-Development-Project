@@ -14,21 +14,23 @@ namespace VirginFrontEnd
           
         }
 
+        //Home Button
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospital.aspx");
         }
 
+        //Add Hospital Button
         protected void btnAddHospital_Click(object sender, EventArgs e)
         {
             Session["Hospital_ID"] = -1;
             Response.Redirect("VHCHospitalAdd.aspx");
         }
         
+        //List Hospital Button
         protected void btnListHospital_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospitalList.aspx");
-
         }
     }
 }
