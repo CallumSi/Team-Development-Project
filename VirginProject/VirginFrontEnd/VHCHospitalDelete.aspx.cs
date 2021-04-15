@@ -45,7 +45,6 @@ namespace VirginFrontEnd
             //delete the record
             DeleteHospital();
             Response.Redirect("VHCHospitalList.aspx");
-
         }
     }
 }
