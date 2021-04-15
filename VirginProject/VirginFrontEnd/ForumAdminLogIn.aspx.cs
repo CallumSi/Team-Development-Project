@@ -32,7 +32,7 @@ namespace VirginFrontEnd
             //if there were no errors
             if (Error == true)
             {
-                Response.Redirect("VirginHomePage.aspx");
+                Response.Redirect("ForumAdminHomePage.aspx");
             }
             else
 

@@ -13,5 +13,25 @@ namespace VirginFrontEnd
         {
 
         }
+
+        protected void btnUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumUserList.aspx");
+        }
+
+        protected void btnAdminAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminList.aspx");
+        }
+
+        protected void btnPosts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumPostList.aspx");
+        }
+
+        protected void btnComments_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumCommentList.aspx");
+        }
     }
 }
