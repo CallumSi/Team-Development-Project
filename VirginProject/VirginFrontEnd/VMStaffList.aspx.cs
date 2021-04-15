@@ -127,5 +127,25 @@ namespace VirginFrontEnd
             //display all Customer usernames
             DisplayFirstName(txtFilterStaffUsername.Text);
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogin.aspx");
+        }
+
+        protected void btnStaffMovie_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnVMStaffAddMovie.aspx");
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMCustomerList.aspx");
+        }
     }
 }

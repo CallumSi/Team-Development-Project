@@ -58,12 +58,13 @@ namespace VirginFrontEnd
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }

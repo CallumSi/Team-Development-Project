@@ -50,14 +50,14 @@ footer {
 #FooterText {
     position: fixed;
     left: 45%;
-    top: 98%;
+    top: 97%;
 }
 
 /*Buttons*/
 .btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome,
 .btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
 .btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
-.btnEditAccount, .btnCustomerLogOut, .btnCustomerHome {
+.btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut, .btnAddMovieStaff {
     padding: 20px;
     border-radius: 2px;
     font-size: 13px;
@@ -92,7 +92,6 @@ footer {
 
 /*######## DELETE MOVIE NAV BUTTONS #########*/
 .btnDeleteHome {
-    position: fixed;
     top: 150px;
     left: 30px;
 }
@@ -492,7 +491,7 @@ footer {
     height:400px;
     position: fixed;
     top: 230px;
-    left: 300px;
+    left: 320px;
 }
 
 .lblMovieCount {
@@ -523,7 +522,7 @@ footer {
     width: 120px;
     position: fixed;
     top: 685px;
-    left: 650px;
+    left: 640px;
     font-size: medium;
     font-weight: bold;
     color: black;
@@ -626,3 +625,118 @@ footer {
 }
 
 /*############# CUSTOMER CHECKOUT ########################*/
+    
+
+
+
+
+/*############# CUSTOMER MOVIE THANKS ########################*/
+
+.MovieThanks {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    font-size:20px;
+    font-weight:bold;
+    color:black;
+}
+
+/*############# VM STAFF LIST ########################*/
+
+.lstVMStaff {
+    left: 679px;
+    top: 232px; 
+    position: absolute; 
+    height: 307px; 
+    width: 650px;
+}
+
+.lblFilterByStaffUsername {
+    left: 700px;
+    top: 200px;
+    position: absolute;
+    color:black;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.txtFilterStaffUsername {
+    left: 880px;
+    width: 320px;
+    top: 197px;
+    position: absolute;
+    font-weight: bold;
+    color: black;
+}
+
+.btnAddStaff, .btnEditStaff, .btnDeleteStaff, .btnDisplayAllStaff, .btnApplyStaffFilter {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+}
+
+.btnAddStaff {
+    left: 700px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+}
+
+.btnEditStaff {
+    left: 870px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnDeleteStaff {
+    left: 1040px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnDisplayAllStaff {
+    left: 1202px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnApplyStaffFilter {
+    left: 1220px;
+    width: 100px;
+    top: 197px;
+    position: absolute;
+}
+
+.lblStaffError {
+    left: 680px;
+    width: 100px;
+    top: 677px;
+    color:black;
+    position: absolute;
+}
+
+.btnCustomerList {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnAddMovieStaff {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+.btnStaffLogOut {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+

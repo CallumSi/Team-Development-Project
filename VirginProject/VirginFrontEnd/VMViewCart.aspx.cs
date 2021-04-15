@@ -80,7 +80,7 @@ namespace VirginFrontEnd
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("VirginLogIn.aspx");
         }
 
         protected void btnContinueShopping_Click(object sender, EventArgs e)
