@@ -64,6 +64,9 @@ footer {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
+ul {
+    align-content:center;
+}
 
 li {
     list-style: none;

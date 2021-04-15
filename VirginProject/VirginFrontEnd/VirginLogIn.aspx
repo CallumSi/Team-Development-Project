@@ -49,6 +49,7 @@
  
             <nav>
                 Navigation links here
+                 <asp:Button ID="btnForumAdmin" runat="server" OnClick="btnForumAdmin_Click" style="z-index: 1; left: 12px; top: 211px; position: absolute" Text="Forum Admin" />
             </nav>
  
             <footer>
@@ -56,6 +57,8 @@
                     © 2021 Virgin Media | All Rights Reserved
                 </div>
             </footer>
+             
+            
              
         </form>
     </body>

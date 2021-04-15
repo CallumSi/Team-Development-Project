@@ -41,7 +41,7 @@
                          <asp:Button ID="btnCancel" runat="server" style="z-index: 1; " Text="Cancel" OnClick="btnCancel_Click1" />
                     </li>
                     <li>
-                        <asp:Label ID="lblError" runat="server" style="z-index: 1;" Text="[Error]"></asp:Label>
+                        <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
                     </li>
                 </ul>
                     </article>

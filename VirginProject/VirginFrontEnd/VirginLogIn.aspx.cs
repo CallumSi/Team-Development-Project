@@ -51,5 +51,10 @@ namespace VirginFrontEnd
 
             Response.Redirect("VirginSignUp.aspx");
         }
+
+        protected void btnForumAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminLogIn.aspx");
+        }
     }
 }
