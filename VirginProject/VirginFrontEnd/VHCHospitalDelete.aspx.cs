@@ -21,12 +21,12 @@ namespace VirginFrontEnd
         //function to delete the selected hospital record 
         void DeleteHospital()
         {
-            //create a new instance of the customer collection class
-            clsVHCHospitalCollection AllHospital = new clsVHCHospitalCollection();
+            //create a new instance of the hospital collection class
+            clsVHCHospitalCollection AllHospitals = new clsVHCHospitalCollection();
             //find the record to delete
-            AllHospital.ThisHospital.Find(Hospital_ID);
+            AllHospitals.ThisHospital.Find(Hospital_ID);
             //delete the record
-            AllHospital.Delete();
+            AllHospitals.Delete();
         }
 
         protected void Home_Button_Click(object sender, EventArgs e)
