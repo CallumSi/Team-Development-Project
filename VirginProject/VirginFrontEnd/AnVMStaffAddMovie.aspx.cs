@@ -142,5 +142,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VirginLogin.aspx");
         }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMCustomerList.aspx");
+        }
     }
 }

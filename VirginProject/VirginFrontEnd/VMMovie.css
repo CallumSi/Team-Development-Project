@@ -57,7 +57,9 @@ footer {
 .btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome,
 .btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
 .btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
-.btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut, .btnAddMovieStaff {
+.btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
+.btnAddMovieStaff, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
+.btnStaffVMList, .btnVMStaffLogOut {
     padding: 20px;
     border-radius: 2px;
     font-size: 13px;
@@ -128,6 +130,25 @@ footer {
 }
 
 /*################## STAFF MOVIE CSS #####################*/
+.btnStaffMovieCustomerList {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+.btnStaffMovieStaffList {
+    position: fixed;
+    top: 550px;
+    left: 30px;
+}
+
+.btnStaffMovieLogOut {
+    position: fixed;
+    top: 650px;
+    left: 30px;
+}
+
+
 .lblFilterGenre {
     z-index: 1;
     width: 129px;
@@ -739,4 +760,159 @@ footer {
     top: 450px;
     left: 30px;
 }
+/*############# VM STAFF ADD/UPDATE ########################*/
+.articleAddStaff {
+    position: fixed;
+    width: 30%;
+    top: 18%;
+    left: 47%;
+    color: black;
+    font-weight: bold;
+}
 
+.lblStaffFirstName {
+    left: 750px;
+    top: 202px;
+    position: absolute;
+    width: 200px;
+    color:black;
+}
+
+.txtStaffFirstName {
+    left: 950px;
+    top: 199px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffLastName {
+    left: 750px;
+    top: 290px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffLastName {
+    left: 950px;
+    top: 287px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffEmail {
+    left: 750px;
+    top: 387px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffEmail {
+    left: 950px;
+    top: 387px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffPassword {
+    left: 750px;
+    top: 470px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffPassword {
+    left: 950px;
+    top: 467px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffPosition {
+    left: 750px;
+    top: 560px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffPosition {
+    left: 950px;
+    top: 557px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.btnStaffAddOkay, .btnStaffAddCancel {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+    width: 140px;
+}
+
+.btnStaffAddOkay {
+    left: 790px;
+    top: 657px;
+    position: absolute;
+}
+
+.btnStaffAddCancel {
+    left: 1000px;
+    top: 657px;
+    position: absolute;
+}
+
+.lblStaffAddError {
+    left: 700px;
+    top: 727px;
+    position: absolute;
+    color:black;
+}
+
+.btnStaffVMList {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+.btnVMStaffLogOut {
+    position: fixed;
+    top: 550px;
+    left: 30px;
+}
+
+/*########## STAFF DELETE PAGE ############*/
+
+.lblDeleteStafflabel {
+    position: fixed;
+    width: 50%;
+    top: 18%;
+    left: 47%;
+    color: black;
+    font-weight: bold;
+}
+
+.btnYesDeleteStaff, .btnCancelDeleteStaff {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+    width: 140px;
+}
+
+.btnYesDeleteStaff {
+    left: 820px;
+    top: 257px;
+    position: absolute;
+}
+.btnCancelDeleteStaff {
+    left: 1090px;
+    top: 257px;
+    position: absolute;
+}
