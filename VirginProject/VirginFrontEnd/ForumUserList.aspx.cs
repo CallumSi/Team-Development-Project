@@ -148,5 +148,15 @@ namespace VirginFrontEnd
 
             }
         }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnForumPost_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumPostList.aspx");
+        }
     }
 }
