@@ -5,7 +5,11 @@ using System.Web;
 using System.Security.Cryptography;
 using VirginClassLibrary;
 
-
+/// <summary>
+/// 
+/// This class handles the signup, login , check password and change password
+/// credit it to Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+/// </summary>
 namespace VirginClassLibrary
 {
     public class clsForumAdminSecurity

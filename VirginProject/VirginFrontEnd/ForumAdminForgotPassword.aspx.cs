@@ -11,6 +11,7 @@ namespace VirginFrontEnd
     public partial class ForumAdminForgotPassword : System.Web.UI.Page
     {
         private clsForumAdminSecurity mSec;
+
         public clsForumAdminSecurity Sec
         {
             get
@@ -20,7 +21,7 @@ namespace VirginFrontEnd
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            mSec = new clsForumAdminSecurity();
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
