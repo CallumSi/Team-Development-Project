@@ -78,6 +78,7 @@
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminForgotPassword.aspx" />
     <Content Include="ForumAdminList.aspx" />
+    <Content Include="ForumAdminLogIn.aspx" />
     <Content Include="ForumAnAdmin.aspx" />
     <Content Include="ForumAnComment.aspx" />
     <Content Include="ForumAnPost.aspx" />
@@ -241,6 +242,13 @@
     </Compile>
     <Compile Include="ForumAdminList.aspx.designer.cs">
       <DependentUpon>ForumAdminList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminLogIn.aspx.cs">
+      <DependentUpon>ForumAdminLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminLogIn.aspx.designer.cs">
+      <DependentUpon>ForumAdminLogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAnAdmin.aspx.cs">
       <DependentUpon>ForumAnAdmin.aspx</DependentUpon>
