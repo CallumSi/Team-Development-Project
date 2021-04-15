@@ -152,10 +152,10 @@ namespace VirginFrontEnd
                 //redirect the delete page
                 Response.Redirect("VCHACar.aspx");
             }
-            else //if a user has not selected a car record to edit
+            else //if a user has not selected a Car record to edit
             {
                 //display an error
-                lblError.Text = "Please select a car to edit from the list";
+                lblError.Text = "Please select a Car to edit from the list";
             }
         }
 

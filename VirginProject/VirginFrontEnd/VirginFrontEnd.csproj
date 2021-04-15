@@ -118,6 +118,8 @@
     <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VCHCustomerOrStaffSelection.aspx" />
     <Content Include="VCHDefault.aspx" />
+    <Content Include="VCHHireDelete.aspx" />
+    <Content Include="VCHHireList.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
     <Content Include="VHCHospital.aspx" />
@@ -526,6 +528,20 @@
     </Compile>
     <Compile Include="VCHDefault.aspx.designer.cs">
       <DependentUpon>VCHDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHHireDelete.aspx.cs">
+      <DependentUpon>VCHHireDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHHireDelete.aspx.designer.cs">
+      <DependentUpon>VCHHireDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHHireList.aspx.cs">
+      <DependentUpon>VCHHireList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHHireList.aspx.designer.cs">
+      <DependentUpon>VCHHireList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHStaffDelete.aspx.cs">
       <DependentUpon>VCHStaffDelete.aspx</DependentUpon>

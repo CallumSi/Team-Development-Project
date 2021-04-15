@@ -9,9 +9,9 @@ namespace VirginTestProject
     public class tstVCHHire
     {
         //HireCollectionDate property
-        string HireCollectionDate = DateTime.Now.Date.ToString();
+        string HireCollectionDate = DateTime.Now.AddDays(1).Date.ToString();
         //HireReturnDate property
-        string HireReturnDate = DateTime.Now.Date.AddDays(7).ToString();
+        string HireReturnDate = DateTime.Now.Date.AddDays(8).ToString();
         //HireLocation property
         string HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
         ////HirePostCode property
@@ -82,7 +82,7 @@ namespace VirginTestProject
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
             //create some test data to assign to the hire collection date
-            DateTime SomeHireCollectionDate = DateTime.Now.Date;
+            DateTime SomeHireCollectionDate = DateTime.Now.Date.AddDays(1);
             //assign the data to the property
             VCHHire.HireCollectionDate = SomeHireCollectionDate;
             //test to see that the two values are the same
@@ -100,8 +100,8 @@ namespace VirginTestProject
             DateTime SomeHireCollectionDate;
             //set the data
             SomeHireCollectionDate = DateTime.Now.Date;
-            //change the data match MinLessOne requirements (set the date to today, minus 1 day )
-            SomeHireCollectionDate = SomeHireCollectionDate.AddDays(-1);
+            //change the data match MinLessOne requirements (set the date to todays date)
+            SomeHireCollectionDate = SomeHireCollectionDate.AddDays(0);
             //convert SomeHireCollectionDate to a string variable 
             string HireCollectionDate = SomeHireCollectionDate.ToString();
             //invoke the method 
@@ -160,7 +160,7 @@ namespace VirginTestProject
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
             //create some test data to assign to the hire return date
-            DateTime SomeHireReturnDate = DateTime.Now.Date.AddDays(7);
+            DateTime SomeHireReturnDate = DateTime.Now.Date.AddDays(8);
             //assign the data to the property
             VCHHire.HireReturnDate = SomeHireReturnDate;
             //test to see that the two values are the same
@@ -178,8 +178,8 @@ namespace VirginTestProject
             DateTime SomeHireReturnDate;
             //set the data
             SomeHireReturnDate = DateTime.Now.Date;
-            //change the data match MinLessOne requirements (set the date to today, plus 6 days )
-            SomeHireReturnDate = SomeHireReturnDate.AddDays(6);
+            //change the data match MinLessOne requirements (set the date to today, plus 7 days )
+            SomeHireReturnDate = SomeHireReturnDate.AddDays(7);
             //convert SomeHireReturnDate to a string variable 
             string HireReturnDate = SomeHireReturnDate.ToString();
             //invoke the method 
@@ -497,8 +497,8 @@ namespace VirginTestProject
             //a string variable to store validation results
             String Error = "";
             //test data to test the method
-            string HireCollectionDate = DateTime.Now.Date.ToString();
-            string HireReturnDate = DateTime.Now.Date.AddDays(7).ToString();
+            string HireCollectionDate = DateTime.Now.Date.AddDays(1).ToString();
+            string HireReturnDate = DateTime.Now.Date.AddDays(8).ToString();
             string HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
             string DriverAge = "26";
             string DriverLicenseNumber = "ALIGH902245DA99S";

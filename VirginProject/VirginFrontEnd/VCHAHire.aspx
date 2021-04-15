@@ -20,28 +20,30 @@
         <asp:Label ID="lblDriverAge" runat="server" style="z-index: 1; left: 10px; top: 390px; position: absolute" Text="Driver Age:"></asp:Label>
         <asp:Label ID="lblDriverLicenseNumber" runat="server" style="z-index: 1; left: 10px; top: 440px; position: absolute" Text="Driver's License Number:"></asp:Label>
         <asp:Label ID="lblHireIDInput" runat="server" style="z-index: 1; left: 370px; top: 100px; position: absolute" Text="[lblHireID]"></asp:Label>
-        <asp:Label ID="lblCarIDInput" runat="server" style="z-index: 1; left: 370px; top: 150px; position: absolute" Text="[lblCarID]"></asp:Label>
-            <asp:Label ID="lblCustomerIDInput" runat="server" style="z-index: 1; left: 370px; top: 195px; position: absolute" Text="[lblCustomerID]"></asp:Label>
+        <asp:TextBox ID="txtCarID" runat="server" style="z-index: 1; left: 370px; top: 150px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCustomerID" runat="server" style="z-index: 1; left: 370px; top: 195px; position: absolute"></asp:TextBox>
+        <%--<asp:Label ID="lblCarIDInput" runat="server" style="z-index: 1; left: 370px; top: 150px; position: absolute" Text="[lblCarID]"></asp:Label>
+            <asp:Label ID="lblCustomerIDInput" runat="server" style="z-index: 1; left: 370px; top: 195px; position: absolute" Text="[lblCustomerID]"></asp:Label>--%>
         </span>
         <asp:TextBox ID="txtHireCollectionDate" runat="server" style="z-index: 1; left: 370px; top: 245px; position: absolute"></asp:TextBox>
-        <%--<asp:DropDownList ID="ddlCarBody" runat="server" style="z-index: 1; left: 370px; top: 245px; position: absolute">
-            <asp:ListItem Value=""></asp:ListItem>
-            <asp:ListItem Value="Coupe"></asp:ListItem>
-            <asp:ListItem Value="Convertible"></asp:ListItem>
-            <asp:ListItem Value="Hatchback"></asp:ListItem>
-            <asp:ListItem Value="Estate"></asp:ListItem>
-            <asp:ListItem Value="Saloon"></asp:ListItem>
-            <asp:ListItem Value="SUV"></asp:ListItem>
-        </asp:DropDownList>--%>
         <asp:TextBox ID="txtHireReturnDate" runat="server" style="z-index: 1; left: 370px; top: 295px; position: absolute"></asp:TextBox>
-        <%--<asp:DropDownList ID="ddlFuelType" runat="server" style="z-index: 1; left: 370px; top: 345px; position: absolute; right: 1225px;">
+        <asp:DropDownList ID="ddlHireLocation" runat="server" style="z-index: 1; left: 370px; top: 345px; position: absolute; right: 1225px;">
             <asp:ListItem Value=""></asp:ListItem>
-            <asp:ListItem Value="Diesel"></asp:ListItem>
-            <asp:ListItem Value="Electric"></asp:ListItem>
-            <asp:ListItem Value="Hybrid"></asp:ListItem>
-            <asp:ListItem Value="Petrol"></asp:ListItem>
-        </asp:DropDownList>--%>
-        <asp:TextBox ID="txtHireCollectionReturnLocation" runat="server" style="z-index: 1; left: 370px; top: 345px; position: absolute"></asp:TextBox>
+            <asp:ListItem Value="14-16 Gulliard Lane, Leicester, LE2 5RE"></asp:ListItem>
+            <asp:ListItem Value="Park Road, Loughborough, LE11 2HE"></asp:ListItem>
+            <asp:ListItem Value="30 Glaxon Street, Shropshire, SH7 3FG"></asp:ListItem>
+            <asp:ListItem Value="1 Byron Street, Leicester, LE1 3QD"></asp:ListItem>
+            <asp:ListItem Value="107-115 Attleborough Road, Nuneaton, CV11 4JQ"></asp:ListItem>
+            <asp:ListItem Value="127-139 Foleshill Road, Coventry, CV1 4LF"></asp:ListItem>
+            <asp:ListItem Value="St Andrew's Road, Northampton, NN1 2PQ"></asp:ListItem>
+            <asp:ListItem Value="1 Crucible Road, Corby, NN17 5TS"></asp:ListItem>
+            <asp:ListItem Value="1 Royal Scot Road, Derby, DE24 8AJ"></asp:ListItem>
+            <asp:ListItem Value="5 Tamworth Road, Tamworth, STS B783RH"></asp:ListItem>
+            <asp:ListItem Value="London Road, Daventry, NN11 4NR"></asp:ListItem>
+            <asp:ListItem Value="Crossfield Road, Lichfield, WS13 6RJ"></asp:ListItem>
+            <asp:ListItem Value="Unit 17a St Marys Road, Leamington Spa, CV31 1PR"></asp:ListItem>
+        </asp:DropDownList>
+        <%--<asp:TextBox ID="txtHireCollectionReturnLocation" runat="server" style="z-index: 1; left: 370px; top: 345px; position: absolute"></asp:TextBox>--%>
         <asp:TextBox ID="txtDriverAge" runat="server" style="z-index: 1; left: 370px; top: 390px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtDriverLicenseNumber" runat="server" style="z-index: 1; left: 370px; top: 440px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 10px; top: 495px; position: absolute" Text="[lblError]"></asp:Label>

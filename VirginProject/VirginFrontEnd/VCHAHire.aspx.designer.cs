@@ -103,22 +103,22 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblHireIDInput;
         
         /// <summary>
-        /// lblCarIDInput control.
+        /// txtCarID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarIDInput;
+        protected global::System.Web.UI.WebControls.TextBox txtCarID;
         
         /// <summary>
-        /// lblCustomerIDInput control.
+        /// txtCustomerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomerIDInput;
+        protected global::System.Web.UI.WebControls.TextBox txtCustomerID;
         
         /// <summary>
         /// txtHireCollectionDate control.
@@ -139,13 +139,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtHireReturnDate;
         
         /// <summary>
-        /// txtHireCollectionReturnLocation control.
+        /// ddlHireLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHireCollectionReturnLocation;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHireLocation;
         
         /// <summary>
         /// txtDriverAge control.

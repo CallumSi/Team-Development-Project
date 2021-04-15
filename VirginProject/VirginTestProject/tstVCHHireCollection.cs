@@ -32,8 +32,8 @@ namespace VirginTestProject
             TestItem.HireID = 1;
             TestItem.CarID = 1;
             TestItem.CustomerID = 1;
-            TestItem.HireCollectionDate = DateTime.Now.Date;
-            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(7);
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
             TestItem.DriverAge = 26;
             TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
@@ -56,8 +56,8 @@ namespace VirginTestProject
             TestHire.HireID = 1;
             TestHire.CarID = 1;
             TestHire.CustomerID = 1;
-            TestHire.HireCollectionDate = DateTime.Now.Date;
-            TestHire.HireReturnDate = DateTime.Now.Date.AddDays(7);
+            TestHire.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestHire.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestHire.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
             TestHire.DriverAge = 26;
             TestHire.DriverLicenseNumber = "ALIGH902245DA99S";
@@ -121,5 +121,149 @@ namespace VirginTestProject
         }
 
         */
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the car hire colllection class
+            clsVCHHireCollection AllHires = new clsVCHHireCollection();
+            //test data to assign to the property
+            clsVCHHire TestItem = new clsVCHHire();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            //set data properties
+            TestItem.HireID = 1;
+            TestItem.CarID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
+            TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
+            TestItem.DriverAge = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            //set ThisCar to the test data
+            AllHires.ThisHire = TestItem;
+            /* 
+            commented out to prevent constant-reduplication of car hire record into data table
+            "//add the record
+            PrimaryKey = AllHires.Add();" 
+            */
+            //set the primary key of the test data
+            TestItem.HireID = PrimaryKey;
+            //find the record
+            AllHires.ThisHire.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllHires.ThisHire, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the car hire colllection class
+            clsVCHHireCollection AllHires = new clsVCHHireCollection();
+            //test data to assign to the property
+            clsVCHHire TestItem = new clsVCHHire();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            //set data properties
+            TestItem.HireID = 1;
+            TestItem.CarID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
+            TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
+            TestItem.DriverAge = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            //set ThisCar to the test data
+            AllHires.ThisHire = TestItem;
+            /* 
+            commented out to prevent constant-reduplication of car hire record into data table
+            "//add the record
+            PrimaryKey = AllHires.Add();" 
+            */
+            //set the primary key of the test data
+            TestItem.HireID = PrimaryKey;
+            //find the record
+            AllHires.ThisHire.Find(PrimaryKey);
+            //delete the record
+            AllHires.Delete();
+            //now find the record
+            Boolean Found = AllHires.ThisHire.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllHires.ThisHire, TestItem);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the car hire colllection class
+            clsVCHHireCollection AllHires = new clsVCHHireCollection();
+            //test data to assign to the property
+            clsVCHHire TestItem = new clsVCHHire();
+            //var to store the primary key 
+            Int32 PrimaryKey = 0;
+            //set data properties
+            //set data properties
+            TestItem.HireID = 1;
+            TestItem.CarID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
+            TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
+            TestItem.DriverAge = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            //set ThisCar to the test data
+            AllHires.ThisHire = TestItem;
+            /* 
+            commented out to prevent constant-reduplication of car hire record into data table
+            "//add the record
+            PrimaryKey = AllHires.Add();" 
+            */
+            //set the primary key of the test data
+            TestItem.HireID = PrimaryKey;
+            //modify the test data in the following manner
+            //set data properties
+            TestItem.HireID = 1;
+            TestItem.CarID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(7);
+            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(14);
+            TestItem.HireLocation = "30 Glaxon Street, Shropshire, SH7 3FG";
+            TestItem.DriverAge = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            //set the record based on the new test data
+            AllHires.ThisHire = TestItem;
+            //update the record
+            AllHires.Update();
+            //find the record
+            AllHires.ThisHire.Find(PrimaryKey);
+            //test to see the values ARE the same
+            Assert.AreEqual(AllHires.ThisHire, TestItem);
+        }
+
+        [TestMethod]
+        public void ReportByHireLocationMethodOK()
+        {
+            //create an instance of the car hire colllection class
+            clsVCHHireCollection AllHires = new clsVCHHireCollection();
+            //create an instance of the data to filter
+            clsVCHHireCollection FilteredHireLocation = new clsVCHHireCollection();
+            //apply a blank string (all car hire records should be returned)
+            FilteredHireLocation.ReportByHireLocation("");
+            //test to see that both values ARE the same
+            Assert.AreEqual(AllHires.Count, FilteredHireLocation.Count);
+        }
+
+        [TestMethod]
+        public void ReportByHireLocationNoneFound()
+        {
+            //create an instance of the data to filter
+            clsVCHHireCollection FilteredHireLocation = new clsVCHHireCollection();
+            //apply a none existent Car Hire record
+            FilteredHireLocation.ReportByHireLocation("ThisDoesntExist");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredHireLocation.Count);
+        }
     }
 }
