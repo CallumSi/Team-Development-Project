@@ -120,8 +120,11 @@ namespace VirginTestProject
             TestItem.Customer_Telephone = "12345678901";
             //set ThisCustomer to the test data 
             AllCustomer.ThisCustomer = TestItem;
-            //add the record
-            PrimaryKey = AllCustomer.Add();
+            /* 
+            commented out to prevent constant-reduplication of customer record into data table
+            "//add the record
+            PrimaryKey = AllCustomer.Add();" 
+            */
             //set the primary key of the test data 
             TestItem.Customer_ID = PrimaryKey;
             //find the record

@@ -74,33 +74,54 @@ namespace VirginFrontEnd
             }
         }
 
-        //protected void btnOK_Click(object sender, EventArgs e)
-        //{
-        //    if (Customer_ID == -1)
-        //    {
-        //        //add a new record
-        //        Add();
-        //    }
-        //    else
-        //    {
-        //        //update the record
-        //        Update();
-        //    }
+        protected void btnOK_Click(object sender, EventArgs e)
+        {
+            if (Customer_ID == -1)
+            {
+                //add a new record
+                Add();
+            }
+            else
+            {
+                //update the record
+                Update();
+            }
         }
 
-    //    void Update()
-    //    {
-    //        //create an instance of the staff 
-    //        clsVPCustomerCollection AllCustomer = new clsVPCustomerCollection();
-    //        //validate the data on the web form 
-    //        String Error = AllCustomer.ThisCustomer.Valid(txtCustomerFirstName.Text, txtCustomerLastName.Text, txtCustomerStreet.Text, txtCustomerAddress.Text, txtCustomerPostcode.Text, txtCustomerEmail.Text, txtCustomerTelephone.Text);
-    //        //if the data is ok then add it to the object
-    //        if (Error == "")
-    //        {
-    //            //find the record to update 
-    //            AllCustomer.ThisCustomer.cus
+        void Update()
+        {
+            //create an instance of the staff 
+            clsVPCustomerCollection AllCustomer = new clsVPCustomerCollection();
+            //validate the data on the web form 
+            String Error = AllCustomer.ThisCustomer.Valid(txtCustomerFirstName.Text, txtCustomerLastName.Text, txtCustomerStreet.Text, txtCustomerAddress.Text, txtCustomerPostcode.Text, txtCustomerEmail.Text, txtCustomerTelephone.Text);
+            //if the data is ok then add it to the object
+            if (Error == "")
+            {
+                //find the record to update 
+                AllCustomer.ThisCustomer.Find(Customer_ID);
+                //get the data entered by the user
+                AllCustomer.ThisCustomer.Customer_FirstName = txtCustomerFirstName.Text;
+                AllCustomer.ThisCustomer.Customer_LastName = txtCustomerLastName.Text;
+                AllCustomer.ThisCustomer.Customer_Street = txtCustomerStreet.Text;
+                AllCustomer.ThisCustomer.Customer_Address = txtCustomerAddress.Text;
+                AllCustomer.ThisCustomer.Customer_Postcode = txtCustomerPostcode.Text;
+                AllCustomer.ThisCustomer.Customer_Email = txtCustomerEmail.Text;
+                AllCustomer.ThisCustomer.Customer_Telephone = txtCustomerTelephone.Text;
+                //update the record 
+                AllCustomer.Update();
+                //all done so redirect back to the main page
+                Response.Redirect("VPCustomerList.aspx");
+            }
+            else
+            {
+                //report an error 
+                lblError.Text = "There were problems with data entered" + Error;
+            }
+        }
 
-    //        }
-    //    }
-    //}
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VPCustomerList.aspx");
+        }
+    }
 }

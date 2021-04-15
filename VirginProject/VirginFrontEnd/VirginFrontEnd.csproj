@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
+    <Content Include="AnPhone.aspx" />
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
     <Content Include="AnVMCustomer.aspx" />
@@ -150,6 +151,9 @@
     <Content Include="VMStaffList.aspx" />
     <Content Include="VMThanks.aspx" />
     <Content Include="VMViewCart.aspx" />
+    <Content Include="VPCustomerDelete.aspx" />
+    <Content Include="VPCustomerList.aspx" />
+    <Content Include="VPDefault.aspx" />
     <Content Include="VPStaffDelete.aspx" />
     <Content Include="VPStaffList.aspx" />
     <Content Include="Web.config" />
@@ -169,6 +173,13 @@
     </Compile>
     <Compile Include="AnMarketplaceUser.aspx.designer.cs">
       <DependentUpon>AnMarketplaceUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnPhone.aspx.cs">
+      <DependentUpon>AnPhone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnPhone.aspx.designer.cs">
+      <DependentUpon>AnPhone.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnVirginUser.aspx.cs">
       <DependentUpon>AnVirginUser.aspx</DependentUpon>
@@ -738,6 +749,27 @@
     </Compile>
     <Compile Include="VMViewCart.aspx.designer.cs">
       <DependentUpon>VMViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPCustomerDelete.aspx.cs">
+      <DependentUpon>VPCustomerDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerDelete.aspx.designer.cs">
+      <DependentUpon>VPCustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPCustomerList.aspx.cs">
+      <DependentUpon>VPCustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerList.aspx.designer.cs">
+      <DependentUpon>VPCustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPDefault.aspx.cs">
+      <DependentUpon>VPDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPDefault.aspx.designer.cs">
+      <DependentUpon>VPDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPStaffDelete.aspx.cs">
       <DependentUpon>VPStaffDelete.aspx</DependentUpon>

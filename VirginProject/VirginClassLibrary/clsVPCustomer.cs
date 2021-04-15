@@ -178,14 +178,14 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                Customer_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Customer_ID"]);
-                Customer_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Customer_FirstName"]);
-                Customer_LastName = Convert.ToString(DB.DataTable.Rows[0]["Customer_LastName"]);
-                Customer_Street = Convert.ToString(DB.DataTable.Rows[0]["Customer_Street"]);
-                Customer_Address = Convert.ToString(DB.DataTable.Rows[0]["Customer_Address"]);
-                Customer_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Customer_Postcode"]);
-                Customer_Email = Convert.ToString(DB.DataTable.Rows[0]["Customer_Email"]);
-                Customer_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Customer_Telephone"]);
+                mCustomer_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Customer_ID"]);
+                mCustomer_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Customer_FirstName"]);
+                mCustomer_LastName = Convert.ToString(DB.DataTable.Rows[0]["Customer_LastName"]);
+                mCustomer_Street = Convert.ToString(DB.DataTable.Rows[0]["Customer_Street"]);
+                mCustomer_Address = Convert.ToString(DB.DataTable.Rows[0]["Customer_Address"]);
+                mCustomer_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Customer_Postcode"]);
+                mCustomer_Email = Convert.ToString(DB.DataTable.Rows[0]["Customer_Email"]);
+                mCustomer_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Customer_Telephone"]);
                 //return that everything works
                 return true;
             }
