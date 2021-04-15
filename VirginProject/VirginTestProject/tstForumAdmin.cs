@@ -8,11 +8,11 @@ namespace VirginTestProject
     public class tstForumAdmin
     {
         //create some test data to pass the method
-        string AdminFirstName = "Robin";
-        string AdminLastName = "Vanpersie";
-        string AdminEmail = "RVP@gmail.com";
-        string AdminPassword = "United4RVP";
-        string AdminUserName = "RVP20";
+        string AdminFirstName = "Qasim";
+        string AdminLastName = "Jillani";
+        string AdminEmail = "QJ@gmail.com";
+        string AdminPassword = "United4Life";
+        string AdminUserName = "Qasim35";
 
         [TestMethod]
         public void InstanceOK()
@@ -258,48 +258,211 @@ namespace VirginTestProject
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
-        //[TestMethod]
-        //public void AdminFirstNameLessOne()
-        //{
-        //    //create an instane of the class we want to create 
-        //    clsForumAdmin AAdmin = new clsForumAdmin();
-        //    //string variable to store any error message
-        //    String Error = "";
-        //    //create some test data to pass the method
-        //    string AdminFirstName = "";
-        //    //invoke the method
-        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
-        //    //test to see that the result is correct
-        //    Assert.AreNotEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void AdminFirstNameMaxPlusOne()
-        //{
-        //    //create an instane of the class we want to create 
-        //    clsForumAdmin AAdmin = new clsForumAdmin();
-        //    //string variable to store any error message
-        //    String Error = "";
-        //    //create some test data to pass the method
-        //    string AdminFirstName = "qwertyuiopasdfgh";
-        //    //invoke the method
-        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
-        //    //test to see that the result is correct
-        //    Assert.AreNotEqual(Error, "");
-        //}
-        //[TestMethod]
-        //public void AdminFirstNameExtremeMax()
-        //{
-        //    //create an instane of the class we want to create 
-        //    clsForumAdmin AAdmin = new clsForumAdmin();
-        //    //string variable to store any error message
-        //    String Error = "";
-        //    //create some test data to pass the method
-        //    string AdminFirstName = "";
-        //    AdminFirstName = AdminFirstName.PadRight(50, 'a');
-        //    //invoke the method
-        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
-        //    //test to see that the result is correct
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        /// <summary>
+        /// first name
+        /// </summary>
+        [TestMethod]
+        public void AdminFirstNameLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminFirstName = "";
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminFirstNameMaxPlusOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminFirstName = "qwertyuiopasdfgh";
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminFirstNameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminFirstName = "";
+            AdminFirstName = AdminFirstName.PadRight(50, 'a');
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        /// <summary>
+        /// last name
+        /// </summary>
+        [TestMethod]
+        public void AdminLastNameLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminLastName = "";
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminLastNameMaxPlusOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminLastName = "qwertyuiopasdfgh";
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminLastNameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string AdminLastName = "";
+            AdminLastName = AdminLastName.PadRight(50, 'a');
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        /// <summary>
+        /// email
+        /// </summary>
+        [TestMethod]
+        public void AdminEmailMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminEmail = "";
+            AdminEmail = AdminEmail.PadRight(26, 'a');
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminEmailExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminEmail = "";
+            AdminEmail = AdminEmail.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        /// <summary>
+        /// password
+        /// </summary>
+        [TestMethod]
+        public void AdminPasswordMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminPassword = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AdminPasswordExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminPassword = "";
+            AdminPassword = AdminPassword.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /// <summary>
+        /// User name
+        /// </summary>
+
+        [TestMethod]
+        public void AdminUserNameMinLessOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminUserName = "abc"; //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+
+        }
+
+        [TestMethod]
+        public void AdminUserNameMaxPlussOne()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminUserName = "qwertyuiopasdfgh"; //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+
+        }
+        [TestMethod]
+        public void AdminUserNameExtremeMax()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string AdminUserName = "";
+            AdminUserName = AdminUserName.PadRight(50, 'a'); //this should fail
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the test is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }

@@ -153,7 +153,60 @@ namespace VirginClassLibrary
                 Error = Error + "The First name can have 1 letter also it must be less than 15 letters : ";
             }
 
-            return "";
+            //if the Last name is blank
+            if (AdminLastName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The last name may not be blank : ";
+            }
+            //if the last name is less than 1 and more than 15
+            if (AdminLastName.Length < 1 | AdminLastName.Length > 15)
+            {
+                //record the error
+                Error = Error + "The Last name can have 1 letter also it must be less than 15 letters : ";
+            }
+
+            //if the email is blank
+            if (AdminEmail.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Email address may not be blank : ";
+            }
+            //if the email is more than 26 
+            if (AdminEmail.Length >= 25)
+            {
+                //record the error
+                Error = Error + "The Email address has to be less than 25.  ";
+            }
+
+            //if the password is blank
+            if (AdminPassword.Length == 0)
+            {
+                //record the error
+                Error = Error + "The password may not be blank : ";
+            }
+            //if the password is more than 16
+            if (AdminPassword.Length > 16)
+            {
+                //record the error
+                Error = Error + "The password has to be less than 16 characters ";
+            }
+
+
+            //if the user name is blank
+            if (AdminUserName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The username may not be blank : ";
+            }
+            //if the username is more than 16
+            if (AdminUserName.Length > 16)
+            {
+                //record the error
+                Error = Error + "The username has to be less than 16 characters ";
+            }
+
+            return Error;
         }
     }
 }
