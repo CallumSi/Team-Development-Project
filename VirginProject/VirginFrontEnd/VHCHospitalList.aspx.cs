@@ -120,7 +120,24 @@ namespace VirginFrontEnd
 
         protected void btnDeleteHospital_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospitalDelete.aspx");
+            //var to store the primary key value of the record to be deleted
+            Int32 Hospital_ID;
+            //if a record has been selected from the list
+            if (lstHospital.SelectedIndex != -1)
+            {
+                //get the primary key of the record to delete
+                Hospital_ID = Convert.ToInt32(lstHospital.SelectedValue);
+                //store the data in the session object
+                Session["Hospital_ID"] = Hospital_ID;
+                //redirect to the delete page
+                Response.Redirect("VHCHospitalDelete.aspx");
+            }
+            //if no record has been selected
+            else
+            {
+                //display an error 
+                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
+            }
 
         }
     }
