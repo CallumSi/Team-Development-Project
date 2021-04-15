@@ -13,22 +13,22 @@ namespace VirginFrontEnd {
     public partial class ForumAdminDelete {
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// btnNo control.
+        /// lblDeleteAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNo;
+        protected global::System.Web.UI.WebControls.Label lblDeleteAdmin;
         
         /// <summary>
         /// btnYes control.
@@ -40,12 +40,12 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
-        /// lblDeleteAdmin control.
+        /// btnNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeleteAdmin;
+        protected global::System.Web.UI.WebControls.Button btnNo;
     }
 }
