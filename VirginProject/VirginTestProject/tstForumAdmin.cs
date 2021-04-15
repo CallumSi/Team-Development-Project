@@ -7,12 +7,12 @@ namespace VirginTestProject
     [TestClass]
     public class tstForumAdmin
     {
-        ////create some test data to pass the method
-        //string AdminFirstname = "Robin";
-        //string AdinUserName = "RVP20";
-        //string AdminLastName = "Vanpersie";
-        //string UserEmailAddress = "RVP@gmail.com";
-        //string UserPassword = "United4RVP";
+        //create some test data to pass the method
+        string AdminFirstName = "Robin";
+        string AdminLastName = "Vanpersie";
+        string AdminEmail = "RVP@gmail.com";
+        string AdminPassword = "United4RVP";
+        string AdminUserName = "RVP20";
 
         [TestMethod]
         public void InstanceOK()
@@ -34,20 +34,7 @@ namespace VirginTestProject
             //test to see that the two values are the same
             Assert.AreEqual(AAdmin.AdminID, TestData);
         }
-        [TestMethod]
-        public void AdminUserNamePropertyOK()
-        {
-            //create an instance of the class we want to create
-            clsForumAdmin AAdmin = new clsForumAdmin();
-            //create a variable to store the user name of the Admin
-            string SomeAdminUserName;
-            //assign a Admin first name to the variable
-            SomeAdminUserName = "Asuldan01";
-            //try to send some data to the admin user name property
-            AAdmin.AdminUserName = SomeAdminUserName;
-            //check to see that the data in the variable and the property are the same
-            Assert.AreEqual(AAdmin.AdminUserName, SomeAdminUserName);
-        }
+
         [TestMethod]
         public void AdminFirstNamePropertyOK()
         {
@@ -104,40 +91,215 @@ namespace VirginTestProject
             //check to see that the data in the variable and the property are the same
             Assert.AreEqual(AAdmin.AdminPassword, SomeAdminPassword);
         }
+        [TestMethod]
+        public void AdminUserNamePropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //create a variable to store the user name of the Admin
+            string SomeAdminUserName;
+            //assign a Admin first name to the variable
+            SomeAdminUserName = "Asuldan01";
+            //try to send some data to the admin user name property
+            AAdmin.AdminUserName = SomeAdminUserName;
+            //check to see that the data in the variable and the property are the same
+            Assert.AreEqual(AAdmin.AdminUserName, SomeAdminUserName);
+        }
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the validation
+            Boolean found = false;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            found = AAdmin.Find(AdminID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
+        }
+        [TestMethod]
+        public void TestAdminIDFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method 
+            Found = AAdmin.Find(AdminID);
+            //check the Admin ID 
+            if (AAdmin.AdminID != 2)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAdminFirstNameFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AnAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            Found = AnAdmin.Find(AdminID);
+            //check the Admin id
+            if (AnAdmin.AdminFirstName != "Taf")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestAdminLastNameFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            Found = AAdmin.Find(AdminID);
+            //check the Admin id
+            if (AAdmin.AdminLastName != "Edward")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestAdminEmailFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            Found = AAdmin.Find(AdminID);
+            //check the Admin id
+            if (AAdmin.AdminEmail != "Taf@hotmail.com")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestAdminPasswordFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            Found = AAdmin.Find(AdminID);
+            //check the Admin id
+            if (AAdmin.AdminPassword != "TafMan")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestAdminUsernameFound()
+        {
+            //create an instance of the class we want to create
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 AdminID = 2;
+            //invoke the method
+            Found = AAdmin.Find(AdminID);
+            //check the Admin id
+            if (AAdmin.AdminUserName != "Tedward02")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instane of the class we want to create 
+            clsForumAdmin AAdmin = new clsForumAdmin();
+            //string variable to store any error message
+            String Error = "";
+            //invoke the method
+            Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
         //[TestMethod]
-        //public void FindMethodOK()
+        //public void AdminFirstNameLessOne()
         //{
-        //    //create an instance of the class we want to create
+        //    //create an instane of the class we want to create 
         //    clsForumAdmin AAdmin = new clsForumAdmin();
-        //    //boolean variable to store the result of the validation
-        //    Boolean found = false;
-        //    //create some test data to use with the method
-        //    Int32 AdminID = 1;
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass the method
+        //    string AdminFirstName = "";
         //    //invoke the method
-        //    found = AAdmin.Find(AdminID);
+        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
         //    //test to see that the result is correct
-        //    Assert.IsTrue(found);
+        //    Assert.AreNotEqual(Error, "");
         //}
         //[TestMethod]
-        //public void TestAdminIDFound()
+        //public void AdminFirstNameMaxPlusOne()
         //{
-        //    //create an instance of the class we want to create
+        //    //create an instane of the class we want to create 
         //    clsForumAdmin AAdmin = new clsForumAdmin();
-        //    //boolean variable to store the result of the search
-        //    Boolean Found = false;
-        //    //boolean variable to record if data is OK
-        //    Boolean OK = true;
-        //    //create some test data to use with the method
-        //    Int32 AdminID = 1;
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass the method
+        //    string AdminFirstName = "qwertyuiopasdfgh";
         //    //invoke the method
-        //    Found = AAdmin.Find(AdminID);
-        //    //check the Admin id
-        //    if (AAdmin.AdminID != 1)
-        //    {
-        //        OK = false;
-        //    }
+        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
         //    //test to see that the result is correct
-        //    Assert.IsTrue(OK);
+        //    Assert.AreNotEqual(Error, "");
+        //}
+        //[TestMethod]
+        //public void AdminFirstNameExtremeMax()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumAdmin AAdmin = new clsForumAdmin();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass the method
+        //    string AdminFirstName = "";
+        //    AdminFirstName = AdminFirstName.PadRight(50, 'a');
+        //    //invoke the method
+        //    Error = AAdmin.Valid(AdminFirstName, AdminLastName, AdminEmail, AdminPassword, AdminUserName);
+        //    //test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
         //}
     }
 }

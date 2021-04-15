@@ -136,7 +136,7 @@ namespace VirginTestProject
             //now find the record
             Boolean Found = AllAdmins.ThisAdmin.Find(PrimaryKey);
             //test to see that the two value are the same
-            Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
+            Assert.IsFalse(Found);
 
         }
 
@@ -174,9 +174,62 @@ namespace VirginTestProject
             AllAdmins.Update();
             //find the record
             AllAdmins.ThisAdmin.Find(PrimaryKey);
-            //test to see ThisUser matches the test data
+            //test to see ThisAdmin matches the test data
             Assert.AreEqual(AllAdmins.ThisAdmin, TestItem);
 
+        }
+        [TestMethod]
+        public void ReportByAdminUsernameMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
+            //create an instance of the filtered data
+            clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
+            //apply a blank string(should return all records)
+            FilteredAdmins.ReportByAdminUsername("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllAdmins.Count, FilteredAdmins.Count);
+        }
+        [TestMethod]
+        public void ReportByAdminUsernameFound()
+        {
+            //create an instance of the filtered data
+            clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
+            //apply a username that does not exist
+            FilteredAdmins.ReportByAdminUsername("xxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredAdmins.Count);
+        }
+        [TestMethod]
+        public void ReportByAdminUserNameTestDataFound()
+        {
+            //create an instance of filtered data
+            clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a username that doesn't exist
+            FilteredAdmins.ReportByAdminUsername("TestData");
+            //check that the correct number of records 
+            if (FilteredAdmins.Count == 2)
+            {
+                //check that the correct number of records are found
+                if (FilteredAdmins.AdminList[0].AdminID != 5)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 6
+                if (FilteredAdmins.AdminList[1].AdminID != 6)
+                {
+                    OK = false;
+                }
+
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
         }
     }
 }
