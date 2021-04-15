@@ -188,7 +188,7 @@ namespace VirginTestProject
             //var to store the primary key 
             Int32 PrimaryKey = 0;
             //set its properties
-            TestItem.Staff_ID = 1;
+            //TestItem.Staff_ID = 1;
             TestItem.Staff_FirstName = "John";
             TestItem.Staff_LastName = "Smith";
             TestItem.Staff_Street = "Fifth Avenue";
