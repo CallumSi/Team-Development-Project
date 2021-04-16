@@ -126,7 +126,26 @@ namespace VirginFrontEnd
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
+            //display all VM movies 
             DisplayVMMovie();
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            //redirect to the customer list
+            Response.Redirect("VMCustomerList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to the login page 
+            Response.Redirect("VirginLogin.aspx");
+        }
+
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect to the staff list
+            Response.Redirect("VMStaffList.aspx");
         }
     }
 }

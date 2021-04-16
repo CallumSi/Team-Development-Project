@@ -130,21 +130,25 @@ namespace VirginFrontEnd
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
+            //redirect to the staff list
             Response.Redirect("VMStaffList.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
+            //redirect to the login page
             Response.Redirect("VirginLogin.aspx");
         }
 
         protected void btnStaffMovie_Click(object sender, EventArgs e)
         {
+            //redirect to the staff movie list
             Response.Redirect("AnVMStaffAddMovie.aspx");
         }
 
         protected void btnCustomerList_Click(object sender, EventArgs e)
         {
+            //redirect to the customer list
             Response.Redirect("VMCustomerList.aspx");
         }
     }
