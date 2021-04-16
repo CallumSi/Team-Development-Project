@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VHCHospital.aspx.cs" Inherits="VirginFrontEnd.VHCHospital" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VHCStaff.aspx.cs" Inherits="VirginFrontEnd.VHCHospital" %>
 
 <!DOCTYPE html>
 <html>
@@ -16,26 +16,18 @@
 
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare: Hospital</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
 
-        <%--NAVIGATION SECTION--%>
-        <nav>
-            <%--BUTTON: HOME--%>
-            <asp:Button ID="btnHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnHome_Click" />
+        <%--ARTICLE SECTION--%>
+        <article>
+            <h3>WELCOME TO VIRGIN HEALTHCARE</h3>
+            <%--BUTTON: LOG OUT--%>
+            <asp:Button ID="btnLogout" runat="server" CssClass="btnLogout" Text="☜ Log Out" OnClick="btnLogout_Click" />
             <%--BUTTON: ADD HOSPITAL--%>
             <asp:Button ID="btnAddHospital" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="btnAddHospital_Click" />
             <%--BUTTON: LIST HOSPITAL--%>
             <asp:Button ID="btnListHospital" runat="server" CssClass="ListHospitals" Text="List Hospitals" OnClick="btnListHospital_Click" />
-        </nav>
-
-        <%--ARTICLE SECTION--%>
-        <article>
-            <h3>WELCOME TO THE HOSPITAL SECTION</h3>
-            <%--OPTION MESSAGE--%>
-            <p id="OptionMessage">Please select one of the options on the left hand side </p>
-            <%--VHC LOGO--%>
-            <img src="VHCImages/VHCLogo.png" alt="VHCLogo">
         </article>
 
         <%--FOOTER SECTION--%>
