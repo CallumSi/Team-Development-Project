@@ -70,7 +70,7 @@
             <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
 
             <%--BUTTON: SUBMIT--%>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT"/>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click"/>
 
         </article>
 

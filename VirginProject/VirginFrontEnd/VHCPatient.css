@@ -90,8 +90,7 @@ footer {
 
 .lblPatient_Title, .lblPatient_Firstname, .lblPatient_Lastname,
 .lblPatient_Address, .lblPatient_DOB, .lblPatient_Email,
-.lblPatient_Username, .lblPatient_Password, .lblPatient_Telephone,
-.lblPatient_Status {
+.lblPatient_Username, .lblPatient_Password, .lblPatient_Telephone{
     position: absolute;
     font-weight: bolder;
     letter-spacing: 2px;
@@ -198,9 +197,13 @@ footer {
 
 /*Patient Status*/
 .lblPatient_Status {
-    top: 605px;
-    left: 640px;
+    position:absolute;
+    top: 615px;
+    left: 910px;
     color: #cc0000;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight:bold;
 }
 .cbPatient_Status{
     position:absolute;
