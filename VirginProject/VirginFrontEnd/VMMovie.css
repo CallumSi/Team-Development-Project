@@ -59,7 +59,7 @@ footer {
 .btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
 .btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
 .btnAddMovieStaff, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
-.btnStaffVMList, .btnVMStaffLogOut {
+.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut {
     padding: 20px;
     border-radius: 2px;
     font-size: 13px;
@@ -571,13 +571,16 @@ footer {
     color: black;
 }
 
+.lblCartCount {
+    position: fixed;
+    top: 275px;
+    left: 200px;
+}
 /*############ MOVIE VIEWER ##############*/
-
 .AnMovie {
     display: flex;
     flex-direction: column;
     list-style: none;
-    
 }
 .li {
     padding: 35px;
@@ -915,4 +918,11 @@ footer {
     left: 1090px;
     top: 257px;
     position: absolute;
+}
+
+/*############## CUSTOMER THANKS PAGE #################*/
+.btnCustThanksLogOut {
+    position: fixed;
+    top: 250px;
+    left: 30px;
 }

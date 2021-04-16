@@ -21,7 +21,7 @@ namespace VirginFrontEnd
 
         protected void btnVirginMovies_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VMCustomerMovieList.aspx");
+            Response.Redirect("VirginCustomerMovieList.aspx");
         }
     }
 }

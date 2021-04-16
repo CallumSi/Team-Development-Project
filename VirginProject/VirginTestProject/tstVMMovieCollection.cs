@@ -110,7 +110,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
-            PrimaryKey = allMovies.Add();
+            //PrimaryKey = allMovies.Add();
             //Set the primary key of the test data
             TestMovie.VMMovieID = PrimaryKey;
             //find the record
@@ -139,7 +139,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
-            PrimaryKey = allMovies.Add();
+            //PrimaryKey = allMovies.Add();
             //Set the primary key of the test data
             TestMovie.VMMovieID = PrimaryKey;
             //mdoify the record
@@ -181,7 +181,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allMovies.ThisMovie = TestMovie;
             //add the record
-            PrimaryKey = allMovies.Add();
+            //PrimaryKey = allMovies.Add();
             //set the primary key of the test data
             TestMovie.VMMovieID = PrimaryKey;
             //find the record

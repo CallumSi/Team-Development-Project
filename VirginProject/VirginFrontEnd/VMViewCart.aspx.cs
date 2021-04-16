@@ -10,13 +10,16 @@ namespace VirginFrontEnd
 {
     public partial class VMViewCart : System.Web.UI.Page
     {
-        //variable to store the VMCustomersID
+        //variable to store the CustomerID from session obect
         Int32 VMCustomerID;
+        Int32 VMMovieID;
+        //create an instance of the clsVMCart
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the customers Id
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            VMMovieID = Convert.ToInt32(Session["VMMovieID"]);
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsVMCart)Session["MyCart"];
             //display the cart contents
@@ -31,13 +34,12 @@ namespace VirginFrontEnd
 
         void DisplayCart()
         {
-            clsVMCart MyCart = new clsVMCart();
+
             //cerate some variables 
             Int32 Index = 0;
             Int32 Count = MyCart.Products.Count;
             string Moviename;
-
-            //display the movie id and quantity    
+            //display the movie 
             Response.Write("Movie ID");
             Response.Write("Quantity");
             //if the cart is empty tell the user
@@ -53,7 +55,7 @@ namespace VirginFrontEnd
                 AnMovie.Find((MyCart.Products[Index].ProductID));
                 //add the item to the list box 
                 Moviename = AnMovie.VMmovieTitle;
-                string lstitem = Moviename + " x" + (MyCart.Products[Index].QTY).ToString();
+                string lstitem = Moviename;
                 lstShoppingCart.Items.Add(lstitem);
                 Index++;
             }
@@ -68,7 +70,7 @@ namespace VirginFrontEnd
 
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
-            //take the customer back to the homepage
+            //take the customer to the shopping cart page
             Session["VMCustomerID"] = VMCustomerID;
             Response.Redirect("VMViewCart.aspx");
         }
@@ -87,6 +89,7 @@ namespace VirginFrontEnd
         {
             //take the customer back to the homepage
             Session["VMCustomerID"] = VMCustomerID;
+
             Response.Redirect("VirginCustomerMovieList.aspx");
         }
 

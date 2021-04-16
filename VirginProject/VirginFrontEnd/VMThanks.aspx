@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
 
         <header>
-            <h2>Virgin Media Order Confirmation</h2>
+            <h2>Virgin Movie Order Confirmation</h2>
         </header>
 
         <div class="MovieThanks">
@@ -23,9 +23,7 @@
         </div>
         <nav>
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnCustomerHome" OnClick="btnHome_Click" />
-            <asp:Button ID="btnViewCart" CssClass="btnCustomerCart" runat="server" Text="View Shopping Cart" OnClick="btnViewCart_Click" />
-            <asp:Button ID="btnEditAccount" CssClass="btnEditAccount" runat="server" Text="Edit Account Details" OnClick="btnEditAccount_Click" />
-            <asp:Button ID="btnLogOut" CssClass="btnCustomerLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnCustThanksLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

@@ -10,12 +10,15 @@ namespace VirginFrontEnd
 {
     public partial class VMCheckout : System.Web.UI.Page
     {
+        Int32 VMMovieID;
         Int32 VMCustomerID;
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsVMCart)Session["MyCart"];
+            //get the CustomerID
+            VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
@@ -65,6 +68,11 @@ namespace VirginFrontEnd
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnCheckout_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("VMThanks.aspx");
         }
     }
 }
