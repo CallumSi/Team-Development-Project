@@ -11,6 +11,10 @@ namespace VirginTestProject
         string FirstName = "Dante";
         //customer Last Name property
         string LastName = "Alighieri";
+        //Driver Age property
+        string Age = "26";
+        //Driver License Number property
+        string DriverLicenseNumber = "ALIGH902245DA99S";
         //customer Address property
         string Address = "12 Florence Cresent, Leicestershire";
         //customer Postcode property
@@ -71,7 +75,7 @@ namespace VirginTestProject
             //pad string of characters
             FirstName = FirstName.PadRight(1, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -88,7 +92,7 @@ namespace VirginTestProject
             //pad string of characters
             FirstName = FirstName.PadRight(31, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -105,7 +109,7 @@ namespace VirginTestProject
             //pad string of characters
             FirstName = FirstName.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -135,7 +139,7 @@ namespace VirginTestProject
             //pad string of characters
             LastName = LastName.PadRight(1, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -152,7 +156,7 @@ namespace VirginTestProject
             //pad string of characters
             LastName = LastName.PadRight(31, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -169,7 +173,130 @@ namespace VirginTestProject
             //pad string of characters
             LastName = LastName.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [TestMethod]
+        public void AgePropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the drivers age 
+            Int32 SomeAge = 26;
+            //assign the data to the property
+            VCHCustomer.Age = SomeAge;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHCustomer.Age, SomeAge);
+        }
+
+        [TestMethod]
+        public void AgeMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Age = "16";
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AgeMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Age = "76";
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AgeExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string Age = "500";
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DriverLicenseNumberPropertyOK()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create some test data to assign to the drivers license number
+            string SomeDriverLicenseNumber = "ALIGH902245DA99S";
+            //assign the data to the property
+            VCHCustomer.DriverLicenseNumber = SomeDriverLicenseNumber;
+            //test to see that the two values are the same
+            Assert.AreEqual(VCHCustomer.DriverLicenseNumber, SomeDriverLicenseNumber);
+        }
+
+        [TestMethod]
+        public void DriverLicenseNumberMinLessOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string DriverLicenseNumber = "";
+            //pad string of characters
+            DriverLicenseNumber = DriverLicenseNumber.PadRight(10, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DriverLicenseNumberMaxPlusOne()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string DriverLicenseNumber = "";
+            //pad string of characters
+            DriverLicenseNumber = DriverLicenseNumber.PadRight(21, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
+            //test to check the result doesn't pass and an error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DriverLicenseNumberExtremeMax()
+        {
+            //create an instance of the class
+            clsVCHCustomer VCHCustomer = new clsVCHCustomer();
+            //create a string variable to hold the validation results (if there's an error, this'll alert users)
+            String Error = "";
+            //create test data to test the method
+            string DriverLicenseNumber = "";
+            //pad string of characters
+            DriverLicenseNumber = DriverLicenseNumber.PadRight(100, 'a');
+            //invoke the method
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -199,7 +326,7 @@ namespace VirginTestProject
             //pad string of characters
             Address = Address.PadRight(2, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -216,7 +343,7 @@ namespace VirginTestProject
             //pad string of characters
             Address = Address.PadRight(51, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -233,7 +360,7 @@ namespace VirginTestProject
             //pad string of characters
             Address = Address.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -263,7 +390,7 @@ namespace VirginTestProject
             //pad string of characters
             PostCode = PostCode.PadRight(4, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -280,7 +407,7 @@ namespace VirginTestProject
             //pad string of characters
             PostCode = PostCode.PadRight(11, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -297,7 +424,7 @@ namespace VirginTestProject
             //pad string of characters
             PostCode = PostCode.PadRight(20, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -327,7 +454,7 @@ namespace VirginTestProject
             //pad string of characters
             Username = Username.PadRight(1, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -344,7 +471,7 @@ namespace VirginTestProject
             //pad string of characters
             Username = Username.PadRight(31, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -361,7 +488,7 @@ namespace VirginTestProject
             //pad string of characters
             Username = Username.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -391,7 +518,7 @@ namespace VirginTestProject
             //pad string of characters
             Email = Email.PadRight(6, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -408,7 +535,7 @@ namespace VirginTestProject
             //pad string of characters
             Email = Email.PadRight(51, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -425,7 +552,7 @@ namespace VirginTestProject
             //pad string of characters
             Email = Email.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -455,7 +582,7 @@ namespace VirginTestProject
             //pad string of characters
             Password = Password.PadRight(5, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -472,7 +599,7 @@ namespace VirginTestProject
             //pad string of characters
             Password = Password.PadRight(21, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -489,7 +616,7 @@ namespace VirginTestProject
             //pad string of characters
             Password = Password.PadRight(100, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -519,7 +646,7 @@ namespace VirginTestProject
             //pad string of characters
             PhoneNumber = PhoneNumber.PadRight(10, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -536,7 +663,7 @@ namespace VirginTestProject
             //pad string of characters
             PhoneNumber = PhoneNumber.PadRight(12, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -553,7 +680,7 @@ namespace VirginTestProject
             //pad string of characters
             PhoneNumber = PhoneNumber.PadRight(20, 'a');
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -568,6 +695,8 @@ namespace VirginTestProject
             //test data to test the method
             string FirstName = "Dante";
             string LastName = "Alighieri";
+            string Age = "26";
+            string DriverLicenseNumber = "ALIGH902245DA99S";
             string Address = "12 Florence Cresent, Leicestershire";
             string PostCode = "LE13 2RV";
             string Username = "DanteAyyy";
@@ -575,7 +704,7 @@ namespace VirginTestProject
             string Password = "3InPuPa";
             string PhoneNumber = "07912345678";
             //invoke the method
-            Error = VCHCustomer.Valid(FirstName, LastName, Address, PostCode, Username, Email, Password, PhoneNumber);
+            Error = VCHCustomer.Valid(FirstName, LastName, Age, DriverLicenseNumber, Address, PostCode, Username, Email, Password, PhoneNumber);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
         }
@@ -588,7 +717,7 @@ namespace VirginTestProject
             //boolean variable to store validation results
             Boolean found = false;
             //test data to test the method
-            Int32 CustomerID = 1;
+            Int32 CustomerID = 340;
             //invoke the method
             found = VCHCustomer.Find(CustomerID);
             //test to see that the result is correct

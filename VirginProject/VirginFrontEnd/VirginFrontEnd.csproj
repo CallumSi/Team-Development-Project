@@ -114,6 +114,7 @@
     <Content Include="VCHCarDelete.aspx" />
     <Content Include="VCHCarList.aspx" />
     <Content Include="VCHCustomerDelete.aspx" />
+    <Content Include="VCHCustomerHome.aspx" />
     <Content Include="VCHCustomerList.aspx" />
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
@@ -518,6 +519,13 @@
     </Compile>
     <Compile Include="VCHCustomerDelete.aspx.designer.cs">
       <DependentUpon>VCHCustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCustomerHome.aspx.cs">
+      <DependentUpon>VCHCustomerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerHome.aspx.designer.cs">
+      <DependentUpon>VCHCustomerHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHCustomerList.aspx.cs">
       <DependentUpon>VCHCustomerList.aspx</DependentUpon>

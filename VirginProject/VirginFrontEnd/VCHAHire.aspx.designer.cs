@@ -31,15 +31,6 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// lblHireID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHireID;
-        
-        /// <summary>
         /// lblCarID control.
         /// </summary>
         /// <remarks>
@@ -85,31 +76,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblHireCollectionReturnLocation;
         
         /// <summary>
-        /// lblDriverAge control.
+        /// lblHireStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDriverAge;
-        
-        /// <summary>
-        /// lblDriverLicenseNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDriverLicenseNumber;
-        
-        /// <summary>
-        /// lblHireIDInput control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHireIDInput;
+        protected global::System.Web.UI.WebControls.Label lblHireStatus;
         
         /// <summary>
         /// txtCarID control.
@@ -157,22 +130,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.DropDownList ddlHireLocation;
         
         /// <summary>
-        /// txtDriverAge control.
+        /// ddlHireStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDriverAge;
-        
-        /// <summary>
-        /// txtDriverLicenseNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDriverLicenseNumber;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHireStatus;
         
         /// <summary>
         /// lblError control.

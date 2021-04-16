@@ -79,8 +79,7 @@ namespace VirginClassLibrary
                 AHire.HireCollectionDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["HireCollectionDate"]);
                 AHire.HireReturnDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["HireReturnDate"]);
                 AHire.HireLocation = Convert.ToString(DB.DataTable.Rows[Index]["HireLocation"]);
-                AHire.DriverAge = Convert.ToInt32(DB.DataTable.Rows[Index]["DriverAge"]);
-                AHire.DriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[Index]["DriverLicenseNumber"]);
+                AHire.HireStatus = Convert.ToString(DB.DataTable.Rows[Index]["HireStatus"]);
                 //add the record to the private data member
                 mHireList.Add(AHire);
                 //point at the next record
@@ -108,8 +107,7 @@ namespace VirginClassLibrary
             TestItem.HireCollectionDate = DateTime.Now.Date;
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(7);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //add the item to the hire list
             mHireList.Add(TestItem);
             //re-initialise the object for some new data
@@ -121,8 +119,7 @@ namespace VirginClassLibrary
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(14);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(28);
             TestItem.HireLocation = "30 Glaxon Street, Shropshire, SH7 3FG";
-            TestItem.DriverAge = 42;
-            TestItem.DriverLicenseNumber = "STONES895523RH00A";
+            TestItem.HireStatus = "Pending Confirmation";
             //add the item to the hire list
             mHireList.Add(TestItem);*/
         }
@@ -138,8 +135,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@HireCollectionDate", mThisHire.HireCollectionDate);
             DB.AddParameter("@HireReturnDate", mThisHire.HireReturnDate);
             DB.AddParameter("@HireLocation", mThisHire.HireLocation);
-            DB.AddParameter("@DriverAge", mThisHire.DriverAge);
-            DB.AddParameter("@DriverLicenseNumber", mThisHire.DriverLicenseNumber);
+            DB.AddParameter("@HireStatus", mThisHire.HireStatus);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVCHHire_Insert");
         }
@@ -167,8 +163,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@HireCollectionDate", mThisHire.HireCollectionDate);
             DB.AddParameter("@HireReturnDate", mThisHire.HireReturnDate);
             DB.AddParameter("@HireLocation", mThisHire.HireLocation);
-            DB.AddParameter("@DriverAge", mThisHire.DriverAge);
-            DB.AddParameter("@DriverLicenseNumber", mThisHire.DriverLicenseNumber);
+            DB.AddParameter("@HireStatus", mThisHire.HireStatus);
             //execute the stored procedure
             DB.Execute("sproc_tblVCHHire_Update");
         }

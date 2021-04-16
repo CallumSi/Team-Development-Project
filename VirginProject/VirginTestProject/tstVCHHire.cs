@@ -16,10 +16,8 @@ namespace VirginTestProject
         string HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
         ////HirePostCode property
         //string HirePostCode = "LE2 5RE";
-        //Driver Age property
-        string DriverAge = "26";
-        //Driver License Number property
-        string DriverLicenseNumber = "ALIGH902245DA99S";
+        //Hire Status property
+        string HireStatus = "Pending Confirmation";
 
         [TestMethod]
         public void InstantationOK()
@@ -105,7 +103,7 @@ namespace VirginTestProject
             //convert SomeHireCollectionDate to a string variable 
             string HireCollectionDate = SomeHireCollectionDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -126,7 +124,7 @@ namespace VirginTestProject
             //convert SomeHireCollectionDate to a string variable 
             string HireCollectionDate = SomeHireCollectionDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -147,7 +145,7 @@ namespace VirginTestProject
             //convert SomeHireCollectionDate to a string variable 
             string HireCollectionDate = SomeHireCollectionDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -183,7 +181,7 @@ namespace VirginTestProject
             //convert SomeHireReturnDate to a string variable 
             string HireReturnDate = SomeHireReturnDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -204,7 +202,7 @@ namespace VirginTestProject
             //convert SomeHireReturnDate to a string variable 
             string HireReturnDate = SomeHireReturnDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -225,7 +223,7 @@ namespace VirginTestProject
             //convert SomeHireReturnDate to a string variable 
             string HireReturnDate = SomeHireReturnDate.ToString();
             //invoke the method 
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -257,7 +255,7 @@ namespace VirginTestProject
             //pad string of characters
             HireLocation = HireLocation.PadRight(4, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -274,7 +272,7 @@ namespace VirginTestProject
             //pad string of characters
             HireLocation = HireLocation.PadRight(71, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -291,7 +289,7 @@ namespace VirginTestProject
             //pad string of characters
             HireLocation = HireLocation.PadRight(200, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -323,7 +321,7 @@ namespace VirginTestProject
             //pad string of characters
             HirePostCode = HirePostCode.PadRight(4, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -340,7 +338,7 @@ namespace VirginTestProject
             //pad string of characters
             HirePostCode = HirePostCode.PadRight(11, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -357,7 +355,7 @@ namespace VirginTestProject
             //pad string of characters
             HirePostCode = HirePostCode.PadRight(20, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }*/
@@ -365,124 +363,65 @@ namespace VirginTestProject
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
-        public void DriverAgePropertyOK()
+        public void HireStatusPropertyOK()
         {
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
-            //create some test data to assign to the drivers age 
-            Int32 SomeDriverAge = 26;
+            //create some test data to assign to the Hire Status
+            string SomeHireStatus = "Pending Confirmation";
             //assign the data to the property
-            VCHHire.DriverAge = SomeDriverAge;
+            VCHHire.HireStatus = SomeHireStatus;
             //test to see that the two values are the same
-            Assert.AreEqual(VCHHire.DriverAge, SomeDriverAge);
+            Assert.AreEqual(VCHHire.HireStatus, SomeHireStatus);
         }
 
         [TestMethod]
-        public void DriverAgeMinLessOne()
+        public void HireStatusMinLessOne()
         {
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
             //create a string variable to hold the validation results (if there's an error, this'll alert users)
             String Error = "";
             //create test data to test the method
-            string DriverAge = "16";
-            //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
-            //test to check the result doesn't pass and an error message is returned
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void DriverAgeMaxPlusOne()
-        {
-            //create an instance of the car hire class
-            clsVCHHire VCHHire = new clsVCHHire();
-            //create a string variable to hold the validation results (if there's an error, this'll alert users)
-            String Error = "";
-            //create test data to test the method
-            string DriverAge = "76";
-            //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
-            //test to check the result doesn't pass and an error message is returned
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void DriverAgeExtremeMax()
-        {
-            //create an instance of the car hire class
-            clsVCHHire VCHHire = new clsVCHHire();
-            //create a string variable to hold the validation results (if there's an error, this'll alert users)
-            String Error = "";
-            //create test data to test the method
-            string DriverAge = "500";
-            //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
-            //test to check the result doesn't pass and an error message is returned
-            Assert.AreNotEqual(Error, "");
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        [TestMethod]
-        public void DriverLicenseNumberPropertyOK()
-        {
-            //create an instance of the car hire class
-            clsVCHHire VCHHire = new clsVCHHire();
-            //create some test data to assign to the drivers license number
-            string SomeDriverLicenseNumber = "ALIGH902245DA99S";
-            //assign the data to the property
-            VCHHire.DriverLicenseNumber = SomeDriverLicenseNumber;
-            //test to see that the two values are the same
-            Assert.AreEqual(VCHHire.DriverLicenseNumber, SomeDriverLicenseNumber);
-        }
-
-        [TestMethod]
-        public void DriverLicenseNumberMinLessOne()
-        {
-            //create an instance of the car hire class
-            clsVCHHire VCHHire = new clsVCHHire();
-            //create a string variable to hold the validation results (if there's an error, this'll alert users)
-            String Error = "";
-            //create test data to test the method
-            string DriverLicenseNumber = "";
+            string HireStatus = "";
             //pad string of characters
-            DriverLicenseNumber = DriverLicenseNumber.PadRight(10, 'a');
+            HireStatus = HireStatus.PadRight(7, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void DriverLicenseNumberMaxPlusOne()
+        public void HireStatusMaxPlusOne()
         {
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
             //create a string variable to hold the validation results (if there's an error, this'll alert users)
             String Error = "";
             //create test data to test the method
-            string DriverLicenseNumber = "";
+            string HireStatus = "";
             //pad string of characters
-            DriverLicenseNumber = DriverLicenseNumber.PadRight(21, 'a');
+            HireStatus = HireStatus.PadRight(21, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
-        public void DriverLicenseNumberExtremeMax()
+        public void HireStatusExtremeMax()
         {
             //create an instance of the car hire class
             clsVCHHire VCHHire = new clsVCHHire();
             //create a string variable to hold the validation results (if there's an error, this'll alert users)
             String Error = "";
             //create test data to test the method
-            string DriverLicenseNumber = "";
+            string HireStatus = "";
             //pad string of characters
-            DriverLicenseNumber = DriverLicenseNumber.PadRight(100, 'a');
+            HireStatus = HireStatus.PadRight(100, 'a');
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result doesn't pass and an error message is returned
             Assert.AreNotEqual(Error, "");
         }
@@ -500,12 +439,26 @@ namespace VirginTestProject
             string HireCollectionDate = DateTime.Now.Date.AddDays(1).ToString();
             string HireReturnDate = DateTime.Now.Date.AddDays(8).ToString();
             string HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            string DriverAge = "26";
-            string DriverLicenseNumber = "ALIGH902245DA99S";
+            string HireStatus = "Pending Confirmation";
             //invoke the method
-            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, DriverAge, DriverLicenseNumber);
+            Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHHire VCHHire = new clsVCHHire();
+            //boolean variable to store validation results
+            Boolean found = false;
+            //test data to test the method
+            Int32 HireID = 21;
+            //invoke the method
+            found = VCHHire.Find(HireID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
         }
     }
 }

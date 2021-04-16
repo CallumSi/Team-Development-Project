@@ -11,16 +11,13 @@
         <div>
         </div>
         <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 10px; top: 25px; position: absolute" Text="Home" OnClick="btnHome_Click" />
-        <asp:Label ID="lblHireID" runat="server" style="position: absolute; z-index: 1; left: 10px; top: 100px" Text="Hire Identification:"></asp:Label>
         <span class="auto-style1">
         <asp:Label ID="lblCarID" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute" Text="Car Identification:"></asp:Label>
         <asp:Label ID="lblCustomerID" runat="server" style="z-index: 1; left: 10px; top: 195px; position: absolute" Text="Customer Identification:"></asp:Label>
         <asp:Label ID="lblHireCollectionDate" runat="server" style="z-index: 1; left: 10px; top: 245px; position: absolute" Text="Car Collection Date:"></asp:Label>
         <asp:Label ID="lblHireReturnDate" runat="server" style="z-index: 1; left: 10px; top: 295px; position: absolute; bottom: 270px" Text="Car Return Date:"></asp:Label>
         <asp:Label ID="lblHireCollectionReturnLocation" runat="server" style="z-index: 1; left: 10px; top: 345px; position: absolute" Text="Car Collection & Return Address:"></asp:Label>
-        <asp:Label ID="lblDriverAge" runat="server" style="z-index: 1; left: 10px; top: 390px; position: absolute" Text="Driver Age:"></asp:Label>
-        <asp:Label ID="lblDriverLicenseNumber" runat="server" style="z-index: 1; left: 10px; top: 440px; position: absolute" Text="Driver's License Number:"></asp:Label>
-        <asp:Label ID="lblHireIDInput" runat="server" style="z-index: 1; left: 370px; top: 100px; position: absolute" Text="[lblHireID]"></asp:Label>
+        <asp:Label ID="lblHireStatus" runat="server" style="z-index: 1; left: 10px; top: 390px; position: absolute" Text="Hire Status:"></asp:Label>
         <asp:TextBox ID="txtCarID" runat="server" style="z-index: 1; left: 370px; top: 150px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtCustomerID" runat="server" style="z-index: 1; left: 370px; top: 195px; position: absolute"></asp:TextBox>
         <%--<asp:Label ID="lblCarIDInput" runat="server" style="z-index: 1; left: 370px; top: 150px; position: absolute" Text="[lblCarID]"></asp:Label>
@@ -45,11 +42,14 @@
             <asp:ListItem Value="Unit 17a St Marys Road, Leamington Spa, CV31 1PR"></asp:ListItem>
         </asp:DropDownList>
         <%--<asp:TextBox ID="txtHireCollectionReturnLocation" runat="server" style="z-index: 1; left: 370px; top: 345px; position: absolute"></asp:TextBox>--%>
-        <asp:TextBox ID="txtDriverAge" runat="server" style="z-index: 1; left: 370px; top: 390px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtDriverLicenseNumber" runat="server" style="z-index: 1; left: 370px; top: 440px; position: absolute"></asp:TextBox>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 10px; top: 495px; position: absolute" Text="[lblError]"></asp:Label>
-        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 10px; top: 545px; position: absolute" Text="OK" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 65px; top: 545px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
+        <asp:DropDownList ID="ddlHireStatus" runat="server" style="z-index: 1; left: 370px; top: 390px; position: absolute; right: 1225px;">
+            <asp:ListItem Value="Pending Confirmation"></asp:ListItem>
+            <asp:ListItem Value="Accepted"></asp:ListItem>
+            <asp:ListItem Value="Declined"></asp:ListItem>
+        </asp:DropDownList>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 10px; top: 515px; position: absolute" Text="Car and Customer identification data must pertain to active records, failure to supply correct data will result in the failure of system functionality."></asp:Label>
+        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 10px; top: 555px; position: absolute" Text="OK" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 65px; top: 555px; position: absolute; right: 1240px;" Text="Cancel" OnClick="btnCancel_Click" />
         <p>
             &nbsp;</p>
     </form>

@@ -32,6 +32,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -71,6 +73,8 @@ namespace VirginTestProject
             TestCustomer.CustomerID = 1;
             TestCustomer.FirstName = "Dante";
             TestCustomer.LastName = "Alighieri";
+            TestCustomer.Age = 26;
+            TestCustomer.DriverLicenseNumber = "ALIGH902245DA99S";
             TestCustomer.Address = "12 Florence Cresent, Leicestershire";
             TestCustomer.PostCode = "LE13 2RV";
             TestCustomer.Username = "DanteAyyy";
@@ -98,6 +102,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -135,6 +141,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -145,9 +153,10 @@ namespace VirginTestProject
             AllCustomers.ThisCustomer = TestItem;
             /* 
             commented out to prevent constant-reduplication of customer record into data table
-            "//add the record
-            PrimaryKey = AllCustomers.Add();" 
-            */
+            "*/
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //"*/
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //find the record
@@ -169,6 +178,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -204,6 +215,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -214,15 +227,18 @@ namespace VirginTestProject
             AllCustomers.ThisCustomer = TestItem;
             /* 
             commented out to prevent constant-reduplication of customer record into data table
-            "//add the record
-            PrimaryKey = AllCustomers.Add();" 
-            */
+            "*/
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //"*/
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //modify the test data in the following manner
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "King_of_Florence";
@@ -272,17 +288,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a data variable of an existent Username
-            FilteredCustomers.ReportByUsername("XXXXXXXXX");
+            FilteredCustomers.ReportByUsername("Cass_G");
             //check that the correct number of customer records are found
             if (FilteredCustomers.Count == 2)
             {
-                //check that the first customer record is CustomerID 29
-                if (FilteredCustomers.CustomerList[0].CustomerID != 29)
+                //check that the first customer record is CustomerID 347
+                if (FilteredCustomers.CustomerList[0].CustomerID != 347)
                 {
                     OK = false;
                 }
-                //check that the second customer record is CustomerID 40
-                if (FilteredCustomers.CustomerList[1].CustomerID != 40)
+                //check that the second customer record is CustomerID 349
+                if (FilteredCustomers.CustomerList[1].CustomerID != 349)
                 {
                     OK = false;
                 }
