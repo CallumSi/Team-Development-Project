@@ -15,14 +15,8 @@
     <form id="form1" runat="server">
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare: Hospital</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
-
-        <%--NAVIGATION SECTION--%>
-        <nav>
-            <%--BUTTON: HOME--%>
-            <asp:Button ID="btnListHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnListHome_Click" /> 
-        </nav>
 
         <%--ARTICLE SECTION--%>
         <article>

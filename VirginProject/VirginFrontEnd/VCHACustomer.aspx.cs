@@ -37,13 +37,15 @@ namespace VirginFrontEnd
             //create an instance of the Customer 
             clsVCHCustomerCollection CustomerCollection = new clsVCHCustomerCollection();
             //validate the data on the web front
-            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
+            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAge.Text, txtDriverLicenseNumber.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
                 //get the data entered by the user
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
+                CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
+                CustomerCollection.ThisCustomer.DriverLicenseNumber = txtDriverLicenseNumber.Text;
                 CustomerCollection.ThisCustomer.Address = txtAddress.Text;
                 CustomerCollection.ThisCustomer.PostCode = txtPostcode.Text;
                 CustomerCollection.ThisCustomer.Username = txtUsername.Text;
@@ -69,7 +71,7 @@ namespace VirginFrontEnd
             //create an instance of the Customer 
             clsVCHCustomerCollection CustomerCollection = new clsVCHCustomerCollection();
             //validate the data on the web front
-            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
+            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAge.Text, txtDriverLicenseNumber.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
@@ -78,6 +80,8 @@ namespace VirginFrontEnd
                 //get the data entered by the user
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
+                CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
+                CustomerCollection.ThisCustomer.DriverLicenseNumber = txtDriverLicenseNumber.Text;
                 CustomerCollection.ThisCustomer.Address = txtAddress.Text;
                 CustomerCollection.ThisCustomer.PostCode = txtPostcode.Text;
                 CustomerCollection.ThisCustomer.Username = txtUsername.Text;
@@ -107,6 +111,8 @@ namespace VirginFrontEnd
             //display the data for this record
             txtFirstName.Text = CustomerCollection.ThisCustomer.FirstName;
             txtLastName.Text = CustomerCollection.ThisCustomer.LastName;
+            txtAge.Text = CustomerCollection.ThisCustomer.Age.ToString();
+            txtDriverLicenseNumber.Text = CustomerCollection.ThisCustomer.DriverLicenseNumber;
             txtAddress.Text = CustomerCollection.ThisCustomer.Address;
             txtPostcode.Text = CustomerCollection.ThisCustomer.PostCode;
             txtUsername.Text = CustomerCollection.ThisCustomer.Username;

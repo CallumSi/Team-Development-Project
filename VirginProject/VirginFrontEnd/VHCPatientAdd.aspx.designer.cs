@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class AnVMStaff {
+    public partial class VHCPatientAdd {
         
         /// <summary>
         /// Head1 control.
@@ -31,121 +31,193 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblAnVMStaffAdd control.
+        /// lblPatient_Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnVMStaffAdd;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Title;
         
         /// <summary>
-        /// lblVMStaffFirstname control.
+        /// txtPatient_Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMStaffFirstname;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Title;
         
         /// <summary>
-        /// lblVMStaffLastname control.
+        /// lblPatient_Firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMStaffLastname;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Firstname;
         
         /// <summary>
-        /// lblVMStaffEmail control.
+        /// txtPatient_Firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMStaffEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Firstname;
         
         /// <summary>
-        /// lblVMStaffPassword control.
+        /// lblPatient_Lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMStaffPassword;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Lastname;
         
         /// <summary>
-        /// lblVMStaffPosition control.
+        /// txtPatient_Lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMStaffPosition;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Lastname;
         
         /// <summary>
-        /// txtVMStaffFirstname control.
+        /// lblPatient_Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVMStaffFirstname;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Address;
         
         /// <summary>
-        /// txtVMStaffLastname control.
+        /// txtPatient_Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVMStaffLastname;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Address;
         
         /// <summary>
-        /// txtVMStaffEmail control.
+        /// lblPatient_DOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVMStaffEmail;
+        protected global::System.Web.UI.WebControls.Label lblPatient_DOB;
         
         /// <summary>
-        /// txtVMStaffPassword control.
+        /// txtPatient_DOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVMStaffPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_DOB;
         
         /// <summary>
-        /// txtVMStaffPosition control.
+        /// lblPatient_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVMStaffPosition;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Email;
         
         /// <summary>
-        /// btnOkay control.
+        /// txtPatient_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOkay;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Email;
         
         /// <summary>
-        /// btnCancel control.
+        /// lblPatient_Username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Username;
+        
+        /// <summary>
+        /// txtPatient_Username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Username;
+        
+        /// <summary>
+        /// lblPatient_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPatient_Password;
+        
+        /// <summary>
+        /// txtPatient_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Password;
+        
+        /// <summary>
+        /// lblPatient_Telephone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPatient_Telephone;
+        
+        /// <summary>
+        /// txtPatient_Telephone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Telephone;
+        
+        /// <summary>
+        /// lblPatient_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPatient_Status;
+        
+        /// <summary>
+        /// cbPatient_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbPatient_Status;
+        
+        /// <summary>
+        /// btnClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnClose;
         
         /// <summary>
         /// lblError control.
@@ -157,48 +229,12 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnHome control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
-        
-        /// <summary>
-        /// btnCustomerList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomerList;
-        
-        /// <summary>
-        /// btnStaffMovie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffMovie;
-        
-        /// <summary>
-        /// btnVMStaffList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVMStaffList;
-        
-        /// <summary>
-        /// btnLogOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

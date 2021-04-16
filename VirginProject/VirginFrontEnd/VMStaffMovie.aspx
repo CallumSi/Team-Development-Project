@@ -32,6 +32,10 @@
             <asp:Button ID="btnAddMovie" CssClass="btnStaffAddMovie" runat="server" Text="Add Movie" OnClick="btnAddMovie_Click" />
             <asp:Button ID="btnUpdateMovie" CssClass="btnStaffUpdateMovie" runat="server" Text="Update Movie" OnClick="btnUpdateMovie_Click" />
             <asp:Button ID="btnDeleteMovie" CssClass="btnVMStaffDeleteMovie" runat="server" Text="Delete Movie" OnClick="btnDeleteMovie_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnStaffMovieCustomerList" runat="server" Text="Customer List" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnStaffList" CssClass="btnStaffMovieStaffList" runat="server" Text="Staff List" OnClick="btnStaffList_Click"/>
+
+            <asp:Button ID="btnLogOut" CssClass="btnStaffMovieLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

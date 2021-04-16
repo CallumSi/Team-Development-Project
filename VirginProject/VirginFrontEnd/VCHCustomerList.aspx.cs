@@ -22,17 +22,6 @@ namespace VirginFrontEnd
 
         void DisplayCustomers()
         {
-            /*//create an instance of the Customer 
-            clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
-            //set the data source to the list of customers in the collection
-            lstCustomer.DataSource = Customers.CustomerList;
-            //set the name of the primary key
-            lstCustomer.DataValueField = "CustomerID";
-            //set the data field to display
-            lstCustomer.DataTextField = "FirstName";
-            //bind the data to the list
-            lstCustomer.DataBind();*/
-
             //int to store the primary key
             Int32 CustomerID;
             //customer Username property

@@ -16,14 +16,8 @@
 
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare: Hospital</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
-
-        <%--NAVIGATION SECTION--%>
-        <nav>
-            <%--BUTTON: HOME--%>
-            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click" />
-        </nav>
 
         <%--ARTICLE SECTION--%>
         <article>

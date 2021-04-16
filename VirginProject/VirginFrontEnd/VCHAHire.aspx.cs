@@ -43,8 +43,7 @@ namespace VirginFrontEnd
             txtHireCollectionDate.Text = HireCollection.ThisHire.HireCollectionDate.ToString();
             txtHireReturnDate.Text = HireCollection.ThisHire.HireReturnDate.ToString();
             ddlHireLocation.SelectedValue = HireCollection.ThisHire.HireLocation;
-            txtDriverAge.Text = HireCollection.ThisHire.DriverAge.ToString();
-            txtDriverLicenseNumber.Text = HireCollection.ThisHire.DriverLicenseNumber;
+            ddlHireStatus.SelectedValue = HireCollection.ThisHire.HireStatus;
         }
 
         //function to add new car hire records
@@ -53,7 +52,7 @@ namespace VirginFrontEnd
             //create an instance of the car hire collection class
             clsVCHHireCollection HireCollection = new clsVCHHireCollection();
             //validate the data on the web front
-            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), txtDriverAge.Text, txtDriverLicenseNumber.Text);
+            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), ddlHireStatus.SelectedValue.ToString());
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
@@ -63,8 +62,7 @@ namespace VirginFrontEnd
                 HireCollection.ThisHire.HireCollectionDate = Convert.ToDateTime(txtHireCollectionDate.Text);
                 HireCollection.ThisHire.HireReturnDate = Convert.ToDateTime(txtHireReturnDate.Text);
                 HireCollection.ThisHire.HireLocation = Convert.ToString(ddlHireLocation.SelectedValue.ToString());
-                HireCollection.ThisHire.DriverAge = Convert.ToInt32(txtDriverAge.Text);
-                HireCollection.ThisHire.DriverLicenseNumber = txtDriverLicenseNumber.Text;
+                HireCollection.ThisHire.HireStatus = Convert.ToString(ddlHireStatus.SelectedValue.ToString());
                 //add the new car hire record
                 HireCollection.Add();
 
@@ -84,7 +82,7 @@ namespace VirginFrontEnd
             //create an instance of the car hire collection class
             clsVCHHireCollection HireCollection = new clsVCHHireCollection();
             //validate the data on the web front
-            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), txtDriverAge.Text, txtDriverLicenseNumber.Text);
+            String Error = HireCollection.ThisHire.Valid(txtHireCollectionDate.Text, txtHireReturnDate.Text, ddlHireLocation.SelectedValue.ToString(), ddlHireStatus.SelectedValue.ToString());
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
@@ -96,8 +94,7 @@ namespace VirginFrontEnd
                 HireCollection.ThisHire.HireCollectionDate = Convert.ToDateTime(txtHireCollectionDate.Text);
                 HireCollection.ThisHire.HireReturnDate = Convert.ToDateTime(txtHireReturnDate.Text);
                 HireCollection.ThisHire.HireLocation = Convert.ToString(ddlHireLocation.SelectedValue.ToString());
-                HireCollection.ThisHire.DriverAge = Convert.ToInt32(txtDriverAge.Text);
-                HireCollection.ThisHire.DriverLicenseNumber = txtDriverLicenseNumber.Text;
+                HireCollection.ThisHire.HireStatus = Convert.ToString(ddlHireStatus.SelectedValue.ToString());
                 //update the existing car hire record
                 HireCollection.Update();
 

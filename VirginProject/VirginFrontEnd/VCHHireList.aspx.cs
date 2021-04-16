@@ -35,6 +35,8 @@ namespace VirginFrontEnd
             DateTime HireCollectionDate;
             //property for HireReturnDate
             DateTime HireReturnDate;
+            //property for HireStatus
+            string HireStatus;
 
             //create an instance of the car hire collection class
             clsVCHHireCollection HireCollection = new clsVCHHireCollection();
@@ -61,8 +63,10 @@ namespace VirginFrontEnd
                 HireCollectionDate = HireCollection.HireList[Index].HireCollectionDate;
                 //retrieve HireReturnDate
                 HireReturnDate = HireCollection.HireList[Index].HireReturnDate;
+                //retrieve HireStatus
+                HireStatus = HireCollection.HireList[Index].HireStatus;
                 //create new lstBx (list box) entry 
-                ListItem NewEntry = new ListItem("Hire ID -  " + HireID + "  |  Car ID -  " + CarID + " |  Customer ID -  " + CustomerID + "  | Hire Location -  " + HireLocation + " |  Car Collection -  " + HireCollectionDate + "  | Car Return -  " + HireReturnDate, HireID.ToString());
+                ListItem NewEntry = new ListItem("Hire ID -  " + HireID + "  |  Car ID -  " + CarID + " |  Customer ID -  " + CustomerID + "  | Hire Location -  " + HireLocation + " |  Car Collection -  " + HireCollectionDate + "  | Car Return -  " + HireReturnDate + "  | Hire Status -  " + HireStatus, HireID.ToString());
                 //add the user to the list
                 lstHires.Items.Add(NewEntry);
                 //move the indext to the next record
@@ -98,7 +102,9 @@ namespace VirginFrontEnd
             DateTime HireCollectionDate;
             //property for HireReturnDate
             DateTime HireReturnDate;
-            
+            //property for HireStatus
+            string HireStatus;
+
             //create an instance of the car hire collection class
             clsVCHHireCollection HireCollection = new clsVCHHireCollection();
             HireCollection.ReportByHireLocation(HireLocationFilter);
@@ -125,8 +131,10 @@ namespace VirginFrontEnd
                 HireCollectionDate = HireCollection.HireList[Index].HireCollectionDate;
                 //retrieve HireReturnDate
                 HireReturnDate = HireCollection.HireList[Index].HireReturnDate;
+                //retrieve HireStatus
+                HireStatus = HireCollection.HireList[Index].HireStatus;
                 //create new lstBx (list box) entry 
-                ListItem NewEntry = new ListItem("Hire ID -  " + HireID + "  |  Car ID -  " + CarID + " |  Customer ID -  " + CustomerID + "  | Hire Location -  " + HireLocation + " |  Car Collection -  " + HireCollectionDate + "  | Car Return -  " + HireReturnDate, HireID.ToString());
+                ListItem NewEntry = new ListItem("Hire ID -  " + HireID + "  |  Car ID -  " + CarID + " |  Customer ID -  " + CustomerID + "  | Hire Location -  " + HireLocation + " |  Car Collection -  " + HireCollectionDate + "  | Car Return -  " + HireReturnDate + "  | Hire Status -  " + HireStatus, HireID.ToString());
                 //add the user to the list
                 lstHires.Items.Add(NewEntry);
                 //move the indext to the next record
