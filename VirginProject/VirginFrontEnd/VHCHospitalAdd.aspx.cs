@@ -55,7 +55,7 @@ namespace VirginFrontEnd
             }
         }
 
-
+        //function for updating new records
         void Update()
         {
             //create an instance of the hospital class
