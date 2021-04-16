@@ -10,8 +10,10 @@ namespace VirginFrontEnd
 {
     public partial class VMThanks : System.Web.UI.Page
     {
+        //variable to store the MovieID and CustomerID from session obect
+        Int32 VMMovieID;
         Int32 VMCustomerID;
-        //create an instance of the cart 
+        //create an instance of the clsVMCart
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,19 +29,6 @@ namespace VirginFrontEnd
             Session["VMCustomerID"] = VMCustomerID;
             //redirect to the movie details page
             Response.Redirect("VirginCustomerMovieList.aspx");
-        }
-
-        protected void btnViewCart_Click(object sender, EventArgs e)
-        {
-            //store data in session object so we can pass it to next page
-            Session["VMCustomerID"] = VMCustomerID;
-            Response.Redirect("VMViewCart.aspx");
-        }
-
-        protected void btnEditAccount_Click(object sender, EventArgs e)
-        {
-            //store data in session object so we can pass it to next page
-            Session["VMCustomerID"] = VMCustomerID;
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

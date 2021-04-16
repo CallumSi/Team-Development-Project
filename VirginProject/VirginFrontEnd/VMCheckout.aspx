@@ -13,28 +13,22 @@
         <header>
             <h2>Virgin Media </h2>
         </header>
-
         <article>
-
-                    <asp:Label ID="lblUsername" runat="server" CssClass="lblUsername"></asp:Label>
-
             <ul>
+
+                <asp:Label ID="lblUsername" runat="server" CssClass="lblUsername"></asp:Label>
                 <li>Please enter your details
                 </li>
                 <li>Credit card no
                     <asp:TextBox ID="txtCardNo" runat="server" CssClass="txtVMCardNo"></asp:TextBox>
                 </li>
                 <li>
-                    <asp:Button ID="btnCheckout" CssClass="btnCheckout" runat="server" Text="Check Out" />
+                    <asp:Button ID="btnCheckout" CssClass="btnCheckout" runat="server" Text="Check Out" OnClick="btnCheckout_Click1" />
                 </li>
                 <li>
                     <asp:Label ID="lblError" runat="server" CssClass="lblCheckoutCardError"></asp:Label>
                 </li>
             </ul>
-
-
-
-
         </article>
 
         <nav>

@@ -103,7 +103,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //Set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //find the record
@@ -130,7 +130,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //Set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //mdoify the record
@@ -168,7 +168,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //find the record

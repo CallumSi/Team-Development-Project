@@ -13,8 +13,18 @@ namespace VirginFrontEnd
     {
         Int32 VMMovieID;
         Int32 VMCustomerID;
+        clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            MyCart = (clsVMCart)Session["MyCart"];
+            if (MyCart == null)
+            {
+                MyCart = new clsVMCart();
+            }
+            VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            //then you can display how many items are in your cart
+            lblCartCount.Text = MyCart.Products.Count.ToString();
             if (IsPostBack == false)
             {
                 //update the list box
@@ -22,6 +32,11 @@ namespace VirginFrontEnd
             }
         }
 
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //you must also save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
+        }
         void DisplayVMMovie()
         {
             //create an instance of the movie collection class
@@ -29,6 +44,7 @@ namespace VirginFrontEnd
             lstMovies.DataSource = allMovie.MovieList;
             //set name of primary key
             lstMovies.DataValueField = "VMMovieID";
+
             //bind data
             lstMovies.DataTextField = "VMMovieTitle";
             lstMovies.DataBind();
@@ -111,6 +127,7 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to next page
             Session["VMCustomerID"] = VMCustomerID;
+
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

@@ -76,6 +76,9 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to next page
             Session["VMCustomerID"] = VMCustomerID;
+            Session["MovieID"] = VMMovieID;
+            //save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
             Response.Redirect("VMViewCart.aspx");
         }
 
@@ -92,36 +95,16 @@ namespace VirginFrontEnd
 
         protected void btnAddToCart_Click(object sender, EventArgs e)
         {
-
             //create a new instance of clsCartItem
             clsVMCartItem AnItem = new clsVMCartItem();
             //set the movie id
             AnItem.ProductID = VMMovieID;
-            try
-            {
-                Int32 Moviequantity = Convert.ToInt32(lblQuantity.Text);
-                Int32 yourquantity = Convert.ToInt32(txtQTY.Text);
+            AnItem.QTY = 1;
+            //add the item to the cart's movie collection
+            MyCart.Products.Add(AnItem);
+            //go back to shopping
+            Response.Redirect("VirginCustomerMovieList.aspx");
 
-                if ( yourquantity <= Moviequantity && yourquantity > 0)
-                {
-                AnItem.QTY = Convert.ToInt32(txtQTY.Text);
-                //add the item to the cart's movie collection
-                MyCart.Products.Add(AnItem);
-                //go back to shopping
-                Response.Redirect("VirginCustomerMovieList.aspx");
-                }
-                else
-                {
-                    //error message
-                    lblError.Text = "Please enter a valid quantity.";
-                }
-
-            }
-            catch
-            {
-                //error message
-                lblError.Text = "Please enter a number.";
-            }
         }
     }
 }

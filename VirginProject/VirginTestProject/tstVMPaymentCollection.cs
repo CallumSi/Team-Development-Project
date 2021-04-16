@@ -92,7 +92,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record
-            PrimaryKey = allPayment.Add();
+            //PrimaryKey = allPayment.Add();
             //Set the primary key of the test data
             TestItem.VMPaymentID = PrimaryKey;
             //find the record
@@ -116,7 +116,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record
-            PrimaryKey = allPayment.Add();
+            //PrimaryKey = allPayment.Add();
             //Set the primary key of the test data
             TestItem.VMPaymentID = PrimaryKey;
             //modify the record
@@ -148,7 +148,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record
-            PrimaryKey = allPayment.Add();
+            //PrimaryKey = allPayment.Add();
             //set the primary key of the test data
             TestItem.VMPaymentID = PrimaryKey;
             //find the record

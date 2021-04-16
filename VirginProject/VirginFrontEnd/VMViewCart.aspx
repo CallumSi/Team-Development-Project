@@ -7,8 +7,8 @@
 <head runat="server">
     <title>VIRGIN MOVIES SHOPPING CART</title>
 
-      <link href="VMMovie.css" rel="stylesheet" type="text/css" />
-  </head>
+    <link href="VMMovie.css" rel="stylesheet" type="text/css" />
+</head>
 <body>
     <form id="form2" runat="server">
         <header>
@@ -16,9 +16,9 @@
         </header>
         <article>
 
-                    <asp:Label ID="lblUsername" runat="server" CssClass="lblUsername" Text="Welcome "></asp:Label>
+            <asp:Label ID="lblUsername" runat="server" CssClass="lblUsername" Text="Welcome "></asp:Label>
 
-            <asp:ListBox ID="lstShoppingCart" runat="server" CssClass="lstShoppingCart" ></asp:ListBox>
+            <asp:ListBox ID="lstShoppingCart" runat="server" CssClass="lstShoppingCart"></asp:ListBox>
             <ul>
                 <asp:Button ID="btnContinueShopping" CssClass="btnContinueShopping" runat="server" Style="z-index: 1;" Text="Continue Shopping" OnClick="btnContinueShopping_Click" />
                 <asp:Button ID="btnVMovieCheckout" CssClass="btnVMovieCheckout" runat="server" Style="z-index: 1;" Text="Go to Checkout" OnClick="btnVMovieCheckout_Click" />
