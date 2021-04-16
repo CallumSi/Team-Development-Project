@@ -123,6 +123,8 @@
     <Content Include="VCHHireList.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
+    <Content Include="VHCPatient.css" />
+    <Content Include="VHCPatientAdd.aspx" />
     <Content Include="VHCStaff.aspx" />
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
@@ -569,6 +571,13 @@
     </Compile>
     <Compile Include="VCHStaffList.aspx.designer.cs">
       <DependentUpon>VCHStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCPatientAdd.aspx.cs">
+      <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientAdd.aspx.designer.cs">
+      <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCStaff.aspx.cs">
       <DependentUpon>VHCStaff.aspx</DependentUpon>

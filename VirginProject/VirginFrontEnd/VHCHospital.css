@@ -91,7 +91,7 @@ footer {
 /*Navigation Buttons*/
 
 /*Main Menu */
-.AddHospital, .ListHospitals {
+.AddHospital, .ListHospitals, .btnAddPatient, .btnListPatients {
     z-index: 1;
     width: 400px;
     height: 200px;
@@ -111,10 +111,12 @@ footer {
 }
 
  /* Hover Effect*/
-.AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover {
-     background-color: #27183D;
-     color: white;
-}
+    .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, 
+    .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover, 
+    .btnAddPatient:hover, .btnListPatients:hover {
+        background-color: #27183D;
+        color: white;
+    }
 
 /*Log Out Button*/
 .btnLogout {
@@ -142,6 +144,13 @@ footer {
     left: 100px;
 }
 
+/*Add Patient Button*/
+.btnAddPatient {
+    position: fixed;
+    top: 240px;
+    left: 800px;
+}
+
 /*Edit Button*/
 .EditHospital {
     position: fixed;
@@ -156,12 +165,20 @@ footer {
     left: 1350px;
 }
 
-/*List Button*/
+/*List Hospital Button*/
 .ListHospitals {
     position: fixed;
     top: 540px;
     left: 100px;
 }
+
+/*List Patient Button*/
+.btnListPatients {
+    position: fixed;
+    top: 540px;
+    left: 800px;
+}
+
 
 /*Display All Button*/
 .btnDisplayAllHospitals {
