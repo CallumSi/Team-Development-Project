@@ -664,7 +664,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Customer_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Customer_Address = Customer_Address.PadLeft(19, 'W');
+            Customer_Address = Customer_Address.PadLeft(4, 'W');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -682,7 +682,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Address = ""; //
             //create some test data to pass the valid method
-            Customer_Address = Customer_Address.PadLeft(20, 'W');
+            Customer_Address = Customer_Address.PadLeft(5, 'W');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -700,7 +700,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Address = ""; //
             //create some test data to pass the valid method
-            Customer_Address = Customer_Address.PadLeft(21, 'W');
+            Customer_Address = Customer_Address.PadLeft(6, 'W');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned
@@ -773,7 +773,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string Customer_Street = ""; //
             //create some test data to pass the valid method
-            Customer_Street = Customer_Street.PadLeft(35, 'W');
+            Customer_Street = Customer_Street.PadLeft(27, 'W');
             //invoke the method
             Error = AVPCustomer.Valid(Customer_FirstName, Customer_LastName, Customer_Street, Customer_Address, Customer_Postcode, Customer_Email,Customer_Telephone);
             //Test to see that result is OK, e.g. no error message is returned

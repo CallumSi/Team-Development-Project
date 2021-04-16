@@ -188,15 +188,15 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                PhoneID = Convert.ToInt32(DB.DataTable.Rows[0]["PhoneID"]);
-                Capacity = Convert.ToString(DB.DataTable.Rows[0]["Capacity"]);
-                Colour = Convert.ToString(DB.DataTable.Rows[0]["Colour"]);
-                Description = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
-                Make = Convert.ToString(DB.DataTable.Rows[0]["Make"]);
-                Model = Convert.ToString(DB.DataTable.Rows[0]["Model"]);
-                Price = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
-                StockStatus = Convert.ToBoolean(DB.DataTable.Rows[0]["StockStatus"]);
-                Quantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
+                mPhoneID = Convert.ToInt32(DB.DataTable.Rows[0]["PhoneID"]);
+                mCapacity = Convert.ToString(DB.DataTable.Rows[0]["Capacity"]);
+                mColour = Convert.ToString(DB.DataTable.Rows[0]["Colour"]);
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["Description"]);
+                mMake = Convert.ToString(DB.DataTable.Rows[0]["Make"]);
+                mModel = Convert.ToString(DB.DataTable.Rows[0]["Model"]);
+                mPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["Price"]);
+                mStockStatus = Convert.ToBoolean(DB.DataTable.Rows[0]["StockStatus"]);
+                mQuantity = Convert.ToInt32(DB.DataTable.Rows[0]["Quantity"]);
                 //return that everything works
                 return true;
             }
@@ -209,7 +209,7 @@ namespace VirginClassLibrary
 
         }
         
-        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string StockStatus, string Quantity)
+        public string Valid(string Capacity, string Colour, string Description, string Make, string Model, string Price, string Quantity)
         {
             string Error = "";
 

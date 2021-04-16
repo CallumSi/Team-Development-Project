@@ -250,17 +250,17 @@ namespace VirginClassLibrary
             //***VALIDATION DELIVERY ADDRESS***//
 
             //record the error
-            if (Delivery_Address.Length == 19)
+            if (Delivery_Address.Length == 4)
             {
                 //record the error
-                Error = Error + "THE DELIVERY ADDRESS MUST BE MORE THAN 19 CHARACTER." + "";
+                Error = Error + "THE DELIVERY ADDRESS MUST BE MORE THAN 4 CHARACTER." + "";
             }
 
             //record the error message  
-            if (Delivery_Address.Length < 20 | Delivery_Address.Length > 50)
+            if (Delivery_Address.Length < 5 | Delivery_Address.Length > 50)
             {
                 //record the error
-                Error = Error + " THE DELIVERY ADDRESS MUST BE BETWEEN 2 AND 50 CHARACTERS" + " ";
+                Error = Error + " THE DELIVERY ADDRESS MUST BE BETWEEN 5 AND 50 CHARACTERS" + " ";
 
             }
 

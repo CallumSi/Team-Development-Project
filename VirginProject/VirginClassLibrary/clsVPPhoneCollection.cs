@@ -154,7 +154,7 @@ namespace VirginClassLibrary
             DB.Execute("sproc_tblVPPhone_Delete");
         }
 
-        public int Update()
+        public void Update()
         {
             //adds a new record to the database based on the values of mThisPhone
             //connect to the database 
@@ -170,7 +170,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@StockStatus", mThisPhone.StockStatus);
             DB.AddParameter("@Quantity", mThisPhone.Quantity);
             //execute the query returning the primary key value
-            return DB.Execute("sproc_tblVPPhone_Update");
+            DB.Execute("sproc_tblVPPhone_Update");
         }
 
     }
