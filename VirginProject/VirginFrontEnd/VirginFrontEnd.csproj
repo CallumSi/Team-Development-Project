@@ -127,6 +127,8 @@
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
     <Content Include="VHCHospitalDelete.aspx" />
+    <Content Include="VHCMainMenu.aspx" />
+    <Content Include="VHCMainMenu.css" />
     <Content Include="VirginCustomerMovieList.aspx" />
     <Content Include="VHCHospitalList.aspx" />
     <Content Include="VirginForgotPassword.aspx" />
@@ -588,6 +590,13 @@
     </Compile>
     <Compile Include="VHCHospitalDelete.aspx.designer.cs">
       <DependentUpon>VHCHospitalDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCMainMenu.aspx.cs">
+      <DependentUpon>VHCMainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCMainMenu.aspx.designer.cs">
+      <DependentUpon>VHCMainMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginCustomerMovieList.aspx.cs">
       <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
