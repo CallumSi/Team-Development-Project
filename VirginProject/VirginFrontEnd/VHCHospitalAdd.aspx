@@ -19,14 +19,8 @@
             <h2>Virgin Healthcare: Hospital</h2>
         </header>
 
-        <%--NAVIGATION SECTION--%>
-        <nav>
-            <%--BUTTON: HOME--%>
-            <asp:Button ID="Home_Button" runat="server" CssClass="Home" Text="HOME" OnClick="Home_Button_Click" />
-        </nav>
-
         <%--ARTICLE SECTION--%>
-        <article>
+        <article id="AddHospital">
             <h4>ADD HOSPITAL SECTION </h4>
             <%--LABEL:HOSPITAL NAME--%>
             <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>

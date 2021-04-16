@@ -14,12 +14,6 @@ namespace VirginFrontEnd
           
         }
 
-        //Home Button
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospital.aspx");
-        }
-
         //Add Hospital Button
         protected void btnAddHospital_Click(object sender, EventArgs e)
         {
@@ -31,6 +25,13 @@ namespace VirginFrontEnd
         protected void btnListHospital_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCHospitalList.aspx");
+        }
+
+        //Log Out Button
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCMainMenu.aspx");
+
         }
     }
 }

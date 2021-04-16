@@ -87,12 +87,6 @@ namespace VirginFrontEnd
             txtHospital_Place.Text = AllHospitals.ThisHospital.Hospital_Place;
         }
 
-        //Home Button
-        protected void Home_Button_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospital.aspx");
-        }
-
         //Submit Button
         protected void btnSubmit_Click(object sender, EventArgs e)
         {

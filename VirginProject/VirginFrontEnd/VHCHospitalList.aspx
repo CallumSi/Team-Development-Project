@@ -18,14 +18,8 @@
             <h2>Virgin Healthcare: Hospital</h2>
         </header>
 
-        <%--NAVIGATION SECTION--%>
-        <nav>
-            <%--BUTTON: HOME--%>
-            <asp:Button ID="btnListHome" runat="server" CssClass="Home" Text="HOME" OnClick="btnListHome_Click" /> 
-        </nav>
-
         <%--ARTICLE SECTION--%>
-        <article>
+        <article id="ListFilterArticle">
             <h4>LIST & FILTER HOSPITAL SECTION </h4>
             <%--LIST BOX: HOSPITAL--%>
             <asp:ListBox ID="lstHospital" runat="server" CssClass="lstHospital"></asp:ListBox>
