@@ -52,7 +52,7 @@ namespace VirginTestProject
             //create a variable to store the order id of the delivery
             Int32 SomeOrderID;
             //assign an ID to the variable
-            SomeOrderID = 1100;
+            SomeOrderID = 1;
             //try to send some data to the id property 
             AVPDelivery.Order_ID = SomeOrderID;
             //check to see the data in the variable and property are the same
@@ -809,7 +809,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(19, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(4, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned
@@ -828,7 +828,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(20, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(5, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned
@@ -847,7 +847,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(21, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(6, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned

@@ -159,8 +159,12 @@
     <Content Include="VPCustomerDelete.aspx" />
     <Content Include="VPCustomerList.aspx" />
     <Content Include="VPDefault.aspx" />
+    <Content Include="VPPayment.aspx" />
+    <Content Include="VPPhoneDelete.aspx" />
+    <Content Include="VPPhoneList.aspx" />
     <Content Include="VPStaffDelete.aspx" />
     <Content Include="VPStaffList.aspx" />
+    <Content Include="VPThankYouConfirmation.aspx" />
     <Content Include="Web.config" />
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
@@ -797,6 +801,27 @@
     <Compile Include="VPDefault.aspx.designer.cs">
       <DependentUpon>VPDefault.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VPPayment.aspx.cs">
+      <DependentUpon>VPPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPPayment.aspx.designer.cs">
+      <DependentUpon>VPPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPPhoneDelete.aspx.cs">
+      <DependentUpon>VPPhoneDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPPhoneDelete.aspx.designer.cs">
+      <DependentUpon>VPPhoneDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPPhoneList.aspx.cs">
+      <DependentUpon>VPPhoneList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPPhoneList.aspx.designer.cs">
+      <DependentUpon>VPPhoneList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VPStaffDelete.aspx.cs">
       <DependentUpon>VPStaffDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -810,6 +835,13 @@
     </Compile>
     <Compile Include="VPStaffList.aspx.designer.cs">
       <DependentUpon>VPStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPThankYouConfirmation.aspx.cs">
+      <DependentUpon>VPThankYouConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPThankYouConfirmation.aspx.designer.cs">
+      <DependentUpon>VPThankYouConfirmation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

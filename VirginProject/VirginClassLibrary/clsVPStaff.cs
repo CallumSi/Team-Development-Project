@@ -245,17 +245,17 @@ namespace VirginClassLibrary
             //***VALIDATION ADDRESS NAME***//
 
             //record the error
-            if (Staff_Address.Length == 19)
+            if (Staff_Address.Length == 4)
             {
                 //record the error
-                Error = Error + "THE ADDRESS MUST BE MORE THAN 19 CHARACTER." + "";
+                Error = Error + "THE ADDRESS MUST BE MORE THAN 4 CHARACTER." + "";
             }
 
             //record the error message
-            if (Staff_Address.Length < 20 | Staff_Address.Length > 50)
+            if (Staff_Address.Length < 5 | Staff_Address.Length > 50)
             {
                 //record the error 
-                Error = Error + "THE ADDRESS MUST BE BETWEEN 20 AND 50 CHARACTERS." + "";
+                Error = Error + "THE ADDRESS MUST BE BETWEEN 5 AND 50 CHARACTERS." + "";
             }
 
 
