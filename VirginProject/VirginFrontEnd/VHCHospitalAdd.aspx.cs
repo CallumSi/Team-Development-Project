@@ -107,7 +107,7 @@ namespace VirginFrontEnd
         //Close Button
         protected void btnClose_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospital.aspx");
+            Response.Redirect("VHCStaff.aspx");
         }
     }
     

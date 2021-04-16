@@ -15,11 +15,11 @@
     <form id="form1" runat="server">
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare: Hospital</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
 
         <%--ARTICLE SECTION--%>
-        <article id="ListFilterArticle">
+        <article>
             <h4>LIST & FILTER HOSPITAL SECTION </h4>
             <%--LIST BOX: HOSPITAL--%>
             <asp:ListBox ID="lstHospital" runat="server" CssClass="lstHospital"></asp:ListBox>

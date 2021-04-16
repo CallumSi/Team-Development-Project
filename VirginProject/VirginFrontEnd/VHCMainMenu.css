@@ -26,7 +26,7 @@ h2 {
 /* Headers 3/4 Shared Attributes*/
 h3, h4 {
     font-weight: bold;
-    font-size: 40px;
+    font-size:45px;
     color: #cc0000;
     text-align: center;
 }
@@ -35,7 +35,7 @@ h3, h4 {
 h3 {
     position: fixed;
     top: 81px;
-    left: 650px;
+    left: 600px;
 }
 
 /* Each Page Sub Title (Add/Edit/Delete/List & Filter)*/
