@@ -89,6 +89,8 @@ namespace VirginClassLibrary
                 ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
                 ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                ACustomer.Age = Convert.ToInt32(DB.DataTable.Rows[Index]["Age"]);
+                ACustomer.DriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[Index]["DriverLicenseNumber"]);
                 ACustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
                 ACustomer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
                 ACustomer.Username = Convert.ToString(DB.DataTable.Rows[Index]["Username"]);
@@ -110,6 +112,8 @@ namespace VirginClassLibrary
             //set parameters for the stored procedure
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@Age", mThisCustomer.Age);
+            DB.AddParameter("@DriverLicenseNumber", mThisCustomer.DriverLicenseNumber);
             DB.AddParameter("@Address", mThisCustomer.Address);
             DB.AddParameter("@PostCode", mThisCustomer.PostCode);
             DB.AddParameter("@Username", mThisCustomer.Username);
@@ -140,6 +144,8 @@ namespace VirginClassLibrary
             DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@Age", mThisCustomer.Age);
+            DB.AddParameter("@DriverLicenseNumber", mThisCustomer.DriverLicenseNumber);
             DB.AddParameter("@Address", mThisCustomer.Address);
             DB.AddParameter("@PostCode", mThisCustomer.PostCode);
             DB.AddParameter("@Username", mThisCustomer.Username);

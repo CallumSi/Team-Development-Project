@@ -35,8 +35,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //add the items to the test list
             TestList.Add(TestItem);
             //assign data to the properties
@@ -59,8 +58,7 @@ namespace VirginTestProject
             TestHire.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestHire.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestHire.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestHire.DriverAge = 26;
-            TestHire.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestHire.HireStatus = "Pending Confirmation";
             //assign data to the properties
             AllHires.ThisHire = TestHire;
             //test to see the values ARE the same
@@ -111,8 +109,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //add the items to the test list
             TestList.Add(TestItem);
             //assign data to the properties
@@ -138,8 +135,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //set ThisCar to the test data
             AllHires.ThisHire = TestItem;
             /* 
@@ -172,8 +168,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //set ThisCar to the test data
             AllHires.ThisHire = TestItem;
             /* 
@@ -210,8 +205,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(1);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(8);
             TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //set ThisCar to the test data
             AllHires.ThisHire = TestItem;
             /* 
@@ -229,8 +223,7 @@ namespace VirginTestProject
             TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(7);
             TestItem.HireReturnDate = DateTime.Now.Date.AddDays(14);
             TestItem.HireLocation = "30 Glaxon Street, Shropshire, SH7 3FG";
-            TestItem.DriverAge = 26;
-            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
+            TestItem.HireStatus = "Pending Confirmation";
             //set the record based on the new test data
             AllHires.ThisHire = TestItem;
             //update the record
@@ -273,17 +266,17 @@ namespace VirginTestProject
             //var to store the outcome
             Boolean OK = true;
             //apply an existent body type
-            FilteredHireLocation.ReportByHireLocation("5 Tamworth Road, Tamworth, STS B783RH");
+            FilteredHireLocation.ReportByHireLocation("1 Royal Scot Road, Derby, DE24 8AJ");
             //check that the correct number of records are found
             if (FilteredHireLocation.Count == 2)
             {
                 //check that the first record ID is 12
-                if (FilteredHireLocation.HireList[0].HireID != 12)
+                if (FilteredHireLocation.HireList[0].HireID != 21)
                 {
                     OK = false;
                 }
                 //check that the second record ID is 15
-                if (FilteredHireLocation.HireList[1].HireID != 15)
+                if (FilteredHireLocation.HireList[1].HireID != 22)
                 {
                     OK = false;
                 }

@@ -22,10 +22,8 @@ namespace VirginClassLibrary
         private DateTime mHireReturnDate;
         //private property for HireLocation
         private string mHireLocation;
-        //private property for DriverAge
-        private int mDriverAge;
-        //private property for DriverLicenseNumber
-        private string mDriverLicenseNumber;
+        //private property for HireStatus
+        private string mHireStatus;
 
 
         //Hire ID property
@@ -137,35 +135,18 @@ namespace VirginClassLibrary
             }
         }*/
 
-        //DriverAge property 
-        public int DriverAge
+        //Hire Status property
+        public string HireStatus
         {
             get
             {
-                //return the private data 
-                return mDriverAge;
+                //return the private data
+                return mHireStatus;
             }
-
             set
             {
                 //set the private data
-                mDriverAge = value;
-            }
-        }
-
-        //DriverLicenseNumber property 
-        public string DriverLicenseNumber
-        {
-            get
-            {
-                //return the private data 
-                return mDriverLicenseNumber;
-            }
-
-            set
-            {
-                //set the private data
-                mDriverLicenseNumber = value;
+                mHireStatus = value;
             }
         }
 
@@ -188,8 +169,7 @@ namespace VirginClassLibrary
                 mHireCollectionDate = Convert.ToDateTime(DB.DataTable.Rows[0]["HireCollectionDate"]);
                 mHireReturnDate = Convert.ToDateTime(DB.DataTable.Rows[0]["HireReturnDate"]);
                 mHireLocation = Convert.ToString(DB.DataTable.Rows[0]["HireLocation"]);
-                mDriverAge = Convert.ToInt32(DB.DataTable.Rows[0]["DriverAge"]);
-                mDriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[0]["DriverLicenseNumber"]);
+                mHireStatus = Convert.ToString(DB.DataTable.Rows[0]["HireStatus"]);
                 //return that the method worked
                 return true;
             }
@@ -201,7 +181,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public string Valid(string HireCollectionDate, string HireReturnDate, string HireLocation, string DriverAge, string DriverLicenseNumber)
+        public string Valid(string HireCollectionDate, string HireReturnDate, string HireLocation, string HireStatus)
         {
             //string variable to store the error message
             string Error = "";
@@ -323,47 +303,23 @@ namespace VirginClassLibrary
             }*/
 
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
-            if (DriverAge.Length > 0)
-            {
-                try
-                {
-                    Int32 TempDriverAge = Convert.ToInt32(DriverAge);
-
-                    if (TempDriverAge < 17)
-                    {
-                        return "For safety and legal reasons, drivers must be at least 17 years old to hire a car.";
-                    }
-
-                    if (TempDriverAge > 75)
-                    {
-                        return "For safety and legal reasons, drivers must be younger than 75 years old to hire a car.";
-
-                    }
-                }
-                catch
-                {
-                    return "The driver age entered is not acceptable.";
-                }
-            }
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////// 
-            //if the driver license number length is blank
-            if (DriverLicenseNumber.Length == 0)
+            //if the Hire Status length is blank
+            if (HireStatus.Length == 0)
             {
                 //return the following error message
-                return "The driver license number may not be blank. Please enter a legal driver license number.";
+                return "A Hire Status may not be blank. Please select an appropriate Hire Status.";
             }
-            //if the driver license number length is more than 20 characters
-            if (DriverLicenseNumber.Length > 20)
+            //if the Hire Status length is more than 20 characters
+            if (HireStatus.Length > 20)
             {
                 //return the following error message
-                return "The driver license number is invalid. Please enter a legal driver license number.";
+                return "The Hire Status invalid. Please select an appropriate Hire Status.";
             }
-            //if the driver license number length is less than 11 characters 
-            if (DriverLicenseNumber.Length < 11)
+            //if the Hire Status length is less than 8 characters 
+            if (HireStatus.Length < 8)
             {
                 //return the following error message
-                return "The driver license number is invalid. Please enter a legal driver license number.";
+                return "The Hire Status invalid. Please select an appropriate Hire Status.";
             }
 
             return Error;
