@@ -16,11 +16,11 @@
 
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare: Hospital</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
 
         <%--ARTICLE SECTION--%>
-        <article id="AddHospital">
+        <article>
             <h4>ADD HOSPITAL SECTION </h4>
             <%--LABEL:HOSPITAL NAME--%>
             <asp:Label ID="lblHospital_Name" runat="server" CssClass="lblHospital_Name" Text="HOSPITAL NAME : "></asp:Label>

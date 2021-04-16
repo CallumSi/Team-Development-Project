@@ -29,12 +29,6 @@ namespace VirginFrontEnd
             AllHospitals.Delete();
         }
 
-        //Home Button
-        protected void Home_Button_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCHospital.aspx");
-        }
-
         //No Button
         protected void btnNo_Click(object sender, EventArgs e)
         {

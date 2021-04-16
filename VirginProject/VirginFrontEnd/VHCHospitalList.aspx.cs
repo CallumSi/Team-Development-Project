@@ -66,13 +66,13 @@ namespace VirginFrontEnd
         //Close button
         protected void btnListClose_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospital.aspx");
+            Response.Redirect("VHCStaff.aspx");
         }
 
         //Home Button
         protected void btnListHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCHospital.aspx");
+            Response.Redirect("VHCStaff.aspx");
         }
 
         //Display All Button

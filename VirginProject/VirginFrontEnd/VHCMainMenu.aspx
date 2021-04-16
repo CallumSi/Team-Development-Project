@@ -16,7 +16,7 @@
 
         <%--HEADER SECTION--%>
         <header>
-            <h2>Virgin Healthcare</h2>
+            <h2>Virgin Healthcare System</h2>
         </header>
 
         <%--NAVIGATION SECTION--%>
@@ -29,7 +29,7 @@
 
         <%--ARTICLE SECTION--%>
         <article>
-            <h3>WELCOME TO THE VIRGIN HEALTHCARE</h3>
+            <h3>WELCOME TO VIRGIN HEALTHCARE</h3>
             <%--VHC LOGO--%>
             <img src="VHCImages/VHCLogo.png" alt="VHCLogo">
             <%--OPTION MESSAGE--%>
