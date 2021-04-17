@@ -4,15 +4,32 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Virgin Movies Customer Delete</title>
+    <link href="VMMovie.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
-        <asp:Label ID="lblDeleteConfirmation" runat="server" style="z-index: 1; left: 172px; top: 58px; position: absolute; width: 515px; text-align: center;" Text="Are you sure you want to delete this customer?" BorderStyle="None" Font-Bold="True" ForeColor="Red"></asp:Label>
-        <asp:Button ID="btnYes" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 271px; top: 137px; position: absolute; width: 111px" Text="YES" OnClick="btnYes_Click" />
-        <asp:Button ID="btnNo" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 471px; top: 137px; position: absolute; width: 111px" Text="NO" OnClick="btnNo_Click" />
+        <header>
+            <h2>Virgin Movie Customer Delete </h2>
+        </header>
+        <asp:Label ID="lblVMDeleteCustomer" runat="server" Text="VIRIGN MOVIES DELETE CUSTOMER" CssClass="lblVMDeleteCustomer"></asp:Label>
+        <asp:Label ID="lblDeleteVMCConfirmation" runat="server" Text="Are you sure you want to delete this customer?" CssClass="lblDeleteVMCConfirmation"></asp:Label>
+        <asp:Button ID="btnYes" runat="server" Text="YES" CssClass="btnYesDeleteCustomer" OnClick="btnYes_Click" />
+        <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelDeleteCustomer" OnClick="btnCancel_Click" />
+        <nav>
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
     </form>
 </body>
 </html>

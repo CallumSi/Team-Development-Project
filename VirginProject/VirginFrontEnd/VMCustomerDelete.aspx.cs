@@ -37,10 +37,40 @@ namespace VirginFrontEnd
             Response.Redirect("VMCustomerList.aspx");
         }
 
-        protected void btnNo_Click(object sender, EventArgs e)
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
             //redirect back to the main page
             Response.Redirect("VMCustomerList.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect back to customer list page
+            Response.Redirect("VMCustomerList.aspx");
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            //redirect back to the customer list page
+            Response.Redirect("VMCustomerList.aspx");
+        }
+
+        protected void btnStaffMovie_Click(object sender, EventArgs e)
+        {
+            //redirect back to the add movie page
+            Response.Redirect("VMStaffAddMovie.aspx");
+        }
+
+        protected void btnVMStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect back to the staff list page
+            Response.Redirect("VMCStaffList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to the  login page 
+            Response.Redirect("VirginLogin.aspx");
         }
     }
 }

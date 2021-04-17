@@ -40,7 +40,7 @@
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
             <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
             <asp:Button ID="btnLogOut" CssClass="btnStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
-            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnAddMovieStaff" Text="Add Movie" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
         </nav>
 
           <footer>
