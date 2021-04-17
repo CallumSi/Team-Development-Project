@@ -58,8 +58,8 @@ footer {
 .btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
 .btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
 .btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
-.btnAddMovieStaff, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
-.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut {
+.btnStaffMovie, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
+.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut, .btnVMPaymentList {
     padding: 20px;
     border-radius: 2px;
     font-size: 13px;
@@ -68,11 +68,47 @@ footer {
     width: 170px;
 }
 
+/*########### STAFF NAV BUTTONS */
+
 .btnStaffHome {
     position: fixed;
     top: 150px;
     left: 30px;
 }
+
+.btnCustomerList {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnStaffMovie {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+.btnStaffVMList {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+.btnVMPaymentList {
+    position: fixed;
+    top: 550px;
+    left: 30px;
+}
+}
+
+.btnVMStaffLogOut {
+    position: fixed;
+    top: 650px;
+    left: 30px;
+}
+
+
+
 /*######## STAFF MOVIE NAV BUTTONS #########*/
 .btnStaffAddMovie {
     position: fixed;
@@ -153,8 +189,8 @@ footer {
     z-index: 1;
     width: 129px;
     position: fixed;
-    top: 275px;
-    left: 730px;
+    top: 215px;
+    left: 750px;
     font-size: medium;
     font-weight: bold;
     color: black;
@@ -164,8 +200,8 @@ footer {
     z-index: 1;
     width: 250px;
     position: fixed;
-    top: 275px;
-    left: 865px;
+    top: 215px;
+    left: 885px;
     font-size: medium;
     font-weight: bold;
     color: black;
@@ -175,8 +211,8 @@ footer {
     z-index: 1;
     width: 100px;
     position: fixed;
-    top: 275px;
-    left: 1135px;
+    top: 215px;
+    left: 1155px;
     font-size: 10pt;
     font-weight: bold;
     color: black;
@@ -186,8 +222,8 @@ footer {
     z-index: 1;
     width: 170px;
     position: fixed;
-    top: 625px;
-    left: 1115px;
+    top: 575px;
+    left: 905px;
     font-size: medium;
     font-weight: bold;
     color: black;
@@ -195,7 +231,7 @@ footer {
 
 .lblError {
     z-index: 1;
-    width: 200px;
+    width: 400px;
     position: fixed;
     top: 625px;
     left: 730px;
@@ -220,8 +256,14 @@ footer {
     text-align: center;
 }
 
+.lblVMStaffMovieList {
+    position: fixed;
+    left: 825px;
+    top: 150px;
+    color: black;
+    font-weight: bold;
+}
 /*################## STAFF MOVIE ADD CSS #####################*/
-
 .articleAddMovie {
     background-color: #CCCCCC;
     position: fixed;
@@ -676,13 +718,21 @@ footer {
     width: 650px;
 }
 
+.lblVMStaffListTitle {
+    left: 900px;
+    top: 140px;
+    position: absolute;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
 .lblFilterByStaffUsername {
     left: 700px;
     top: 200px;
     position: absolute;
-    color:black;
+    color: black;
     font-size: 14px;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .txtFilterStaffUsername {
@@ -746,13 +796,7 @@ footer {
     position: absolute;
 }
 
-.btnCustomerList {
-    position: fixed;
-    top: 250px;
-    left: 30px;
-}
-
-.btnAddMovieStaff {
+.btnStaffMovie {
     position: fixed;
     top: 350px;
     left: 30px;
@@ -879,17 +923,6 @@ footer {
     color:black;
 }
 
-.btnStaffVMList {
-    position: fixed;
-    top: 450px;
-    left: 30px;
-}
-
-.btnVMStaffLogOut {
-    position: fixed;
-    top: 550px;
-    left: 30px;
-}
 
 /*########## STAFF DELETE PAGE ############*/
 
@@ -953,4 +986,298 @@ footer {
     position: absolute;
     left: 1100px;
     top: 400px;
+}
+
+/*############## STAFF DELETE CUSTOMER PAGE #################*/
+.lblVMDeleteCustomer {
+    position:absolute;
+    text-align: center;
+    left: 990px;
+    font-size: 18px;
+    top:200px;
+    color:black;
+    font-weight:bold;
+}
+
+.lblDeleteVMCConfirmation {
+    position: absolute;
+    text-align: center;
+    left: 1000px;
+    font-size: 15px;
+    top: 280px;
+    color: black;
+}
+
+.btnYesDeleteCustomer, .btnCancelDeleteCustomer {
+    padding: 7px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 80px;
+}
+
+.btnYesDeleteCustomer {
+    position: absolute;
+    left: 1040px;
+    top: 360px;
+}
+
+.btnCancelDeleteCustomer {
+    position: absolute;
+    left: 1200px;
+    top: 360px;
+}
+
+/*########### STAFF CUSTOMER LIST ##############*/
+
+.lblVMSCustomerList {
+    position: fixed;
+    left: 925px;
+    top: 150px;
+    color: black;
+    font-weight: bold;
+}
+
+.lstVMCCustomers {
+    position:absolute;
+    top:235px;
+    left:735px;
+    height: 363px;
+    width: 690px;
+}
+
+.lblVMCFilterUsername {
+    position: fixed;
+    left: 740px;
+    top: 200px;
+    color: black;
+}
+
+.txtVMCFilterUsername {
+    position: fixed;
+    left: 910px;
+    top: 200px;
+    width:370px;
+}
+
+.btnVMCApplyFilter {
+    position: absolute;
+    left: 1300px;
+    top: 195px;
+}
+
+.btnAddVMCCustomer, .btnEditVMCCustomer, .btnDeleteVMCCustomer,
+.btnDisplayAllVMCCustomer, .btnVMCApplyFilter {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnAddVMCCustomer {
+    position: absolute;
+    left: 780px;
+    top: 640px;
+}
+
+.btnEditVMCCustomer {
+    position: absolute;
+    left: 940px;
+    top: 640px;
+}
+
+.btnDeleteVMCCustomer {
+    position: absolute;
+    left: 1100px;
+    top: 640px;
+}
+
+.btnDisplayAllVMCCustomer {
+    position: absolute;
+    left: 1260px;
+    top: 640px;
+}
+
+.lblErrorVMCList {
+    position: fixed;
+    top: 700px;
+    left: 760px;
+    width: 400px;
+    color: black;
+}
+
+/*######## VM STAFF ADD/EDIT CUSTOMER #############*/
+
+.lblAnVMCustomer {
+    position: fixed;
+    left: 810px;
+    top: 125px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMcustomerFirstname {
+    position: fixed;
+    left: 725px;
+    top: 180px;
+    color: black;
+}
+
+.lblVMcustomerLastname {
+    position: fixed;
+    left: 725px;
+    top: 280px;
+    color: black;
+}
+
+.lblVMcustomerEmail {
+    position: fixed;
+    left: 725px;
+    top: 380px;
+    color: black;
+}
+
+.lblVMcustomerUsername {
+    position: fixed;
+    left: 725px;
+    top: 480px;
+    color: black;
+}
+
+.lblVMcustomerPassword {
+    position: fixed;
+    left: 725px;
+    top: 580px;
+    color: black;
+}
+
+.txtVMcustomerFirstname {
+    position: fixed;
+    left: 955px;
+    top: 180px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerLastname {
+    position: fixed;
+    left: 955px;
+    top: 280px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerEmail {
+    position: fixed;
+    left: 955px;
+    top: 380px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerUsername {
+    position: fixed;
+    left: 955px;
+    top: 480px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerPassword {
+    position: fixed;
+    left: 955px;
+    top: 580px;
+    color: black;
+    width: 250px;
+}
+
+.btnOkayVMCustomer, .btnCancelVMCustomer {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnOkayVMCustomer {
+    position: fixed;
+    left: 955px;
+    top: 670px;
+}
+
+.btnCancelVMCustomer {
+    position: fixed;
+    left: 1090px;
+    top: 670px;
+}
+
+.lblErrorVMCustomer {
+    position: fixed;
+    left: 655px;
+    top: 730px;
+    color: black;
+    width: 400px;
+}
+
+/*########### VM STAFF PAYMENT LIST #############*/
+
+.lblAnVMPayment {
+    position: fixed;
+    left: 910px;
+    top: 165px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblPaymentStatus {
+    position: fixed;
+    left: 725px;
+    top: 280px;
+    color: black;
+}
+
+.lblPaymentType {
+    position: fixed;
+    left: 725px;
+    top: 380px;
+    color: black;
+}
+
+.txtPaymentType {
+    position: fixed;
+    left: 955px;
+    top: 380px;
+    color: black;
+    width: 250px;
+}
+
+.chkPaymentStatus {
+    position: fixed;
+    left: 955px;
+    top: 280px;
+}
+
+.btnOKVMPayment, .btnCancelVMPayment {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnOKVMPayment {
+    position: fixed;
+    left: 945px;
+    top: 450px;
+}
+
+.btnCancelVMPayment {
+    position: fixed;
+    left: 1085px;
+    top: 450px;
 }

@@ -151,5 +151,11 @@ namespace VirginFrontEnd
             //redirect to the customer list
             Response.Redirect("VMCustomerList.aspx");
         }
+
+        protected void btnVMPaymentList_Click(object sender, EventArgs e)
+        {
+            //redirect to the payment list
+            Response.Redirect("VMPaymentList.aspx");
+        }
     }
 }
