@@ -18,7 +18,7 @@ namespace VirginFrontEnd
             Hospital_ID = Convert.ToInt32(Session["Hospital_ID"]);
             if (IsPostBack == false)
             {
-                //populate the list of phones
+                //populate the list of hospitals
                 DisplayHospital();
             }
         }
@@ -65,12 +65,6 @@ namespace VirginFrontEnd
 
         //Close button
         protected void btnListClose_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VHCStaff.aspx");
-        }
-
-        //Home Button
-        protected void btnListHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VHCStaff.aspx");
         }

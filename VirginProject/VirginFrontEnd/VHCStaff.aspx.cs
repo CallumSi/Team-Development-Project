@@ -38,5 +38,11 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VHCPatientAdd.aspx");
         }
+
+        protected void btnListPatients_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCPatientList.aspx");
+
+        }
     }
 }
