@@ -74,6 +74,7 @@ namespace VirginClassLibrary
             return DB.Execute("sproc_tblVHCPatient_Insert");
         }
 
+
         public void Update()
         {
             //update an existing record based on the values of thisPatient

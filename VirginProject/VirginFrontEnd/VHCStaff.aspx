@@ -35,7 +35,7 @@
             <asp:Button ID="btnAddPatient" runat="server" CssClass="btnAddPatient" Text="Add Patient" OnClick="btnAddPatient_Click" />
 
             <%--BUTTON: LIST PATIENTS--%>
-            <asp:Button ID="btnListPatients" runat="server" CssClass="btnListPatients" Text="List Patients" />
+            <asp:Button ID="btnListPatients" runat="server" CssClass="btnListPatients" Text="List Patients" OnClick="btnListPatients_Click" />
         </article>
 
         <%--FOOTER SECTION--%>
