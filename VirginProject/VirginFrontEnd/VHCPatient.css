@@ -88,6 +88,7 @@ footer {
 
 /*** TOOLBOX E.G. LABELS/TEXTBOXES/IMAGE/LISTBOX ***/
 
+/*Patient Labels*/
 .lblPatient_Title, .lblPatient_Firstname, .lblPatient_Lastname,
 .lblPatient_Address, .lblPatient_DOB, .lblPatient_Email,
 .lblPatient_Username, .lblPatient_Password, .lblPatient_Telephone{
@@ -97,6 +98,7 @@ footer {
     font-size: 25px;
 }
 
+/*Patient Textboxes*/
 .txtPatient_Title, .txtPatient_Firstname, .txtPatient_Lastname,
 .txtPatient_Address, .txtPatient_DOB, .txtPatient_Email,
 .txtPatient_Username, .txtPatient_Password, .txtPatient_Telephone {
@@ -211,6 +213,88 @@ footer {
     left:1340px;
 }
 
+/*Patient Search Textbox*/
+.txtPatientSearch {
+    position: fixed;
+    top: 615px;
+    left: 410px;
+    width: 580px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #e8e5e5;
+}
+
+/*Patient ListBox*/
+.lstPatient {
+    background-color: #eeecef;
+    position: fixed;
+    top: 250px;
+    left: 200px;
+    width: 800px;
+    height: 350px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+/*Error Message Label*/
+.lblErrorMessage {
+    position: absolute;
+    top: 650px;
+    left: 25px;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #cc0000;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Filter Patient Label*/
+.lblFilterPatient {
+    position: absolute;
+    top: 525px;
+    left: 180px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* List Patient Buttons */
+.btnDisplayAllPatients, .btnPatientApplyFilter, .btnTotalRecords, .EditPatient, .DeletePatient {
+    z-index: 1;
+    width: 250px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Hover Effect */
+.btnDisplayAllPatients:hover, .btnPatientApplyFilter:hover, .btnTotalRecords:hover, .EditPatient:hover, .DeletePatient:hover{
+    background-color: #27183D;
+    color: white;
+}
+
+/* Submit Button */
+.btnSubmit {
+    position: fixed;
+    top: 750px;
+    left: 1500px;
+    z-index: 1;
+    width: 200px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Submit Hover Effect */
+.btnSubmit:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
 /* Close Button */
 .btnClose {
     position: fixed;
@@ -231,23 +315,37 @@ footer {
     color: white;
 }
 
-/* Submit Button */
-.btnSubmit {
+/*Display All Button*/
+.btnDisplayAllPatients {
     position: fixed;
-    top:750px;
-    left: 1500px;
-    z-index: 1;
-    width: 200px;
-    height: 70px;
-    font-size: 20pt;
-    border-radius: 12px;
-    transition-duration: 0.5s;
+    top: 280px;
+    left: 1050px;
 }
 
-/* Submit Hover Effect */
-.btnSubmit:hover {
-    background-color: darkgreen;
-    color: white;
+/*Apply Patient Filter Button*/
+.btnPatientApplyFilter {
+    position: fixed;
+    top: 390px;
+    left: 1050px;
 }
 
+/*Total Records Button*/
+.btnTotalRecords {
+    position: fixed;
+    top: 500px;
+    left: 1050px;
+}
 
+/*Edit Button*/
+.EditPatient {
+    position: fixed;
+    top: 280px;
+    left: 1350px;
+}
+
+/*Delete Button*/
+.DeletePatient {
+    position: fixed;
+    top: 390px;
+    left: 1350px;
+}

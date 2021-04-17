@@ -103,11 +103,11 @@ namespace VirginFrontEnd
             //if a record has been selected from the list
             if (lstCustomer.SelectedIndex != -1)
             {
-                //retrieve intended delete records primary key
+                //retrieve intended edit records primary key
                 CustomerID = Convert.ToInt32(lstCustomer.SelectedValue);
                 //store the data in the session object
                 Session["CustomerID"] = CustomerID;
-                //redirect the delete page
+                //redirect the edit page
                 Response.Redirect("VCHACustomer.aspx");
             }
             else //if a user has not selected a customer record to delete

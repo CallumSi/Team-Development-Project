@@ -10,11 +10,16 @@ namespace VirginFrontEnd
     public partial class MarketplaceWelcome : System.Web.UI.Page
     {
         //vairables to store original id and user id
-        int OriginalID = 134;
-        int UserID;
+        Int32 OriginalID;
+        Int32 UserID;
         protected void Page_Load(object sender, EventArgs e)
         
         {
+
+            OriginalID = Convert.ToInt32(Session["UserID"]);
+            
+            
+            
             //check if user exisits
             //create an instance of the user collection class
             VirginClassLibrary.clsMarketplaceUserCollection SomeUser = new VirginClassLibrary.clsMarketplaceUserCollection();

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
     <title>Virgin Movie Add Staff</title>
     <link href="VMMovie.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <header>
-            <h2>Virgin Media Staff Add Staff </h2>
+            <h2>Virgin Movie Staff Add Staff </h2>
         </header>
 
         <article class="articleAddStaff">
@@ -35,15 +35,17 @@
         <nav>
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
             <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
-            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnAddMovieStaff" Text="Add Movie" OnClick="btnStaffMovie_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
             <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
             <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
 
         </nav>
 
         <footer>
-            <div id="FooterText"></div>
-            © 2021 Virgin Media | All Rights Reserved
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+
         </footer>
     </form>
 </body>

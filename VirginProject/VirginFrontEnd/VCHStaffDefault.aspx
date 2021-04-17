@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHDefault.aspx.cs" Inherits="VirginFrontEnd.VCHDefault" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHStaffDefault.aspx.cs" Inherits="VirginFrontEnd.VCHDefault" %>
 
 <!DOCTYPE html>
 
@@ -14,6 +14,7 @@
         <asp:Button ID="btnCustomer" runat="server" OnClick="btnCustomer_Click" Text="Access Customer" />
         <asp:Button ID="btnCar" runat="server" OnClick="btnCar_Click" Text="Access Cars" />
         <asp:Button ID="btnHire" runat="server" OnClick="btnHire_Click" Text="Access Hires" />
+        <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" Text="Return to Selector Page" />
     </form>
 </body>
 </html>

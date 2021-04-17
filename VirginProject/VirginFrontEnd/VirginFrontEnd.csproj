@@ -109,23 +109,26 @@
     <Content Include="MarketplaceViewCart.aspx" />
     <Content Include="VCHACar.aspx" />
     <Content Include="VCHACustomer.aspx" />
+    <Content Include="VCHACustomerCE.aspx" />
     <Content Include="VCHAHire.aspx" />
     <Content Include="VCHAStaff.aspx" />
     <Content Include="VCHCarDelete.aspx" />
     <Content Include="VCHCarList.aspx" />
     <Content Include="VCHCustomerDelete.aspx" />
-    <Content Include="VCHCustomerHome.aspx" />
+    <Content Include="VCHCustomerDefault.aspx" />
+    <Content Include="VCHCustomerHomeCE.aspx" />
     <Content Include="VCHCustomerList.aspx" />
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VCHCustomerOrStaffSelection.aspx" />
-    <Content Include="VCHDefault.aspx" />
+    <Content Include="VCHStaffDefault.aspx" />
     <Content Include="VCHHireDelete.aspx" />
     <Content Include="VCHHireList.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
+    <Content Include="VHCPatientList.aspx" />
     <Content Include="VHCStaff.aspx" />
     <Content Include="VHCHospital.css" />
     <Content Include="VHCHospitalAdd.aspx" />
@@ -494,6 +497,13 @@
     <Compile Include="VCHACustomer.aspx.designer.cs">
       <DependentUpon>VCHACustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VCHACustomerCE.aspx.cs">
+      <DependentUpon>VCHACustomerCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHACustomerCE.aspx.designer.cs">
+      <DependentUpon>VCHACustomerCE.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VCHAHire.aspx.cs">
       <DependentUpon>VCHAHire.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -529,12 +539,19 @@
     <Compile Include="VCHCustomerDelete.aspx.designer.cs">
       <DependentUpon>VCHCustomerDelete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VCHCustomerHome.aspx.cs">
-      <DependentUpon>VCHCustomerHome.aspx</DependentUpon>
+    <Compile Include="VCHCustomerDefault.aspx.cs">
+      <DependentUpon>VCHCustomerDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VCHCustomerHome.aspx.designer.cs">
-      <DependentUpon>VCHCustomerHome.aspx</DependentUpon>
+    <Compile Include="VCHCustomerDefault.aspx.designer.cs">
+      <DependentUpon>VCHCustomerDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCustomerHomeCE.aspx.cs">
+      <DependentUpon>VCHCustomerHomeCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerHomeCE.aspx.designer.cs">
+      <DependentUpon>VCHCustomerHomeCE.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHCustomerList.aspx.cs">
       <DependentUpon>VCHCustomerList.aspx</DependentUpon>
@@ -550,12 +567,12 @@
     <Compile Include="VCHCustomerOrStaffSelection.aspx.designer.cs">
       <DependentUpon>VCHCustomerOrStaffSelection.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VCHDefault.aspx.cs">
-      <DependentUpon>VCHDefault.aspx</DependentUpon>
+    <Compile Include="VCHStaffDefault.aspx.cs">
+      <DependentUpon>VCHStaffDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VCHDefault.aspx.designer.cs">
-      <DependentUpon>VCHDefault.aspx</DependentUpon>
+    <Compile Include="VCHStaffDefault.aspx.designer.cs">
+      <DependentUpon>VCHStaffDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHHireDelete.aspx.cs">
       <DependentUpon>VCHHireDelete.aspx</DependentUpon>
@@ -591,6 +608,13 @@
     </Compile>
     <Compile Include="VHCPatientAdd.aspx.designer.cs">
       <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCPatientList.aspx.cs">
+      <DependentUpon>VHCPatientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientList.aspx.designer.cs">
+      <DependentUpon>VHCPatientList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCStaff.aspx.cs">
       <DependentUpon>VHCStaff.aspx</DependentUpon>

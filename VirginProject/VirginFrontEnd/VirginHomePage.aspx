@@ -23,7 +23,7 @@
                      </li>
                      <li>
                    
-                     <asp:Button ID="btnCarHire"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Car Hire" Height="47px" Width="173px" />
+                     <asp:Button ID="btnCarHire"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Car Hire" Height="47px" Width="173px" OnClick="btnCarHire_Click" />
     
                     </li>
                      <li> 
@@ -31,7 +31,7 @@
                         </li>
 
                         <li>                
-                        <asp:Button ID="btnMarketPlace"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Market Place" Height="45px" Width="216px" />
+                        <asp:Button ID="btnMarketPlace"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Market Place" Height="45px" Width="216px" OnClick="btnMarketPlace_Click" />
 
                         </li>
                        <li>
