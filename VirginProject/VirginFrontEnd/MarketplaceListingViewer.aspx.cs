@@ -113,9 +113,19 @@ namespace VirginFrontEnd
                 //if need be indicate the listing has ended 
                 if (enddate < todaydatetime)
                 {
+                    //hide any interactive functions
                     lblTimeLeft.Text = "Listing Ended";
                     btnFavorite.Visible = false;
                     btnUnFavorite.Visible = false;
+                    btnOffer.Visible = false;
+                    btnBid.Visible = false;
+                    btnAddToCart.Visible = false;
+                    lblFavorite.Visible = false;
+                    txtBid.Visible = false;
+                    txtQTY.Visible = false;
+                    lblBidText.Visible = false;
+                    lblQuant.Visible = false; 
+               
                 }
         }
 
@@ -306,7 +316,7 @@ namespace VirginFrontEnd
                     }
 
                     //if the bid enteered is higer than existing bid add it to the database
-                    if (tempbid > Convert.ToDecimal(temphighestbid))
+                    if (tempbid > Convert.ToDecimal(temphighestbid) && tempbid > Convert.ToDecimal(lblPrice.Text))
                     {
                         DB.AddParameter("@BidAmount", tempbid);
                         DB.AddParameter("@UserID", UserID);
@@ -320,7 +330,7 @@ namespace VirginFrontEnd
                     else
                     {
                         //error message
-                        lblError.Text = "Please enter a bid higher than :" + lblBidTitle.Text;
+                        lblError.Text = "Please enter a bid higher than the lowest bid and lowest bid amount:";
                     }
                 }
                 else
