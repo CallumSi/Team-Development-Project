@@ -37,7 +37,9 @@ namespace VirginFrontEnd
 
         }
 
-        protected void btnOk_Click(object sender, EventArgs e)
+       
+
+            protected void btnOk_Click(object sender, EventArgs e)
         {
             //if new record
             if(UserID == -1)
@@ -60,8 +62,9 @@ namespace VirginFrontEnd
         //go back to the welcome page
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            Session["UserID"] = OriginalID;
             Response.Redirect("MarketplaceWelcome.aspx");
-            Session["OriginalID"] = OriginalID;
+           
         }
 
         void DisplayData()
