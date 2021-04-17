@@ -926,3 +926,31 @@ footer {
     top: 250px;
     left: 30px;
 }
+
+/*############## CUSTOMER WELCOME PAGE #################*/
+.CustomerWelcome {
+    text-align:center;
+    left:600px;
+    font-size:13px;
+}
+
+.btnContinue, .btnFirstTime {
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 170px;
+}
+
+.btnContinue {
+    position:absolute;
+    left: 840px;
+    top:400px;
+}
+
+.btnFirstTime {
+    position: absolute;
+    left: 1100px;
+    top: 400px;
+}

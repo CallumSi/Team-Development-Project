@@ -50,12 +50,13 @@ namespace VirginFrontEnd
         {
             //you must also save the cart every time the unload event takes place
             Session["MyCart"] = MyCart;
+            Session["UserID"] = UserID;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("Marketplacehome2.aspx");
-            Session["UserID"] = UserID;
+
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
@@ -64,12 +65,12 @@ namespace VirginFrontEnd
             {
                 //add the new record
                 AddListing();
-                Session["UserID"] = UserID;
+               
             }
             else
             {
                 UpdateListing();
-                Session["UserID"] = UserID;
+               
             }
         }
 
@@ -114,7 +115,15 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Category = txtCategory.Text;
                 SomeListing.ThisListing.Quantity = Convert.ToInt32(txtQuantity.Text);
                 SomeListing.ThisListing.Price = Convert.ToDecimal(txtPrice.Text);
-                SomeListing.ThisListing.Img = txtImg.Text;
+                if (txtImg.Text != "")
+                {
+                    SomeListing.ThisListing.Img = txtImg.Text;
+                }
+                else
+                {
+                    SomeListing.ThisListing.Img = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png";
+                }
+               
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
                 SomeListing.ThisListing.OwnerID = UserID;
                 SomeListing.ThisListing.CloseDate = CloseDate;
@@ -150,7 +159,14 @@ namespace VirginFrontEnd
                 SomeListing.ThisListing.Category = txtCategory.Text;
                 SomeListing.ThisListing.Quantity = Convert.ToInt32(txtQuantity.Text);
                 SomeListing.ThisListing.Price = Convert.ToDecimal(txtPrice.Text);
-                SomeListing.ThisListing.Img = txtImg.Text;
+                if (txtImg.Text != "")
+                {
+                    SomeListing.ThisListing.Img = txtImg.Text;
+                }
+                else
+                {
+                    SomeListing.ThisListing.Img = "https://picsum.photos/200/300";
+                }
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
                 SomeListing.ThisListing.OwnerID = UserID;
                 SomeListing.ThisListing.CloseDate = CloseDate;
@@ -172,15 +188,13 @@ namespace VirginFrontEnd
         {
             //use session object to indicate new record
             Session["ListingID"] = -1;
-            Session["UserID"] = UserID;
             //redirect to user data entry page
             Response.Redirect("MarketplaceListingType.aspx");
         }
 
         protected void btnMyAccount_Click(object sender, EventArgs e)
         {
-            //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
+        
             //redirect to edit user details page
             Response.Redirect("MarketplaceUserProfile.aspx");
         }
@@ -200,8 +214,7 @@ namespace VirginFrontEnd
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //store data in session object so we can pass it to next page
-            Session["UserID"] = UserID;
+           
             //redirect to edit user details page
             Response.Redirect("Marketplacehome2.aspx");
         }

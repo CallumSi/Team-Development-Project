@@ -30,6 +30,7 @@ namespace VirginTestProject
             TestItem.VMPaymentID = 1;
             TestItem.VMPaymentStatus = true;
             TestItem.VMPaymentType = "Paypal";
+            TestItem.VMCustomerID = 4;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -48,6 +49,7 @@ namespace VirginTestProject
             TestPayment.VMPaymentID = 1;
             TestPayment.VMPaymentStatus = true;
             TestPayment.VMPaymentType = "Paypal";
+            TestPayment.VMCustomerID = 4;
             //assign the data to the property
             allPayment.ThisPayment = TestPayment;
             //test to see that the two values are the same
@@ -69,6 +71,7 @@ namespace VirginTestProject
             TestItem.VMPaymentID = 1;
             TestItem.VMPaymentStatus = true;
             TestItem.VMPaymentType = "Paypal";
+            TestItem.VMCustomerID = 4;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -88,7 +91,8 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set the properties of the test object
             TestItem.VMPaymentStatus = true;
-            TestItem.VMPaymentType = "Paypal";
+            TestItem.VMPaymentType = "Debit Card";
+            TestItem.VMCustomerID = 7;
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record
@@ -113,6 +117,7 @@ namespace VirginTestProject
             //set the properties of the test object
             TestItem.VMPaymentStatus = true;
             TestItem.VMPaymentType = "Paypal";
+            TestItem.VMCustomerID = 4;
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record
@@ -122,6 +127,7 @@ namespace VirginTestProject
             //modify the record
             TestItem.VMPaymentStatus = true;
             TestItem.VMPaymentType = "Debit Card";
+            TestItem.VMCustomerID = 4;
             //set the record based on the new test data
             allPayment.ThisPayment = TestItem;
             //Update the record
@@ -142,9 +148,10 @@ namespace VirginTestProject
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set the properties of the test object
-            TestItem.VMPaymentID = 3;
+            TestItem.VMPaymentID = 2;
             TestItem.VMPaymentStatus = true;
             TestItem.VMPaymentType = "Debit Payment";
+            TestItem.VMCustomerID = 5;
             //set ThisCustomer to the test data
             allPayment.ThisPayment = TestItem;
             //add the record

@@ -7,6 +7,7 @@ namespace VirginClassLibrary
         //Unique Payment Identifier
         //private data member for the VMPaymentID property
         private int mVMPaymentID;
+        private int mVMCustomerID;
         Boolean mVMPaymentStatus;
         String mVMPaymentType;
 
@@ -52,6 +53,20 @@ namespace VirginClassLibrary
             }
         }
 
+        public int VMCustomerID
+        {
+            get
+            {
+                //return private data
+                return mVMCustomerID;
+            }
+            set
+            {
+                //set value to private data
+                mVMCustomerID = value;
+            }
+        }
+
         public bool Find(int VMPaymentID)
         {
             //create an instance of the data connection
@@ -67,6 +82,7 @@ namespace VirginClassLibrary
                 mVMPaymentID = Convert.ToInt32(DB.DataTable.Rows[0]["VMPaymentID"]);
                 mVMPaymentStatus = Convert.ToBoolean(DB.DataTable.Rows[0]["VMPaymentStatus"]);
                 mVMPaymentType = Convert.ToString(DB.DataTable.Rows[0]["VMPaymentType"]);
+                mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
                 //return that everything worked OK
                 return true;
             }

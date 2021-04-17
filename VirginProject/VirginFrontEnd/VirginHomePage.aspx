@@ -31,7 +31,7 @@
                         </li>
 
                         <li>                
-                        <asp:Button ID="btnMarketPlace"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Market Place" Height="45px" Width="216px" />
+                        <asp:Button ID="btnMarketPlace"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Market Place" Height="45px" Width="216px" OnClick="btnMarketPlace_Click" />
 
                         </li>
                        <li>
