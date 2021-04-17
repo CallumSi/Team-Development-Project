@@ -96,7 +96,6 @@
     <Compile Include="clsVPDelivery.cs" />
     <Compile Include="clsVPDeliveryCollection.cs" />
     <Compile Include="clsVPOrder.cs" />
-    <Compile Include="clsVPOrderCollection.cs" />
     <Compile Include="clsVPPayment.cs" />
     <Compile Include="clsVPPaymentCollection.cs" />
     <Compile Include="clsVPPhone.cs" />
