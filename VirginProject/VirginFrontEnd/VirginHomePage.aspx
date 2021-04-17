@@ -23,7 +23,7 @@
                      </li>
                      <li>
                    
-                     <asp:Button ID="btnCarHire"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Car Hire" Height="47px" Width="173px" />
+                     <asp:Button ID="btnCarHire"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Car Hire" Height="47px" Width="173px" OnClick="btnCarHire_Click" />
     
                     </li>
                      <li> 

@@ -10,6 +10,8 @@ namespace VirginClassLibrary
     {
         //private customer ID property
         private int mCustomerID;
+        //private user ID property
+        private int mUserID;
         //private customer First Name property
         private string mFirstName;
         //private customer Last Name property
@@ -43,6 +45,21 @@ namespace VirginClassLibrary
             {
                 //set the private data
                 mCustomerID = value;
+            }
+        }
+
+        //user ID property
+        public int UserID
+        {
+            get
+            {
+                //return the private data
+                return mUserID;
+            }
+            set
+            {
+                //set the private data
+                mUserID = value;
             }
         }
 
@@ -211,6 +228,43 @@ namespace VirginClassLibrary
             {
                 //copy the data from the database to the private data member
                 mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mAge = Convert.ToInt32(DB.DataTable.Rows[0]["Age"]);
+                mDriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[0]["DriverLicenseNumber"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mUsername = Convert.ToString(DB.DataTable.Rows[0]["Username"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["PhoneNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+
+        }
+
+        public bool FindByUserID(int UserID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for UserID to search for
+            DB.AddParameter("@UserID", UserID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHCustomer_FilterByUserID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mAge = Convert.ToInt32(DB.DataTable.Rows[0]["Age"]);

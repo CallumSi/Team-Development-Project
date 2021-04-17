@@ -429,6 +429,23 @@ namespace VirginTestProject
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHHire VCHHire = new clsVCHHire();
+            //boolean variable to store validation results
+            Boolean found = false;
+            //test data to test the method
+            Int32 HireID = 23;
+            //invoke the method
+            found = VCHHire.Find(HireID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        [TestMethod]
         public void ValidMethodOK()
         {
             //create an instance of the class
@@ -444,21 +461,6 @@ namespace VirginTestProject
             Error = VCHHire.Valid(HireCollectionDate, HireReturnDate, HireLocation, HireStatus);
             //test to check the result does pass and to see if any error message is returned
             Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FindMethodOK()
-        {
-            //create an instance of the class
-            clsVCHHire VCHHire = new clsVCHHire();
-            //boolean variable to store validation results
-            Boolean found = false;
-            //test data to test the method
-            Int32 HireID = 21;
-            //invoke the method
-            found = VCHHire.Find(HireID);
-            //test to see that the result is correct
-            Assert.IsTrue(found);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VirginFrontEnd
 {
-    public partial class VCHCustomerHome : System.Web.UI.Page
+    public partial class VCHCustomerHomeCE : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
