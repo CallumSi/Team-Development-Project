@@ -153,10 +153,9 @@ namespace VirginTestProject
             AllCustomers.ThisCustomer = TestItem;
             /* 
             commented out to prevent constant-reduplication of customer record into data table
-            "*/
-            //add the record
-            PrimaryKey = AllCustomers.Add();
-            //"*/
+            "//add the record
+            PrimaryKey = AllCustomers.Add();"
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //find the record
@@ -175,6 +174,7 @@ namespace VirginTestProject
             //var to store the primary key 
             Int32 PrimaryKey = 0;
             //set data properties
+            TestItem.UserID = 137;
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
@@ -227,10 +227,9 @@ namespace VirginTestProject
             AllCustomers.ThisCustomer = TestItem;
             /* 
             commented out to prevent constant-reduplication of customer record into data table
-            "*/
-            //add the record
-            PrimaryKey = AllCustomers.Add();
-            //"*/
+            "//add the record
+            PrimaryKey = AllCustomers.Add();"
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //modify the test data in the following manner
@@ -288,17 +287,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a data variable of an existent Username
-            FilteredCustomers.ReportByUsername("Cass_G");
+            FilteredCustomers.ReportByUsername("Tafnino");
             //check that the correct number of customer records are found
             if (FilteredCustomers.Count == 2)
             {
-                //check that the first customer record is CustomerID 347
-                if (FilteredCustomers.CustomerList[0].CustomerID != 347)
+                //check that the first customer record is CustomerID 10
+                if (FilteredCustomers.CustomerList[0].CustomerID != 10)
                 {
                     OK = false;
                 }
-                //check that the second customer record is CustomerID 349
-                if (FilteredCustomers.CustomerList[1].CustomerID != 349)
+                //check that the second customer record is CustomerID 13
+                if (FilteredCustomers.CustomerList[1].CustomerID != 13)
                 {
                     OK = false;
                 }

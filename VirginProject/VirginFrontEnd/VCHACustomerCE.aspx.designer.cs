@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHACustomer {
+    public partial class VCHACustomerCE {
         
         /// <summary>
         /// form1 control.

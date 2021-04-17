@@ -18,13 +18,13 @@ namespace VirginFrontEnd
         protected void btnStaff_Click(object sender, EventArgs e)
         {
             //direct me to the staff end pages
-            Response.Redirect("VCHDefault.aspx");
+            Response.Redirect("VCHStaffDefault.aspx");
         }
 
         protected void btnCustomer_Click(object sender, EventArgs e)
         {
-            //direct me to the customer end pages
-            // I haven't created this side yet - Response.Redirect("VCHDefault2.aspx");
+            //direct me to the initial customer end page
+            Response.Redirect("VCHCustomerDefault.aspx");
         }
     }
 }

@@ -23,5 +23,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VirginCustomerMovieList.aspx");
         }
+
+        protected void btnCarHire_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VCHCustomerDefault.aspx"); 
+        }
     }
 }

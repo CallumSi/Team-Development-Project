@@ -11,7 +11,7 @@ namespace VirginFrontEnd
 {
 
 
-    public partial class VCHCustomerHome
+    public partial class VCHCustomerHomeCE
     {
 
         /// <summary>

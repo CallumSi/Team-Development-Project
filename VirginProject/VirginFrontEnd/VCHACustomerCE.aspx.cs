@@ -8,7 +8,7 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class VCHACustomer : System.Web.UI.Page
+    public partial class VCHACustomerCE : System.Web.UI.Page
     {
         //variable to store the primary key & UserID (FK) with page level scope
         Int32 CustomerID;
@@ -31,6 +31,8 @@ namespace VirginFrontEnd
                 {
                     //display the current data for the record
                     DisplayCustomers();
+                    //display the customers UserID
+                    lblUserID.Text = UserID.ToString();
                 }
             }
         }
@@ -60,8 +62,11 @@ namespace VirginFrontEnd
                 //add the new customer record
                 CustomerCollection.Add();
 
-                //once complete redirect the user back to the main page
-                Response.Redirect("VCHCustomerList.aspx");
+                CustomerCollection.ThisCustomer.FindByUserID(UserID);
+                //Add the CustomerID to session object 
+                Session["CustomerID"] = CustomerID;
+                //once complete redirect the customer to the customer home page
+                Response.Redirect("VCHCustomerHomeCE.aspx");
             }
             else
             {
@@ -97,15 +102,17 @@ namespace VirginFrontEnd
                 //update the customer record
                 CustomerCollection.Update();
 
-                //once complete redirect the user back to the main page
-                Response.Redirect("VCHCustomerList.aspx");
+                //Add the CustomerID to session object 
+                Session["CustomerID"] = CustomerID;
+                //once complete redirect the customer to the customer home page
+                Response.Redirect("VCHCustomerHomeCE.aspx");
             }
             else
             {
                 //report an error
                 lblError.Text = "The inputted data is not acceptable. " + Error;
             }
-            
+
         }
 
         void DisplayCustomers()
@@ -140,12 +147,17 @@ namespace VirginFrontEnd
                 //update the record
                 Update();
             }
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //once complete redirect the customer to the customer home page
+            Response.Redirect("VCHCustomerHomeCE.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            //redirect the user to the customer list page, without having added or edited a customer record
-            Response.Redirect("VCHCustomerList.aspx");
+            //redirect the user to the customer default page, without having added or edited their customer record
+            Response.Redirect("VCHCustomerDefault.aspx");
+            Session["UserID"] = UserID;
         }
     }
 }

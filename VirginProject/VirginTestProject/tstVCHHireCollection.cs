@@ -266,17 +266,17 @@ namespace VirginTestProject
             //var to store the outcome
             Boolean OK = true;
             //apply an existent body type
-            FilteredHireLocation.ReportByHireLocation("1 Royal Scot Road, Derby, DE24 8AJ");
+            FilteredHireLocation.ReportByHireLocation("127-139 Foleshill Road, Coventry, CV1 4LF");
             //check that the correct number of records are found
             if (FilteredHireLocation.Count == 2)
             {
-                //check that the first record ID is 12
-                if (FilteredHireLocation.HireList[0].HireID != 21)
+                //check that the first record ID is 23
+                if (FilteredHireLocation.HireList[0].HireID != 23)
                 {
                     OK = false;
                 }
-                //check that the second record ID is 15
-                if (FilteredHireLocation.HireList[1].HireID != 22)
+                //check that the second record ID is 24
+                if (FilteredHireLocation.HireList[1].HireID != 24)
                 {
                     OK = false;
                 }

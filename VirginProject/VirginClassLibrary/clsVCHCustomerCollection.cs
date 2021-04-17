@@ -87,6 +87,7 @@ namespace VirginClassLibrary
                 clsVCHCustomer ACustomer = new clsVCHCustomer();
                 //read in the fields from the curent record
                 ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
+                //ACustomer.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserID"]);
                 ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
                 ACustomer.Age = Convert.ToInt32(DB.DataTable.Rows[Index]["Age"]);
@@ -110,6 +111,7 @@ namespace VirginClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure
+            DB.AddParameter("@UserID", mThisCustomer.UserID);
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
             DB.AddParameter("@Age", mThisCustomer.Age);
@@ -142,6 +144,7 @@ namespace VirginClassLibrary
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure
             DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            //DB.AddParameter("@UserID", mThisCustomer.UserID);
             DB.AddParameter("@FirstName", mThisCustomer.FirstName);
             DB.AddParameter("@LastName", mThisCustomer.LastName);
             DB.AddParameter("@Age", mThisCustomer.Age);

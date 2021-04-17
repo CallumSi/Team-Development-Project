@@ -567,6 +567,23 @@ namespace VirginTestProject
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsVCHCar VCHCar = new clsVCHCar();
+            //boolean variable to store validation results
+            Boolean found = false;
+            //test data to test the method
+            Int32 CarID = 1;
+            //invoke the method
+            found = VCHCar.Find(CarID);
+            //test to see that the result is correct
+            Assert.IsTrue(found);
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [TestMethod]
         public void ValidMethodOK()

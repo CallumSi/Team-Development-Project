@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHCustomerHome.aspx.cs" Inherits="VirginFrontEnd.VCHCustomerHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VCHCustomerHomeCE.aspx.cs" Inherits="VirginFrontEnd.VCHCustomerHomeCE" %>
 
 <!DOCTYPE html>
 
