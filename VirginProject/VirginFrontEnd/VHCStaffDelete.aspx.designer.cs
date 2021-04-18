@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VHCHospital {
+    public partial class VHCStaffDelete {
         
         /// <summary>
         /// Head1 control.
@@ -31,66 +31,30 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnLogout control.
+        /// btnYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
+        protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
-        /// btnAddHospital control.
+        /// btnNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddHospital;
+        protected global::System.Web.UI.WebControls.Button btnNo;
         
         /// <summary>
-        /// btnListHospital control.
+        /// lblDeleteConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListHospital;
-        
-        /// <summary>
-        /// btnAddPatient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddPatient;
-        
-        /// <summary>
-        /// btnListPatients control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListPatients;
-        
-        /// <summary>
-        /// btnAddStaff control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddStaff;
-        
-        /// <summary>
-        /// btnListStaffs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListStaffs;
+        protected global::System.Web.UI.WebControls.Label lblDeleteConfirm;
     }
 }

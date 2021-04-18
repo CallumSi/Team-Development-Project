@@ -243,7 +243,7 @@ footer {
     left: 25px;
     color: black;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 10pt;
     letter-spacing: 3px;
     color: #cc0000;
     font-family: 'Share Tech Mono', monospace;
@@ -253,7 +253,7 @@ footer {
 .lblFilterPatient {
     position: absolute;
     top: 525px;
-    left: 180px;
+    left: 150px;
     color: black;
     font-weight: bolder;
     font-size: 20px;

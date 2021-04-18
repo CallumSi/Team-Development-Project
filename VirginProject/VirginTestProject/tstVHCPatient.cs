@@ -208,7 +208,7 @@ namespace VirginTestProject
             string Patient_Telephone = "01164891276"; // (9) 
             string Patient_Status = "True"; // (10) 
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -230,7 +230,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -247,7 +247,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -264,7 +264,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(3, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -281,7 +281,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(4, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -298,7 +298,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(5, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -315,7 +315,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(6, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -332,7 +332,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(4, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -349,7 +349,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Title = Patient_Title.PadLeft(10, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -368,7 +368,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Firstname = "";
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -385,7 +385,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -402,7 +402,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -419,7 +419,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -436,7 +436,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -453,7 +453,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -470,7 +470,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(26, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -487,7 +487,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Firstname = Patient_Firstname.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -506,7 +506,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Lastname = "";
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -523,7 +523,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -540,7 +540,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -557,7 +557,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -574,7 +574,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -591,7 +591,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -608,7 +608,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(26, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -625,7 +625,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Lastname = Patient_Lastname.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -644,7 +644,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Patient_Address = "";
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -661,7 +661,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -678,7 +678,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -695,7 +695,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(99, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -712,7 +712,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -729,7 +729,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(101, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -746,7 +746,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -763,7 +763,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Address = Patient_Address.PadLeft(1000, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -789,7 +789,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
 
@@ -812,7 +812,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
 
@@ -835,7 +835,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -858,7 +858,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -881,7 +881,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -904,7 +904,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -927,7 +927,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
 
@@ -948,7 +948,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -971,7 +971,7 @@ namespace VirginTestProject
             //convert the date variable to a string variable 
             string Patient_DOB = SomePatient_DOB.ToString();
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
 
@@ -993,7 +993,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(10, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1010,7 +1010,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(11, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1027,7 +1027,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(12, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1044,7 +1044,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1061,7 +1061,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1078,7 +1078,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1095,7 +1095,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(31, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1112,7 +1112,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Email = Patient_Email.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1133,7 +1133,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             Patient_Username = Patient_Username.PadLeft(7, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1150,7 +1150,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(8, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1167,7 +1167,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(9, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1184,7 +1184,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1201,7 +1201,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1218,7 +1218,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1235,7 +1235,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(29, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1252,7 +1252,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Username = Patient_Username.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1273,7 +1273,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(7, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1290,7 +1290,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(8, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1307,7 +1307,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(9, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1324,7 +1324,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1341,7 +1341,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1358,7 +1358,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1375,7 +1375,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(29, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1392,7 +1392,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Password = Patient_Password.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1413,7 +1413,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(6, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1430,7 +1430,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(7, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1447,7 +1447,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(8, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1464,7 +1464,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(14, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1481,7 +1481,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(15, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1498,7 +1498,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(16, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1515,7 +1515,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(11, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1532,7 +1532,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Patient_Telephone = Patient_Telephone.PadLeft(100, '1');
             //invoke the method 
-            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone, Patient_Status);
+            Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
