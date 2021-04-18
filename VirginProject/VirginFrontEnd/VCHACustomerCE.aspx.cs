@@ -23,9 +23,6 @@ namespace VirginFrontEnd
             lblUserID.Text = "New User Details";
             if (IsPostBack == false)
             {
-                //populate the list of customers
-                DisplayCustomers();
-
                 //if this is not a new record
                 if (CustomerID != -1)
                 {
@@ -35,6 +32,13 @@ namespace VirginFrontEnd
                     lblUserID.Text = UserID.ToString();
                 }
             }
+        }
+
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Save the CustomerID & UserID when a page unload event happens
+            Session["CustomerID"] = CustomerID;
+            Session["UserID"] = UserID;
         }
 
         //function to add new customer records
@@ -48,7 +52,7 @@ namespace VirginFrontEnd
             if (Error == "")
             {
                 //get the data entered by the user
-                CustomerCollection.ThisCustomer.UserID = 137;
+                CustomerCollection.ThisCustomer.UserID = UserID;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
                 CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
@@ -88,7 +92,7 @@ namespace VirginFrontEnd
                 //find the CustomerID for the record to be updated
                 CustomerCollection.ThisCustomer.Find(CustomerID);
                 //get the data entered by the user
-                CustomerCollection.ThisCustomer.UserID = 137;
+                //CustomerCollection.ThisCustomer.UserID = UserID;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
                 CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);

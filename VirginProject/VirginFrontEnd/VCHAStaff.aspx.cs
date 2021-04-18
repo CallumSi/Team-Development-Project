@@ -134,11 +134,5 @@ namespace VirginFrontEnd
             //redirect the user to the staff list page, without having added or edited a staff record
             Response.Redirect("VCHStaffList.aspx");
         }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            //redirect me to the home page, this offers links to all system pages
-            Response.Redirect("VCHCustomerOrStaffSelection.aspx");
-        }
     }
 }

@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHACar {
+    public partial class VCHACarViewer {
         
         /// <summary>
         /// form1 control.
@@ -121,13 +121,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtCarEngine;
         
         /// <summary>
-        /// ddlCarBody control.
+        /// txtCarBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCarBody;
+        protected global::System.Web.UI.WebControls.TextBox txtCarBody;
         
         /// <summary>
         /// txtCarColour control.
@@ -139,13 +139,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtCarColour;
         
         /// <summary>
-        /// ddlFuelType control.
+        /// txtCarFuel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFuelType;
+        protected global::System.Web.UI.WebControls.TextBox txtCarFuel;
         
         /// <summary>
         /// txtCarPrice control.
@@ -175,21 +175,21 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnOK control.
+        /// btnHire control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOK;
+        protected global::System.Web.UI.WebControls.Button btnHire;
         
         /// <summary>
-        /// btnCancel control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }
