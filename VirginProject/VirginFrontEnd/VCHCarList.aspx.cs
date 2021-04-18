@@ -145,7 +145,7 @@ namespace VirginFrontEnd
             //if a record has been selected from the list
             if (lstCars.SelectedIndex != -1)
             {
-                //retrieve intended delete records primary key
+                //retrieve intended edit records primary key
                 CarID = Convert.ToInt32(lstCars.SelectedValue);
                 //store the data in the session object
                 Session["CarID"] = CarID;

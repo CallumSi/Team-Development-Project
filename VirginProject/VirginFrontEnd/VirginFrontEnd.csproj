@@ -108,6 +108,7 @@
     <Content Include="MarketplaceUserList.aspx" />
     <Content Include="MarketplaceViewCart.aspx" />
     <Content Include="VCHACar.aspx" />
+    <Content Include="VCHACarViewerCE.aspx" />
     <Content Include="VCHACustomer.aspx" />
     <Content Include="VCHACustomerCE.aspx" />
     <Content Include="VCHAHire.aspx" />
@@ -498,6 +499,13 @@
     </Compile>
     <Compile Include="VCHACar.aspx.designer.cs">
       <DependentUpon>VCHACar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHACarViewerCE.aspx.cs">
+      <DependentUpon>VCHACarViewerCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHACarViewerCE.aspx.designer.cs">
+      <DependentUpon>VCHACarViewerCE.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHACustomer.aspx.cs">
       <DependentUpon>VCHACustomer.aspx</DependentUpon>
