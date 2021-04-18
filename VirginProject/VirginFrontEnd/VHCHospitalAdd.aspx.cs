@@ -74,6 +74,12 @@ namespace VirginFrontEnd
                 AllHospitals.Update();
                 Response.Redirect("VHCHospitalList.aspx");
             }
+
+            else
+            {
+                //report an error
+                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+            }
         }
 
         void DisplayHospitals()

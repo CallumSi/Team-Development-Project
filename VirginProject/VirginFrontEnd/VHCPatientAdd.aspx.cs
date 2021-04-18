@@ -36,7 +36,7 @@ namespace VirginFrontEnd
             //create an instance of the patient class
             clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
             //validate the data on the web form
-            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text, cbPatient_Status.Checked.ToString());
+            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -70,7 +70,7 @@ namespace VirginFrontEnd
             //create an instance of the patient class
             clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
             //validate the data on the web form
-            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text, cbPatient_Status.Checked.ToString());
+            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -90,6 +90,12 @@ namespace VirginFrontEnd
                 //update the record 
                 AllPatients.Update();
                 Response.Redirect("VHCPatientList.aspx");
+            }
+
+            else
+            {
+                //report an error
+                lblError.Text = "⚠️ ERROR:" + "  " + Error;
             }
         }
 
