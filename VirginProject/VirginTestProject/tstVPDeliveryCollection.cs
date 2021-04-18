@@ -44,7 +44,6 @@ namespace VirginTestProject
             AllDelivery.DeliveryList = TestList;
             //test to see that two values are the same
             Assert.AreEqual(AllDelivery.DeliveryList, TestList);
-
         }
 
 

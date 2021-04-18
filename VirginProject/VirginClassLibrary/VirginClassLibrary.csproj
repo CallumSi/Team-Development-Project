@@ -89,7 +89,6 @@
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCart.cs" />
-    <Compile Include="clsVPCartCollection.cs" />
     <Compile Include="clsVPCartItem.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPCustomerCollection.cs" />

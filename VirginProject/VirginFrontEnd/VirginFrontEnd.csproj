@@ -140,6 +140,7 @@
     <Content Include="VirginForgotPassword.aspx" />
     <Content Include="VirginHomePage.aspx" />
     <Content Include="VirginLogIn.aspx" />
+    <Content Include="VirginPhoneWelcome.aspx" />
     <Content Include="VirginProject.css" />
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginSignUp.aspx" />
@@ -163,12 +164,15 @@
     <Content Include="VPCustomerDelete.aspx" />
     <Content Include="VPCustomerList.aspx" />
     <Content Include="VPDefault.aspx" />
+    <Content Include="VPDeliveryList.aspx" />
     <Content Include="VPPayment.aspx" />
     <Content Include="VPPhoneDelete.aspx" />
     <Content Include="VPPhoneList.aspx" />
+    <Content Include="VPPhoneView.aspx" />
     <Content Include="VPStaffDelete.aspx" />
     <Content Include="VPStaffList.aspx" />
     <Content Include="VPThankYouConfirmation.aspx" />
+    <Content Include="VPViewCart.aspx" />
     <Content Include="Web.config" />
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
@@ -679,6 +683,13 @@
     <Compile Include="VirginLogIn.aspx.designer.cs">
       <DependentUpon>VirginLogIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VirginPhoneWelcome.aspx.cs">
+      <DependentUpon>VirginPhoneWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VirginPhoneWelcome.aspx.designer.cs">
+      <DependentUpon>VirginPhoneWelcome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VirginProject.Master.cs">
       <DependentUpon>VirginProject.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -833,6 +844,13 @@
     <Compile Include="VPDefault.aspx.designer.cs">
       <DependentUpon>VPDefault.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VPDeliveryList.aspx.cs">
+      <DependentUpon>VPDeliveryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPDeliveryList.aspx.designer.cs">
+      <DependentUpon>VPDeliveryList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VPPayment.aspx.cs">
       <DependentUpon>VPPayment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -854,6 +872,13 @@
     <Compile Include="VPPhoneList.aspx.designer.cs">
       <DependentUpon>VPPhoneList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VPPhoneView.aspx.cs">
+      <DependentUpon>VPPhoneView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPPhoneView.aspx.designer.cs">
+      <DependentUpon>VPPhoneView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VPStaffDelete.aspx.cs">
       <DependentUpon>VPStaffDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -874,6 +899,13 @@
     </Compile>
     <Compile Include="VPThankYouConfirmation.aspx.designer.cs">
       <DependentUpon>VPThankYouConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPViewCart.aspx.cs">
+      <DependentUpon>VPViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPViewCart.aspx.designer.cs">
+      <DependentUpon>VPViewCart.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

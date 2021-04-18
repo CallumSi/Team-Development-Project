@@ -106,10 +106,6 @@ namespace VirginFrontEnd
                 lblError.Text = "Please add items to cart first in order to checkout!";
             }
         }
-
-        protected void lstShoppingCart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
