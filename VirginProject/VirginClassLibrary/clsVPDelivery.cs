@@ -165,15 +165,15 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                Delivery_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Delivery_ID"]);
-                Order_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Order_ID"]);
-                Title = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
-                FirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
-                LastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
-                House_No = Convert.ToInt32(DB.DataTable.Rows[0]["House_No"]);
-                Delivery_Address = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Address"]);
-                Delivery_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Postcode"]);
-                Delivery_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Delivery_Date"]);
+                mDelivery_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Delivery_ID"]);
+                mOrder_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Order_ID"]);
+                mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mHouse_No = Convert.ToInt32(DB.DataTable.Rows[0]["House_No"]);
+                mDelivery_Address = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Address"]);
+                mDelivery_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Postcode"]);
+                mDelivery_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Delivery_Date"]);
                 //return that everything works
                 return true;
             }

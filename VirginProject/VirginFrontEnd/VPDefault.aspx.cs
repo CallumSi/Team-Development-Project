@@ -30,7 +30,7 @@ namespace VirginFrontEnd
         protected void btnPhone_Click(object sender, EventArgs e)
         {
             //direct me to the phone list page
-            // pending phone list page Response.Redirect("VPPhoneList.aspx");
+            Response.Redirect("VPPhoneList.aspx");
         }
     }
 }
