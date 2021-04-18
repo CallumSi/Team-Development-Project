@@ -1,0 +1,383 @@
+﻿/* Font Style from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/*** HTML STRUCTURE ***/
+
+/* Header Section*/
+header {
+    background-color: #27183d;
+    height: 3%;
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #DBDBDB;
+}
+
+/* Virgin Healthcare:Hospital Title*/
+h2 {
+    position: fixed;
+    top: 0%;
+    left: 1%;
+}
+
+/* Headers 3/4 Shared Attributes*/
+h3, h4 {
+    font-weight: bold;
+    font-size: 50px;
+    color: #cc0000;
+    text-align: center;
+}
+
+/* Each Page Title (Hospital/Patient/Staff/Appointment)*/
+h3 {
+    position: fixed;
+    top: 81px;
+    left: 650px;
+}
+
+/* Each Page Sub Title (Add/Edit/Delete/List & Filter)*/
+h4 {
+    position: fixed;
+    top: 81px;
+    left: 750px;
+}
+
+/* Body Section*/
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    }
+
+/*Article Section*/
+article {
+    position: fixed;
+    color: black;
+    left: 1%;
+    top: 10%;
+    height: 759px;
+    width: 98%;
+    bottom: 169px;
+    background-color: white;
+}
+
+/*Footer Section*/
+footer {
+    background-color: #27183d;
+    position: fixed;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    left: -4%;
+    top: 83%;
+    height: 7%;
+    width: 105%;
+}
+
+/*Footer Information*/
+#FooterText {
+    position: fixed;
+    left: 900px;
+    top: 900px;
+    font-size: 10pt;
+}
+
+/*** BUTTONS ***/
+
+/*Navigation Buttons*/
+
+/*List Staff Buttons*/
+.btnDisplayAllStaffs, .btnStaffApplyFilter, .btnYes, .btnNo, .EditStaff, .DeleteStaff, .btnTotalRecords {
+    z-index: 1;
+    width: 250px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Hover Effect */
+.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover, .btnTotalRecords:hover {
+    background-color: #27183D;
+    color: white;
+}
+
+/*Yes Button*/
+.btnYes {
+    position: fixed;
+    top: 500px;
+    left: 555px;
+}
+
+/*Yes Button Hover*/
+.btnYes:hover {
+    background-color: green;
+    color: white;
+}
+
+/*No Button*/
+.btnNo {
+    position: fixed;
+    top: 500px;
+    left: 1155px;
+}
+
+/*No Button Hover*/
+.btnNo:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Submit Button */
+.btnSubmit {
+    position: fixed;
+    top: 675px;
+    left: 1000px;
+    z-index: 1;
+    width: 200px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Submit Hover Effect */
+.btnSubmit:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Close Button */
+.btnClose {
+    position: fixed;
+    top: 109px;
+    left: 1823px;
+    z-index: 1;
+    width: 60px;
+    height: 35px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/*Display All Button*/
+.btnDisplayAllStaffs {
+    position: fixed;
+    top: 280px;
+    left: 1050px;
+}
+
+/*Apply Staff Filter Button*/
+.btnStaffApplyFilter {
+    position: fixed;
+    top: 390px;
+    left: 1050px;
+}
+
+/*Edit Button*/
+.EditStaff {
+    position: fixed;
+    top: 280px;
+    left: 1350px;
+}
+
+/*Delete Button*/
+.DeleteStaff {
+    position: fixed;
+    top: 390px;
+    left: 1350px;
+}
+
+/*Total Records Button*/
+.btnTotalRecords {
+    position: fixed;
+    top: 500px;
+    left: 1050px;
+}
+
+/*** TOOLBOX E.G. LABELS/TEXTBOXES/IMAGE/LISTBOX ***/
+
+/*Staff Labels*/
+.lblStaff_Title, .lblStaff_Firstname, .lblStaff_Lastname,
+.lblStaff_Email, .lblStaff_Username, .lblStaff_Password, .lblStaff_Role {
+    position: absolute;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+/*Staff Textboxes*/
+.txtStaff_Title, .txtStaff_Firstname, .txtStaff_Lastname,
+.txtStaff_Email, .txtStaff_Username, .txtStaff_Password, .txtStaff_Role {
+    position: absolute;
+    letter-spacing: 2px;
+    font-size: 25px;
+    width: 500px;
+}
+
+/*Staff Title*/
+.lblStaff_Title {
+    top: 150px;
+    left: 720px;
+}
+
+.txtStaff_Title {
+    top: 155px;
+    left: 900px;
+}
+
+/*Staff Firstname*/
+.lblStaff_Firstname {
+    top: 200px;
+    left: 640px;
+}
+
+.txtStaff_Firstname {
+    top: 205px;
+    left: 900px;
+}
+
+/*Staff Lastname*/
+.lblStaff_Lastname {
+    top: 250px;
+    left: 650px;
+}
+
+.txtStaff_Lastname {
+    top: 255px;
+    left: 900px;
+}
+
+/*Staff Email*/
+.lblStaff_Email {
+    top: 300px;
+    left: 710px;
+}
+
+.txtStaff_Email {
+    top: 305px;
+    left: 900px;
+}
+
+/*Staff Username*/
+.lblStaff_Username {
+    top: 350px;
+    left: 645px;
+}
+
+.txtStaff_Username {
+    top: 355px;
+    left: 900px;
+}
+
+/*Staff Password*/
+.lblStaff_Password {
+    top: 400px;
+    left: 635px;
+}
+
+.txtStaff_Password {
+    top: 405px;
+    left: 900px;
+}
+
+/*Staff Role*/
+.lblStaff_Role {
+    top: 450px;
+    left: 720px;
+}
+
+.txtStaff_Role {
+    top: 455px;
+    left: 900px;
+}
+
+/*Staff Status*/
+.lblStaff_Status {
+    position: absolute;
+    top: 515px;
+    left: 910px;
+    color: #cc0000;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cbStaff_Status {
+    position: absolute;
+    top: 512px;
+    left: 1340px;
+}
+
+
+/*Delete Error Message Label*/
+.lblDeleteErrorMessage {
+    position: absolute;
+    top: 230px;
+    left: 550px;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: darkorange;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Error Message Label*/
+.lblErrorMessage {
+    position: absolute;
+    top: 650px;
+    left: 25px;
+    color: black;
+    font-weight: bolder;
+    font-size: 10pt;
+    letter-spacing: 3px;
+    color: #cc0000;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Staff ListBox*/
+.lstStaff {
+    background-color: #eeecef;
+    position: fixed;
+    top: 250px;
+    left: 200px;
+    width: 800px;
+    height: 350px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+/*Staff Search Textbox*/
+.txtStaffSearch {
+    position: fixed;
+    top: 615px;
+    left: 410px;
+    width: 580px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #e8e5e5;
+}
+
+/*Filter Staff Label*/
+.lblFilterStaff {
+    position: absolute;
+    top: 525px;
+    left: 150px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
