@@ -35,5 +35,10 @@ namespace VirginFrontEnd
             //redirrect back to the main page
             Response.Redirect("ForumAdminList.aspx");
         }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminList.aspx");
+        }
     }
 }

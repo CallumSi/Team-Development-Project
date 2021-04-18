@@ -72,6 +72,7 @@ namespace VirginClassLibrary
             //set the parameters for the stored procedure
             DB.AddParameter("@VMPaymentStatus", mThisPayment.VMPaymentStatus);
             DB.AddParameter("@VMPaymentType", mThisPayment.VMPaymentType);
+            DB.AddParameter("@VMCustomerID", mThisPayment.VMCustomerID);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVMPayment_Insert");
         }
@@ -85,6 +86,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@VMPaymentID", mThisPayment.VMPaymentID);
             DB.AddParameter("@VMPaymentStatus", mThisPayment.VMPaymentStatus);
             DB.AddParameter("@VMPaymentType", mThisPayment.VMPaymentType);
+            DB.AddParameter("@VMCustomerID", mThisPayment.VMCustomerID);
             //execute the query returning the primary key value
             DB.Execute("sproc_tblVMPayment_Update");
         }
@@ -133,6 +135,7 @@ namespace VirginClassLibrary
                 APayment.VMPaymentID = Convert.ToInt32(DB.DataTable.Rows[Index]["VMPaymentID"]);
                 APayment.VMPaymentStatus = Convert.ToBoolean(DB.DataTable.Rows[Index]["VMPaymentStatus"]);
                 APayment.VMPaymentType = Convert.ToString(DB.DataTable.Rows[Index]["VMPaymentType"]);
+                APayment.VMCustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["VMCustomerID"]);
                 //add the record to the private data member
                 mPaymentList.Add(APayment);
                 //point to the next record

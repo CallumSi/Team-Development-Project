@@ -18,6 +18,7 @@
        
                       <li>
                           <asp:Label ID="Label2" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
+                          <asp:Label ID="lblOriginalID" runat="server" style="z-index: 1;" Text="Welcome "></asp:Label>
                             <asp:Label ID="Label1" runat="server" style="z-index: 1;" Text="Please Update your details"></asp:Label>
                        </li>
                   
@@ -41,6 +42,7 @@
                           <asp:TextBox ID="txtDeliveryAdressLineTwo" runat="server" style="z-index: 1;"></asp:TextBox>
                        
                     </li>
+
                     <li>
               
                         <asp:Label ID="Label9" runat="server" style="z-index: 1;" Text="PostCode"></asp:Label>
@@ -70,6 +72,8 @@
                 </div>
             </footer>
         </form>
+        <p>
+            AllStaff</p>
     </body>
        
 </html>

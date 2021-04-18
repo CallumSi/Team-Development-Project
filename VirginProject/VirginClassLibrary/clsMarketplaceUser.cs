@@ -12,8 +12,9 @@ namespace VirginClassLibrary
         private string mPostCode;
         private string mEmail;
         private string mPassword;
-        private int mRating;
+        private int mOriginalID;
         private int mUserID;
+        private int mRating;
 
         //public data
         public bool Admin
@@ -29,6 +30,36 @@ namespace VirginClassLibrary
                 mAdmin = value;
             }
         }
+
+        public bool FindByOriginal(int userID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("OriginalID", userID);
+            //execute the sproc
+            DB.Execute("sproc_tblMarketplaceUser_FilterByOriginalUserID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                mDeliveryAdressLineOne = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineOne"]);
+                mDeliveryAdressLineTwo = Convert.ToString(DB.DataTable.Rows[0]["DeliveryAdressLineTwo"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+
+        }
+
         public string DeliveryAdressLineOne
         {
             get
@@ -94,17 +125,17 @@ namespace VirginClassLibrary
                 mPassword = value;
             }
         }
-        public int Rating
+        public int OriginalID
         {
             get
             {
                 //return private data
-                return mRating;
+                return mOriginalID;
             }
             set
             {
                 //set value to private data
-                mRating = value;
+                mOriginalID = value;
             }
         }
         public int UserID
@@ -118,6 +149,20 @@ namespace VirginClassLibrary
             {
                 //set value to private data
                 mUserID = value;
+            }
+        }
+
+        public int Rating
+        {
+            get
+            {
+                //return private data
+                return mRating;
+            }
+            set
+            {
+                //set value to private data
+                mRating = value;
             }
         }
         public Boolean Find(int UserID)
@@ -137,6 +182,7 @@ namespace VirginClassLibrary
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]); 
                 mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
                 //mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
 
                 return true;

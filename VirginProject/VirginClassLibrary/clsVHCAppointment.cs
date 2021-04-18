@@ -4,17 +4,167 @@ namespace VirginClassLibrary
 {
     public class clsVHCAppointment
     {
+        //private data member for the Appointment_ID property 
+        private int mAppointment_ID;
+
+        //private data member for the Appointment_Date property 
+        private DateTime mAppointment_Date;
+
+        //private data member for the Appointment_Time property 
+        private string mAppointment_Time;
+
+        //private data member for the Appointment_Description property 
+        private string mAppointment_Description;
+
+        //private data member for the Hospital_ID property 
+        private int mHospital_ID;
+
+        //private data member for the Patient_ID property 
+        private int mPatient_ID;
+
+        //private data member for the Staff_ID property 
+        private int mStaff_ID;
+
         //Appointment_ID Property 
-        public int Appointment_ID { get; set; }
+        public int Appointment_ID 
+        {
+            get
+            {
+                //return the private data 
+                return mAppointment_ID;
+            }
+
+            set
+            {
+                mAppointment_ID = value;
+            }
+        }
 
         //Appointment_Date Property 
-        public string Appointment_Date { get; set; }
+        public DateTime Appointment_Date
+        {
+            get
+            {
+                //return the private data 
+                return mAppointment_Date;
+            }
+
+            set
+            {
+                //return the private data 
+                mAppointment_Date = value;
+            }
+        }
 
         //Appointment_Time Property 
-        public string Appointment_Time { get; set; }
+        public string Appointment_Time 
+        {
+            get
+            {
+                //return the private data 
+                return mAppointment_Time;
+            }
+
+            set
+            {
+                //return the private data 
+                mAppointment_Time = value;
+            }
+        }
 
         //Appointment_Description Property 
-        public string Appointment_Description { get; set; }
+        public string Appointment_Description 
+        {
+            get
+            {
+                //return the private data 
+                return mAppointment_Description;
+            }
+
+            set
+            {
+                //return the private data 
+                mAppointment_Description = value;
+            }
+        }
+
+        //Hospital_ID Property 
+        public int Hospital_ID
+        {
+            get
+            {
+                //return the private data 
+                return mHospital_ID;
+            }
+
+            set
+            {
+                //return the private data 
+                mHospital_ID = value;
+            }
+        }
+
+        public int Patient_ID 
+        {
+            get 
+            {
+                //return the private data 
+                return mPatient_ID;
+            }
+
+            set 
+            {
+                //return the private data 
+                mPatient_ID = value;
+            }
+        }
+        public int Staff_ID 
+        {
+            get
+            {
+                //return the private data 
+                return mStaff_ID;
+            }
+
+            set
+            {
+                //return the private data 
+                mStaff_ID = value;
+            }
+        }
+
+        public bool Find(int Appointment_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Appointment_ID to search for
+            DB.AddParameter("@Appointment_ID", Appointment_ID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVHCAppointment_FilterByVHCAppointmentID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mAppointment_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_ID"]);
+                mAppointment_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Appointment_Date"]);
+                mAppointment_Time = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Time"]);
+                mAppointment_Description = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Description"]);
+                mHospital_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Hospital_ID"]);
+                mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);
+                mStaff_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Staff_ID"]);
+                //return that everything worked OK
+                return true;
+            }
+
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+
+        }
+
 
         public string Valid(string Appointment_Date, string Appointment_Time, string Appointment_Description)
         {

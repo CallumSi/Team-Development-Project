@@ -116,19 +116,18 @@ namespace VirginTestProject
             //create some properties
             clsMarketplaceListing Listing = new clsMarketplaceListing();
 
-            Listing.Category = "Cookie Jar";
+            Listing.Category = "Testing Kitten";
             Listing.CloseDate = DateTime.Now.AddDays(7);
             Listing.DeliveryType = "First Class";
-            Listing.Description = "Includes Audio when opening";
+            Listing.Description = "Meows Loud";
             Listing.Img = @"http://placekitten.com/200/300";
             Listing.ListingID = 1;
             Listing.ListingName = "Shrek Cookie Jar";
             Listing.New = true;
             Listing.Price = Convert.ToDecimal(10.22);
             Listing.Quantity = 1;
-            Listing.OwnerID = 1;
+            Listing.OwnerID = 205;
             Listing.ListingType = 2;
-        
             //set test data 
             Listings.ThisListing = Listing;
             //add
@@ -137,6 +136,7 @@ namespace VirginTestProject
             Listings.ThisListing.Find(PK);
             //test are equal 
             Assert.AreEqual(Listings.ThisListing, Listing);
+            Listings.DeleteListing();
         }
 
         [TestMethod]
@@ -157,7 +157,7 @@ namespace VirginTestProject
             Listing.New = true;
             Listing.Price = Convert.ToDecimal(10.22);
             Listing.Quantity = 1;
-            Listing.OwnerID = 1;
+            Listing.OwnerID = 205;
             Listing.ListingType = 2;
 
             //set test data 
@@ -171,6 +171,7 @@ namespace VirginTestProject
             Boolean Found = Listings.ThisListing.Find(PK);
             //test are equal 
             Assert.AreEqual(false, Found);
+            Listings.DeleteListing();
         }
 
         [TestMethod]
@@ -191,7 +192,7 @@ namespace VirginTestProject
             Listing.New = true;
             Listing.Price = Convert.ToDecimal(10.22);
             Listing.Quantity = 1;
-            Listing.OwnerID = 1;
+            Listing.OwnerID = 205;
             Listing.ListingType = 2;
 
             //set test data 
@@ -211,7 +212,7 @@ namespace VirginTestProject
             Listing.New = true;
             Listing.Price = Convert.ToDecimal(22.22);
             Listing.Quantity = 2;
-            Listing.OwnerID = 1;
+            Listing.OwnerID = 205;
             Listing.ListingType = 2;
             //set the record
             Listings.ThisListing = Listing;
@@ -220,6 +221,7 @@ namespace VirginTestProject
             //find the user to see if data matches
             Listings.ThisListing.Find(PK);
             Assert.AreEqual(Listings.ThisListing, Listing);
+            Listings.DeleteListing();
         }
 
 
@@ -230,38 +232,20 @@ namespace VirginTestProject
 
             //create an instance of the filtered data
             clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-            FilteredListings.FilterByUserID("4");
+            FilteredListings.FilterByUserID("205");
             //test to see that the two values are the same
-            Assert.AreEqual(7, FilteredListings.Count);
+            Assert.AreEqual(2, FilteredListings.Count);
         }
         [TestMethod]
         public void FilterByUserIDNotFound()
         {
         
             clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-            FilteredListings.FilterByUserID("242");
+            FilteredListings.FilterByUserID("-1");
             Assert.AreEqual(0, FilteredListings.Count);
         }
 
-        //listing id
-        //[TestMethod]
-        //public void FilterByListingIDFound()
-        //{
 
-        //    //create an instance of the filtered data
-        //    clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-        //    FilteredListings.FilterByListingID("13");
-        //    //test to see that the two values are the same
-        //    Assert.AreEqual(1, FilteredListings.Count);
-        //}
-        //[TestMethod]
-        //public void FilterByListingIDNotFound()
-        //{
-
-        //    clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-        //    FilteredListings.FilterByListingID("242");
-        //    Assert.AreEqual(0, FilteredListings.Count);
-        //}
 
         //listing name
         [TestMethod]
@@ -270,7 +254,7 @@ namespace VirginTestProject
 
             //create an instance of the filtered data
             clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-            FilteredListings.FilterByListingName("test");
+            FilteredListings.FilterByListingName("Classic Kitten");
             //test to see that the two values are the same
             Assert.AreEqual(1, FilteredListings.Count);
         }
@@ -283,17 +267,17 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredListings.Count);
         }
 
-        //listing type
-        [TestMethod]
-        public void FilterByListingTypeFound()
-        {
+        ////listing type commented as amount of listings change often
+        //[TestMethod]
+        //public void FilterByListingTypeFound()
+        //{
 
-            //create an instance of the filtered data
-            clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
-            FilteredListings.FilterByListingType(4);
-            //test to see that the two values are the same
-            Assert.AreEqual(1, FilteredListings.Count);
-        }
+        //    //create an instance of the filtered data
+        //    clsMarketplaceListingCollection FilteredListings = new clsMarketplaceListingCollection();
+        //    FilteredListings.FilterByListingType(3);
+        //    //test to see that the two values are the same
+        //    Assert.AreEqual(1, FilteredListings.Count);
+        //}
         [TestMethod]
         public void FilterByListingTypeNotFound()
         {

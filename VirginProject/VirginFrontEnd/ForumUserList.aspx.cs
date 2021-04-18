@@ -32,6 +32,8 @@ namespace VirginFrontEnd
             lstUserListBox.DataTextField = "Userusername";
             //bind the data to the list
             lstUserListBox.DataBind();
+            //clear the list box
+            lstUserListBox.Items.Clear();
         }
 
         Int32 DisplayFilterUserusername(string UserusernameFilter)
@@ -147,6 +149,16 @@ namespace VirginFrontEnd
                 lblError.Text = "Please make you select a record from the list";
 
             }
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnForumPost_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumPostList.aspx");
         }
     }
 }

@@ -66,7 +66,6 @@ namespace VirginTestProject
         {
             //create an instance of the clsVMCustomerCollection class
             clsVMCustomerCollection allCustomers = new clsVMCustomerCollection();
-            //create some test data to assign to the property
             //in this case the data needs to be a list of objects
             List<clsVMCustomer> TestList = new List<clsVMCustomer>();
             //add an item to the list
@@ -104,7 +103,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //Set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //find the record
@@ -131,7 +130,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //Set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //mdoify the record
@@ -169,7 +168,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allCustomers.ThisCustomer = TestItem;
             //add the record
-            PrimaryKey = allCustomers.Add();
+            //PrimaryKey = allCustomers.Add();
             //set the primary key of the test data
             TestItem.VMCustomerID = PrimaryKey;
             //find the record

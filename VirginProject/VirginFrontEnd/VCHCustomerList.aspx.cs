@@ -22,22 +22,43 @@ namespace VirginFrontEnd
 
         void DisplayCustomers()
         {
-            //create an instance of the Customer 
-            clsVCHCustomerCollection Customers = new clsVCHCustomerCollection();
-            //set the data source to the list of customers in the collection
-            lstCustomer.DataSource = Customers.CustomerList;
-            //set the name of the primary key
-            lstCustomer.DataValueField = "CustomerID";
-            //set the data field to display
-            lstCustomer.DataTextField = "FirstName";
+            //int to store the primary key
+            Int32 CustomerID;
+            //customer Username property
+            string Username;
+            //customer First Name property
+            string FirstName;
+            //customer Last Name property
+            string LastName;
 
-            /*//set the data field to display
-            lstCustomer.DataTextField = "Username";
-            //set the data field to display
-            lstCustomer.DataTextField = "FirstName" + "Username";*/
-
-            //bind the data to the list
-            lstCustomer.DataBind();
+            //create an instance of the user collection class
+            clsVCHCustomerCollection CustomerCollection = new clsVCHCustomerCollection();
+            //count of records
+            Int32 RecordCount;
+            //index for the loop
+            Int32 Index = 0;
+            //get the count of records
+            RecordCount = CustomerCollection.Count;
+            //clear the list box
+            lstCustomer.Items.Clear();
+            //while there are records to process
+            while (Index < RecordCount)
+            {
+                //retrieve CustomerID
+                CustomerID = CustomerCollection.CustomerList[Index].CustomerID;
+                //retrieve Username
+                Username = CustomerCollection.CustomerList[Index].Username;
+                //retrieve FirstName
+                FirstName = CustomerCollection.CustomerList[Index].FirstName;
+                //retrieve LastName
+                LastName = CustomerCollection.CustomerList[Index].LastName;
+                //create new lstBx (list box) entry 
+                ListItem NewEntry = new ListItem("Username - " + Username + " | First Name - " + FirstName + " | Last Name - " + LastName, CustomerID.ToString());
+                //add the user to the list
+                lstCustomer.Items.Add(NewEntry);
+                //move the indext to the next record
+                Index++;
+            }
         }
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
@@ -50,7 +71,7 @@ namespace VirginFrontEnd
         {
             //store -1 into the session object to indicate this is a new record
             Session["CustomerID"] = -1;
-            //once complete redirect the user back to the main page
+            //redirect the user back to the customer add page
             Response.Redirect("VCHACustomer.aspx");
         }
 
@@ -82,11 +103,11 @@ namespace VirginFrontEnd
             //if a record has been selected from the list
             if (lstCustomer.SelectedIndex != -1)
             {
-                //retrieve intended delete records primary key
+                //retrieve intended edit records primary key
                 CustomerID = Convert.ToInt32(lstCustomer.SelectedValue);
                 //store the data in the session object
                 Session["CustomerID"] = CustomerID;
-                //redirect the delete page
+                //redirect the edit page
                 Response.Redirect("VCHACustomer.aspx");
             }
             else //if a user has not selected a customer record to delete

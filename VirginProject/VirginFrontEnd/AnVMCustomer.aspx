@@ -4,24 +4,42 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Virgin Movie Customer Information</title>
+    <link href="VMMovie.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblAnVMCustomer" runat="server" Font-Bold="True" ForeColor="#CC0000" style="z-index: 1; left: 371px; top: 60px; position: absolute" Text="VIRGIN MOVIES CUSTOMER"></asp:Label>
-        <asp:Label ID="lblVMcustomerFirstname" runat="server" BorderStyle="None" Font-Bold="True" style="z-index: 1; left: 215px; top: 153px; position: absolute" Text="CUSTOMER FIRSTNAME: "></asp:Label>
-        <asp:Label ID="lblVMcustomerLastname" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 203px; position: absolute" Text="CUSTOMER LASTNAME: "></asp:Label>
-        <asp:Label ID="lblVMcustomerEmail" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 253px; position: absolute; width: 187px" Text="CUSTOMER EMAIL: "></asp:Label>
-        <asp:Label ID="lblVMcustomerUsername" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 303px; position: absolute" Text="CUSTOMER USERNAME: "></asp:Label>
-        <asp:Label ID="lblVMcustomerPassword" runat="server" Font-Bold="True" style="z-index: 1; left: 215px; top: 353px; position: absolute" Text="CUSTOMER PASSWORD: "></asp:Label>
-        <asp:TextBox ID="txtVMcustomerFirstname" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 151px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:TextBox ID="txtVMcustomerLastname" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 208px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:TextBox ID="txtVMcustomerEmail" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 258px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:TextBox ID="txtVMcustomerUsername" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 303px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:TextBox ID="txtVMcustomerPassword" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 351px; position: absolute; width: 274px"></asp:TextBox>
-        <asp:Button ID="btnOkay" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 450px; top: 420px; position: absolute; width: 136px; right: 848px" Text="OKAY" OnClick="btnOkay_Click" />
-        <asp:Button ID="btnCancel" runat="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 598px; top: 420px; position: absolute; width: 136px" Text="CANCEL" OnClick="btnCancel_Click" />
-        <asp:Label ID="lblError" runat="server" Font-Bold="True" style="z-index: 1; left: 217px; top: 486px; position: absolute; width: 517px"></asp:Label>
-    </form>
+        <header>
+            <h2>Virgin Movie Customer Details</h2>
+        </header>
+        <asp:Label ID="lblAnVMCustomer" runat="server" Text="VIRGIN MOVIES CUSTOMER DETAILS" CssClass="lblAnVMCustomer"></asp:Label>
+        <asp:Label ID="lblVMcustomerFirstname" runat="server" Text="CUSTOMER FIRSTNAME: " CssClass="lblVMcustomerFirstname"></asp:Label>
+        <asp:Label ID="lblVMcustomerLastname" runat="server" Text="CUSTOMER LASTNAME: " CssClass="lblVMcustomerLastname"></asp:Label>
+        <asp:Label ID="lblVMcustomerEmail" runat="server" Text="CUSTOMER EMAIL: " CssClass="lblVMcustomerEmail"></asp:Label>
+        <asp:Label ID="lblVMcustomerUsername" runat="server" Text="CUSTOMER USERNAME: " CssClass="lblVMcustomerUsername"></asp:Label>
+        <asp:Label ID="lblVMcustomerPassword" runat="server" Text="CUSTOMER PASSWORD: " CssClass="lblVMcustomerPassword"></asp:Label>
+        <asp:TextBox ID="txtVMcustomerFirstname" runat="server" CssClass="txtVMcustomerFirstname"></asp:TextBox>
+        <asp:TextBox ID="txtVMcustomerLastname" runat="server" CssClass="txtVMcustomerLastname"></asp:TextBox>
+        <asp:TextBox ID="txtVMcustomerEmail" runat="server" CssClass="txtVMcustomerEmail"></asp:TextBox>
+        <asp:TextBox ID="txtVMcustomerUsername" runat="server" CssClass="txtVMcustomerUsername"></asp:TextBox>
+        <asp:TextBox ID="txtVMcustomerPassword" runat="server" CssClass="txtVMcustomerPassword"></asp:TextBox>
+        <asp:Button ID="btnOkay" runat="server" Text="OKAY" CssClass="btnOkayVMCustomer" OnClick="btnOkay_Click" />
+        <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelVMCustomer" OnClick="btnCancel_Click" />
+        <asp:Label ID="lblError" runat="server" CssClass="lblErrorVMCustomer"></asp:Label>
+        <nav>
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
+            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </form>
 </body>
 </html>

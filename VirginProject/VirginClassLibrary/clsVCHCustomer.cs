@@ -10,10 +10,16 @@ namespace VirginClassLibrary
     {
         //private customer ID property
         private int mCustomerID;
+        //private user ID property
+        private int mUserID;
         //private customer First Name property
         private string mFirstName;
         //private customer Last Name property
         private string mLastName;
+        //private property for Age
+        private int mAge;
+        //private property for DriverLicenseNumber
+        private string mDriverLicenseNumber;
         //private customer Address property
         private string mAddress;
         //private customer Postcode property
@@ -39,6 +45,21 @@ namespace VirginClassLibrary
             {
                 //set the private data
                 mCustomerID = value;
+            }
+        }
+
+        //user ID property
+        public int UserID
+        {
+            get
+            {
+                //return the private data
+                return mUserID;
+            }
+            set
+            {
+                //set the private data
+                mUserID = value;
             }
         }
 
@@ -69,6 +90,38 @@ namespace VirginClassLibrary
             {
                 //set the private data
                 mLastName = value;
+            }
+        }
+
+        //customer Age property 
+        public int Age
+        {
+            get
+            {
+                //return the private data 
+                return mAge;
+            }
+
+            set
+            {
+                //set the private data
+                mAge = value;
+            }
+        }
+
+        //customer DriverLicenseNumber property 
+        public string DriverLicenseNumber
+        {
+            get
+            {
+                //return the private data 
+                return mDriverLicenseNumber;
+            }
+
+            set
+            {
+                //set the private data
+                mDriverLicenseNumber = value;
             }
         }
 
@@ -175,8 +228,47 @@ namespace VirginClassLibrary
             {
                 //copy the data from the database to the private data member
                 mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mAge = Convert.ToInt32(DB.DataTable.Rows[0]["Age"]);
+                mDriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[0]["DriverLicenseNumber"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mUsername = Convert.ToString(DB.DataTable.Rows[0]["Username"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["PhoneNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+
+        }
+
+        public bool FindByUserID(int UserID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for UserID to search for
+            DB.AddParameter("@UserID", UserID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHCustomer_FilterByUserID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mAge = Convert.ToInt32(DB.DataTable.Rows[0]["Age"]);
+                mDriverLicenseNumber = Convert.ToString(DB.DataTable.Rows[0]["DriverLicenseNumber"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
                 mUsername = Convert.ToString(DB.DataTable.Rows[0]["Username"]);
@@ -196,7 +288,7 @@ namespace VirginClassLibrary
         }
 
         //Valid Method
-        public string Valid(string FirstName, string LastName, string Address, string PostCode, string Username, string Email, string Password, string PhoneNumber)
+        public string Valid(string FirstName, string LastName, string Age, string DriverLicenseNumber, string Address, string PostCode, string Username, string Email, string Password, string PhoneNumber)
         {
             //string variable to store the error message
             string Error = "";
@@ -237,6 +329,50 @@ namespace VirginClassLibrary
             {
                 //return the following error message
                 return "The last name entered is not acceptable. Please try again with a longer last name.";
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            if (Age.Length > 0)
+            {
+                try
+                {
+                    Int32 TempAge = Convert.ToInt32(Age);
+
+                    if (TempAge < 17)
+                    {
+                        return "For safety and legal reasons, drivers must be at least 17 years old to hire a car. Therefore, Virgin Car Hire account holders must be aged between 17 and 75 years old.";
+                    }
+
+                    if (TempAge > 75)
+                    {
+                        return "For safety and legal reasons, drivers must be younger than 75 years old to hire a car. Therefore, Virgin Car Hire account holders must be aged between 17 and 75 years old.";
+
+                    }
+                }
+                catch
+                {
+                    return "The driver age entered is not acceptable.";
+                }
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////// 
+            //if the driver license number length is blank
+            if (DriverLicenseNumber.Length == 0)
+            {
+                //return the following error message
+                return "The driver license number may not be blank. Please enter a legal driver license number.";
+            }
+            //if the driver license number length is more than 20 characters
+            if (DriverLicenseNumber.Length > 20)
+            {
+                //return the following error message
+                return "The driver license number is invalid. Please enter a legal driver license number.";
+            }
+            //if the driver license number length is less than 11 characters 
+            if (DriverLicenseNumber.Length < 11)
+            {
+                //return the following error message
+                return "The driver license number is invalid. Please enter a legal driver license number.";
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////

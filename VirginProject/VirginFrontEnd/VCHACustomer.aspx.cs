@@ -10,18 +10,22 @@ namespace VirginFrontEnd
 {
     public partial class VCHACustomer : System.Web.UI.Page
     {
-        //variable to store the primary key with page level scope
+        //variable to store the primary key & UserID (FK) with page level scope
         Int32 CustomerID;
+        Int32 UserID;
 
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the number of the customer to be processed
+            //get the number of the customer/user to be processed
             CustomerID = Convert.ToInt32(Session["CustomerID"]);
+            UserID = Convert.ToInt32(Session["UserID"]);
+            lblUserID.Text = "New User Details";
             if (IsPostBack == false)
             {
                 //populate the list of customers
                 DisplayCustomers();
+
                 //if this is not a new record
                 if (CustomerID != -1)
                 {
@@ -37,13 +41,16 @@ namespace VirginFrontEnd
             //create an instance of the Customer 
             clsVCHCustomerCollection CustomerCollection = new clsVCHCustomerCollection();
             //validate the data on the web front
-            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
+            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAge.Text, txtDriverLicenseNumber.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
                 //get the data entered by the user
+                CustomerCollection.ThisCustomer.UserID = 137;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
+                CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
+                CustomerCollection.ThisCustomer.DriverLicenseNumber = txtDriverLicenseNumber.Text;
                 CustomerCollection.ThisCustomer.Address = txtAddress.Text;
                 CustomerCollection.ThisCustomer.PostCode = txtPostcode.Text;
                 CustomerCollection.ThisCustomer.Username = txtUsername.Text;
@@ -69,15 +76,18 @@ namespace VirginFrontEnd
             //create an instance of the Customer 
             clsVCHCustomerCollection CustomerCollection = new clsVCHCustomerCollection();
             //validate the data on the web front
-            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
+            String Error = CustomerCollection.ThisCustomer.Valid(txtFirstName.Text, txtLastName.Text, txtAge.Text, txtDriverLicenseNumber.Text, txtAddress.Text, txtPostcode.Text, txtUsername.Text, txtEmail.Text, txtPassword.Text, txtPhonenumber.Text);
             //if the data is correct/OK then it'll be added to the object
             if (Error == "")
             {
                 //find the CustomerID for the record to be updated
                 CustomerCollection.ThisCustomer.Find(CustomerID);
                 //get the data entered by the user
+                CustomerCollection.ThisCustomer.UserID = 137;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
+                CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
+                CustomerCollection.ThisCustomer.DriverLicenseNumber = txtDriverLicenseNumber.Text;
                 CustomerCollection.ThisCustomer.Address = txtAddress.Text;
                 CustomerCollection.ThisCustomer.PostCode = txtPostcode.Text;
                 CustomerCollection.ThisCustomer.Username = txtUsername.Text;
@@ -107,6 +117,8 @@ namespace VirginFrontEnd
             //display the data for this record
             txtFirstName.Text = CustomerCollection.ThisCustomer.FirstName;
             txtLastName.Text = CustomerCollection.ThisCustomer.LastName;
+            txtAge.Text = CustomerCollection.ThisCustomer.Age.ToString();
+            txtDriverLicenseNumber.Text = CustomerCollection.ThisCustomer.DriverLicenseNumber;
             txtAddress.Text = CustomerCollection.ThisCustomer.Address;
             txtPostcode.Text = CustomerCollection.ThisCustomer.PostCode;
             txtUsername.Text = CustomerCollection.ThisCustomer.Username;

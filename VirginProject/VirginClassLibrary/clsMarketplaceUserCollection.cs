@@ -80,6 +80,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@DeliveryAdressLineTwo", mThisUser.DeliveryAdressLineTwo);
             DB.AddParameter("@PostCode", mThisUser.PostCode);
             DB.AddParameter("@Email", mThisUser.Email);
+            DB.AddParameter("@OriginalID", mThisUser.OriginalID);
             //DB.AddParameter("@Password", mThisUser.Password);
             //DB.AddParameter("@Rating", mThisUser.Rating);
             //execute the insert sproc

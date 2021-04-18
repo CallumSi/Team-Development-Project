@@ -33,7 +33,7 @@
                        <asp:ListBox ID="lstYourListings" runat="server" style="z-index: 1; height: 184px; width: 440px; margin-top: 0px"></asp:ListBox>
                         <br />
                        <asp:Button ID="btnRemoveFavorite" runat="server" CssClass="navButton" OnClick="btnRemoveFavorite_Click" style="z-index: 1;" Text="RemoveFavorite" />                     
-                        <asp:Button ID="btnView" runat="server" CssClass="navButton" style="z-index: 1;" Text="View" />
+                        <asp:Button ID="btnView" runat="server" CssClass="navButton" style="z-index: 1;" Text="View" OnClick="btnView_Click" />
                   <asp:Button ID="btnBack" CssClass="navButton" runat="server" style="z-index: 1;" Text="Back" OnClick="btnBack_Click" />
                          <br />
                        <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>

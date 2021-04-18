@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsForumAdminSecurity.cs" />
+    <Compile Include="clsForumCommentCollection.cs" />
+    <Compile Include="clsForumPostCollection.cs" />
     <Compile Include="clsMarketplaceCartItem.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsForumAdmin.cs" />
@@ -55,15 +58,20 @@
     <Compile Include="clsMarketplaceUser.cs" />
     <Compile Include="clsMarketplaceUserCollection.cs" />
     <Compile Include="clsMarketplaceOrder.cs" />
+    <Compile Include="clsVCHCarCollection.cs" />
+    <Compile Include="clsVCHHire.cs" />
+    <Compile Include="clsVCHHireCollection.cs" />
+    <Compile Include="clsVMMovieCollection.cs" />
+    <Compile Include="clsSecurity.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="clsUserCollection.cs" />
     <Compile Include="clsVCHCar.cs" />
     <Compile Include="clsVCHCustomer.cs" />
     <Compile Include="clsVCHCustomerCollection.cs" />
-    <Compile Include="clsVCHHire.cs" />
     <Compile Include="clsVCHStaff.cs" />
     <Compile Include="clsVCHStaffCollection.cs" />
     <Compile Include="clsVHCAppointment.cs" />
+    <Compile Include="clsVHCAppointmentCollection.cs" />
     <Compile Include="clsVHCHospital.cs" />
     <Compile Include="clsVHCHospitalCollection.cs" />
     <Compile Include="clsVHCPatientCollection.cs" />
@@ -81,13 +89,19 @@
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCart.cs" />
+    <Compile Include="clsVPCartCollection.cs" />
+    <Compile Include="clsVPCartItem.cs" />
     <Compile Include="clsVPCustomer.cs" />
+    <Compile Include="clsVPCustomerCollection.cs" />
     <Compile Include="clsVPDelivery.cs" />
+    <Compile Include="clsVPDeliveryCollection.cs" />
     <Compile Include="clsVPOrder.cs" />
     <Compile Include="clsVPPayment.cs" />
+    <Compile Include="clsVPPaymentCollection.cs" />
     <Compile Include="clsVPPhone.cs" />
+    <Compile Include="clsVPPhoneCollection.cs" />
     <Compile Include="clsVPStaff.cs" />
-    <Compile Include="clsVPStock.cs" />
+    <Compile Include="clsVPStaffCollection.cs" />
     <Compile Include="clsMarketplaceCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

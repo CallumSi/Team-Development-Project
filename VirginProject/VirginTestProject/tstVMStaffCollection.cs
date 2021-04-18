@@ -105,7 +105,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allStaff.ThisStaff = TestItem;
             //add the record
-            PrimaryKey = allStaff.Add();
+            //PrimaryKey = allStaff.Add();
             //Set the primary key of the test data
             TestItem.VMstaffID = PrimaryKey;
             //find the record
@@ -132,7 +132,7 @@ namespace VirginTestProject
             //set ThisCustomer to the test data
             allStaff.ThisStaff = TestItem;
             //add the record
-            PrimaryKey = allStaff.Add();
+            //PrimaryKey = allStaff.Add();
             //Set the primary key of the test data
             TestItem.VMstaffID = PrimaryKey;
             //mdoify the record
@@ -169,7 +169,7 @@ namespace VirginTestProject
             //set the record based on the new test data
             allStaff.ThisStaff = TestItem;
             //add the record
-            PrimaryKey = allStaff.Add();
+            //PrimaryKey = allStaff.Add();
             //set the primary key of the test data
             TestItem.VMstaffID = PrimaryKey;
             //find the record
@@ -217,7 +217,7 @@ namespace VirginTestProject
             if (FilteredVMSFirstName.Count == 2)
             {
                 //check that the first record is ID 80
-                if (FilteredVMSFirstName.StaffList[0].VMstaffID != 17)
+                if (FilteredVMSFirstName.StaffList[0].VMstaffID != 2)
                 {
                     OK = false;
                 }

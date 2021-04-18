@@ -8,7 +8,7 @@ namespace VirginClassLibrary
 {
     public class clsVMCart
     {
-        List<clsVMCartItem> mMovies = new List<clsVMCartItem>();
+        List<clsVMCartItem> mProducts = new List<clsVMCartItem>();
 
         private Int32 mUserNo;
         public Int32 UserNo
@@ -36,11 +36,11 @@ namespace VirginClassLibrary
             }
         }
 
-        public List<clsVMCartItem> Movies
+        public List<clsVMCartItem> Products
         {
             get
             {
-                return mMovies;
+                return mProducts;
             }
         }
 

@@ -18,8 +18,8 @@ namespace VirginClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //pass the data as parameters to the data layer
-            DB.AddParameter("@MovieOrderDate", DateTime.Now.Date);
-            DB.AddParameter("@CustomerID", ShoppingCart.UserNo);
+            DB.AddParameter("@OrderDate", DateTime.Now.Date);
+            DB.AddParameter("@CustomerNo", ShoppingCart.UserNo);
             DB.AddParameter("@CardNo", ShoppingCart.CardNo);
             //execute the stored procedure capturing the primary key of the new record in the variable OrderNo
             Int32 NewOrderNo;
@@ -27,15 +27,15 @@ namespace VirginClassLibrary
 
             //now we need to loop through all the products adding them to the order line table
             Int32 Index = 0;
-            Int32 Count = ShoppingCart.Movies.Count;
+            Int32 Count = ShoppingCart.Products.Count;
             while (Index < Count)
             {
                 //reset the connection to the database
                 DB = new clsDataConnection();
-                DB.AddParameter("@MovieOrderID", NewOrderNo);
-                DB.AddParameter("@MovieID", ShoppingCart.Movies[Index].MovieID);
-                DB.AddParameter("@MovieOrderLineQuantity", ShoppingCart.Movies[Index].QTY);
-                Int32 MovieOrderID = DB.Execute("sproc_tblVMOrderLine_Insert");
+                DB.AddParameter("@OrderNo", NewOrderNo);
+                DB.AddParameter("@ProductNo", ShoppingCart.Products[Index].ProductID);
+                DB.AddParameter("@Quantity", ShoppingCart.Products[Index].QTY);
+                Int32 OrderNo = DB.Execute("sproc_tblVMOrderLine_Insert");
                 Index++;
             }
             //now look in the tables and the order should be present

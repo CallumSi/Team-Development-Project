@@ -1,0 +1,378 @@
+﻿/* Font Style from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/*** HTML STRUCTURE ***/
+
+/* Header Section*/
+header {
+    background-color: #27183d;
+    height: 3%;
+    position: fixed;
+    width: 100%;
+    height:5%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #DBDBDB;
+}
+
+/* Virgin Healthcare:Hospital Title*/
+h2 {
+    position: fixed;
+    top: 0%;
+    left: 1%;
+}
+
+/* Headers 3/4 Shared Attributes*/
+h3, h4 {
+    font-weight: bold;
+    font-size: 50px;
+    color: #cc0000;
+    text-align: center;
+}
+
+/* Each Page Title (Hospital/Patient/Staff/Appointment)*/
+h3 {
+    position: fixed;
+    top: 81px;
+    left: 650px;
+}
+
+/* Each Page Sub Title (Add/Edit/Delete/List & Filter)*/
+h4 {
+    position: fixed;
+    top: 81px;
+    left: 700px;
+}
+
+/* Body Section*/
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Article Section*/
+article {
+    position: fixed;
+    color: black;
+    left: 1%;
+    top: 10%;
+    height: 759px;
+    width: 98%;
+    bottom: 169px;
+    background-color: white;
+}
+
+/*Footer Section*/
+footer {
+    background-color: #27183d;
+    position: fixed;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    left: -4%;
+    top: 83%;
+    height: 7%;
+    width: 105%;
+}
+
+/*Footer Information*/
+#FooterText {
+    position: fixed;
+    left: 900px;
+    top: 900px;
+    font-size: 10pt;
+}
+
+/*** BUTTONS ***/
+
+/*Navigation Buttons*/
+
+/*Main Menu */
+.AddHospital, .ListHospitals, .btnAddPatient, .btnListPatients {
+    z-index: 1;
+    width: 400px;
+    height: 200px;
+    font-size: 30pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/*List Hospital Buttons*/
+.EditHospital, .DeleteHospital, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords, .btnYes, .btnNo {
+    z-index: 1;
+    width: 250px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+ /* Hover Effect*/
+    .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, 
+    .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover, 
+    .btnAddPatient:hover, .btnListPatients:hover {
+        background-color: #27183D;
+        color: white;
+    }
+
+/*Log Out Button*/
+.btnLogout {
+    position: fixed;
+    top: 110px;
+    left: 1680px;
+    z-index: 1;
+    width: 200px;
+    height: 50px;
+    font-size: 15pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/*Log out - Hover Effect */
+.btnLogout:hover{
+    background-color: #cc0000;
+    color: white;
+}
+
+/*Add Hospital Button*/
+.AddHospital {
+    position: fixed;
+    top: 240px;
+    left: 100px;
+}
+
+/*Add Patient Button*/
+.btnAddPatient {
+    position: fixed;
+    top: 240px;
+    left: 800px;
+}
+
+/*Edit Button*/
+.EditHospital {
+    position: fixed;
+    top: 280px;
+    left: 1350px;
+}
+
+/*Delete Button*/
+.DeleteHospital {
+    position: fixed;
+    top: 390px;
+    left: 1350px;
+}
+
+/*List Hospital Button*/
+.ListHospitals {
+    position: fixed;
+    top: 540px;
+    left: 100px;
+}
+
+/*List Patient Button*/
+.btnListPatients {
+    position: fixed;
+    top: 540px;
+    left: 800px;
+}
+
+
+/*Display All Button*/
+.btnDisplayAllHospitals {
+    position: fixed;
+    top: 280px;
+    left:1050px;
+}
+
+/*Apply Hospital Filter Button*/
+.btnHospitalApplyFilter {
+    position: fixed;
+    top: 390px;
+    left: 1050px;
+}
+
+/*Total Records Button*/
+.btnTotalRecords {
+    position: fixed;
+    top: 500px;
+    left: 1050px;
+}
+
+/*Hospital Delete Page - Yes Button*/
+.btnYes {
+    position: fixed;
+    top: 500px;
+    left: 555px;
+}
+
+/*Hospital Delete Page - Yes Button Hover*/
+.btnYes:hover {
+    background-color: green;
+    color: white;
+}
+
+/*Hospital Delete Page - No Button*/
+.btnNo {
+    position: fixed;
+    top: 500px;
+    left: 1155px;
+}
+
+/*Hospital Delete Page - No Button Hover*/
+.btnNo:hover {
+     background-color: red;
+    color: white;
+}
+
+/* Hospital Add Page - Submit Button */
+.btnSubmit {
+    position: fixed;
+    top: 600px;
+    left: 900px;
+    z-index: 1;
+    width: 200px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+ /* Hospital Add Page - Submit Hover Effect */
+.btnSubmit:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Close Button */
+.btnClose {
+    position: fixed;
+    top: 109px;
+    left: 1823px;
+    z-index: 1;
+    width: 60px;
+    height: 35px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/*** TOOLBOX E.G. LABELS/TEXTBOXES/IMAGE/LISTBOX ***/
+
+/*Hosptial Name Label*/
+.lblHospital_Name {
+    position: absolute;
+    top: 200px;
+    left:470px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size:35px;
+}
+
+/*Hosptial Place Label*/
+.lblHospital_Place {
+    position: absolute;
+    top: 350px;
+    left: 470px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+
+/*Error Message Label*/
+.lblErrorMessage {
+    position: absolute;
+    top: 650px;
+    left: 25px;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #cc0000;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Delete Error Message Label*/
+.lblDeleteErrorMessage {
+    position: absolute;
+    top: 230px;
+    left: 550px;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: darkorange;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*Filter Hospital Label*/
+.lblFilterHospital {
+    position: absolute;
+    top: 525px;
+    left: 180px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/*Hospital ListBox*/
+.lstHospital {
+    background-color: #eeecef;
+    position: fixed;
+    top: 250px;
+    left: 200px;
+    width: 800px;
+    height: 350px;
+    font-size: 20px;
+    padding:8px;
+}
+
+/*Hospital Search Textbox*/
+.txtHospitalSearch {
+    position: fixed;
+    top: 615px;
+    left: 410px;
+    width: 580px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #e8e5e5;
+}
+/*Hospital Name Textbox*/
+.txtHospital_Name {
+    position: absolute;
+    top: 210px;
+    left: 800px;
+    width: 457px;
+    height: 40px;
+    font-size: 35px;
+}
+
+/*Hospital Place Textbox*/
+.txtHospital_Place {
+    position: absolute;
+    top: 350px;
+    left: 800px;
+    width: 457px;
+    height: 40px;
+    font-size: 35px;
+}
+
+/* OptionMessage */
+#OptionMessage {
+    position: fixed;
+    top: 725px;
+    left: 875px;
+    font-style: italic;
+    color: darkgrey;
+    font-size:17px;
+}

@@ -42,7 +42,7 @@ namespace VirginTestProject
             //check to see the data in the variable and property are the same
             Assert.AreEqual(AVPDelivery.Delivery_ID, SomeDeliveryID);
         }
-
+        
         //testing the property order id (FK)
         [TestMethod]
         public void OrderIDPropertyOK()
@@ -52,7 +52,7 @@ namespace VirginTestProject
             //create a variable to store the order id of the delivery
             Int32 SomeOrderID;
             //assign an ID to the variable
-            SomeOrderID = 1100;
+            SomeOrderID = 1;
             //try to send some data to the id property 
             AVPDelivery.Order_ID = SomeOrderID;
             //check to see the data in the variable and property are the same
@@ -654,157 +654,141 @@ namespace VirginTestProject
         }
 
 
-        ////***TESTING PROPERTIES***/
+        //***TESTING PROPERTIES***/
 
-        ///// <summary>
-        ///// //***TESTING PROPERTIES HOUSE NO***//
-        ///// </summary>
-        ///// 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMinLessOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        /// <summary>
+        /// //***TESTING PROPERTIES HOUSE NO***//
+        /// </summary>
+        /// 
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMinLessOne()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = ""; 
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMin()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (1);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMin()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "1";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMinPlusOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (2);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMinPlusOne()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "2";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMaxLessOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMaxLessOne()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "999";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMax()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMax()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "1000";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMaxPlusOne()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMaxPlusOne()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "1001";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMid()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMid()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "500";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreEqual(Error, "");
+        }
 
-        //[TestMethod]
-        ////testing the valid method
-        //public void HouseNoMinExtremeMax()
-        //{
-        //    //create an instance of a class
-        //    clsVPDelivery AVPDelivery = new clsVPDelivery();
-        //    //create a string variable to store the validation
-        //    String Error = "";
-        //    //create some test data to test the valid method
-        //    Int32 HouseNo = 0; //this should trigger an error message
-        //    //create some test data to pass the valid method
-        //    HouseNo = HouseNo = (0);
-        //    //invoke the method
-        //    Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
-        //    //Test to see that result is OK, e.g. no error message is returned
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        //testing the valid method
+        public void HouseNoMinExtremeMax()
+        {
+            //create an instance of a class
+            clsVPDelivery AVPDelivery = new clsVPDelivery();
+            //create a string variable to store the validation
+            String Error = "";
+            //create some test data to test the valid method
+            string House_No = "2000";
+            //invoke the method
+            Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
+            //Test to see that result is OK, e.g. no error message is returned
+            Assert.AreNotEqual(Error, "");
+        }
 
 
 
@@ -825,7 +809,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(19, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(4, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned
@@ -844,7 +828,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(20, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(5, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned
@@ -863,7 +847,7 @@ namespace VirginTestProject
             //create some test data to test the valid method
             string Delivery_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method
-            Delivery_Address = Delivery_Address.PadLeft(21, 'C');
+            Delivery_Address = Delivery_Address.PadLeft(6, 'C');
             //invoke the method
             Error = AVPDelivery.Valid(Title, FirstName, LastName, House_No, Delivery_Address, Delivery_Postcode, Delivery_Date);
             //Test to see that result is OK, e.g. no error message is returned

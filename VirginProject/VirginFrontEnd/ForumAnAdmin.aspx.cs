@@ -115,5 +115,10 @@ namespace VirginFrontEnd
                 lblError.Text = "There has been a problem with the information that's been entered. Please try again." + Error;
             }
         }
+
+        protected void btnCancel_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminList.aspx");
+        }
     }
 }

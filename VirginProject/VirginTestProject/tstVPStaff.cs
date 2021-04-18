@@ -660,7 +660,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string Staff_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method 
-            Staff_Address = Staff_Address.PadLeft(19, 'F');
+            Staff_Address = Staff_Address.PadLeft(4, 'F');
             //invoke the method 
             Error = AVPStaff.Valid(Staff_FirstName, Staff_LastName, Staff_Street, Staff_Address, Staff_Postcode, Staff_Email, Staff_Telephone);
             //test to see the resutls is OK, e.g. no error message is retuned 
@@ -678,7 +678,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string Staff_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method 
-            Staff_Address = Staff_Address.PadLeft(20, 'F');
+            Staff_Address = Staff_Address.PadLeft(5, 'F');
             //invoke the method 
             Error = AVPStaff.Valid(Staff_FirstName, Staff_LastName, Staff_Street, Staff_Address, Staff_Postcode, Staff_Email, Staff_Telephone);
             //test to see the resutls is OK, e.g. no error message is retuned 
@@ -696,7 +696,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string Staff_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method 
-            Staff_Address = Staff_Address.PadLeft(21, 'F');
+            Staff_Address = Staff_Address.PadLeft(6, 'F');
             //invoke the method 
             Error = AVPStaff.Valid(Staff_FirstName, Staff_LastName, Staff_Street, Staff_Address, Staff_Postcode, Staff_Email, Staff_Telephone);
             //test to see the resutls is OK, e.g. no error message is retuned 
@@ -768,7 +768,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             string Staff_Address = ""; //this should trigger an error message
             //create some test data to pass the valid method 
-            Staff_Address = Staff_Address.PadLeft(35, 'F');
+            Staff_Address = Staff_Address.PadLeft(27, 'F');
             //invoke the method 
             Error = AVPStaff.Valid(Staff_FirstName, Staff_LastName, Staff_Street, Staff_Address, Staff_Postcode, Staff_Email, Staff_Telephone);
             //test to see the resutls is OK, e.g. no error message is retuned 

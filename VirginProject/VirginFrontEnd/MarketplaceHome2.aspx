@@ -1,46 +1,40 @@
 ﻿<%@ Page Language="C#" %>
 
 
-
 <!DOCTYPE html>
-
-
 
 <script runat="server">
 
+    //declare variable to store session object 
     Int32 UserID;
+    //create an instance of the lisitng collection 
     VirginClassLibrary.clsMarketplaceListingCollection MyListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+    //boolean that decides if you want to see ended listings 
     Boolean showEnded = false;
-
+    //create an instance of the cart 
     VirginClassLibrary.clsMarketplaceCart MyCart = new VirginClassLibrary.clsMarketplaceCart();
     protected void Page_Load(object sender, EventArgs e)
     {
 
         //upon loading the page read the session object
         MyCart = (VirginClassLibrary.clsMarketplaceCart)Session["MyCart"];
+        //check if cart is empty 
         if (MyCart ==null)
         {
             MyCart = new VirginClassLibrary.clsMarketplaceCart();
         }
         //then you can display how many items are in your cart
         lblCartCount.Text = MyCart.Products.Count.ToString();
-
-
         //get the User Id
         UserID = Convert.ToInt32(Session["UserID"]);
+        //see if the user wants to see ended listings by getting this session object 
         showEnded = Convert.ToBoolean(Session["ShowEnded"]);
-
 
         if (IsPostBack == false)
         {
             {
-
                 //display the User data
                 DisplayUserData();
-                //display the Listings
-                //create an instance of the Listing Colleciton
-
-
             }
         }
     }
@@ -49,7 +43,6 @@
         //save the cart
         Session["MyCart"] = MyCart;
     }
-
 
 
     void DisplayUserData()
@@ -61,12 +54,7 @@
         //display the data for this record
         lblEmail.Text = SomeUser.ThisUser.Email;
 
-
     }
-
-
-
-
 
 
     protected void btnClickHere_Click(object sender, EventArgs e)
@@ -90,9 +78,9 @@
     protected void btnSearch_Click(object sender, EventArgs e)
     {
 
-
         //create instance of collection class
         VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
+        //filter the list by the search request 
         ListOfListings.FilterByListingName(txtSearch.Text);
         MyListings = ListOfListings;
 
@@ -114,9 +102,10 @@
         Response.Redirect("MarketplaceHome2.aspx");
     }
 
+
+    //function to display the higest bid of the displayed listing 
     decimal GetHighestBid(int ListingID)
     {
-
         //first establish connection 
         VirginClassLibrary.clsDataConnection DB = new VirginClassLibrary.clsDataConnection();
         //set the paramters for the sproc
@@ -132,10 +121,7 @@
         RecordCount = DB.Count;
         if (RecordCount != 0)
         {
-
-
             //loop through the list adding them to the list box
-
             while (Index < RecordCount)
             {
 
@@ -144,44 +130,33 @@
                 {
                     highestbid = tempbid;
                 }
-
-
                 Index++;
             }
-
         }
-
         return highestbid;
     }
 
-
+    //change the value of show eneded based on if the user wants to see ended listings 
     protected void btnEnded_Click(object sender, EventArgs e)
     {
         if(  showEnded == true){
             showEnded = false;
-
         }
         else
         {
             showEnded = true;
-
         }
-
-
         Session["showEnded"] = showEnded;
-
     }
 
-
+    //differnt filters based on the different tyype of listings
     protected void btnBuyItNow_Click(object sender, EventArgs e)
     {
-
         //create instance of collection class
         VirginClassLibrary.clsMarketplaceListingCollection ListOfListings = new VirginClassLibrary.clsMarketplaceListingCollection();
         ListOfListings.FilterByListingType(1);
         MyListings = ListOfListings;
     }
-
     protected void btnAuction_Click(object sender, EventArgs e)
     {
 
@@ -190,7 +165,6 @@
         ListOfListings.FilterByListingType(2);
         MyListings = ListOfListings;
     }
-
     protected void btnAcceptsOffers_Click(object sender, EventArgs e)
     {
 
@@ -200,7 +174,6 @@
         MyListings = ListOfListings;
 
     }
-
     protected void btnAllListings_Click(object sender, EventArgs e)
     {
 
@@ -209,13 +182,12 @@
         ListOfListings.FilterByListingName("");
         MyListings = ListOfListings;
     }
-
+    //button to view the cart 
     protected void btnViewCart_Click(object sender, EventArgs e)
     {
         Response.Redirect("MarketplaceViewcart.aspx");
     }
 </script>
-
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -267,45 +239,36 @@
                  <%
                    
                     //create an index variable
-        
                      Int32 Index = 0;
                     //get the count of records
-                    
                     Int32 RecordCount = MyListings.Count;
-                    
-                        //loop through each record
-                       
+                     //loop through each record     
                     %>
-                    <ul class="Listings">
-                    
+                    <ul class="Listings">   
                     <%
-
-
+                        //while there are still listings to display
                         while(Index < RecordCount)
-
                         {
+                            //figure out if the listing is in the future or the past 
                             DateTime todaydatetime =  DateTime.Now;
                             DateTime enddate = MyListings.ListingList[Index].CloseDate;
                             TimeSpan difference = enddate.Subtract(todaydatetime);
+                            //check if the user wanted to see ended results or not
                             if (showEnded == false)
                             {
-                            
                                                 if (enddate > todaydatetime)
                                                 {
-
-
                                                      %>
                                                                             <li>
                                                                                 <%
                                                                                     //write a listing to the browser
-
                                                                                     Response.Write(MyListings.ListingList[Index].ListingName);
                                                                                     Response.Write("<br>");
                                                                                     Response.Write("<img src='" + MyListings.ListingList[Index].Img+ "'/>");
                                                                                     Response.Write("<br>");
                                                                                     Response.Write("Start Price: £" + MyListings.ListingList[Index].Price);
                                                                                     Response.Write("<br>");
-                                                                
+                                                                                    //display if the listing has ended or not 
                                                                                     if(enddate > todaydatetime)
                                                                                     {
                                                                                     Response.Write("Ends:" + MyListings.ListingList[Index].CloseDate);
@@ -354,7 +317,7 @@
                                                         %>
                                                         <li>
                                                             <%
-                                                                //write a listing to the browser
+                                                                //if the listing has ended display it like this
 
                                                                 Response.Write(MyListings.ListingList[Index].ListingName);
                                                                 Response.Write("<br>");

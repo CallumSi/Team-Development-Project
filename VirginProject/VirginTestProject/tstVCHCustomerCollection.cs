@@ -32,6 +32,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -71,6 +73,8 @@ namespace VirginTestProject
             TestCustomer.CustomerID = 1;
             TestCustomer.FirstName = "Dante";
             TestCustomer.LastName = "Alighieri";
+            TestCustomer.Age = 26;
+            TestCustomer.DriverLicenseNumber = "ALIGH902245DA99S";
             TestCustomer.Address = "12 Florence Cresent, Leicestershire";
             TestCustomer.PostCode = "LE13 2RV";
             TestCustomer.Username = "DanteAyyy";
@@ -98,6 +102,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -135,6 +141,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -143,8 +151,11 @@ namespace VirginTestProject
             TestItem.PhoneNumber = "07912345678";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
-            //add the record
-            PrimaryKey = AllCustomers.Add();
+            /* 
+            commented out to prevent constant-reduplication of customer record into data table
+            "//add the record
+            PrimaryKey = AllCustomers.Add();"
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //find the record
@@ -163,9 +174,12 @@ namespace VirginTestProject
             //var to store the primary key 
             Int32 PrimaryKey = 0;
             //set data properties
+            TestItem.UserID = 137;
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -201,6 +215,8 @@ namespace VirginTestProject
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "DanteAyyy";
@@ -209,14 +225,19 @@ namespace VirginTestProject
             TestItem.PhoneNumber = "07912345678";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
-            //add the record
-            PrimaryKey = AllCustomers.Add();
+            /* 
+            commented out to prevent constant-reduplication of customer record into data table
+            "//add the record
+            PrimaryKey = AllCustomers.Add();"
+            */
             //set the primary key of the test data
             TestItem.CustomerID = PrimaryKey;
             //modify the test data in the following manner
             TestItem.CustomerID = 1;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
+            TestItem.Age = 26;
+            TestItem.DriverLicenseNumber = "ALIGH902245DA99S";
             TestItem.Address = "12 Florence Cresent, Leicestershire";
             TestItem.PostCode = "LE13 2RV";
             TestItem.Username = "King_of_Florence";
@@ -257,7 +278,7 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredCustomers.Count);
         }
 
-        /*
+        
         [TestMethod]
         public void ReportByUsernameTestDataFound()
         {
@@ -265,18 +286,18 @@ namespace VirginTestProject
             clsVCHCustomerCollection FilteredCustomers = new clsVCHCustomerCollection();
             //var to store outcome
             Boolean OK = true;
-            //apply a data variable of a none existent Username
-            FilteredCustomers.ReportByUsername("HelloThisDoesn'tExist");
+            //apply a data variable of an existent Username
+            FilteredCustomers.ReportByUsername("Tafnino");
             //check that the correct number of customer records are found
             if (FilteredCustomers.Count == 2)
             {
-                //check that the first customer record is CustomerID 2
-                if (FilteredCustomers.CustomerList[0].CustomerID !=2)
+                //check that the first customer record is CustomerID 10
+                if (FilteredCustomers.CustomerList[0].CustomerID != 10)
                 {
                     OK = false;
                 }
-                //check that the first customer record is CustomerID 3
-                if (FilteredCustomers.CustomerList[1].CustomerID != 3)
+                //check that the second customer record is CustomerID 13
+                if (FilteredCustomers.CustomerList[1].CustomerID != 13)
                 {
                     OK = false;
                 }
@@ -288,6 +309,6 @@ namespace VirginTestProject
 
             //test to see that there are no new customer records
             Assert.IsTrue(OK);
-        }*/
+        }
     }
 }

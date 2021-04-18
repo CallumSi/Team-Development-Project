@@ -106,6 +106,7 @@ namespace VirginTestProject
             Users.ThisUser.Find(PK);
             //test are equal 
             Assert.AreEqual(Users.ThisUser, User);
+            Users.DeleteUser();
         }
 
         [TestMethod]
@@ -169,6 +170,7 @@ namespace VirginTestProject
             //find the user to see if data matches
             Users.ThisUser.Find(PK);
             Assert.AreEqual(Users.ThisUser, User);
+            Users.DeleteUser();
         }
 
 
@@ -206,7 +208,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsMarketplaceUserCollection FilteredUsers = new clsMarketplaceUserCollection();
             //apply a blank string(should return all records)
-            FilteredUsers.FilterByEmail("zzz@hotmail.com");
+            FilteredUsers.FilterByEmail("cjs@hotmail.com");
             //test to see that the two values are the same
             Assert.AreEqual(1, FilteredUsers.Count);
         }

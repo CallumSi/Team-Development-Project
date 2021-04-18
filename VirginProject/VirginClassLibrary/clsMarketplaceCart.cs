@@ -8,8 +8,10 @@ namespace VirginClassLibrary
 {
     public class clsMarketplaceCart
     {
-
+        //initialise a list of products
         List<clsMarketplaceCartItem> mProducts = new List<clsMarketplaceCartItem>();
+
+        //create some getters/ setters
 
         private Int32 mUserNo;
         public Int32 UserNo
@@ -44,7 +46,7 @@ namespace VirginClassLibrary
                 return mProducts;
             }
         }
-
+        //method to checkout 
         public void Checkout()
         {
             //create an instance of the order class

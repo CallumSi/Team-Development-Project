@@ -17,6 +17,8 @@ namespace VirginClassLibrary
             //
         }
 
+        //getters/ setters for the class
+
         private Int32 mProductID;
         public Int32 ProductID
         {

@@ -8,6 +8,8 @@ namespace VirginTestProject
     [TestClass]
     public class tstVHCPatientCollection
     {
+        public DateTime Patient_DOB { get; private set; }
+
         [TestMethod]
         public void InstantiationOK()
         {
@@ -233,7 +235,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
             //apply a blank string (Should return all patients) 
-            //FilteredPatient.ReportByPatient(); **** DATE CANNOT BE NULL ****
+            FilteredPatient.ReportByPatient(Convert.ToDateTime(""));
             //test to see that the two values are the same 
             Assert.AreEqual(AllPatients.Count, FilteredPatient.Count);
         }

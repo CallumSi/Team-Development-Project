@@ -170,8 +170,11 @@ namespace VirginTestProject
             TestItem.StaffPhoneNumber = "07987654321";
             //set ThisStaff to the test data
             AllStaff.ThisStaff = TestItem;
-            //add the record
-            PrimaryKey = AllStaff.Add();
+            /* 
+            commented out to prevent constant-reduplication of staff record into data table
+            "//add the record
+            PrimaryKey = AllStaff.Add();" 
+            */
             //set the primary key of the test data
             TestItem.StaffID = PrimaryKey;
             //find the record
@@ -236,8 +239,11 @@ namespace VirginTestProject
             TestItem.StaffPhoneNumber = "07987654321";
             //set ThisStaff to the test data
             AllStaff.ThisStaff = TestItem;
-            //add the record
-            PrimaryKey = AllStaff.Add();
+            /* 
+            commented out to prevent constant-reduplication of staff record into data table
+            "//add the record
+            PrimaryKey = AllStaff.Add();" 
+            */
             //set the primary key of the test data
             TestItem.StaffID = PrimaryKey;
             //modify the test data in the following manner
@@ -291,7 +297,7 @@ namespace VirginTestProject
             clsVCHStaffCollection FilteredStaff = new clsVCHStaffCollection();
             //var to store outcome
             Boolean OK = true;
-            //apply a data variable of a none existent staff Username
+            //apply a data variable of an existent staff Username
             FilteredStaff.ReportByStaffUsername("BrickBoy");
             //check that the correct number of staff records are found
             if (FilteredStaff.Count == 2)
@@ -301,8 +307,8 @@ namespace VirginTestProject
                 {
                     OK = false;
                 }
-                //check that the first staff record is StaffID 7
-                if (FilteredStaff.StaffList[1].StaffID != 7)
+                //check that the first staff record is StaffID 187
+                if (FilteredStaff.StaffList[1].StaffID != 187)
                 {
                     OK = false;
                 }

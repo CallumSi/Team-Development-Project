@@ -1,0 +1,1283 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #27183d;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #cc0000;
+}
+
+nav {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    position: fixed;
+    width: 12%;
+    height: 100%;
+    top: 13.5%;
+    left: 0%;
+}
+
+article {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 50%;
+    top: 30%;
+    left: 20%;
+    color: black;
+}
+
+footer {
+    background-color: #27183d;
+    height: 14%;
+    position: fixed;
+    width: 100%;
+    top: 85%;
+    left: 0%;
+    margin-top: 94px;
+    margin-bottom: 15px;
+}
+
+#FooterText {
+    position: fixed;
+    left: 45%;
+    top: 97%;
+}
+
+/*Buttons*/
+.btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome,
+.btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
+.btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
+.btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
+.btnStaffMovie, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
+.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut, .btnVMPaymentList {
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 170px;
+}
+
+/*########### STAFF NAV BUTTONS */
+
+.btnStaffHome {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnCustomerList {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnStaffMovie {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+.btnStaffVMList {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+.btnVMPaymentList {
+    position: fixed;
+    top: 550px;
+    left: 30px;
+}
+}
+
+.btnVMStaffLogOut {
+    position: fixed;
+    top: 650px;
+    left: 30px;
+}
+
+
+
+/*######## STAFF MOVIE NAV BUTTONS #########*/
+.btnStaffAddMovie {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnStaffUpdateMovie {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnVMStaffDeleteMovie {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+/*######## DELETE MOVIE NAV BUTTONS #########*/
+.btnDeleteHome {
+    top: 150px;
+    left: 30px;
+}
+
+.btnDeleteViewCart {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+/*######## CUSTOMER FILM NAV BUTTONS #########*/
+.btnCustomerHome {
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}
+
+.btnCustomerCart {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+.btnEditAccount {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+.btnCustomerLogOut {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+/*################## STAFF MOVIE CSS #####################*/
+.btnStaffMovieCustomerList {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+
+.btnStaffMovieStaffList {
+    position: fixed;
+    top: 550px;
+    left: 30px;
+}
+
+.btnStaffMovieLogOut {
+    position: fixed;
+    top: 650px;
+    left: 30px;
+}
+
+
+.lblFilterGenre {
+    z-index: 1;
+    width: 129px;
+    position: fixed;
+    top: 215px;
+    left: 750px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtFilterGenre {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 215px;
+    left: 885px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnApplyFilter  {
+    z-index: 1;
+    width: 100px;
+    position: fixed;
+    top: 215px;
+    left: 1155px;
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+}
+
+.btnDisplayAll {
+    z-index: 1;
+    width: 170px;
+    position: fixed;
+    top: 575px;
+    left: 905px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblError {
+    z-index: 1;
+    width: 400px;
+    position: fixed;
+    top: 625px;
+    left: 730px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.articleMovie {
+    left: 38%;
+    top: 21%;
+}
+
+.lstMovies {
+    margin-left: 0px;
+    margin-top: 50px;
+    height: 293px;
+    width: 553px;
+}
+
+.lblStaffMovie {
+    text-align: center;
+}
+
+.lblVMStaffMovieList {
+    position: fixed;
+    left: 825px;
+    top: 150px;
+    color: black;
+    font-weight: bold;
+}
+/*################## STAFF MOVIE ADD CSS #####################*/
+.articleAddMovie {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 30%;
+    top: 20%;
+    left: 50%;
+    color: black;
+    font-weight: bold;
+}
+
+.lblMovieTitle {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 280px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblGenre {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 340px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieDuration {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 400px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieRating {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 460px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieReleaseDate {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 520px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMovieImage {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 580px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.lblMoviePrice {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 640px;
+    left: 630px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.txtMovieTitle {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 278px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 337px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieDuration {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 397px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieRating {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 457px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieReleaseDate {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 517px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMovieImage {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 577px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtMoviePrice {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 637px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnStaffMovieOK {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 710px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnStaffMovieCancel {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 710px;
+    left: 1100px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblStaffAddMovieError {
+    z-index: 1;
+    width: 30%;
+    position: fixed;
+    top: 750px;
+    left: 730px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+/*################## STAFF MOVIE DELETE CSS #####################*/
+
+
+.articleDeleteMovie {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 30%;
+    top: 20%;
+    left: 49%;
+    color: black;
+    font-weight: bold;
+}
+
+.lblMovieDeleteConfirm {
+    z-index: 1;
+    width: 500px;
+    position: fixed;
+    top: 260px;
+    left: 750px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    text-align: right;
+}
+
+.btnMovieDeleteYes {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 320px;
+    left: 880px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnMovieDeleteCancel {
+    z-index: 1;
+    width: 125px;
+    position: fixed;
+    top: 320px;
+    left: 1090px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+/*################## CUSTOMER FILM LIST ################## */
+.lblFilterFilmGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 150px;
+    left: 330px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.txtFilterFilmGenre {
+    z-index: 1;
+    width: 290px;
+    position: fixed;
+    top: 147px;
+    left: 470px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnApplyFilmFilter {
+    z-index: 1;
+    width: 120px;
+    position: fixed;
+    top: 145px;
+    left: 780px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lstCustomerFilms {
+    width: 800px;
+    height:400px;
+    position: fixed;
+    top: 230px;
+    left: 320px;
+}
+
+.lblMovieCount {
+    z-index: 1;
+    width: 200px;
+    position: fixed;
+    top: 150px;
+    left: 930px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblFilmDescription {
+    z-index: 1;
+    width: 400px;
+    height:200px;
+    position: fixed;
+    top: 230px;
+    left: 1150px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnViewMovie {
+    z-index: 1;
+    width: 120px;
+    position: fixed;
+    top: 685px;
+    left: 640px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblFilmError {
+    z-index: 1;
+    width: 500px;
+    position: fixed;
+    top: 730px;
+    left: 500px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnDisplayAllFilm {
+    z-index: 1;
+    width: 180px;
+    position: fixed;
+    top: 145px;
+    left: 920px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblCartCount {
+    position: fixed;
+    top: 275px;
+    left: 200px;
+}
+/*############ MOVIE VIEWER ##############*/
+.AnMovie {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.li {
+    padding: 35px;
+    list-style: none;
+}
+
+.MovieImage {
+    position: fixed;
+    right: 300px;
+    top: 190px;
+    height: 550px;
+    width: 550px;
+}
+
+.btnAddToCart {
+    z-index: 1;
+    width: 180px;
+    position: fixed;
+    top: 705px;
+    left: 620px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.lblUsername{
+    position:fixed;
+    top:80px; 
+    left:500px; 
+    background:yellow;
+}
+
+/*############ CUSTOMER SHOPPING CART ##############*/
+.lstShoppingCart {
+    top: 300px;
+    left: 100px;
+    height: 293px;
+    width: 553px;
+}
+
+.btnContinueShopping, .btnVMovieCheckout {
+    padding: 6px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 170px;
+}
+
+.btnContinueShopping {
+    position: fixed;
+    top: 700px;
+    left: 300px; 
+}
+
+.btnVMovieCheckout {
+    position: fixed;
+    top: 700px;
+    left: 500px;
+}
+
+.lblCheckoutError {
+    position: fixed;
+    top: 710px;
+    left: 680px;
+    width: 500px; 
+}
+
+/*############# CUSTOMER CHECKOUT ########################*/
+    
+
+
+
+
+/*############# CUSTOMER MOVIE THANKS ########################*/
+
+.MovieThanks {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    font-size:20px;
+    font-weight:bold;
+    color:black;
+}
+
+/*############# VM STAFF LIST ########################*/
+
+.lstVMStaff {
+    left: 679px;
+    top: 232px; 
+    position: absolute; 
+    height: 307px; 
+    width: 650px;
+}
+
+.lblVMStaffListTitle {
+    left: 900px;
+    top: 140px;
+    position: absolute;
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+.lblFilterByStaffUsername {
+    left: 700px;
+    top: 200px;
+    position: absolute;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.txtFilterStaffUsername {
+    left: 880px;
+    width: 320px;
+    top: 197px;
+    position: absolute;
+    font-weight: bold;
+    color: black;
+}
+
+.btnAddStaff, .btnEditStaff, .btnDeleteStaff, .btnDisplayAllStaff, .btnApplyStaffFilter {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+}
+
+.btnAddStaff {
+    left: 700px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+}
+
+.btnEditStaff {
+    left: 870px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnDeleteStaff {
+    left: 1040px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnDisplayAllStaff {
+    left: 1202px;
+    top: 580px;
+    position: absolute;
+    width: 98px;
+    right: 1156px;
+}
+
+.btnApplyStaffFilter {
+    left: 1220px;
+    width: 100px;
+    top: 197px;
+    position: absolute;
+}
+
+.lblStaffError {
+    left: 680px;
+    width: 100px;
+    top: 677px;
+    color:black;
+    position: absolute;
+}
+
+.btnStaffMovie {
+    position: fixed;
+    top: 350px;
+    left: 30px;
+}
+
+.btnStaffLogOut {
+    position: fixed;
+    top: 450px;
+    left: 30px;
+}
+/*############# VM STAFF ADD/UPDATE ########################*/
+.articleAddStaff {
+    position: fixed;
+    width: 30%;
+    top: 18%;
+    left: 47%;
+    color: black;
+    font-weight: bold;
+}
+
+.lblStaffFirstName {
+    left: 750px;
+    top: 202px;
+    position: absolute;
+    width: 200px;
+    color:black;
+}
+
+.txtStaffFirstName {
+    left: 950px;
+    top: 199px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffLastName {
+    left: 750px;
+    top: 290px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffLastName {
+    left: 950px;
+    top: 287px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffEmail {
+    left: 750px;
+    top: 387px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffEmail {
+    left: 950px;
+    top: 387px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffPassword {
+    left: 750px;
+    top: 470px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffPassword {
+    left: 950px;
+    top: 467px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.lblStaffPosition {
+    left: 750px;
+    top: 560px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.txtStaffPosition {
+    left: 950px;
+    top: 557px;
+    position: absolute;
+    width: 200px;
+    color: black;
+}
+
+.btnStaffAddOkay, .btnStaffAddCancel {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+    width: 140px;
+}
+
+.btnStaffAddOkay {
+    left: 790px;
+    top: 657px;
+    position: absolute;
+}
+
+.btnStaffAddCancel {
+    left: 1000px;
+    top: 657px;
+    position: absolute;
+}
+
+.lblStaffAddError {
+    left: 700px;
+    top: 727px;
+    position: absolute;
+    color:black;
+}
+
+
+/*########## STAFF DELETE PAGE ############*/
+
+.lblDeleteStafflabel {
+    position: fixed;
+    width: 50%;
+    top: 18%;
+    left: 47%;
+    color: black;
+    font-weight: bold;
+}
+
+.btnYesDeleteStaff, .btnCancelDeleteStaff {
+    font-weight: bold;
+    color: black;
+    border: 2px solid;
+    width: 140px;
+}
+
+.btnYesDeleteStaff {
+    left: 820px;
+    top: 257px;
+    position: absolute;
+}
+.btnCancelDeleteStaff {
+    left: 1090px;
+    top: 257px;
+    position: absolute;
+}
+
+/*############## CUSTOMER THANKS PAGE #################*/
+.btnCustThanksLogOut {
+    position: fixed;
+    top: 250px;
+    left: 30px;
+}
+
+/*############## CUSTOMER WELCOME PAGE #################*/
+.CustomerWelcome {
+    text-align:center;
+    left:600px;
+    font-size:13px;
+}
+
+.btnContinue, .btnFirstTime {
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 170px;
+}
+
+.btnContinue {
+    position:absolute;
+    left: 840px;
+    top:400px;
+}
+
+.btnFirstTime {
+    position: absolute;
+    left: 1100px;
+    top: 400px;
+}
+
+/*############## STAFF DELETE CUSTOMER PAGE #################*/
+.lblVMDeleteCustomer {
+    position:absolute;
+    text-align: center;
+    left: 990px;
+    font-size: 18px;
+    top:200px;
+    color:black;
+    font-weight:bold;
+}
+
+.lblDeleteVMCConfirmation {
+    position: absolute;
+    text-align: center;
+    left: 1000px;
+    font-size: 15px;
+    top: 280px;
+    color: black;
+}
+
+.btnYesDeleteCustomer, .btnCancelDeleteCustomer {
+    padding: 7px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 80px;
+}
+
+.btnYesDeleteCustomer {
+    position: absolute;
+    left: 1040px;
+    top: 360px;
+}
+
+.btnCancelDeleteCustomer {
+    position: absolute;
+    left: 1200px;
+    top: 360px;
+}
+
+/*########### STAFF CUSTOMER LIST ##############*/
+
+.lblVMSCustomerList {
+    position: fixed;
+    left: 925px;
+    top: 150px;
+    color: black;
+    font-weight: bold;
+}
+
+.lstVMCCustomers {
+    position:absolute;
+    top:235px;
+    left:735px;
+    height: 363px;
+    width: 690px;
+}
+
+.lblVMCFilterUsername {
+    position: fixed;
+    left: 740px;
+    top: 200px;
+    color: black;
+}
+
+.txtVMCFilterUsername {
+    position: fixed;
+    left: 910px;
+    top: 200px;
+    width:370px;
+}
+
+.btnVMCApplyFilter {
+    position: absolute;
+    left: 1300px;
+    top: 195px;
+}
+
+.btnAddVMCCustomer, .btnEditVMCCustomer, .btnDeleteVMCCustomer,
+.btnDisplayAllVMCCustomer, .btnVMCApplyFilter {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnAddVMCCustomer {
+    position: absolute;
+    left: 780px;
+    top: 640px;
+}
+
+.btnEditVMCCustomer {
+    position: absolute;
+    left: 940px;
+    top: 640px;
+}
+
+.btnDeleteVMCCustomer {
+    position: absolute;
+    left: 1100px;
+    top: 640px;
+}
+
+.btnDisplayAllVMCCustomer {
+    position: absolute;
+    left: 1260px;
+    top: 640px;
+}
+
+.lblErrorVMCList {
+    position: fixed;
+    top: 700px;
+    left: 760px;
+    width: 400px;
+    color: black;
+}
+
+/*######## VM STAFF ADD/EDIT CUSTOMER #############*/
+
+.lblAnVMCustomer {
+    position: fixed;
+    left: 810px;
+    top: 125px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMcustomerFirstname {
+    position: fixed;
+    left: 725px;
+    top: 180px;
+    color: black;
+}
+
+.lblVMcustomerLastname {
+    position: fixed;
+    left: 725px;
+    top: 280px;
+    color: black;
+}
+
+.lblVMcustomerEmail {
+    position: fixed;
+    left: 725px;
+    top: 380px;
+    color: black;
+}
+
+.lblVMcustomerUsername {
+    position: fixed;
+    left: 725px;
+    top: 480px;
+    color: black;
+}
+
+.lblVMcustomerPassword {
+    position: fixed;
+    left: 725px;
+    top: 580px;
+    color: black;
+}
+
+.txtVMcustomerFirstname {
+    position: fixed;
+    left: 955px;
+    top: 180px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerLastname {
+    position: fixed;
+    left: 955px;
+    top: 280px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerEmail {
+    position: fixed;
+    left: 955px;
+    top: 380px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerUsername {
+    position: fixed;
+    left: 955px;
+    top: 480px;
+    color: black;
+    width: 250px;
+}
+
+.txtVMcustomerPassword {
+    position: fixed;
+    left: 955px;
+    top: 580px;
+    color: black;
+    width: 250px;
+}
+
+.btnOkayVMCustomer, .btnCancelVMCustomer {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnOkayVMCustomer {
+    position: fixed;
+    left: 955px;
+    top: 670px;
+}
+
+.btnCancelVMCustomer {
+    position: fixed;
+    left: 1090px;
+    top: 670px;
+}
+
+.lblErrorVMCustomer {
+    position: fixed;
+    left: 655px;
+    top: 730px;
+    color: black;
+    width: 400px;
+}
+
+/*########### VM STAFF PAYMENT LIST #############*/
+
+.lblAnVMPayment {
+    position: fixed;
+    left: 910px;
+    top: 165px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblPaymentStatus {
+    position: fixed;
+    left: 725px;
+    top: 280px;
+    color: black;
+}
+
+.lblPaymentType {
+    position: fixed;
+    left: 725px;
+    top: 380px;
+    color: black;
+}
+
+.txtPaymentType {
+    position: fixed;
+    left: 955px;
+    top: 380px;
+    color: black;
+    width: 250px;
+}
+
+.chkPaymentStatus {
+    position: fixed;
+    left: 955px;
+    top: 280px;
+}
+
+.btnOKVMPayment, .btnCancelVMPayment {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnOKVMPayment {
+    position: fixed;
+    left: 945px;
+    top: 450px;
+}
+
+.btnCancelVMPayment {
+    position: fixed;
+    left: 1085px;
+    top: 450px;
+}

@@ -10,7 +10,9 @@ namespace VirginFrontEnd
 {
     public partial class MarketplaceUserFavoriteListings : System.Web.UI.Page
     {
+        //variable to store user id 
         Int32 UserID;
+        //create an instance of the cart 
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,6 +23,7 @@ namespace VirginFrontEnd
             {
                 //update the list box
                 DisplayListing();
+                //display the users data
                 DisplayUserData();
             }
         }
@@ -40,7 +43,6 @@ namespace VirginFrontEnd
         }
 
   
-
         void DisplayListing()
         {
             //create an instance of the use collection
@@ -120,7 +122,7 @@ namespace VirginFrontEnd
         private void DeleteFavorite(int ListingID)
         {
             //function for deleting records
-            
+         
             //first establish connection
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the sproc
@@ -152,6 +154,31 @@ namespace VirginFrontEnd
             Session["UserID"] = UserID;
             //redirect to edit user details page
             Response.Redirect("MarketplaceHome2.aspx");
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            //variable to store primary key of field you want to delete
+            Int32 ListingID;
+            //check if a record has been selected from the list
+            if (lstYourListings.SelectedIndex != -1)
+            {
+                //get primary key from selected
+                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                //store data in session object so we can pass it to next page
+                
+               
+                //then go to listing page
+                Response.Redirect("MarketplaceListingViewer.aspx?ListingID=" + ListingID);
+
+
+            }
+            //if a record hasnt been selected from the listbox 
+            else
+            {
+                //display a error .
+                lblError.Text = "Please select a record to delete from the list ";
+            }
         }
     }
 }
