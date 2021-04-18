@@ -25,7 +25,7 @@ namespace VirginFrontEnd
 
         private void DisplayPatient()
         {
-            //create an instance of the patient class
+            /*  //create an instance of the patient class
             clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
             //set the data source to the list of patient in the collection 
             lstPatient.DataSource = AllPatients.PatientList;
@@ -34,9 +34,33 @@ namespace VirginFrontEnd
             //set the data field to display 
             lstPatient.DataTextField = "Patient_Firstname";
             //bind the data to the list
-            lstPatient.DataBind();
+            lstPatient.DataBind();*/
+
+            //BEFORE FILTER SETTINGS
+            Int32 Patient_ID; //Var to store the primary key  
+            String Patient_Title; //Var to store the Patient Title
+            String Patient_Firstname; //Var to store the Patient Firstname
+            String Patient_Lastname; //Var to store the Patient Lastname
+            //create an instance of the patient class
+            clsVHCPatientCollection PatientSearch = new clsVHCPatientCollection();
+            Int32 RecordCount; //Var to store the count of records 
+            Int32 Index = 0; //Var to store the index for the loop
+            RecordCount = PatientSearch.Count; //get the count of records 
+            lstPatient.Items.Clear(); //clear the list box
+            while (Index < RecordCount) //While there are records to process
+            {
+                Patient_ID = PatientSearch.PatientList[Index].Patient_ID; //get primary key 
+                Patient_Title = PatientSearch.PatientList[Index].Patient_Title; //get Patient Title 
+                Patient_Firstname = PatientSearch.PatientList[Index].Patient_Firstname; //get Patient Firstname
+                Patient_Lastname = PatientSearch.PatientList[Index].Patient_Lastname; //get Patient Lastname
+                //create a new entry for the list box
+                ListItem NewEntry = new ListItem(" [" + Patient_ID + "] " + " " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname, Patient_ID.ToString());
+                lstPatient.Items.Add(NewEntry);
+                Index++;
+            }
         }
 
+        //AFTER FILTER SETTINGS
         Int32 DisplayPatient(string PatientFilter)
         {
             Int32 Patient_ID; //Var to store the primary key  
@@ -72,7 +96,7 @@ namespace VirginFrontEnd
                 Patient_Telephone = PatientSearch.PatientList[Index].Patient_Telephone; //get Patient Telephone
                 Patient_Status = PatientSearch.PatientList[Index].Patient_Status; //get Patient Status
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem("[" + Patient_ID + "] " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname, Patient_ID.ToString());
+                ListItem NewEntry = new ListItem(" [" + Patient_ID + "] " + " " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname + " "+ " - " + Patient_DOB, Patient_ID.ToString());
                 lstPatient.Items.Add(NewEntry);
                 Index++;
             }

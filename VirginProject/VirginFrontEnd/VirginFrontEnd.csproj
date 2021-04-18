@@ -136,6 +136,10 @@
     <Content Include="VHCHospitalDelete.aspx" />
     <Content Include="VHCMainMenu.aspx" />
     <Content Include="VHCMainMenu.css" />
+    <Content Include="VHCStaff.css" />
+    <Content Include="VHCStaffAdd.aspx" />
+    <Content Include="VHCStaffDelete.aspx" />
+    <Content Include="VHCStaffList.aspx" />
     <Content Include="VirginCustomerMovieList.aspx" />
     <Content Include="VHCHospitalList.aspx" />
     <Content Include="VirginForgotPassword.aspx" />
@@ -651,6 +655,27 @@
     </Compile>
     <Compile Include="VHCMainMenu.aspx.designer.cs">
       <DependentUpon>VHCMainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCStaffAdd.aspx.cs">
+      <DependentUpon>VHCStaffAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCStaffAdd.aspx.designer.cs">
+      <DependentUpon>VHCStaffAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCStaffDelete.aspx.cs">
+      <DependentUpon>VHCStaffDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCStaffDelete.aspx.designer.cs">
+      <DependentUpon>VHCStaffDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCStaffList.aspx.cs">
+      <DependentUpon>VHCStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCStaffList.aspx.designer.cs">
+      <DependentUpon>VHCStaffList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VirginCustomerMovieList.aspx.cs">
       <DependentUpon>VirginCustomerMovieList.aspx</DependentUpon>
