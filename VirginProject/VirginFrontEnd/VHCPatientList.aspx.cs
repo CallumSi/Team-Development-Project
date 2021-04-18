@@ -89,6 +89,7 @@ namespace VirginFrontEnd
         //Display All Button
         protected void btnDisplayAllPatients_Click(object sender, EventArgs e)
         {
+        
             //display all patients
             DisplayPatient();
         }
@@ -110,18 +111,6 @@ namespace VirginFrontEnd
 
             
         }
-
-        ////Total Records Button
-        //protected void btnTotalRecords_Click(object sender, EventArgs e)
-        //{
-        //    //display all patients
-        //    DisplayPatient("");
-
-        //    //declare var to store the record count 
-        //    Int32 RecordCount;
-        //    RecordCount = DisplayPatient("");
-        //    lblError.Text = RecordCount + " RECORDS FOUND ";
-        //}
 
         protected void btnEditPatient_Click(object sender, EventArgs e)
         {

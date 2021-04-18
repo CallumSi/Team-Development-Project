@@ -9,6 +9,8 @@ namespace VirginFrontEnd
 {
     public partial class VHCHospital : System.Web.UI.Page
     {
+        Int32 Patient_ID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
           
@@ -36,6 +38,8 @@ namespace VirginFrontEnd
 
         protected void btnAddPatient_Click(object sender, EventArgs e)
         {
+            //use session object to indicate new record
+            Session["Patient_ID"] = -1;
             Response.Redirect("VHCPatientAdd.aspx");
         }
 
