@@ -27,7 +27,7 @@
     
                     </li>
                      <li> 
-                     <asp:Button ID="btnVirginPhone"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Phones" Height="40px" Width="159px" />
+                     <asp:Button ID="btnVirginPhone"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Phones" Height="40px" Width="159px" OnClick="btnVirginPhone_Click" />
                         </li>
 
                         <li>                

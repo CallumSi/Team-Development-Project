@@ -40,5 +40,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("MarketplaceWelcome.aspx");
         }
+
+        protected void btnVirginPhone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VPDefault.aspx");
+        }
     }
 }

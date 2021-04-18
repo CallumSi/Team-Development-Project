@@ -91,10 +91,10 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                Payment_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Payment_ID"]);
-                CardNo = Convert.ToInt32(DB.DataTable.Rows[0]["CardNo"]);
-                ExpiryDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ExpiryDate"]);
-                SecurityNo = Convert.ToInt32(DB.DataTable.Rows[0]["SecurityNo"]);
+                mPayment_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Payment_ID"]);
+                mCardNo = Convert.ToInt32(DB.DataTable.Rows[0]["CardNo"]);
+                mExpiryDate = Convert.ToDateTime(DB.DataTable.Rows[0]["ExpiryDate"]);
+                mSecurityNo = Convert.ToInt32(DB.DataTable.Rows[0]["SecurityNo"]);
                               //return that everything works
                 return true;
             }
