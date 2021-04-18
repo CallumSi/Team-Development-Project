@@ -1,0 +1,302 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #27183d;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #cc0000;
+}
+
+nav {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    position: fixed;
+    width: 12%;
+    height: 100%;
+    top: 13.5%;
+    left: 0%;
+}
+
+article {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 50%;
+    top: 30%;
+    left: 20%;
+    color: black;
+}
+
+footer {
+    background-color: #27183d;
+    height: 14%;
+    position: fixed;
+    width: 100%;
+    top: 85%;
+    left: 0%;
+    margin-top: 94px;
+    margin-bottom: 15px;
+}
+
+#FooterText {
+    position: fixed;
+    left: 45%;
+    top: 101%;
+}
+
+/*########### ADMIN LOGIN BUTTONS ###########*/
+.btnVMAdminLogIn, .btnVMAdminSignUp, .btnVMAdminForgotPassword {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btnVMAdminLogIn{
+    position: fixed;
+    top: 380px;
+    left: 900px;
+}
+
+.btnVMAdminSignUp {
+    position: fixed;
+    top: 380px;
+    left: 1030px;
+}
+
+.btnVMAdminForgotPassword {
+    position: fixed;
+    top: 380px;
+    left: 1160px;
+}
+
+
+/*########## ADMIN LOGIN LABELS ###########*/
+
+.lblVMAdminLogIn {
+    position: fixed;
+    top: 130px;
+    left: 960px;
+    width: 290px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAdminUsername {
+    position: fixed;
+    top: 230px;
+    left: 890px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAdminPassword {
+    position: fixed;
+    top: 300px;
+    left: 890px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblErrorVMALogin {
+    position: fixed;
+    top: 480px;
+    left: 890px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+}
+
+/*########## ADMIN LOGIN TEXTBOX ###########*/
+.txtVMAdminUsername {
+    position: fixed;
+    top: 230px;
+    left: 1000px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+.txtVMAdminPassword {
+    position: fixed;
+    top: 300px;
+    left: 1000px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+/*########### ADMIN SIGN UP BUTTONS ###########*/
+.btnVMASignUp {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 480px;
+    left: 1090px;
+}
+
+.btnVMABack {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 480px;
+    left: 1230px;
+}
+
+/*########### ADMIN SIGN UP LABELS ###########*/
+.lblVMASignUp {
+    position: fixed;
+    top: 130px;
+    left: 960px;
+    width: 500px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAUsername {
+    position: fixed;
+    top: 200px;
+    left: 890px;
+    width: 180px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAPassword {
+    position: fixed;
+    top: 270px;
+    left: 890px;
+    width: 180px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAPasswordConfirm {
+    position: fixed;
+    top: 340px;
+    left: 890px;
+    width: 180px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMASecret {
+    position: fixed;
+    top: 410px;
+    left: 890px;
+    width: 180px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMAError {
+    position: fixed;
+    top: 460px;
+    left: 890px;
+    width: 180px;
+    color: black;
+}
+/*########### ADMIN SIGN UP TEXTBOX ###########*/
+.txtVMAUsername {
+    position: fixed;
+    top: 200px;
+    left: 1080px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+.txtVMAPassword {
+    position: fixed;
+    top: 270px;
+    left: 1080px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+.txtVMAPasswordConfirm {
+    position: fixed;
+    top: 340px;
+    left: 1080px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+.txtVMASecret {
+    position: fixed;
+    top: 410px;
+    left: 1080px;
+    width: 270px;
+    color: black;
+    font-weight: bold;
+}
+
+/*########### ADMIN OR STAFF #############*/
+.lblOption {
+    left: 980px;
+    top: 237px;
+    font-weight:bold;
+    font-size:20px;
+    position: absolute;
+    width: 450px;
+    color: black;
+}
+
+.btnVMAStaffList {
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 380px;
+    left: 980px;
+}
+
+.btnVMACustomerMovie {
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 380px;
+    left: 1230px;
+}
+
+.btnLogOut {
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 170px;
+    position: fixed;
+    top: 150px;
+    left: 30px;
+}

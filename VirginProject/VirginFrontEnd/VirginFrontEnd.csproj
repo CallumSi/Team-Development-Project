@@ -145,6 +145,11 @@
     <Content Include="VirginSignUp.aspx" />
     <Content Include="VirginSignUpSuccess.aspx" />
     <Content Include="VirginUserList.aspx" />
+    <Content Include="VMAdmin.css" />
+    <Content Include="VMAdminForgotPassword.aspx" />
+    <Content Include="VMAdminLogin.aspx" />
+    <Content Include="VMAdminSignUp.aspx" />
+    <Content Include="VMAdminSignUpSuccess.aspx" />
     <Content Include="VMCheckout.aspx" />
     <Content Include="VMCustomerDelete.aspx" />
     <Content Include="VMCustomerList.aspx" />
@@ -158,6 +163,7 @@
     <Content Include="AnVMStaffAddMovie.aspx" />
     <Content Include="VMStaffDelete.aspx" />
     <Content Include="VMStaffList.aspx" />
+    <Content Include="VMStafforCustomer.aspx" />
     <Content Include="VMThanks.aspx" />
     <Content Include="VMViewCart.aspx" />
     <Content Include="VPCustomerDelete.aspx" />
@@ -707,6 +713,34 @@
     <Compile Include="VirginUserList.aspx.designer.cs">
       <DependentUpon>VirginUserList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VMAdminForgotPassword.aspx.cs">
+      <DependentUpon>VMAdminForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminForgotPassword.aspx.designer.cs">
+      <DependentUpon>VMAdminForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMAdminLogin.aspx.cs">
+      <DependentUpon>VMAdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminLogin.aspx.designer.cs">
+      <DependentUpon>VMAdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMAdminSignUp.aspx.cs">
+      <DependentUpon>VMAdminSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminSignUp.aspx.designer.cs">
+      <DependentUpon>VMAdminSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMAdminSignUpSuccess.aspx.cs">
+      <DependentUpon>VMAdminSignUpSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminSignUpSuccess.aspx.designer.cs">
+      <DependentUpon>VMAdminSignUpSuccess.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VMCheckout.aspx.cs">
       <DependentUpon>VMCheckout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -797,6 +831,13 @@
     </Compile>
     <Compile Include="VMStaffList.aspx.designer.cs">
       <DependentUpon>VMStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMStafforCustomer.aspx.cs">
+      <DependentUpon>VMStafforCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMStafforCustomer.aspx.designer.cs">
+      <DependentUpon>VMStafforCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMThanks.aspx.cs">
       <DependentUpon>VMThanks.aspx</DependentUpon>

@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+///
+/// This class handles the shopping cart
+/// credit it to Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+/// </summary>
+
 namespace VirginClassLibrary
 {
     class clsVMOrder

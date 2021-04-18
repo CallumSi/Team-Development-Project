@@ -10,8 +10,11 @@ namespace VirginFrontEnd
 {
     public partial class VMStaffList : System.Web.UI.Page
     {
+        Int32 VMStaffID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the Staff ID
+            VMStaffID = Convert.ToInt32(Session["VMStaffID"]);
             if (IsPostBack == false)
             {
                 //update the list box
@@ -137,7 +140,7 @@ namespace VirginFrontEnd
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             //redirect to the login page
-            Response.Redirect("VirginLogin.aspx");
+            Response.Redirect("VMAdminLogin.aspx");
         }
 
         protected void btnStaffMovie_Click(object sender, EventArgs e)
