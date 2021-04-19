@@ -265,7 +265,7 @@ namespace VirginFrontEnd
                     //display a error 
                     lblError.Text = "Please select a record to edit from the list ";
                 }
-            }
+        }
         
     }
 }
