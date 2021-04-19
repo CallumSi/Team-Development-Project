@@ -62,5 +62,11 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VPPayment.aspx");
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            //redirect back to cart
+            Response.Redirect("VPViewCart.aspx");
+        }
     }
 }

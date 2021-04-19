@@ -183,14 +183,17 @@
     <Content Include="VMViewCart.aspx" />
     <Content Include="VPCustomerDelete.aspx" />
     <Content Include="VPCustomerList.aspx" />
+    <Content Include="VPCustomerPhoneList.aspx" />
+    <Content Include="VPCustomerWelcome.aspx" />
     <Content Include="VPDefault.aspx" />
     <Content Include="VPDeliveryList.aspx" />
     <Content Include="VPPayment.aspx" />
     <Content Include="VPPhoneDelete.aspx" />
     <Content Include="VPPhoneList.aspx" />
-    <Content Include="VPPhoneView.aspx" />
+    <Content Include="VPPhoneViewer.aspx" />
     <Content Include="VPStaffDelete.aspx" />
     <Content Include="VPStaffList.aspx" />
+    <Content Include="VPStafforCustomerSelection.aspx" />
     <Content Include="VPThankYouConfirmation.aspx" />
     <Content Include="VPViewCart.aspx" />
     <Content Include="Web.config" />
@@ -969,6 +972,20 @@
     <Compile Include="VPCustomerList.aspx.designer.cs">
       <DependentUpon>VPCustomerList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VPCustomerPhoneList.aspx.cs">
+      <DependentUpon>VPCustomerPhoneList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerPhoneList.aspx.designer.cs">
+      <DependentUpon>VPCustomerPhoneList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPCustomerWelcome.aspx.cs">
+      <DependentUpon>VPCustomerWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerWelcome.aspx.designer.cs">
+      <DependentUpon>VPCustomerWelcome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VPDefault.aspx.cs">
       <DependentUpon>VPDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1004,12 +1021,12 @@
     <Compile Include="VPPhoneList.aspx.designer.cs">
       <DependentUpon>VPPhoneList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VPPhoneView.aspx.cs">
-      <DependentUpon>VPPhoneView.aspx</DependentUpon>
+    <Compile Include="VPPhoneViewer.aspx.cs">
+      <DependentUpon>VPPhoneViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VPPhoneView.aspx.designer.cs">
-      <DependentUpon>VPPhoneView.aspx</DependentUpon>
+    <Compile Include="VPPhoneViewer.aspx.designer.cs">
+      <DependentUpon>VPPhoneViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPStaffDelete.aspx.cs">
       <DependentUpon>VPStaffDelete.aspx</DependentUpon>
@@ -1024,6 +1041,13 @@
     </Compile>
     <Compile Include="VPStaffList.aspx.designer.cs">
       <DependentUpon>VPStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPStafforCustomerSelection.aspx.cs">
+      <DependentUpon>VPStafforCustomerSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPStafforCustomerSelection.aspx.designer.cs">
+      <DependentUpon>VPStafforCustomerSelection.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPThankYouConfirmation.aspx.cs">
       <DependentUpon>VPThankYouConfirmation.aspx</DependentUpon>
