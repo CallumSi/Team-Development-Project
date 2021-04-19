@@ -11,8 +11,8 @@ namespace VirginFrontEnd
 
     public partial class VMAdminForgotPassword : System.Web.UI.Page
     {
-        private clsVMAdminSecurity mSec;
-        public clsVMAdminSecurity Sec
+        private clsForumAdminSecurity mSec;
+        public clsForumAdminSecurity Sec
         {
             get
             {
@@ -22,7 +22,7 @@ namespace VirginFrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            mSec = new clsVMAdminSecurity();
+            mSec = new clsForumAdminSecurity();
 
         }
 
@@ -37,7 +37,7 @@ namespace VirginFrontEnd
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VMAdminLogIn.aspx");
+            Response.Redirect("VMAdminLogin.aspx");
         }
     }
 }

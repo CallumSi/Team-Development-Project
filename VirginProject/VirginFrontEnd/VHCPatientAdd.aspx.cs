@@ -118,6 +118,7 @@ namespace VirginFrontEnd
             cbPatient_Status.Checked = Convert.ToBoolean(AllPatients.ThisPatient.Patient_Status);
 
         }
+
         //Close Button
         protected void btnClose_Click(object sender, EventArgs e)
         {

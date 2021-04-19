@@ -35,22 +35,19 @@
             <asp:Button ID="btnListClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnListClose_Click" />
 
             <%--BUTTON: DISPLAY ALL STAFF--%>
-            <asp:Button ID="btnDisplayAllStaffs" runat="server" CssClass="btnDisplayAllStaffs" Text="Display Full Details" />
+            <asp:Button ID="btnDisplayAllStaffs" runat="server" CssClass="btnDisplayAllStaffs" Text="Display Full Details" OnClick="btnDisplayAllStaffs_Click" />
 
             <%--BUTTON: APPLY STAFF FILTER--%>
-            <asp:Button ID="btnStaffApplyFilter" runat="server" CssClass="btnStaffApplyFilter" Text="Apply Filter" />
+            <asp:Button ID="btnStaffApplyFilter" runat="server" CssClass="btnStaffApplyFilter" Text="Apply Filter" OnClick="btnStaffApplyFilter_Click" />
 
             <%--LABEL: FILTER STAFF--%>
             <asp:Label ID="lblFilterStaff" runat="server" CssClass="lblFilterStaff" Text="Filter By Staff : "></asp:Label>
 
             <%--BUTTON: EDIT STAFF--%>
-            <asp:Button ID="btnEditStaff" runat="server" CssClass="EditStaff" Text="Edit Record" />
+            <asp:Button ID="btnEditStaff" runat="server" CssClass="EditStaff" Text="Edit Record" OnClick="btnEditStaff_Click" />
 
             <%--BUTTON: DELETE STAFF--%>
-            <asp:Button ID="btnDeleteStaff" runat="server" CssClass="DeleteStaff" Text="Delete Record" />
-            <%--BUTTON: TOTAL NUMBER OF RECORD/S--%>
-            <asp:Button ID="btnTotalRecords" runat="server" CssClass="btnTotalRecords" Text="No.Record/s"/>
-
+            <asp:Button ID="btnDeleteStaff" runat="server" CssClass="DeleteStaff" Text="Delete Record" OnClick="btnDeleteStaff_Click" />
         </article>
 
         <%--FOOTER SECTION--%>

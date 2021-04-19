@@ -40,6 +40,8 @@
         <footer>
             <div id="FooterText">
                 © 2021 Virgin Media | All Rights Reserved
-            </form>
+            </div>
+        </footer>
+    </form>
 </body>
 </html>

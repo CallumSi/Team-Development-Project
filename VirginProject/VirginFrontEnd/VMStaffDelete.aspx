@@ -15,13 +15,15 @@
             <h1>Virgin Movies Staff Delete</h1>
         </header>
         <asp:Label ID="lblDeleteConfirmation" runat="server" Text="Are you sure you want to delete this staff?" CssClass="lblDeleteStafflabel"></asp:Label>
-        <asp:Button ID="btnYes" runat="server" Text="YES" CssClass="btnYesDeleteStaff" OnClick="btnYes_Click"/>
+        <asp:Button ID="btnYes" runat="server" Text="YES" CssClass="btnYesDeleteStaff" OnClick="btnYes_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelDeleteStaff" OnClick="btnNo_Click" />
         <nav>
-            <asp:Button ID="btnAddMovie" CssClass="btnStaffAddMovie" runat="server" Text="Staff List Movie" OnClick="btnAddMovie_Click" />
-            <asp:Button ID="btnUpdateMovie" CssClass="btnStaffUpdateMovie" runat="server" Text="Customer List" OnClick="btnUpdateMovie_Click"  />
-            <asp:Button ID="btnDeleteMovie" CssClass="btnVMStaffDeleteMovie" runat="server" Text="Movie List" OnClick="btnDeleteMovie_Click" />
-            <asp:Button ID="btnCustomerList" CssClass="btnStaffMovieCustomerList" runat="server" Text="Log Out" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click"/>
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
+            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click"  />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

@@ -18,18 +18,18 @@ namespace VirginFrontEnd
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
             //create an instance of the security class
-            clsVMAdminSecurity Sec = new clsVMAdminSecurity();
+            clsForumAdminSecurity Sec = new clsForumAdminSecurity();
             //get the new users details
-            string VMAdminUsername = txtUsername.Text;
-            string VMAdminPassword = txtPassword.Text;
-            string VMPasswordConfirm = txtPasswordConfirm.Text;
+            string AdminUserName = txtUsername.Text;
+            string AdminPassword = txtPassword.Text;
+            string PasswordConfirm = txtPasswordConfirm.Text;
             string SecretMessage = txtSecret.Text;
 
             //try to sign up the new user
-            lblError.Text = Sec.AdminSignUp(VMAdminUsername, VMAdminPassword, VMPasswordConfirm, SecretMessage);
+            lblError.Text = Sec.AdminSignUp(AdminUserName, AdminPassword, PasswordConfirm, SecretMessage);
             if (lblError.Text == "")
             {
-                Response.Redirect("VMAdminLogIn.aspx");
+                Response.Redirect("VMAdminLogin.aspx");
 
             }
             else

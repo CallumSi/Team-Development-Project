@@ -1,39 +1,34 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VMPaymentDelete.aspx.cs" Inherits="VirginFrontEnd.VMPaymentDelete" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link href="VirginProject.css" rel="stylesheet">
+    <title>Virgin Movies Payment Delete</title>
+    <link href="VMMovie.css" rel="stylesheet">
 </head>
 <body>
-	<form id="form1" runat="server">
-		<header>
-			<h2>Virgin Media</h2>
-		</header>
-		<article>
-			<ul>
-				<li>
-                   
-				<li></li>
-			</ul><br>
-			<ul>
-				<li><asp:Label ID="lblPaymentDelete" runat="server" Text="ARE YOU SURE YOU WANT TO DELETE THIS PAYMENT?" style="z-index: 1; left: 500px; top: 108px; position: absolute; width: 515px; text-align: center;" BorderStyle="None" Font-Bold="True" ForeColor="Red"></asp:Label></li>
-				<li></li>
-				<li><asp:Button ID="btnYes" runat ="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 271px; top: 137px; position: absolute; width: 111px" Text="YES" OnClick="btnYes_Click" /> 
-                    <asp:Button ID="btnNo" runat ="server" BorderStyle="Solid" Font-Bold="True" style="z-index: 1; left: 471px; top: 137px; position: absolute; width: 111px" Text="NO"/>
+    <form id="form1" runat="server">
+        <header>
+            <h2>Virgin Movies Payment Delete</h2>
+        </header>
 
-				</li>
-                </ul>
-		</article>
-		<nav>
-			Navigation links here
-		</nav>
-		<footer>
-			<div id="FooterText">
-				© 2021 Virgin Media | All Rights Reserved
-			</div>
-		</footer>
-	</form>
+        <asp:Label ID="lblPaymentDelete" runat="server" Text="ARE YOU SURE YOU WANT TO DELETE THIS PAYMENT?" CssClass="lblVMPaymentDelete"></asp:Label>
+        <asp:Button ID="btnYes" runat="server" Text="YES" CssClass="btnVMPaymentYes" OnClick="btnYes_Click" />
+        <asp:Button ID="btnNo" runat="server" Text="NO" CssClass="btnVMPaymentNo" OnClick="btnNo_Click" />
+        <nav>
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
+            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+        </nav>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+    </form>
 </body>
 </html>
 

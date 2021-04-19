@@ -71,13 +71,16 @@
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="AnVMCustomerEdit.aspx" />
     <Content Include="AnVMPayment.aspx" />
     <Content Include="AnVMStaff.aspx" />
     <Content Include="AnVPStaff.aspx" />
     <Content Include="AnVPCustomer.aspx" />
+    <Content Include="CheckAdmin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminForgotPassword.aspx" />
+    <Content Include="ForumAdminHome.aspx" />
     <Content Include="ForumAdminHomePage.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAdminLogIn.aspx" />
@@ -89,6 +92,7 @@
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumCommentDelete.aspx" />
     <Content Include="ForumCommentList.aspx" />
+    <Content Include="ForumHome.aspx" />
     <Content Include="ForumPostDelete.aspx" />
     <Content Include="ForumPostList.aspx" />
     <Content Include="ForumStyleSheet.css" />
@@ -127,6 +131,9 @@
     <Content Include="VCHHireList.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
+    <Content Include="VCHStyleCustomer.css" />
+    <Content Include="VHCAppointment.css" />
+    <Content Include="VHCAppointmentList.aspx" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
     <Content Include="VHCPatientDelete.aspx" />
@@ -153,6 +160,7 @@
     <Content Include="VirginSignUpSuccess.aspx" />
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMAdmin.css" />
+    <Content Include="VMAdminCheckPin.aspx" />
     <Content Include="VMAdminForgotPassword.aspx" />
     <Content Include="VMAdminLogin.aspx" />
     <Content Include="VMAdminSignUp.aspx" />
@@ -235,6 +243,13 @@
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="AnVMCustomerEdit.aspx.cs">
+      <DependentUpon>AnVMCustomerEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMCustomerEdit.aspx.designer.cs">
+      <DependentUpon>AnVMCustomerEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnVMPayment.aspx.cs">
       <DependentUpon>AnVMPayment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +278,13 @@
     <Compile Include="AnVPCustomer.aspx.designer.cs">
       <DependentUpon>AnVPCustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CheckAdmin.aspx.cs">
+      <DependentUpon>CheckAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckAdmin.aspx.designer.cs">
+      <DependentUpon>CheckAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -283,6 +305,13 @@
     </Compile>
     <Compile Include="ForumAdminForgotPassword.aspx.designer.cs">
       <DependentUpon>ForumAdminForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminHome.aspx.cs">
+      <DependentUpon>ForumAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminHome.aspx.designer.cs">
+      <DependentUpon>ForumAdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAdminHomePage.aspx.cs">
       <DependentUpon>ForumAdminHomePage.aspx</DependentUpon>
@@ -360,6 +389,13 @@
     </Compile>
     <Compile Include="ForumCommentList.aspx.designer.cs">
       <DependentUpon>ForumCommentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumHome.aspx.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumHome.aspx.designer.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumPostDelete.aspx.cs">
       <DependentUpon>ForumPostDelete.aspx</DependentUpon>
@@ -628,6 +664,13 @@
     <Compile Include="VCHStaffList.aspx.designer.cs">
       <DependentUpon>VCHStaffList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VHCAppointmentList.aspx.cs">
+      <DependentUpon>VHCAppointmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCAppointmentList.aspx.designer.cs">
+      <DependentUpon>VHCAppointmentList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VHCPatientAdd.aspx.cs">
       <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -767,6 +810,13 @@
     </Compile>
     <Compile Include="VirginUserList.aspx.designer.cs">
       <DependentUpon>VirginUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMAdminCheckPin.aspx.cs">
+      <DependentUpon>VMAdminCheckPin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminCheckPin.aspx.designer.cs">
+      <DependentUpon>VMAdminCheckPin.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMAdminForgotPassword.aspx.cs">
       <DependentUpon>VMAdminForgotPassword.aspx</DependentUpon>

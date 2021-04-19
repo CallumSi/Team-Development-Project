@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <header>Virgin Movies Staff or Customer</header>
+        <header><h2> Virgin Movies Staff or Customer</h2></header>
 
         <asp:Label ID="lblOption" runat="server" Text="Please select from the options below:" CssClass="lblOption"></asp:Label>
         <asp:Button ID="btnVMAStaff" runat="server" Text="Staff" CssClass="btnVMAStaffList" OnClick="btnVMAStaff_Click" />

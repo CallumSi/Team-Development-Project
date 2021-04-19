@@ -29,7 +29,7 @@ namespace VirginFrontEnd
             //set the name of the primary key
             lstForumAdmin.DataValueField = "AdminID";
             //set the data field to display
-            lstForumAdmin.DataTextField = "AdminUserName";
+            lstForumAdmin.DataTextField = "AdminFirstName";
             //bind the data to the list
             lstForumAdmin.DataBind();
             //clear the list box
@@ -51,15 +51,22 @@ namespace VirginFrontEnd
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            //var to store the primary key value of the record to be deleted
             Int32 AdminID;
+            //if a record has been selected from the list
             if (lstForumAdmin.SelectedIndex != -1)
             {
+                //get the primary key value of the record to delete
                 AdminID = Convert.ToInt32(lstForumAdmin.SelectedValue);
+                //store the data in the session object
                 Session["AdminID"] = AdminID;
+                //redirect to the delete page
                 Response.Redirect("ForumAdminDelete.aspx");
             }
+            //if no recod has been selected
             else
             {
+                //display an error
                 lblError.Text = "Please select a record to delete.";
             }
         }
@@ -91,27 +98,21 @@ namespace VirginFrontEnd
         protected void btnApply_Click1(object sender, EventArgs e)
         {
             //display only usernames
-            DisplayFilterAdminUser(txtFilterFirstName.Text);
+            DisplayFilterAdminFirstName(txtFilterFirstName.Text);
         }
 
-        protected void btnDisplayAll_Click1(object sender, EventArgs e)
-        {
-            //display all username
-            DisplayAdmin();
-        }
-        Int32 DisplayFilterAdminUser(string AdminUser)
+  
+        Int32 DisplayFilterAdminFirstName(string AdminfirstName)
         {
             //int to store the primary key
             Int32 AdminID;
-            //string username 
-            string AdminUserName;
             //string firstname
             string AdminFirstName;
             //string last name
             string AdminLastName;
             //create an instance of the user collection class
             clsForumAdminCollection AdminBook = new clsForumAdminCollection();
-            AdminBook.ReportByAdminUsername(AdminUser);
+            AdminBook.ReportByAdminFirstName(AdminfirstName);
             //count of records
             Int32 RecordCount;
             //index for the loop
@@ -125,14 +126,12 @@ namespace VirginFrontEnd
             {
                 //get the User id
                 AdminID = AdminBook.AdminList[Index].AdminID;
-                //get the username 
-                AdminUserName = AdminBook.AdminList[Index].AdminUserName;
                 //get the first name
                 AdminFirstName = AdminBook.AdminList[Index].AdminFirstName;
                 //get the last name
                 AdminLastName = AdminBook.AdminList[Index].AdminLastName;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(AdminUserName + "" + AdminFirstName + "" + AdminLastName, AdminID.ToString());
+                ListItem NewEntry = new ListItem( AdminFirstName + "" + AdminLastName, AdminID.ToString());
                 //add the user to the list
                 lstForumAdmin.Items.Add(NewEntry);
                 //move the indext to the next record

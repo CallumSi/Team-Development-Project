@@ -186,7 +186,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
             //apply a blank string(should return all records)
-            FilteredAdmins.ReportByAdminUsername("");
+            FilteredAdmins.ReportByAdminFirstName("");
             //test to see that the two values are the same
             Assert.AreEqual(AllAdmins.Count, FilteredAdmins.Count);
         }
@@ -196,7 +196,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
             //apply a username that does not exist
-            FilteredAdmins.ReportByAdminUsername("xxxxx");
+            FilteredAdmins.ReportByAdminFirstName("xxxxx");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredAdmins.Count);
         }
@@ -208,7 +208,7 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredAdmins.ReportByAdminUsername("TestData");
+            FilteredAdmins.ReportByAdminFirstName("Jake");
             //check that the correct number of records 
             if (FilteredAdmins.Count == 2)
             {

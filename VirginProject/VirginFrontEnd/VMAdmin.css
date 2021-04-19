@@ -300,3 +300,65 @@ footer {
     top: 150px;
     left: 30px;
 }
+
+/*######### ADMIN CHECK PIN ###########*/
+.lblCheckPin {
+    left: 1020px;
+    top: 270px;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    width: 150px;
+    color: black;
+}
+
+.lblAdminPin {
+    position: fixed;
+    top: 380px;
+    left: 890px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+}
+
+.txtAdminPin {
+    position: fixed;
+    top: 380px;
+    left: 1010px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+}
+
+.btnConfirmPin {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 450px;
+    left: 1010px;
+}
+
+.btnBackHome {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    top: 450px;
+    left: 1150px;
+}
+
+.lblAdminPinError {
+    position: fixed;
+    top: 520px;
+    left: 890px;
+    width: 450px;
+    color: black;
+    font-weight: bold;
+}

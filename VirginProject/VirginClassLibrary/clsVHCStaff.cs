@@ -223,7 +223,7 @@ namespace VirginClassLibrary
 
         }
 
-        public string Valid (string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role, string Staff_Status)
+        public string Valid (string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role)
         {   
             //create a string variable to store data values
             String Error = "";
