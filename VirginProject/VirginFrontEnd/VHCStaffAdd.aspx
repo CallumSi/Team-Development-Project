@@ -45,7 +45,7 @@
 
             <%--STAFF PASSWORD--%>
             <asp:Label ID="lblStaff_Password" runat="server" CssClass="lblStaff_Password" Text="STAFF PASSWORD : "></asp:Label>
-            <asp:TextBox ID="txtStaff_Password" runat="server" CssClass="txtStaff_Password" Font-Italic="False"></asp:TextBox>
+            <asp:TextBox ID="txtStaff_Password" runat="server" CssClass="txtStaff_Password" Font-Italic="False" MaxLength="50"></asp:TextBox>
 
             <%--STAFF ROLE--%>
             <asp:Label ID="lblStaff_Role" runat="server" CssClass="lblStaff_Role" Text="STAFF ROLE : "></asp:Label>
@@ -53,16 +53,16 @@
 
             <%--STAFF STATUS--%>
             <asp:Label ID="lblStaff_Status" runat="server" CssClass="lblStaff_Status" Text="PLEASE TICK TO ACCEPT THE TERMS & CONDITIONS "></asp:Label>
-            <asp:CheckBox ID="cbStaff_Status" runat="server" CssClass="cbStaff_Status"/>
+            <asp:CheckBox ID="cbStaff_Status" runat="server" CssClass="cbStaff_Status" />
 
             <%--BUTTON: CLOSE--%>
-            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click"/>
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
 
             <%--LABEL:ERROR MESSAGE--%>
             <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
 
             <%--BUTTON: SUBMIT--%>
-            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT"/>
+            <asp:Button ID="btnSubmit" runat="server" CssClass="btnSubmit" Text="SUBMIT" OnClick="btnSubmit_Click" />
 
         </article>
 

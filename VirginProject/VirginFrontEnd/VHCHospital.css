@@ -101,7 +101,7 @@ footer {
 }
 
 /*List Hospital Buttons*/
-.EditHospital, .DeleteHospital, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords, .btnYes, .btnNo {
+.EditHospital, .DeleteHospital, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnYes, .btnNo {
     z-index: 1;
     width: 250px;
     height: 70px;
@@ -112,8 +112,8 @@ footer {
 
 /* Hover Effect*/
 .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, 
-.btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover, 
-.btnAddPatient:hover, .btnListPatients:hover {
+.btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, 
+.btnAddPatient:hover, .btnListPatients:hover, .btnAddStaff:hover, .btnListStaffs:hover{
     background-color: #27183D;
     color: white;
 }

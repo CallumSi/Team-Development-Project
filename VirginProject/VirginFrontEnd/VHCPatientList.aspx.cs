@@ -25,17 +25,6 @@ namespace VirginFrontEnd
 
         private void DisplayPatient()
         {
-            /*  //create an instance of the patient class
-            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
-            //set the data source to the list of patient in the collection 
-            lstPatient.DataSource = AllPatients.PatientList;
-            //set the name of the primary key 
-            lstPatient.DataValueField = "Patient_ID";
-            //set the data field to display 
-            lstPatient.DataTextField = "Patient_Firstname";
-            //bind the data to the list
-            lstPatient.DataBind();*/
-
             //BEFORE FILTER SETTINGS
             Int32 Patient_ID; //Var to store the primary key  
             String Patient_Title; //Var to store the Patient Title
@@ -113,7 +102,7 @@ namespace VirginFrontEnd
         //Display All Button
         protected void btnDisplayAllPatients_Click(object sender, EventArgs e)
         {
-        
+
             //display all patients
             DisplayPatient();
         }
