@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForumHome.aspx.cs" Inherits="VirginFrontEnd.ForumHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForumAdminHome.aspx.cs" Inherits="VirginFrontEnd.ForumAdminHome" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  <title>ForumUserHomePage</title>
+   <title>ForumAdminHomePage</title>
    <link href="ForumStyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +20,7 @@
             <ul>
 
                 <li>
-                    <asp:Button ID="btnForum" runat="server" Style="z-index: 1;" Text="Go To Forum" CssClass="Button" OnClick="btnForum_Click" />
+                    <asp:Button ID="btnAdminPage" runat="server" Style="z-index: 1;" Text="Go To Admin Home Page" CssClass="Button" OnClick="btnAdminPage_Click" />
 
                 </li>
                 <li>

@@ -41,7 +41,6 @@ namespace VirginFrontEnd
 
             }
             else
-
             {
                 //otherwise show any errors
                 lblError.Text = "Failed Login";

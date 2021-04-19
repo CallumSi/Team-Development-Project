@@ -121,7 +121,7 @@ namespace VirginClassLibrary
                 mUserusername = value;
             }
         }
-        //public property for User username
+        //public property for OriginalID
         public int OriginalID
         {
             get

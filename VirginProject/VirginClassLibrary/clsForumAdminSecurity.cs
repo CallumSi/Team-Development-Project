@@ -148,6 +148,7 @@ namespace VirginClassLibrary
                 return false;
             }
         }
+    
         public string ChangePassword(string AdminUserName, string Password1, string Password2, string Secret)
         {
             //used to change a users password

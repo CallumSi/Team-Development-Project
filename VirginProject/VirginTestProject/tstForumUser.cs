@@ -12,9 +12,7 @@ namespace VirginTestProject
         string UserFirstName = "Qasim";
         string UserLastName = "Mohamed";
         string UserEmail = "MQ@gmail.com";
-        string UserPassword = "QQ55";
         string UserPhoneNumber = "12345678912";
-        string Userusername = "QMohamed02";
 
         [TestMethod]
         public void InstantiationOK()

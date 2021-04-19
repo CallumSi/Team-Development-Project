@@ -79,10 +79,7 @@ namespace VirginFrontEnd
             return RecordCount;
         }
 
-        protected void btnDisplayAll_Click(object sender, EventArgs e)
-        {
-            DisplayUser();
-        }
+  
 
         protected void btnApply_Click1(object sender, EventArgs e)
         {

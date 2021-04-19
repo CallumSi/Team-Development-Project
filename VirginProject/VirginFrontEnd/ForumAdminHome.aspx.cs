@@ -8,50 +8,52 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class ForumHome : System.Web.UI.Page
+    public partial class ForumAdminHome : System.Web.UI.Page
     {
         //variable to the user and orginial id
         Int32 OriginalID;
-        Int32 UserID;
+        Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the user to be processed 
-            OriginalID = Convert.ToInt32(Session["UserID"]);
+            OriginalID = Convert.ToInt32(Session["AdminID"]);
 
             //create an instance of the user book
-            clsForumUserCollection Userbook = new clsForumUserCollection();
+            clsForumAdminCollection Adminbook = new clsForumAdminCollection();
             //find the user record
-            if (Userbook.ThisUser.FindOriginal(OriginalID) == false)
+            if (Adminbook.ThisAdmin.FindOriginal(OriginalID) == false)
             {
                 //change button text to create account
                 btnNewComer.Text = "Create An Account";
-                btnForum.Visible = false;
-                UserID = -1;
+                btnAdminPage.Visible = false;
+                AdminID = -1;
             }
             else
             {
                 //change button for edit user details
                 btnNewComer.Text = "Edit User Account";
-                Userbook.ThisUser.FindOriginal(OriginalID);
-                UserID = Userbook.ThisUser.UserID;
+                Adminbook.ThisAdmin.FindOriginal(OriginalID);
+                AdminID = Adminbook.ThisAdmin.AdminID;
 
             }
         }
 
-        protected void btnForum_Click(object sender, EventArgs e)
-        {
-            //store user id in session object 
-            Session["UserID"] = UserID;
-            Response.Redirect("ForumPostList.aspx");
-        }
+      
 
         protected void btnNewComer_Click(object sender, EventArgs e)
         {
             //store user id and orginial id in session object 
-            Session["UserID"] = UserID;
+            Session["AdminID"] = AdminID;
             Session["OriginalID"] = OriginalID;
             //redirect to edit user details page
-            Response.Redirect("ForumAnUser.aspx");
+            Response.Redirect("ForumAnAdmin.aspx");
+        }
+
+        protected void btnAdminPage_Click(object sender, EventArgs e)
+        {
+            //store user id in session object 
+            Session["AdminID"] = AdminID;
+            Response.Redirect("ForumAdminHomePage.aspx");
         }
     }
 }

@@ -69,9 +69,8 @@ namespace VirginFrontEnd
         {
             //create an instance of the User book
             clsForumUserCollection UserBook = new clsForumUserCollection();
-            string Error = "";
             //validate the data on the web form
-            Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtEmailAddress.Text, /*txtPassword.Text,*/ txtPhoneNumber.Text/*, txtUsername.Text*/);
+            String Error = UserBook.ThisUser.Valid(txtFirstName.Text, txtLastName.Text, txtEmailAddress.Text, /*txtPassword.Text,*/ txtPhoneNumber.Text/*, txtUsername.Text*/);
             //if the data is OK then add it to the object
             if (Error == "")
             {
