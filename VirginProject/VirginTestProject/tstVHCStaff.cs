@@ -177,7 +177,7 @@ namespace VirginTestProject
             string Staff_Role = "Doctor"; // (7) 
             string Staff_Status = "True"; // (8)
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
 
@@ -200,7 +200,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -217,7 +217,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -235,7 +235,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(3, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -252,7 +252,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(4, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -269,7 +269,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(5, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -286,7 +286,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(6, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -303,7 +303,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(4, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -320,7 +320,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Title = Staff_Title.PadLeft(10, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -339,7 +339,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Staff_Firstname = "";
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -356,7 +356,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -373,7 +373,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -390,7 +390,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -407,7 +407,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -424,7 +424,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -441,7 +441,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(26, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -458,7 +458,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Firstname = Staff_Firstname.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -478,7 +478,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Staff_Lastname = "";
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -495,7 +495,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -512,7 +512,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -529,7 +529,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -546,7 +546,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -563,7 +563,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -580,7 +580,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(26, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -597,7 +597,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Lastname = Staff_Lastname.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -616,7 +616,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             string Staff_Role = "";
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -633,7 +633,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(1, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -650,7 +650,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(2, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -667,7 +667,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -684,7 +684,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -701,7 +701,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -718,7 +718,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(26, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -735,7 +735,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Role = Staff_Role.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -756,7 +756,7 @@ namespace VirginTestProject
             //create some test data to pass to the method 
             Staff_Email = Staff_Email.PadLeft(10, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -773,7 +773,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(11, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -790,7 +790,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(12, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -807,7 +807,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -824,7 +824,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -841,7 +841,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -858,7 +858,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(31, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -875,7 +875,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Email = Staff_Email.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -897,7 +897,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(7, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -914,7 +914,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(8, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -932,7 +932,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(9, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -949,7 +949,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -966,7 +966,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -983,7 +983,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1000,7 +1000,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(29, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1017,7 +1017,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Username = Staff_Username.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1038,7 +1038,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(7, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1055,7 +1055,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(8, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1073,7 +1073,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(9, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1090,7 +1090,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(49, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1107,7 +1107,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(50, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1124,7 +1124,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(51, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
@@ -1141,7 +1141,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(29, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreEqual(Error, "");
         }
@@ -1158,7 +1158,7 @@ namespace VirginTestProject
             //create some test data to test the valid method 
             Staff_Password = Staff_Password.PadLeft(100, 'A');
             //invoke the method 
-            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role, Staff_Status);
+            Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
