@@ -130,6 +130,7 @@
     <Content Include="VCHHireList.aspx" />
     <Content Include="VCHStaffDelete.aspx" />
     <Content Include="VCHStaffList.aspx" />
+    <Content Include="VCHStyleCustomer.css" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
     <Content Include="VHCPatientDelete.aspx" />

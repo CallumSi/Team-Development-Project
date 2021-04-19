@@ -19,15 +19,15 @@
         <asp:Label ID="lblCarFuel" runat="server" style="z-index: 1; left: 200px; top: 345px; position: absolute" Text="Fuel Type:"></asp:Label>
         <asp:Label ID="lblCarPrice" runat="server" style="z-index: 1; left: 200px; top: 390px; position: absolute" Text="Hire Price (£):"></asp:Label>
         <asp:Label ID="lblCarRegistration" runat="server" style="z-index: 1; left: 200px; top: 440px; position: absolute" Text="Registration:"></asp:Label>
-        <asp:TextBox ID="txtCarMake" runat="server" style="z-index: 1; left: 360px; top: 100px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarModel" runat="server" style="z-index: 1; left: 360px; top: 150px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarMake" runat="server" style="z-index: 1; left: 445px; top: 100px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarModel" runat="server" style="z-index: 1; left: 445px; top: 150px; position: absolute"></asp:TextBox>
         </span>
-        <asp:TextBox ID="txtCarEngine" runat="server" style="z-index: 1; left: 360px; top: 195px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarBody" runat="server" style="z-index: 1; left: 360px; top: 245px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarColour" runat="server" style="z-index: 1; left: 360px; top: 295px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarFuel" runat="server" style="z-index: 1; left: 360px; top: 345px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 360px; top: 390px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtCarRegistration" runat="server" style="z-index: 1; left: 360px; top: 440px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarEngine" runat="server" style="z-index: 1; left: 445px; top: 195px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarBody" runat="server" style="z-index: 1; left: 445px; top: 245px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarColour" runat="server" style="z-index: 1; left: 445px; top: 295px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarFuel" runat="server" style="z-index: 1; left: 445px; top: 345px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 445px; top: 390px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtCarRegistration" runat="server" style="z-index: 1; left: 445px; top: 440px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 200px; top: 495px; position: absolute" Text="[lblError]"></asp:Label>
         <asp:Button ID="btnHire" runat="server" OnClick="btnHire_Click" style="z-index: 1; left: 200px; top: 545px; position: absolute" Text="Hire" />
         <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 275px; top: 545px; position: absolute" Text="Back" OnClick="btnBack_Click" />

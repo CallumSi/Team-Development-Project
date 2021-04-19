@@ -19,15 +19,15 @@
         <asp:Label ID="lblStaffEmail" runat="server" style="z-index: 1; left: 200px; top: 345px; position: absolute" Text="Email:"></asp:Label>
         <asp:Label ID="lblStaffPassword" runat="server" style="z-index: 1; left: 200px; top: 390px; position: absolute" Text="Password:"></asp:Label>
         <asp:Label ID="lblStaffPhoneNumber" runat="server" style="z-index: 1; left: 200px; top: 440px; position: absolute" Text="Phone Number:"></asp:Label>
-        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 360px; top: 100px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 360px; top: 150px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 445px; top: 100px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 445px; top: 150px; position: absolute"></asp:TextBox>
         </span>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 360px; top: 195px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPostcode" runat="server" style="z-index: 1; left: 360px; top: 245px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 360px; top: 295px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 360px; top: 345px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 360px; top: 390px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPhonenumber" runat="server" style="z-index: 1; left: 360px; top: 440px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 445px; top: 195px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPostcode" runat="server" style="z-index: 1; left: 445px; top: 245px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 445px; top: 295px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 445px; top: 345px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 445px; top: 390px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPhonenumber" runat="server" style="z-index: 1; left: 445px; top: 440px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 200px; top: 495px; position: absolute" Text="[lblError]"></asp:Label>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 200px; top: 545px; position: absolute" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 255px; top: 545px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
