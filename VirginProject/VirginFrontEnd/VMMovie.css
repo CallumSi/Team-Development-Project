@@ -55,8 +55,7 @@ footer {
 
 /*Buttons*/
 .btnUpdateMovie, .btnDeleteMovie, .btnViewCart, .btnStaffHome,
-.btnDeleteHome, .btnDeleteViewCart, .btnStaffAddMovie,
-.btnStaffUpdateMovie, .btnVMStaffDeleteMovie, .btnCustomerCart,
+.btnDeleteHome, .btnDeleteViewCart, .btnCustomerCart,
 .btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
 .btnStaffMovie, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
 .btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut, .btnVMPaymentList {
@@ -99,32 +98,10 @@ footer {
     top: 550px;
     left: 30px;
 }
-}
 
 .btnVMStaffLogOut {
     position: fixed;
     top: 650px;
-    left: 30px;
-}
-
-
-
-/*######## STAFF MOVIE NAV BUTTONS #########*/
-.btnStaffAddMovie {
-    position: fixed;
-    top: 150px;
-    left: 30px;
-}
-
-.btnStaffUpdateMovie {
-    position: fixed;
-    top: 250px;
-    left: 30px;
-}
-
-.btnVMStaffDeleteMovie {
-    position: fixed;
-    top: 350px;
     left: 30px;
 }
 
@@ -207,7 +184,52 @@ footer {
     color: black;
 }
 
-.btnApplyFilter  {
+.lblError {
+    z-index: 1;
+    width: 400px;
+    position: fixed;
+    top: 685px;
+    left: 730px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+/*######## STAFF MOVIE BUTTONS #########*/
+.btnStaffAddMovie {
+    z-index: 1;
+    width: 160px;
+    position: fixed;
+    top: 565px;
+    left: 700px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnStaffUpdateMovie {
+    z-index: 1;
+    width: 160px;
+    position: fixed;
+    top: 565px;
+    left: 895px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnVMStaffDeleteMovie {
+    z-index: 1;
+    width: 170px;
+    position: fixed;
+    top: 565px;
+    left: 1095px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.btnApplyFilter {
     z-index: 1;
     width: 100px;
     position: fixed;
@@ -222,19 +244,8 @@ footer {
     z-index: 1;
     width: 170px;
     position: fixed;
-    top: 575px;
-    left: 905px;
-    font-size: medium;
-    font-weight: bold;
-    color: black;
-}
-
-.lblError {
-    z-index: 1;
-    width: 400px;
-    position: fixed;
-    top: 625px;
-    left: 730px;
+    top: 635px;
+    left: 890px;
     font-size: medium;
     font-weight: bold;
     color: black;
@@ -648,6 +659,12 @@ footer {
     color: black;
 }
 
+.lblWelcomeUsername {
+    position: fixed;
+    top: 80px;
+    left: 420px;
+}
+
 .lblUsername{
     position:fixed;
     top:80px; 
@@ -657,8 +674,9 @@ footer {
 
 /*############ CUSTOMER SHOPPING CART ##############*/
 .lstShoppingCart {
-    top: 300px;
-    left: 100px;
+    position:absolute;
+    top: 200px;
+    left: 700px;
     height: 293px;
     width: 553px;
 }
@@ -673,39 +691,89 @@ footer {
 
 .btnContinueShopping {
     position: fixed;
-    top: 700px;
-    left: 300px; 
+    top: 600px;
+    left: 800px; 
 }
 
 .btnVMovieCheckout {
     position: fixed;
-    top: 700px;
-    left: 500px;
+    top: 600px;
+    left: 1000px;
 }
 
 .lblCheckoutError {
     position: fixed;
-    top: 710px;
-    left: 680px;
+    top: 700px;
+    left: 740px;
     width: 500px; 
+    color: black;
 }
 
+.lblVMAshoppingCart {
+    position: fixed;
+    top: 130px;
+    left: 880px;
+    width: 250px;
+    color: black;
+    font-weight: bold;
+
+}
+
+
 /*############# CUSTOMER CHECKOUT ########################*/
-    
 
+.lblVMCheckOut {
+    position: fixed;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    top: 130px;
+    left:880px;
+}
 
+.lblCardDetails {
+    position: fixed;
+    color: black;
+    top: 190px;
+    left: 900px;
+}
 
+.lblVMCardNo {
+    position: fixed;
+    color: black;
+    top: 290px;
+    left: 860px;
+    width: 250px;
+}
 
+.txtVMCardNo {
+    position: fixed;
+    color: black;
+    top: 290px;
+    left: 1000px;
+    width: 250px;
+}
+
+.btnVMCheckout {
+    position:absolute;
+    padding: 2px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 170px;
+    top: 350px;
+    left: 950px;
+}
 /*############# CUSTOMER MOVIE THANKS ########################*/
-
 .MovieThanks {
     position: fixed;
     top: 50%;
     left: 50%;
     width: 250px;
-    font-size:20px;
-    font-weight:bold;
-    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
 }
 
 /*############# VM STAFF LIST ########################*/
@@ -804,7 +872,7 @@ footer {
 
 .btnStaffLogOut {
     position: fixed;
-    top: 450px;
+    top: 550px;
     left: 30px;
 }
 /*############# VM STAFF ADD/UPDATE ########################*/
@@ -1280,4 +1348,118 @@ footer {
     position: fixed;
     left: 1085px;
     top: 450px;
+}
+
+/*########## VM STAFF PAYMENT DELETE ############*/
+
+.lblVMPaymentDelete {
+    position: fixed;
+    left: 925px;
+    top: 350px;
+    color: black;
+    font-weight: bold;
+}
+
+.btnVMPaymentYes {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    left: 975px;
+    top: 400px;
+    color: black;
+}
+
+.btnVMPaymentNo {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 120px;
+    position: fixed;
+    left: 1250px;
+    top: 400px;
+    color: black;
+}
+
+/*########### VM STAFF PAYMENT LIST #############*/
+
+.lblVMPaymentListLabel {
+    position: fixed;
+    left: 910px;
+    top: 145px;
+    color: black;
+    font-weight: bold;
+}
+
+.lblVMFilterPaymentType {
+    left: 770px;
+    top: 195px;
+    position: absolute;
+    width: 200px;
+    color:black;
+}
+
+.txtVMFilterPaymentType {
+    left: 970px;
+    top: 195px;
+    position: absolute;
+    width: 250px;
+}
+
+.lstVMPayment {
+   left: 760px; 
+   top: 230px; 
+   position: absolute;
+   height: 287px; 
+   width: 623px;
+}
+
+.lblVMPaymentError {
+    position: fixed;
+    left: 760px;
+    top: 625px;
+    color: black;
+    width: 500px;
+}
+
+/*################### VM STAFF PAYMMENT PAYMENT BUTTONS #############*/
+.btnAddVMPayment, .btnApplyPaymentFilter, .btnEditVMPayment, .btnDeleteVMPayment, .btnDisplayAllVMPayment {
+    padding: 2px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 100px;
+    position: fixed;
+}
+
+.btnAddVMPayment {
+    top: 540px;
+    left: 760px;
+    right: 979px;
+}
+
+.btnEditVMPayment {
+    top: 540px;
+    left: 940px;
+}
+
+.btnDeleteVMPayment {
+    top: 540px;
+    left: 1110px;
+}
+
+.btnDisplayAllVMPayment {
+    top: 540px;
+    left: 1280px;
+}
+
+.btnApplyPaymentFilter {
+    left: 1240px;
+    top: 192px;
 }

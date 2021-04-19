@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMCustomerDelete {
+    public partial class VMAdminCheckPin {
         
         /// <summary>
         /// form1 control.
@@ -22,93 +22,57 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblVMDeleteCustomer control.
+        /// lblCheckPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVMDeleteCustomer;
+        protected global::System.Web.UI.WebControls.Label lblCheckPin;
         
         /// <summary>
-        /// lblDeleteVMCConfirmation control.
+        /// lblAdminPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeleteVMCConfirmation;
+        protected global::System.Web.UI.WebControls.Label lblAdminPin;
         
         /// <summary>
-        /// btnYes control.
+        /// txtAdminPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnYes;
+        protected global::System.Web.UI.WebControls.TextBox txtAdminPin;
         
         /// <summary>
-        /// btnCancel control.
+        /// btnConfirmPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button btnConfirmPin;
         
         /// <summary>
-        /// btnHome control.
+        /// btnBackHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Button btnBackHome;
         
         /// <summary>
-        /// btnCustomerList control.
+        /// lblAdminPinError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomerList;
-        
-        /// <summary>
-        /// btnStaffMovie control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffMovie;
-        
-        /// <summary>
-        /// btnVMStaffList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVMStaffList;
-        
-        /// <summary>
-        /// btnVMPaymentList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVMPaymentList;
-        
-        /// <summary>
-        /// btnLogOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        protected global::System.Web.UI.WebControls.Label lblAdminPinError;
     }
 }

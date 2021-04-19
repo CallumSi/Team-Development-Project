@@ -14,21 +14,18 @@
         <header>
             <h2>Virgin Movies Shopping Cart </h2>
         </header>
-        <article>
 
-            <asp:Label ID="lblUsername" runat="server" CssClass="lblUsername" Text="Welcome "></asp:Label>
-
-            <asp:ListBox ID="lstShoppingCart" runat="server" CssClass="lstShoppingCart"></asp:ListBox>
-            <ul>
-                <asp:Button ID="btnContinueShopping" CssClass="btnContinueShopping" runat="server" Style="z-index: 1;" Text="Continue Shopping" OnClick="btnContinueShopping_Click" />
-                <asp:Button ID="btnVMovieCheckout" CssClass="btnVMovieCheckout" runat="server" Style="z-index: 1;" Text="Go to Checkout" OnClick="btnVMovieCheckout_Click" />
-                <asp:Label ID="lblError" runat="server" CssClass="lblCheckoutError" Text=""></asp:Label>
-            </ul>
-        </article>
-
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
+        <asp:Label ID="lblVMAshoppingCart" runat="server" Text="YOUR SHOPPING CART" CssClass="lblVMAshoppingCart"></asp:Label>
+        <asp:ListBox ID="lstShoppingCart" runat="server" CssClass="lstShoppingCart"></asp:ListBox>
+        <asp:Button ID="btnContinueShopping" CssClass="btnContinueShopping" runat="server" Text="Continue Shopping" OnClick="btnContinueShopping_Click" />
+        <asp:Button ID="btnVMovieCheckout" CssClass="btnVMovieCheckout" runat="server" Text="Go to Checkout" OnClick="btnVMovieCheckout_Click" />
+        <asp:Label ID="lblError" runat="server" CssClass="lblCheckoutError" Text=""></asp:Label>
         <nav>
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnCustomerHome" OnClick="btnHome_Click" />
             <asp:Button ID="btnViewCart" CssClass="btnCustomerCart" runat="server" Text="View Shopping Cart" OnClick="btnViewCart_Click" />
+            <asp:Label ID="lblCartCount" runat="server" CssClass="lblCartCount" Text=""></asp:Label>
             <asp:Button ID="btnEditAccount" CssClass="btnEditAccount" runat="server" Text="Edit Account Details" OnClick="btnEditAccount_Click" />
             <asp:Button ID="btnLogOut" CssClass="btnCustomerLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>

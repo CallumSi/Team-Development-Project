@@ -21,15 +21,19 @@
         <asp:Button ID="btnYES" runat="server" Text="YES" CssClass="btnMovieDeleteYes" OnClick="btnYES_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnMovieDeleteCancel" OnClick="btnCancel_Click" />
 
-    <nav>
-        <asp:Button ID="btnDeleteHome" CssClass="btnDeleteHome" runat="server" Text="Home" OnClick="btnDeleteHome_Click" />
-    </nav>
+        <nav>
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click"/>
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click"/>
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click"/>
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
+            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click"/>
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+        </nav>
 
-    <footer>
-        <div id="FooterText">
-            © 2021 Virgin Media | All Rights Reserved
-        </div>
-    </footer>
-</form>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            >
+    </form>
 </body>
 </html>

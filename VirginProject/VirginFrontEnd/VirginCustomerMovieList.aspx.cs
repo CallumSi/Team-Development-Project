@@ -127,7 +127,7 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to next page
             Session["VMCustomerID"] = VMCustomerID;
-
+            Response.Redirect("AnVMCustomerEdit.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

@@ -31,6 +31,7 @@ namespace VirginFrontEnd
             //bind data
             lstVMCustomers.DataTextField = "VMCustomerUsername";
             lstVMCustomers.DataBind();
+            lstVMCustomers.Items.Clear();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -158,6 +159,11 @@ namespace VirginFrontEnd
         {
             //redirect to the login page
             Response.Redirect("VirginLogin.aspx");
+        }
+
+        protected void btnVMPaymentList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMPaymentList.aspx");
         }
     }
 }

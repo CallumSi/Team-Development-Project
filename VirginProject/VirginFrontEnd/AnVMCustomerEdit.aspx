@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnVMCustomer.aspx.cs" Inherits="VirginFrontEnd.AnVMCustomer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnVMCustomerEdit.aspx.cs" Inherits="VirginFrontEnd.AnVMCustomerEdit" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,8 @@
         <header>
             <h2>Virgin Movie Customer Details</h2>
         </header>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
         <asp:Label ID="lblAnVMCustomer" runat="server" Text="VIRGIN MOVIES CUSTOMER DETAILS" CssClass="lblAnVMCustomer"></asp:Label>
         <asp:Label ID="lblVMcustomerFirstname" runat="server" Text="CUSTOMER FIRSTNAME: " CssClass="lblVMcustomerFirstname"></asp:Label>
         <asp:Label ID="lblVMcustomerLastname" runat="server" Text="CUSTOMER LASTNAME: " CssClass="lblVMcustomerLastname"></asp:Label>
@@ -28,13 +30,11 @@
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelVMCustomer" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" CssClass="lblErrorVMCustomer"></asp:Label>
         <nav>
-            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
-            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
-            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
-            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
-            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click" />
-            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
-
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnCustomerHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnViewCart" CssClass="btnCustomerCart" runat="server" Text="View Shopping Cart" OnClick="btnViewCart_Click" />
+            <asp:Label ID="lblCartCount" runat="server" CssClass="lblCartCount" Text=""></asp:Label>
+            <asp:Button ID="btnEditAccount" CssClass="btnEditAccount" runat="server" Text="Edit Account Details" OnClick="btnEditAccount_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnCustomerLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

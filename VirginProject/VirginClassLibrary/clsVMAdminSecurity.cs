@@ -15,33 +15,31 @@ namespace VirginClassLibrary
 {
     public class clsVMAdminSecurity
     {
-        public string AdminSignUp(string VMAdminUserName, string VMAdminPassword, string VMPasswordConfirm, string Secret)
+        public string AdminSignUp(string AdminUserName, string AdminPassword, string PasswordConfirm, string Secret)
         {
             //var to store any errors
             string ErrorMsg = "";
             //if the two password match
-            if (VMAdminPassword == VMPasswordConfirm)
+            if (AdminPassword == PasswordConfirm)
             {
 
-                if (CheckPassword(VMAdminPassword) == "")
+                if (CheckPassword(AdminPassword) == "")
                 {
                     //get the hash of the plain text password
-                    string HashPassword = GetHashString(VMAdminPassword + VMAdminUserName);
+                    string HashPassword = GetHashString(AdminPassword + AdminUserName);
                     //add the record to the database
                     clsDataConnection DB = new clsDataConnection();
                     //set the parameter for the stored procesdure
-                    DB.AddParameter("@VMAdminUserName", VMAdminUserName);
-                    DB.AddParameter("@VMAdminPassword", HashPassword);
+                    DB.AddParameter("@AdminUserName", AdminUserName);
+                    DB.AddParameter("@AdminPassword", HashPassword);
                     DB.AddParameter("@SecretMessage", Secret);
                     //execute the query returning the primary key value
-                    DB.Execute("sproc_tblVMAdminSecurity_Insert");
+                    DB.Execute("sproc_tblForumAdminSecurity_Insert");
                 }
                 else
                 {
-                    ErrorMsg = CheckPassword(VMAdminPassword);
+                    ErrorMsg = CheckPassword(AdminPassword);
                 }
-
-
             }
 
             else
@@ -80,7 +78,7 @@ namespace VirginClassLibrary
             }
         }
 
-        private Boolean ContainsNumber(string VMAdminPassword)
+        private Boolean ContainsNumber(string AdminPassword)
         {
             //checks to see if a password contains a number
             //var to indicate found
@@ -97,7 +95,7 @@ namespace VirginClassLibrary
                 //get the char value of the ascii code
                 AChar = (char)Temp;
                 //if the code is in the password
-                if (VMAdminPassword.Contains(AChar) == true)
+                if (AdminPassword.Contains(AChar) == true)
                 {
                     //set found = true
                     Found = true;
@@ -112,18 +110,18 @@ namespace VirginClassLibrary
             return Found;
         }
 
-        public Boolean Login(string VMAdminUserName, string VMAdminPassword)
+        public Boolean Login(string AdminUserName, string AdminPassword)
         {
 
             //convert the plain text password to a hash code
-            VMAdminUserName = GetHashString(VMAdminPassword + VMAdminUserName);
+            AdminPassword = GetHashString(AdminPassword + AdminUserName);
             //find the record matching the user email to a has code
             clsDataConnection AdminAccount = new clsDataConnection();
             //add the parameters
-            AdminAccount.AddParameter("@VMAdminUserName", VMAdminUserName);
-            AdminAccount.AddParameter("@VMAdminPassword", VMAdminUserName);
+            AdminAccount.AddParameter("@AdminUserName", AdminUserName);
+            AdminAccount.AddParameter("@AdminPassword", AdminPassword);
             //execute the query
-            AdminAccount.Execute("sproc_tblVMAdminSecurity_Login");
+            AdminAccount.Execute("sproc_tblForumAdminSecurity_Login");
             if (AdminAccount.Count >= 1)
             {
                 return true;
@@ -134,7 +132,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public string ChangePassword(string VMAdminUserName, string Password1, string Password2, string Secret)
+        public string ChangePassword(string AdminUserName, string Password1, string Password2, string Secret)
         {
             //used to change a users password
             //var to store any errors
@@ -143,9 +141,9 @@ namespace VirginClassLibrary
 
 
             clsDataConnection AdminAccount = new clsDataConnection();
-            AdminAccount.AddParameter("@VMAdminUserName", VMAdminUserName);
+            AdminAccount.AddParameter("@AdminUserName", AdminUserName);
             AdminAccount.AddParameter("@SecretMessage", Secret);
-            AdminAccount.Execute("sproc_tblVMAdminSecurity_CheckSecret");
+            AdminAccount.Execute("sproc_tblForumAdminSecurity_CheckSecret");
             if (AdminAccount.Count >= 1)
             {
                 //if the two passwords match
@@ -156,12 +154,12 @@ namespace VirginClassLibrary
                     if (Message == "")
                     {
                         //get the hash of the plain text password
-                        string HashPassword = GetHashString(Password1 + VMAdminUserName);
+                        string HashPassword = GetHashString(Password1 + AdminUserName);
                         //updat the password
                         clsDataConnection DB = new clsDataConnection();
-                        DB.AddParameter("@VMAdminUserName", VMAdminUserName);
-                        DB.AddParameter("@VMAdminPassword", HashPassword);
-                        DB.Execute("sproc_tblVMAdminSecurity_UpdatePassword");
+                        DB.AddParameter("@AdminUserName", AdminUserName);
+                        DB.AddParameter("@AdminPassword", HashPassword);
+                        DB.Execute("sproc_tblForumAdminSecurity_UpdatePassword");
                         Message = "The password has been changed.";
                     }
                 }
@@ -184,19 +182,19 @@ namespace VirginClassLibrary
 
         }
 
-        private string CheckPassword(string VMAdminPassword)
+        private string CheckPassword(string AdminPassword)
         //used to check that the password meets requirments
         {
             string Err = "";
             //if the password is less then 7 characters
-            if (VMAdminPassword.Length < 7 | VMAdminPassword.Length > 14)
+            if (AdminPassword.Length < 7 | AdminPassword.Length > 14)
             {
                 Err = "Your password must be at least 7 characters ";
             }
             //if the password doesn't contain a number
-            if (ContainsNumber(VMAdminPassword) == false)
+            if (ContainsNumber(AdminPassword) == false)
             {
-                Err = Err + "your password must contain a number ";
+                Err = Err + "Your password must contain a number ";
             }
             //return any errors
             return Err;
