@@ -56,7 +56,7 @@ namespace VirginFrontEnd
 
         protected void btnForumAdmin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ForumAdminLogIn.aspx");
+            Response.Redirect("CheckAdmin.aspx");
         }
 
 
