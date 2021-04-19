@@ -18,11 +18,11 @@ namespace VirginClassLibrary
             }
 
 
-            set
-            {
-                //set the private data 
-                mAppointmentList = value;
-            }
+            //set
+            //{
+            //    //set the private data 
+            //    mAppointmentList = value;
+            //}
         }
         public clsVHCAppointment ThisAppointment 
         {
