@@ -33,14 +33,6 @@
                          <asp:TextBox ID="txtEmailAddress" runat="server" style="z-index: 1;"></asp:TextBox>
                     </li>
                     <li>
-                         <asp:Label ID="lblPassword" runat="server" style="z-index: 1;" Text="Password"></asp:Label>
-                        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1;"></asp:TextBox>
-                    </li>
-                    <li>
-                        <asp:Label ID="lblUserName" runat="server" style="z-index: 1;" Text="Username"></asp:Label>
-                        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1;"></asp:TextBox>
-                    </li>
-                    <li>
                          <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1;" Text="OK" />
                          <asp:Button ID="btnCancel" runat="server" style="z-index: 1;" Text="Cancel" OnClick="btnCancel_Click" />
                     </li>

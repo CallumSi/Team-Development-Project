@@ -39,7 +39,7 @@
                       </li>
                            
                       <li> 
-                        <asp:Button ID="btnVirginForum"   CssClass="navButton" runat="server" style="z-index: 1;" Text="Virgin Forum" Height="45px" Width="159px" />
+                        <asp:Button ID="btnVirginForum"   CssClass="navButton" runat="server" style="z-index: 1;" Text="Virgin Forum" Height="45px" Width="159px" OnClick="btnVirginForum_Click" />
 
                      </li>
                      <li>

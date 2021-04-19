@@ -75,9 +75,11 @@
     <Content Include="AnVMStaff.aspx" />
     <Content Include="AnVPStaff.aspx" />
     <Content Include="AnVPCustomer.aspx" />
+    <Content Include="CheckAdmin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ForumAdminDelete.aspx" />
     <Content Include="ForumAdminForgotPassword.aspx" />
+    <Content Include="ForumAdminHome.aspx" />
     <Content Include="ForumAdminHomePage.aspx" />
     <Content Include="ForumAdminList.aspx" />
     <Content Include="ForumAdminLogIn.aspx" />
@@ -89,6 +91,7 @@
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumCommentDelete.aspx" />
     <Content Include="ForumCommentList.aspx" />
+    <Content Include="ForumHome.aspx" />
     <Content Include="ForumPostDelete.aspx" />
     <Content Include="ForumPostList.aspx" />
     <Content Include="ForumStyleSheet.css" />
@@ -260,6 +263,13 @@
     <Compile Include="AnVPCustomer.aspx.designer.cs">
       <DependentUpon>AnVPCustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CheckAdmin.aspx.cs">
+      <DependentUpon>CheckAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckAdmin.aspx.designer.cs">
+      <DependentUpon>CheckAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -280,6 +290,13 @@
     </Compile>
     <Compile Include="ForumAdminForgotPassword.aspx.designer.cs">
       <DependentUpon>ForumAdminForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumAdminHome.aspx.cs">
+      <DependentUpon>ForumAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumAdminHome.aspx.designer.cs">
+      <DependentUpon>ForumAdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumAdminHomePage.aspx.cs">
       <DependentUpon>ForumAdminHomePage.aspx</DependentUpon>
@@ -357,6 +374,13 @@
     </Compile>
     <Compile Include="ForumCommentList.aspx.designer.cs">
       <DependentUpon>ForumCommentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumHome.aspx.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumHome.aspx.designer.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumPostDelete.aspx.cs">
       <DependentUpon>ForumPostDelete.aspx</DependentUpon>

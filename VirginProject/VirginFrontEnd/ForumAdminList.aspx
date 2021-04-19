@@ -25,7 +25,6 @@
                 </li>
                 <li>
                     <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" />
-                    <asp:Button ID="btnDisplayAll" runat="server" Style="z-index: 1;" Text="Display All" OnClick="btnDisplayAll_Click1" />
                 </li>
                 <li>
                     <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" OnClick="btnAdd_Click" />
