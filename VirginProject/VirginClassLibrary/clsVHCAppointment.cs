@@ -11,7 +11,7 @@ namespace VirginClassLibrary
         private DateTime mAppointment_Date;
 
         //private data member for the Appointment_Time property 
-        private string mAppointment_Time;
+        private int mAppointment_Time;
 
         //private data member for the Appointment_Description property 
         private string mAppointment_Description;
@@ -57,7 +57,7 @@ namespace VirginClassLibrary
         }
 
         //Appointment_Time Property 
-        public string Appointment_Time 
+        public int Appointment_Time 
         {
             get
             {
@@ -147,7 +147,7 @@ namespace VirginClassLibrary
                 //copy the data from the database to the private data members
                 mAppointment_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_ID"]);
                 mAppointment_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Appointment_Date"]);
-                mAppointment_Time = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Time"]);
+                mAppointment_Time = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_Time"]);
                 mAppointment_Description = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Description"]);
                 mHospital_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Hospital_ID"]);
                 mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);

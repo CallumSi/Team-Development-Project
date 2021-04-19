@@ -66,7 +66,7 @@ namespace VirginTestProject
             //create an instance of the appointment class 
             clsVHCAppointment AVHCAppointment = new clsVHCAppointment();
             //create a variable to store the time of a appointment 
-            string SomeAppointment_Time = "09:00";
+            Int32 SomeAppointment_Time = 0900;
             //try to send some data to the appointment time property
             AVHCAppointment.Appointment_Time = SomeAppointment_Time;
             //check to see that the data in the variable and the property are the same

@@ -29,7 +29,7 @@ namespace VirginTestProject
             //set its properties
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -53,7 +53,7 @@ namespace VirginTestProject
             //set the properties of the test object
             TestAppointment.Appointment_ID = 1;
             TestAppointment.Appointment_Date = DateTime.Now.Date;
-            TestAppointment.Appointment_Time = "09:00";
+            TestAppointment.Appointment_Time = 0900;
             TestAppointment.Appointment_Description = "Broken Arm";
             TestAppointment.Hospital_ID = 1;
             TestAppointment.Patient_ID = 4;
@@ -78,7 +78,7 @@ namespace VirginTestProject
             //set its properties
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -104,7 +104,7 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -134,7 +134,7 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -148,7 +148,7 @@ namespace VirginTestProject
             //modify the test data 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Leg";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -176,7 +176,7 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
             TestItem.Hospital_ID = 1;
             TestItem.Patient_ID = 4;
@@ -236,14 +236,14 @@ namespace VirginTestProject
             //check that the correct number of records are found
             if (FilteredAppointment.Count == 2)
             {
-                //check that the first record id ID 15
-                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 15)
+                //check that the first record id ID 1
+                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 1)
                 {
                     OK = false;
                 }
 
-                //check that the last record is ID 16
-                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 16)
+                //check that the last record is ID 3
+                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 3)
                 {
                     OK = false;
                 }
