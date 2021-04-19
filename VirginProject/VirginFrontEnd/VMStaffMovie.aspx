@@ -24,15 +24,17 @@
         <asp:Button ID="btnApplyFilter" runat="server" Text="Apply Filter" CssClass="btnApplyFilter" OnClick="btnApplyFilter_Click" />
         <asp:Button ID="btnDisplayAll" runat="server" Text="Display All Movies" CssClass="btnDisplayAll" OnClick="btnDisplayAll_Click" />
         <asp:Label ID="lblError" runat="server" Text="" CssClass="lblError"></asp:Label>
+        <asp:Button ID="btnAddMovie" CssClass="btnStaffAddMovie" runat="server" Text="Add Movie" OnClick="btnAddMovie_Click" />
+        <asp:Button ID="btnUpdateMovie" CssClass="btnStaffUpdateMovie" runat="server" Text="Update Movie" OnClick="btnUpdateMovie_Click" />
+        <asp:Button ID="btnDeleteMovie" CssClass="btnVMStaffDeleteMovie" runat="server" Text="Delete Movie" OnClick="btnDeleteMovie_Click" />
 
         <nav>
-            <asp:Button ID="btnAddMovie" CssClass="btnStaffAddMovie" runat="server" Text="Add Movie" OnClick="btnAddMovie_Click" />
-            <asp:Button ID="btnUpdateMovie" CssClass="btnStaffUpdateMovie" runat="server" Text="Update Movie" OnClick="btnUpdateMovie_Click" />
-            <asp:Button ID="btnDeleteMovie" CssClass="btnVMStaffDeleteMovie" runat="server" Text="Delete Movie" OnClick="btnDeleteMovie_Click" />
-            <asp:Button ID="btnCustomerList" CssClass="btnStaffMovieCustomerList" runat="server" Text="Customer List" OnClick="btnCustomerList_Click" />
-            <asp:Button ID="btnStaffList" CssClass="btnStaffMovieStaffList" runat="server" Text="Staff List" OnClick="btnStaffList_Click" />
-
-            <asp:Button ID="btnLogOut" CssClass="btnStaffMovieLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
+            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" />
+            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnStaffList_Click" />
+            <asp:Button ID="btnVMPaymentList" runat="server" Text="View Payment List" CssClass="btnVMPaymentList" OnClick="btnVMPaymentList_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

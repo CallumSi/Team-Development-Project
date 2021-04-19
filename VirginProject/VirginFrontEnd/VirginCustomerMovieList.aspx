@@ -16,8 +16,8 @@
         </header>
 
         <asp:ListBox ID="lstMovies" runat="server" CssClass="lstCustomerFilms"></asp:ListBox>
-
-
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
         <asp:Label ID="lblFilterGenre" runat="server" Text="Filter By Genre:" CssClass="lblFilterFilmGenre"></asp:Label>
         <asp:TextBox ID="txtFilterGenre" runat="server" CssClass="txtFilterFilmGenre"></asp:TextBox>
         <asp:Button ID="btnApplyFilter" runat="server" Text="Apply Filter" CssClass="btnApplyFilmFilter" OnClick="btnApplyFilter_Click" />
@@ -38,7 +38,7 @@
                 © 2021 Virgin Media | All Rights Reserved
             </div>
         </footer>
-        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
+
     </form>
 </body>
 </html>

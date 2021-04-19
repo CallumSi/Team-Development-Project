@@ -16,7 +16,7 @@ namespace VirginFrontEnd
 
         protected void btnVMAStaff_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VMAdminLogin.aspx");
+            Response.Redirect("VMAdminCheckPin.aspx");
         }
 
         protected void btnVMACustomer_Click(object sender, EventArgs e)

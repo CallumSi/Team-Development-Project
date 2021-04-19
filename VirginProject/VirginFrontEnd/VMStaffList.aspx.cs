@@ -140,13 +140,13 @@ namespace VirginFrontEnd
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             //redirect to the login page
-            Response.Redirect("VMAdminLogin.aspx");
+            Response.Redirect("VirginLogin.aspx");
         }
 
         protected void btnStaffMovie_Click(object sender, EventArgs e)
         {
             //redirect to the staff movie list
-            Response.Redirect("AnVMStaffAddMovie.aspx");
+            Response.Redirect("VMStaffMovie.aspx");
         }
 
         protected void btnCustomerList_Click(object sender, EventArgs e)
@@ -159,6 +159,11 @@ namespace VirginFrontEnd
         {
             //redirect to the payment list
             Response.Redirect("VMPaymentList.aspx");
+        }
+
+        protected void btnVMStaffList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffList.aspx");
         }
     }
 }

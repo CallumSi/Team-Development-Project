@@ -42,5 +42,35 @@ namespace VirginFrontEnd
             //redirect back to the main page
             Response.Redirect("VMPaymentList.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffList.aspx");
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMCustomerList.aspx");
+        }
+
+        protected void btnStaffMovie_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffMovie.aspx");
+        }
+
+        protected void btnVMStaffList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffList.aspx");
+        }
+
+        protected void btnVMPaymentList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMPaymentList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogin.aspx");
+        }
     }
 }

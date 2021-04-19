@@ -71,6 +71,7 @@
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
     <Content Include="AnVMCustomer.aspx" />
+    <Content Include="AnVMCustomerEdit.aspx" />
     <Content Include="AnVMPayment.aspx" />
     <Content Include="AnVMStaff.aspx" />
     <Content Include="AnVPStaff.aspx" />
@@ -156,6 +157,7 @@
     <Content Include="VirginSignUpSuccess.aspx" />
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMAdmin.css" />
+    <Content Include="VMAdminCheckPin.aspx" />
     <Content Include="VMAdminForgotPassword.aspx" />
     <Content Include="VMAdminLogin.aspx" />
     <Content Include="VMAdminSignUp.aspx" />
@@ -234,6 +236,13 @@
     <Compile Include="AnVMCustomer.aspx.designer.cs">
       <DependentUpon>AnVMCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMCustomerEdit.aspx.cs">
+      <DependentUpon>AnVMCustomerEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVMCustomerEdit.aspx.designer.cs">
+      <DependentUpon>AnVMCustomerEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnVMPayment.aspx.cs">
       <DependentUpon>AnVMPayment.aspx</DependentUpon>
@@ -788,6 +797,13 @@
     </Compile>
     <Compile Include="VirginUserList.aspx.designer.cs">
       <DependentUpon>VirginUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VMAdminCheckPin.aspx.cs">
+      <DependentUpon>VMAdminCheckPin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VMAdminCheckPin.aspx.designer.cs">
+      <DependentUpon>VMAdminCheckPin.aspx</DependentUpon>
     </Compile>
     <Compile Include="VMAdminForgotPassword.aspx.cs">
       <DependentUpon>VMAdminForgotPassword.aspx</DependentUpon>
