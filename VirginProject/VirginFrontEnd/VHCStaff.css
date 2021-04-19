@@ -91,7 +91,7 @@ footer {
 /*Navigation Buttons*/
 
 /*List Staff Buttons*/
-.btnDisplayAllStaffs, .btnStaffApplyFilter, .btnYes, .btnNo, .EditStaff, .DeleteStaff, .btnTotalRecords {
+.btnDisplayAllStaffs, .btnStaffApplyFilter, .btnYes, .btnNo, .EditStaff, .DeleteStaff {
     z-index: 1;
     width: 250px;
     height: 70px;
@@ -101,7 +101,7 @@ footer {
 }
 
 /* Hover Effect */
-.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover, .btnTotalRecords:hover {
+.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover {
     background-color: #27183D;
     color: white;
 }

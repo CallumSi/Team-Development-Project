@@ -72,8 +72,10 @@ namespace VirginFrontEnd
         //Display All Button
         protected void btnDisplayAllHospitals_Click(object sender, EventArgs e)
         {
-            //display all hospitals
-            DisplayHospital("");
+            //display all staff
+            Int32 RecordCount;
+            RecordCount = DisplayHospital("");
+            lblError.Text = RecordCount + " RECORDS FOUND ";
         }
 
         //Apply Button
@@ -91,18 +93,6 @@ namespace VirginFrontEnd
                 RecordCount = DisplayHospital(txtHospitalSearch.Text);
                 lblError.Text = RecordCount + " RECORDS FOUND ";
             }
-        }
-
-        //Total Records Button
-        protected void btnTotalRecords_Click(object sender, EventArgs e)
-        {
-            //display all hospitals
-            DisplayHospital("");
-
-            //declare var to store the record count 
-            Int32 RecordCount;
-            RecordCount = DisplayHospital("");
-            lblError.Text = RecordCount + " RECORDS FOUND ";
         }
 
         //Edit Button

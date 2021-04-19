@@ -48,14 +48,9 @@ namespace VirginClassLibrary
         }
 
 
-        //constructor for the class
+        //constructor for the user collection class
         public clsForumUserCollection()
         {
-            ////var for the index 
-            //Int32 Index = 0;
-            ////var to store the record count
-            //Int32 RecordCount = 0;
-
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the store procedure
@@ -73,9 +68,10 @@ namespace VirginClassLibrary
             DB.AddParameter("@UserFirstName", mThisUser.UserFirstName);
             DB.AddParameter("@UserLastName", mThisUser.UserLastName);
             DB.AddParameter("@UserEmailAddress", mThisUser.UserEmail);
-            DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            //DB.AddParameter("@UserPassword", mThisUser.UserPassword);
             DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
-            DB.AddParameter("@Userusername", mThisUser.Userusername);
+            DB.AddParameter("@OriginalID", mThisUser.OriginalID);
+            //DB.AddParameter("@Userusername", mThisUser.Userusername);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblForumUser_Insert");
 
@@ -101,22 +97,22 @@ namespace VirginClassLibrary
             DB.AddParameter("@UserFirstName", mThisUser.UserFirstName);
             DB.AddParameter("@UserLastName", mThisUser.UserLastName);
             DB.AddParameter("@UserEmailAddress", mThisUser.UserEmail);
-            DB.AddParameter("@UserPassword", mThisUser.UserPassword);
+            //DB.AddParameter("@UserPassword", mThisUser.UserPassword);
             DB.AddParameter("@UserPhoneNumber", mThisUser.UserPhoneNumber);
-            DB.AddParameter("@Userusername", mThisUser.Userusername);
+            //DB.AddParameter("@Userusername", mThisUser.Userusername);
             //execute the stored procedure
             DB.Execute("sproc_tblForumUser_Update");
 
         }
 
-        public void ReportByUserusername(string Userusername)
+        public void ReportByUserFirstName(string UserFirstName)
         {
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //sent the Userusername parameter to the database
-            DB.AddParameter("@Userusername", Userusername);
+            DB.AddParameter("@UserFirstName", UserFirstName);
             //execute the stored procedure
-            DB.Execute("sproc_tblForumUser_FilterbyUserusername");
+            DB.Execute("sproc_tblForumUser_FilterbyUserFirstName");
             //populate the array list with the data table
             PopulateArray(DB);
         }
@@ -142,9 +138,9 @@ namespace VirginClassLibrary
                 AnUser.UserFirstName = Convert.ToString(DB.DataTable.Rows[Index]["UserFirstName"]);
                 AnUser.UserLastName = Convert.ToString(DB.DataTable.Rows[Index]["UserLastName"]);
                 AnUser.UserEmail = Convert.ToString(DB.DataTable.Rows[Index]["UserEmailAddress"]);
-                AnUser.UserPassword = Convert.ToString(DB.DataTable.Rows[Index]["UserPassword"]);
+                //AnUser.UserPassword = Convert.ToString(DB.DataTable.Rows[Index]["UserPassword"]);
                 AnUser.UserPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["UserPhoneNumber"]);
-                AnUser.Userusername = Convert.ToString(DB.DataTable.Rows[Index]["Userusername"]);
+                //AnUser.Userusername = Convert.ToString(DB.DataTable.Rows[Index]["Userusername"]);
                 mUserList.Add(AnUser);
                 //point at the next record
                 Index++;

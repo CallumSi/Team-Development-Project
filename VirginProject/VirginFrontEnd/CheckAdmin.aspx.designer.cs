@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class ForumAdminList {
+    public partial class CheckAdmin {
         
         /// <summary>
         /// form2 control.
@@ -22,67 +22,31 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
-        /// lstForumAdmin control.
+        /// lblPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstForumAdmin;
+        protected global::System.Web.UI.WebControls.Label lblPin;
         
         /// <summary>
-        /// lblFilterUsername control.
+        /// txtPin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFilterUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtPin;
         
         /// <summary>
-        /// txtFilterFirstName control.
+        /// btnOk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterFirstName;
-        
-        /// <summary>
-        /// btnApply control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
-        
-        /// <summary>
-        /// btnAdd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
-        
-        /// <summary>
-        /// btnEdit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
-        
-        /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
         /// lblError control.

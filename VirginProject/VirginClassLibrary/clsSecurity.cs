@@ -114,7 +114,20 @@ public class clsSecurity
         //return the state of found
         return Found;
     }
-
+    public Boolean Pin(string Pin)
+    {
+        clsDataConnection AdminAccount = new clsDataConnection();
+        AdminAccount.AddParameter("@Pin", Pin);
+        AdminAccount.Execute("sproc_tblVirginAdmin_CheckPin");
+        if (AdminAccount.Count >= 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     private string CheckPassword(string Password)
     //used to check that the password meets requirments
     {
