@@ -181,46 +181,46 @@ namespace VirginTestProject
 
         }
         [TestMethod]
-        public void ReportByUserusernameMethodOK()
+        public void ReportByUserFirstNameMethodOK()
         {
             //create an instance of the class we want to create
             clsForumUserCollection AllUsers = new clsForumUserCollection();
             //create an instance of the filtered data
             clsForumUserCollection FilteredUsers = new clsForumUserCollection();
             //apply a blank string(should return all records)
-            FilteredUsers.ReportByUserusername("");
+            FilteredUsers.ReportByUserFirstName("");
             //test to see that the two values are the same
             Assert.AreEqual(AllUsers.Count, FilteredUsers.Count);
         }
         [TestMethod]
-        public void ReportByUserusernameFound()
+        public void ReportByUserFirstNameFound()
         {
             //create an instance of the filtered data
             clsForumUserCollection FilteredUsers = new clsForumUserCollection();
             //apply a username that does not exist
-            FilteredUsers.ReportByUserusername("xxxxx");
+            FilteredUsers.ReportByUserFirstName("xxxxx");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredUsers.Count);
         }
         [TestMethod]
-        public void ReportByUserusernameTestDataFound()
+        public void ReportByUserFirstNameTestDataFound()
         {
             //create an instance of filtered data
             clsForumUserCollection FilteredUsers = new clsForumUserCollection();
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredUsers.ReportByUserusername("Test01");
+            FilteredUsers.ReportByUserFirstName("book");
             //check that the correct number of records 
             if (FilteredUsers.Count == 2)
             {
                 //check that the correct number of records are found
-                if (FilteredUsers.UserList[0].UserID != 6)
+                if (FilteredUsers.UserList[0].UserID != 387)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 6
-                if (FilteredUsers.UserList[1].UserID != 12)
+                if (FilteredUsers.UserList[1].UserID != 388)
                 {
                     OK = false;
                 }

@@ -169,7 +169,7 @@ namespace VirginTestProject
             //invoke the method
             Found = AnUser.Find(UserID);
             //check the user firstname
-            if (AnUser.UserFirstName != "Abdi")
+            if (AnUser.UserFirstName != "AbdiKarim")
             {
                 OK = false;
             }
@@ -239,27 +239,27 @@ namespace VirginTestProject
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
-        [TestMethod]
-        public void TestUserPasswordFound()
-        {
-            //create an instance of the class we want to create
-            clsForumUser AnUser = new clsForumUser();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is OK
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 UserID = 1;
-            //invoke the method
-            Found = AnUser.Find(UserID);
-            //check the user password
-            if (AnUser.UserPassword != "Abz234")
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
-        }
+        //[TestMethod]
+        //public void TestUserPasswordFound()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //boolean variable to record if data is OK
+        //    Boolean OK = true;
+        //    //create some test data to use with the method
+        //    Int32 UserID = 1;
+        //    //invoke the method
+        //    Found = AnUser.Find(UserID);
+        //    //check the user password
+        //    if (AnUser.UserPassword != "Abz234")
+        //    {
+        //        OK = false;
+        //    }
+        //    //test to see that the result is correct
+        //    Assert.IsTrue(OK);
+        //}
         [TestMethod]
         public void ValidMethodOK()
         {
@@ -268,7 +268,7 @@ namespace VirginTestProject
             //string variable to store any error message
             String Error = "";
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -282,7 +282,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserFirstName = "";
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -297,7 +297,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserFirstName = "qwertyuioplkjhgf";
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -313,7 +313,7 @@ namespace VirginTestProject
             string UserFirstName = "";
             UserFirstName = UserFirstName.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+             Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
 
@@ -342,7 +342,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserLastName = "a"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -355,8 +355,8 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method
             string UserLastName = "aqwsderfgtyhjuik"; //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+                                                      //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -371,7 +371,7 @@ namespace VirginTestProject
             string UserLastName = "";
             UserLastName = UserLastName.PadRight(50, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -390,7 +390,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserPhoneNumber = "1234567891"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -404,7 +404,7 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserPhoneNumber = "123456789123"; //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -419,7 +419,7 @@ namespace VirginTestProject
             string UserPhoneNumber = "";
             UserPhoneNumber = UserLastName.PadRight(20, 'a'); //this should fail
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -439,7 +439,7 @@ namespace VirginTestProject
             string UserEmail = "";
             UserEmail = UserEmail.PadRight(26, 'a');
             //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -453,8 +453,8 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserEmail = "";
             UserEmail = UserEmail.PadRight(50, 'a'); //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+                                                     //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -463,84 +463,84 @@ namespace VirginTestProject
         /// Password
         /// </summary>
 
-        [TestMethod]
-        public void UserPasswordMaxPlussOne()
-        {
-            //create an instane of the class we want to create 
-            clsForumUser AnUser = new clsForumUser();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string UserPassword = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
-            //test to see that the test is correct
-            Assert.AreNotEqual(Error, "");
-        }
-        [TestMethod]
-        public void UserPasswordExtremeMax()
-        {
-            //create an instane of the class we want to create 
-            clsForumUser AnUser = new clsForumUser();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string UserPassword = "";
-            UserPassword = UserPassword.PadRight(50, 'a'); //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
-            //test to see that the test is correct
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //public void UserPasswordMaxPlussOne()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass to the method
+        //    string UserPassword = "qazwsxedcrfvtgbyhnujmiklop"; //this should fail
+        //    //invoke the method
+        //    Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+        //    //test to see that the test is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
+        //[TestMethod]
+        //public void UserPasswordExtremeMax()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass to the method
+        //    string UserPassword = "";
+        //    UserPassword = UserPassword.PadRight(50, 'a'); //this should fail
+        //    //invoke the method
+        //    Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+        //    //test to see that the test is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
-        /// <summary>
-        /// User name
-        /// </summary>
+        ///// <summary>
+        ///// User name
+        ///// </summary>
 
-        [TestMethod]
-        public void UserusernameMinLessOne()
-        {
-            //create an instane of the class we want to create 
-            clsForumUser AnUser = new clsForumUser();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string Userusername = "aaa"; //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
-            //test to see that the test is correct
+        //[TestMethod]
+        //public void UserusernameMinLessOne()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass to the method
+        //    string Userusername = "aaa"; //this should fail
+        //    //invoke the method
+        //    Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+        //    //test to see that the test is correct
 
-        }
+        //}
 
-        [TestMethod]
-        public void UserusernameMaxPlussOne()
-        {
-            //create an instane of the class we want to create 
-            clsForumUser AnUser = new clsForumUser();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string Userusername = "qwertyuiopasdfgh"; //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
-            //test to see that the test is correct
+        //[TestMethod]
+        //public void UserusernameMaxPlussOne()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass to the method
+        //    string Userusername = "qwertyuiopasdfgh"; //this should fail
+        //    //invoke the method
+        //    Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+        //    //test to see that the test is correct
 
-        }
-        [TestMethod]
-        public void UserusernameExtremeMax()
-        {
-            //create an instane of the class we want to create 
-            clsForumUser AnUser = new clsForumUser();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string Userusername = "";
-            Userusername = Userusername.PadRight(50, 'a'); //this should fail
-            //invoke the method
-            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
-            //test to see that the test is correct
-            Assert.AreNotEqual(Error, "");
-        }
+        //}
+        //[TestMethod]
+        //public void UserusernameExtremeMax()
+        //{
+        //    //create an instane of the class we want to create 
+        //    clsForumUser AnUser = new clsForumUser();
+        //    //string variable to store any error message
+        //    String Error = "";
+        //    //create some test data to pass to the method
+        //    string Userusername = "";
+        //    Userusername = Userusername.PadRight(50, 'a'); //this should fail
+        //    //invoke the method
+        //    Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail, UserPassword, UserPhoneNumber, Userusername);
+        //    //test to see that the test is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
     }
 }

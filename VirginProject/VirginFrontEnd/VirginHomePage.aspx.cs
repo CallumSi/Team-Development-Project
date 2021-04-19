@@ -45,5 +45,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VPDefault.aspx");
         }
+
+        protected void btnVirginForum_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumHome.aspx");
+        }
     }
 }

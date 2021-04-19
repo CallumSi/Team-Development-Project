@@ -89,6 +89,7 @@
     <Content Include="ForumAnUser.aspx" />
     <Content Include="ForumCommentDelete.aspx" />
     <Content Include="ForumCommentList.aspx" />
+    <Content Include="ForumHome.aspx" />
     <Content Include="ForumPostDelete.aspx" />
     <Content Include="ForumPostList.aspx" />
     <Content Include="ForumStyleSheet.css" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="ForumCommentList.aspx.designer.cs">
       <DependentUpon>ForumCommentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForumHome.aspx.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForumHome.aspx.designer.cs">
+      <DependentUpon>ForumHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForumPostDelete.aspx.cs">
       <DependentUpon>ForumPostDelete.aspx</DependentUpon>

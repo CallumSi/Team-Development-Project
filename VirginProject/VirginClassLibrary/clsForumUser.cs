@@ -19,6 +19,8 @@ namespace VirginClassLibrary
         private string mUserPhoneNumber;
         //pribate memeber for the User username
         private string mUserusername;
+        //pribate memeber for the User username
+        private int mOriginalID;
 
         //public property for user ID
         public int UserID
@@ -119,7 +121,48 @@ namespace VirginClassLibrary
                 mUserusername = value;
             }
         }
+        //public property for User username
+        public int OriginalID
+        {
+            get
+            {
+                //return the private data
+                return mOriginalID;
+            }
+            set
+            {
+                //set the value of the private data member
+                mOriginalID = value;
+            }
+        }
 
+        public bool FindOriginal(int UserID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("OriginalID", UserID);
+            //execute the sproc
+            DB.Execute("sproc_tblForumUser_FilterByOriginalID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mUserFirstName = Convert.ToString(DB.DataTable.Rows[0]["UserFirstName"]);
+                mUserLastName = Convert.ToString(DB.DataTable.Rows[0]["UserLastName"]);
+                mUserPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["UserPhoneNumber"]);
+                mUserEmail = Convert.ToString(DB.DataTable.Rows[0]["UserEmailAddress"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+        }
 
         public clsForumUser()
         {
@@ -142,9 +185,9 @@ namespace VirginClassLibrary
                 mUserFirstName = Convert.ToString(DB.DataTable.Rows[0]["UserFirstName"]);
                 mUserLastName = Convert.ToString(DB.DataTable.Rows[0]["UserLastName"]);
                 mUserEmail = Convert.ToString(DB.DataTable.Rows[0]["UserEmailAddress"]);
-                mUserPassword = Convert.ToString(DB.DataTable.Rows[0]["UserPassword"]);
+                //mUserPassword = Convert.ToString(DB.DataTable.Rows[0]["UserPassword"]);
                 mUserPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["UserPhoneNumber"]);
-                mUserusername = Convert.ToString(DB.DataTable.Rows[0]["Userusername"]);
+                //mUserusername = Convert.ToString(DB.DataTable.Rows[0]["Userusername"]);
                 //return that everything worked ok
                 return true;
             }
@@ -159,7 +202,7 @@ namespace VirginClassLibrary
         }
 
 
-        public string Valid(string UserFirstName, string UserLastName, string UserEmail, string UserPassword, string UserPhoneNumber, string Userusername)
+        public string Valid(string UserFirstName, string UserLastName, string UserEmail, /*string UserPassword,*/ string UserPhoneNumber /* string Userusername*/)
         {
             //create a string variable to store the error
             String Error = "";
@@ -203,18 +246,18 @@ namespace VirginClassLibrary
                 Error = Error + "The Email address has to be less than 25.  ";
             }
 
-            //if the Last name is blank
-            if (UserPassword.Length == 0)
-            {
-                //record the error
-                Error = Error + "The password may not be blank : ";
-            }
-            //if the email is more than 16
-            if (UserPassword.Length > 16)
-            {
-                //record the error
-                Error = Error + "The password has to be less than 16 characters ";
-            }
+            ////if the Last name is blank
+            //if (UserPassword.Length == 0)
+            //{
+            //    //record the error
+            //    Error = Error + "The password may not be blank : ";
+            //}
+            ////if the email is more than 16
+            //if (UserPassword.Length > 16)
+            //{
+            //    //record the error
+            //    Error = Error + "The password has to be less than 16 characters ";
+            //}
 
             //if the UserName is blank
             if (UserPhoneNumber.Length == 0)
@@ -229,18 +272,18 @@ namespace VirginClassLibrary
                 Error = Error + "The phone number has to be 11 numbers. ";
             }
 
-            //if the Last name is blank
-            if (Userusername.Length == 0)
-            {
-                //record the error
-                Error = Error + "The username may not be blank : ";
-            }
-            //if the username is more than 16
-            if (Userusername.Length > 16)
-            {
-                //record the error
-                Error = Error + "The username has to be less than 16 characters ";
-            }
+            ////if the Last name is blank
+            //if (Userusername.Length == 0)
+            //{
+            //    //record the error
+            //    Error = Error + "The username may not be blank : ";
+            //}
+            ////if the username is more than 16
+            //if (Userusername.Length > 16)
+            //{
+            //    //record the error
+            //    Error = Error + "The username has to be less than 16 characters ";
+            //}
 
             //return any error message
             return Error;

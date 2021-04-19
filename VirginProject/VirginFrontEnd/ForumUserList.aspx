@@ -18,15 +18,14 @@
                 <ul>
                     <li><asp:ListBox ID="lstUserListBox" runat="server" style="z-index: 1;" Height="265px" Width="456px"></asp:ListBox> </li>
                     <li>
-                        <asp:Label ID="lblUserFilter" runat="server" style="z-index: 1;" Text="Please filter by user name."></asp:Label>
-                         <asp:TextBox ID="txtFilterbyusername" runat="server" style="z-index: 1;" Width="241px"></asp:TextBox>
+                        <asp:Label ID="lblUserFilter" runat="server" style="z-index: 1;" Text="Please filter by first name."></asp:Label>
+                         <asp:TextBox ID="txtFilterbyuserfirstname" runat="server" style="z-index: 1;" Width="241px"></asp:TextBox>
                     </li>
                     <li>
                          <asp:Button ID="btnApply" runat="server" style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" />
-                            <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1;" Text="Display All" OnClick="btnDisplayAll_Click1" />
                     </li>
                     <li>                   
-                      <asp:Button ID="btnAdd" runat="server" style="z-index: 1;" Text="Add" OnClick="btnAdd_Click1" />
+                      <asp:Button ID="btnAdd" runat="server" style="z-index: 1;" Text="Add" OnClick="btnAdd_Click1" Visible="False" />
                       <asp:Button ID="btnEdit" runat="server" style="z-index: 1;" Text="Edit" OnClick="btnEdit_Click1" />
                       <asp:Button ID="btnDelete" runat="server" style="z-index: 1;" Text="Delete" OnClick="btnDelete_Click1" />
                     </li>

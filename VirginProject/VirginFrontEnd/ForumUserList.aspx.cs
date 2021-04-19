@@ -29,26 +29,26 @@ namespace VirginFrontEnd
             //set the name of the primary key
             lstUserListBox.DataValueField = "UserID";
             //set the data field to display
-            lstUserListBox.DataTextField = "Userusername";
+            lstUserListBox.DataTextField = "UserFirstName";
             //bind the data to the list
             lstUserListBox.DataBind();
             //clear the list box
             lstUserListBox.Items.Clear();
         }
 
-        Int32 DisplayFilterUserusername(string UserusernameFilter)
+        Int32 DisplayFilterUserFirstName(string UserFirstNameFilter)
         {
             //int to store the primary key
             Int32 UserId;
             //string username 
-            string Userusername;
+            //string Userusername;
             //string firstname
             string UserFirstName;
             //string last name
             string UserLastName;
             //create an instance of the user collection class
             clsForumUserCollection UserBook = new clsForumUserCollection();
-            UserBook.ReportByUserusername(UserusernameFilter);
+            UserBook.ReportByUserFirstName(UserFirstNameFilter);
             //count of records
             Int32 RecordCount;
             //index for the loop
@@ -63,13 +63,13 @@ namespace VirginFrontEnd
                 //get the User id
                 UserId = UserBook.UserList[Index].UserID;
                 //get the username 
-                Userusername = UserBook.UserList[Index].Userusername;
+                //Userusername = UserBook.UserList[Index].Userusername;
                 //get the first name
                 UserFirstName = UserBook.UserList[Index].UserFirstName;
                 //get the last name
                 UserLastName = UserBook.UserList[Index].UserLastName;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Userusername + "" + UserFirstName + "" + UserLastName, UserId.ToString());
+                ListItem NewEntry = new ListItem(UserFirstName + "" + UserLastName, UserId.ToString());
                 //add the user to the list
                 lstUserListBox.Items.Add(NewEntry);
                 //move the indext to the next record
@@ -87,14 +87,10 @@ namespace VirginFrontEnd
         protected void btnApply_Click1(object sender, EventArgs e)
         {
             //display only usernames
-            DisplayFilterUserusername(txtFilterbyusername.Text);
+            DisplayFilterUserFirstName(txtFilterbyuserfirstname.Text);
         }
 
-        protected void btnDisplayAll_Click1(object sender, EventArgs e)
-        {
-            //display all username
-            DisplayUser();
-        }
+       
 
         protected void btnAdd_Click1(object sender, EventArgs e)
         {
