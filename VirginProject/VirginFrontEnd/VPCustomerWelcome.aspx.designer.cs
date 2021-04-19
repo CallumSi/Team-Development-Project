@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VPThankYouConfirmation {
+    public partial class VPCustomerWelcome {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,21 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblThankYou control.
+        /// btnContinue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThankYou;
+        protected global::System.Web.UI.WebControls.Button btnContinue;
         
         /// <summary>
-        /// btnHome control.
+        /// btnFirstTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
-        
-        /// <summary>
-        /// btnLogOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        protected global::System.Web.UI.WebControls.Button btnFirstTime;
     }
 }

@@ -64,12 +64,14 @@ namespace VirginFrontEnd
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Session["Customer_ID"] = Customer_ID;
-            Response.Redirect("");
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
 
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
-
+            //store data in session object so we can pass it to next page
+            Session["Customer_ID"] = Customer_ID;
+            Response.Redirect("VPViewCart.aspx");
         }
 
         protected void btnPayment_Click(object sender, EventArgs e)
@@ -84,6 +86,13 @@ namespace VirginFrontEnd
             {
                 lblError.Text = "Please add items to cart first";
             }
+        }
+
+        protected void btnContinueShopping_Click(object sender, EventArgs e)
+        {
+            //send the customer back to the main phone list page
+            Session["Customer_ID"] = Customer_ID;
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
     }
 }

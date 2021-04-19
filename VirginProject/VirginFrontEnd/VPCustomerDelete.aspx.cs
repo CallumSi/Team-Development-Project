@@ -42,7 +42,38 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            //redirect back to customer page
+            Response.Redirect("VPCustomerList.aspx");
+        }
 
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect back to customer page
+            Response.Redirect("VPCustomerList.aspx");
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            //redirect back to customer page
+            Response.Redirect("VPCustomerList.aspx");
+        }
+
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect back to customer page
+            Response.Redirect("VPStaffList.aspx");
+        }
+
+        protected void btnPhoneList_Click(object sender, EventArgs e)
+        {
+            //redirect back to customer page
+            Response.Redirect("VPPhoneList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to the login page 
+            Response.Redirect("VirginLogin.aspx");
         }
     }
 }
