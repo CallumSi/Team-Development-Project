@@ -121,7 +121,7 @@ namespace VirginFrontEnd
                 }
                 else
                 {
-                    SomeListing.ThisListing.Img = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png";
+                    SomeListing.ThisListing.Img = "https://picsum.photos/200/300";
                 }
                
                 SomeListing.ThisListing.ListingName = txtListingName.Text;
