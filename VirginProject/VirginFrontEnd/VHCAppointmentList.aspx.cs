@@ -11,7 +11,9 @@ namespace VirginFrontEnd
 {
     public partial class VHCAppointmentList : System.Web.UI.Page
     {
+        //create an instance of the appointment collection with page level scope
         clsVHCAppointmentCollection AppointmentList;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //if this is the first time the page has been displayed
@@ -20,7 +22,7 @@ namespace VirginFrontEnd
                 //initialise the list of appointments for specified date
                 AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
                 //display the appts in the list
-                DisplayAppts();
+                DisplayAppointments();
             }
             else //if this is a re-load of the page
             {
@@ -28,7 +30,7 @@ namespace VirginFrontEnd
                 AppointmentList = (clsVHCAppointmentCollection)Session["AppointmentList"];
             }
         }
-        void DisplayAppts()
+        void DisplayAppointments()
         {
             //function displays the list of appointments in the list box
 
@@ -72,7 +74,7 @@ namespace VirginFrontEnd
             //reinitialise the list of appt with the new date
             AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
             //dislay the list of appts
-            DisplayAppts();
+            DisplayAppointments();
         }
 
         protected void btnAppointmentBook_Click(object sender, EventArgs e)
@@ -103,7 +105,7 @@ namespace VirginFrontEnd
             }
             else //show an error if not
             {
-                lblError.Text = "You must select an avaiable booking first";
+                lblError.Text = "You must select an available booking first";
             }
         }
     }

@@ -236,14 +236,14 @@ namespace VirginTestProject
             //check that the correct number of records are found
             if (FilteredAppointment.Count == 2)
             {
-                //check that the first record id ID 1
-                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 1)
+                //check that the first record id ID 3
+                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 3)
                 {
                     OK = false;
                 }
 
-                //check that the last record is ID 3
-                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 3)
+                //check that the last record is ID 4
+                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 4)
                 {
                     OK = false;
                 }

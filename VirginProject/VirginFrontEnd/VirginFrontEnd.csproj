@@ -133,6 +133,7 @@
     <Content Include="VCHStaffList.aspx" />
     <Content Include="VCHStyleCustomer.css" />
     <Content Include="VHCAppointment.css" />
+    <Content Include="VHCAppointmentBooking.aspx" />
     <Content Include="VHCAppointmentList.aspx" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
@@ -663,6 +664,13 @@
     </Compile>
     <Compile Include="VCHStaffList.aspx.designer.cs">
       <DependentUpon>VCHStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCAppointmentBooking.aspx.cs">
+      <DependentUpon>VHCAppointmentBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCAppointmentBooking.aspx.designer.cs">
+      <DependentUpon>VHCAppointmentBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCAppointmentList.aspx.cs">
       <DependentUpon>VHCAppointmentList.aspx</DependentUpon>

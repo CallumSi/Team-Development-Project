@@ -172,6 +172,7 @@ namespace VirginClassLibrary
 
             //create a temporary variable to store data values
             DateTime DateTemp;
+            Int32 TempAppointmentTime;
 
             //Appointment Date Validation (1) 
             try
@@ -199,20 +200,25 @@ namespace VirginClassLibrary
                 Error = Error + " THE DATA WAS NOT A VALID DATE: ";
             }
 
-            //Appointment Time Validation (2) 
-
-            //if appointment time  is blank 
-            if (Appointment_Time.Length == 0)
+            ////Appointment Time Validation(2)
+            
+            try
             {
-                //record the error 
-                Error = Error + "APPOINTMENT TIME CANNOT BE BLANK!" + " ";
+                Int32 TempAppointmentTemp = Convert.ToInt32(Appointment_Time);
 
+                if (TempAppointmentTemp == 0)
+                {
+                    Error = Error + "APPOINTMENT TIME CANNOT BE BLANK!" + " ";
+                }
+
+                if (TempAppointmentTemp < 0001 | TempAppointmentTemp > 2401)
+                {
+                    Error = Error + "APPOINTMENT TIME MUST BETWEEN THE RANGE 0900 - 2400 " + " ";
+                }
             }
-
-            if (Appointment_Time.Length < 5 | Appointment_Time.Length > 5)
+            catch
             {
-                //set the error message 
-                Error = Error + "APPOINTMENT TIME MUST BE 5 CHARACTERS!" + " ";
+                Error = Error + "APPOINTMENT TIME IS INVALID" + " ";
             }
 
             //Appointment Description Validation (3) 
