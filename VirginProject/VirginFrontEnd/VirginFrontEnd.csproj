@@ -199,6 +199,7 @@
     <Content Include="VPPhoneDelete.aspx" />
     <Content Include="VPPhoneList.aspx" />
     <Content Include="VPPhoneViewer.aspx" />
+    <Content Include="VPStaffCheckPin.aspx" />
     <Content Include="VPStaffDelete.aspx" />
     <Content Include="VPStaffList.aspx" />
     <Content Include="VPStafforCustomerSelection.aspx" />
@@ -1077,6 +1078,13 @@
     </Compile>
     <Compile Include="VPPhoneViewer.aspx.designer.cs">
       <DependentUpon>VPPhoneViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPStaffCheckPin.aspx.cs">
+      <DependentUpon>VPStaffCheckPin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPStaffCheckPin.aspx.designer.cs">
+      <DependentUpon>VPStaffCheckPin.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPStaffDelete.aspx.cs">
       <DependentUpon>VPStaffDelete.aspx</DependentUpon>

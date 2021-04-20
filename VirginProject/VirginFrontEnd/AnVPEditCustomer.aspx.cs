@@ -123,22 +123,25 @@ namespace VirginFrontEnd
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-
+            //all done so redirect back to the main page
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
 
         protected void btnViewCart_Click(object sender, EventArgs e)
         {
-
+            //all done so redirect back to the main page
+            Response.Redirect("VPViewCart.aspx");
         }
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //all done so redirect back to the main page
+            Response.Redirect("AnVPEditCustomer.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("VirginLogIn.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

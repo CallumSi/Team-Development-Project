@@ -40,8 +40,8 @@ namespace VirginFrontEnd
             Int32 Count = MyCart.Products.Count;
             string Phonename;
             //display the phone 
-            Response.Write("PhoneID");
-            Response.Write("Quantity");
+            //Response.Write("PhoneID");
+            //Response.Write("Quantity");
             //if cart is empty tell the user
             if (Count == 0)
             {

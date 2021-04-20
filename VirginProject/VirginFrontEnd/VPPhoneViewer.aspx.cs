@@ -91,6 +91,9 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to the next page
             Session["Customer_ID"] = Customer_ID;
+            //redirect to customer edit page
+            Response.Redirect("AnVPEditCustomer.aspx");
+        
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
