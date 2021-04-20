@@ -94,7 +94,6 @@ namespace VirginClassLibrary
                 clsVPDelivery ADelivery = new clsVPDelivery();
                 //read in the field from the current records
                 ADelivery.Delivery_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Delivery_ID"]);
-                ADelivery.Order_ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Order_ID"]);
                 ADelivery.Title = Convert.ToString(DB.DataTable.Rows[Index]["Title"]);
                 ADelivery.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 ADelivery.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
@@ -128,7 +127,6 @@ namespace VirginClassLibrary
             //connect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@Order_ID", mThisDelivery.Order_ID);
             DB.AddParameter("@Title", mThisDelivery.Title);
             DB.AddParameter("@FirstName", mThisDelivery.FirstName);
             DB.AddParameter("@LastName", mThisDelivery.LastName);
@@ -160,7 +158,6 @@ namespace VirginClassLibrary
             //set the parameters for the stored procedure
             //set the parameters for the stored procedure
             DB.AddParameter("@Delivery_ID", mThisDelivery.Delivery_ID);
-            DB.AddParameter("@Order_ID", mThisDelivery.Order_ID);
             DB.AddParameter("@Title", mThisDelivery.Title);
             DB.AddParameter("@FirstName", mThisDelivery.FirstName);
             DB.AddParameter("@LastName", mThisDelivery.LastName);

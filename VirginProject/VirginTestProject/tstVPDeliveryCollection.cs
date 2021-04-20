@@ -30,7 +30,6 @@ namespace VirginTestProject
             clsVPDelivery TestItem = new clsVPDelivery();
             //set its properties
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -56,7 +55,6 @@ namespace VirginTestProject
             clsVPDelivery TestDelivery = new clsVPDelivery();
             //set the properties of the test object
             TestDelivery.Delivery_ID = 1;
-            TestDelivery.Order_ID = 2222;
             TestDelivery.Title = "Miss";
             TestDelivery.FirstName = "Sienna";
             TestDelivery.LastName = "Campbell";
@@ -84,7 +82,6 @@ namespace VirginTestProject
             clsVPDelivery TestItem = new clsVPDelivery();
             //set it's properties
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 2222;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -113,7 +110,6 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -148,7 +144,6 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";
@@ -167,7 +162,6 @@ namespace VirginTestProject
             TestItem.Delivery_ID = PrimaryKey;
             //modify the test data
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 11;
             TestItem.Title = "Mr";
             TestItem.FirstName = "James";
             TestItem.LastName = "Bond";
@@ -198,7 +192,6 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set its properties 
             TestItem.Delivery_ID = 1;
-            TestItem.Order_ID = 11;
             TestItem.Title = "Miss";
             TestItem.FirstName = "Sienna";
             TestItem.LastName = "Campbell";

@@ -11,8 +11,8 @@
         <div>
         </div>
         <asp:ListBox ID="lstPhone" runat="server" style="z-index: 1; left: 527px; top: 105px; position: absolute; height: 281px; width: 505px"></asp:ListBox>
-        <asp:Label ID="lblEnterAPhone" runat="server" style="z-index: 1; left: 532px; top: 399px; position: absolute" Text="Please enter a phone"></asp:Label>
-        <asp:TextBox ID="txtSearchPhone" runat="server" style="z-index: 1; left: 673px; top: 399px; position: absolute; width: 212px"></asp:TextBox>
+        <asp:Label ID="lblEnterAPhone" runat="server" style="z-index: 1; left: 532px; top: 399px; position: absolute" Text="Please enter a phone by make"></asp:Label>
+        <asp:TextBox ID="txtSearchPhone" runat="server" style="z-index: 1; left: 762px; top: 399px; position: absolute; width: 212px"></asp:TextBox>
         <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" style="z-index: 1; left: 533px; top: 459px; position: absolute" Text="Apply Filter" />
         <asp:Button ID="btnDisplayAll" runat="server" OnClick="btnDisplayAll_Click" style="z-index: 1; left: 640px; top: 459px; position: absolute" Text="DisplayAll" />
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" style="z-index: 1; left: 536px; top: 493px; position: absolute; width: 55px" Text="Add" />

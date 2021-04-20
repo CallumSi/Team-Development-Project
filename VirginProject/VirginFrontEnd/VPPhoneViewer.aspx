@@ -29,6 +29,11 @@
         <asp:Label ID="lblPhoneModel" runat="server" style="z-index: 1; left: 407px; top: 453px; position: absolute" Text="[lblModel]"></asp:Label>
         <asp:Label ID="lblPhonePrice" runat="server" style="z-index: 1; left: 405px; top: 533px; position: absolute" Text="[lblPrice]"></asp:Label>
         <asp:DropDownList ID="ddlQuantity" runat="server" style="z-index: 1; left: 399px; top: 697px; position: absolute">
+            <asp:ListItem>1</asp:ListItem>
+            <asp:ListItem>2</asp:ListItem>
+            <asp:ListItem>3</asp:ListItem>
+            <asp:ListItem>4</asp:ListItem>
+            <asp:ListItem>5</asp:ListItem>
         </asp:DropDownList>
         <asp:CheckBox ID="chkStockStatus" runat="server" style="z-index: 1; left: 404px; top: 616px; position: absolute" Checked="True" />
         <asp:Button ID="btnAddToCart" runat="server" OnClick="btnAddToCart_Click" style="z-index: 1; left: 745px; top: 548px; position: absolute" Text="Add To Cart" />
