@@ -19,12 +19,14 @@ namespace VirginFrontEnd
             //if this is the first time the page has been displayed
             if (IsPostBack == false)
             {
-                //initialise the list of appointments for specified date
+                //initialise the list of appointments for a specified date
                 AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
-                //display the appts in the list
+                //display the appointments in the list
                 DisplayAppointments();
             }
-            else //if this is a re-load of the page
+
+            //if this is a re-load of the page
+            else
             {
                 //read in the already initialised list
                 AppointmentList = (clsVHCAppointmentCollection)Session["AppointmentList"];
@@ -34,29 +36,29 @@ namespace VirginFrontEnd
         {
             //function displays the list of appointments in the list box
 
-            //var to store the appt no if an existing appointment it is the primary key
-            //if it is an available appt it is the time prefied with -
+            //var to store the appointments id if an existing appointment it is the primary key
+            //if it is an available appointments it is the time preferred with
             Int32 Appointment_ID;
-            //var to store the appt time
+            //var to store the appointments time
             Int32 Appointment_Time;
-            //var to store the appt reason
+            //var to store the appointments description
             string Appointment_Description;
             //index for the loop
             Int32 Index = 0;
             //clear the list of any existing entries
             lstAppointment.Items.Clear();
-            //loop for processing the appts
+            //loop for processing the appointments
             while (Index < AppointmentList.Count)
             {
-                //get the appt no
+                //get the appointments id
                 Appointment_ID = AppointmentList.AppointmentList[Index].Appointment_ID;
-                //get the appt time
+                //get the appointments time
                 Appointment_Time = AppointmentList.AppointmentList[Index].Appointment_Time;
-                //get the appt reason
+                //get the appointments description
                 Appointment_Description = AppointmentList.AppointmentList[Index].Appointment_Description;
-                //create the appt entry
-                ListItem NewItem = new ListItem("Primary key " + Appointment_ID.ToString() + "Time " + Appointment_Time.ToString() + " " + Appointment_Description, Appointment_ID.ToString());
-                //add the appt to the list
+                //create the appointments entry
+                ListItem NewItem = new ListItem("Avaliable Booking Time " + " - " + Appointment_Time.ToString() + ":00 " + Appointment_Description, Appointment_ID.ToString());
+                //add the appointments to the list
                 lstAppointment.Items.Add(NewItem);
                 //inc the index
                 Index++;
@@ -65,15 +67,15 @@ namespace VirginFrontEnd
 
         protected void Page_UnLoad(object sender, EventArgs e)
         {
-            //store the appt list in the session object
+            //store the appointments list in the session object
             Session["AppointmentList"] = AppointmentList;
         }
 
         protected void btnAppointmentSearch_Click(object sender, EventArgs e)
         {
-            //reinitialise the list of appt with the new date
+            //reinitialise the list of appointments with the new date
             AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
-            //dislay the list of appts
+            //dislay the list of appointments
             DisplayAppointments();
         }
 
@@ -83,8 +85,9 @@ namespace VirginFrontEnd
             string BookingTime;
             //var to store the booking date
             string BookingDate;
-            //clear amu previous errors
+            //clear any previous errors
             lblError.Text = "";
+
             //check to see that an entry has been selected
             if (lstAppointment.SelectedIndex != -1)
             {
@@ -92,21 +95,33 @@ namespace VirginFrontEnd
                 BookingTime = lstAppointment.SelectedValue;
                 //get the booking date
                 BookingDate = txtAppointmentDate.Text;
-                //if this is an available appt eg - at the start
+
+                //if this is an available appointments eg - at the start
                 if (BookingTime.Contains("-") == true)
                 {
                     //redirect to the make booking page
-                    Response.Redirect("MakeBooking.aspx?BookingDate=" + BookingDate + "&BookingTime=" + BookingTime);
+                    Response.Redirect("VHCAppointmentBooking.aspx?BookingDate=" + BookingDate + "&BookingTime=" + BookingTime);
                 }
-                else//otherwise cannot change the appt (at least in this version of the system)
+
+
+                //otherwise cannot change the appointments (at least in this version of the system)
+                else
                 {
-                    lblError.Text = "Cannot change this booking";
+                    lblError.Text = "⚠️ ERROR: CANNOT CHANGE THIS BOOKING!";
                 }
             }
-            else //show an error if not
+
+            //show an error if not
+            else
             {
-                lblError.Text = "You must select an available booking first";
+                lblError.Text = "⚠️ ERROR: PLEASE SELECT AN AVAILABLE BOOKING FIRST!";
             }
+        }
+
+        //Close Button
+        protected void btnListClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCMainMenu.aspx");
         }
     }
 }

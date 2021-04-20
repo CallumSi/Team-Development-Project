@@ -22,7 +22,7 @@
         <%--NAVIGATION SECTION--%>
         <nav>
             <%--BUTTON: PATIENT--%>
-            <asp:Button ID="btnPatient" runat="server" CssClass="btnPatient" Text="PATIENT" />
+            <asp:Button ID="btnPatient" runat="server" CssClass="btnPatient" Text="PATIENT" OnClick="btnPatient_Click" />
             <%--BUTTON: STAFF--%>
             <asp:Button ID="btnStaff" runat="server" CssClass="btnStaff" Text="STAFF" OnClick="btnStaff_Click" />
         </nav>
