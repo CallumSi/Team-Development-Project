@@ -270,13 +270,13 @@ namespace VirginTestProject
             //check that the correct number of records are found
             if (FilteredHireLocation.Count == 2)
             {
-                //check that the first record ID is 23
-                if (FilteredHireLocation.HireList[0].HireID != 23)
+                //check that the first record ID is 25
+                if (FilteredHireLocation.HireList[0].HireID != 25)
                 {
                     OK = false;
                 }
-                //check that the second record ID is 24
-                if (FilteredHireLocation.HireList[1].HireID != 24)
+                //check that the second record ID is 27
+                if (FilteredHireLocation.HireList[1].HireID != 27)
                 {
                     OK = false;
                 }
