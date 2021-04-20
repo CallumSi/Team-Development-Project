@@ -2,6 +2,10 @@
 
 namespace VirginClassLibrary
 {
+    ///This class uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+
     public class clsVHCPatient
     {
         //private data member for the Patient_ID property 

@@ -88,6 +88,7 @@ footer {
 
 /*List Appointment Buttons*/
 .btnAppointmentBook, .btnAppointmentSearch {
+    position: fixed;
     z-index: 1;
     width: 150px;
     height: 50px;
@@ -110,14 +111,12 @@ footer {
 
 /* Appointment Search Button*/
 .btnAppointmentSearch {
-    position: fixed;
     top: 235px;
     left: 1350px;
 }
 
 /* Appointment Book Button*/
 .btnAppointmentBook {
-    position: fixed;
     top: 665px;
     left: 1350px;
 }
@@ -136,46 +135,122 @@ footer {
     transition-duration: 0.5s;
 }
 
-    /* Close Hover Button */
-    .btnClose:hover {
-        background-color: #cc0000;
-        color: white;
-    }
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/* OK Button */
+.btnOK {
+    position: fixed;
+    top: 600px;
+    left: 1050px;
+    z-index: 1;
+    width: 200px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* OK Button - Hover Effect */
+.btnOK:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/*Labels*/
+.lblFilterAppointment, .lblAppointmentDate, .lblErrorMessage, .lblDate, .lblTime, .lblDescription {
+    position: absolute;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/*Filter Appoointment Label*/
+.lblFilterAppointment {
+    top: 575px;
+    left: 500px;
+}
+
+/*Appoointment Date Label*/
+.lblAppointmentDate {
+    top: 150px;
+    left: 500px;
+}
+
+/*Appoointment Booking Date Label*/
+.lblDate {
+    top: 175px;
+    left: 700px;
+}
+
+/*Appoointment Booking Time Label*/
+.lblTime {
+    top: 275px;
+    left: 700px;
+}
+
+/*Appoointment Booking Description Label*/
+.lblDescription {
+    top: 375px;
+    left: 720px;
+}
 
 /*Error Message Label*/
 .lblErrorMessage {
-    position: absolute;
     top: 650px;
     left: 25px;
-    color: black;
-    font-weight: bolder;
     font-size: 18px;
     letter-spacing: 3px;
     color: #cc0000;
     font-family: 'Share Tech Mono', monospace;
 }
 
-/*Filter Appoointment Label*/
-.lblFilterAppointment {
-    position: absolute;
-    top: 575px;
-    left: 500px;
-    color: black;
-    font-weight: bolder;
-    font-size: 20px;
-    letter-spacing: 1px;
+/*Textboxes*/
+.txtDate, .txtTime, .txtDescription, txtAppointmentSearch, .txtAppointmentDate {
+    position: fixed;
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #e8e5e5;
+    text-align: center;
 }
 
+/*Appointment Search Textbox*/
+.txtAppointmentSearch {
+    top: 670px;
+    left: 850px;
+    width: 450px;
+}
 
-/*Appoointment Date Label*/
-.lblAppointmentDate {
-    position: absolute;
-    top: 150px;
-    left: 500px;
-    color: black;
-    font-weight: bolder;
-    font-size: 20px;
-    letter-spacing: 1px;
+/*Appointment Date Search Textbox*/
+.txtAppointmentDate {
+    top: 245px;
+    left: 750px;
+    width: 550px;
+}
+
+/*Date Textbox*/
+.txtDate {
+    top: 270px;
+    left: 900px;
+}
+
+/*Time Textbox*/
+.txtTime {
+    top: 370px;
+    left: 900px;
+}
+
+/*Description Textbox*/
+.txtDescription {
+    top: 470px;
+    left: 900px;
+    width: 500px;
+    height: 75px;
 }
 
 /*Appointment ListBox*/
@@ -190,24 +265,3 @@ footer {
     padding: 8px;
 }
 
-/*Appointment Search Textbox*/
-.txtAppointmentSearch {
-    position: fixed;
-    top: 670px;
-    left: 850px;
-    width: 450px;
-    height: 30px;
-    font-size: 18px;
-    background-color: #e8e5e5;
-}
-
-/*Appointment Date Search Textbox*/
-.txtAppointmentDate {
-    position: fixed;
-    top: 245px;
-    left: 750px;
-    width: 550px;
-    height: 30px;
-    font-size: 18px;
-    background-color: #e8e5e5;
-}

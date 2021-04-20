@@ -2,6 +2,11 @@
 
 namespace VirginClassLibrary
 {
+    ///This class uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
+
     public class clsVHCAppointment
     {
         //private data member for the Appointment_ID property 
@@ -15,15 +20,6 @@ namespace VirginClassLibrary
 
         //private data member for the Appointment_Description property 
         private string mAppointment_Description;
-
-        //private data member for the Hospital_ID property 
-        private int mHospital_ID;
-
-        //private data member for the Patient_ID property 
-        private int mPatient_ID;
-
-        //private data member for the Staff_ID property 
-        private int mStaff_ID;
 
         //Appointment_ID Property 
         public int Appointment_ID 
@@ -88,50 +84,6 @@ namespace VirginClassLibrary
             }
         }
 
-        //Hospital_ID Property 
-        public int Hospital_ID
-        {
-            get
-            {
-                //return the private data 
-                return mHospital_ID;
-            }
-
-            set
-            {
-                //return the private data 
-                mHospital_ID = value;
-            }
-        }
-
-        public int Patient_ID 
-        {
-            get 
-            {
-                //return the private data 
-                return mPatient_ID;
-            }
-
-            set 
-            {
-                //return the private data 
-                mPatient_ID = value;
-            }
-        }
-        public int Staff_ID 
-        {
-            get
-            {
-                //return the private data 
-                return mStaff_ID;
-            }
-
-            set
-            {
-                //return the private data 
-                mStaff_ID = value;
-            }
-        }
 
         public bool Find(int Appointment_ID)
         {
@@ -149,9 +101,6 @@ namespace VirginClassLibrary
                 mAppointment_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Appointment_Date"]);
                 mAppointment_Time = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_Time"]);
                 mAppointment_Description = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Description"]);
-                mHospital_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Hospital_ID"]);
-                mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);
-                mStaff_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Staff_ID"]);
                 //return that everything worked OK
                 return true;
             }

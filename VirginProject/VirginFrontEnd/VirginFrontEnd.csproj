@@ -150,6 +150,7 @@
     <Content Include="VHCMainMenu.css" />
     <Content Include="VHCStaff.css" />
     <Content Include="VHCStaffAdd.aspx" />
+    <Content Include="VHCStaffCheckPin.aspx" />
     <Content Include="VHCStaffDelete.aspx" />
     <Content Include="VHCStaffList.aspx" />
     <Content Include="VirginCustomerMovieList.aspx" />
@@ -758,6 +759,13 @@
     </Compile>
     <Compile Include="VHCStaffAdd.aspx.designer.cs">
       <DependentUpon>VHCStaffAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCStaffCheckPin.aspx.cs">
+      <DependentUpon>VHCStaffCheckPin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCStaffCheckPin.aspx.designer.cs">
+      <DependentUpon>VHCStaffCheckPin.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCStaffDelete.aspx.cs">
       <DependentUpon>VHCStaffDelete.aspx</DependentUpon>

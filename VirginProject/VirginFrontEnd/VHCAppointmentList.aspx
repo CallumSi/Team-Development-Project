@@ -27,29 +27,20 @@
             <%--LABEL: ERROR--%>
             <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
 
-            <%--TEXTBOX: APPOINTMENT SEARCH--%>
-            <%--<asp:TextBox ID="txtAppointmentSearch" runat="server" CssClass="txtAppointmentSearch"></asp:TextBox>--%>
-
             <%--BUTTON: CLOSE--%>
-            <asp:Button ID="btnListClose" runat="server" CssClass="btnClose" Text="X" />
+            <asp:Button ID="btnListClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnListClose_Click" />
 
             <%--BUTTON: APPOINTMENT BOOK FILTER--%>
             <asp:Button ID="btnAppointmentBook" runat="server" CssClass="btnAppointmentBook" Text="BOOK" OnClick="btnAppointmentBook_Click" />
 
-            <%--LABEL: FILTER APPOINTMENT--%>
-            <%--<asp:Label ID="lblFilterAppointment" runat="server" CssClass="lblFilterAppointment" Text="Filter By Appointment Date : "></asp:Label>--%>
-
             <%--LABEL: APPOINTMENT START DATE--%>
             <asp:Label ID="lblAppointmentDate" runat="server" CssClass="lblAppointmentDate" Text="Appointment Date : "></asp:Label>
+
             <%--TEXTBOX: APPOINTMENT DATE SEARCH--%>
-            <asp:TextBox ID="txtAppointmentDate" runat="server" CssClass="txtAppointmentDate"></asp:TextBox>
+            <asp:TextBox ID="txtAppointmentDate" runat="server" CssClass="txtAppointmentDate">20/04/2021</asp:TextBox>
 
-
-
-            <%--BUTTON: CLOSE--%>
+            <%--BUTTON: APPOINTMENT SEARCH--%>
             <asp:Button ID="btnAppointmentSearch" runat="server" CssClass="btnAppointmentSearch" Text="Search" OnClick="btnAppointmentSearch_Click" />
-
-
         </article>
 
         <%--FOOTER SECTION--%>
