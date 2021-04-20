@@ -106,6 +106,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@VMCustomerEmail", mThisCustomer.VMcustomerEmail);
             DB.AddParameter("@VMCustomerUsername", mThisCustomer.VMcustomerUsername);
             DB.AddParameter("@VMCustomerPassword", mThisCustomer.VMcustomerPassword);
+            DB.AddParameter("@OriginalID", mThisCustomer.OriginalID);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVMCustomer_Insert");
         }

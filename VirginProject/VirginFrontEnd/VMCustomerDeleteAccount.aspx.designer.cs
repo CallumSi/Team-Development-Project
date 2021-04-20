@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMPaymentDelete {
+    public partial class VMCustomerDeleteAccount {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,22 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblPaymentDelete control.
+        /// lblVMDeleteCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPaymentDelete;
+        protected global::System.Web.UI.WebControls.Label lblVMDeleteCustomer;
+        
+        /// <summary>
+        /// lblDeleteVMCConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeleteVMCConfirmation;
         
         /// <summary>
         /// btnYes control.
@@ -40,13 +49,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
-        /// btnNo control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNo;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// btnHome control.
@@ -58,40 +67,31 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// btnCustomerList control.
+        /// btnViewCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomerList;
+        protected global::System.Web.UI.WebControls.Button btnViewCart;
         
         /// <summary>
-        /// btnStaffMovie control.
+        /// lblCartCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffMovie;
+        protected global::System.Web.UI.WebControls.Label lblCartCount;
         
         /// <summary>
-        /// btnVMStaffList control.
+        /// btnEditAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVMStaffList;
-        
-        /// <summary>
-        /// btnVMPaymentList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVMPaymentList;
+        protected global::System.Web.UI.WebControls.Button btnEditAccount;
         
         /// <summary>
         /// btnLogOut control.

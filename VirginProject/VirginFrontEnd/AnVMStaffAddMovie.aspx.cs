@@ -153,11 +153,6 @@ namespace VirginFrontEnd
             Response.Redirect("VMStaffMovie.aspx");
         }
 
-        protected void btnVMPaymentList_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VMPaymentList.aspx");
-        }
-
         protected void btnVMStaffList_Click(object sender, EventArgs e)
         {
             Response.Redirect("VMStaffList.aspx");
