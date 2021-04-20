@@ -27,7 +27,7 @@ nav {
     position: fixed;
     width: 20%;
     height: 90%;
-    top: 15%;
+    top: 14%;
     left: 0%;
 }
 
@@ -35,7 +35,7 @@ article {
     background-color: #fff;
     position: fixed;
     width: 80%;
-    top: 15%;
+    top: 14%;
     left: 20%;
     color: black;
     height: 381px;
@@ -46,7 +46,7 @@ footer {
     height: 10%;
     position: fixed;
     width: 100%;
-    top: 75%;
+    top: 78%;
     left: 0%;
     margin-top: 94px;
     margin-bottom: 15px;

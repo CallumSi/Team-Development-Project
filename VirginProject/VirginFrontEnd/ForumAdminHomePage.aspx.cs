@@ -33,5 +33,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("ForumCommentList.aspx");
         }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminLogIn.aspx");
+        }
     }
 }

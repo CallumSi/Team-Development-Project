@@ -129,5 +129,15 @@ namespace VirginFrontEnd
             //return the count of records
             return RecordCount;
         }
+
+        protected void btnPost_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumPostList.aspx");
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+        }
     }
 }

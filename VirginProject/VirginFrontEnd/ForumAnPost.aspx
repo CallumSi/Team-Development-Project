@@ -15,6 +15,7 @@
             </header>
  
             <article>
+                <h1>Post page</h1>
                 <ul>
              
                 <li>
@@ -27,8 +28,8 @@
                      <asp:TextBox ID="txtMessage" runat="server" style="z-index: 1; " Height="132px" Width="290px" ></asp:TextBox>
                </li>
                 <li>
-                     <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1;" Text="OK" />
-                     <asp:Button ID="btnCancel" runat="server" style="z-index: 1;" Text="Cancel" OnClick="btnCancel_Click" />
+                     <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1;" Text="OK" CssClass="navButton" />
+                     <asp:Button ID="btnCancel" runat="server" style="z-index: 1;" Text="Cancel" OnClick="btnCancel_Click" CssClass="navButton" />
                 </li>
                  <li>
                       <asp:Label ID="lblPostError" runat="server" style="z-index: 1;"></asp:Label>
@@ -38,7 +39,7 @@
             </article>
  
             <nav>
-                Navigation links here
+            
             </nav>
  
             <footer>
