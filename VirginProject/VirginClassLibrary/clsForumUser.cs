@@ -154,7 +154,6 @@ namespace VirginClassLibrary
                 mUserPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["UserPhoneNumber"]);
                 mUserEmail = Convert.ToString(DB.DataTable.Rows[0]["UserEmailAddress"]);
                 mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
-
                 return true;
             }
             else

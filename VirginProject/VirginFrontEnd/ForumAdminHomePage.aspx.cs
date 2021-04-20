@@ -9,9 +9,10 @@ namespace VirginFrontEnd
 {
     public partial class ForumAdminHomePage : System.Web.UI.Page
     {
+        Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AdminID = Convert.ToInt32(Session["AdminID"]);
         }
 
         protected void btnUser_Click(object sender, EventArgs e)
