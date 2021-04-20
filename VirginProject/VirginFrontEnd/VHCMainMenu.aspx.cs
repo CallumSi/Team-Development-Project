@@ -17,7 +17,7 @@ namespace VirginFrontEnd
         //Staff Button
         protected void btnStaff_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCStaff.aspx");
+            Response.Redirect("VHCStaffCheckPin.aspx");
         }
 
         //Patient Button
