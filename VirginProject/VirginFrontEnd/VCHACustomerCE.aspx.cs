@@ -153,8 +153,6 @@ namespace VirginFrontEnd
             }
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
-            //once complete redirect the customer to the customer home page
-            Response.Redirect("VCHCustomerHomeCE.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
