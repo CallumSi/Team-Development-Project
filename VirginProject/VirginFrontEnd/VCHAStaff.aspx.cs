@@ -33,6 +33,7 @@ namespace VirginFrontEnd
             }
         }
 
+        //event handler for unload event
         protected void Page_UnLoad(object sender, EventArgs e)
         {
             //Save the StaffID & AdminID when a page unload event happens
@@ -155,6 +156,46 @@ namespace VirginFrontEnd
             //redirect the user to the staff list page, without having added or edited a staff record
             Response.Redirect("VCHStaffList.aspx");
             Session["AdminID"] = AdminID;
+        }
+
+        protected void btnStaff_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff list page
+            Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the customer list page
+            Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
+        }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
         }
     }
 }
