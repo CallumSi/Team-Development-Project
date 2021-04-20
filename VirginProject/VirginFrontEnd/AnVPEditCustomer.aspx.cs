@@ -8,7 +8,7 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class AVPCustomer : System.Web.UI.Page
+    public partial class AnVPEditCustomer : System.Web.UI.Page
     {
         Int32 Customer_ID;
         protected void Page_Load(object sender, EventArgs e)
@@ -20,13 +20,14 @@ namespace VirginFrontEnd
                 //populate the list of customers
                 DisplayCustomer();
                 //if this is not a new record
-                if (Customer_ID !=-1)
+                if (Customer_ID != -1)
                 {
                     //display the current data for the record
                     DisplayCustomer();
                 }
 
             }
+
         }
 
         //function for displaying customers 
@@ -65,7 +66,7 @@ namespace VirginFrontEnd
                 //add the record
                 AllCustomer.Add();
                 //redirect back to the main page
-                Response.Redirect("VPCustomerList.aspx");
+                Response.Redirect("VPCustomerPhoneList.aspx");
             }
             else
             {
@@ -86,6 +87,7 @@ namespace VirginFrontEnd
                 //update the record
                 Update();
             }
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
 
         void Update()
@@ -110,7 +112,7 @@ namespace VirginFrontEnd
                 //update the record 
                 AllCustomer.Update();
                 //all done so redirect back to the main page
-                Response.Redirect("VPCustomerList.aspx");
+                Response.Redirect("VPCustomerPhoneList.aspx");
             }
             else
             {
@@ -119,40 +121,30 @@ namespace VirginFrontEnd
             }
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            //redirect back to the customer page
-            Response.Redirect("VPCustomerList.aspx");
-        }
-
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //redirect back to the customer page
-            Response.Redirect("VPStaffList.aspx");
+
         }
 
-        protected void btnViewStaffList_Click(object sender, EventArgs e)
+        protected void btnViewCart_Click(object sender, EventArgs e)
         {
-            //redirect back to the customer page
-            Response.Redirect("VPStaffList.aspx");
+
         }
 
-        protected void btnViewCustomerList_Click(object sender, EventArgs e)
+        protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-            //redirect back to the customer page
-            Response.Redirect("VPCustomerList.aspx");
-        }
 
-        protected void btnViewPhoneList_Click(object sender, EventArgs e)
-        {
-            //redirect back to the customer page
-            Response.Redirect("VPPhoneList.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            //redirect to login page
-            Response.Redirect("VirginLogin.aspx");
+
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            //redirect back to the customer page
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
     }
 }

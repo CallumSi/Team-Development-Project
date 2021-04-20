@@ -129,7 +129,7 @@ namespace VirginFrontEnd
         {
             ////store the sesssion object so we can pass it to the next page
             Session["Customer_ID"] = Customer_ID;
-            Response.Redirect("AnVPCustomer.aspx");
+            Response.Redirect("AnVPEditCustomer.aspx");
         }
     }
 

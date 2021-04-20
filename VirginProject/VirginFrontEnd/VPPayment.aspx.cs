@@ -52,7 +52,8 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-
+            //redirect back to customer phone list
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
@@ -64,6 +65,8 @@ namespace VirginFrontEnd
         {
             //store the data in the session so we can pass it to the next page
             Session["Customer_ID"] = Customer_ID;
+            //redirect to the cart page
+            Response.Redirect("AnVPEditCustomer.aspx");
         }
 
         protected void btnViewCart_Click(object sender, EventArgs e)
