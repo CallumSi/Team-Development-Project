@@ -77,10 +77,24 @@ namespace VirginFrontEnd
 
         protected void btnAppointmentSearch_Click(object sender, EventArgs e)
         {
-            //reinitialise the list of appointments with the new date
-            AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
-            //dislay the list of appointments
-            DisplayAppointments();
+            try
+            { //reinitialise the list of appointments with the new date
+                AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
+                //dislay the list of appointments
+                DisplayAppointments();
+            }
+
+            catch
+            {
+                lblError.Text = "⚠️ PLEASE ENTER A VALID DATE !";
+            }
+
+            if (txtAppointmentDate.Text.Length == 0)
+            {
+                lblError.Text = "⚠️ DATE SEARCH CANNOT BE BLANK !";
+              
+            }
+
         }
 
         protected void btnAppointmentBook_Click(object sender, EventArgs e)
