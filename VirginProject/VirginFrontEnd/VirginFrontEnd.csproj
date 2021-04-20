@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminHomePage.aspx" />
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnPhone.aspx" />
@@ -202,6 +203,13 @@
     <Content Include="MarketplaceHome2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminHomePage.aspx.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHomePage.aspx.designer.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnMarketplaceListing.aspx.cs">
       <DependentUpon>AnMarketplaceListing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
