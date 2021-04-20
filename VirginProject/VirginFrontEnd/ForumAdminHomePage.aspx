@@ -41,7 +41,7 @@
         </article>
 
         <nav>
-          
+          <asp:Button ID="btnSignOut" runat="server" CssClass="Button" style="z-index: 1;" Text="Sign Out" OnClick="btnSignOut_Click" Width="166px" />
         </nav>
 
         <footer>

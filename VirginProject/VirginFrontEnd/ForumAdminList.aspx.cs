@@ -140,5 +140,15 @@ namespace VirginFrontEnd
             //return the count of records
             return RecordCount;
         }
+
+        protected void btnAdminHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminHomePage.aspx");
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumAdminLogIn.aspx");
+        }
     }
 }

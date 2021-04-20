@@ -49,7 +49,7 @@
  
             <nav>
                 Navigation links here
-                 <asp:Button ID="btnForumAdmin" runat="server" OnClick="btnForumAdmin_Click" style="z-index: 1; left: 12px; top: 211px; position: absolute" Text="Forum Admin" />
+                 <asp:Button ID="btnForumAdmin" runat="server" OnClick="btnForumAdmin_Click" style="z-index: 1; left: 1px; top: 269px; position: absolute" Text="Forum Admin" />
             </nav>
  
             <footer>

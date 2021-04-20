@@ -163,6 +163,16 @@ namespace VirginFrontEnd
             //return the count of records
             return RecordCount;
         }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumUserList.aspx");
+        }
     }
 
 }

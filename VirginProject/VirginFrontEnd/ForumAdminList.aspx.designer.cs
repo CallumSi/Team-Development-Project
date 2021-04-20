@@ -31,13 +31,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.ListBox lstForumAdmin;
         
         /// <summary>
-        /// lblFilterUsername control.
+        /// lblFilterFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFilterUsername;
+        protected global::System.Web.UI.WebControls.Label lblFilterFirstName;
         
         /// <summary>
         /// txtFilterFirstName control.
@@ -92,5 +92,14 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// btnAdminHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdminHome;
     }
 }

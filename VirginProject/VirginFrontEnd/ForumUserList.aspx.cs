@@ -35,13 +35,12 @@ namespace VirginFrontEnd
             //clear the list box
             lstUserListBox.Items.Clear();
         }
+  
 
         Int32 DisplayFilterUserFirstName(string UserFirstNameFilter)
         {
             //int to store the primary key
             Int32 UserId;
-            //string username 
-            //string Userusername;
             //string firstname
             string UserFirstName;
             //string last name
@@ -62,8 +61,6 @@ namespace VirginFrontEnd
             {
                 //get the User id
                 UserId = UserBook.UserList[Index].UserID;
-                //get the username 
-                //Userusername = UserBook.UserList[Index].Userusername;
                 //get the first name
                 UserFirstName = UserBook.UserList[Index].UserFirstName;
                 //get the last name
@@ -83,8 +80,20 @@ namespace VirginFrontEnd
 
         protected void btnApply_Click1(object sender, EventArgs e)
         {
-            //display only usernames
-            DisplayFilterUserFirstName(txtFilterbyuserfirstname.Text);
+            Int32 RecordCount;
+            //store the string
+            string UserFirstName = txtFilterbyuserfirstname.Text;
+            //if the text box is blank
+            if (UserFirstName=="")
+            {
+                lblError.Text = "Please enter a first name";
+            }
+            else
+            {
+                RecordCount = DisplayFilterUserFirstName(txtFilterbyuserfirstname.Text);
+                lblError.Text = RecordCount + "Record Found";
+            }
+          
         }
 
        
@@ -114,6 +123,7 @@ namespace VirginFrontEnd
             //if no recod has been selected
             else
             {
+                
                 //display an error
                 lblError.Text = "Please make you select a record from the list";
 
