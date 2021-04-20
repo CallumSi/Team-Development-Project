@@ -43,7 +43,7 @@ namespace VirginFrontEnd
 
         protected void btnVirginPhone_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VPDefault.aspx");
+            Response.Redirect("VPStafforCustomerSelection.aspx");
         }
 
         protected void btnVirginForum_Click(object sender, EventArgs e)

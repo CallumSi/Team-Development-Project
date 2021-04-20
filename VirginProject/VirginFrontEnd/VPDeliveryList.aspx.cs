@@ -28,7 +28,7 @@ namespace VirginFrontEnd
             }
         }
 
-        //function for displaying customers
+        //function for displaying 
 
         void DisplayDelivery()
         {
@@ -41,7 +41,7 @@ namespace VirginFrontEnd
             txtLastName.Text = AllDelivery.ThisDelivery.LastName;
             txtHouseNo.Text = AllDelivery.ThisDelivery.House_No.ToString();
             txtAddress.Text = AllDelivery.ThisDelivery.Delivery_Address;
-            //txtDeliveryDate = AllDelivery.ThisDelivery.Delivery_Date.Date
+            ddlDeliveryDate.Text = AllDelivery.ThisDelivery.Delivery_Date.ToString();
         }
 
         //function for adding a new delivery
@@ -50,11 +50,28 @@ namespace VirginFrontEnd
             //create an instance of the delivery list
             clsVPDeliveryCollection AllDelivery = new clsVPDeliveryCollection();
             //validate the data on the web form
-            string Error = AllDelivery.ThisDelivery.Valid(txtTitle.Text, txtFirstName.Text, txtLastName.Text, txtHouseNo.Text, txtAddress.Text, txtPostcode.Text, txtDeliveryDate.Text);
+            string Error = AllDelivery.ThisDelivery.Valid(txtTitle.Text, txtFirstName.Text, txtLastName.Text, txtHouseNo.Text, txtAddress.Text, txtPostcode.Text, ddlDeliveryDate.Text);
             //if the data is ok then add it to the object
             if (Error == "")
             {
-
+                //get the data entered by the user
+                AllDelivery.ThisDelivery.Title = txtTitle.Text;
+                AllDelivery.ThisDelivery.FirstName = txtFirstName.Text;
+                AllDelivery.ThisDelivery.LastName = txtLastName.Text;
+                AllDelivery.ThisDelivery.House_No = Convert.ToInt32(txtHouseNo);
+                AllDelivery.ThisDelivery.Delivery_Address = txtAddress.Text;
+                AllDelivery.ThisDelivery.Delivery_Postcode = txtPostcode.Text;
+                AllDelivery.ThisDelivery.Delivery_Date = Convert.ToDateTime(ddlDeliveryDate);
+                //add the record
+                AllDelivery.Add();
+                //redirect back to the main page
+                Response.Redirect("");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "There were problems with the data entered, please try again" + Error;
+           
             }
         }
 
@@ -67,6 +84,29 @@ namespace VirginFrontEnd
         {
             //redirect back to cart
             Response.Redirect("VPViewCart.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect back to cart
+            Response.Redirect("VPCustomerPhoneList.aspx");
+        }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+            //redirect back to cart
+            Response.Redirect("VPViewCart.aspx");
+        }
+
+        protected void btnViewCustomerPhone_Click(object sender, EventArgs e)
+        {
+            //redirect back to cart
+            Response.Redirect("VPCustomerPhoneList.aspx");
+        }
+
+        protected void btnContinueToPayment_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("VPPayment.aspx");
         }
     }
 }

@@ -132,9 +132,27 @@ namespace VirginFrontEnd
             return RecordCount;
         }
 
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect to staff list
+            Response.Redirect("VPStaffList.aspx");
+        }
 
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            //redirect to customer list
+            Response.Redirect("VPCustomerList.aspx");
+        }
 
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to log out page
+            Response.Redirect("VirginLogin.aspx");
+        }
     }
 }

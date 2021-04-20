@@ -15,8 +15,7 @@ namespace VirginFrontEnd
             //the first time the page is displayed 
             if (IsPostBack == false)
             {
-                //update the list box
-                DisplayVPStaff();
+
             }
         }
 
@@ -31,7 +30,7 @@ namespace VirginFrontEnd
             //set the data field to display
             lstStaff.DataTextField = "Staff_FirstName";
             //bind the data to the list
-            lstStaff.DataBind(); 
+            lstStaff.DataBind();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -86,52 +85,78 @@ namespace VirginFrontEnd
             }
         }
 
-        
+
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
-            DisplayFirstName(txtSearchFirstName.Text);
-        }
-
-        protected void btnDisplayAll_Click(object sender, EventArgs e)
-        {
-            ////display all staff first name
-            DisplayFirstName("");
-        }
-
-        Int32 DisplayFirstName(string VPStaffFilter)
-        {
-            Int32 Staff_ID;
-            string Staff_FirstName; //this one is declared in the collections and tests
-            //create an instance of the staff collection
-            clsVPStaffCollection StaffFirstName = new clsVPStaffCollection();
-            //invoke the staff first name filter
-            StaffFirstName.FilterByStaffFirstName(VPStaffFilter);
-            //var to store the count of record
-            Int32 RecordCount;
-            //var to store the index for the loop
-            Int32 Index = 0;
-            //get the count record
-            RecordCount = StaffFirstName.Count;
-            //clear the list box
-            lstStaff.Items.Clear();
-            //while there are records to process
-            while (Index < RecordCount)
+            string Filter = txtSearchFirstName.Text;
+            if (Filter == "")
             {
-                //get the primary key 
-                Staff_ID = StaffFirstName.StaffList[Index].Staff_ID;
-                //get the first name
-                Staff_FirstName = StaffFirstName.StaffList[Index].Staff_FirstName;
-                //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Staff_FirstName + "", Staff_ID.ToString());
-                //add the staff to the list
-                lstStaff.Items.Add(NewEntry);
-                //move the index to the next record
-                Index++;
+                lblError.Text = "Please enter Staff Firstname ";
             }
-            return RecordCount;
+            else
+            {
+                //display all Customer usernames
+                DisplayFirstName(txtSearchFirstName.Text);
+            }
         }
 
 
+            Int32 DisplayFirstName(string VPStaffFilter)
+            {
+                Int32 Staff_ID;
+                string Staff_FirstName; //this one is declared in the collections and tests
+                                        //create an instance of the staff collection
+                clsVPStaffCollection StaffFirstName = new clsVPStaffCollection();
+                //invoke the staff first name filter
+                StaffFirstName.FilterByStaffFirstName(VPStaffFilter);
+                //var to store the count of record
+                Int32 RecordCount;
+                //var to store the index for the loop
+                Int32 Index = 0;
+                //get the count record
+                RecordCount = StaffFirstName.Count;
+                //clear the list box
+                lstStaff.Items.Clear();
+                //while there are records to process
+                while (Index < RecordCount)
+                {
+                    //get the primary key 
+                    Staff_ID = StaffFirstName.StaffList[Index].Staff_ID;
+                    //get the first name
+                    Staff_FirstName = StaffFirstName.StaffList[Index].Staff_FirstName;
+                    //create a new entry for the list box
+                    ListItem NewEntry = new ListItem(Staff_FirstName + "", Staff_ID.ToString());
+                    //add the staff to the list
+                    lstStaff.Items.Add(NewEntry);
+                    //move the index to the next record
+                    Index++;
+                }
+                return RecordCount;
+            }
+
+            protected void btnHome_Click(object sender, EventArgs e)
+            {
+                //redirect to staff list
+                Response.Redirect("VPStaffList.aspx");
+            }
+
+            protected void btnCustomerList_Click(object sender, EventArgs e)
+            {
+                //redirect to customer list
+                Response.Redirect("VPCustomerList.aspx");
+            }
+
+            protected void btnPhoneList_Click(object sender, EventArgs e)
+            {
+                //redirect to customer list
+                Response.Redirect("VPPhoneList.aspx");
+            }
+
+            protected void btnLogOut_Click(object sender, EventArgs e)
+            {
+                //redirect to log out page
+                Response.Redirect("VirginLogin.aspx");
+            }
+        }
     }
-}
