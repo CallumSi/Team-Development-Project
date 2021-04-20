@@ -10,15 +10,28 @@ namespace VirginFrontEnd
 {
     public partial class VCHHireList : System.Web.UI.Page
     {
+        //variable to store the primary keywith page level scope
+        Int32 StaffID;
+
         //function to handle this pages load event
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the number of the staff/admin to be processed
+            StaffID = Convert.ToInt32(Session["StaffID"]);
+
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
                 //update the list box
                 DisplayHires();
             }
+        }
+
+        //event handler for unload event
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Save the StaffID when a page unload event happens
+            Session["StaffID"] = StaffID;
         }
 
         void DisplayHires()
@@ -146,6 +159,8 @@ namespace VirginFrontEnd
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
             //store -1 into the session object to indicate this is a new record
             Session["HireID"] = -1;
             //redirect the user back to the car add page
@@ -154,7 +169,9 @@ namespace VirginFrontEnd
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-             //var to store the primary key value
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //var to store the primary key value
             Int32 HireID;
             //if a record has been selected from the list
             if (lstHires.SelectedIndex != -1)
@@ -175,7 +192,9 @@ namespace VirginFrontEnd
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-             //var to store the primary key value
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //var to store the primary key value
             Int32 HireID;
             //if a record has been selected from the list
             if (lstHires.SelectedIndex != -1)
@@ -192,6 +211,46 @@ namespace VirginFrontEnd
                 //display an error
                 lblError.Text = "Please select a Hire record to delete from the list";
             } 
+        }
+
+        protected void btnStaff_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff list page
+            Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the customer list page
+            Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
+        }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
         }
     }
 }

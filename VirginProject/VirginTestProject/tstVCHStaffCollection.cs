@@ -160,6 +160,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set data properties
             TestItem.StaffID = 1;
+            TestItem.AdminID = 23;
             TestItem.StaffFirstName = "Johann";
             TestItem.StaffLastName = "Goethe";
             TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
@@ -194,6 +195,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set data properties
             TestItem.StaffID = 1;
+            TestItem.AdminID = 23;
             TestItem.StaffFirstName = "Johann";
             TestItem.StaffLastName = "Goethe";
             TestItem.StaffAddress = "49 Frankfurt Lane, Leicester";
@@ -298,17 +300,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a data variable of an existent staff Username
-            FilteredStaff.ReportByStaffUsername("BrickBoy");
+            FilteredStaff.ReportByStaffUsername("M_Var99");
             //check that the correct number of staff records are found
             if (FilteredStaff.Count == 2)
             {
-                //check that the first staff record is StaffID 6
-                if (FilteredStaff.StaffList[0].StaffID != 6)
+                //check that the first staff record is StaffID 12
+                if (FilteredStaff.StaffList[0].StaffID != 12)
                 {
                     OK = false;
                 }
-                //check that the first staff record is StaffID 187
-                if (FilteredStaff.StaffList[1].StaffID != 187)
+                //check that the first staff record is StaffID 13
+                if (FilteredStaff.StaffList[1].StaffID != 13)
                 {
                     OK = false;
                 }

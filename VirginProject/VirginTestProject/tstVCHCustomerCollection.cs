@@ -139,6 +139,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set data properties
             TestItem.CustomerID = 1;
+            TestItem.UserID = 175;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
             TestItem.Age = 26;
