@@ -12,39 +12,17 @@ namespace VirginFrontEnd
         Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             AdminID = Convert.ToInt32(Session["AdminID"]);
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
         {
-
             Session["AdminID"] = AdminID;
-        }
-
-        protected void btnVirginMovies_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void btnCarHire_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnVirginPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnMarketPlace_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnVirginGP_Click(object sender, EventArgs e)
-        {
-
+            Response.Redirect("VCHStaffIndex.aspx"); 
         }
 
         protected void btnVirginForum_Click(object sender, EventArgs e)

@@ -1,62 +1,55 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VirginSignUp.aspx.cs" Inherits="VirginFrontEnd.VirginSignUp" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>VirginSignUp</title>
-         <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+<html>
+<%-- HEADER --%>
+<head id="Head1" runat="server">
+    <title>Virgin Sign Up</title>
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
- <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
-            </header>
- 
-            <article>
-                <ul>
-             
-                <li>
-                       <asp:Label ID="lblUserName" runat="server" style="z-index: 1;" Text="User Name"></asp:Label>
-                <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1;"></asp:TextBox>
-               </li>
-              
-                 <li> 
-                <asp:Label ID="lblPassword" runat="server" style="z-index: 1; " Text="Password"></asp:Label>
-                <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; " TextMode="Password"></asp:TextBox>
-                </li>
-                    
-                 <li> 
-                 <asp:Label ID="lblPasswordConfirm" runat="server" style="z-index: 1;" Text="Password Confirm"></asp:Label>
-                 <asp:TextBox ID="txtPasswordConfirm" runat="server" style="z-index: 1;" TextMode="Password"></asp:TextBox>
-                 </li>
-                 <li>
-                <asp:Label ID="lblSecret" runat="server" style="z-index: 1; " Text="Secret"></asp:Label>
-                 <asp:TextBox ID="txtSecret" runat="server" style="z-index: 1 "></asp:TextBox>
-                </li>
-                <li>
-                <asp:Label ID="lblError" runat="server" style="z-index: 1; "></asp:Label>
-                    
-                 
-                    
-                    </li>
-                    <li>            
-                           <asp:Button ID="btnSignUp" CssClass="navButton" runat="server" OnClick="btnSignUp_Click" style="z-index: 1;" Text="Sign Up" Height="46px" />
-                    </li>
-                </ul>
-            </article>
- 
-            <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-             
-        </form>
-    </body>
+
+<%--BODY SECTION--%>
+<body>
+    <form id="form1" runat="server">
+        <%--HEADER SECTION--%>
+        <header>
+            <h2>VIRGIN SERVICES </h2>
+        </header>
+        <%--ARTICLE SECTION--%>
+        <article>
+            <h4>VIRGIN SIGN UP </h4>
+            <%--LABEL: USERNAME--%>
+            <asp:Label ID="lblUserName" runat="server" CssClass="lblUserName" Text="USERNAME : "></asp:Label>
+            <%--TEXTBOX: USERNAME--%>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="txtUsername"></asp:TextBox>
+            <%--LABEL: PASSWORD--%>
+            <asp:Label ID="lblPassword" runat="server" CssClass="lblPassword" Text="PASSWORD : "></asp:Label>
+            <%--TEXTBOX: PASSWORD--%>
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
+            <%--LABEL: PASSWORD CONFIRM--%>
+            <asp:Label ID="lblPasswordConfirm" runat="server" CssClass="lblPasswordConfirm" Text="PASSWORD CONFIRM : "></asp:Label>
+            <%--TEXTBOX: PASSWORD CONFIRM--%>
+            <asp:TextBox ID="txtPasswordConfirm" runat="server" CssClass="txtPasswordConfirm" TextMode="Password"></asp:TextBox>
+            <%--LABEL: SECRET--%>
+            <asp:Label ID="lblSecret" runat="server" CssClass="lblSecret" Text="SECRET : "></asp:Label>
+            <%--TEXTBOX: SECRET--%>
+            <asp:TextBox ID="txtSecret" runat="server" CssClass="txtSecret"></asp:TextBox>
+            <%--LABEL: ERROR--%>
+            <asp:Label ID="lblErrorMessage" runat="server" CssClass="lblErrorMessage"></asp:Label>
+            <%--BUTTON: SIGN UP--%>
+            <asp:Button ID="btnSignUp" CssClass="btnSignUp" runat="server" OnClick="btnSignUp_Click" Text="Sign Up" />
+            <%--BUTTON: CLOSE--%>
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click"/>
+
+        </article>
+
+        <%--FOOTER SECTION--%>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+
+    </form>
+</body>
 </html>

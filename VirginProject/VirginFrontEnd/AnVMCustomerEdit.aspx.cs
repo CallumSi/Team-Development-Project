@@ -11,10 +11,15 @@ namespace VirginFrontEnd
     public partial class AnVMCustomerEdit : System.Web.UI.Page
     {
         Int32 VMCustomerID;
+        Int32 OriginalID;
+        //create an instance of the clsVMCart
+        clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of Customers to be processed
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
+            MyCart = (clsVMCart)Session["MyCart"];
             if (IsPostBack == false)
             {
                 //populate the list of Customers
@@ -24,6 +29,7 @@ namespace VirginFrontEnd
                 {
                     //display the current data for the record
                     DisplayVMCustomers();
+                    DisplayCustomerData();
                 }
             }
 
@@ -41,6 +47,23 @@ namespace VirginFrontEnd
                 txtVMcustomerPassword.Text = AllCustomers.ThisCustomer.VMcustomerPassword;
             }
         }
+
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //save the cart every time the unload event takes place
+            Session["MyCart"] = MyCart;
+        }
+
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
+        }
+
 
         protected void btnOkay_Click(object sender, EventArgs e)
         {
@@ -72,7 +95,7 @@ namespace VirginFrontEnd
                 AllCustomers.ThisCustomer.VMcustomerEmail = txtVMcustomerEmail.Text;
                 AllCustomers.ThisCustomer.VMcustomerUsername = txtVMcustomerUsername.Text;
                 AllCustomers.ThisCustomer.VMcustomerPassword = txtVMcustomerPassword.Text;
-
+                
                 //add the record
                 AllCustomers.Add();
                 //redirect to the main page
@@ -146,6 +169,13 @@ namespace VirginFrontEnd
             //store data in session object so we can pass it to next page
             Session["VMCustomerID"] = VMCustomerID;
             Response.Redirect("VirginCustomerMovieList.aspx");
+        }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
+            Response.Redirect("VMCustomerDeleteAccount.aspx");
         }
     }
 }

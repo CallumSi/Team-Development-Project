@@ -29,8 +29,8 @@ namespace VirginFrontEnd
 
 
             //try to sign up the new user
-            lblError.Text = Sec.SignUp(Username, Password, PasswordConfirm, SecretMessage);
-            if (lblError.Text == "")
+            lblErrorMessage.Text = Sec.SignUp(Username, Password, PasswordConfirm, SecretMessage);
+            if (lblErrorMessage.Text == "")
             {
                 Session["UserID"] = GetUserID();
                 Response.Redirect("VirginSignUpSuccess.aspx");
@@ -62,6 +62,11 @@ namespace VirginFrontEnd
             }
 
             return UserID;
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }

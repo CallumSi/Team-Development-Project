@@ -11,7 +11,11 @@
     <form id="form1" runat="server">
 
         <header>
-            <h2>Virgin Media </h2>
+            <h2>Virgin Media 
+           
+                  <asp:Label ID="lblWelcome" runat="server" Font-Size="Medium" ForeColor="White" Style="z-index: 1; left: 741px; top: 15px; position: absolute" Text="Welcome:"></asp:Label>
+                <asp:Label ID="lblFirstName" runat="server" Style="z-index: 1; left: 875px; top: 9px; position: absolute" BackColor="White"></asp:Label>
+            </h2>
         </header>
 
         <article>
@@ -42,8 +46,7 @@
         <nav>
 
             <ul>
-                <li>
-                </li>
+                <li></li>
                 <li>
                     <asp:Button ID="btnSignOut" runat="server" OnClick="btnSignOut_Click" Style="z-index: 1;" Text="Sign Out" CssClass="Button" />
                     <asp:Button ID="btnForumPost" runat="server" OnClick="btnForumPost_Click" Style="z-index: 1;" Text="Forum" CssClass="Button" />

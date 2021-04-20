@@ -77,10 +77,24 @@ namespace VirginFrontEnd
 
         protected void btnAppointmentSearch_Click(object sender, EventArgs e)
         {
-            //reinitialise the list of appointments with the new date
-            AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
-            //dislay the list of appointments
-            DisplayAppointments();
+            try
+            { //reinitialise the list of appointments with the new date
+                AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
+                //dislay the list of appointments
+                DisplayAppointments();
+            }
+
+            catch
+            {
+                lblError.Text = "⚠️ PLEASE ENTER A VALID DATE !";
+            }
+
+            if (txtAppointmentDate.Text.Length == 0)
+            {
+                lblError.Text = "⚠️ DATE SEARCH CANNOT BE BLANK !";
+              
+            }
+
         }
 
         protected void btnAppointmentBook_Click(object sender, EventArgs e)
@@ -111,14 +125,14 @@ namespace VirginFrontEnd
                 //otherwise cannot change the appointments (at least in this version of the system)
                 else
                 {
-                    lblError.Text = "⚠️ ERROR: CANNOT CHANGE THIS BOOKING!";
+                    lblError.Text = "⚠️ CANNOT CHANGE THIS BOOKING!";
                 }
             }
 
             //show an error if not
             else
             {
-                lblError.Text = "⚠️ ERROR: PLEASE SELECT AN AVAILABLE BOOKING FIRST!";
+                lblError.Text = "⚠️ PLEASE SELECT AN AVAILABLE BOOKING FIRST!";
             }
         }
 

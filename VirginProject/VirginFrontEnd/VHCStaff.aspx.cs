@@ -13,8 +13,7 @@ namespace VirginFrontEnd
     
     public partial class VHCHospital : System.Web.UI.Page
     {
-        Int32 Patient_ID;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
           
@@ -36,7 +35,7 @@ namespace VirginFrontEnd
         //Log Out Button
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCMainMenu.aspx");
+            Response.Redirect("VirginLogIn.aspx");
 
         }
 

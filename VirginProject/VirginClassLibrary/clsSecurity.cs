@@ -50,7 +50,7 @@ public class clsSecurity
         else
         {
             //generate an error message
-            ErrorMsg = "The Password do not match.";
+            ErrorMsg = " ⚠️ THE PASSWORD DO NOT MATCH!";
         }
         return ErrorMsg;
     }
@@ -135,12 +135,12 @@ public class clsSecurity
         //if the password is less then 7 characters
         if (Password.Length < 7 | Password.Length > 14)
         {
-            Err = "Your password must be at least 7 characters ";
+            Err = "⚠️ PASSWORD MUST BE AT LEAST 7 CHARACTERS! ";
         }
         //if the password doesn't contain a number
         if (ContainsNumber(Password) == false)
         {
-            Err = Err + "your password must contain a number ";
+            Err = Err + "⚠️ PASSWORD MUST CONTAIN A NUMBER! ";
         }
         //return any errors
         return Err;
@@ -194,21 +194,21 @@ public class clsSecurity
                     DB.AddParameter("@Username", Username);
                     DB.AddParameter("@UserPassword", HashPassword);
                     DB.Execute("sproc_tblVMUser_UpdatePassword");
-                    Message = "The password has been changed.";
+                    Message = "THE PASSWORD HAS BEEN CHANGED.";
                 }
             }
             //if the passwords do not match
             else
             {
                 //generate an error message
-                Message = "The passwords do not match.";
+                Message = "⚠️ THE PASSWORDS DO NOT MATCH.";
             }
 
         }
 
         else
         {
-            Message = "Username or secret not correct";
+            Message = "⚠️ USERNAME OR SECRET INCORRECT";
         }
 
         //return the error message (if there is one)
