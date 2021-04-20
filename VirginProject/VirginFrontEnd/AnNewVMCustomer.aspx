@@ -1,18 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnVMCustomer.aspx.cs" Inherits="VirginFrontEnd.AnVMCustomer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AnNewVMCustomer.aspx.cs" Inherits="VirginFrontEnd.AnNewVMCustomer" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Virgin Movie Customer Information</title>
+    <title>Virgin Movie New Customer Information</title>
     <link href="VMMovie.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
     <form id="form1" runat="server">
         <header>
-            <h2>Virgin Movie Customer Details</h2>
+            <h2>Virgin Movie New Customer Details</h2>
         </header>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
         <asp:Label ID="lblAnVMCustomer" runat="server" Text="VIRGIN MOVIES CUSTOMER DETAILS" CssClass="lblAnVMCustomer"></asp:Label>
         <asp:Label ID="lblVMcustomerFirstname" runat="server" Text="CUSTOMER FIRSTNAME: " CssClass="lblVMcustomerFirstname"></asp:Label>
         <asp:Label ID="lblVMcustomerLastname" runat="server" Text="CUSTOMER LASTNAME: " CssClass="lblVMcustomerLastname"></asp:Label>
@@ -28,12 +30,8 @@
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelVMCustomer" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" CssClass="lblErrorVMCustomer"></asp:Label>
         <nav>
-            <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
-            <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
-            <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
-            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
-            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
 
+            <asp:Button ID="btnLogOut" CssClass="btnVMNCustomerLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>

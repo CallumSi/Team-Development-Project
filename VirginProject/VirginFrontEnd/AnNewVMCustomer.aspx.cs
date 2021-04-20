@@ -8,22 +8,24 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class AnVMCustomer : System.Web.UI.Page
+    public partial class AnNewVMCustomer : System.Web.UI.Page
     {
         Int32 VMCustomerID;
+        Int32 OriginalID;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of Customers to be processed
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            OriginalID = Convert.ToInt32(Session["UserID"]);
             if (IsPostBack == false)
             {
-                //populate the list of Customers
-                DisplayVMCustomers();
                 //if this is not a new record
                 if (VMCustomerID != -1)
                 {
                     //display the current data for the record
                     DisplayVMCustomers();
+                    DisplayCustomerData();
+
                 }
             }
 
@@ -42,6 +44,16 @@ namespace VirginFrontEnd
             }
         }
 
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
+        }
+
         protected void btnOkay_Click(object sender, EventArgs e)
         {
             if (VMCustomerID == -1)
@@ -52,9 +64,13 @@ namespace VirginFrontEnd
             }
             else
             {
+
                 //update the record
                 Update();
             }
+            //add PK to session object 
+            Session["VMCustomerID"] = VMCustomerID;
+            Response.Redirect("VirginCustomerMovieList.aspx");
         }
 
         //function for adding new records
@@ -65,26 +81,28 @@ namespace VirginFrontEnd
             //validate the data on the web form
             String Error = AllCustomers.ThisCustomer.Valid(txtVMcustomerFirstname.Text, txtVMcustomerLastname.Text, txtVMcustomerEmail.Text, txtVMcustomerUsername.Text, txtVMcustomerPassword.Text);
             //if the data is OK then add it to the object
-             if (Error == "")
-             {
+            if (Error == "")
+            {
                 AllCustomers.ThisCustomer.VMcustomerFirstName = txtVMcustomerFirstname.Text;
                 AllCustomers.ThisCustomer.VMcustomerLastName = txtVMcustomerLastname.Text;
                 AllCustomers.ThisCustomer.VMcustomerEmail = txtVMcustomerEmail.Text;
                 AllCustomers.ThisCustomer.VMcustomerUsername = txtVMcustomerUsername.Text;
                 AllCustomers.ThisCustomer.VMcustomerPassword = txtVMcustomerPassword.Text;
-
+                AllCustomers.ThisCustomer.OriginalID = OriginalID;
                 //add the record
                 AllCustomers.Add();
+                AllCustomers.ThisCustomer.FindOriginal(OriginalID);
+                Session["VMCustomerID"] = AllCustomers.ThisCustomer.VMCustomerID;
                 //redirect to the main page
-                Response.Redirect("VMCustomerList.aspx");
-             }
-             else
-             {
+                Response.Redirect("VirginCustomerMovieList.aspx");
+            }
+            else
+            {
                 //report an error
                 lblError.Text = "There were problems with the data entered: " + Error;
-             }
+            }
         }
-        
+
         //function for Updating records
         void Update()
         {
@@ -107,7 +125,8 @@ namespace VirginFrontEnd
                 //add the record
                 AllCustomers.Update();
                 //redirect to the main page
-                Response.Redirect("VMCustomerList.aspx");
+                Session["VMCustomerID"] = AllCustomers.ThisCustomer.VMCustomerID;
+                Response.Redirect("VirginCustomerMovieList.aspx");
             }
             else
             {
@@ -118,37 +137,12 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VMCustomerList.aspx");
-
-        }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-            //redirect to the staff list
-            Response.Redirect("VMStaffList.aspx");
-        }
-
-        protected void btnCustomerList_Click(object sender, EventArgs e)
-        {
-            //redirect to the customer list
-            Response.Redirect("VMCustomerList.aspx");
-        }
-
-        protected void btnStaffMovie_Click(object sender, EventArgs e)
-        {
-            //redirect to the staff movie list
-            Response.Redirect("VMStaffMovie.aspx");
-        }
-
-        protected void btnVMStaffList_Click(object sender, EventArgs e)
-        {
-            //redirect to the staff list
-            Response.Redirect("VMStaffList.aspx");
+            Session["UserID"] = OriginalID;
+            Response.Redirect("VMCustomerFirstTime.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            //redirect to the login page
             Response.Redirect("VirginLogin.aspx");
         }
     }

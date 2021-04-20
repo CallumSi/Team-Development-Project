@@ -8,10 +8,9 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
-    public partial class VMCustomerDelete : System.Web.UI.Page
+    public partial class VMCustomerDeleteAccount : System.Web.UI.Page
     {
         Int32 VMCustomerID;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the customer to be deleted from the session object
@@ -34,43 +33,38 @@ namespace VirginFrontEnd
             //delete the record
             DeleteCustomer();
             //redirect to the main page
-            Response.Redirect("VMCustomerList.aspx");
+            Response.Redirect("VirginLogin.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             //redirect back to the main page
-            Response.Redirect("VMCustomerList.aspx");
+            Response.Redirect("VirginCustomerMovieList.aspx");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //redirect back to customer list page
-            Response.Redirect("VMCustomerList.aspx");
+            //redirect back to the main page
+            Response.Redirect("VirginCustomerMovieList.aspx");
         }
 
-        protected void btnCustomerList_Click(object sender, EventArgs e)
+        protected void btnViewCart_Click(object sender, EventArgs e)
         {
-            //redirect back to the customer list page
-            Response.Redirect("VMCustomerList.aspx");
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
+            Response.Redirect("VMViewCart.aspx");
         }
 
-        protected void btnStaffMovie_Click(object sender, EventArgs e)
+        protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-            //redirect back to the add movie page
-            Response.Redirect("VMStaffAddMovie.aspx");
-        }
-
-        protected void btnVMStaffList_Click(object sender, EventArgs e)
-        {
-            //redirect back to the staff list page
-            Response.Redirect("VMCStaffList.aspx");
+            //store data in session object so we can pass it to next page
+            Session["VMCustomerID"] = VMCustomerID;
+            Response.Redirect("AnVMCustomerEdit.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
-            //redirect to the  login page 
-            Response.Redirect("VirginLogin.aspx");
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }

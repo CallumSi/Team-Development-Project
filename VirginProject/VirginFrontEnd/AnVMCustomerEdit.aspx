@@ -29,6 +29,7 @@
         <asp:Button ID="btnOkay" runat="server" Text="OKAY" CssClass="btnOkayVMCustomer" OnClick="btnOkay_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="CANCEL" CssClass="btnCancelVMCustomer" OnClick="btnCancel_Click" />
         <asp:Label ID="lblError" runat="server" CssClass="lblErrorVMCustomer"></asp:Label>
+        <asp:Button ID="btnDeleteAccount" runat="server" Text="DELETE ACCOUNT" CssClass="btnDeleteAccount" OnClick="btnDeleteAccount_Click" />
         <nav>
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnCustomerHome" OnClick="btnHome_Click" />
             <asp:Button ID="btnViewCart" CssClass="btnCustomerCart" runat="server" Text="View Shopping Cart" OnClick="btnViewCart_Click" />

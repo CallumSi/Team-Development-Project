@@ -58,7 +58,7 @@ footer {
 .btnDeleteHome, .btnDeleteViewCart, .btnCustomerCart,
 .btnEditAccount, .btnCustomerLogOut, .btnCustomerHome, .btnCustomerList, .btnStaffLogOut,
 .btnStaffMovie, .btnStaffMovieCustomerList, .btnStaffMovieLogOut, .btnStaffMovieStaffList,
-.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut, .btnVMPaymentList {
+.btnStaffVMList, .btnVMStaffLogOut, .btnCustThanksLogOut, .btnVMNCustomerLogOut {
     padding: 20px;
     border-radius: 2px;
     font-size: 13px;
@@ -93,15 +93,9 @@ footer {
     left: 30px;
 }
 
-.btnVMPaymentList {
-    position: fixed;
-    top: 550px;
-    left: 30px;
-}
-
 .btnVMStaffLogOut {
     position: fixed;
-    top: 650px;
+    top: 550px;
     left: 30px;
 }
 
@@ -1462,4 +1456,23 @@ footer {
 .btnApplyPaymentFilter {
     left: 1240px;
     top: 192px;
+}
+
+
+.btnDeleteAccount {
+    position: absolute;
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 130px;
+    left: 1225px;
+    top: 670px;
+}
+
+.btnVMNCustomerLogOut {
+    position: fixed;
+    top:150px;
+    left:30px;
 }

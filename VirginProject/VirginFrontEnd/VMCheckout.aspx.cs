@@ -10,7 +10,6 @@ namespace VirginFrontEnd
 {
     public partial class VMCheckout : System.Web.UI.Page
     {
-        Int32 VMMovieID;
         Int32 VMCustomerID;
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
@@ -19,12 +18,28 @@ namespace VirginFrontEnd
             MyCart = (clsVMCart)Session["MyCart"];
             //get the CustomerID
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+
+            if (IsPostBack == false)
+            {
+                DisplayCustomerData();
+            }
+
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
         {
             //you must also save the cart every time the unload event takes place
             Session["MyCart"] = MyCart;
+        }
+
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
