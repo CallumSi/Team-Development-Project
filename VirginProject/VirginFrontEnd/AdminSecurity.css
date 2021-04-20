@@ -19,8 +19,8 @@ header {
 h2 {
     position: fixed;
     left: 30px;
-    top:5px; 
-    letter-spacing:2px;
+    top: 5px;
+    letter-spacing: 2px;
 }
 
 /* Headers 3/4 Shared Attributes*/
@@ -106,27 +106,26 @@ footer {
     position: fixed;
     top: 150px;
     left: 150px;
-    color:black;
-    font-size:40pt;
-    font-weight:bolder;
+    color: black;
+    font-size: 40pt;
+    font-weight: bolder;
 }
 
 /*Username Label*/
 .lblUserName {
-    top: 200px;
-    left: 660px;
+    top: 197px;
+    left: 669px;
 }
 
 /*Password Label*/
 .lblPassword {
-    top: 298px;
-    left: 612px;
+    left: 596px;
 }
 
 /*Password Confirm Label*/
 .lblPasswordConfirm {
-    top: 400px;
-    left: 470px;
+    top: 399px;
+    left: 449px;
 }
 
 /*Secret Label*/
@@ -169,7 +168,7 @@ footer {
 }
 
 /* Navigation Buttons */
-.btnVirginMovies, .btnCarHire, .btnVirginPhone, .btnMarketPlace, .btnVirginGP, .btnVirginForum{
+.btnVirginMovies, .btnCarHire, .btnVirginPhone, .btnMarketPlace, .btnVirginGP, .btnVirginForum {
     position: fixed;
     z-index: 1;
     width: 550px;
@@ -183,8 +182,8 @@ footer {
 .btnLogOut {
     position: fixed;
     z-index: 1;
-    width: 200px;
-    height: 50px;
+    width: 232px;
+    height: 67px;
     font-size: 20pt;
     border-radius: 12px;
     transition-duration: 0.5s;
@@ -192,10 +191,10 @@ footer {
     left: 1650px;
 }
 
-.btnLogOut:hover {
-    background-color: darkred; 
-    color:white;
-}
+    .btnLogOut:hover {
+        background-color: darkred;
+        color: white;
+    }
 
 /*Virgin Movie*/
 .btnVirginMovies {
@@ -205,8 +204,8 @@ footer {
 
 /*Virgin Car Hire*/
 .btnCarHire {
-    top: 500px;
-    left: 50px;
+    top: 313px;
+    left: 318px;
 }
 
 /*Virgin Phones*/
@@ -229,8 +228,8 @@ footer {
 
 /*Virgin Forum*/
 .btnVirginForum {
-    top: 500px;
-    left: 1320px;
+    top: 317px;
+    left: 1321px;
 }
 
 /* Buttons */
@@ -244,24 +243,24 @@ footer {
     transition-duration: 0.5s;
 }
 
-/* Buttons - Hover Effect */
-.btnSignUp:hover, .btnLogIn:hover, .btnSignUp2:hover, .btnForgotPassword:hover, .btnContinue:hover, .btnVirginMovies:hover, .btnCarHire:hover, .btnVirginPhone:hover, .btnMarketPlace:hover, .btnVirginGP:hover, .btnVirginForum:hover {
-    background-color: #27183D;
-    color:white; 
-}
+    /* Buttons - Hover Effect */
+    .btnSignUp:hover, .btnLogIn:hover, .btnSignUp2:hover, .btnForgotPassword:hover, .btnContinue:hover, .btnVirginMovies:hover, .btnCarHire:hover, .btnVirginPhone:hover, .btnMarketPlace:hover, .btnVirginGP:hover, .btnVirginForum:hover {
+        background-color: #27183D;
+        color: white;
+    }
 
 /* Forum Admin */
 .btnForumAdmin {
     top: 300px;
     left: 100px;
-    width: 300px;
+    width: 361px;
 }
 
-/* Forum Admin- Hover Effect */
-.btnForumAdmin:hover {
-    background-color: dimgrey;
-    color: white;
-}
+    /* Forum Admin- Hover Effect */
+    .btnForumAdmin:hover {
+        background-color: dimgrey;
+        color: white;
+    }
 
 /* Sign Up Button */
 .btnSignUp {
@@ -269,11 +268,11 @@ footer {
     left: 1000px;
 }
 
-/* Sign Up ButtonHover Effect */
-.btnSignUp:hover {
-    background-color: darkgreen;
-    color: white;
-}
+    /* Sign Up ButtonHover Effect */
+    .btnSignUp:hover {
+        background-color: darkgreen;
+        color: white;
+    }
 
 /* Log In Button */
 .btnLogIn {
@@ -310,30 +309,30 @@ footer {
     left: 1000px;
 }
 
-.btnSubmit:hover {
-    background-color: darkgreen;
-    color: white;
-}
+    .btnSubmit:hover {
+        background-color: darkgreen;
+        color: white;
+    }
 
 /* Close Button */
 .btnClose {
     position: fixed;
-    top: 113px;
-    left: 1651px;
+    top: 121px;
+    left: 1580px;
     z-index: 1;
-    width: 60px;
-    height: 35px;
+    width: 113px;
+    height: 40px;
     font-size: 10pt;
     font-weight: bold;
     border-radius: 12px;
     transition-duration: 0.5s;
 }
 
-/* Close Hover Button */
-.btnClose:hover {
-    background-color: #cc0000;
-    color: white;
-}
+    /* Close Hover Button */
+    .btnClose:hover {
+        background-color: #cc0000;
+        color: white;
+    }
 
 /*Error Message Label*/
 .lblErrorMessage {
@@ -344,6 +343,6 @@ footer {
     font-weight: bolder;
     font-size: 15pt;
     letter-spacing: 3px;
-    color:#cc0000;
+    color: #cc0000;
     font-family: 'Share Tech Mono', monospace;
 }

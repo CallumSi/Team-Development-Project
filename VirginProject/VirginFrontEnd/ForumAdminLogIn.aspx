@@ -5,52 +5,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>AdminLogIn</title>
-    <link href="ForumStyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
 
         <header>
             <h2>Virgin Media </h2>
-              
+
         </header>
 
         <article>
-          <h1> Admin Log In</h1>
-            <ul>
+            <h1>Admin Log In</h1>
 
-                <li>
-                    <asp:Label ID="lblUserName" runat="server" Style="z-index: 1;" Text="User Name"></asp:Label>
-                    <asp:TextBox ID="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
-                </li>
+            <asp:Label ID="lblUserName" CssClass="lblUserName" runat="server" Style="z-index: 1;" Text="User Name"></asp:Label>
+            <asp:TextBox ID="txtUsername" CssClass="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
 
-                <li>
-                    <asp:Label ID="lblPassword" runat="server" Style="z-index: 1;" Text="Password"></asp:Label>
-                    <asp:TextBox ID="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
-                </li>
+            <asp:Label ID="lblPassword" CssClass="lblPassword" runat="server" Style="z-index: 1;" Text="Password"></asp:Label>
+            <asp:TextBox ID="txtPassword" CssClass="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
 
-                <li>
-                    <asp:Button ID="btnLogIn" runat="server" Style="z-index: 1;" Text="Log In" OnClick="btnLogIn_Click" />
-                </li>
 
-                <li>
-                    <asp:Button ID="btnSignUp" runat="server" Style="z-index: 1;" Text="Sign Up" OnClick="btnSignUp_Click1" />
-                </li>
-                <li>
+            <asp:Button ID="btnLogIn" CssClass="btnLogIn" runat="server" Style="z-index: 1;" Text="Log In" OnClick="btnLogIn_Click" />
 
-                    <asp:Button ID="btnForgotPassword" runat="server" Style="z-index: 1;" Text="Forgot Password" OnClick="btnForgotPassword_Click" />
 
-                </li>
-                <li>
 
-                    <asp:Label ID="lblError" runat="server" Style="z-index: 1;"></asp:Label>
+            <asp:Button ID="btnSignUp" CssClass="btnSignUp2" runat="server" Style="z-index: 1;" Text="Sign Up" OnClick="btnSignUp_Click1" />
 
-                </li>
-            </ul>
+            <asp:Button ID="btnForgotPassword" CssClass="btnForgotPassword" runat="server" Style="z-index: 1;" Text="Forgot Password" OnClick="btnForgotPassword_Click" />
+
+
+            <asp:Label ID="lblError" CssClass="lblErrorMessage" runat="server" Style="z-index: 1;"></asp:Label>
         </article>
 
         <nav>
-          
         </nav>
 
         <footer>
