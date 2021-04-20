@@ -91,7 +91,7 @@ footer {
 /*Navigation Buttons*/
 
 /*List Staff Buttons*/
-.btnDisplayAllStaffs, .btnStaffApplyFilter, .btnYes, .btnNo, .EditStaff, .DeleteStaff {
+.btnDisplayAllStaffs, .btnStaffApplyFilter, .btnYes, .btnNo, .EditStaff, .DeleteStaff, .btnConfirmPin {
     z-index: 1;
     width: 250px;
     height: 70px;
@@ -101,9 +101,16 @@ footer {
 }
 
 /* Hover Effect */
-.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover {
+.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover, .btnConfirmPin:hover {
     background-color: #27183D;
     color: white;
+}
+
+/* Confirm Button */
+.btnConfirmPin {
+    position: fixed;
+    top: 500px;
+    left: 1000px;
 }
 
 /*Yes Button*/
@@ -210,20 +217,40 @@ footer {
 
 /*Staff Labels*/
 .lblStaff_Title, .lblStaff_Firstname, .lblStaff_Lastname,
-.lblStaff_Email, .lblStaff_Username, .lblStaff_Password, .lblStaff_Role {
+.lblStaff_Email, .lblStaff_Username, .lblStaff_Password, .lblStaff_Role, .lblConfirmStaff, .lblConfirmPin {
     position: absolute;
     font-weight: bolder;
     letter-spacing: 2px;
     font-size: 25px;
 }
 
+/*Confirm Staff Label */
+.lblConfirmStaff {
+    top: 150px;
+    left: 650px;
+}
+
+/*Confirm Pin Label */
+.lblConfirmPin {
+    top: 250px;
+    left: 650px;
+}
+
+
 /*Staff Textboxes*/
 .txtStaff_Title, .txtStaff_Firstname, .txtStaff_Lastname,
-.txtStaff_Email, .txtStaff_Username, .txtStaff_Password, .txtStaff_Role {
+.txtStaff_Email, .txtStaff_Username, .txtStaff_Password, .txtStaff_Role, .txtStaffPin {
     position: absolute;
     letter-spacing: 2px;
     font-size: 25px;
     width: 500px;
+}
+
+/*Staff Pin Textbox */
+.txtStaffPin {
+    top: 250px;
+    left: 900px;
+    background-color: #e8e5e5;
 }
 
 /*Staff Title*/
