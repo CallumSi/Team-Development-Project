@@ -10,6 +10,8 @@ namespace VirginClassLibrary
     {
         //private staff ID property
         private int mStaffID;
+        //private admin ID property
+        private int mAdminID;
         //private staff first name property 
         private string mStaffFirstName;
         //private staff last name property 
@@ -42,6 +44,21 @@ namespace VirginClassLibrary
             }
         }
 
+        //AdminID property
+        public int AdminID
+        {
+            get
+            {
+                //return the private data
+                return mAdminID;
+            }
+            set
+            {
+                //set the private data
+                mAdminID = value;
+            }
+        }
+        
         //Staff First Name property
         public string StaffFirstName
         {
@@ -176,6 +193,41 @@ namespace VirginClassLibrary
             {
                 //copy the data from the database to the private data member
                 mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                mAdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
+                mStaffFirstName = Convert.ToString(DB.DataTable.Rows[0]["StaffFirstName"]);
+                mStaffLastName = Convert.ToString(DB.DataTable.Rows[0]["StaffLastName"]);
+                mStaffAddress = Convert.ToString(DB.DataTable.Rows[0]["StaffAddress"]);
+                mStaffPostCode = Convert.ToString(DB.DataTable.Rows[0]["StaffPostCode"]);
+                mStaffUsername = Convert.ToString(DB.DataTable.Rows[0]["StaffUsername"]);
+                mStaffEmail = Convert.ToString(DB.DataTable.Rows[0]["StaffEmail"]);
+                mStaffPassword = Convert.ToString(DB.DataTable.Rows[0]["StaffPassword"]);
+                mStaffPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["StaffPhoneNumber"]);
+                //return that the method worked
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                //return false - showing an error
+                return false;
+            }
+        }
+
+        //find method AdminID
+        public bool FindByAdminID(int AdminID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for AdminID to search for
+            DB.AddParameter("@AdminID", AdminID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVCHStaff_FilterByAdminID");
+            //if one record is found (there should only be 1 or 0 records found)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data member
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                mAdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
                 mStaffFirstName = Convert.ToString(DB.DataTable.Rows[0]["StaffFirstName"]);
                 mStaffLastName = Convert.ToString(DB.DataTable.Rows[0]["StaffLastName"]);
                 mStaffAddress = Convert.ToString(DB.DataTable.Rows[0]["StaffAddress"]);

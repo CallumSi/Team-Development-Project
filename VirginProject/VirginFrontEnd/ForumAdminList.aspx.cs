@@ -10,8 +10,14 @@ namespace VirginFrontEnd
 {
     public partial class ForumAdminList : System.Web.UI.Page
     {
+        Int32 AdminID;
+        Int32 OriginalID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the number of the customer/user to be processed
+            AdminID = Convert.ToInt32(Session["AdminID "]);
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
+
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
