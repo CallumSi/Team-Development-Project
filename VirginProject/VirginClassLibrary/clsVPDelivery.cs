@@ -8,6 +8,7 @@ namespace VirginClassLibrary
         //private data member for the DeliveryID
         private Int32 mDelivery_ID;
         //Delivery Attributes
+        Int32 mOrderID;
         String mTitle;
         String mFirstName;
         String mLastName;
@@ -30,7 +31,23 @@ namespace VirginClassLibrary
             }
 
         }
-        
+        public int OrderID
+
+        {
+            get
+            {
+                //return the private data 
+                return mOrderID;
+            }
+
+            set
+            {
+                //set the private data
+                mOrderID = value;
+            }
+
+        }
+
         public string Title
 
         {
@@ -151,6 +168,7 @@ namespace VirginClassLibrary
             {
                 //copy the data from the database to the private data members
                 mDelivery_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Delivery_ID"]);
+                mOrderID = Convert.ToInt32(DB.DataTable.Rows[0]["OrderID"]);
                 mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
