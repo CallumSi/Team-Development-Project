@@ -30,8 +30,8 @@ h1 {
 nav {
     background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
     position: fixed;
-    width: 19%;
-    height: 86%;
+    width: 13%;
+    height: 86a%;
     top: 14%;
     left: 0%;
 }
@@ -48,10 +48,10 @@ article {
 
 footer {
     background-color: #27183d;
-    height: 10%;
+    height: 20%;
     position: fixed;
     width: 100%;
-    top: 87%;
+    top: 85%;
     left: 0%;
     margin-top: 94px;
     margin-bottom: 15px;

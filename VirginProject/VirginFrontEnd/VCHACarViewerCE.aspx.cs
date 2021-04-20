@@ -19,6 +19,9 @@ namespace VirginFrontEnd
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the number of the customer/user to be processed
+            CustomerID = Convert.ToInt32(Session["CustomerID"]);
+
             //get the number of the car to be processed
             CarID = Convert.ToInt32(Session["CarID"]);
             if (IsPostBack == false)
@@ -39,6 +42,7 @@ namespace VirginFrontEnd
             //Save the CustomerID & UserID when a page unload event happens
             Session["CustomerID"] = CustomerID;
             Session["UserID"] = UserID;
+            Session["CarID"] = CarID;
         }
 
         void DisplayCar()
@@ -60,7 +64,12 @@ namespace VirginFrontEnd
 
         protected void btnHire_Click(object sender, EventArgs e)
         {
-
+            //store -1 into the session object to indicate this is a new record
+            Session["CustomerID"] = CustomerID;
+            Session["CarID"] = CarID;
+            Session["HireID"] = -1;
+            //redirect the user back to the car add page
+            Response.Redirect("VCHAHireCE.aspx");
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
