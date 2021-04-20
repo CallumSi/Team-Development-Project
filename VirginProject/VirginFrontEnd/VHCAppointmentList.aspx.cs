@@ -111,14 +111,14 @@ namespace VirginFrontEnd
                 //otherwise cannot change the appointments (at least in this version of the system)
                 else
                 {
-                    lblError.Text = "⚠️ ERROR: CANNOT CHANGE THIS BOOKING!";
+                    lblError.Text = "⚠️ CANNOT CHANGE THIS BOOKING!";
                 }
             }
 
             //show an error if not
             else
             {
-                lblError.Text = "⚠️ ERROR: PLEASE SELECT AN AVAILABLE BOOKING FIRST!";
+                lblError.Text = "⚠️ PLEASE SELECT AN AVAILABLE BOOKING FIRST!";
             }
         }
 

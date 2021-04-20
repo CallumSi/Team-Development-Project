@@ -40,10 +40,18 @@ namespace VirginFrontEnd
                 Response.Redirect("VirginHomePage.aspx");
 
             }
+
+            if (txtUsername.Text.Length == 0 | txtPassword.Text.Length == 0)
+            {
+                //otherwise show any errors
+                lblErrorMessage.Text = "⚠️ USERNAME/PASSWORD CANNOT BE BLANK!";
+            }
+
+
             else
             {
                 //otherwise show any errors
-                lblError.Text = "Failed Login";
+                lblErrorMessage.Text = "⚠️ FAILED LOGIN";
             }
         }
 

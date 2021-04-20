@@ -41,7 +41,7 @@ namespace VirginFrontEnd
             if (txtStaffPin.Text.Length == 0)
             {
                 //otherwise show any errors
-                lblError.Text = "⚠️ ERROR: CANNOT BE BLANK! PLEASE ENTER THE CORRECT PIN TO PROCEED!";
+                lblError.Text = "⚠️ CANNOT BE BLANK! PLEASE ENTER THE CORRECT PIN TO PROCEED!";
 
             }
 
@@ -49,7 +49,7 @@ namespace VirginFrontEnd
 
             {
                 //otherwise show any errors
-                lblError.Text = "⚠️ ERROR: INCORRECT PIN! PLEASE TRY AGAIN.";
+                lblError.Text = "⚠️ INCORRECT PIN! PLEASE TRY AGAIN.";
             }
         }
     }
