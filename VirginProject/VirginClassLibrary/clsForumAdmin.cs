@@ -38,6 +38,34 @@ namespace VirginClassLibrary
                 mAdminID = value;
             }
         }
+
+        public bool FindOriginal(int adminID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("OriginalID", adminID);
+            //execute the sproc
+            DB.Execute("sproc_tblForumAdmin_FilterByOriginalID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                AdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
+                mAdminFirstName = Convert.ToString(DB.DataTable.Rows[0]["AdminFirstName"]);
+                mAdminLastName = Convert.ToString(DB.DataTable.Rows[0]["AdminLastName"]);
+                mAdminEmail = Convert.ToString(DB.DataTable.Rows[0]["AdminEmail"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+        }
+
         //public property for Admin First name
         public string AdminFirstName
         {
@@ -66,33 +94,7 @@ namespace VirginClassLibrary
                 mOriginalID = value;
             }
         }
-
-        public bool FindOriginal(int AdminID)
-        {
-            //instantiate the data connection
-            clsDataConnection DB = new clsDataConnection();
-            //ad the parameter we use to search
-            DB.AddParameter("OriginalID", AdminID);
-            //execute the sproc
-            DB.Execute("sproc_tblForumAdmin_FilterByOriginalID");
-            //if record found 
-            if (DB.Count == 1)
-            {
-                //copy the data from the databse to the private data variables
-                AdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
-                mAdminFirstName = Convert.ToString(DB.DataTable.Rows[0]["AdminFirstName"]);
-                mAdminLastName = Convert.ToString(DB.DataTable.Rows[0]["AdminLastName"]);
-                mAdminEmail = Convert.ToString(DB.DataTable.Rows[0]["AdminEmailAddress"]);
-                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
-
-                return true;
-            }
-            else
-            {
-                //return false if no record ofund
-                return false;
-            }
-        }
+        
 
         //public property for Admin last name
         public string AdminLastName

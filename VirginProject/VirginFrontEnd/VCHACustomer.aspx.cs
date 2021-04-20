@@ -46,7 +46,7 @@ namespace VirginFrontEnd
             if (Error == "")
             {
                 //get the data entered by the user
-                CustomerCollection.ThisCustomer.UserID = 137;
+                CustomerCollection.ThisCustomer.UserID = UserID;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
                 CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);
@@ -83,7 +83,7 @@ namespace VirginFrontEnd
                 //find the CustomerID for the record to be updated
                 CustomerCollection.ThisCustomer.Find(CustomerID);
                 //get the data entered by the user
-                CustomerCollection.ThisCustomer.UserID = 137;
+                CustomerCollection.ThisCustomer.UserID = UserID;
                 CustomerCollection.ThisCustomer.FirstName = txtFirstName.Text;
                 CustomerCollection.ThisCustomer.LastName = txtLastName.Text;
                 CustomerCollection.ThisCustomer.Age = Convert.ToInt32(txtAge.Text);

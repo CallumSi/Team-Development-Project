@@ -55,6 +55,7 @@ namespace VirginFrontEnd
             {
                 //get the data entered by the admin
                 //AdminBook.ThisAdmin.AdminUserName = txtUsername.Text;
+                AdminBook.ThisAdmin.OriginalID = OriginalID;
                 AdminBook.ThisAdmin.AdminFirstName = txtFirstName.Text;
                 AdminBook.ThisAdmin.AdminLastName = txtLastName.Text;
                 AdminBook.ThisAdmin.AdminEmail = txtEmailAddress.Text;

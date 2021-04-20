@@ -29,7 +29,7 @@ namespace VirginFrontEnd
             //instantiate the data connection
             clsDataConnection DB = new clsDataConnection();
             //ad the parameter we use to search
-            DB.AddParameter("Username", txtUsername.Text);
+            DB.AddParameter("AdminUserName", txtUsername.Text);
             //execute the sproc
             DB.Execute("sproc_tblForumAdminSecurity_FilterbyUsername");
             //if record found 
@@ -57,6 +57,7 @@ namespace VirginFrontEnd
             //if there were no errors
             if (Error == true)
             {
+                Session["AdminID"] = GetAdminID();
                 Response.Redirect("AdminHomePage.aspx");
             }
             else

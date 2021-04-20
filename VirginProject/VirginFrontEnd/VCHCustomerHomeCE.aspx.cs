@@ -17,6 +17,10 @@ namespace VirginFrontEnd
         //function to handle this pages load event
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the number of the customer/user to be processed
+            CustomerID = Convert.ToInt32(Session["CustomerID"]);
+            UserID = Convert.ToInt32(Session["UserID"]);
+
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
