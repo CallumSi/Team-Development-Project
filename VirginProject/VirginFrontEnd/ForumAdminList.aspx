@@ -15,21 +15,22 @@
         </header>
 
         <article>
+            <h1>Admin page</h1>
             <ul>
                 <li>
                     <asp:ListBox ID="lstForumAdmin" runat="server" OnSelectedIndexChanged="lstForumAdmin_SelectedIndexChanged" Style="z-index: 1;" Height="202px" Width="442px"></asp:ListBox>
                 </li>
                 <li>
-                    <asp:Label ID="lblFilterUsername" runat="server" Style="z-index: 1;" Text="Filter By User Name"></asp:Label>
+                    <asp:Label ID="lblFilterFirstName" runat="server" Style="z-index: 1;" Text="Filter By First Name"></asp:Label>
                     <asp:TextBox ID="txtFilterFirstName" runat="server" Style="z-index: 1;" Height="31px" Width="276px"></asp:TextBox>
                 </li>
                 <li>
-                    <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" />
+                    <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" CssClass="navButton" />
                 </li>
                 <li>
-                    <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" OnClick="btnAdd_Click" />
-                    <asp:Button ID="btnEdit" runat="server" Style="z-index: 1;" Text="Edit" OnClick="btnEdit_Click" />
-                    <asp:Button ID="btnDelete" runat="server" Style="z-index: 1;" Text="Delete" OnClick="btnDelete_Click" />
+                    <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" OnClick="btnAdd_Click" CssClass="navButton" />
+                    <asp:Button ID="btnEdit" runat="server" Style="z-index: 1;" Text="Edit" OnClick="btnEdit_Click" CssClass="navButton" />
+                    <asp:Button ID="btnDelete" runat="server" Style="z-index: 1;" Text="Delete" OnClick="btnDelete_Click" CssClass="navButton" />
                 </li>
                 <li>
                     <asp:Label ID="lblError" runat="server" Style="z-index: 1;"></asp:Label>
@@ -39,7 +40,8 @@
         </article>
 
         <nav>
-            Navigation links here
+            <asp:Button ID="btnAdminHome" runat="server" Style="z-index: 1;" Text="Admin Home" OnClick="btnAdminHome_Click" CssClass="Button" />
+            <asp:Button runat="server" Style="z-index: 1;" Text="Sign Out" OnClick="Unnamed1_Click" CssClass="Button" />
         </nav>
 
         <footer>

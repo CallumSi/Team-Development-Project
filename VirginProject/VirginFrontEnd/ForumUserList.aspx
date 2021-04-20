@@ -8,52 +8,55 @@
     <link href="ForumStyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
-            </header>
- 
-            <article>
-                <ul>
-                    <li><asp:ListBox ID="lstUserListBox" runat="server" style="z-index: 1;" Height="265px" Width="456px"></asp:ListBox> </li>
-                    <li>
-                        <asp:Label ID="lblUserFilter" runat="server" style="z-index: 1;" Text="Please filter by first name."></asp:Label>
-                         <asp:TextBox ID="txtFilterbyuserfirstname" runat="server" style="z-index: 1;" Width="241px"></asp:TextBox>
-                    </li>
-                    <li>
-                         <asp:Button ID="btnApply" runat="server" style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" />
-                    </li>
-                    <li>                   
-                      <asp:Button ID="btnAdd" runat="server" style="z-index: 1;" Text="Add" OnClick="btnAdd_Click1" Visible="False" />
-                      <asp:Button ID="btnEdit" runat="server" style="z-index: 1;" Text="Edit" OnClick="btnEdit_Click1" />
-                      <asp:Button ID="btnDelete" runat="server" style="z-index: 1;" Text="Delete" OnClick="btnDelete_Click1" />
-                    </li>
-                    <li>
-                         <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
-                    </li>
+    <form id="form1" runat="server">
 
-                </ul>
-                    </article>
- 
-            <nav>
-                Navigation links here
-                <ul>
+        <header>
+            <h2>Virgin Media </h2>
+        </header>
+
+        <article>
+            <h1>User Page</h1>
+            <ul>
                 <li>
-                 <asp:Button ID="btnSignOut" runat="server" OnClick="btnSignOut_Click" style="z-index: 1;" Text="Sign Out" />
-                    </li>
-                <li>
-                    <asp:Button ID="btnForumPost" runat="server" OnClick="btnForumPost_Click" style="z-index: 1;" Text="Forum" />
+                    <asp:ListBox ID="lstUserListBox" runat="server" Style="z-index: 1;" Height="265px" Width="456px"></asp:ListBox>
                 </li>
-                </ul>
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-             
-        </form>
-    </body>
+                <li>
+                    <asp:Label ID="lblUserFilter" runat="server" Style="z-index: 1;" Text="Please filter by first name."></asp:Label>
+                    <asp:TextBox ID="txtFilterbyuserfirstname" runat="server" Style="z-index: 1;" Width="241px"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" CssClass="navButton" />
+                </li>
+                <li>
+                    <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add Account" OnClick="btnAdd_Click1" Visible="False" CssClass="navButton" />
+                    <asp:Button ID="btnEdit" runat="server" Style="z-index: 1;" Text="Edit Account" OnClick="btnEdit_Click1" CssClass="navButton" />
+                    <asp:Button ID="btnDelete" runat="server" Style="z-index: 1;" Text="Delete Account" OnClick="btnDelete_Click1" CssClass="navButton" />
+                </li>
+                <li>
+                    <asp:Label ID="lblError" runat="server" Style="z-index: 1;"></asp:Label>
+                </li>
+
+            </ul>
+        </article>
+
+        <nav>
+
+            <ul>
+                <li>
+                </li>
+                <li>
+                    <asp:Button ID="btnSignOut" runat="server" OnClick="btnSignOut_Click" Style="z-index: 1;" Text="Sign Out" CssClass="Button" />
+                    <asp:Button ID="btnForumPost" runat="server" OnClick="btnForumPost_Click" Style="z-index: 1;" Text="Forum" CssClass="Button" />
+                </li>
+            </ul>
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+
+    </form>
+</body>
 </html>
