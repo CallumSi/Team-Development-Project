@@ -116,7 +116,7 @@ namespace VirginFrontEnd
         {
             if (txtPatientSearch.Text.Length == 0)
             {
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE ENTER A VALID DATE OF BIRTH";
+                lblError.Text = "⚠️" + " " + "PLEASE ENTER A VALID DATE OF BIRTH";
             }
 
             else
@@ -148,7 +148,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
             }
         }
 
@@ -171,7 +171,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
             }
         }
     }

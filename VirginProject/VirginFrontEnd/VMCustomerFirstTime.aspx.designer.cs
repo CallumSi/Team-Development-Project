@@ -10,16 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMThanks {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+    public partial class VMCustomerFirstTime {
         
         /// <summary>
         /// form1 control.
@@ -31,31 +22,31 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblWelcomeUsername control.
+        /// lblWelcomeVM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcomeUsername;
+        protected global::System.Web.UI.WebControls.Label lblWelcomeVM;
         
         /// <summary>
-        /// lblUsername control.
+        /// btnContinueVM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.Button btnContinueVM;
         
         /// <summary>
-        /// btnHome control.
+        /// btnVMNewComer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Button btnVMNewComer;
         
         /// <summary>
         /// btnLogOut control.

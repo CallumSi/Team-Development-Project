@@ -10,13 +10,16 @@ namespace VirginFrontEnd
 {
     public partial class ForumUserList : System.Web.UI.Page
     {
+        Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            AdminID = Convert.ToInt32(Session["AdminID"]);
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
                 //update the list box
                 DisplayUser();
+                DisplayFirstName();
             }
 
         }
@@ -34,6 +37,15 @@ namespace VirginFrontEnd
             lstUserListBox.DataBind();
             //clear the list box
             lstUserListBox.Items.Clear();
+        }
+        void DisplayFirstName()
+        {
+            //create an instance of the County Collection
+            clsForumAdminCollection Admin = new clsForumAdminCollection();
+            //find First name
+            Admin.ThisAdmin.Find(AdminID);
+            //display the first name
+            lblFirstName.Text = Admin.ThisAdmin.AdminFirstName;
         }
   
 

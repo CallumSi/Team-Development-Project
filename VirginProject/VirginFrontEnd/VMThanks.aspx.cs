@@ -21,6 +21,21 @@ namespace VirginFrontEnd
             MyCart = new clsVMCart();
             //get the customer Id
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+
+            if (IsPostBack == false)
+            {
+                DisplayCustomerData();
+            }
+        }
+
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
         }
 
         protected void btnHome_Click(object sender, EventArgs e)

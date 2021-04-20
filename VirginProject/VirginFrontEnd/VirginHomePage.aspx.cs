@@ -50,5 +50,10 @@ namespace VirginFrontEnd
         {
             Response.Redirect("ForumHome.aspx");
         }
+
+        protected void btnVirginGP_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCMainMenu.aspx");
+        }
     }
 }

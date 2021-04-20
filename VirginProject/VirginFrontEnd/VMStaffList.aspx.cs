@@ -17,8 +17,7 @@ namespace VirginFrontEnd
             VMStaffID = Convert.ToInt32(Session["VMStaffID"]);
             if (IsPostBack == false)
             {
-                //update the list box
-                DisplayVMStaff();
+               
             }
         }
 
@@ -86,12 +85,6 @@ namespace VirginFrontEnd
             }
         }
 
-        protected void btnDisplayAll_Click(object sender, EventArgs e)
-        {
-            //display all Customer
-            DisplayFirstName("");
-        }
-
         Int32 DisplayFirstName(string VMStaffFilter)
         {
             Int32 VMStaffID;
@@ -126,9 +119,17 @@ namespace VirginFrontEnd
         }
 
         protected void btnApplyFilter_Click(object sender, EventArgs e)
-        {
-            //display all Customer usernames
-            DisplayFirstName(txtFilterStaffUsername.Text);
+        { 
+            string Filter = txtFilterStaffUsername.Text;
+            if(Filter=="")
+            {
+                lblError.Text = "Please enter you bloodclart username";
+            }
+            else
+            {
+                //display all Customer usernames
+                DisplayFirstName(txtFilterStaffUsername.Text);
+            }
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
@@ -153,12 +154,6 @@ namespace VirginFrontEnd
         {
             //redirect to the customer list
             Response.Redirect("VMCustomerList.aspx");
-        }
-
-        protected void btnVMPaymentList_Click(object sender, EventArgs e)
-        {
-            //redirect to the payment list
-            Response.Redirect("VMPaymentList.aspx");
         }
 
         protected void btnVMStaffList_Click(object sender, EventArgs e)

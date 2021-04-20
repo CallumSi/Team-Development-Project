@@ -362,3 +362,38 @@ footer {
     color: black;
     font-weight: bold;
 }
+
+/*########### VIRGIN MOVIES EXISTING OR NEW CUSTOMER */
+.lblWelcomeVM {
+    left: 700px;
+    top: 270px;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    width: 250px;
+    color: black;
+}
+
+.btnContinueVM {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 190px;
+    position: fixed;
+    top: 400px;
+    left: 600px;
+}
+
+.btnVMNewComer {
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: bold;
+    width: 190px;
+    position: fixed;
+    top: 400px;
+    left: 890px;
+}

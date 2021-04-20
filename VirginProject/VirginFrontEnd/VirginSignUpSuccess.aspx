@@ -1,35 +1,39 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VirginSignUpSuccess.aspx.cs" Inherits="VirginFrontEnd.VirginSignUpSuccess" %>
 
 <!DOCTYPE html>
-
+<%-- HEAD --%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>VirginSignUpSuccess</title>
-     <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+    <title>Virgin Sign Up Success</title>
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
+<%-- BODY --%>
 <body>
     <form id="form1" runat="server">
+
+        <%-- HEADER --%>
         <header>
-               <h2> Virgin Media </h2>
-            
-              </header>
+            <h2>VIRGIN SERVICES </h2>
+        </header>
+
+        <%-- ARTICLE --%>
         <article>
-        <asp:Label ID="lblSuccessSignUp" runat="server" style="z-index: 1; left: 791px; top: 237px; position: absolute" Text="Congratulations! you have been successfully signed up."></asp:Label>
+            <h5>CONGRATULATIONS!
+                <br />
+                YOU HAVE BEEN SUCCESSFULLY SIGNED UP TO VIRGIN SERVICES.<br />
+                <br />
+                Please press to continue
+            </h5>
+            <%-- BUTTON CONTINUE --%>
+            <asp:Button ID="btnContinue" CssClass="btnContinue" runat="server" Text=" ☞ " OnClick="btnHome_Click" />
         </article>
-          <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-       
-        <p>
-             <asp:Button ID="btnHome" CssClass="navButton" runat="server" style="z-index: 1; left: 942px; top: 289px; position: absolute; width: 95px;" Text="Home" OnClick="btnHome_Click" />
-        </p>
-       
+
+        <%-- FOOTER --%>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
     </form>
 </body>
 </html>
