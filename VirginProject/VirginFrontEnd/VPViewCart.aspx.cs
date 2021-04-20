@@ -80,7 +80,7 @@ namespace VirginFrontEnd
             {
                 //store data in session object so we can pass it to next page
                 Session["Customer_ID"] = Customer_ID;
-                Response.Redirect("VPPayment.aspx");
+                Response.Redirect("VPDeliveryList.aspx");
             }
             else
             {
@@ -92,6 +92,11 @@ namespace VirginFrontEnd
         {
             //send the customer back to the main phone list page
             Session["Customer_ID"] = Customer_ID;
+            Response.Redirect("VPCustomerPhoneList.aspx");
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
             Response.Redirect("VPCustomerPhoneList.aspx");
         }
     }

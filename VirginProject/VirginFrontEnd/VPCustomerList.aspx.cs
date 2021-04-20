@@ -32,6 +32,7 @@ namespace VirginFrontEnd
             lstCustomer.DataTextField = "Customer_FirstName";
             //bind the data to the list
             lstCustomer.DataBind();
+            lstCustomer.Items.Clear();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

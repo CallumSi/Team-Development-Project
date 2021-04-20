@@ -140,5 +140,40 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VPPhoneList.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VPStaffList.aspx");
+        }
+        
+        protected void btnViewCustomer_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VPCustomerList.aspx");
+        }
+
+        protected void btnViewPhoneList_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VPPhoneList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VirginLogin.aspx");
+        }
+
+        protected void btnViewStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VPStaff.aspx");
+        }
+
+        protected void btnViewCustomerList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

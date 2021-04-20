@@ -75,6 +75,7 @@
     <Content Include="AnVMCustomer.aspx" />
     <Content Include="AnVMCustomerEdit.aspx" />
     <Content Include="AnVMStaff.aspx" />
+    <Content Include="AnVPEditCustomer.aspx" />
     <Content Include="AnVPStaff.aspx" />
     <Content Include="AnVPCustomer.aspx" />
     <Content Include="CheckAdmin.aspx" />
@@ -276,6 +277,13 @@
     </Compile>
     <Compile Include="AnVMStaff.aspx.designer.cs">
       <DependentUpon>AnVMStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnVPEditCustomer.aspx.cs">
+      <DependentUpon>AnVPEditCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnVPEditCustomer.aspx.designer.cs">
+      <DependentUpon>AnVPEditCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnVPStaff.aspx.cs">
       <DependentUpon>AnVPStaff.aspx</DependentUpon>

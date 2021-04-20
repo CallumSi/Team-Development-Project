@@ -30,7 +30,7 @@
         <asp:Label ID="lblPhonePrice" runat="server" style="z-index: 1; left: 405px; top: 533px; position: absolute" Text="[lblPrice]"></asp:Label>
         <asp:DropDownList ID="ddlQuantity" runat="server" style="z-index: 1; left: 399px; top: 697px; position: absolute">
         </asp:DropDownList>
-        <asp:CheckBox ID="chkStockStatus" runat="server" style="z-index: 1; left: 404px; top: 616px; position: absolute" />
+        <asp:CheckBox ID="chkStockStatus" runat="server" style="z-index: 1; left: 404px; top: 616px; position: absolute" Checked="True" />
         <asp:Button ID="btnAddToCart" runat="server" OnClick="btnAddToCart_Click" style="z-index: 1; left: 745px; top: 548px; position: absolute" Text="Add To Cart" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 746px; top: 598px; position: absolute" Text="[lblError]"></asp:Label>
         <asp:Label ID="lblCustomerFirstName" runat="server" style="z-index: 1; left: 445px; top: 42px; position: absolute" Text="[lblCustomerFirstName]"></asp:Label>
