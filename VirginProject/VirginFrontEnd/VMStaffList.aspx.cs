@@ -123,7 +123,7 @@ namespace VirginFrontEnd
             string Filter = txtFilterStaffUsername.Text;
             if(Filter=="")
             {
-                lblError.Text = "Please enter you bloodclart username";
+                lblError.Text = "Please enter a staff username ";
             }
             else
             {
