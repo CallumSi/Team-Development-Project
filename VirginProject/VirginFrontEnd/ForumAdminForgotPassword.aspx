@@ -4,58 +4,49 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-  <title>AdminForgotPassword</title>
-  <link href="ForumStyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>AdminForgotPassword</title>
+   <link href="AdminSecurity.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
- 
+    <form id="form1" runat="server">
+
+        <header>
+            <h2>Virgin Media </h2>
+         
             <article>
-              
-                <ul>
-                    <li>
-                <asp:Label ID="lblUsername" runat="server" style="z-index: 1;" Text="UserName"></asp:Label>
-                <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1;"></asp:TextBox>
-                
-              </li>
-               
-             <li>
-                 <asp:Label ID="lblPassword" runat="server" style="z-index: 1;" Text="New Password"></asp:Label>
-                 <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1;" TextMode="Password"></asp:TextBox>
-             </li>
-              <li>
-                  <asp:Label ID="lblPasswordConfirm" runat="server" style="z-index: 1;" Text="New Password Confirm"></asp:Label>
-                 <asp:TextBox ID="txtPasswordConfirm" runat="server" style="z-index: 1; " TextMode="Password"></asp:TextBox>
-              </li>
-                <li>
-                    <asp:Label ID="lblSecret" runat="server" style="z-index: 1;" Text="Secret"></asp:Label>
-                    <asp:TextBox ID="txtSecret" runat="server" style="z-index: 1;" TextMode="Password"></asp:TextBox>
-               </li>
-              <li>
-                  <asp:Label ID="lblError" runat="server" style="z-index: 1;"></asp:Label>
-              </li>
-               <li>
-                   <asp:Button ID="BtnSubmit" CssClass="navButton" runat="server" OnClick="BtnSubmit_Click" style="z-index: 1;" Text="Submit"/>
-                   <asp:Button ID="btnCancel" CssClass="navButton" runat="server" style="z-index: 1;" Text="Cancel" OnClick="btnCancel_Click" />
-               </li>
-                </ul>
+                   <h1>Admin Forgot Password</h1>
+
+                <asp:Label ID="lblUsername"  CssClass="lblUserName" runat="server" Style="z-index: 1;" Text="UserName"></asp:Label>
+                <asp:TextBox ID="txtUsername"  CssClass="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
+
+                <asp:Label ID="lblPassword" CssClass="lblPassword" runat="server" Style="z-index: 1; top: 290px;" Text="New Password"></asp:Label>
+                <asp:TextBox ID="txtPassword" CssClass="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
+
+                <asp:Label ID="lblPasswordConfirm" CssClass="lblPasswordConfirm" runat="server" Style="z-index: 1;" Text="New Password Confirm"></asp:Label>
+                <asp:TextBox ID="txtPasswordConfirm"  CssClass="txtPasswordConfirm" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
+
+                <asp:Label ID="lblSecret" CssClass="lblSecret" runat="server" Style="z-index: 1;" Text="Secret"></asp:Label>
+                <asp:TextBox ID="txtSecret"  CssClass="txtSecret" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
+
+                <asp:Label ID="lblError" CssClass="lblErrorMessage" runat="server" Style="z-index: 1;"></asp:Label>
+
+                <asp:Button ID="BtnSubmit"  CssClass="btnSubmit" runat="server" OnClick="BtnSubmit_Click" Style="z-index: 1;" Text="Submit" />
+                <asp:Button ID="btnCancel" CssClass="btnClose" runat="server" Style="z-index: 1;" Text="X" OnClick="btnCancel_Click" Font-Bold="True" Font-Size="Large" ForeColor="Black" />
+
             </article>
- 
-            </header>
- 
-            <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-             
-        </form>
-    </body>
+
+        </header>
+
+        <nav>
+            Navigation links here
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+
+    </form>
+</body>
 </html>
