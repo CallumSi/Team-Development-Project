@@ -4,62 +4,47 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>VirginLogIn</title>
-    <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+    <title> Virgin Log In </title>
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
-            </header>
- 
-            <article>
-                <ul>
-             
-                <li>
-                    <asp:Label ID="lblUserName" runat="server" style="z-index: 1;" Text="User Name"></asp:Label>
-                    <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 130px; top: 0px; position: absolute"></asp:TextBox>
-               </li>
-              
-                 <li> 
-                     <asp:Label ID="lblPassword" runat="server" style="z-index: 1;" Text="Password"></asp:Label>
-                     <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1;" TextMode="Password"></asp:TextBox>
-                </li>
-                      
-                 <li> 
-                     <asp:Button ID="btnLogIn" runat="server" style="z-index: 1;" Text="Log In" OnClick="btnLogIn_Click" />
-                 </li>
+    <form id="form1" runat="server">
 
-                 <li>
-                      <asp:Button ID="btnSignUp" runat="server" style="z-index: 1;" Text="Sign Up" OnClick="btnSignUp_Click1" />
-                </li>
-                <li>
-                   
-                     <asp:Button ID="btnForgotPassword" runat="server" style="z-index: 1;" Text="Forgot Password" OnClick="btnForgotPassword_Click" />
+        <header>
+            <h2>VIRGIN SERVICES </h2>
+        </header>
 
-               </li>
-                    <li>                
-                           
-                <asp:Label ID="lblError" runat="server" style="z-index: 1; "></asp:Label>
+        <article>
+           <h4>WELCOME </h4>
+            <%--LABEL: USERNAME--%>
+            <asp:Label ID="lblUserName" runat="server" CssClass="lblUserName" Text="USERNAME : "></asp:Label>
+            <%--TEXTBOX: USERNAME--%>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="txtUsername"></asp:TextBox>
+            <%--LABEL: PASSWORD--%>
+            <asp:Label ID="lblPassword" runat="server" CssClass="lblPassword" Text="PASSWORD : "></asp:Label>
+            <%--TEXTBOX: PASSWORD--%>
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="txtPassword" TextMode="Password"></asp:TextBox>
+             <%--BUTTON: LOG IN--%>
+            <asp:Button ID="btnLogIn" runat="server" CssClass="btnLogIn" Text="LOG IN" OnClick="btnLogIn_Click" />
+             <%--BUTTON: SIGN UP--%>
+            <asp:Button ID="btnSignUp2" runat="server" CssClass="btnSignUp2" Text="SIGN UP" OnClick="btnSignUp_Click1" />
+             <%--BUTTON: FORGOT PASSWORD--%>
+            <asp:Button ID="btnForgotPassword" runat="server" CssClass="btnForgotPassword" Text="FORGOT PASSWORD" OnClick="btnForgotPassword_Click" />
+             <%--LABEL: ERROR--%>
+            <asp:Label ID="lblErrorMessage" runat="server" CssClass="lblErrorMessage"></asp:Label>
+            <%--BUTTON: FORUM ADMIN--%>
+            <asp:Button ID="btnForumAdmin" runat="server"  CssClass="btnForumAdmin" OnClick="btnForumAdmin_Click" Text="FORUM ADMIN" />
+             <%--LABEL: OTHER--%>
+            <asp:Label ID="lblOther" runat="server" CssClass="lblOther" Text="ADMINS"></asp:Label>
 
-                    </li>
-                </ul>
-            </article>
- 
-            <nav>
-                Navigation links here
-                 <asp:Button ID="btnForumAdmin" runat="server" OnClick="btnForumAdmin_Click" style="z-index: 1; left: 1px; top: 269px; position: absolute" Text="Admin Access" />
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-             
-            
-             
-        </form>
-    </body>
+        </article>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
+    </form>
+</body>
 </html>

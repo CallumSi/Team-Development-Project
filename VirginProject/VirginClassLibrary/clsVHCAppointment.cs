@@ -121,7 +121,6 @@ namespace VirginClassLibrary
 
             //create a temporary variable to store data values
             DateTime DateTemp;
-            Int32 TempAppointmentTime;
 
             //Appointment Date Validation (1) 
             try

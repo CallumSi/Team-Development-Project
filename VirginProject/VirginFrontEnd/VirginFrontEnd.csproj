@@ -163,6 +163,7 @@
     <Content Include="MarketplaceWelcome.aspx" />
     <Content Include="VirginSignUp.aspx" />
     <Content Include="VirginSignUpSuccess.aspx" />
+    <Content Include="VirginTeamLogin.css" />
     <Content Include="VirginUserList.aspx" />
     <Content Include="VMAdmin.css" />
     <Content Include="VMAdminCheckPin.aspx" />

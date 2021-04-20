@@ -55,7 +55,7 @@ namespace VirginFrontEnd
             else
             {
                 //report an error
-                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 
@@ -82,7 +82,7 @@ namespace VirginFrontEnd
             else
             {
                 //report an error
-                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 

@@ -26,7 +26,7 @@ namespace VirginTestProject
         string Staff_Username = "MonGeller"; // (5) 
         string Staff_Password = "MG30070956"; // (6) 
         string Staff_Role = "Doctor"; // (7) 
-        string Staff_Status = "True"; // (8)
+        //string Staff_Status = "True"; // (8)
 
         [TestMethod]
         public void InstantiationOK()
@@ -179,7 +179,7 @@ namespace VirginTestProject
             string Staff_Username = "MonGeller"; // (5) 
             string Staff_Password = "MG30070956"; // (6) 
             string Staff_Role = "Doctor"; // (7) 
-            string Staff_Status = "True"; // (8)
+            //string Staff_Status = "True"; // (8)
             //invoke the method 
             Error = AVHCStaff.Valid(Staff_Title, Staff_Firstname, Staff_Lastname, Staff_Email, Staff_Username, Staff_Password, Staff_Role);
             //test to see that the result is correct 
