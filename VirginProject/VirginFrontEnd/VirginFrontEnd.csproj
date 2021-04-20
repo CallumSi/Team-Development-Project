@@ -116,6 +116,7 @@
     <Content Include="VCHACustomer.aspx" />
     <Content Include="VCHACustomerCE.aspx" />
     <Content Include="VCHAHire.aspx" />
+    <Content Include="VCHAHireCE.aspx" />
     <Content Include="VCHAStaff.aspx" />
     <Content Include="VCHCarDelete.aspx" />
     <Content Include="VCHCarList.aspx" />
@@ -573,6 +574,13 @@
     </Compile>
     <Compile Include="VCHAHire.aspx.designer.cs">
       <DependentUpon>VCHAHire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHAHireCE.aspx.cs">
+      <DependentUpon>VCHAHireCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHAHireCE.aspx.designer.cs">
+      <DependentUpon>VCHAHireCE.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHAStaff.aspx.cs">
       <DependentUpon>VCHAStaff.aspx</DependentUpon>
