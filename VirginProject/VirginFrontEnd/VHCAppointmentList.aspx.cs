@@ -8,7 +8,11 @@ using VirginClassLibrary;
 
 
 namespace VirginFrontEnd
-{
+{  
+    ///This page uses code originated by Matthew Dean.
+   ///it is free for use by anybody so long as you give credit to the original author.
+   ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+  
     public partial class VHCAppointmentList : System.Web.UI.Page
     {
         //create an instance of the appointment collection with page level scope
