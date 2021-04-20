@@ -147,8 +147,6 @@ namespace VirginFrontEnd
             //Add the StaffID & AdminID to session object 
             Session["StaffID"] = StaffID;
             Session["AdminID"] = AdminID;
-            //once complete redirect the staff to the staffhome page
-            Response.Redirect("VCHStaffIndex.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

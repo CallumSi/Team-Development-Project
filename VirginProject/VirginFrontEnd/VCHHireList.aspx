@@ -29,7 +29,7 @@
         <asp:Button ID="btnAdd" runat="server" Height="40px" Width="75px" OnClick="btnAdd_Click" style="z-index: 1; left: 200px; top: 540px; position: absolute" Text="Add" />
         <asp:Button ID="btnEdit" runat="server" Height="40px" Width="75px" style="z-index: 1; left: 300px; top: 540px; position: absolute; right: 1272px;" Text="Edit" OnClick="btnEdit_Click" />
         <asp:Button ID="btnDelete" runat="server" Height="40px" Width="75px" style="z-index: 1; left: 400px; top: 540px; position: absolute" Text="Delete" OnClick="btnDelete_Click" />
-        <asp:TextBox ID="txtBxSearch" runat="server" Height="30px" style="z-index: 1; left: 520px; top: 440px;  position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtBxSearch" runat="server" Height="30px" style="z-index: 1; left: 580px; top: 440px;  position: absolute"></asp:TextBox>
         <p>
         <asp:ListBox ID="lstHires" runat="server" Height="300px" Width="1250px" style="z-index: 1; left: 200px; top: 100px; position: absolute"></asp:ListBox>
         <asp:Label ID="lblHireLocation" runat="server" style="z-index: 1; left: 200px; top: 440px; position: absolute" Text="Please Enter a Virgin Car Hire Location" ForeColor="White"></asp:Label>
