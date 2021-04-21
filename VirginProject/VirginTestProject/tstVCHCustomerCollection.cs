@@ -139,6 +139,7 @@ namespace VirginTestProject
             Int32 PrimaryKey = 0;
             //set data properties
             TestItem.CustomerID = 1;
+            TestItem.UserID = 175;
             TestItem.FirstName = "Dante";
             TestItem.LastName = "Alighieri";
             TestItem.Age = 26;
@@ -278,7 +279,7 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredCustomers.Count);
         }
 
-        
+
         [TestMethod]
         public void ReportByUsernameTestDataFound()
         {
@@ -287,17 +288,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a data variable of an existent Username
-            FilteredCustomers.ReportByUsername("Tafnino");
+            FilteredCustomers.ReportByUsername("CallyG");
             //check that the correct number of customer records are found
             if (FilteredCustomers.Count == 2)
             {
-                //check that the first customer record is CustomerID 10
-                if (FilteredCustomers.CustomerList[0].CustomerID != 10)
+                //check that the first customer record is CustomerID 52
+                if (FilteredCustomers.CustomerList[0].CustomerID != 52)
                 {
                     OK = false;
                 }
-                //check that the second customer record is CustomerID 13
-                if (FilteredCustomers.CustomerList[1].CustomerID != 13)
+                //check that the second customer record is CustomerID 55
+                if (FilteredCustomers.CustomerList[1].CustomerID != 55)
                 {
                     OK = false;
                 }

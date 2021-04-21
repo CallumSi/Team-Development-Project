@@ -7,6 +7,8 @@ namespace VirginTestProject
     [TestClass]
     public class tstVCHCustomer
     {
+        /*//customer UserID property
+        string UserID = "137";*/
         //customer First Name property
         string FirstName = "Dante";
         //customer Last Name property
@@ -56,7 +58,7 @@ namespace VirginTestProject
             //create an instance of the class
             clsVCHCustomer VCHCustomer = new clsVCHCustomer();
             //create some test data to assign to the customers ID 
-            Int32 SomeUserID = 1;
+            Int32 SomeUserID = 137;
             //assign the data to the property
             VCHCustomer.UserID = SomeUserID;
             //test to see that the two values are the same
@@ -730,7 +732,7 @@ namespace VirginTestProject
             //boolean variable to store validation results
             Boolean found = false;
             //test data to test the method
-            Int32 CustomerID = 2;
+            Int32 CustomerID = 52;
             //invoke the method
             found = VCHCustomer.Find(CustomerID);
             //test to see that the result is correct

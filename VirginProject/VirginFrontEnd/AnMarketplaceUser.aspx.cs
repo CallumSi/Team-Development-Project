@@ -52,11 +52,7 @@ namespace VirginFrontEnd
                 //update the record
                 UpdateUser();
             }
-            //add user id to session object 
-            Session["UserID"] = UserID;
-            //redirect to the main page
-            Response.Redirect("MarketplaceHome2.aspx");
-
+          
         }
 
         //go back to the welcome page
@@ -137,6 +133,7 @@ namespace VirginFrontEnd
                 SomeUser.ThisUser.FindByOriginal(OriginalID);
                 Session["UserID"] = SomeUser.ThisUser.UserID;
                 Response.Redirect("MarketplaceHome2.aspx");
+
             }
             else
             {

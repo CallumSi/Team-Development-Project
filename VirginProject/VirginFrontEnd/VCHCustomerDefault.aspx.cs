@@ -16,6 +16,7 @@ namespace VirginFrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UserID = Convert.ToInt32(Session["UserID"]);
             //check if user exisits
             //create an instance of the customer collection class
             clsVCHCustomerCollection SomeCustomer = new clsVCHCustomerCollection();
@@ -34,6 +35,13 @@ namespace VirginFrontEnd
                 SomeCustomer.ThisCustomer.FindByUserID(UserID);
                 CustomerID = SomeCustomer.ThisCustomer.CustomerID;
             }
+        }
+
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Save the CustomerID & UserID when a page unload event happens
+            Session["CustomerID"] = CustomerID;
+            Session["UserID"] = UserID;
         }
 
         //event handler for the btnFirstTime

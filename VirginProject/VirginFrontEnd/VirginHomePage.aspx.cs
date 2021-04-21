@@ -28,7 +28,7 @@ namespace VirginFrontEnd
 
         protected void btnVirginMovies_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VirginCustomerMovieList.aspx");
+            Response.Redirect("VMStafforCustomer.aspx");
         }
 
         protected void btnCarHire_Click(object sender, EventArgs e)
@@ -39,6 +39,21 @@ namespace VirginFrontEnd
         protected void btnMarketPlace_Click(object sender, EventArgs e)
         {
             Response.Redirect("MarketplaceWelcome.aspx");
+        }
+
+        protected void btnVirginPhone_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VPStafforCustomerSelection.aspx");
+        }
+
+        protected void btnVirginForum_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForumHome.aspx");
+        }
+
+        protected void btnVirginGP_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCMainMenu.aspx");
         }
     }
 }

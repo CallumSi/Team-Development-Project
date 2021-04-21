@@ -121,6 +121,15 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnDeleteMovie;
         
         /// <summary>
+        /// btnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHome;
+        
+        /// <summary>
         /// btnCustomerList control.
         /// </summary>
         /// <remarks>
@@ -130,13 +139,31 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnCustomerList;
         
         /// <summary>
-        /// btnStaffList control.
+        /// btnStaffMovie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaffList;
+        protected global::System.Web.UI.WebControls.Button btnStaffMovie;
+        
+        /// <summary>
+        /// btnVMStaffList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVMStaffList;
+        
+        /// <summary>
+        /// btnVMPaymentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVMPaymentList;
         
         /// <summary>
         /// btnLogOut control.

@@ -8,6 +8,10 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     public partial class VHCHospitalAdd : System.Web.UI.Page
     {
         //Declare Hospital Primary Key
@@ -51,7 +55,7 @@ namespace VirginFrontEnd
             else
             {
                 //report an error
-                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 
@@ -73,6 +77,12 @@ namespace VirginFrontEnd
                 //update the record 
                 AllHospitals.Update();
                 Response.Redirect("VHCHospitalList.aspx");
+            }
+
+            else
+            {
+                //report an error
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 

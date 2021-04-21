@@ -1,64 +1,47 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VirginHomePage.aspx.cs" Inherits="VirginFrontEnd.VirginHomePage" %>
 
 <!DOCTYPE html>
-
+<%-- HEAD --%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>VirginHomePage</title>
-    <link href="VirginProject.css" rel="stylesheet" type="text/css" />
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
+
+<%-- BODY --%>
 <body>
-        <form id="form1" runat="server">
- 
-             <header>
-               <h2> Virgin Media </h2> 
-            </header>
-         
- 
-            <article>
-                <ul>
 
-                        <li>
-                          <asp:Button ID="btnVirginMovies" CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Movies" Height="45px" Width="154px" OnClick="btnVirginMovies_Click" />
-                     </li>
-                     <li>
-                   
-                     <asp:Button ID="btnCarHire"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Car Hire" Height="47px" Width="173px" OnClick="btnCarHire_Click" />
-    
-                    </li>
-                     <li> 
-                     <asp:Button ID="btnVirginPhone"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Phones" Height="40px" Width="159px" />
-                        </li>
+    <form id="form1" runat="server">
+        <%-- HEADER --%>
+        <header>
+            <h2>VIRGIN SERVICES </h2>
+        </header>
 
-                        <li>                
-                        <asp:Button ID="btnMarketPlace"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin Market Place" Height="45px" Width="216px" OnClick="btnMarketPlace_Click" />
+        <%-- ARTICLE --%>
+        <article>
+            <%-- BUTTON VIRGIN MOVIES --%>
+            <asp:Button ID="btnVirginMovies" CssClass="btnVirginMovies" runat="server" Text="MOVIES 🎥 " OnClick="btnVirginMovies_Click" />
+            <%-- BUTTON VIRGIN CAR HIRE --%>
+            <asp:Button ID="btnCarHire" CssClass="btnCarHire" runat="server" Text="CAR HIRE 🚘 " OnClick="btnCarHire_Click" />
+            <%-- BUTTON VIRGIN PHONE --%>
+            <asp:Button ID="btnVirginPhone" CssClass="btnVirginPhone" runat="server" Text="PHONES 📱 " OnClick="btnVirginPhone_Click" />
+            <%-- BUTTON VIRGIN MARKET PLACE --%>
+            <asp:Button ID="btnMarketPlace" CssClass="btnMarketPlace" runat="server" Text=" MARKETPLACE 📈 " OnClick="btnMarketPlace_Click" />
+            <%-- BUTTON VIRGIN HEALTHCARE --%>
+            <asp:Button ID="btnVirginGP" CssClass="btnVirginGP" runat="server" Text="HEALTHCARE 💊 " OnClick="btnVirginGP_Click" />
+            <%-- BUTTON VIRGIN FORUM --%>
+            <asp:Button ID="btnVirginForum" CssClass="btnVirginForum" runat="server" Text="FORUM 💬 " OnClick="btnVirginForum_Click" />
+            <%-- BUTTON LOG OUT --%>
+            <asp:Button ID="btnLogOut" CssClass="btnLogOut" runat="server" OnClick="btnLogOut_Click" Text="Log Out" />
+        </article>
 
-                        </li>
-                       <li>
-                          <asp:Button ID="btnVirginGP"  CssClass="navButton" runat="server" style="z-index: 1; " Text="Virgin GP" Height="48px" Width="132px" />
-                      </li>
-                           
-                      <li> 
-                        <asp:Button ID="btnVirginForum"   CssClass="navButton" runat="server" style="z-index: 1;" Text="Virgin Forum" Height="45px" Width="159px" />
+        <%-- FOOTER --%>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
 
-                     </li>
-                     <li>
-                        <asp:Button ID="btnLogOut"  CssClass="navButton"  runat="server" OnClick="btnLogOut_Click" style="z-index: 1; left: 199px; top: 254px; position: absolute" Text="Log Out" />
-                    </li>
-                 
-                </ul>
-            </article>
- 
-            <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
-             
-        </form>
-    </body>
+    </form>
+</body>
 </html>

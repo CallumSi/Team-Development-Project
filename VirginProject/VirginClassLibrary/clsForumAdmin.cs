@@ -16,6 +16,9 @@ namespace VirginClassLibrary
         private string mAdminPassword;
         //pribate memeber for the Admin username
         private string mAdminUserName;
+        //pribate memeber for the OriginalID proptery
+        private Int32 mOriginalID;
+
         //public property for user ID
         public clsForumAdmin()
         {
@@ -35,6 +38,34 @@ namespace VirginClassLibrary
                 mAdminID = value;
             }
         }
+
+        public bool FindOriginal(int adminID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("OriginalID", adminID);
+            //execute the sproc
+            DB.Execute("sproc_tblForumAdmin_FilterByOriginalID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the databse to the private data variables
+                AdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
+                mAdminFirstName = Convert.ToString(DB.DataTable.Rows[0]["AdminFirstName"]);
+                mAdminLastName = Convert.ToString(DB.DataTable.Rows[0]["AdminLastName"]);
+                mAdminEmail = Convert.ToString(DB.DataTable.Rows[0]["AdminEmail"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
+                return false;
+            }
+        }
+
         //public property for Admin First name
         public string AdminFirstName
         {
@@ -49,6 +80,22 @@ namespace VirginClassLibrary
                 mAdminFirstName = value;
             }
         }
+        //public property for Admin First name
+        public int OriginalID
+        {
+            get
+            {
+                //return the priavate data
+                return mOriginalID;
+            }
+            set
+            {
+                //set the value of the private data member
+                mOriginalID = value;
+            }
+        }
+        
+
         //public property for Admin last name
         public string AdminLastName
         {
@@ -122,8 +169,8 @@ namespace VirginClassLibrary
                 mAdminFirstName = Convert.ToString(DB.DataTable.Rows[0]["AdminFirstName"]);
                 mAdminLastName = Convert.ToString(DB.DataTable.Rows[0]["AdminLastName"]);
                 mAdminEmail = Convert.ToString(DB.DataTable.Rows[0]["AdminEmail"]);
-                mAdminPassword = Convert.ToString(DB.DataTable.Rows[0]["AdminPassword"]);
-                mAdminUserName = Convert.ToString(DB.DataTable.Rows[0]["AdminUserName"]);
+                //mAdminPassword = Convert.ToString(DB.DataTable.Rows[0]["AdminPassword"]);
+                //mAdminUserName = Convert.ToString(DB.DataTable.Rows[0]["AdminUserName"]);
                 //return that everything worked ok
                 return true;
             }
@@ -135,7 +182,7 @@ namespace VirginClassLibrary
             }
         }
 
-        public string Valid(string AdminFirstName, string AdminLastName, string AdminEmail, string AdminPassword, string AdminUserName)
+        public string Valid(string AdminFirstName, string AdminLastName, string AdminEmail/*, string AdminPassword, string AdminUserName*/)
         {
             //create a string variable to store the error
             String Error = "";
@@ -179,32 +226,32 @@ namespace VirginClassLibrary
                 Error = Error + "The Email address has to be less than 25.  ";
             }
 
-            //if the password is blank
-            if (AdminPassword.Length == 0)
-            {
-                //record the error
-                Error = Error + "The password may not be blank : ";
-            }
-            //if the password is more than 16
-            if (AdminPassword.Length > 16)
-            {
-                //record the error
-                Error = Error + "The password has to be less than 16 characters ";
-            }
+            ////if the password is blank
+            //if (AdminPassword.Length == 0)
+            //{
+            //    //record the error
+            //    Error = Error + "The password may not be blank : ";
+            //}
+            ////if the password is more than 16
+            //if (AdminPassword.Length > 16)
+            //{
+            //    //record the error
+            //    Error = Error + "The password has to be less than 16 characters ";
+            //}
 
 
-            //if the user name is blank
-            if (AdminUserName.Length == 0)
-            {
-                //record the error
-                Error = Error + "The username may not be blank : ";
-            }
-            //if the username is more than 16
-            if (AdminUserName.Length > 16)
-            {
-                //record the error
-                Error = Error + "The username has to be less than 16 characters ";
-            }
+            ////if the user name is blank
+            //if (AdminUserName.Length == 0)
+            //{
+            //    //record the error
+            //    Error = Error + "The username may not be blank : ";
+            //}
+            ////if the username is more than 16
+            //if (AdminUserName.Length > 16)
+            //{
+            //    //record the error
+            //    Error = Error + "The username has to be less than 16 characters ";
+            //}
 
             return Error;
         }

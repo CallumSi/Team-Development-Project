@@ -8,6 +8,10 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     public partial class VHCPatientAdd : System.Web.UI.Page
     {
         //Declare Patient Primary Key
@@ -36,7 +40,7 @@ namespace VirginFrontEnd
             //create an instance of the patient class
             clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
             //validate the data on the web form
-            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text, cbPatient_Status.Checked.ToString());
+            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -59,7 +63,7 @@ namespace VirginFrontEnd
             else
             {
                 //report an error
-                lblError.Text = "⚠️ ERROR:" + "  " + Error;
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 
@@ -70,7 +74,7 @@ namespace VirginFrontEnd
             //create an instance of the patient class
             clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
             //validate the data on the web form
-            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text, cbPatient_Status.Checked.ToString());
+            String Error = AllPatients.ThisPatient.Valid(txtPatient_Title.Text, txtPatient_Firstname.Text, txtPatient_Lastname.Text, txtPatient_Address.Text, txtPatient_DOB.Text, txtPatient_Email.Text, txtPatient_Username.Text, txtPatient_Password.Text, txtPatient_Telephone.Text);
             //if the data is OK then add it to the object
             if (Error == "")
             {
@@ -90,6 +94,12 @@ namespace VirginFrontEnd
                 //update the record 
                 AllPatients.Update();
                 Response.Redirect("VHCPatientList.aspx");
+            }
+
+            else
+            {
+                //report an error
+                lblError.Text = "⚠️" + "  " + Error;
             }
         }
 
@@ -112,6 +122,7 @@ namespace VirginFrontEnd
             cbPatient_Status.Checked = Convert.ToBoolean(AllPatients.ThisPatient.Patient_Status);
 
         }
+
         //Close Button
         protected void btnClose_Click(object sender, EventArgs e)
         {

@@ -25,6 +25,9 @@
             <%--BUTTON: LOG OUT--%>
             <asp:Button ID="btnLogout" runat="server" CssClass="btnLogout" Text="☜ Log Out" OnClick="btnLogout_Click" />
 
+            <%--BUTTON: APPOINTMENT LIST--%>
+            <asp:Button ID="btnAppointmentList" runat="server" CssClass="btnAppointmentList" Text=" 🕒 Appointment Booking" OnClick="btnAppointmentList_Click"/>
+
             <%--BUTTON: ADD HOSPITAL--%>
             <asp:Button ID="btnAddHospital" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="btnAddHospital_Click"/>
 
@@ -36,6 +39,14 @@
 
             <%--BUTTON: LIST PATIENTS--%>
             <asp:Button ID="btnListPatients" runat="server" CssClass="btnListPatients" Text="List Patients" OnClick="btnListPatients_Click" />
+
+             <%--BUTTON: ADD STAFF--%>
+            <asp:Button ID="btnAddStaff" runat="server" CssClass="btnAddStaff" Text="Add Staff" OnClick="btnAddStaff_Click"/>
+
+            <%--BUTTON: LIST STAFF--%>
+            <asp:Button ID="btnListStaffs" runat="server" CssClass="btnListStaffs" Text="List Staff" OnClick="btnListStaffs_Click"/>
+
+
         </article>
 
         <%--FOOTER SECTION--%>

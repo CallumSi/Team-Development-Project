@@ -10,13 +10,16 @@ namespace VirginFrontEnd
 {
     public partial class ForumUserList : System.Web.UI.Page
     {
+        Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            AdminID = Convert.ToInt32(Session["AdminID"]);
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
                 //update the list box
                 DisplayUser();
+                DisplayFirstName();
             }
 
         }
@@ -29,26 +32,34 @@ namespace VirginFrontEnd
             //set the name of the primary key
             lstUserListBox.DataValueField = "UserID";
             //set the data field to display
-            lstUserListBox.DataTextField = "Userusername";
+            lstUserListBox.DataTextField = "UserFirstName";
             //bind the data to the list
             lstUserListBox.DataBind();
             //clear the list box
             lstUserListBox.Items.Clear();
         }
+        void DisplayFirstName()
+        {
+            //create an instance of the County Collection
+            clsForumAdminCollection Admin = new clsForumAdminCollection();
+            //find First name
+            Admin.ThisAdmin.Find(AdminID);
+            //display the first name
+            lblFirstName.Text = Admin.ThisAdmin.AdminFirstName;
+        }
+  
 
-        Int32 DisplayFilterUserusername(string UserusernameFilter)
+        Int32 DisplayFilterUserFirstName(string UserFirstNameFilter)
         {
             //int to store the primary key
             Int32 UserId;
-            //string username 
-            string Userusername;
             //string firstname
             string UserFirstName;
             //string last name
             string UserLastName;
             //create an instance of the user collection class
             clsForumUserCollection UserBook = new clsForumUserCollection();
-            UserBook.ReportByUserusername(UserusernameFilter);
+            UserBook.ReportByUserFirstName(UserFirstNameFilter);
             //count of records
             Int32 RecordCount;
             //index for the loop
@@ -62,14 +73,12 @@ namespace VirginFrontEnd
             {
                 //get the User id
                 UserId = UserBook.UserList[Index].UserID;
-                //get the username 
-                Userusername = UserBook.UserList[Index].Userusername;
                 //get the first name
                 UserFirstName = UserBook.UserList[Index].UserFirstName;
                 //get the last name
                 UserLastName = UserBook.UserList[Index].UserLastName;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Userusername + "" + UserFirstName + "" + UserLastName, UserId.ToString());
+                ListItem NewEntry = new ListItem(UserFirstName + "" + UserLastName, UserId.ToString());
                 //add the user to the list
                 lstUserListBox.Items.Add(NewEntry);
                 //move the indext to the next record
@@ -79,22 +88,27 @@ namespace VirginFrontEnd
             return RecordCount;
         }
 
-        protected void btnDisplayAll_Click(object sender, EventArgs e)
-        {
-            DisplayUser();
-        }
+  
 
         protected void btnApply_Click1(object sender, EventArgs e)
         {
-            //display only usernames
-            DisplayFilterUserusername(txtFilterbyusername.Text);
+            Int32 RecordCount;
+            //store the string
+            string UserFirstName = txtFilterbyuserfirstname.Text;
+            //if the text box is blank
+            if (UserFirstName=="")
+            {
+                lblError.Text = "Please enter a first name";
+            }
+            else
+            {
+                RecordCount = DisplayFilterUserFirstName(txtFilterbyuserfirstname.Text);
+                lblError.Text = RecordCount + "Record Found";
+            }
+          
         }
 
-        protected void btnDisplayAll_Click1(object sender, EventArgs e)
-        {
-            //display all username
-            DisplayUser();
-        }
+       
 
         protected void btnAdd_Click1(object sender, EventArgs e)
         {
@@ -121,6 +135,7 @@ namespace VirginFrontEnd
             //if no recod has been selected
             else
             {
+                
                 //display an error
                 lblError.Text = "Please make you select a record from the list";
 

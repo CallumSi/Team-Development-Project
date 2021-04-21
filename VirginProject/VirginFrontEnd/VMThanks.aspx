@@ -17,7 +17,8 @@
         <header>
             <h2>Virgin Movie Order Confirmation</h2>
         </header>
-
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
+        <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="" CssClass="lblUsername"></asp:Label>
         <div class="MovieThanks">
             Thanks for your order!
         </div>

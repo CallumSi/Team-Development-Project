@@ -32,6 +32,7 @@ namespace VirginFrontEnd
             lstCustomer.DataTextField = "Customer_FirstName";
             //bind the data to the list
             lstCustomer.DataBind();
+            lstCustomer.Items.Clear();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -128,6 +129,37 @@ namespace VirginFrontEnd
                 Index++;
             }
             return RecordCount;
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //redirect the customer list 
+            Response.Redirect("VPStaffList.aspx");
+
+        }
+
+        protected void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            //redirect the customer list 
+            Response.Redirect("VPCustomerList.aspx");
+        }
+
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect the staff list 
+            Response.Redirect("VPStaffList.aspx");
+        }
+
+        protected void btnPhoneList_Click(object sender, EventArgs e)
+        {
+            //redirect the phone list 
+            Response.Redirect("VPPhoneList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //redirect to login page
+            Response.Redirect("VirginLogin.aspx");
         }
     }
 }

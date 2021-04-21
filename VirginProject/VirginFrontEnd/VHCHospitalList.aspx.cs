@@ -8,6 +8,10 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     public partial class VHCHospitalList : System.Web.UI.Page
     {
         Int32 Hospital_ID;
@@ -72,8 +76,10 @@ namespace VirginFrontEnd
         //Display All Button
         protected void btnDisplayAllHospitals_Click(object sender, EventArgs e)
         {
-            //display all hospitals
-            DisplayHospital("");
+            //display all staff
+            Int32 RecordCount;
+            RecordCount = DisplayHospital("");
+            lblError.Text = RecordCount + " RECORDS FOUND ";
         }
 
         //Apply Button
@@ -82,7 +88,7 @@ namespace VirginFrontEnd
 
             if (txtHospitalSearch.Text.Length == 0)
             {
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE ENTER A VALID LOCATION";
+                lblError.Text = "⚠️" + " " + "PLEASE ENTER A VALID LOCATION";
             }
 
             else
@@ -91,18 +97,6 @@ namespace VirginFrontEnd
                 RecordCount = DisplayHospital(txtHospitalSearch.Text);
                 lblError.Text = RecordCount + " RECORDS FOUND ";
             }
-        }
-
-        //Total Records Button
-        protected void btnTotalRecords_Click(object sender, EventArgs e)
-        {
-            //display all hospitals
-            DisplayHospital("");
-
-            //declare var to store the record count 
-            Int32 RecordCount;
-            RecordCount = DisplayHospital("");
-            lblError.Text = RecordCount + " RECORDS FOUND ";
         }
 
         //Edit Button
@@ -125,7 +119,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
             }
         }
 
@@ -148,7 +142,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
             }
 
         }

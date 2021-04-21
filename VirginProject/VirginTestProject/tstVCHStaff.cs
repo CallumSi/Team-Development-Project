@@ -504,7 +504,7 @@ namespace VirginTestProject
             //boolean variable to store validation results
             Boolean Found = false;
             //test data to test the method
-            Int32 StaffID = 1;
+            Int32 StaffID = 7;
             //invoke the method
             Found = VCHStaff.Find(StaffID);
             //test to see that the results are correct

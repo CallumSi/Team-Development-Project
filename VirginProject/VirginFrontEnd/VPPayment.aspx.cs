@@ -52,7 +52,37 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            //redirect back to customer phone list
+            Response.Redirect("VPCustomerPhoneList.aspx");
+        }
 
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            //store the data in the session so we can pass it to the next page
+            Session["Customer_ID"] = Customer_ID;
+            //redirect to the cart page
+            Response.Redirect("AnVPEditCustomer.aspx");
+        }
+
+        protected void btnViewCart_Click(object sender, EventArgs e)
+        {
+            //store the data in the session so we can pass it to the next page
+            Session["Customer_ID"] = Customer_ID;
+            //redirect to the cart page
+            Response.Redirect("VPViewCart");
+        }
+
+        protected void btnCustomerHome_Click(object sender, EventArgs e)
+        {
+            //store the data in the session so we can pass it to the next page
+            Session["Customer_ID"] = Customer_ID;
+            //redirect back to customer phone list
+            Response.Redirect("VPCustomerPhoneList.aspx");
         }
     }
 }

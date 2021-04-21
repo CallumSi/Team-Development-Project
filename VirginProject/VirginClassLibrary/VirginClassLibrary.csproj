@@ -61,6 +61,7 @@
     <Compile Include="clsVCHCarCollection.cs" />
     <Compile Include="clsVCHHire.cs" />
     <Compile Include="clsVCHHireCollection.cs" />
+    <Compile Include="clsVMAdminSecurity.cs" />
     <Compile Include="clsVMMovieCollection.cs" />
     <Compile Include="clsSecurity.cs" />
     <Compile Include="clsUser.cs" />
@@ -84,12 +85,9 @@
     <Compile Include="clsVMCustomerCollection.cs" />
     <Compile Include="clsVMMovie.cs" />
     <Compile Include="clsVMOrder.cs" />
-    <Compile Include="clsVMPayment.cs" />
-    <Compile Include="clsVMPaymentCollection.cs" />
     <Compile Include="clsVMStaff.cs" />
     <Compile Include="clsVMStaffCollection.cs" />
     <Compile Include="clsVPCart.cs" />
-    <Compile Include="clsVPCartCollection.cs" />
     <Compile Include="clsVPCartItem.cs" />
     <Compile Include="clsVPCustomer.cs" />
     <Compile Include="clsVPCustomerCollection.cs" />

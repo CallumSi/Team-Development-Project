@@ -147,5 +147,15 @@ namespace VirginFrontEnd
             //redirect to the staff list
             Response.Redirect("VMStaffList.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMStaffList.aspx");
+        }
+
+        protected void btnVMPaymentList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VMPaymentList.aspx");
+        }
     }
 }

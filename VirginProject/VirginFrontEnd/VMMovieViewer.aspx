@@ -16,8 +16,9 @@
         </header>
 
         <article>
-
-            <asp:Label ID="lblUsername" runat="server" Style="z-index: 1;" Text="" CssClass="lblUsername"></asp:Label>
+            <asp:Label ID="lblMovieDescription" runat="server" Text="MOVIE DESCRIPTION" CssClass="lblMovieDescription"></asp:Label>
+        <asp:Label ID="lblWelcomeUsername" runat="server" Text="Welcome: " CssClass="lblWelcomeUsername"></asp:Label>
+        <asp:Label ID="lblMVUsername" runat="server" CssClass="lblUsername"></asp:Label>
             <asp:Image ID="MovieImage" runat="server" CssClass="MovieImage" />
             <ul class="AnMovie">
                 <li>

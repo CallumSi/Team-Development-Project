@@ -8,7 +8,7 @@ namespace VirginClassLibrary
         //private data member for the DeliveryID
         private Int32 mDelivery_ID;
         //Delivery Attributes
-        Int32 mOrder_ID;
+        Int32 mOrderID;
         String mTitle;
         String mFirstName;
         String mLastName;
@@ -31,21 +31,23 @@ namespace VirginClassLibrary
             }
 
         }
-        public int Order_ID
+        public int OrderID
 
-        { get
+        {
+            get
             {
                 //return the private data 
-                return mOrder_ID;
+                return mOrderID;
             }
-                
-                set
+
+            set
             {
                 //set the private data
-                mOrder_ID = value;
+                mOrderID = value;
             }
-                
-                }
+
+        }
+
         public string Title
 
         {
@@ -165,15 +167,15 @@ namespace VirginClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                Delivery_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Delivery_ID"]);
-                Order_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Order_ID"]);
-                Title = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
-                FirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
-                LastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
-                House_No = Convert.ToInt32(DB.DataTable.Rows[0]["House_No"]);
-                Delivery_Address = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Address"]);
-                Delivery_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Postcode"]);
-                Delivery_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Delivery_Date"]);
+                mDelivery_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Delivery_ID"]);
+                mOrderID = Convert.ToInt32(DB.DataTable.Rows[0]["OrderID"]);
+                mTitle = Convert.ToString(DB.DataTable.Rows[0]["Title"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mHouse_No = Convert.ToInt32(DB.DataTable.Rows[0]["House_No"]);
+                mDelivery_Address = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Address"]);
+                mDelivery_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Delivery_Postcode"]);
+                mDelivery_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Delivery_Date"]);
                 //return that everything works
                 return true;
             }

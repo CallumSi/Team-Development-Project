@@ -5,48 +5,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>AdminSignUp</title>
-    <link href="ForumStyleSheet.css" rel="stylesheet" type="text/css" />
+    <link href="VirginTeamLogin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
 
         <header>
             <h2>Virgin Media </h2>
+           
         </header>
 
         <article>
-            <ul>
+             <h1>Admin Sign Up</h1>
+            <asp:Label ID="lblUserName" CssClass="lblUserName" runat="server" Style="z-index: 1;" Text="User Name"></asp:Label>
 
-                <li>
-                    <asp:Label ID="lblUserName" runat="server" Style="z-index: 1;" Text="User Name"></asp:Label>
+            <asp:TextBox ID="txtUsername" CssClass="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
 
-                    <asp:TextBox ID="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
+            <asp:Label ID="lblPassword"  CssClass="lblPassword" runat="server" Style="z-index: 1;" Text="Password"></asp:Label>
+            <asp:TextBox ID="txtPassword" CssClass="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
 
-                </li>
+            <asp:Label ID="lblPasswordConfirm" CssClass="lblPasswordConfirm" runat="server" Style="z-index: 1;" Text="Password Confirm"></asp:Label>
+            <asp:TextBox ID="txtPasswordConfirm" CssClass="txtPasswordConfirm" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
 
-                <li>
-                    <asp:Label ID="lblPassword" runat="server" Style="z-index: 1;" Text="Password"></asp:Label>
-                    <asp:TextBox ID="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
-                </li>
+            <asp:Label ID="lblSecret" runat="server"  CssClass="lblSecret"  Style="z-index: 1;" Text="Secret"></asp:Label>
+            <asp:TextBox ID="txtSecret" runat="server"  CssClass="txtSecret" Style="z-index: 1"></asp:TextBox>
 
-                <li>
-                    <asp:Label ID="lblPasswordConfirm" runat="server" Style="z-index: 1;" Text="Password Confirm"></asp:Label>
-                    <asp:TextBox ID="txtPasswordConfirm" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
-                </li>
-                <li>
-                    <asp:Label ID="lblSecret" runat="server" Style="z-index: 1;" Text="Secret"></asp:Label>
-                    <asp:TextBox ID="txtSecret" runat="server" Style="z-index: 1"></asp:TextBox>
-                </li>
-                <li>
-                    <asp:Label ID="lblError" runat="server" Style="z-index: 1;"></asp:Label>
+            <asp:Label ID="lblError" runat="server"  CssClass="lblErrorMessage" Style="z-index: 1;"></asp:Label>
 
+            <asp:Button ID="btnSignUp" CssClass="btnSignUp" runat="server" OnClick="btnSignUp_Click" Style="z-index: 1;" Text="Sign Up" Height="46px" />
 
-
-                </li>
-                <li>
-                    <asp:Button ID="btnSignUp" CssClass="navButton" runat="server" OnClick="btnSignUp_Click" Style="z-index: 1;" Text="Sign Up" Height="46px" />
-                </li>
-            </ul>
         </article>
 
         <nav>

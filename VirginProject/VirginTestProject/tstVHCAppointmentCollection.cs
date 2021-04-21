@@ -5,6 +5,10 @@ using VirginClassLibrary;
 
 namespace VirginTestProject
 {
+    ///This test uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     [TestClass]
     public class tstVHCAppointmentCollection
     {
@@ -29,11 +33,8 @@ namespace VirginTestProject
             //set its properties
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4; 
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -53,11 +54,8 @@ namespace VirginTestProject
             //set the properties of the test object
             TestAppointment.Appointment_ID = 1;
             TestAppointment.Appointment_Date = DateTime.Now.Date;
-            TestAppointment.Appointment_Time = "09:00";
+            TestAppointment.Appointment_Time = 0900;
             TestAppointment.Appointment_Description = "Broken Arm";
-            TestAppointment.Hospital_ID = 1;
-            TestAppointment.Patient_ID = 4;
-            TestAppointment.Staff_ID = 4;
             //assign the data to the property
             AllAppointments.ThisAppointment = TestAppointment;
             //test to see that the two values are the same
@@ -78,11 +76,8 @@ namespace VirginTestProject
             //set its properties
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4;
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -104,15 +99,12 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4;
             //set ThisPatient to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //find the record 
@@ -134,25 +126,19 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4;
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //modify the test data 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Leg";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4;
             //set the record based on the new test data
             AllAppointments.ThisAppointment = TestItem;
             //update the method 
@@ -176,15 +162,12 @@ namespace VirginTestProject
             //set its properties 
             TestItem.Appointment_ID = 1;
             TestItem.Appointment_Date = DateTime.Now.Date;
-            TestItem.Appointment_Time = "09:00";
+            TestItem.Appointment_Time = 0900;
             TestItem.Appointment_Description = "Broken Arm";
-            TestItem.Hospital_ID = 1;
-            TestItem.Patient_ID = 4;
-            TestItem.Staff_ID = 4;
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //find the record 
@@ -236,14 +219,14 @@ namespace VirginTestProject
             //check that the correct number of records are found
             if (FilteredAppointment.Count == 2)
             {
-                //check that the first record id ID 15
-                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 15)
+                //check that the first record id ID 3
+                if (FilteredAppointment.AppointmentList[0].Appointment_ID != 3)
                 {
                     OK = false;
                 }
 
-                //check that the last record is ID 16
-                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 16)
+                //check that the last record is ID 4
+                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 4)
                 {
                     OK = false;
                 }

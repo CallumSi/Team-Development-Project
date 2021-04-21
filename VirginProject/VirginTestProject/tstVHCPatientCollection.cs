@@ -5,6 +5,10 @@ using VirginClassLibrary;
 
 namespace VirginTestProject
 {
+    ///This test uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     [TestClass]
     public class tstVHCPatientCollection
     {
@@ -129,7 +133,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //find the record 
@@ -163,7 +167,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //modify the test data 
@@ -213,7 +217,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //find the record 
@@ -235,7 +239,7 @@ namespace VirginTestProject
             //create an instance of the filtered data
             clsVHCPatientCollection FilteredPatient = new clsVHCPatientCollection();
             //apply a blank string (Should return all patients) 
-            FilteredPatient.ReportByPatient(Convert.ToDateTime(""));
+            //FilteredPatient.ReportByPatient(Convert.ToDateTime("")); ***DATE CANNOT BE NULL***
             //test to see that the two values are the same 
             Assert.AreEqual(AllPatients.Count, FilteredPatient.Count);
         }

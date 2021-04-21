@@ -151,11 +151,5 @@ namespace VirginFrontEnd
             //redirect to the login page
             Response.Redirect("VirginLogin.aspx");
         }
-
-        protected void btnVMPaymentList_Click(object sender, EventArgs e)
-        {
-            //redirect to the payment list page
-            Response.Redirect("VMPaymentList.aspx");
-        }
     }
 }

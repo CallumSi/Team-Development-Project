@@ -2,6 +2,10 @@
 
 namespace VirginClassLibrary
 {
+    ///This class uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+
     public class clsVHCStaff
     {
         //private data member for the Staff_ID property 
@@ -223,7 +227,7 @@ namespace VirginClassLibrary
 
         }
 
-        public string Valid (string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role, string Staff_Status)
+        public string Valid (string Staff_Title, string Staff_Firstname, string Staff_Lastname, string Staff_Email, string Staff_Username, string Staff_Password, string Staff_Role)
         {   
             //create a string variable to store data values
             String Error = "";

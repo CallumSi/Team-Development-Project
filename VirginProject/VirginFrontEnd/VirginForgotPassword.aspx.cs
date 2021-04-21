@@ -28,12 +28,18 @@ namespace VirginFrontEnd
             //change the password and record the outcome
             string Outcome = mSec.ChangePassword(txtUsername.Text, txtPassword.Text, txtPasswordConfirm.Text, txtSecret.Text);
             //display the outcome
-            lblError.Text = Outcome;
+            lblErrorMessage.Text = Outcome;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
+
         }
     }
 }

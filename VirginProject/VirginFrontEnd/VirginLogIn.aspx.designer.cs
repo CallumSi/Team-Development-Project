@@ -67,13 +67,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnLogIn;
         
         /// <summary>
-        /// btnSignUp control.
+        /// btnSignUp2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignUp;
+        protected global::System.Web.UI.WebControls.Button btnSignUp2;
         
         /// <summary>
         /// btnForgotPassword control.
@@ -85,13 +85,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnForgotPassword;
         
         /// <summary>
-        /// lblError control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
         
         /// <summary>
         /// btnForumAdmin control.
@@ -101,5 +101,14 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnForumAdmin;
+        
+        /// <summary>
+        /// lblOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOther;
     }
 }

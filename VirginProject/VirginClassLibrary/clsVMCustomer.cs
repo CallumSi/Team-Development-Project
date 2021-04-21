@@ -13,6 +13,7 @@ namespace VirginClassLibrary
         String mVMcustomerEmail;
         String mVMcustomerUsername;
         String mVMcustomerPassword;
+        Int32 mOriginalID;
 
         //Public property for CustomerID
         public int VMCustomerID
@@ -104,6 +105,22 @@ namespace VirginClassLibrary
             }
         }
 
+        //public property for OriginalID
+        public int OriginalID
+        {
+            get
+            {
+                //return the private data
+                return mOriginalID;
+            }
+            set
+            {
+                //set the value of the private data member
+                mOriginalID = value;
+            }
+        }
+
+
         public bool Find(int VMCustomerID)
         {
             //create an instance of the data connection
@@ -122,6 +139,8 @@ namespace VirginClassLibrary
                 mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
                 mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
                 mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
+                //mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
                 //return that everything worked OK
                 return true;
             }
@@ -129,6 +148,35 @@ namespace VirginClassLibrary
             else
             {
                 //return false indicating a problem
+                return false;
+            }
+        }
+
+        public bool FindOriginal(int VMCustomerID)
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("OriginalID", VMCustomerID);
+            //execute the sproc
+            DB.Execute("sproc_tblVMCustomer_FilterByOriginalID");
+            //if record found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mVMCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["VMCustomerID"]);
+                mVMcustomerFirstName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerFirstName"]);
+                mVMcustomerLastName = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerLastName"]);
+                mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
+                mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
+                mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
+                return true;
+            }
+            else
+            {
+                //return false if no record ofund
                 return false;
             }
         }

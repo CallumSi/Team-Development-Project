@@ -18,7 +18,7 @@
             <asp:Label ID="lblStaffMovie" runat="server" Text="VIRGIN MOVIES ADD MOVIE" CssClass="lblStaffAddMovie"></asp:Label>
         </article>
 
-        <asp:Label ID="lblMovieTitle" runat="server" Text="Movie Title: " CssClass="lblMovieTitle" ></asp:Label>
+        <asp:Label ID="lblMovieTitle" runat="server" Text="Movie Title: " CssClass="lblMovieTitle"></asp:Label>
         <asp:Label ID="lblMovieGenre" runat="server" Text="Movie Genre: " CssClass="lblGenre"></asp:Label>
         <asp:Label ID="lblMovieDuration" runat="server" Text="Movie Duration (minutes): " CssClass="lblMovieDuration"></asp:Label>
         <asp:Label ID="lblMovieRating" runat="server" Text="Movie Rating (score out of 10): " CssClass="lblMovieRating"></asp:Label>
@@ -39,15 +39,16 @@
         <nav>
             <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btnStaffHome" OnClick="btnHome_Click" />
             <asp:Button ID="btnCustomerList" CssClass="btnCustomerList" runat="server" Text="View Customer List" OnClick="btnCustomerList_Click" />
-            <asp:Button ID="btnLogOut" CssClass="btnStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+            <asp:Button ID="btnLogOut" CssClass="btnVMStaffLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+            <asp:Button ID="btnVMStaffList" runat="server" CssClass="btnStaffVMList" Text="View Staff List" OnClick="btnVMStaffList_Click" />
             <asp:Button ID="btnStaffMovie" runat="server" CssClass="btnStaffMovie" Text="View Movie List" OnClick="btnStaffMovie_Click" />
         </nav>
 
-          <footer>
-                <div id ="FooterText">
-                    © 2021 Virgin Media | All Rights Reserved
-                </div>
-            </footer>
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+            </div>
+        </footer>
 
     </form>
 </body>

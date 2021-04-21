@@ -22,6 +22,24 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblWelcome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWelcome;
+        
+        /// <summary>
+        /// lblFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFirstName;
+        
+        /// <summary>
         /// lstUserListBox control.
         /// </summary>
         /// <remarks>
@@ -40,13 +58,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblUserFilter;
         
         /// <summary>
-        /// txtFilterbyusername control.
+        /// txtFilterbyuserfirstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFilterbyusername;
+        protected global::System.Web.UI.WebControls.TextBox txtFilterbyuserfirstname;
         
         /// <summary>
         /// btnApply control.
@@ -56,15 +74,6 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnApply;
-        
-        /// <summary>
-        /// btnDisplayAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
         
         /// <summary>
         /// btnAdd control.

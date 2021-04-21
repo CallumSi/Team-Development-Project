@@ -1,0 +1,139 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.lblUsername {
+    color: white;
+}
+
+header {
+    background-color: #27183d;
+    height: 9%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: 15px;
+    color: #cc0000;
+}
+
+h1 {
+    color: #cc0000;
+    text-align: center;
+}
+
+nav {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    position: fixed;
+    width: 13%;
+    height: 845px;
+    top: 14%;
+    left: 0%;
+}
+
+article {
+    background-color: #fff;
+    position: fixed;
+    width: 80%;
+    top: 15%;
+    left: 20%;
+    color: black;
+    height: 381px;
+}
+
+footer {
+    background-color: #27183d;
+    height: 20%;
+    position: fixed;
+    width: 100%;
+    top: 85%;
+    left: 0%;
+    margin-top: 94px;
+    margin-bottom: 15px;
+}
+
+#FooterText {
+    position: fixed;
+    left: 45%;
+    top: 886%;
+}
+
+
+.Button, .navButton {
+    background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 1em;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+ul {
+    align-content: center;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.column {
+    list-style: none;
+    padding: 0px;
+}
+
+
+.navButton {
+    padding: 10px;
+    margin-top: 3px;
+    font-size: 13px;
+    color: white;
+}
+
+.Listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+    overflow: scroll;
+    height: 58vh;
+    padding-bottom: 30px;
+    z-index: 10;
+    background-color: white;
+    border: 30px solid white;
+}
+
+    .Listings li {
+        background-color: white;
+    }
+
+        .Listings li img {
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+.AnListing {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    list-style: none;
+}
+
+    .AnListing li {
+        padding: 10px;
+        list-style: none;
+    }

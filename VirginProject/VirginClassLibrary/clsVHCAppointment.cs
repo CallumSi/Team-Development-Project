@@ -2,6 +2,11 @@
 
 namespace VirginClassLibrary
 {
+    ///This class uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
+
     public class clsVHCAppointment
     {
         //private data member for the Appointment_ID property 
@@ -11,19 +16,10 @@ namespace VirginClassLibrary
         private DateTime mAppointment_Date;
 
         //private data member for the Appointment_Time property 
-        private string mAppointment_Time;
+        private int mAppointment_Time;
 
         //private data member for the Appointment_Description property 
         private string mAppointment_Description;
-
-        //private data member for the Hospital_ID property 
-        private int mHospital_ID;
-
-        //private data member for the Patient_ID property 
-        private int mPatient_ID;
-
-        //private data member for the Staff_ID property 
-        private int mStaff_ID;
 
         //Appointment_ID Property 
         public int Appointment_ID 
@@ -57,7 +53,7 @@ namespace VirginClassLibrary
         }
 
         //Appointment_Time Property 
-        public string Appointment_Time 
+        public int Appointment_Time 
         {
             get
             {
@@ -88,50 +84,6 @@ namespace VirginClassLibrary
             }
         }
 
-        //Hospital_ID Property 
-        public int Hospital_ID
-        {
-            get
-            {
-                //return the private data 
-                return mHospital_ID;
-            }
-
-            set
-            {
-                //return the private data 
-                mHospital_ID = value;
-            }
-        }
-
-        public int Patient_ID 
-        {
-            get 
-            {
-                //return the private data 
-                return mPatient_ID;
-            }
-
-            set 
-            {
-                //return the private data 
-                mPatient_ID = value;
-            }
-        }
-        public int Staff_ID 
-        {
-            get
-            {
-                //return the private data 
-                return mStaff_ID;
-            }
-
-            set
-            {
-                //return the private data 
-                mStaff_ID = value;
-            }
-        }
 
         public bool Find(int Appointment_ID)
         {
@@ -147,11 +99,8 @@ namespace VirginClassLibrary
                 //copy the data from the database to the private data members
                 mAppointment_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_ID"]);
                 mAppointment_Date = Convert.ToDateTime(DB.DataTable.Rows[0]["Appointment_Date"]);
-                mAppointment_Time = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Time"]);
+                mAppointment_Time = Convert.ToInt32(DB.DataTable.Rows[0]["Appointment_Time"]);
                 mAppointment_Description = Convert.ToString(DB.DataTable.Rows[0]["Appointment_Description"]);
-                mHospital_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Hospital_ID"]);
-                mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);
-                mStaff_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Staff_ID"]);
                 //return that everything worked OK
                 return true;
             }
@@ -199,20 +148,25 @@ namespace VirginClassLibrary
                 Error = Error + " THE DATA WAS NOT A VALID DATE: ";
             }
 
-            //Appointment Time Validation (2) 
-
-            //if appointment time  is blank 
-            if (Appointment_Time.Length == 0)
+            ////Appointment Time Validation(2)
+            
+            try
             {
-                //record the error 
-                Error = Error + "APPOINTMENT TIME CANNOT BE BLANK!" + " ";
+                Int32 TempAppointmentTemp = Convert.ToInt32(Appointment_Time);
 
+                if (TempAppointmentTemp == 0)
+                {
+                    Error = Error + "APPOINTMENT TIME CANNOT BE BLANK!" + " ";
+                }
+
+                if (TempAppointmentTemp < 0001 | TempAppointmentTemp > 2401)
+                {
+                    Error = Error + "APPOINTMENT TIME MUST BETWEEN THE RANGE 0900 - 2400 " + " ";
+                }
             }
-
-            if (Appointment_Time.Length < 5 | Appointment_Time.Length > 5)
+            catch
             {
-                //set the error message 
-                Error = Error + "APPOINTMENT TIME MUST BE 5 CHARACTERS!" + " ";
+                Error = Error + "APPOINTMENT TIME IS INVALID" + " ";
             }
 
             //Appointment Description Validation (3) 

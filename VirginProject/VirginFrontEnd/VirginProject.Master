@@ -1,5 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="VirginProject.master.cs" Inherits="VirginProject" %>
 
+ <%--   This page uses code originated by Matthew Dean.
+    it is free for use by anybody so long as you give credit to the original author.
+    Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019--%>
+
 <!DOCTYPE html>
 
 <html>
@@ -11,7 +15,7 @@
         <form id="form1" runat="server">
  
              <header>
-               <h2> Virgin Media </h2> 
+               <h2> VIRGIN SERVICES </h2> 
             </header>
  
             <article>

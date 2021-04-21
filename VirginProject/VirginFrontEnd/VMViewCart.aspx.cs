@@ -22,14 +22,31 @@ namespace VirginFrontEnd
             VMMovieID = Convert.ToInt32(Session["VMMovieID"]);
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsVMCart)Session["MyCart"];
-            //display the cart contents
-            DisplayCart();
+
+            if (IsPostBack == false)
+            {
+                //display the cart contents
+                DisplayCart();
+                DisplayCustomerData();
+
+
+            }
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
         {
             //you must also save the cart every time the unload event takes place
             Session["MyCart"] = MyCart;
+        }
+
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
         }
 
         void DisplayCart()
@@ -77,7 +94,9 @@ namespace VirginFrontEnd
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //take the customer to the edit customer page
+            Session["VMCustomerID"] = VMCustomerID;
+            Response.Redirect("AnVMCustomerEdit.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
@@ -106,10 +125,6 @@ namespace VirginFrontEnd
                 lblError.Text = "Please add items to cart first in order to checkout!";
             }
         }
-
-        protected void lstShoppingCart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -40,6 +40,15 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnLogout;
         
         /// <summary>
+        /// btnAppointmentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAppointmentList;
+        
+        /// <summary>
         /// btnAddHospital control.
         /// </summary>
         /// <remarks>
@@ -74,5 +83,23 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnListPatients;
+        
+        /// <summary>
+        /// btnAddStaff control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddStaff;
+        
+        /// <summary>
+        /// btnListStaffs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListStaffs;
     }
 }

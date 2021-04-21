@@ -12,11 +12,13 @@ namespace VirginFrontEnd
     {
         //variable to store the primary key with page level scope
         Int32 CarID;
+        Int32 StaffID;
 
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the car to be processed
+            StaffID = Convert.ToInt32(Session["StaffID"]);
             CarID = Convert.ToInt32(Session["CarID"]);
             if (IsPostBack == false)
             {
@@ -29,6 +31,13 @@ namespace VirginFrontEnd
                     DisplayCar();
                 }
             }
+        }
+
+        //event handler for unload event
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Save the StaffID when a page unload event happens
+            Session["StaffID"] = StaffID;
         }
 
         //function to add new car records
@@ -53,6 +62,8 @@ namespace VirginFrontEnd
                 //add the new car record
                 CarCollection.Add();
 
+                //Add the StaffID to session object 
+                Session["StaffID"] = StaffID;
                 //once complete redirect the user to the car list page
                 Response.Redirect("VCHCarList.aspx");
             }
@@ -104,6 +115,8 @@ namespace VirginFrontEnd
                 //update the existing car record
                 CarCollection.Update();
 
+                //Add the StaffID to session object 
+                Session["StaffID"] = StaffID;
                 //once complete redirect the user to the car list page
                 Response.Redirect("VCHCarList.aspx");
             }
@@ -130,14 +143,50 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
             //redirect the user to the car list page, without having added or edited a car record
             Response.Redirect("VCHCarList.aspx");
         }
 
+        protected void btnStaff_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff list page
+            Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the customer list page
+            Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
+        }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
+        }
+
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //redirect me to the home page, this offers links to all system pages
-            Response.Redirect("VCHCustomerOrStaffSelection.aspx");
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
         }
     }
 }

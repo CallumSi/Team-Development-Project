@@ -8,6 +8,10 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     public partial class VHCPatientList : System.Web.UI.Page
     {
         Int32 Patient_ID;
@@ -25,18 +29,31 @@ namespace VirginFrontEnd
 
         private void DisplayPatient()
         {
+            //BEFORE FILTER SETTINGS
+            Int32 Patient_ID; //Var to store the primary key  
+            String Patient_Title; //Var to store the Patient Title
+            String Patient_Firstname; //Var to store the Patient Firstname
+            String Patient_Lastname; //Var to store the Patient Lastname
             //create an instance of the patient class
-            clsVHCPatientCollection AllPatients = new clsVHCPatientCollection();
-            //set the data source to the list of patient in the collection 
-            lstPatient.DataSource = AllPatients.PatientList;
-            //set the name of the primary key 
-            lstPatient.DataValueField = "Patient_ID";
-            //set the data field to display 
-            lstPatient.DataTextField = "Patient_Firstname";
-            //bind the data to the list
-            lstPatient.DataBind();
+            clsVHCPatientCollection PatientSearch = new clsVHCPatientCollection();
+            Int32 RecordCount; //Var to store the count of records 
+            Int32 Index = 0; //Var to store the index for the loop
+            RecordCount = PatientSearch.Count; //get the count of records 
+            lstPatient.Items.Clear(); //clear the list box
+            while (Index < RecordCount) //While there are records to process
+            {
+                Patient_ID = PatientSearch.PatientList[Index].Patient_ID; //get primary key 
+                Patient_Title = PatientSearch.PatientList[Index].Patient_Title; //get Patient Title 
+                Patient_Firstname = PatientSearch.PatientList[Index].Patient_Firstname; //get Patient Firstname
+                Patient_Lastname = PatientSearch.PatientList[Index].Patient_Lastname; //get Patient Lastname
+                //create a new entry for the list box
+                ListItem NewEntry = new ListItem(" [" + Patient_ID + "] " + " " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname, Patient_ID.ToString());
+                lstPatient.Items.Add(NewEntry);
+                Index++;
+            }
         }
 
+        //AFTER FILTER SETTINGS
         Int32 DisplayPatient(string PatientFilter)
         {
             Int32 Patient_ID; //Var to store the primary key  
@@ -72,7 +89,7 @@ namespace VirginFrontEnd
                 Patient_Telephone = PatientSearch.PatientList[Index].Patient_Telephone; //get Patient Telephone
                 Patient_Status = PatientSearch.PatientList[Index].Patient_Status; //get Patient Status
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem("[" + Patient_ID + "] " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname, Patient_ID.ToString());
+                ListItem NewEntry = new ListItem(" [" + Patient_ID + "] " + " " + Patient_Title + " " + Patient_Firstname + " " + Patient_Lastname + " "+ " - " + Patient_DOB, Patient_ID.ToString());
                 lstPatient.Items.Add(NewEntry);
                 Index++;
             }
@@ -89,6 +106,7 @@ namespace VirginFrontEnd
         //Display All Button
         protected void btnDisplayAllPatients_Click(object sender, EventArgs e)
         {
+
             //display all patients
             DisplayPatient();
         }
@@ -98,7 +116,7 @@ namespace VirginFrontEnd
         {
             if (txtPatientSearch.Text.Length == 0)
             {
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE ENTER A VALID DATE OF BIRTH";
+                lblError.Text = "⚠️" + " " + "PLEASE ENTER A VALID DATE OF BIRTH";
             }
 
             else
@@ -110,18 +128,6 @@ namespace VirginFrontEnd
 
             
         }
-
-        ////Total Records Button
-        //protected void btnTotalRecords_Click(object sender, EventArgs e)
-        //{
-        //    //display all patients
-        //    DisplayPatient("");
-
-        //    //declare var to store the record count 
-        //    Int32 RecordCount;
-        //    RecordCount = DisplayPatient("");
-        //    lblError.Text = RecordCount + " RECORDS FOUND ";
-        //}
 
         protected void btnEditPatient_Click(object sender, EventArgs e)
         {
@@ -142,7 +148,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO UPDATE FROM THE LIST!";
             }
         }
 
@@ -165,7 +171,7 @@ namespace VirginFrontEnd
             else
             {
                 //display an error 
-                lblError.Text = "⚠️ SYSTEM ERROR:" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
+                lblError.Text = "⚠️" + " " + "PLEASE SELECT A RECORD TO BE REMOVED FROM THE LIST!";
             }
         }
     }

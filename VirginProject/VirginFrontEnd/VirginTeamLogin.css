@@ -1,0 +1,349 @@
+﻿/* Font Style from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/*** HTML STRUCTURE ***/
+
+/* Header Section*/
+header {
+    background-color: #27183d;
+    height: 3%;
+    position: fixed;
+    width: 100%;
+    height: 5%;
+    padding: 15px;
+    color: #DBDBDB;
+}
+
+/* Virgin Services*/
+h2 {
+    position: fixed;
+    left: 30px;
+    top:5px; 
+    letter-spacing:2px;
+}
+
+/* Headers 3/4 Shared Attributes*/
+h3, h4, h5 {
+    font-weight: bold;
+    font-size: 50px;
+    color: #cc0000;
+    text-align: center;
+}
+
+/* Each Page Title */
+h3 {
+    position: fixed;
+    top: 81px;
+    left: 750px;
+}
+
+/* Each Page Sub Title*/
+h4 {
+    position: fixed;
+    top: 81px;
+    left: 950px;
+}
+
+/*virgin Success Sign Up Message*/
+h5 {
+    position: fixed;
+    top: 200px;
+    left: 250px;
+    color: #27183d;
+}
+
+/* Body Section*/
+body {
+    background-color: #CCCCCC;
+    color: #DBDBDB;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Article Section*/
+article {
+    position: fixed;
+    color: black;
+    left: 1%;
+    top: 10%;
+    height: 759px;
+    width: 98%;
+    bottom: 169px;
+    background-color: white;
+}
+
+/*Footer Section*/
+footer {
+    background-color: #27183d;
+    position: fixed;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    left: -4%;
+    top: 83%;
+    height: 7%;
+    width: 105%;
+}
+
+/*Footer Information*/
+#FooterText {
+    position: fixed;
+    left: 900px;
+    top: 900px;
+    font-size: 10pt;
+}
+
+/*Labels*/
+.lblUserName, .lblPassword, .lblPasswordConfirm, .lblSecret {
+    position: absolute;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+
+/* Each Page Sub Title*/
+.lblOther {
+    position: fixed;
+    top: 150px;
+    left: 150px;
+    color:black;
+    font-size:40pt;
+    font-weight:bolder;
+}
+
+/*Username Label*/
+.lblUserName {
+    top: 200px;
+    left: 660px;
+}
+
+/*Password Label*/
+.lblPassword {
+    top: 298px;
+    left: 612px;
+}
+
+/*Password Confirm Label*/
+.lblPasswordConfirm {
+    top: 400px;
+    left: 470px;
+}
+
+/*Secret Label*/
+.lblSecret {
+    top: 500px;
+    left: 720px;
+}
+
+/*Textbox*/
+.txtUsername, .txtPassword, .txtPasswordConfirm, .txtSecret {
+    position: absolute;
+    width: 500px;
+    height: 40px;
+    font-size: 35px;
+    background-color: #e8e5e5;
+}
+
+/*Username Textbox*/
+.txtUsername {
+    top: 205px;
+    left: 900px;
+}
+
+/*Password Textbox*/
+.txtPassword {
+    top: 305px;
+    left: 900px;
+}
+
+/*Password Confirm Textbox*/
+.txtPasswordConfirm {
+    top: 405px;
+    left: 900px;
+}
+
+/*Secret Textbox*/
+.txtSecret {
+    top: 505px;
+    left: 900px;
+}
+
+/* Navigation Buttons */
+.btnVirginMovies, .btnCarHire, .btnVirginPhone, .btnMarketPlace, .btnVirginGP, .btnVirginForum{
+    position: fixed;
+    z-index: 1;
+    width: 550px;
+    height: 200px;
+    font-size: 40pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/*Log Out */
+.btnLogOut {
+    position: fixed;
+    z-index: 1;
+    width: 200px;
+    height: 50px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+    top: 120px;
+    left: 1650px;
+}
+
+.btnLogOut:hover {
+    background-color: darkred; 
+    color:white;
+}
+
+/*Virgin Movie*/
+.btnVirginMovies {
+    top: 200px;
+    left: 50px;
+}
+
+/*Virgin Car Hire*/
+.btnCarHire {
+    top: 500px;
+    left: 50px;
+}
+
+/*Virgin Phones*/
+.btnVirginPhone {
+    top: 200px;
+    left: 680px;
+}
+
+/*Virgin Market Place*/
+.btnMarketPlace {
+    top: 500px;
+    left: 680px;
+}
+
+/*Virgin Healthcare*/
+.btnVirginGP {
+    top: 200px;
+    left: 1320px;
+}
+
+/*Virgin Forum*/
+.btnVirginForum {
+    top: 500px;
+    left: 1320px;
+}
+
+/* Buttons */
+.btnSignUp, .btnLogIn, .btnSignUp2, .btnForgotPassword, .btnForumAdmin, .btnSubmit, .btnContinue {
+    position: fixed;
+    z-index: 1;
+    width: 200px;
+    height: 70px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Buttons - Hover Effect */
+.btnSignUp:hover, .btnLogIn:hover, .btnSignUp2:hover, .btnForgotPassword:hover, .btnContinue:hover, .btnVirginMovies:hover, .btnCarHire:hover, .btnVirginPhone:hover, .btnMarketPlace:hover, .btnVirginGP:hover, .btnVirginForum:hover {
+    background-color: #27183D;
+    color:white; 
+}
+
+/* Forum Admin */
+.btnForumAdmin {
+    top: 300px;
+    left: 100px;
+    width: 300px;
+}
+
+/* Forum Admin- Hover Effect */
+.btnForumAdmin:hover {
+    background-color: dimgrey;
+    color: white;
+}
+
+/* Sign Up Button */
+.btnSignUp {
+    top: 700px;
+    left: 1000px;
+}
+
+/* Sign Up ButtonHover Effect */
+.btnSignUp:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Log In Button */
+.btnLogIn {
+    top: 550px;
+    left: 1000px;
+}
+
+/* Sign Up 2 Button */
+.btnSignUp2 {
+    top: 550px;
+    left: 700px;
+}
+
+/* Forgot Password Button */
+.btnForgotPassword {
+    top: 550px;
+    left: 1300px;
+    width: 300px;
+}
+
+/* Continue Button */
+.btnContinue {
+    top: 600px;
+    left: 800px;
+    font-size: 50pt;
+    text-align: center;
+    width: 400px;
+    height: 150px;
+}
+
+/* Submit Button*/
+.btnSubmit {
+    top: 709px;
+    left: 1000px;
+}
+
+.btnSubmit:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Close Button */
+.btnClose {
+    position: fixed;
+    top: 113px;
+    left: 1651px;
+    z-index: 1;
+    width: 60px;
+    height: 35px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+}
+
+/* Close Hover Button */
+.btnClose:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+/*Error Message Label*/
+.lblErrorMessage {
+    position: absolute;
+    top: 700px;
+    left: 25px;
+    color: black;
+    font-weight: bolder;
+    font-size: 15pt;
+    letter-spacing: 3px;
+    color:#cc0000;
+    font-family: 'Share Tech Mono', monospace;
+}

@@ -91,7 +91,7 @@ footer {
 /*Navigation Buttons*/
 
 /*Main Menu */
-.AddHospital, .ListHospitals, .btnAddPatient, .btnListPatients {
+.AddHospital, .ListHospitals, .btnAddPatient, .btnListPatients, .btnAddStaff, .btnListStaffs {
     z-index: 1;
     width: 400px;
     height: 200px;
@@ -101,7 +101,7 @@ footer {
 }
 
 /*List Hospital Buttons*/
-.EditHospital, .DeleteHospital, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnTotalRecords, .btnYes, .btnNo {
+.EditHospital, .DeleteHospital, .btnDisplayAllHospitals, .btnHospitalApplyFilter, .btnYes, .btnNo {
     z-index: 1;
     width: 250px;
     height: 70px;
@@ -110,31 +110,41 @@ footer {
     transition-duration: 0.5s;
 }
 
- /* Hover Effect*/
-    .AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, 
-    .btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, .btnTotalRecords:hover, 
-    .btnAddPatient:hover, .btnListPatients:hover {
-        background-color: #27183D;
-        color: white;
-    }
+/* Hover Effect*/
+.AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover,
+.btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover,
+.btnAddPatient:hover, .btnListPatients:hover, .btnAddStaff:hover, .btnListStaffs:hover, .btnAppointmentList:hover {
+    background-color: #27183D;
+    color: white;
+}
 
-/*Log Out Button*/
-.btnLogout {
+/*Log Out/Appointment List Button*/
+.btnLogout, .btnAppointmentList {
     position: fixed;
-    top: 110px;
-    left: 1680px;
     z-index: 1;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 75px;
     font-size: 15pt;
     border-radius: 12px;
     transition-duration: 0.5s;
+}
+
+.btnLogout {
+    top: 110px;
+    left: 1620px;
 }
 
 /*Log out - Hover Effect */
 .btnLogout:hover{
     background-color: #cc0000;
     color: white;
+}
+
+/*Appointment List Button*/
+.btnAppointmentList {
+    position: fixed;
+    top: 110px;
+    left: 50px;
 }
 
 /*Add Hospital Button*/
@@ -149,6 +159,13 @@ footer {
     position: fixed;
     top: 240px;
     left: 800px;
+}
+
+/*Add Staff Button*/
+.btnAddStaff {
+    position: fixed;
+    top: 240px;
+    left: 1400px;
 }
 
 /*Edit Button*/
@@ -177,6 +194,13 @@ footer {
     position: fixed;
     top: 540px;
     left: 800px;
+}
+
+/*List Staff Button*/
+.btnListStaffs {
+    position: fixed;
+    top: 540px;
+    left: 1400px;
 }
 
 
@@ -223,7 +247,7 @@ footer {
 
 /*Hospital Delete Page - No Button Hover*/
 .btnNo:hover {
-     background-color: red;
+    background-color: red;
     color: white;
 }
 
@@ -240,7 +264,7 @@ footer {
     transition-duration: 0.5s;
 }
 
- /* Hospital Add Page - Submit Hover Effect */
+/* Hospital Add Page - Submit Hover Effect */
 .btnSubmit:hover {
     background-color: darkgreen;
     color: white;

@@ -85,6 +85,7 @@ namespace VirginClassLibrary
                 clsVCHStaff AStaff = new clsVCHStaff();
                 //read in the fields from the curent record
                 AStaff.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);
+                //AStaff.AdminID = Convert.ToInt32(DB.DataTable.Rows[Index]["AdminID"]);
                 AStaff.StaffFirstName = Convert.ToString(DB.DataTable.Rows[Index]["StaffFirstName"]);
                 AStaff.StaffLastName = Convert.ToString(DB.DataTable.Rows[Index]["StaffLastName"]);
                 AStaff.StaffAddress = Convert.ToString(DB.DataTable.Rows[Index]["StaffAddress"]);
@@ -106,6 +107,7 @@ namespace VirginClassLibrary
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure
+            DB.AddParameter("@AdminID", mThisStaff.AdminID);
             DB.AddParameter("@StaffFirstName", mThisStaff.StaffFirstName);
             DB.AddParameter("@StaffLastName", mThisStaff.StaffLastName);
             DB.AddParameter("@StaffAddress", mThisStaff.StaffAddress);
@@ -136,6 +138,7 @@ namespace VirginClassLibrary
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure
             DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            //DB.AddParameter("@AdminID", mThisStaff.AdminID);
             DB.AddParameter("@StaffFirstName", mThisStaff.StaffFirstName);
             DB.AddParameter("@StaffLastName", mThisStaff.StaffLastName);
             DB.AddParameter("@StaffAddress", mThisStaff.StaffAddress);

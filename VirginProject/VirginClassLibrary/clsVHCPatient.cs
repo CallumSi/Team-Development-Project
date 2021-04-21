@@ -2,6 +2,10 @@
 
 namespace VirginClassLibrary
 {
+    ///This class uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+
     public class clsVHCPatient
     {
         //private data member for the Patient_ID property 
@@ -242,7 +246,7 @@ namespace VirginClassLibrary
 
         }
 
-        public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone, string Patient_Status)
+        public string Valid(string Patient_Title, string Patient_Firstname, string Patient_Lastname, string Patient_Address, string Patient_DOB, string Patient_Email, string Patient_Username, string Patient_Password, string Patient_Telephone)
         {
             //create a string variable to store data values
             String Error = "";

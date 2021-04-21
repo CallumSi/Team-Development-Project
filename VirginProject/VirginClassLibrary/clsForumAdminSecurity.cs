@@ -148,6 +148,7 @@ namespace VirginClassLibrary
                 return false;
             }
         }
+    
         public string ChangePassword(string AdminUserName, string Password1, string Password2, string Secret)
         {
             //used to change a users password
@@ -195,7 +196,21 @@ namespace VirginClassLibrary
 
             //return the error message (if there is one)
             return Message;
+        }
 
+        public Boolean Pin(string Pin)
+        {
+            clsDataConnection AdminAccount = new clsDataConnection();
+            AdminAccount.AddParameter("@Pin", Pin);
+            AdminAccount.Execute("sproc_tblVirginAdmin_CheckPin");
+            if (AdminAccount.Count >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

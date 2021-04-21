@@ -13,6 +13,7 @@ namespace VirginFrontEnd
     {
         Int32 VMMovieID;
         Int32 VMCustomerID;
+        Int32 OriginalID;
         clsVMCart MyCart = new clsVMCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,13 +24,27 @@ namespace VirginFrontEnd
                 MyCart = new clsVMCart();
             }
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
+            lblMVUsername.Text = "New User";
             //then you can display how many items are in your cart
             lblCartCount.Text = MyCart.Products.Count.ToString();
             if (IsPostBack == false)
             {
                 //update the list box
                 DisplayVMMovie();
+                //indicate the users ID
+                DisplayCustomerData();
             }
+        }
+
+        void DisplayCustomerData()
+        {
+            //create an instance of the customer collection class
+            clsVMCustomerCollection SomeCustomer = new clsVMCustomerCollection();
+            //find the customer to update
+            SomeCustomer.ThisCustomer.Find(VMCustomerID);
+            //display the data for this record
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
@@ -127,7 +142,7 @@ namespace VirginFrontEnd
         {
             //store data in session object so we can pass it to next page
             Session["VMCustomerID"] = VMCustomerID;
-
+            Response.Redirect("AnVMCustomerEdit.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

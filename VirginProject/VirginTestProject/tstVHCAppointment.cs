@@ -4,6 +4,10 @@ using VirginClassLibrary;
 
 namespace VirginTestProject
 {
+    ///This test uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+    
     [TestClass]
 
     public class tstVHCAppointment
@@ -18,7 +22,7 @@ namespace VirginTestProject
         //TOTAL: 4 Properties including PK (Appointment_ID) 
 
         string Appointment_Date = DateTime.Now.Date.ToString(); // (1) 
-        string Appointment_Time = "09:00"; // (2) 
+        string Appointment_Time = "0900"; // (2) 
         string Appointment_Description = "Broken arm"; // (3) 
 
 
@@ -66,7 +70,7 @@ namespace VirginTestProject
             //create an instance of the appointment class 
             clsVHCAppointment AVHCAppointment = new clsVHCAppointment();
             //create a variable to store the time of a appointment 
-            string SomeAppointment_Time = "09:00";
+            Int32 SomeAppointment_Time = 0900;
             //try to send some data to the appointment time property
             AVHCAppointment.Appointment_Time = SomeAppointment_Time;
             //check to see that the data in the variable and the property are the same
@@ -97,7 +101,7 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to test the valid method 
             string Appointment_Date = DateTime.Now.Date.ToString(); // (1) 
-            string Appointment_Time = "09:00"; // (2) 
+            string Appointment_Time = "0900"; // (2) 
             string Appointment_Description = "Broken arm"; // (3) 
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
@@ -345,8 +349,6 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method 
             string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(3, 'A');
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
@@ -362,8 +364,6 @@ namespace VirginTestProject
             String Error = "";
             //create some test data to pass to the method 
             string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(4, 'A');
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
@@ -378,9 +378,7 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(5, 'A');
+            string Appointment_Time = "0001";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
@@ -395,13 +393,11 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(6, 'A');
+            string Appointment_Time = "0002";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -412,13 +408,11 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(4, 'A');
+            string Appointment_Time = "2399";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -429,9 +423,7 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(5, 'A');
+            string Appointment_Time = "2400";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
@@ -447,9 +439,7 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(6, 'A');
+            string Appointment_Time = "2500";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
@@ -464,13 +454,11 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(0, 'A');
+            string Appointment_Time = "1200";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -481,9 +469,7 @@ namespace VirginTestProject
             //string variable to store any error message 
             String Error = "";
             //create some test data to pass to the method 
-            string Appointment_Time = "";
-            //create some test data to test the valid method 
-            Appointment_Time = Appointment_Time.PadLeft(100, 'A');
+            string Appointment_Time = "100000";
             //invoke the method 
             Error = AVHCAppointment.Valid(Appointment_Date, Appointment_Time, Appointment_Description);
             //test to see that the result is correct 

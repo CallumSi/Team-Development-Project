@@ -11,7 +11,7 @@ namespace VirginFrontEnd
     public partial class ForumAdminLogIn : System.Web.UI.Page
     {
         private clsForumAdminSecurity mSec;
-
+        Int32 AdminID;
 
         public clsForumAdminSecurity Sec
         {
@@ -24,6 +24,31 @@ namespace VirginFrontEnd
         {
             mSec = new clsForumAdminSecurity();
         }
+        public Int32 GetAdminID()
+        {
+            //instantiate the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //ad the parameter we use to search
+            DB.AddParameter("AdminUserName", txtUsername.Text);
+            //execute the sproc
+            DB.Execute("sproc_tblForumAdminSecurity_FilterbyUsername");
+            //if record found 
+            if (DB.Count == 1)
+            {
+
+                AdminID = Convert.ToInt32(DB.DataTable.Rows[0]["AdminID"]);
+
+
+
+            }
+            else
+            {
+                //return false if no record ofund
+                AdminID = -2;
+            }
+
+            return AdminID;
+        }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -32,7 +57,8 @@ namespace VirginFrontEnd
             //if there were no errors
             if (Error == true)
             {
-                Response.Redirect("ForumAdminHomePage.aspx");
+                Session["AdminID"] = GetAdminID();
+                Response.Redirect("AdminHomePage.aspx");
             }
             else
 

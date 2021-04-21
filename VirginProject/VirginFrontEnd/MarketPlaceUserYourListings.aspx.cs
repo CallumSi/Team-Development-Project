@@ -134,20 +134,28 @@ namespace VirginFrontEnd
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             //variable to store primary key of field you want to delete
-            Int32 ListingID;
+            Int32 ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
             string ListingName;
             Session["UserID"] = UserID;
             //check if a record has been selected from the list
             if (lstYourListings.SelectedIndex != -1)
             {
-                //get primary key from selected
-                ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
-                ListingName = lstYourListings.SelectedItem.ToString();
-                //store data in session object so we can pass it to next page
-                Session["ListingID"] = ListingID;
-                Session["ListingName"] = ListingName;  
-                //redirect to delete page
-                Response.Redirect("MarketplaceListingDelete.aspx");
+                if (CheckForBid(ListingID) == false && CheckForOffer(ListingID) == false)
+                {
+                    //get primary key from selected
+                    ListingID = Convert.ToInt32(lstYourListings.SelectedValue);
+                    ListingName = lstYourListings.SelectedItem.ToString();
+                    //store data in session object so we can pass it to next page
+                    Session["ListingID"] = ListingID;
+                    Session["ListingName"] = ListingName;
+                    //redirect to delete page
+                    Response.Redirect("MarketplaceListingDelete.aspx");
+                }
+                else
+                {
+                    lblError.Text = "Please select a record with no  bids or offers ";
+                }
+              
 
             }
             //if a record hasnt been selected from the listbox 
@@ -257,7 +265,7 @@ namespace VirginFrontEnd
                     //display a error 
                     lblError.Text = "Please select a record to edit from the list ";
                 }
-            }
+        }
         
     }
 }

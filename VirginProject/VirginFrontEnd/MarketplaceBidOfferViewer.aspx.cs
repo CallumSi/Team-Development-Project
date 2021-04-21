@@ -91,8 +91,6 @@ namespace VirginFrontEnd
         }
         private Int32 DisplayBids()
         {
-
-
             //first establish connection
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the sproc
@@ -118,8 +116,7 @@ namespace VirginFrontEnd
                 lstBidOffers.Items.Add(NewListing);
                 Index++;
             }
-            return RecordCount;
-           
+            return RecordCount;     
         }
         private Int32 DisplayOffers()
         {

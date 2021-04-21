@@ -12,12 +12,14 @@ namespace VirginFrontEnd
     {
         //variable to store the primary key with page level scope
         Int32 StaffID;
+        Int32 AdminID;
 
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the staff to be processed
             StaffID = Convert.ToInt32(Session["StaffID"]);
+            AdminID = Convert.ToInt32(Session["AdminID"]);
             if (IsPostBack == false)
             {
                 //populate the list of staff
@@ -31,6 +33,14 @@ namespace VirginFrontEnd
             }
         }
 
+        //event handler for unload event
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Save the StaffID & AdminID when a page unload event happens
+            Session["StaffID"] = StaffID;
+            Session["AdminID"] = AdminID;
+        }
+
         //function to add new staff records
         void Add()
         {
@@ -42,6 +52,7 @@ namespace VirginFrontEnd
             if (Error == "")
             {
                 //get the data entered by the user
+                StaffCollection.ThisStaff.AdminID = AdminID;
                 StaffCollection.ThisStaff.StaffFirstName = txtFirstName.Text;
                 StaffCollection.ThisStaff.StaffLastName = txtLastName.Text;
                 StaffCollection.ThisStaff.StaffAddress = txtAddress.Text;
@@ -53,6 +64,9 @@ namespace VirginFrontEnd
                 //add the new staff record
                 StaffCollection.Add();
 
+                StaffCollection.ThisStaff.FindByAdminID(AdminID);
+                //Add the StaffID to session object 
+                Session["StaffID"] = StaffID;
                 //once complete redirect the user back to the main page
                 Response.Redirect("VCHStaffList.aspx");
             }
@@ -76,6 +90,7 @@ namespace VirginFrontEnd
                 //find the StaffID for the record to be updated
                 StaffCollection.ThisStaff.Find(StaffID);
                 //get the data entered by the user
+                //StaffCollection.ThisStaff.AdminID = AdminID;
                 StaffCollection.ThisStaff.StaffFirstName = txtFirstName.Text;
                 StaffCollection.ThisStaff.StaffLastName = txtLastName.Text;
                 StaffCollection.ThisStaff.StaffAddress = txtAddress.Text;
@@ -87,6 +102,8 @@ namespace VirginFrontEnd
                 //update the staff record
                 StaffCollection.Update();
 
+                //Add the StaffID to session object 
+                Session["StaffID"] = StaffID;
                 //once complete redirect the user back to the main page
                 Response.Redirect("VCHStaffList.aspx");
             }
@@ -127,18 +144,56 @@ namespace VirginFrontEnd
                 //update the staff record
                 Update();
             }
+            //Add the StaffID & AdminID to session object 
+            Session["StaffID"] = StaffID;
+            Session["AdminID"] = AdminID;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             //redirect the user to the staff list page, without having added or edited a staff record
             Response.Redirect("VCHStaffList.aspx");
+            Session["AdminID"] = AdminID;
+        }
+
+        protected void btnStaff_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff list page
+            Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the customer list page
+            Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
+        }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //redirect me to the home page, this offers links to all system pages
-            Response.Redirect("VCHCustomerOrStaffSelection.aspx");
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
         }
     }
 }
