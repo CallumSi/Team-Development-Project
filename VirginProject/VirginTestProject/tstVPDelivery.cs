@@ -42,7 +42,7 @@ namespace VirginTestProject
             //check to see the data in the variable and property are the same
             Assert.AreEqual(AVPDelivery.Delivery_ID, SomeDeliveryID);
         }
-        
+
         //testing the property order id (FK)
         [TestMethod]
         public void OrderIDPropertyOK()
@@ -52,12 +52,13 @@ namespace VirginTestProject
             //create a variable to store the order id of the delivery
             Int32 SomeOrderID;
             //assign an ID to the variable
-            SomeOrderID = 1;
+            SomeOrderID = 2;
             //try to send some data to the id property 
-            AVPDelivery.Order_ID = SomeOrderID;
+            AVPDelivery.OrderID = SomeOrderID;
             //check to see the data in the variable and property are the same
-            Assert.AreEqual(AVPDelivery.Order_ID, SomeOrderID);
+            Assert.AreEqual(AVPDelivery.OrderID, SomeOrderID);
         }
+
 
         //testing the property title
         [TestMethod]
