@@ -65,5 +65,11 @@ namespace VirginFrontEnd
             Response.Redirect("VHCStaffList.aspx");
 
         }
+
+        protected void btnAppointmentList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCAppointmentList.aspx");
+
+        }
     }
 }

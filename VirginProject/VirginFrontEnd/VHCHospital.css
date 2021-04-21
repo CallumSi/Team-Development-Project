@@ -111,30 +111,40 @@ footer {
 }
 
 /* Hover Effect*/
-.AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover, 
-.btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover, 
-.btnAddPatient:hover, .btnListPatients:hover, .btnAddStaff:hover, .btnListStaffs:hover{
+.AddHospital:hover, .EditHospital:hover, .DeleteHospital:hover, .ListHospitals:hover,
+.btnDisplayAllHospitals:hover, .btnHospitalApplyFilter:hover,
+.btnAddPatient:hover, .btnListPatients:hover, .btnAddStaff:hover, .btnListStaffs:hover, .btnAppointmentList:hover {
     background-color: #27183D;
     color: white;
 }
 
-/*Log Out Button*/
-.btnLogout {
+/*Log Out/Appointment List Button*/
+.btnLogout, .btnAppointmentList {
     position: fixed;
-    top: 110px;
-    left: 1680px;
     z-index: 1;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 75px;
     font-size: 15pt;
     border-radius: 12px;
     transition-duration: 0.5s;
+}
+
+.btnLogout {
+    top: 110px;
+    left: 1620px;
 }
 
 /*Log out - Hover Effect */
 .btnLogout:hover{
     background-color: #cc0000;
     color: white;
+}
+
+/*Appointment List Button*/
+.btnAppointmentList {
+    position: fixed;
+    top: 110px;
+    left: 50px;
 }
 
 /*Add Hospital Button*/

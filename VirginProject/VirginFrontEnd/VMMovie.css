@@ -636,10 +636,21 @@ footer {
 
 .MovieImage {
     position: fixed;
-    right: 300px;
+    right: 400px;
     top: 190px;
     height: 550px;
-    width: 550px;
+    width: 450px;
+}
+
+.lblMovieDescription {
+    z-index: 1;
+    width: 250px;
+    position: fixed;
+    top: 140px;
+    left: 630px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
 }
 
 .btnAddToCart {
@@ -657,13 +668,15 @@ footer {
     position: fixed;
     top: 80px;
     left: 420px;
+    color:white;
 }
 
 .lblUsername{
     position:fixed;
     top:80px; 
     left:500px; 
-    background:yellow;
+    color:white;
+    font-weight: bold;
 }
 
 /*############ CUSTOMER SHOPPING CART ##############*/
@@ -1282,7 +1295,8 @@ footer {
     left: 655px;
     top: 730px;
     color: black;
-    width: 400px;
+    height: 50px;
+    width: 900px;
 }
 
 /*########### VM STAFF PAYMENT LIST #############*/

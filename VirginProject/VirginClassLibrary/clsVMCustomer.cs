@@ -139,7 +139,7 @@ namespace VirginClassLibrary
                 mVMcustomerEmail = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerEmail"]);
                 mVMcustomerUsername = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerUsername"]);
                 mVMcustomerPassword = Convert.ToString(DB.DataTable.Rows[0]["VMCustomerPassword"]);
-                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+                //mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
 
                 //return that everything worked OK
                 return true;

@@ -11,9 +11,9 @@ namespace VirginFrontEnd
 {
     public partial class VPStaffCheckPin : System.Web.UI.Page
     {
-        private clsSecurity mSec;
+        private clsForumAdminSecurity mSec;
 
-        public clsSecurity Sec
+        public clsForumAdminSecurity Sec
         {
             get
             {
@@ -22,7 +22,7 @@ namespace VirginFrontEnd
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            mSec = new clsSecurity();
+            mSec = new clsForumAdminSecurity();
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -45,5 +45,13 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VPStafforCustomerSelection.aspx");
         }
+
+        protected void btnHome_Click1(object sender, EventArgs e)
+        {
+            //redirect back to log in 
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+       
     }
 }

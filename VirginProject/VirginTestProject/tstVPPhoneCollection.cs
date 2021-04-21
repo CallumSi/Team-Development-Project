@@ -124,7 +124,7 @@ namespace VirginTestProject
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
-            PrimaryKey = AllPhone.Add();
+            //PrimaryKey = AllPhone.Add();
             //set the primary key of the test data 
             TestItem.PhoneID = PrimaryKey;
             //find the record
@@ -155,7 +155,7 @@ namespace VirginTestProject
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
-            PrimaryKey = AllPhone.Add();
+            //PrimaryKey = AllPhone.Add();
             //set the primary key of the test data 
             TestItem.PhoneID = PrimaryKey;
             //modify the test data
@@ -202,7 +202,7 @@ namespace VirginTestProject
             //set ThisPhone to the test data 
             AllPhone.ThisPhone = TestItem;
             //add the record
-            PrimaryKey = AllPhone.Add();
+            //PrimaryKey = AllPhone.Add();
             //set the primary key of the test data 
             TestItem.PhoneID = PrimaryKey;
             //find the record

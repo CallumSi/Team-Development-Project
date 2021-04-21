@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VPDefault {
+    public partial class VHCPatientFirstTime {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,30 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnStaff control.
+        /// btnContinueVHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaff;
+        protected global::System.Web.UI.WebControls.Button btnContinueVHC;
         
         /// <summary>
-        /// btnCustomer control.
+        /// btnVHCNewComer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
+        protected global::System.Web.UI.WebControls.Button btnVHCNewComer;
         
         /// <summary>
-        /// btnPhone control.
+        /// btnClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPhone;
+        protected global::System.Web.UI.WebControls.Button btnClose;
     }
 }

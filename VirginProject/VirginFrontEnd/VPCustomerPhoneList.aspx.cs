@@ -46,7 +46,7 @@ namespace VirginFrontEnd
             lstPhones.DataValueField = "PhoneID";
 
             //bind the data 
-            lstPhones.DataTextField = "Model";
+            lstPhones.DataTextField = "Make";
             lstPhones.DataBind();
         }
 
@@ -83,7 +83,7 @@ namespace VirginFrontEnd
         Int32 DisplayPhoneMake (string FilterMake)
         {
             Int32 PhoneID;
-            string Model;
+            string Make;
             //create an instance of the phone collection class
             clsVPPhoneCollection PhoneMake = new clsVPPhoneCollection();
             //invoke the make filter
@@ -102,9 +102,9 @@ namespace VirginFrontEnd
                 //get the primary key 
                 PhoneID = PhoneMake.PhoneList[Index].PhoneID;
                 //get the model
-                Model = PhoneMake.PhoneList[Index].Model;
+                Make = PhoneMake.PhoneList[Index].Make;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(Model + " ", PhoneID.ToString());
+                ListItem NewEntry = new ListItem(Make + " ", PhoneID.ToString());
                 //add the phone to the list
                 lstPhones.Items.Add(NewEntry);
                 //move the index to the next record
@@ -130,6 +130,11 @@ namespace VirginFrontEnd
             ////store the sesssion object so we can pass it to the next page
             Session["Customer_ID"] = Customer_ID;
             Response.Redirect("AnVPEditCustomer.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 

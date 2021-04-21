@@ -4,32 +4,58 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Virgin Media Staff Add Staff</title>
+     <link href="VPhoneStyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblStaffFirstName" runat="server" style="z-index: 1; left: 480px; top: 125px; position: absolute" Text="First Name"></asp:Label>
-        <asp:Label ID="lblStaffLastName" runat="server" style="z-index: 1; left: 480px; top: 193px; position: absolute" Text="LastName"></asp:Label>
-        <asp:Label ID="lblStaffStreet" runat="server" style="z-index: 1; left: 482px; top: 262px; position: absolute" Text="Street"></asp:Label>
-        <asp:Label ID="lblStaffAddres" runat="server" style="z-index: 1; left: 483px; top: 333px; position: absolute" Text="Address"></asp:Label>
-        <asp:Label ID="lblStaffPostcode" runat="server" style="z-index: 1; left: 486px; top: 398px; position: absolute" Text="Postcode"></asp:Label>
-        <asp:Label ID="lblStaffEmail" runat="server" style="z-index: 1; left: 488px; top: 458px; position: absolute; bottom: 180px" Text="Email"></asp:Label>
-        <asp:Label ID="lblStaffTelephone" runat="server" style="z-index: 1; left: 486px; top: 521px; position: absolute" Text="Telephone"></asp:Label>
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 481px; top: 568px; position: absolute" Text="[lblError]"></asp:Label>
-        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 620px; top: 566px; position: absolute; width: 42px;" Text="OK" OnClick="btnOK_Click" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 675px; top: 566px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
-        <asp:TextBox ID="txtStaffFirstName" runat="server" style="z-index: 1; left: 647px; top: 125px; position: absolute; width: 128px;"></asp:TextBox>
-        <asp:TextBox ID="txtStaffLastName" runat="server" style="z-index: 1; left: 647px; top: 192px; position: absolute; width: 131px;"></asp:TextBox>
-        <asp:TextBox ID="txtStaffStreet" runat="server" style="z-index: 1; left: 644px; top: 261px; position: absolute; width: 134px;"></asp:TextBox>
-        <asp:TextBox ID="txtStaffAddress" runat="server" style="z-index: 1; left: 645px; top: 329px; position: absolute; width: 133px;"></asp:TextBox>
-        <asp:TextBox ID="txtStaffPostcode" runat="server" style="z-index: 1; left: 643px; top: 394px; position: absolute; width: 134px;"></asp:TextBox>
-        <asp:TextBox ID="txtStaffEmail" runat="server" style="z-index: 1; left: 643px; top: 453px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtStaffTelephone" runat="server" style="z-index: 1; left: 641px; top: 518px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" style="z-index: 1; left: 34px; top: 118px; position: absolute; height: 59px; width: 143px" Text="Home" />
-        <asp:Button ID="btnViewStaffList" runat="server" OnClick="btnViewStaffList_Click" style="z-index: 1; left: 36px; top: 214px; position: absolute; height: 59px; width: 142px; bottom: 384px" Text="View Staff List" />
-        <asp:Button ID="btnViewCustomerList" runat="server" OnClick="btnViewCustomerList_Click" style="z-index: 1; left: 37px; top: 316px; position: absolute; height: 57px; width: 140px" Text="View Customer List" />
-        <asp:Button ID="btnViewPhoneList" runat="server" OnClick="btnViewPhoneList_Click" style="z-index: 1; left: 37px; top: 415px; position: absolute; height: 57px; width: 141px" Text="View Phone List" />
-        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" style="z-index: 1; left: 39px; top: 564px; position: absolute; height: 59px; width: 137px" Text="Log Out" />
+
+        <div>
+
+        </div>
+
+        <header> 
+                <h2>
+                    Virgin Phone Staff Add Staff
+                </h2>
+        </header>
+        <asp:Label ID="lblStaffFirstName" runat="server" style="z-index: 1; left: 706px; top: 215px; position: absolute" Text="First Name:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblStaffLastName" runat="server" style="z-index: 1; left: 705px; top: 286px; position: absolute" Text="LastName:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblStaffStreet" runat="server" style="z-index: 1; left: 708px; top: 358px; position: absolute" Text="Street:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblStaffAddres" runat="server" style="z-index: 1; left: 702px; top: 426px; position: absolute" Text="Address:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblStaffPostcode" runat="server" style="z-index: 1; left: 701px; top: 494px; position: absolute" Text="Postcode:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblStaffTelephone" runat="server" style="z-index: 1; left: 700px; top: 631px; position: absolute" Text="Telephone:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 1036px; top: 707px; position: absolute" Text="[lblError]" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 791px; top: 705px; position: absolute; width: 66px;" Text="OK" OnClick="btnOK_Click" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 877px; top: 705px; position: absolute; width: 72px;" Text="Cancel" OnClick="btnCancel_Click" Font-Bold="True" ForeColor="Black" />
+        <asp:TextBox ID="txtStaffFirstName" runat="server" style="z-index: 1; left: 851px; top: 218px; position: absolute; width: 145px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffLastName" runat="server" style="z-index: 1; left: 852px; top: 290px; position: absolute; width: 143px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffStreet" runat="server" style="z-index: 1; left: 851px; top: 357px; position: absolute; width: 146px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffAddress" runat="server" style="z-index: 1; left: 851px; top: 426px; position: absolute; width: 145px; height: 17px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffPostcode" runat="server" style="z-index: 1; left: 853px; top: 491px; position: absolute; width: 145px; height: 18px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffEmail" runat="server" style="z-index: 1; left: 854px; top: 562px; position: absolute; width: 145px; height: 18px;"></asp:TextBox>
+        <asp:TextBox ID="txtStaffTelephone" runat="server" style="z-index: 1; left: 857px; top: 632px; position: absolute; width: 146px; height: 17px;"></asp:TextBox>
+        
+        
+        <nav>
+        <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" style="z-index: 1; left: 58px; top: 27px; position: absolute; height: 77px; width: 172px" Text="Home" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnViewStaffList" runat="server" OnClick="btnViewStaffList_Click" style="z-index: 1; left: 58px; top: 150px; position: absolute; height: 77px; width: 172px; bottom: 384px" Text="View Staff List" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnViewCustomerList" runat="server" OnClick="btnViewCustomerList_Click" style="z-index: 1; left: 58px; top: 273px; position: absolute; height: 77px; width: 172px" Text="View Customer List" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnViewPhoneList" runat="server" OnClick="btnViewPhoneList_Click" style="z-index: 1; left: 58px; top: 396px; position: absolute; height: 77px; width: 172px" Text="View Phone List" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" style="z-index: 1; left: 58px; top: 519px; position: absolute; height: 77px; width: 172px" Text="Log Out" Font-Bold="True" ForeColor="Black" />
+
+        </nav>
+        
+         <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+                </div>
+    
+        </footer>
+        <p>
+        <asp:Label ID="lblStaffEmail" runat="server" style="z-index: 1; left: 705px; top: 562px; position: absolute; " Text="Email:" Font-Bold="True" ForeColor="Black" Font-Size="Medium"></asp:Label>
+        </p>
+        <asp:Label ID="lblAddStaff" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Black" style="z-index: 1; left: 787px; top: 145px; position: absolute; width: 258px" Text="Virgin Phone Add / Edit Staff"></asp:Label>
     </form>
 </body>
 </html>
