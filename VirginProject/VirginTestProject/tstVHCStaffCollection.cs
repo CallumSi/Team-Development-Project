@@ -123,7 +123,7 @@ namespace VirginTestProject
             //set ThisStaff to the test data 
             AllStaffs.ThisStaff = TestItem;
             //add the record 
-            PrimaryKey = AllStaffs.Add();
+            //PrimaryKey = AllStaffs.Add();
             //set the primary key of the test data 
             TestItem.Staff_ID = PrimaryKey;
             //find the record 
@@ -155,7 +155,7 @@ namespace VirginTestProject
             //set ThisStaff to the test data 
             AllStaffs.ThisStaff = TestItem;
             //add the record 
-            PrimaryKey = AllStaffs.Add();
+            //PrimaryKey = AllStaffs.Add();
             //set the primary key of the test data 
             TestItem.Staff_ID = PrimaryKey;
             //modify the test data 
@@ -201,7 +201,7 @@ namespace VirginTestProject
             //set ThisStaff to the test data 
             AllStaffs.ThisStaff = TestItem;
             //add the record 
-            PrimaryKey = AllStaffs.Add();
+            //PrimaryKey = AllStaffs.Add();
             //set the primary key of the test data 
             TestItem.Staff_ID = PrimaryKey;
             //find the record 
@@ -240,39 +240,39 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredStaff.Count);
         }
 
-        //[TestMethod]
-        //public void ReportByStaffTestDataFound()
-        ////Report By Staff Test Data Found Method 
-        //{
-        //    //create an instance of the filtered data
-        //    clsVHCStaffCollection FilteredStaff = new clsVHCStaffCollection();
-        //    //var to store outcome
-        //    Boolean OK = true;
-        //    //apply a make that does exist
-        //    FilteredStaff.ReportByStaff("Mati");
-        //    //check that the correct number of records are found
-        //    if (FilteredStaff.Count == 2)
-        //    {
-        //        //check that the first record id ID 2
-        //        if (FilteredStaff.StaffList[0].Staff_ID != 20)
-        //        {
-        //            OK = false;
-        //        }
+        [TestMethod]
+        public void ReportByStaffTestDataFound()
+        //Report By Staff Test Data Found Method 
+        {
+            //create an instance of the filtered data
+            clsVHCStaffCollection FilteredStaff = new clsVHCStaffCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a make that does exist
+            FilteredStaff.ReportByStaff("Mati");
+            //check that the correct number of records are found
+            if (FilteredStaff.Count == 2)
+            {
+                //check that the first record id ID 2
+                if (FilteredStaff.StaffList[0].Staff_ID != 20)
+                {
+                    OK = false;
+                }
 
-        //        //check that the last record is ID 20
-        //        if (FilteredStaff.StaffList[1].Staff_ID != 22)
-        //        {
-        //            OK = false;
-        //        }
-        //    }
+                //check that the last record is ID 20
+                if (FilteredStaff.StaffList[1].Staff_ID != 22)
+                {
+                    OK = false;
+                }
+            }
 
-        //    else
-        //    {
-        //        OK = false;
-        //    }
+            else
+            {
+                OK = false;
+            }
 
-        //    //test to see that the two values are the same 
-        //    Assert.IsTrue(OK);
-        //}
+            //test to see that the two values are the same 
+            Assert.IsTrue(OK);
+        }
     }
 }

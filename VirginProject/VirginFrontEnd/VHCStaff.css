@@ -99,10 +99,10 @@ footer {
 }
 
 /* Hover Effect */
-.btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover, .btnConfirmPin:hover {
-    background-color: #27183D;
-    color: white;
-}
+    .btnDisplayAllStaffs:hover, .btnStaffApplyFilter:hover, .EditStaff:hover, .DeleteStaff:hover, .btnConfirmPin:hover {
+        background-color: #27183D;
+        color: white;
+    }
 
 /* Confirm Button */
 .btnConfirmPin {
@@ -230,8 +230,8 @@ footer {
 
 /*Confirm Pin Label */
 .lblConfirmPin {
-    top: 301px;
-    left: 550px;
+    top: 245px;
+    left: 680px;
 }
 
 

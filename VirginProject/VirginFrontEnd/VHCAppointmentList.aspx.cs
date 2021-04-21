@@ -61,7 +61,7 @@ namespace VirginFrontEnd
                 //get the appointments description
                 Appointment_Description = AppointmentList.AppointmentList[Index].Appointment_Description;
                 //create the appointments entry
-                ListItem NewItem = new ListItem("Avaliable Booking Time " + " - " + Appointment_Time.ToString() + ":00 " + Appointment_Description, Appointment_ID.ToString());
+                ListItem NewItem = new ListItem("Booking Time " + " - " + Appointment_Time.ToString() + ":00 " + Appointment_Description, Appointment_ID.ToString());
                 //add the appointments to the list
                 lstAppointment.Items.Add(NewItem);
                 //inc the index
