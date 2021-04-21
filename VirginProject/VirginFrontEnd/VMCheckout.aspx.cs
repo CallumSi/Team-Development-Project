@@ -18,6 +18,7 @@ namespace VirginFrontEnd
             MyCart = (clsVMCart)Session["MyCart"];
             //get the CustomerID
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            MyCart.UserNo = VMCustomerID;
 
             if (IsPostBack == false)
             {

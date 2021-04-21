@@ -11,13 +11,14 @@ namespace VirginFrontEnd
     {
         Int32 UserID;
         clsMarketplaceCart MyCart = new clsMarketplaceCart();
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             //upon loading the page you need to read in the cart from the session object
-            MyCart = (clsMarketplaceCart)Session["MyCart"];
+            MyCart = (clsMarketplaceCart)Session["MyCart"];  
             //get the User Id
             UserID = Convert.ToInt32(Session["UserID"]);
+            MyCart.UserNo = UserID;
 
         }
 

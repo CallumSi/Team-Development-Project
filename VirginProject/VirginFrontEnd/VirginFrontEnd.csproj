@@ -142,7 +142,9 @@
     <Content Include="VHCAppointmentList.aspx" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
+    <Content Include="VHCPatientAddFirstTime.aspx" />
     <Content Include="VHCPatientDelete.aspx" />
+    <Content Include="VHCPatientFirstTime.aspx" />
     <Content Include="VHCPatientList.aspx" />
     <Content Include="VHCStaff.aspx" />
     <Content Include="VHCHospital.css" />
@@ -722,12 +724,26 @@
     <Compile Include="VHCPatientAdd.aspx.designer.cs">
       <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VHCPatientAddFirstTime.aspx.cs">
+      <DependentUpon>VHCPatientAddFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientAddFirstTime.aspx.designer.cs">
+      <DependentUpon>VHCPatientAddFirstTime.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VHCPatientDelete.aspx.cs">
       <DependentUpon>VHCPatientDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VHCPatientDelete.aspx.designer.cs">
       <DependentUpon>VHCPatientDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCPatientFirstTime.aspx.cs">
+      <DependentUpon>VHCPatientFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientFirstTime.aspx.designer.cs">
+      <DependentUpon>VHCPatientFirstTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCPatientList.aspx.cs">
       <DependentUpon>VHCPatientList.aspx</DependentUpon>

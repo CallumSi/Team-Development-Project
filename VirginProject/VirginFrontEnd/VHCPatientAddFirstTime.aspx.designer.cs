@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VMMovieViewer {
+    public partial class VHCPatientAddFirstTime {
         
         /// <summary>
         /// Head1 control.
@@ -31,157 +31,193 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblMovieDescription control.
+        /// lblPatient_Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieDescription;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Title;
         
         /// <summary>
-        /// lblWelcomeUsername control.
+        /// txtPatient_Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcomeUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Title;
         
         /// <summary>
-        /// lblMVUsername control.
+        /// lblPatient_Firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMVUsername;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Firstname;
         
         /// <summary>
-        /// MovieImage control.
+        /// txtPatient_Firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image MovieImage;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Firstname;
         
         /// <summary>
-        /// lblMovieNameTitle control.
+        /// lblPatient_Lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieNameTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Lastname;
         
         /// <summary>
-        /// lblMovieTitle control.
+        /// txtPatient_Lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Lastname;
         
         /// <summary>
-        /// lblMovieGenreTitle control.
+        /// lblPatient_Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieGenreTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Address;
         
         /// <summary>
-        /// lblMovieGenre control.
+        /// txtPatient_Address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieGenre;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Address;
         
         /// <summary>
-        /// lblMovieDurationTitle control.
+        /// lblPatient_DOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieDurationTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_DOB;
         
         /// <summary>
-        /// lblMovieDuration control.
+        /// txtPatient_DOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieDuration;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_DOB;
         
         /// <summary>
-        /// lblMovieRatingTitle control.
+        /// lblPatient_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieRatingTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Email;
         
         /// <summary>
-        /// lblMovieRating control.
+        /// txtPatient_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieRating;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Email;
         
         /// <summary>
-        /// lblMovieReleaseDateTitle control.
+        /// lblPatient_Username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieReleaseDateTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Username;
         
         /// <summary>
-        /// lblMovieReleaseDate control.
+        /// txtPatient_Username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMovieReleaseDate;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Username;
         
         /// <summary>
-        /// lblMoviePriceTitle control.
+        /// lblPatient_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoviePriceTitle;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Password;
         
         /// <summary>
-        /// lblMoviePrice control.
+        /// txtPatient_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoviePrice;
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Password;
         
         /// <summary>
-        /// btnAddToCart control.
+        /// lblPatient_Telephone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddToCart;
+        protected global::System.Web.UI.WebControls.Label lblPatient_Telephone;
+        
+        /// <summary>
+        /// txtPatient_Telephone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPatient_Telephone;
+        
+        /// <summary>
+        /// lblPatient_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPatient_Status;
+        
+        /// <summary>
+        /// cbPatient_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbPatient_Status;
+        
+        /// <summary>
+        /// BtnClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnClose;
         
         /// <summary>
         /// lblError control.
@@ -193,39 +229,12 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnHome control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
-        
-        /// <summary>
-        /// btnViewCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewCart;
-        
-        /// <summary>
-        /// btnEditAccount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditAccount;
-        
-        /// <summary>
-        /// btnLogOut control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogOut;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
     }
 }

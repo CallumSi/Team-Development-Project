@@ -133,7 +133,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //find the record 
@@ -167,7 +167,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //modify the test data 
@@ -217,7 +217,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllPatients.ThisPatient = TestItem;
             //add the record 
-            PrimaryKey = AllPatients.Add();
+            //PrimaryKey = AllPatients.Add();
             //set the primary key of the test data 
             TestItem.Patient_ID = PrimaryKey;
             //find the record 

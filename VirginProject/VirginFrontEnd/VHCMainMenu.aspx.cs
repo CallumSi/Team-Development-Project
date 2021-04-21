@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
@@ -13,9 +14,10 @@ namespace VirginFrontEnd
     
     public partial class VHCMainMenu : System.Web.UI.Page
     {
+        Int32 UserID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            UserID = Convert.ToInt32(Session["UserID"]);
         }
 
         //Staff Button
@@ -27,7 +29,7 @@ namespace VirginFrontEnd
         //Patient Button
         protected void btnPatient_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VHCAppointmentList.aspx");
+            Response.Redirect("VHCPatientFirstTime.aspx");
 
         }
     }

@@ -64,11 +64,6 @@ namespace VirginFrontEnd
             Response.Redirect("VMStaffList.aspx");
         }
 
-        protected void btnVMPaymentList_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VMPaymentList.aspx");
-        }
-
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             Response.Redirect("VirginLogin.aspx");

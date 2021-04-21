@@ -28,7 +28,7 @@ namespace VirginTestProject
         string Patient_Username = "LiaPotter1"; // (7) 
         string Patient_Password = "LiaP010101"; // (8) 
         string Patient_Telephone = "01164891276"; // (9) 
-        //string Patient_Status = "True"; // (10)
+      
 
         [TestMethod]
         public void InstantiationOK()
@@ -210,7 +210,6 @@ namespace VirginTestProject
             string Patient_Username = "LiaPotter1"; // (7) 
             string Patient_Password = "LiaP010101"; // (8) 
             string Patient_Telephone = "01164891276"; // (9) 
-            //string Patient_Status = "True"; // (10) 
             //invoke the method 
             Error = AVHCPatient.Valid(Patient_Title, Patient_Firstname, Patient_Lastname, Patient_Address, Patient_DOB, Patient_Email, Patient_Username, Patient_Password, Patient_Telephone);
             //test to see that the result is correct 

@@ -25,6 +25,9 @@
             <%--BUTTON: LOG OUT--%>
             <asp:Button ID="btnLogout" runat="server" CssClass="btnLogout" Text="☜ Log Out" OnClick="btnLogout_Click" />
 
+            <%--BUTTON: APPOINTMENT LIST--%>
+            <asp:Button ID="btnAppointmentList" runat="server" CssClass="btnAppointmentList" Text=" 🕒 Appointment Booking" OnClick="btnAppointmentList_Click"/>
+
             <%--BUTTON: ADD HOSPITAL--%>
             <asp:Button ID="btnAddHospital" runat="server" CssClass="AddHospital" Text="Add Hospital" OnClick="btnAddHospital_Click"/>
 

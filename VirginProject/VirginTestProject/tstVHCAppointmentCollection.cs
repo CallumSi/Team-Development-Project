@@ -104,7 +104,7 @@ namespace VirginTestProject
             //set ThisPatient to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //find the record 
@@ -131,7 +131,7 @@ namespace VirginTestProject
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //modify the test data 
@@ -167,7 +167,7 @@ namespace VirginTestProject
             //set ThisAppointment to the test data 
             AllAppointments.ThisAppointment = TestItem;
             //add the record 
-            PrimaryKey = AllAppointments.Add();
+            //PrimaryKey = AllAppointments.Add();
             //set the primary key of the test data 
             TestItem.Appointment_ID = PrimaryKey;
             //find the record 
@@ -225,8 +225,8 @@ namespace VirginTestProject
                     OK = false;
                 }
 
-                //check that the last record is ID 4
-                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 4)
+                //check that the last record is ID 82
+                if (FilteredAppointment.AppointmentList[1].Appointment_ID != 82)
                 {
                     OK = false;
                 }
