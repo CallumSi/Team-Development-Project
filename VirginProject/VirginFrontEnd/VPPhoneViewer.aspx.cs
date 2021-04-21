@@ -114,5 +114,11 @@ namespace VirginFrontEnd
             Response.Redirect("VPCustomerPhoneList.aspx");
 
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            //redirect back to phone viewer page
+            Response.Redirect("VPCustomerPhoneList.aspx");
+        }
     }
 }

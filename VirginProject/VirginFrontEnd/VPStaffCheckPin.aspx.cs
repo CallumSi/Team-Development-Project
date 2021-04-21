@@ -45,5 +45,13 @@ namespace VirginFrontEnd
         {
             Response.Redirect("VPStafforCustomerSelection.aspx");
         }
+
+        protected void btnHome_Click1(object sender, EventArgs e)
+        {
+            //redirect back to log in 
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+       
     }
 }

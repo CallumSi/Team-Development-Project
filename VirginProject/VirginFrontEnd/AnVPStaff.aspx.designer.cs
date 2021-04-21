@@ -67,15 +67,6 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblStaffPostcode;
         
         /// <summary>
-        /// lblStaffEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStaffEmail;
-        
-        /// <summary>
         /// lblStaffTelephone control.
         /// </summary>
         /// <remarks>
@@ -218,5 +209,23 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogOut;
+        
+        /// <summary>
+        /// lblStaffEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStaffEmail;
+        
+        /// <summary>
+        /// lblAddStaff control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddStaff;
     }
 }

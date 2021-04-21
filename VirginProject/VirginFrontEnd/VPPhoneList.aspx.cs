@@ -146,7 +146,8 @@ namespace VirginFrontEnd
 
         protected void btnEditAccount_Click(object sender, EventArgs e)
         {
-
+            //redirect to customer list
+            Response.Redirect("VPStaffList.aspx");
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

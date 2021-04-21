@@ -195,8 +195,8 @@
     <Content Include="VPCustomerList.aspx" />
     <Content Include="VPCustomerPhoneList.aspx" />
     <Content Include="VPCustomerWelcome.aspx" />
-    <Content Include="VPDefault.aspx" />
     <Content Include="VPDeliveryList.aspx" />
+    <Content Include="VPhoneStyleSheet.css" />
     <Content Include="VPPayment.aspx" />
     <Content Include="VPPhoneDelete.aspx" />
     <Content Include="VPPhoneList.aspx" />
@@ -1052,13 +1052,6 @@
     </Compile>
     <Compile Include="VPCustomerWelcome.aspx.designer.cs">
       <DependentUpon>VPCustomerWelcome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VPDefault.aspx.cs">
-      <DependentUpon>VPDefault.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VPDefault.aspx.designer.cs">
-      <DependentUpon>VPDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPDeliveryList.aspx.cs">
       <DependentUpon>VPDeliveryList.aspx</DependentUpon>
