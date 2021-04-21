@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHHireList {
+    public partial class VCHAHireBooking {
         
         /// <summary>
         /// form1 control.
@@ -67,85 +67,76 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// btnApply control.
+        /// lblHireID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
+        protected global::System.Web.UI.WebControls.Label lblHireID;
         
         /// <summary>
-        /// btnDisplayAll control.
+        /// lblHireDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
+        protected global::System.Web.UI.WebControls.Label lblHireDate;
         
         /// <summary>
-        /// btnAdd control.
+        /// lblHireTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label lblHireTime;
         
         /// <summary>
-        /// btnEdit control.
+        /// lblHireDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.Label lblHireDescription;
         
         /// <summary>
-        /// btnDelete control.
+        /// txtHireID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
+        protected global::System.Web.UI.WebControls.TextBox txtHireID;
         
         /// <summary>
-        /// btnBookHire control.
+        /// txtHireDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBookHire;
+        protected global::System.Web.UI.WebControls.TextBox txtHireDate;
         
         /// <summary>
-        /// txtBxSearch control.
+        /// txtHireTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBxSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtHireTime;
         
         /// <summary>
-        /// lstHires control.
+        /// txtHireDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstHires;
-        
-        /// <summary>
-        /// lblHireLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHireLocation;
+        protected global::System.Web.UI.WebControls.TextBox txtHireDescription;
         
         /// <summary>
         /// lblError control.
@@ -155,5 +146,23 @@ namespace VirginFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// btnOK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }
