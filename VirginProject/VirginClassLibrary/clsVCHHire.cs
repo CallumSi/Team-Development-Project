@@ -119,22 +119,6 @@ namespace VirginClassLibrary
             }
         }
 
-        /*//Hire PostCode property
-        public string HirePostCode
-        {
-            get
-            {
-                //return the private data 
-                return mHirePostCode;
-            }
-
-            set
-            {
-                //set the private data
-                mHirePostCode = value;
-            }
-        }*/
-
         //Hire Status property
         public string HireStatus
         {
