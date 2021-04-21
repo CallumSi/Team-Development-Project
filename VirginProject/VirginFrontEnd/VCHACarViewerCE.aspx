@@ -29,8 +29,8 @@
         <asp:TextBox ID="txtCarPrice" runat="server" style="z-index: 1; left: 445px; top: 390px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtCarRegistration" runat="server" style="z-index: 1; left: 445px; top: 440px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 200px; top: 495px; position: absolute" Text="[lblError]"></asp:Label>
-        <asp:Button ID="btnHire" runat="server" OnClick="btnHire_Click" style="z-index: 1; left: 200px; top: 545px; position: absolute" Text="Hire" />
-        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 275px; top: 545px; position: absolute" Text="Back" OnClick="btnBack_Click" />
+        <asp:Button ID="btnHire" runat="server" OnClick="btnHire_Click" style="z-index: 1; left: 200px; top: 545px; position: absolute" Text="Request Hire" />
+        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 400px; top: 545px; position: absolute" Text="Back" OnClick="btnBack_Click" />
     </form>
 </body>
 </html>

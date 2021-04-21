@@ -68,7 +68,7 @@ namespace VirginFrontEnd
             Session["CustomerID"] = CustomerID;
             Session["CarID"] = CarID;
             Session["HireID"] = -1;
-            //redirect the user back to the car add page
+            //redirect the user to the hire request page
             Response.Redirect("VCHAHireCE.aspx");
         }
 
