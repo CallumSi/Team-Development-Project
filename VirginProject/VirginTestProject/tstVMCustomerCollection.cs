@@ -198,7 +198,7 @@ namespace VirginTestProject
             // create an instance of the filtered data
             clsVMCustomerCollection FilteredVMCUsernames = new clsVMCustomerCollection();
             //apply a username that doesnt exist
-            FilteredVMCUsernames.FilterByUsername("Hello");
+            FilteredVMCUsernames.FilterByUsername("Hello098765");
             //test to see that the two values are the same
             Assert.AreEqual(0, FilteredVMCUsernames.Count);
         }
