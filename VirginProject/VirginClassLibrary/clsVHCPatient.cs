@@ -41,6 +41,9 @@ namespace VirginClassLibrary
         //private data member for the Patient_Status property 
         private bool mPatient_Status;
 
+        //private data member for the OriginalID property 
+        private int mOriginalID;
+
 
         //Patient_ID Property
         public int Patient_ID
@@ -209,6 +212,22 @@ namespace VirginClassLibrary
             }
         }
 
+        //OriginalID Property
+        public int OriginalID
+        {
+            get
+            {
+                //return the private data 
+                return mOriginalID;
+            }
+
+            set
+            {
+                mOriginalID = value;
+            }
+        }
+
+
         public bool Find(int Patient_ID)
         {
             //create an instance of the data connection
@@ -232,6 +251,45 @@ namespace VirginClassLibrary
                 mPatient_Password = Convert.ToString(DB.DataTable.Rows[0]["Patient_Password"]);
                 mPatient_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Patient_Telephone"]);
                 mPatient_Status = Convert.ToBoolean(DB.DataTable.Rows[0]["Patient_Status"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+                //return that everything worked OK
+                return true;
+            }
+
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+
+        }
+
+        public bool FindOriginal(int Patient_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Patient_ID to search for
+            DB.AddParameter("@OriginalID", Patient_ID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblVHCPatient_FilterByOriginalID");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mPatient_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Patient_ID"]);
+                mPatient_Title = Convert.ToString(DB.DataTable.Rows[0]["Patient_Title"]);
+                mPatient_Firstname = Convert.ToString(DB.DataTable.Rows[0]["Patient_Firstname"]);
+                mPatient_Lastname = Convert.ToString(DB.DataTable.Rows[0]["Patient_Lastname"]);
+                mPatient_Address = Convert.ToString(DB.DataTable.Rows[0]["Patient_Address"]);
+                mPatient_DOB = Convert.ToDateTime(DB.DataTable.Rows[0]["Patient_DOB"]);
+                mPatient_Email = Convert.ToString(DB.DataTable.Rows[0]["Patient_Email"]);
+                mPatient_Username = Convert.ToString(DB.DataTable.Rows[0]["Patient_Username"]);
+                mPatient_Password = Convert.ToString(DB.DataTable.Rows[0]["Patient_Password"]);
+                mPatient_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Patient_Telephone"]);
+                mPatient_Status = Convert.ToBoolean(DB.DataTable.Rows[0]["Patient_Status"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+
 
                 //return that everything worked OK
                 return true;

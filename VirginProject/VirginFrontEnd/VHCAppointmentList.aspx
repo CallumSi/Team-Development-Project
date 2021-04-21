@@ -21,6 +21,13 @@
         <%--ARTICLE SECTION--%>
         <article>
             <h4>APPOINTMENT LIST </h4>
+
+             <%--LABEL: WELCOME FIRSTNAME--%>
+            <asp:Label ID="lblWelcomeFirstName" runat="server" CssClass="lblWelcomeFirstName"></asp:Label>
+
+             <%--LABEL: WELCOME--%>
+            <asp:Label ID="lblWelcome" runat="server" Text="👤 Welcome" CssClass="lblWelcome"></asp:Label>
+
             <%--LIST BOX: APPOINTMENT--%>
             <asp:ListBox ID="lstAppointment" runat="server" CssClass="lstAppointment"></asp:ListBox>
 
@@ -28,10 +35,10 @@
             <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>
 
             <%--BUTTON: CLOSE--%>
-            <asp:Button ID="btnListClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnListClose_Click" />
+            <asp:Button ID="BtnListClose" runat="server" CssClass="btnClose" Text="X" OnClick="BtnListClose_Click"/>
 
             <%--BUTTON: APPOINTMENT BOOK FILTER--%>
-            <asp:Button ID="btnAppointmentBook" runat="server" CssClass="btnAppointmentBook" Text="BOOK" OnClick="btnAppointmentBook_Click" />
+            <asp:Button ID="BtnAppointmentBook" runat="server" CssClass="btnAppointmentBook" Text="BOOK" OnClick="BtnAppointmentBook_Click" />
 
             <%--LABEL: APPOINTMENT START DATE--%>
             <asp:Label ID="lblAppointmentDate" runat="server" CssClass="lblAppointmentDate" Text="Appointment Date : "></asp:Label>
@@ -40,7 +47,7 @@
             <asp:TextBox ID="txtAppointmentDate" runat="server" CssClass="txtAppointmentDate">20/04/2021</asp:TextBox>
 
             <%--BUTTON: APPOINTMENT SEARCH--%>
-            <asp:Button ID="btnAppointmentSearch" runat="server" CssClass="btnAppointmentSearch" Text="Search" OnClick="btnAppointmentSearch_Click" />
+            <asp:Button ID="BtnAppointmentSearch" runat="server" CssClass="btnAppointmentSearch" Text="Search" OnClick="BtnAppointmentSearch_Click" />
         </article>
 
         <%--FOOTER SECTION--%>
