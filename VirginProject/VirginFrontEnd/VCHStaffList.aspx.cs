@@ -36,16 +36,6 @@ namespace VirginFrontEnd
 
         void DisplayStaff()
         {
-            /*//create an instance of the Staff 
-            clsVCHStaffCollection Staff = new clsVCHStaffCollection();
-            //set the data source to the list of staff in the collection
-            lstStaff.DataSource = Staff.StaffList;
-            //set the name of the primary key
-            lstStaff.DataValueField = "StaffID";
-            //set the data field to display
-            lstStaff.DataTextField = "StaffFirstName";
-            //bind the data to the list
-            lstStaff.DataBind();*/
             //int to store the primary key
             Int32 StaffID;
             //Staff Username property
@@ -162,7 +152,7 @@ namespace VirginFrontEnd
                 StaffID = Convert.ToInt32(lstStaff.SelectedValue);
                 //store the data in the session object
                 Session["StaffID"] = StaffID;
-                //redirect the delete page
+                //redirect the staff details page
                 Response.Redirect("VCHAStaff.aspx");
             }
             else //if a user has not selected a staff record to edit

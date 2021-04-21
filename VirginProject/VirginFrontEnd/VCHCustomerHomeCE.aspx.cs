@@ -149,28 +149,6 @@ namespace VirginFrontEnd
             }
         }
 
-        protected void btnHire_Click(object sender, EventArgs e)
-        {
-            //var to store the primary key value
-            Int32 CarID;
-            //if a record has been selected from the list
-            if (lstCars.SelectedIndex != -1)
-            {
-                //retrieve intended view records primary key
-                CarID = Convert.ToInt32(lstCars.SelectedValue);
-                //store -1 into the session object to indicate this is a new record
-                Session["HireID"] = -1;
-                //redirect the delete page
-                Response.Redirect("VCHAHireCE.aspx");
-            }
-
-            else //if a user has not selected a Car record to Hire
-            {
-                //display an error
-                lblError.Text = "Please select a Car to Hire from the list";
-            }
-        }
-
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
             //display the car list

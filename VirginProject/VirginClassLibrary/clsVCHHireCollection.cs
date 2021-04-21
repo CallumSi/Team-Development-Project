@@ -90,38 +90,12 @@ namespace VirginClassLibrary
         //constructor for the class
         public clsVCHHireCollection()
         {
-            
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute stored procedure
             DB.Execute("sproc_tblVCHHire_SelectAll");
             //populate the array list with the data
             PopulateArray(DB);
-
-            /*//create item of test data
-            clsVCHHire TestItem = new clsVCHHire();
-            //set the properties
-            TestItem.HireID = 1;
-            TestItem.CarID = 1;
-            TestItem.CustomerID = 1;
-            TestItem.HireCollectionDate = DateTime.Now.Date;
-            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(7);
-            TestItem.HireLocation = "14-16 Gulliard Lane, Leicester, LE2 5RE";
-            TestItem.HireStatus = "Pending Confirmation";
-            //add the item to the hire list
-            mHireList.Add(TestItem);
-            //re-initialise the object for some new data
-            TestItem = new clsVCHHire();
-            //set the properties
-            TestItem.HireID = 2;
-            TestItem.CarID = 2;
-            TestItem.CustomerID = 2;
-            TestItem.HireCollectionDate = DateTime.Now.Date.AddDays(14);
-            TestItem.HireReturnDate = DateTime.Now.Date.AddDays(28);
-            TestItem.HireLocation = "30 Glaxon Street, Shropshire, SH7 3FG";
-            TestItem.HireStatus = "Pending Confirmation";
-            //add the item to the hire list
-            mHireList.Add(TestItem);*/
         }
 
         public int Add()

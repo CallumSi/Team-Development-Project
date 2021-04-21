@@ -10,30 +10,29 @@ namespace VirginFrontEnd
 {
     public partial class VCHAHireCE : System.Web.UI.Page
     {
-        //variable to store the primary key with page level scope
+        //variable to store the primary & foreign keys with page level scope
         Int32 CustomerID;
-        //variable to store the primary key with page level scope
         Int32 CarID;
         Int32 HireID;
 
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the number of the customer/user to be processed
-            CustomerID = Convert.ToInt32(Session["CustomerID"]);
-            CarID = Convert.ToInt32(Session["CarID"]);
-            //get the number of the car hire to be processed
+            //get the number of the hire, car and customer to be processed
             HireID = Convert.ToInt32(Session["HireID"]);
+            CarID = Convert.ToInt32(Session["CarID"]);
+            CustomerID = Convert.ToInt32(Session["CustomerID"]);
+
+            lblCarIDDisplay.Text = "[CarID]";
+            lblCustomerIDDisplay.Text = "[CustomerID]";
+
+            //display the car & customers ID
+            lblCarIDDisplay.Text = CarID.ToString();
+            lblCustomerIDDisplay.Text = CustomerID.ToString();
+
             if (IsPostBack == false)
             {
-                //populate the list of car hire
-                DisplayHire();
-                //if this is not a new record
-                if (HireID != -1)
-                {
-                    //display the current data for the record
-                    DisplayHire();
-                }
+
             }
         }
 
@@ -43,22 +42,6 @@ namespace VirginFrontEnd
             //Save the CustomerID & UserID when a page unload event happens
             Session["CustomerID"] = CustomerID;
             Session["CarID"] = CarID;
-        }
-
-        void DisplayHire()
-        {
-            //create an instance of the car hire collection class
-            clsVCHHireCollection HireCollection = new clsVCHHireCollection();
-            //find the HireID for the record to be updated
-            HireCollection.ThisHire.Find(HireID);
-            //display the data for this record
-            lblCarIDDisplay.Text = HireCollection.ThisHire.CarID.ToString();
-            lblCustomerIDDisplay.Text = HireCollection.ThisHire.CustomerID.ToString();
-            txtHireCollectionDate.Text = HireCollection.ThisHire.HireCollectionDate.ToString();
-            txtHireReturnDate.Text = HireCollection.ThisHire.HireReturnDate.ToString();
-            ddlHireLocation.SelectedValue = HireCollection.ThisHire.HireLocation;
-            lblHireStatus.Text = HireCollection.ThisHire.HireStatus;
-
         }
 
         protected void btnHire_Click(object sender, EventArgs e)
