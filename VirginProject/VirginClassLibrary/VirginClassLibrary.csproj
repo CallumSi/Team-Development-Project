@@ -60,6 +60,8 @@
     <Compile Include="clsMarketplaceOrder.cs" />
     <Compile Include="clsVCHCarCollection.cs" />
     <Compile Include="clsVCHHire.cs" />
+    <Compile Include="clsVCHHireBooking.cs" />
+    <Compile Include="clsVCHHireBookingCollection.cs" />
     <Compile Include="clsVCHHireCollection.cs" />
     <Compile Include="clsVMAdminSecurity.cs" />
     <Compile Include="clsVMMovieCollection.cs" />

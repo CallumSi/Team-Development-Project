@@ -64,33 +64,7 @@ namespace VirginTestProject
             //test to see the values ARE the same
             Assert.AreEqual(AllHires.ThisHire, TestHire);
         }
-
-        /*
-         
-        [TestMethod]
-        public void CountPropertyOK()
-        {
-            //create an instance of the car hire colllection class
-            clsVCHHireCollection AllHires = new clsVCHHireCollection();
-            //test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign the data to the property
-            AllHires.Count = SomeCount;
-            //test to see the values ARE the same
-            Assert.AreEqual(AllHires.Count, SomeCount);
-        }
         
-        [TestMethod]
-        public void TwoHiresPresent()
-        {
-            //create an instance of the car hire colllection class
-            clsVCHHireCollection AllHires = new clsVCHHireCollection();
-            //test to see the values ARE the same
-            Assert.AreEqual(AllHires.Count, 2);
-        }
-
-        */
-
         [TestMethod]
         public void ListAndCountOK()
         {

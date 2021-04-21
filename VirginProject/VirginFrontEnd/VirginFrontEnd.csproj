@@ -119,6 +119,7 @@
     <Content Include="VCHACustomer.aspx" />
     <Content Include="VCHACustomerCE.aspx" />
     <Content Include="VCHAHire.aspx" />
+    <Content Include="VCHAHireBooking.aspx" />
     <Content Include="VCHAHireCE.aspx" />
     <Content Include="VCHAStaff.aspx" />
     <Content Include="VCHCarDelete.aspx" />
@@ -130,6 +131,7 @@
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VCHCustomerOrStaffSelection.aspx" />
+    <Content Include="VCHHireBookingList.aspx" />
     <Content Include="VCHStaffDefault.aspx" />
     <Content Include="VCHHireDelete.aspx" />
     <Content Include="VCHHireList.aspx" />
@@ -598,6 +600,13 @@
     <Compile Include="VCHAHire.aspx.designer.cs">
       <DependentUpon>VCHAHire.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VCHAHireBooking.aspx.cs">
+      <DependentUpon>VCHAHireBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHAHireBooking.aspx.designer.cs">
+      <DependentUpon>VCHAHireBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VCHAHireCE.aspx.cs">
       <DependentUpon>VCHAHireCE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -660,6 +669,13 @@
     </Compile>
     <Compile Include="VCHCustomerOrStaffSelection.aspx.designer.cs">
       <DependentUpon>VCHCustomerOrStaffSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHHireBookingList.aspx.cs">
+      <DependentUpon>VCHHireBookingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHHireBookingList.aspx.designer.cs">
+      <DependentUpon>VCHHireBookingList.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHStaffDefault.aspx.cs">
       <DependentUpon>VCHStaffDefault.aspx</DependentUpon>

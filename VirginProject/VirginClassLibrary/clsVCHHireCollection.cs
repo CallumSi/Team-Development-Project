@@ -127,7 +127,7 @@ namespace VirginClassLibrary
 
         public void Update()
         {
-            //update an existing car hite record in the database, based on values of thisCar
+            //update an existing car hire record in the database, based on values of thisHire
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set parameters for the stored procedure
@@ -147,7 +147,7 @@ namespace VirginClassLibrary
             //filter car hire records according to complete or partial Hire Location
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
-            //set the car body parameter for this stored procedure
+            //set the hire location parameter for this stored procedure
             DB.AddParameter("@HireLocation", HireLocation);
             //execute the stored procedure
             DB.Execute("sproc_tblVCHHire_FilterByHireLocation");

@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VCHHireList {
+    public partial class VCHHireBookingList {
         
         /// <summary>
         /// form1 control.
@@ -67,24 +67,6 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// btnApply control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApply;
-        
-        /// <summary>
-        /// btnDisplayAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDisplayAll;
-        
-        /// <summary>
         /// btnAdd control.
         /// </summary>
         /// <remarks>
@@ -121,31 +103,13 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Button btnBookHire;
         
         /// <summary>
-        /// txtBxSearch control.
+        /// lstBookings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBxSearch;
-        
-        /// <summary>
-        /// lstHires control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstHires;
-        
-        /// <summary>
-        /// lblHireLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHireLocation;
+        protected global::System.Web.UI.WebControls.ListBox lstBookings;
         
         /// <summary>
         /// lblError control.
