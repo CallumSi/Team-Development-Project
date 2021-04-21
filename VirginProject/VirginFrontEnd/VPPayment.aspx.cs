@@ -12,6 +12,7 @@ namespace VirginFrontEnd
     {
         Int32 PhoneID;
         Int32 Customer_ID;
+
         clsVPCart MyCart = new clsVPCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +20,7 @@ namespace VirginFrontEnd
             MyCart = (clsVPCart)Session["MyCart"];
             //get the customer id
             Customer_ID = Convert.ToInt32(Session["Customer_ID"]);
+            MyCart.UserNo = Customer_ID;
         }
 
 
@@ -45,10 +47,6 @@ namespace VirginFrontEnd
 
         }
 
-        protected void btnPlaceOrder_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("VPThankYouConfirmation.aspx");
-        }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {

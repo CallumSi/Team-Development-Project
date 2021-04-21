@@ -158,5 +158,11 @@ namespace VirginFrontEnd
                 //redirect to log out page
                 Response.Redirect("VirginLogin.aspx");
             }
+
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect to staff list
+            Response.Redirect("VPStaffList.aspx");
         }
+    }
     }

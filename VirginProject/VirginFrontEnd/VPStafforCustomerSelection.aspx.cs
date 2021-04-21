@@ -16,7 +16,7 @@ namespace VirginFrontEnd
 
         protected void btnVPAStaff_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VPStaffList.aspx");
+            Response.Redirect("VPStaffCheckPin.aspx");
         }
 
         protected void btnVPACustomer_Click(object sender, EventArgs e)
@@ -25,6 +25,11 @@ namespace VirginFrontEnd
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginLogin.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("VirginLogin.aspx");
         }

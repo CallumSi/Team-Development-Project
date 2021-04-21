@@ -4,24 +4,54 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+   <title>Virgin Media Customer Phone List</title>
+     <link href="VPhoneStyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 82px; top: 130px; position: absolute; height: 68px; width: 119px" Text="Home" />
-        <asp:Button ID="btnViewCart" runat="server" OnClick="btnViewCart_Click" style="z-index: 1; left: 84px; top: 244px; position: absolute; height: 69px; width: 119px" Text="View Cart" />
-        <asp:Button ID="btnEditAccount" runat="server" OnClick="btnEditAccount_Click" style="z-index: 1; left: 85px; top: 366px; position: absolute; height: 69px; width: 122px; margin-bottom: 5px" Text="Edit Account" />
-        <asp:Button ID="btnLogOut" runat="server" style="z-index: 1; left: 86px; top: 552px; position: absolute; height: 59px; width: 125px" Text="Log Out" />
-        <asp:ListBox ID="lstPhones" runat="server" style="z-index: 1; left: 315px; top: 128px; position: absolute; height: 330px; width: 616px"></asp:ListBox>
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 324px; top: 478px; position: absolute" Text="Filter By Make"></asp:Label>
-        <asp:Button ID="btnViewPhone" runat="server" OnClick="btnViewPhone_Click" style="z-index: 1; left: 817px; top: 470px; position: absolute" Text="View Phone" />
-        <asp:Button ID="btnApplyFilter" runat="server" OnClick="btnApplyFilter_Click" style="z-index: 1; left: 325px; top: 508px; position: absolute" Text="Apply Filter" />
-        <asp:Button ID="btnDisplayAll" runat="server" OnClick="btnDisplayAll_Click" style="z-index: 1; left: 326px; top: 544px; position: absolute; width: 100px" Text="Display All" />
-        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 328px; top: 580px; position: absolute" Text="[lblError]"></asp:Label>
-        <asp:Label ID="lblCartCount" runat="server" style="z-index: 1; left: 209px; top: 267px; position: absolute" Text="[lblCartCount]"></asp:Label>
-        <asp:TextBox ID="txtFilterPhoneMake" runat="server" style="z-index: 1; left: 443px; top: 477px; position: absolute; width: 221px"></asp:TextBox>
+
+        <header> 
+                <h2>
+                    Virgin Phone Customer Phone List
+                </h2>
+        </header>
+
+
+       
+       
+        <asp:ListBox ID="lstPhones" runat="server" style="z-index: 1; left: 583px; top: 180px; position: absolute; height: 330px; width: 616px"></asp:ListBox>
+        <asp:Button ID="btnViewPhone" runat="server" OnClick="btnViewPhone_Click" style="z-index: 1; left: 758px; top: 577px; position: absolute; height: 31px; width: 85px;" Text="View Phone" Font-Bold="True" ForeColor="Black"/>
+        <asp:Button ID="btnApplyFilter" runat="server" OnClick="btnApplyFilter_Click" style="z-index: 1; left: 956px; top: 521px; position: absolute; height: 25px; width: 92px;" Text="Apply Filter"  Font-Bold="True" ForeColor="Black" CssClass="column" />
+        <asp:Button ID="btnDisplayAll" runat="server" OnClick="btnDisplayAll_Click" style="z-index: 1; left: 851px; top: 577px; position: absolute; width: 85px; height: 32px;" Text="Display All"  Font-Bold="True" ForeColor="Black" CssClass="column" />
+        <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 594px; top: 643px; position: absolute" Text="[lblError]"  Font-Bold="True" ForeColor="Black" Font-Size="Small"></asp:Label>
+        <asp:Label ID="lblCartCount" runat="server" style="z-index: 1; left: 233px; top: 295px; position: absolute" Text="[lblCartCount]" Font-Bold="True" ForeColor="Black"></asp:Label>
+        
+        <nav> 
+        <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 58px; top: 27px; position: absolute; height: 77px; width: 172px" Text="Home" Font-Bold="True" ForeColor="Black" CssClass="column" />
+        <asp:Button ID="btnViewCart" runat="server" OnClick="btnViewCart_Click" style="z-index: 1; left: 58px; top: 150px; position: absolute; height: 77px; width: 172px" Text="View Cart" Font-Bold="True" ForeColor="Black" CssClass="column" />
+        <asp:Button ID="btnEditAccount" runat="server" OnClick="btnEditAccount_Click" style="z-index: 1; left: 58px; top: 273px; position: absolute; height: 77px; width: 172px; margin-bottom: 5px" Text="Edit Account" Font-Bold="True" ForeColor="Black" CssClass="column" />
+        <asp:Button ID="btnLogOut" runat="server" style="z-index: 1; left: 58px; top: 396px; position: absolute; height: 77px; width: 172px" Text="Log Out" Font-Bold="True" ForeColor="Black" CssClass="column" OnClick="btnLogOut_Click" />
+        </nav>
+
+        <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+                </div>
+    
+        </footer>
+
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <asp:Label ID="lblFilterByMake" runat="server" style="z-index: 1; left: 612px; top: 522px; position: absolute; right: 775px; height: 17px;" Text="Filter By Make"  Font-Bold="True" ForeColor="Black" Font-Size="Small"></asp:Label>
+        <p>
+        <asp:TextBox ID="txtFilterPhoneMake" runat="server" style="z-index: 1; left: 720px; top: 520px; position: absolute; width: 221px"></asp:TextBox>
+        
+        </p>
+
     </form>
 </body>
 </html>

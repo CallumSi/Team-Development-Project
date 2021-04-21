@@ -25,6 +25,7 @@ namespace VirginFrontEnd
             MyCart = (clsVPCart)Session["MyCart"];
             //display the cart contents
             DisplayCart();
+            
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
@@ -98,6 +99,11 @@ namespace VirginFrontEnd
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("VPCustomerPhoneList.aspx");
+        }
+
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnVPEditCustomer.aspx");
         }
     }
 }
