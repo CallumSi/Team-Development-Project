@@ -101,16 +101,6 @@ footer {
     font-size: 35px;
 }
 
-/* Each Page Sub Title*/
-.lblOther {
-    position: fixed;
-    top: 150px;
-    left: 150px;
-    color:black;
-    font-size:40pt;
-    font-weight:bolder;
-}
-
 /*Username Label*/
 .lblUserName {
     top: 200px;
@@ -120,7 +110,7 @@ footer {
 /*Password Label*/
 .lblPassword {
     top: 298px;
-    left: 612px;
+    left: 682px;
 }
 
 /*Password Confirm Label*/
@@ -252,8 +242,8 @@ footer {
 
 /* Forum Admin */
 .btnForumAdmin {
-    top: 300px;
-    left: 100px;
+    top: 700px;
+    left: 950px;
     width: 300px;
 }
 

@@ -52,5 +52,11 @@ namespace VirginFrontEnd
                 lblError.Text = "⚠️ INCORRECT PIN! PLEASE TRY AGAIN.";
             }
         }
+
+        //Close Button
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VHCMainMenu.aspx");
+        }
     }
 }

@@ -140,8 +140,8 @@ footer {
 /* Submit Button */
 .btnSubmit {
     position: fixed;
-    top: 675px;
-    left: 1000px;
+    top: 520px;
+    left: 1500px;
     z-index: 1;
     width: 200px;
     height: 70px;
@@ -231,7 +231,7 @@ footer {
 /*Confirm Pin Label */
 .lblConfirmPin {
     top: 245px;
-    left: 680px;
+    left: 580px;
 }
 
 

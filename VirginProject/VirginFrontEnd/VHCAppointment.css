@@ -1,6 +1,6 @@
 ﻿/* Font Style from Google Fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 /*** HTML STRUCTURE ***/
 
@@ -265,3 +265,22 @@ footer {
     padding: 8px;
 }
 
+/*Welcome Label*/
+.lblWelcome {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    color: dimgray;
+    font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+.lblWelcomeFirstName {
+    top: 20px;
+    left: 285px;
+    position: absolute;
+    color: dimgray;
+    font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 1px;
+}

@@ -31,7 +31,7 @@
             <asp:Button ID="btnConfirmPin" runat="server" Text="CONFIRM" CssClass="btnConfirmPin" OnClick="btnConfirmPin_Click" />
 
             <%--BUTTON: CLOSE--%>
-            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" />
+            <asp:Button ID="btnClose" runat="server" CssClass="btnClose" Text="X" OnClick="btnClose_Click" />
 
             <%--LABEL: ERROR--%>
             <asp:Label ID="lblError" runat="server" CssClass="lblErrorMessage" Text=""></asp:Label>

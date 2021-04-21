@@ -11,44 +11,27 @@
     <form id="form1" runat="server">
 
         <header>
-            <h2>Virgin Media </h2>
-
+            <h2>VIRGIN SERVICES</h2>
         </header>
 
         <article>
-            <h1>Admin Log In</h1>
+            <h4>ADMIN LOG IN</h4>
 
-            <asp:Label ID="lblUserName" CssClass="lblUserName" runat="server" Style="z-index: 1;" Text="User Name"></asp:Label>
+            <asp:Label ID="lblUserName" CssClass="lblUserName" runat="server" Style="z-index: 1;" Text="User Name : "></asp:Label>
             <asp:TextBox ID="txtUsername" CssClass="txtUsername" runat="server" Style="z-index: 1;"></asp:TextBox>
-
-            <asp:Label ID="lblPassword" CssClass="lblPassword" runat="server" Style="z-index: 1;" Text="Password"></asp:Label>
+            <asp:Label ID="lblPassword" CssClass="lblPassword" runat="server" Style="z-index: 1;" Text="Password : "></asp:Label>
             <asp:TextBox ID="txtPassword" CssClass="txtPassword" runat="server" Style="z-index: 1;" TextMode="Password"></asp:TextBox>
-
-
             <asp:Button ID="btnLogIn" CssClass="btnLogIn" runat="server" Style="z-index: 1;" Text="Log In" OnClick="btnLogIn_Click" />
-
-
-
             <asp:Button ID="btnSignUp" CssClass="btnSignUp2" runat="server" Style="z-index: 1;" Text="Sign Up" OnClick="btnSignUp_Click1" />
-
             <asp:Button ID="btnForgotPassword" CssClass="btnForgotPassword" runat="server" Style="z-index: 1;" Text="Forgot Password" OnClick="btnForgotPassword_Click" />
-
-
             <asp:Label ID="lblError" CssClass="lblErrorMessage" runat="server" Style="z-index: 1;"></asp:Label>
         </article>
-
-        <nav>
-        </nav>
 
         <footer>
             <div id="FooterText">
                 © 2021 Virgin Media | All Rights Reserved
             </div>
         </footer>
-
-
-
     </form>
 </body>
-
 </html>
