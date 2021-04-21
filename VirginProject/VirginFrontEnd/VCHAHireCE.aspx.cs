@@ -32,8 +32,27 @@ namespace VirginFrontEnd
 
             if (IsPostBack == false)
             {
-
+                //populate the list of car hire
+                DisplayHire();
+                //if this is not a new record
+                if (HireID != -1)
+                {
+                    //display the current data for the record
+                    DisplayHire();
+                }
             }
+        }
+
+        void DisplayHire()
+        {
+            //create an instance of the car hire collection class
+            clsVCHHireCollection HireCollection = new clsVCHHireCollection();
+            //find the HireID for the record to be updated
+            HireCollection.ThisHire.Find(HireID);
+            //display the data for this record
+            txtHireCollectionDate.Text = HireCollection.ThisHire.HireCollectionDate.ToString();
+            txtHireReturnDate.Text = HireCollection.ThisHire.HireReturnDate.ToString();
+            ddlHireLocation.SelectedValue = HireCollection.ThisHire.HireLocation;
         }
 
         //event handler for the page unload event
