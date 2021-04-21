@@ -137,7 +137,7 @@ namespace VirginFrontEnd
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (Patient_ID == -1)
+            if (Patient_ID ==-1)
             {
                 //Add the new record
                 Add();
@@ -150,7 +150,6 @@ namespace VirginFrontEnd
             }
             //add primary to session object 
             Patient_ID = Convert.ToInt32(Session["Patient_ID"]);
-            Response.Redirect("VHCAppointmentList.aspx");
         }
     }
 }
