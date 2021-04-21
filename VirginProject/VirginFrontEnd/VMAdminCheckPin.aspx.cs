@@ -10,9 +10,9 @@ namespace VirginFrontEnd
 {
     public partial class VMAdminCheckPin : System.Web.UI.Page
     {
-        private clsSecurity mSec;
+        private clsForumAdminSecurity mSec;
 
-        public clsSecurity Sec
+        public clsForumAdminSecurity Sec
         {
             get
             {
@@ -21,7 +21,7 @@ namespace VirginFrontEnd
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            mSec = new clsSecurity();
+            mSec = new clsForumAdminSecurity();
 
         }
 

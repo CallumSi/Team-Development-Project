@@ -55,7 +55,7 @@ namespace VirginFrontEnd
             //find the customer to update
             SomeCustomer.ThisCustomer.Find(VMCustomerID);
             //display the data for this record
-            lblUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
+            lblMVUsername.Text = SomeCustomer.ThisCustomer.VMcustomerUsername;
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)

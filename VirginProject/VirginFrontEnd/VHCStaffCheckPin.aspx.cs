@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
@@ -13,9 +14,9 @@ namespace VirginFrontEnd
     
     public partial class VHCStaffCheckPin : System.Web.UI.Page
     {
-        private clsSecurity mSec;
+        private clsForumAdminSecurity mSec;
 
-        public clsSecurity Sec
+        public clsForumAdminSecurity Sec
         {
             get
             {
@@ -25,7 +26,7 @@ namespace VirginFrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            mSec = new clsSecurity();
+            mSec = new clsForumAdminSecurity();
         }
 
         protected void btnConfirmPin_Click(object sender, EventArgs e)
