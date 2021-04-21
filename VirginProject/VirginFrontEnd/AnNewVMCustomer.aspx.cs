@@ -70,7 +70,6 @@ namespace VirginFrontEnd
             }
             //add PK to session object 
             Session["VMCustomerID"] = VMCustomerID;
-            Response.Redirect("VirginCustomerMovieList.aspx");
         }
 
         //function for adding new records
