@@ -18,11 +18,11 @@
             <h1>All Posts</h1>
             <ul>
                 <li>
-                    <asp:ListBox ID="lstPostlistbox" runat="server" Style="z-index: 1;" Height="231px" Width="328px"></asp:ListBox>
+                    <asp:ListBox ID="lstPostlistbox" runat="server" Style="z-index: 1;" Height="231px" Width="419px"></asp:ListBox>
                 </li>
                 <li>
                     <asp:Label ID="lblFilterByPostTitle" runat="server" Style="z-index: 1;" Text="Please enter a title."></asp:Label>
-                    <asp:TextBox ID="txtFilterByPostTitle" runat="server" Style="z-index: 1;"></asp:TextBox>
+                    <asp:TextBox ID="txtFilterByPostTitle" runat="server" Style="z-index: 1;" Width="283px"></asp:TextBox>
                 </li>
                 <li>
                     <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click" CssClass="navButton" />

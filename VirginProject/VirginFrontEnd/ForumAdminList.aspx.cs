@@ -10,12 +10,15 @@ namespace VirginFrontEnd
 {
     public partial class ForumAdminList : System.Web.UI.Page
     {
+        //declare admin id
         Int32 AdminID;
+        //declare orginial id
         Int32 OriginalID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the number of the customer/user to be processed
+            //get the admin id to be processed
             AdminID = Convert.ToInt32(Session["AdminID "]);
+            //get the orginial id to be processed
             OriginalID = Convert.ToInt32(Session["OriginalID"]);
 
             //if this is the first time the page is displayed
@@ -28,9 +31,9 @@ namespace VirginFrontEnd
         }
         void DisplayAdmin()
         {
-            //create an instance of the County Collection
+            //create an instance of the admin Collection
             clsForumAdminCollection Admins = new clsForumAdminCollection();
-            //set the data source to the list of countries in the collection
+            //set the data source to the list of admins in the collection
             lstForumAdmin.DataSource = Admins.AdminList;
             //set the name of the primary key
             lstForumAdmin.DataValueField = "AdminID";
@@ -149,11 +152,13 @@ namespace VirginFrontEnd
 
         protected void btnAdminHome_Click(object sender, EventArgs e)
         {
+            //redirect to home page
             Response.Redirect("ForumAdminHomePage.aspx");
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            //redirect to log in
             Response.Redirect("ForumAdminLogIn.aspx");
         }
     }

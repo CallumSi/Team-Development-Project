@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <asp:Label ID="lblComment" runat="server" Style="z-index: 1;" Text="Comment:"></asp:Label>
-                    <asp:TextBox ID="txtComment" runat="server" Style="z-index: 1;"></asp:TextBox>
+                    <asp:TextBox ID="txtComment" runat="server" Style="z-index: 1;" Height="149px" Width="383px"></asp:TextBox>
                 </li>
                 <li>
                     <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Style="z-index: 1;" Text="OK" CssClass="navButton" />

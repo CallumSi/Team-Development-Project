@@ -22,9 +22,9 @@ namespace VirginFrontEnd
         }
         void DisplayComments()
         {
-            //create an instance of the County Collection
+            //create an instance of the Comment Collection
             clsForumCommentCollection Comment = new clsForumCommentCollection();
-            //set the data source to the list of countries in the collection
+            //set the data source to the list of comments in the collection
             lstComment.DataSource = Comment.CommentList;
             //set the name of the primary key
             lstComment.DataValueField = "CommentID";
@@ -82,6 +82,7 @@ namespace VirginFrontEnd
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //redirect to forum post list page.
             Response.Redirect("ForumPostList.aspx");
         }
 
@@ -93,6 +94,7 @@ namespace VirginFrontEnd
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
+            //display all comments
             DisplayComments();
         }
         Int32 DisplayFilterCommentMessage(string CommentMessageFilter)
@@ -120,7 +122,7 @@ namespace VirginFrontEnd
                 //get the CommentMessage
                 CommentMessage = CommentBook.CommentList[Index].CommentMessage;
                 //create a new entry for the list box
-                ListItem NewEntry = new ListItem(CommentMessage + "", CommentID.ToString());
+                ListItem NewEntry = new ListItem("Comment Message: " + CommentMessage, CommentID.ToString());
                 //add the user to the list
                 lstComment.Items.Add(NewEntry);
                 //move the indext to the next record
@@ -132,11 +134,13 @@ namespace VirginFrontEnd
 
         protected void btnPost_Click(object sender, EventArgs e)
         {
+            //redirect to post list page
             Response.Redirect("ForumPostList.aspx");
         }
 
         protected void btnSignOut_Click(object sender, EventArgs e)
         {
+            //redirect to log in page
             Response.Redirect("VirginLogIn.aspx");
         }
     }

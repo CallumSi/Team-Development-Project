@@ -10,19 +10,20 @@ namespace VirginFrontEnd
 {
     public partial class ForumAnAdmin : System.Web.UI.Page
     {
-        //variable to store the primary key with page level scope
+        //variable to store the primary key 
         Int32 AdminID;
+        //variable to store the primary key 
         Int32 OriginalID;
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the user to be processed 
             AdminID = Convert.ToInt32(Session["AdminID"]);
+            //get the orginialID to be processed 
             OriginalID = Convert.ToInt32(Session["OriginalID"]);
             if (IsPostBack == false)
             {
-                //populate the list of users
-                //DisplayAdmin();
+
                 //if this is not a new record
                 if (AdminID !=-1)
                 {
@@ -33,16 +34,14 @@ namespace VirginFrontEnd
         }
         void DisplayAdmin()
         {
-            //create an instance of the user book
+            //create an instance of the admin book
             clsForumAdminCollection AdminBook = new clsForumAdminCollection();
             //find the record to update
             AdminBook.ThisAdmin.Find(AdminID);
             //display the data for this record
-            //txtUsername.Text = AdminBook.ThisAdmin.AdminUserName;
             txtFirstName.Text = AdminBook.ThisAdmin.AdminFirstName;
             txtLastName.Text = AdminBook.ThisAdmin.AdminLastName;
             txtEmailAddress.Text = AdminBook.ThisAdmin.AdminEmail;
-            //txtPassword.Text = AdminBook.ThisAdmin.AdminPassword;
         }
         void Add()
         {
@@ -54,14 +53,13 @@ namespace VirginFrontEnd
             if (Error == "")
             {
                 //get the data entered by the admin
-                //AdminBook.ThisAdmin.AdminUserName = txtUsername.Text;
                 AdminBook.ThisAdmin.OriginalID = OriginalID;
                 AdminBook.ThisAdmin.AdminFirstName = txtFirstName.Text;
                 AdminBook.ThisAdmin.AdminLastName = txtLastName.Text;
                 AdminBook.ThisAdmin.AdminEmail = txtEmailAddress.Text;
-                //AdminBook.ThisAdmin.AdminPassword = txtPassword.Text;
                 //add the record
                 AdminBook.Add();
+                //find the record
                 AdminBook.ThisAdmin.FindOriginal(OriginalID);
                 Session["AdminID"] = AdminBook.ThisAdmin.AdminID;
                 //Redirect back to the main page
@@ -72,9 +70,6 @@ namespace VirginFrontEnd
                 //report an error
                 lblError.Text = "There has been a problem with the information that's been entered. Please try again." + Error;
             }
-
-
-
         }
 
 
@@ -108,11 +103,9 @@ namespace VirginFrontEnd
                 //find the record to update
                 AdminBook.ThisAdmin.Find(AdminID);
                 //get the data entered by the admin
-                //AdminBook.ThisAdmin.AdminUserName = txtUsername.Text;
                 AdminBook.ThisAdmin.AdminFirstName = txtFirstName.Text;
                 AdminBook.ThisAdmin.AdminLastName = txtLastName.Text;
                 AdminBook.ThisAdmin.AdminEmail = txtEmailAddress.Text;
-                //AdminBook.ThisAdmin.AdminPassword = txtPassword.Text;
                 //update the record 
                 AdminBook.Update();
                 Session["AdminID"] = AdminID;
@@ -128,7 +121,9 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click1(object sender, EventArgs e)
         {
+            //add PK to session object
             Session["AdminID"] = OriginalID;
+            //redirect to admin list page
             Response.Redirect("ForumAdminList.aspx");
         }
     }

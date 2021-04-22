@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <asp:Label ID="lblFilterFirstName" runat="server" Style="z-index: 1;" Text="Filter By First Name"></asp:Label>
-                    <asp:TextBox ID="txtFilterFirstName" runat="server" Style="z-index: 1;" Height="31px" Width="276px"></asp:TextBox>
+                    <asp:TextBox ID="txtFilterFirstName" runat="server" Style="z-index: 1;" Height="31px" Width="298px"></asp:TextBox>
                 </li>
                 <li>
                     <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" CssClass="navButton" />

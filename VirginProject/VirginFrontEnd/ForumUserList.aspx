@@ -22,11 +22,11 @@
             <h1>User Page</h1>
             <ul>
                 <li>
-                    <asp:ListBox ID="lstUserListBox" runat="server" Style="z-index: 1;" Height="265px" Width="456px"></asp:ListBox>
+                    <asp:ListBox ID="lstUserListBox" runat="server" Style="z-index: 1;" Height="265px" Width="507px"></asp:ListBox>
                 </li>
                 <li>
                     <asp:Label ID="lblUserFilter" runat="server" Style="z-index: 1;" Text="Please filter by first name."></asp:Label>
-                    <asp:TextBox ID="txtFilterbyuserfirstname" runat="server" Style="z-index: 1;" Width="241px"></asp:TextBox>
+                    <asp:TextBox ID="txtFilterbyuserfirstname" runat="server" Style="z-index: 1;" Width="329px"></asp:TextBox>
                 </li>
                 <li>
                     <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click1" CssClass="navButton" />

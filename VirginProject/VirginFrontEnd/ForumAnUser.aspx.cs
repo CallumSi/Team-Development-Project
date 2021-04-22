@@ -10,19 +10,19 @@ namespace VirginFrontEnd
 {
     public partial class ForumAnUser : System.Web.UI.Page
     {
-        //variable to store the primary key with page level scope
+        //variable to store the primary key 
         Int32 UserId;
+        //variable to store the primary key 
         Int32 OriginalID;
         //event handler for the page load event
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the number of the user to be processed 
             UserId = Convert.ToInt32(Session["UserId"]);
+            //get the orginal to be processed 
             OriginalID = Convert.ToInt32(Session["OriginalID"]);
             if (IsPostBack == false)
             {
-                //populate the list of users
-                //DisplayUser();
                 //if this is not a new record
                 if (UserId != -1)
                 {
@@ -78,12 +78,11 @@ namespace VirginFrontEnd
                 UserBook.ThisUser.UserFirstName = txtFirstName.Text;
                 UserBook.ThisUser.UserLastName = txtLastName.Text;
                 UserBook.ThisUser.UserEmail = txtEmailAddress.Text;
-                //UserBook.ThisUser.UserPassword = txtPassword.Text;
                 UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
                 UserBook.ThisUser.OriginalID = OriginalID;
-                //UserBook.ThisUser.Userusername = txtUsername.Text;
                 //add the record
                 UserBook.Add();
+                //find the record
                 UserBook.ThisUser.FindOriginal(OriginalID);
                 Session["UserId"] = UserBook.ThisUser.UserID;
                 //Redirect back to the main page
@@ -114,9 +113,7 @@ namespace VirginFrontEnd
                 UserBook.ThisUser.UserFirstName = txtFirstName.Text;
                 UserBook.ThisUser.UserLastName = txtLastName.Text;
                 UserBook.ThisUser.UserEmail = txtEmailAddress.Text;
-                //UserBook.ThisUser.UserPassword = txtPassword.Text;
                 UserBook.ThisUser.UserPhoneNumber = txtPhoneNumber.Text;
-                //UserBook.ThisUser.Userusername = txtUsername.Text;
                 //update the record 
                 UserBook.Update();
                 //Redirect back to the user list page
@@ -137,7 +134,9 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            //add PK to session object 
             Session["UserId"] = OriginalID;
+            //redirect to user list
             Response.Redirect("ForumUserList.aspx");
         }
     }
