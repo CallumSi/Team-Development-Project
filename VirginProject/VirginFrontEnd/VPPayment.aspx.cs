@@ -8,14 +8,18 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
     public partial class VPPayment : System.Web.UI.Page
     {
         Int32 PhoneID;
         Int32 Customer_ID;
-
+        Int32 OriginalID;
         clsVPCart MyCart = new clsVPCart();
         protected void Page_Load(object sender, EventArgs e)
         {
+            OriginalID = Convert.ToInt32(Session["UserID"]);
             //upon loading the page you need to read in the cart from the session object
             MyCart = (clsVPCart)Session["MyCart"];
             //get the customer id
@@ -50,6 +54,7 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            Session["Customer_ID"] = Customer_ID;
             //redirect back to customer phone list
             Response.Redirect("VPCustomerPhoneList.aspx");
         }
