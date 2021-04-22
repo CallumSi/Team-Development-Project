@@ -181,7 +181,7 @@ namespace VirginClassLibrary
                     //record the HireBookingID primary key as -time
                     NewHireBooking.HireBookingID = -SomeTime;
                     //set the HireID to blank
-                    NewHireBooking.HireID = Convert.ToInt32("");
+                    NewHireBooking.HireID = 25;
                     //store the date using the private data member
                     NewHireBooking.HireDate = mHireDate;
                     //record the hire time
