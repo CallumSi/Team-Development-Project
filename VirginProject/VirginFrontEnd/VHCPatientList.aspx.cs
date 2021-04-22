@@ -22,8 +22,7 @@ namespace VirginFrontEnd
             Patient_ID = Convert.ToInt32(Session["Patient_ID"]);
             if (IsPostBack == false)
             {
-                //populate the list of patients
-                DisplayPatient();
+                
             }
         }
 

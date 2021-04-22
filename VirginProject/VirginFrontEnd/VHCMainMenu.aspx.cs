@@ -32,5 +32,12 @@ namespace VirginFrontEnd
             Response.Redirect("VHCPatientFirstTime.aspx");
 
         }
+
+        //Log out
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VirginHomePage.aspx");
+
+        }
     }
 }
