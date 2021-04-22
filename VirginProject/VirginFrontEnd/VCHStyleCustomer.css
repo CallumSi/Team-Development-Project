@@ -31,9 +31,20 @@ nav {
     background-color: #cc0000; /* #c3092d;  Virgin Media Original Red */
     position: fixed;
     width: 11%;
-    height: 858px;
-    top: 12%;
+    height: 865px;
+    top: 11%;
     left: 0%;
+    margin-right: 0px;
+}
+
+section {
+    background-color: #CCCCCC;
+    position: fixed;
+    width: 80%;
+    top: 15%;
+    left: 20%;
+    color: black;
+    height: 381px;
 }
 
 article {
