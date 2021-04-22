@@ -30,7 +30,7 @@ namespace VirginFrontEnd
             //display hire booking date
             txtHireDate.Text = HireBookingDate;
             //display hire booking time 
-            txtHireTime.Text = HireBookingTime.Remove(0, 1);
+            txtHireTime.Text = HireBookingTime;
         }
 
         //event handler for unload event
@@ -44,7 +44,7 @@ namespace VirginFrontEnd
         protected void btnOK_Click(object sender, EventArgs e)
         {
             //retrieve Hire Booking Time
-            int HireID= Convert.ToInt32(txtHireID.Text);
+            int HireID = Convert.ToInt32(txtHireID.Text);
             //retrieve Hire Booking Time
             int HireTime = Convert.ToInt32(txtHireTime.Text);
             //retrieve Hire Date
@@ -108,6 +108,20 @@ namespace VirginFrontEnd
             Session["StaffID"] = StaffID;
             //direct me to the staff home page
             Response.Redirect("VCHStaffDefault.aspx");
+        }
+
+        protected void btnBooking_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHHireBookingList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }

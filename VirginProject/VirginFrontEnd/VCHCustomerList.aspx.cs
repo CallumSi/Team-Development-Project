@@ -10,6 +10,10 @@ namespace VirginFrontEnd
 {
     public partial class VCHCustomerList : System.Web.UI.Page
     {
+        //variable to store the primary key with page level scope
+        Int32 CustomerID;
+        Int32 StaffID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //if this is the first time the page is displayed
@@ -172,6 +176,60 @@ namespace VirginFrontEnd
             //once selected, I will be directed to the StaffList page
             //this button is currently in place to avoid an error of null customers
             Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnStaff_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff list page
+            Response.Redirect("VCHStaffList.aspx");
+        }
+
+        protected void btnCustomer_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the customer list page
+            Response.Redirect("VCHCustomerList.aspx");
+        }
+
+        protected void btnCar_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car list page
+            Response.Redirect("VCHCarList.aspx");
+        }
+
+        protected void btnHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the car hire list page
+            Response.Redirect("VCHHireList.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
+        }
+
+        protected void btnBooking_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHHireBookingList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }
