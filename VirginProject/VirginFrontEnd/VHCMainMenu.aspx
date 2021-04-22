@@ -25,6 +25,9 @@
             <asp:Button ID="btnPatient" runat="server" CssClass="btnPatient" Text="PATIENT" OnClick="btnPatient_Click" />
             <%--BUTTON: STAFF--%>
             <asp:Button ID="btnStaff" runat="server" CssClass="btnStaff" Text="STAFF" OnClick="btnStaff_Click" />
+            <%-- BUTTON LOG OUT --%>
+            <asp:Button ID="btnLogOut" CssClass="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
+
         </nav>
 
         <%--ARTICLE SECTION--%>
