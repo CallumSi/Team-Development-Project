@@ -13,7 +13,7 @@
         </div>
 
         <header>
-            <h2> My Account
+            <h2> My Account - Edit & Delete
                 <asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" style="z-index: 1; left: 1355px; top: 40px; position: absolute; height: 35px; width: 100px;" />
             </h2> 
         </header>
@@ -47,8 +47,9 @@
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 500px; top: 515px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtPhonenumber" runat="server" style="z-index: 1; left: 500px; top: 565px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 285px; top: 605px; position: absolute" Text="[lblError]"></asp:Label>
-        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 1005px; top: 590px; position: absolute" Text="OK" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1085px; top: 590px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
+        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 1005px; top: 590px; position: absolute" Text="Save Changes" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 1005px; top: 640px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" /> 
+        <asp:Button ID="btnDeleteAccount" runat="server" style="z-index: 1; left: 1005px; top: 690px; position: absolute" Text="Delete My Account" OnClick="btnDeleteAccount_Click"/>
         </section>
     </form>
 </body>

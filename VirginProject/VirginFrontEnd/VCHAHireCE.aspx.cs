@@ -97,8 +97,8 @@ namespace VirginFrontEnd
                 //add the new car hire record
                 HireCollection.Add();
 
-                //once complete redirect the user to the customer home page
-                Response.Redirect("VCHCustomerHomeCE.aspx");
+                //redirect to hire request successfully submitted page
+                Response.Redirect("VCHHireRequestSuccessful.aspx");
             }
             else
             {

@@ -223,7 +223,7 @@ namespace VirginTestProject
             //var to store the outcome
             Boolean OK = true;
             //apply an existent body type
-            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("22/04/2021"));
+            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("23/04/2021"));
             //check that the correct number of records are found
             if (FilteredHireBooking.Count == 2)
             {
