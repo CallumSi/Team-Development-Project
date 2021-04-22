@@ -20,8 +20,11 @@ namespace VirginFrontEnd
         {
             //get the post title
             lblTitle.Text = PostTitle;
+            //get the post id to be processed 
             PostID = Convert.ToInt32(Session["PostID"]);
+            //get the post title to be processed 
             PostTitle = Convert.ToString(Session["PostTitle"]);
+            //get the customer id to be processed 
             CommentID = Convert.ToInt32(Session["CommentID"]);
             if (IsPostBack == false)
             {
@@ -45,7 +48,7 @@ namespace VirginFrontEnd
         }
         void DisplayComment()
         {
-            //create an instance of the user book
+            //create an instance of the comment book
             clsForumCommentCollection CommentBook = new clsForumCommentCollection();
             //find the record to update
             CommentBook.ThisComment.Find(CommentID);
@@ -67,7 +70,7 @@ namespace VirginFrontEnd
         }
         void Add()
         {
-            //create an instance of the post collection
+            //create an instance of the comment collection
             clsForumCommentCollection Comment = new clsForumCommentCollection();
             //validate the data on the web form
             String Error = Comment.ThisComment.Valid(txtComment.Text);
@@ -89,7 +92,7 @@ namespace VirginFrontEnd
         }
         void Update()
         {
-            //create an instance of the user book
+            //create an instance of the comment book
             clsForumCommentCollection Comment = new clsForumCommentCollection();
             //validate the data on the web form
             String Error = Comment.ThisComment.Valid(txtComment.Text);
@@ -102,7 +105,7 @@ namespace VirginFrontEnd
                 Comment.ThisComment.CommentMessage = txtComment.Text;
                 //update the record 
                 Comment.Update();
-                //Redirect back to the user list page
+                //Redirect back to the comment list page
                 Response.Redirect("ForumCommentList.aspx");
             }
             else
