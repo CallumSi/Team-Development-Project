@@ -10,6 +10,9 @@ namespace VirginFrontEnd
 {
     public partial class VPStaffDelete : System.Web.UI.Page
     {
+        ///This page uses code originated by Matthew Dean.
+        ///it is free for use by anybody so long as you give credit to the original author.
+        ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
 
         //var to store the primary ket of the record to be deleted
         Int32 Staff_ID;

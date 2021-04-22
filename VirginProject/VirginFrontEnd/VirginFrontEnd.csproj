@@ -70,6 +70,7 @@
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnNewVMCustomer.aspx" />
+    <Content Include="AnNewVPCustomer.aspx" />
     <Content Include="AnPhone.aspx" />
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
@@ -194,6 +195,7 @@
     <Content Include="VMThanks.aspx" />
     <Content Include="VMViewCart.aspx" />
     <Content Include="VPCustomerDelete.aspx" />
+    <Content Include="VPCustomerFirstTime.aspx" />
     <Content Include="VPCustomerList.aspx" />
     <Content Include="VPCustomerPhoneList.aspx" />
     <Content Include="VPCustomerWelcome.aspx" />
@@ -240,6 +242,13 @@
     </Compile>
     <Compile Include="AnNewVMCustomer.aspx.designer.cs">
       <DependentUpon>AnNewVMCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnNewVPCustomer.aspx.cs">
+      <DependentUpon>AnNewVPCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnNewVPCustomer.aspx.designer.cs">
+      <DependentUpon>AnNewVPCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnPhone.aspx.cs">
       <DependentUpon>AnPhone.aspx</DependentUpon>
@@ -1047,6 +1056,13 @@
     </Compile>
     <Compile Include="VPCustomerDelete.aspx.designer.cs">
       <DependentUpon>VPCustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VPCustomerFirstTime.aspx.cs">
+      <DependentUpon>VPCustomerFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerFirstTime.aspx.designer.cs">
+      <DependentUpon>VPCustomerFirstTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPCustomerList.aspx.cs">
       <DependentUpon>VPCustomerList.aspx</DependentUpon>

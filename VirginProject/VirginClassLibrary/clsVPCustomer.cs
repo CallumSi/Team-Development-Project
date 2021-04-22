@@ -15,7 +15,8 @@ namespace VirginClassLibrary
         String mCustomer_Postcode;
         String mCustomer_Email;
         String mCustomer_Telephone;
-        
+        Int32 mOriginalID;
+
 
         //Customer Address Property
         public string Customer_Address
@@ -164,6 +165,21 @@ namespace VirginClassLibrary
             }
         }
 
+        //OriginalID Property
+        public int OriginalID
+        {
+            get
+            {
+                //return the private data 
+                return mOriginalID;
+            }
+
+            set
+            {
+                mOriginalID = value;
+            }
+        }
+
 
 
         public bool Find(int Customer_ID)
@@ -186,6 +202,7 @@ namespace VirginClassLibrary
                 mCustomer_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Customer_Postcode"]);
                 mCustomer_Email = Convert.ToString(DB.DataTable.Rows[0]["Customer_Email"]);
                 mCustomer_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Customer_Telephone"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
                 //return that everything works
                 return true;
             }
@@ -197,9 +214,41 @@ namespace VirginClassLibrary
             }
         }
 
-       
+        public bool FindOriginal(int Customer_ID)
+        {
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the Customer_ID to search
+            DB.AddParameter("@OriginalID", Customer_ID);
+            //execute the stored procedure 
+            DB.Execute("sproc_tblVPCustomer_FilterByOriginalID");
+            //if one record is found 
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mCustomer_ID = Convert.ToInt32(DB.DataTable.Rows[0]["Customer_ID"]);
+                mCustomer_FirstName = Convert.ToString(DB.DataTable.Rows[0]["Customer_FirstName"]);
+                mCustomer_LastName = Convert.ToString(DB.DataTable.Rows[0]["Customer_LastName"]);
+                mCustomer_Street = Convert.ToString(DB.DataTable.Rows[0]["Customer_Street"]);
+                mCustomer_Address = Convert.ToString(DB.DataTable.Rows[0]["Customer_Address"]);
+                mCustomer_Postcode = Convert.ToString(DB.DataTable.Rows[0]["Customer_Postcode"]);
+                mCustomer_Email = Convert.ToString(DB.DataTable.Rows[0]["Customer_Email"]);
+                mCustomer_Telephone = Convert.ToString(DB.DataTable.Rows[0]["Customer_Telephone"]);
+                mOriginalID = Convert.ToInt32(DB.DataTable.Rows[0]["OriginalID"]);
+                //return that everything works
+                return true;
+            }
+            //if no record was found 
+            else
+            {
+                //return false indicating a problem 
+                return false;
+            }
+        }
 
-            public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
+
+
+        public string Valid(string Customer_FirstName, string Customer_LastName, string Customer_Street, string Customer_Address, string Customer_Postcode, string Customer_Email, string Customer_Telephone)
         {
             string Error = "";
 

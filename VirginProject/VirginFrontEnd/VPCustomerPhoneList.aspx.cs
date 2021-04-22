@@ -8,10 +8,14 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
     public partial class VPCustomerPhoneList : System.Web.UI.Page
     {
         Int32 PhoneID;
         Int32 Customer_ID;
+        Int32 OriginalID;
         clsVPCart MyCart = new clsVPCart();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,8 +24,8 @@ namespace VirginFrontEnd
             {
                 MyCart = new clsVPCart();
             }
-
             Customer_ID = Convert.ToInt32(Session["Customer_ID"]);
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
             //then you can display how many phones are in the cart
             lblCartCount.Text = MyCart.Products.Count.ToString();
             if (IsPostBack == false)
