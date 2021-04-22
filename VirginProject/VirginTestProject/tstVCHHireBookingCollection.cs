@@ -204,36 +204,36 @@ namespace VirginTestProject
             Assert.AreEqual(AllHireBookings.Count, FilteredHireDate.Count);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void ReportByHireDateNoneFound()
         {
             //create an instance of the data to filter
-            clsVCHHireBookingCollection FilteredHireDate = new clsVCHHireBookingCollection();
+            clsVCHHireBookingCollection FilteredHireBooking = new clsVCHHireBookingCollection();
             //apply a none existent hire booking date
-            FilteredHireDate.ReportByHireDate = Convert.ToDateTime("31/01/1999 00:00:00");
+            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("31/01/1999"));
             //test to see that both values ARE the same
-            Assert.AreEqual(0, FilteredHireDate.Count);
+            Assert.AreEqual(0, FilteredHireBooking.Count);
         }
 
         [TestMethod]
         public void ReportByHireDateDataFound()
         {
             //create an instance of the data to filter
-            clsVCHHireBookingCollection FilteredHireDate = new clsVCHHireBookingCollection();
+            clsVCHHireBookingCollection FilteredHireBooking = new clsVCHHireBookingCollection();
             //var to store the outcome
             Boolean OK = true;
             //apply an existent body type
-            FilteredHireDate.ReportByHireDate = Convert.ToDateTime("22/04/2021");
+            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("22/04/2021"));
             //check that the correct number of records are found
-            if (FilteredHireDate.Count == 2)
+            if (FilteredHireBooking.Count == 2)
             {
-                //check that the first record ID is 25
-                if (FilteredHireDate.HireBookingList[0].HireID != 25)
+                //check that the first record ID is 1
+                if (FilteredHireBooking.HireBookingList[0].HireBookingID != 1)
                 {
                     OK = false;
                 }
-                //check that the second record ID is 27
-                if (FilteredHireDate.HireBookingList[1].HireID != 27)
+                //check that the second record ID is 5
+                if (FilteredHireBooking.HireBookingList[1].HireBookingID != 5)
                 {
                     OK = false;
                 }
@@ -244,6 +244,6 @@ namespace VirginTestProject
             }
             //test to see that there are no records
             Assert.IsTrue(OK);
-        }*/
+        }
     }
 }

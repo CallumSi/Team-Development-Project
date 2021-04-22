@@ -12,20 +12,31 @@ namespace VirginFrontEnd
     {
         //variable to store the primary keywith page level scope
         Int32 StaffID;
-        Int32 HireBookingID;
+        Int32 AdminID;
+
+        //create an instance of the hire booking collection with page level scope
+        clsVCHHireBookingCollection HireBookingList;
 
         //function to handle this pages load event
         protected void Page_Load(object sender, EventArgs e)
         {
-            //get the number of the staff/admin to be processed
+            //get the number of the staff to be processed
             StaffID = Convert.ToInt32(Session["StaffID"]);
-            HireBookingID = Convert.ToInt32(Session["HireBookingID"]);
-
+            AdminID = Convert.ToInt32(Session["AdminID"]);
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
-                //update the list box
-                DisplayBookings();
+                //initialise hire booking list for specific dates
+                HireBookingList = new clsVCHHireBookingCollection(Convert.ToDateTime(txtHireDate.Text));
+
+                //display the Hire Bookings in the list
+                DisplayHireBookings();
+            }
+            //if the page has been reloaded 
+            else
+            {
+                //read in the already initialised list
+                HireBookingList = (clsVCHHireBookingCollection)Session["HireBookingList"];
             }
         }
 
@@ -34,133 +45,99 @@ namespace VirginFrontEnd
         {
             //Save the StaffID when a page unload event happens
             Session["StaffID"] = StaffID;
+            Session["HireBookingList"] = HireBookingList;
         }
 
-        void DisplayBookings()
+        void DisplayHireBookings()
         {
-            //int to store the primary key
+            //into to store the primary key
             Int32 HireBookingID;
-            //property for HireID - FK
-            Int32 HireID;
-            //property for HireDate
-            DateTime HireDate;
-
-            //create an instance of the car hire booking collection class
-            clsVCHHireBookingCollection HireBookingCollection = new clsVCHHireBookingCollection();
-            //count of records
-            Int32 RecordCount;
+            //property for HireTime
+            Int32 HireTime;
+            //property for HireDescription
+            string HireDescription;
             //index for the loop
             Int32 Index = 0;
-            //get the count of records
-            RecordCount = HireBookingCollection.Count;
-            //clear the list box
-            lstBookings.Items.Clear();
-            //while there are records to process
-            while (Index < RecordCount)
+            //clear the list of any existing entries
+            lstHireBookings.Items.Clear();
+            //loop for processing the appointments
+            while (Index < HireBookingList.Count)
             {
                 //retrieve HireBookingID
-                HireBookingID = HireBookingCollection.HireBookingList[Index].HireBookingID;
-                //retrieve HireID
-                HireID = HireBookingCollection.HireBookingList[Index].HireID;
-                //retrieve HireDate
-                HireDate = HireBookingCollection.HireBookingList[Index].HireDate;
-                //create new lstBx (list box) entry 
-                ListItem NewEntry = new ListItem("Booking ID -  " + HireBookingID + "  |  Hire ID -  " + HireID + " |  Hire Date  -  " + HireDate, HireBookingID.ToString());
-                //add the user to the list
-                lstBookings.Items.Add(NewEntry);
-                //move the indext to the next record
+                HireBookingID = HireBookingList.HireBookingList[Index].HireBookingID;
+                //retrieve HireTime 
+                HireTime = HireBookingList.HireBookingList[Index].HireTime;
+                //retrieve HireDescription
+                HireDescription = HireBookingList.HireBookingList[Index].HireDescription;
+                //create the hire booking entry
+                ListItem NewItem = new ListItem("Hire Time - " + HireTime.ToString() + ":00 " + HireDescription, HireBookingID.ToString());
+                //add the hire bookings to the list
+                lstHireBookings.Items.Add(NewItem);
+                //inc the index
                 Index++;
             }
         }
 
-        /*protected void btnApply_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            DisplayFilterHireDate(txtBxSearch.Text);
-        }
-
-        Int32 DisplayFilterHireDate(string HireDateFilter)
-        {
-            //int to store the primary key
-            Int32 HireBookingID;
-            //property for HireID - FK
-            Int32 HireID;
-            //property for HireDate
-            DateTime HireDate;
-
-            //create an instance of the car hire booking collection class
-            clsVCHHireBookingCollection HireBookingCollection = new clsVCHHireBookingCollection();
-            HireBookingCollection.ReportByHireDate(HireDateFilter);
-            //count of records
-            Int32 RecordCount;
-            //index for the loop
-            Int32 Index = 0;
-            //get the count of records
-            RecordCount = HireBookingCollection.Count;
-            //clear the list box
-            lstBookings.Items.Clear();
-            //while there are records to process
-            while (Index < RecordCount)
+            try
             {
-                //retrieve HireBookingID
-                HireBookingID = HireBookingCollection.HireBookingList[Index].HireBookingID;
-                //retrieve HireID
-                HireID = HireBookingCollection.HireBookingList[Index].HireID;
-                //retrieve HireDate
-                HireDate = HireBookingCollection.HireBookingList[Index].HireDate;
-                //create new lstBx (list box) entry 
-                ListItem NewEntry = new ListItem("Booking ID -  " + HireBookingID + "  |  Hire ID -  " + HireID + " |  Hire Date  -  " + HireDate, HireBookingID.ToString());
-                //add the user to the list
-                lstBookings.Items.Add(NewEntry);
-                //move the indext to the next record
-                Index++;
+                //initialise hire booking list for specific dates
+                HireBookingList = new clsVCHHireBookingCollection(Convert.ToDateTime(txtHireDate.Text));
+                //display the hire booking list
+                DisplayHireBookings();
             }
-            //return the count of records
-            return RecordCount;
-        }*/
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //Add the StaffID to session object 
-            Session["StaffID"] = StaffID;
-            //store -1 into the session object to indicate this is a new record
-            Session["HireBookingID"] = -1;
-            //redirect the user back to the hire booking add page
-            Response.Redirect("VCHAHireBooking.aspx");
-        }
-
-        protected void btnEdit_Click(object sender, EventArgs e)
-        {
-            //Add the StaffID to session object 
-            Session["StaffID"] = StaffID;
-            //var to store the primary key value
-            Int32 HireBookingID;
-            //if a record has been selected from the list
-            if (lstBookings.SelectedIndex != -1)
+            catch
             {
-                //retrieve intended edit records primary key
-                HireBookingID = Convert.ToInt32(lstBookings.SelectedValue);
-                //store the data in the session object
-                Session["HireBookingID"] = HireBookingID;
-                //redirect the user back to the hire booking edit page
-                Response.Redirect("VCHAHireBooking.aspx");
+                lblError.Text = "Enter a valid date.";
             }
-            else //if a user has not selected a car hire record to edit
+            if (txtHireDate.Text.Length == 0)
             {
-                //display an error
-                lblError.Text = "Please select a booking record to edit from the list";
+                lblError.Text = "The date value may not be blank, please enter a valid date..";
             }
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
+        protected void btnBook_Click(object sender, EventArgs e)
         {
+            //var to store the hire booking time
+            string HireBookingTime;
+            //var to store the hire booking date
+            string HireBookingDate;
+            //restore lblError to blank [lblError]
+            lblError.Text = "";
 
+            //check to see that an entry has been selected
+            if (lstHireBookings.SelectedIndex != -1)
+            {
+                //read in the primary key
+                HireBookingTime = lstHireBookings.SelectedValue;
+                //retrieve Hire Date 
+                HireBookingDate = txtHireDate.Text;
+
+                //if this is an available hire booking
+                if (HireBookingTime.Contains("-") == true)
+                {
+                    //Save the StaffID when a page unload event happens
+                    Session["StaffID"] = StaffID;
+                    Session["HireBookingList"] = HireBookingList;
+                    //redirect to the make booking page
+                    Response.Redirect("VCHAHireBooking.aspx?HireBookingDate" + HireBookingDate + "&HireBookingTime=" + HireBookingTime);
+                }
+
+
+                //otherwise cannot change the hire bookings (at least in this version of the system)
+                else
+                {
+                    lblError.Text = "This hire booking may not be modified";
+                }
+            }
+
+            //show an error if not
+            else
+            {
+                lblError.Text = "Select an available booking to proceed.";
+            }
         }
-
-        protected void btnBookHire_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         protected void btnStaff_Click(object sender, EventArgs e)
         {

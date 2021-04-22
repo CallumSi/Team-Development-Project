@@ -12,7 +12,6 @@ namespace VirginFrontEnd
     {
         //variable to store the primary keywith page level scope
         Int32 StaffID;
-        Int32 HireID;
         Int32 HireBookingID;
 
         //function to handle this pages load event
@@ -20,32 +19,18 @@ namespace VirginFrontEnd
         {
             //get the number of the staff/admin to be processed
             StaffID = Convert.ToInt32(Session["StaffID"]);
-            HireID = Convert.ToInt32(Session["HireID"]);
             HireBookingID = Convert.ToInt32(Session["HireBookingID"]);
 
-            //if this is the first time the page is displayed
-            if (IsPostBack == false)
-            {
-                //if this is not a new record
-                if (HireBookingID != -1)
-                {
-                    //display the current data for the record
-                    DisplayBooking();
-                }
-            }
-        }
-
-        void DisplayBooking()
-        {
-            //create an instance of the car hire collection class
-            clsVCHHireBookingCollection HireBookingCollection = new clsVCHHireBookingCollection();
-            //find the HireID for the record to be updated
-            HireBookingCollection.ThisHireBooking.Find(HireBookingID);
-            //display the data for this record
-            txtHireID.Text = HireBookingCollection.ThisHireBooking.HireID.ToString();
-            txtHireDate.Text = HireBookingCollection.ThisHireBooking.HireDate.ToString();
-            txtHireTime.Text = HireBookingCollection.ThisHireBooking.HireTime.ToString();
-            txtHireDescription.Text= HireBookingCollection.ThisHireBooking.HireDescription;
+            //vars to store the date and time
+            string HireBookingDate;
+            string HireBookingTime;
+            //get the date and time from the query string
+            HireBookingDate = Request.QueryString["HireBookingDate"];
+            HireBookingTime = Request.QueryString["HireBookingTime"];
+            //display hire booking date
+            txtHireDate.Text = HireBookingDate;
+            //display hire booking time 
+            txtHireTime.Text = HireBookingTime.Remove(0, 1);
         }
 
         //event handler for unload event
@@ -53,84 +38,28 @@ namespace VirginFrontEnd
         {
             //Save the StaffID when a page unload event happens
             Session["StaffID"] = StaffID;
-            Session["HireID"] = HireID;
             Session["HireBookingID"] = HireBookingID;
-        }
-
-        //function to add new car hire booking records
-        void Add()
-        {
-            //create an instance of the car hire collection class
-            clsVCHHireBookingCollection HireBookingCollection = new clsVCHHireBookingCollection();
-            //validate the data on the web front
-            String Error = HireBookingCollection.ThisHireBooking.Valid(txtHireDate.Text, txtHireTime.Text, txtHireDescription.Text);
-            //if the data is correct/OK then it'll be added to the object
-            if (Error == "")
-            {
-                //get the data entered by the user
-                HireBookingCollection.ThisHireBooking.HireID = Convert.ToInt32(txtHireID.Text);
-                HireBookingCollection.ThisHireBooking.HireDate = Convert.ToDateTime(txtHireDate.Text);
-                HireBookingCollection.ThisHireBooking.HireTime = Convert.ToInt32(txtHireTime.Text);
-                HireBookingCollection.ThisHireBooking.HireDescription = txtHireDescription.Text;
-                //add the new car hire record
-                HireBookingCollection.Add();
-
-                //Add the StaffID to session object 
-                Session["StaffID"] = StaffID;
-                //once complete redirect the user to the car hire booking list page
-                Response.Redirect("VCHHireBookingList.aspx");
-            }
-            else
-            {
-                //report an error
-                lblError.Text = "The inputted data is not acceptable. " + Error;
-            }
-        }
-
-        //function to update existing car hire booking records
-        void Update()
-        {
-            //create an instance of the car hire collection class
-            clsVCHHireBookingCollection HireBookingCollection = new clsVCHHireBookingCollection();
-            //validate the data on the web front
-            String Error = HireBookingCollection.ThisHireBooking.Valid(txtHireDate.Text, txtHireTime.Text, txtHireDescription.Text);
-            //if the data is correct/OK then it'll be added to the object
-            if (Error == "")
-            {
-                //find the record to update/edit
-                HireBookingCollection.ThisHireBooking.Find(HireBookingID);
-                //get the data entered by the user
-                HireBookingCollection.ThisHireBooking.HireID = Convert.ToInt32(txtHireID.Text);
-                HireBookingCollection.ThisHireBooking.HireDate = Convert.ToDateTime(txtHireDate.Text);
-                HireBookingCollection.ThisHireBooking.HireTime = Convert.ToInt32(txtHireTime.Text);
-                HireBookingCollection.ThisHireBooking.HireDescription = txtHireDescription.Text;
-                //add the new car hire record
-                HireBookingCollection.Add();
-
-                //Add the StaffID to session object 
-                Session["StaffID"] = StaffID;
-                //once complete redirect the user to the car hire booking list page
-                Response.Redirect("VCHHireBookingList.aspx");
-            }
-            else
-            {
-                //report an error
-                lblError.Text = "The inputted data is not acceptable. " + Error;
-            }
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            if (HireBookingID == -1)
-            {
-                //add the new car record
-                Add();
-            }
-            else
-            {
-                //update the car record
-                Update();
-            }
+            //retrieve Hire Booking Time
+            int HireID= Convert.ToInt32(txtHireID.Text);
+            //retrieve Hire Booking Time
+            int HireTime = Convert.ToInt32(txtHireTime.Text);
+            //retrieve Hire Date
+            DateTime HireDate = Convert.ToDateTime(txtHireDate.Text);
+            //retrieve Hire Description
+            string HireDescription = Convert.ToString(txtHireDescription.Text);
+
+            //create an instance of the hire booking collection class
+            clsVCHHireBookingCollection HireBooking = new clsVCHHireBookingCollection(HireDate);
+            //add new hire booking record
+            HireBooking.AddBooking(HireID, HireTime, HireDescription);
+            //redirect to the main page
+            //store data in session object so we can pass it to next page
+            Session["StaffID"] = StaffID;
+            Response.Redirect("VCHHireBookingList.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
