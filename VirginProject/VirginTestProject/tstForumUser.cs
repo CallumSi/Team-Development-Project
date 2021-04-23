@@ -310,8 +310,8 @@ namespace VirginTestProject
             //create some test data to pass to the method
             string UserFirstName = "";
             UserFirstName = UserFirstName.PadRight(50, 'a'); //this should fail
-            //invoke the method
-             Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
+                                                             //invoke the method
+            Error = AnUser.Valid(UserFirstName, UserLastName, UserEmail,/* UserPassword,*/ UserPhoneNumber/*, Userusername*/);
             //test to see that the test is correct
             Assert.AreNotEqual(Error, "");
 

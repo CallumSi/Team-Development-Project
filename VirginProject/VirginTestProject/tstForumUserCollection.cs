@@ -210,17 +210,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredUsers.ReportByUserFirstName("book");
+            FilteredUsers.ReportByUserFirstName("nike");
             //check that the correct number of records 
             if (FilteredUsers.Count == 2)
             {
                 //check that the correct number of records are found
-                if (FilteredUsers.UserList[0].UserID != 387)
+                if (FilteredUsers.UserList[0].UserID != 458)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 6
-                if (FilteredUsers.UserList[1].UserID != 388)
+                if (FilteredUsers.UserList[1].UserID != 509)
                 {
                     OK = false;
                 }

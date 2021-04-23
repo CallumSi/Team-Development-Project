@@ -68,7 +68,7 @@ namespace VirginTestProject
             //boolean variable to store the result of the validation
             Boolean found = false;
             //create some test data to use with the method
-            Int32 PostID = 3;
+            Int32 PostID = 11;
             //invoke the method
             found = AnPost.Find(PostID);
             //test to see that the result is correct
@@ -84,11 +84,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 PostID = 3;
+            Int32 PostID = 11;
             //invoke the method
             Found = AnPost.Find(PostID);
             //check the user id
-            if (AnPost.PostID != 3)
+            if (AnPost.PostID != 11)
             {
                 OK = false;
             }
@@ -105,11 +105,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 PostID = 3;
+            Int32 PostID = 11;
             //invoke the method
             Found = AnPost.Find(PostID);
             //check the user firstname
-            if (AnPost.PostTitle != "The webpage is rubbish!")
+            if (AnPost.PostTitle != "I love this website!!")
             {
                 OK = false;
             }
@@ -126,11 +126,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 PostID = 3;
+            Int32 PostID = 11;
             //invoke the method
             Found = AnPost.Find(PostID);
             //check the post message
-            if (AnPost.PostMessage != "This website does not help you at all.")
+            if (AnPost.PostMessage != "This website is amazing and useful :)")
             {
                 OK = false;
             }
