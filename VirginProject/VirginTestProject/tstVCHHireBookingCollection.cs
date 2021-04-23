@@ -223,17 +223,17 @@ namespace VirginTestProject
             //var to store the outcome
             Boolean OK = true;
             //apply an existent body type
-            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("23/04/2021"));
+            FilteredHireBooking.ReportByHireDate(Convert.ToDateTime("19/05/2021"));
             //check that the correct number of records are found
             if (FilteredHireBooking.Count == 2)
             {
                 //check that the first record ID is 1
-                if (FilteredHireBooking.HireBookingList[0].HireBookingID != 1)
+                if (FilteredHireBooking.HireBookingList[0].HireBookingID != 4)
                 {
                     OK = false;
                 }
                 //check that the second record ID is 5
-                if (FilteredHireBooking.HireBookingList[1].HireBookingID != 5)
+                if (FilteredHireBooking.HireBookingList[1].HireBookingID != 6)
                 {
                     OK = false;
                 }
