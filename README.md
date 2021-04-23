@@ -1,10 +1,10 @@
 # TEAM DEVELOPMENT PROJECT: PRIME UNITED
-DMU final year development project
-Welcome to the initial REPO
-Edward was here - just getting back in touch with GitHub
+DMU Final Year Team Development Project
 
-Individual Sub-Systems Include: 
+Individual Sub-systems Include: 
 - Virgin Movies - Sufiyaan Hussain 
 - Virgin Healthcare - Mathunila Nitharsan
 - Virgin Phones - Meera Varia
-- Test Pushing 
+- Virgin Forum - Abdikarim Suldan
+- Virgin Market Place - Callum Simpson
+- Virgin Car Hire - Edward Taf
