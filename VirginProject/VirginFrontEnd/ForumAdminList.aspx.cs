@@ -106,8 +106,21 @@ namespace VirginFrontEnd
 
         protected void btnApply_Click1(object sender, EventArgs e)
         {
-            //display only usernames
-            DisplayFilterAdminFirstName(txtFilterFirstName.Text);
+            Int32 RecordCount;
+            //store the string
+            string AdminFirstName = txtFilterFirstName.Text;
+            if (AdminFirstName == "")
+            {
+                //display the error message
+                lblError.Text = "Please enter a first name";
+            }
+            else
+            {
+                //record the user
+                RecordCount = DisplayFilterAdminFirstName(txtFilterFirstName.Text);
+                //display how many user have been found
+                lblError.Text = RecordCount + "Record Found";
+            }
         }
 
   
