@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <asp:Label ID="lblComment" runat="server" Style="z-index: 1;" Text="Please enter a comment message"></asp:Label>
-                    <asp:TextBox ID="txtFilterByComment" runat="server" Style="z-index: 1;"></asp:TextBox>
+                    <asp:TextBox ID="txtFilterByComment" runat="server" Style="z-index: 1;" Width="295px"></asp:TextBox>
                 </li>
                 <li>
                     <asp:Button ID="btnApply" runat="server" Style="z-index: 1;" Text="Apply" OnClick="btnApply_Click" CssClass="navButton" />

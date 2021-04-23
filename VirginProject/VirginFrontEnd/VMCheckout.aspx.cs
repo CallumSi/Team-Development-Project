@@ -6,6 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using VirginClassLibrary;
 
+///This page uses code originated by Matthew Dean.
+///it is free for use by anybody so long as you give credit to the original author.
+///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+
 namespace VirginFrontEnd
 {
     public partial class VMCheckout : System.Web.UI.Page
@@ -18,6 +22,7 @@ namespace VirginFrontEnd
             MyCart = (clsVMCart)Session["MyCart"];
             //get the CustomerID
             VMCustomerID = Convert.ToInt32(Session["VMCustomerID"]);
+            MyCart.UserNo = VMCustomerID;
 
             if (IsPostBack == false)
             {

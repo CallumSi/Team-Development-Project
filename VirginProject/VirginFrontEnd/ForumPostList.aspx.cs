@@ -21,9 +21,9 @@ namespace VirginFrontEnd
         }
         void DisplayPosts()
         {
-            //create an instance of the County Collection
+            //create an instance of the post Collection
             clsForumPostCollection posts = new clsForumPostCollection();
-            //set the data source to the list of countries in the collection
+            //set the data source to the list of post in the collection
             lstPostlistbox.DataSource = posts.PostList;
             //set the name of the primary key
             lstPostlistbox.DataValueField = "PostID";

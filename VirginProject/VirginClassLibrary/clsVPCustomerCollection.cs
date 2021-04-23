@@ -132,6 +132,7 @@ namespace VirginClassLibrary
             DB.AddParameter("@Customer_Postcode", mThisCustomer.Customer_Postcode);
             DB.AddParameter("@Customer_Email", mThisCustomer.Customer_Email);
             DB.AddParameter("@Customer_Telephone", mThisCustomer.Customer_Telephone);
+            DB.AddParameter("@OriginalID", mThisCustomer.OriginalID);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVPCustomer_Insert");
 

@@ -70,6 +70,7 @@
     <Content Include="AnMarketplaceListing.aspx" />
     <Content Include="AnMarketplaceUser.aspx" />
     <Content Include="AnNewVMCustomer.aspx" />
+    <Content Include="AnNewVPCustomer.aspx" />
     <Content Include="AnPhone.aspx" />
     <Content Include="AnVirginUser.aspx" />
     <Content Include="AnVirginUserDelete.aspx" />
@@ -119,17 +120,22 @@
     <Content Include="VCHACustomer.aspx" />
     <Content Include="VCHACustomerCE.aspx" />
     <Content Include="VCHAHire.aspx" />
+    <Content Include="VCHAHireBooking.aspx" />
     <Content Include="VCHAHireCE.aspx" />
     <Content Include="VCHAStaff.aspx" />
     <Content Include="VCHCarDelete.aspx" />
     <Content Include="VCHCarList.aspx" />
     <Content Include="VCHCustomerDelete.aspx" />
     <Content Include="VCHCustomerDefault.aspx" />
+    <Content Include="VCHCustomerDeleteCE.aspx" />
+    <Content Include="VCHCustomerDeleteNoticeCE.aspx" />
     <Content Include="VCHCustomerHomeCE.aspx" />
     <Content Include="VCHCustomerList.aspx" />
     <Content Include="MarketplaceUserProfile.aspx" />
     <Content Include="MarketPlaceUserYourListings.aspx" />
     <Content Include="VCHCustomerOrStaffSelection.aspx" />
+    <Content Include="VCHHireBookingList.aspx" />
+    <Content Include="VCHHireRequestSuccessful.aspx" />
     <Content Include="VCHStaffDefault.aspx" />
     <Content Include="VCHHireDelete.aspx" />
     <Content Include="VCHHireList.aspx" />
@@ -142,7 +148,9 @@
     <Content Include="VHCAppointmentList.aspx" />
     <Content Include="VHCPatient.css" />
     <Content Include="VHCPatientAdd.aspx" />
+    <Content Include="VHCPatientAddFirstTime.aspx" />
     <Content Include="VHCPatientDelete.aspx" />
+    <Content Include="VHCPatientFirstTime.aspx" />
     <Content Include="VHCPatientList.aspx" />
     <Content Include="VHCStaff.aspx" />
     <Content Include="VHCHospital.css" />
@@ -190,11 +198,12 @@
     <Content Include="VMThanks.aspx" />
     <Content Include="VMViewCart.aspx" />
     <Content Include="VPCustomerDelete.aspx" />
+    <Content Include="VPCustomerFirstTime.aspx" />
     <Content Include="VPCustomerList.aspx" />
     <Content Include="VPCustomerPhoneList.aspx" />
     <Content Include="VPCustomerWelcome.aspx" />
-    <Content Include="VPDefault.aspx" />
     <Content Include="VPDeliveryList.aspx" />
+    <Content Include="VPhoneStyleSheet.css" />
     <Content Include="VPPayment.aspx" />
     <Content Include="VPPhoneDelete.aspx" />
     <Content Include="VPPhoneList.aspx" />
@@ -236,6 +245,13 @@
     </Compile>
     <Compile Include="AnNewVMCustomer.aspx.designer.cs">
       <DependentUpon>AnNewVMCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnNewVPCustomer.aspx.cs">
+      <DependentUpon>AnNewVPCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnNewVPCustomer.aspx.designer.cs">
+      <DependentUpon>AnNewVPCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnPhone.aspx.cs">
       <DependentUpon>AnPhone.aspx</DependentUpon>
@@ -596,6 +612,13 @@
     <Compile Include="VCHAHire.aspx.designer.cs">
       <DependentUpon>VCHAHire.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VCHAHireBooking.aspx.cs">
+      <DependentUpon>VCHAHireBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHAHireBooking.aspx.designer.cs">
+      <DependentUpon>VCHAHireBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VCHAHireCE.aspx.cs">
       <DependentUpon>VCHAHireCE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -638,6 +661,20 @@
     <Compile Include="VCHCustomerDefault.aspx.designer.cs">
       <DependentUpon>VCHCustomerDefault.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VCHCustomerDeleteCE.aspx.cs">
+      <DependentUpon>VCHCustomerDeleteCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerDeleteCE.aspx.designer.cs">
+      <DependentUpon>VCHCustomerDeleteCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHCustomerDeleteNoticeCE.aspx.cs">
+      <DependentUpon>VCHCustomerDeleteNoticeCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHCustomerDeleteNoticeCE.aspx.designer.cs">
+      <DependentUpon>VCHCustomerDeleteNoticeCE.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VCHCustomerHomeCE.aspx.cs">
       <DependentUpon>VCHCustomerHomeCE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -658,6 +695,20 @@
     </Compile>
     <Compile Include="VCHCustomerOrStaffSelection.aspx.designer.cs">
       <DependentUpon>VCHCustomerOrStaffSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHHireBookingList.aspx.cs">
+      <DependentUpon>VCHHireBookingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHHireBookingList.aspx.designer.cs">
+      <DependentUpon>VCHHireBookingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VCHHireRequestSuccessful.aspx.cs">
+      <DependentUpon>VCHHireRequestSuccessful.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VCHHireRequestSuccessful.aspx.designer.cs">
+      <DependentUpon>VCHHireRequestSuccessful.aspx</DependentUpon>
     </Compile>
     <Compile Include="VCHStaffDefault.aspx.cs">
       <DependentUpon>VCHStaffDefault.aspx</DependentUpon>
@@ -722,12 +773,26 @@
     <Compile Include="VHCPatientAdd.aspx.designer.cs">
       <DependentUpon>VHCPatientAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VHCPatientAddFirstTime.aspx.cs">
+      <DependentUpon>VHCPatientAddFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientAddFirstTime.aspx.designer.cs">
+      <DependentUpon>VHCPatientAddFirstTime.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VHCPatientDelete.aspx.cs">
       <DependentUpon>VHCPatientDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VHCPatientDelete.aspx.designer.cs">
       <DependentUpon>VHCPatientDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VHCPatientFirstTime.aspx.cs">
+      <DependentUpon>VHCPatientFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VHCPatientFirstTime.aspx.designer.cs">
+      <DependentUpon>VHCPatientFirstTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="VHCPatientList.aspx.cs">
       <DependentUpon>VHCPatientList.aspx</DependentUpon>
@@ -1016,6 +1081,13 @@
     <Compile Include="VPCustomerDelete.aspx.designer.cs">
       <DependentUpon>VPCustomerDelete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VPCustomerFirstTime.aspx.cs">
+      <DependentUpon>VPCustomerFirstTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VPCustomerFirstTime.aspx.designer.cs">
+      <DependentUpon>VPCustomerFirstTime.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VPCustomerList.aspx.cs">
       <DependentUpon>VPCustomerList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1036,13 +1108,6 @@
     </Compile>
     <Compile Include="VPCustomerWelcome.aspx.designer.cs">
       <DependentUpon>VPCustomerWelcome.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VPDefault.aspx.cs">
-      <DependentUpon>VPDefault.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VPDefault.aspx.designer.cs">
-      <DependentUpon>VPDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="VPDeliveryList.aspx.cs">
       <DependentUpon>VPDeliveryList.aspx</DependentUpon>

@@ -8,6 +8,9 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
     public partial class VPViewCart : System.Web.UI.Page
     {
         //varible to store the customer id
@@ -25,6 +28,7 @@ namespace VirginFrontEnd
             MyCart = (clsVPCart)Session["MyCart"];
             //display the cart contents
             DisplayCart();
+            
         }
 
         protected void Page_UnLoad(object sender, EventArgs e)
@@ -97,7 +101,16 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            //send the customer back to the main phone list page
+            Session["Customer_ID"] = Customer_ID;
             Response.Redirect("VPCustomerPhoneList.aspx");
+        }
+
+        protected void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            //send the customer back to the main phone list page
+            Session["Customer_ID"] = Customer_ID;
+            Response.Redirect("AnVPEditCustomer.aspx");
         }
     }
 }

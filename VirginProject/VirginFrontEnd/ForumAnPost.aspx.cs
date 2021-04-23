@@ -31,7 +31,7 @@ namespace VirginFrontEnd
         }
         void DisplayPost()
         {
-            //create an instance of the user book
+            //create an instance of the Post book
             clsForumPostCollection PostBook = new clsForumPostCollection();
             //find the record to update
             PostBook.ThisPost.Find(PostID);
@@ -82,7 +82,7 @@ namespace VirginFrontEnd
         //function for updating records
         void Update()
         {
-            //create an instance of the user book
+            //create an instance of the Post book
             clsForumPostCollection PostBook = new clsForumPostCollection();
             //validate the data on the web form
             String Error = PostBook.ThisPost.Valid(txtTitle.Text, txtMessage.Text);
@@ -91,12 +91,12 @@ namespace VirginFrontEnd
             {
                 //find the record to update
                 PostBook.ThisPost.Find(PostID);
-                //get the data entered by the user
+                //get the data entered by the Post
                 PostBook.ThisPost.PostTitle = txtTitle.Text;
                 PostBook.ThisPost.PostMessage = txtMessage.Text;
                 //update the record 
                 PostBook.Update();
-                //Redirect back to the user list page
+                //Redirect back to the Post list page
                 Response.Redirect("ForumPostList.aspx");
             }
             else
@@ -108,7 +108,7 @@ namespace VirginFrontEnd
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            //Redirect back to the user list page
+            //Redirect back to the Post list page
             Response.Redirect("ForumPostList.aspx");
         }
     }

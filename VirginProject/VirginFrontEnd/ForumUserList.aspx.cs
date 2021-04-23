@@ -10,24 +10,27 @@ namespace VirginFrontEnd
 {
     public partial class ForumUserList : System.Web.UI.Page
     {
+        //declare admin id
         Int32 AdminID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //get the number of the admin to be processed 
             AdminID = Convert.ToInt32(Session["AdminID"]);
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
                 //update the list box
                 DisplayUser();
+                //display first name
                 DisplayFirstName();
             }
 
         }
         void DisplayUser()
         {
-            //create an instance of the County Collection
+            //create an instance of the user Collection
             clsForumUserCollection Users = new clsForumUserCollection();
-            //set the data source to the list of countries in the collection
+            //set the data source to the list of user in the collection
             lstUserListBox.DataSource = Users.UserList;
             //set the name of the primary key
             lstUserListBox.DataValueField = "UserID";
@@ -40,7 +43,7 @@ namespace VirginFrontEnd
         }
         void DisplayFirstName()
         {
-            //create an instance of the County Collection
+            //create an instance of the user Collection
             clsForumAdminCollection Admin = new clsForumAdminCollection();
             //find First name
             Admin.ThisAdmin.Find(AdminID);
@@ -98,18 +101,17 @@ namespace VirginFrontEnd
             //if the text box is blank
             if (UserFirstName=="")
             {
+                //display the error message
                 lblError.Text = "Please enter a first name";
             }
             else
             {
+                //record the user
                 RecordCount = DisplayFilterUserFirstName(txtFilterbyuserfirstname.Text);
+                //display how many user have been found
                 lblError.Text = RecordCount + "Record Found";
             }
-          
         }
-
-       
-
         protected void btnAdd_Click1(object sender, EventArgs e)
         {
             //store -1 into the session object to indicate this is a new record
@@ -168,11 +170,13 @@ namespace VirginFrontEnd
 
         protected void btnSignOut_Click(object sender, EventArgs e)
         {
+            //redirect to log in
             Response.Redirect("VirginLogIn.aspx");
         }
 
         protected void btnForumPost_Click(object sender, EventArgs e)
         {
+            //redirect to post list
             Response.Redirect("ForumPostList.aspx");
         }
     }

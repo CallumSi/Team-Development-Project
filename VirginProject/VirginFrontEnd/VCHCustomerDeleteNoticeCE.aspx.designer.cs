@@ -10,7 +10,7 @@
 namespace VirginFrontEnd {
     
     
-    public partial class VPDefault {
+    public partial class VCHCustomerDeleteNoticeCE {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,57 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnStaff control.
+        /// btnLogOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnStaff;
+        protected global::System.Web.UI.WebControls.Button btnLogOut;
         
         /// <summary>
-        /// btnCustomer control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
+        protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// btnPhone control.
+        /// btnAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPhone;
+        protected global::System.Web.UI.WebControls.Button btnAccount;
+        
+        /// <summary>
+        /// lblDeletNotice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletNotice;
+        
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

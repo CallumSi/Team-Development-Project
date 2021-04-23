@@ -261,7 +261,7 @@ footer {
 }
 
 /* List Patient Buttons */
-.btnDisplayAllPatients, .btnPatientApplyFilter, .btnTotalRecords, .EditPatient, .DeletePatient {
+.btnDisplayAllPatients, .btnPatientApplyFilter, .btnTotalRecords, .EditPatient, .DeletePatient, .btnContinue, .btnSignUp {
     z-index: 1;
     width: 250px;
     height: 70px;
@@ -271,13 +271,29 @@ footer {
 }
 
 /* Hover Effect */
-.btnDisplayAllPatients:hover, .btnPatientApplyFilter:hover, .btnTotalRecords:hover, .EditPatient:hover, .DeletePatient:hover{
+.btnDisplayAllPatients:hover, .btnPatientApplyFilter:hover, .btnTotalRecords:hover, .EditPatient:hover, .DeletePatient:hover, .btnContinue:hover, .btnSignUp:hover{
     background-color: #27183D;
     color: white;
 }
 
+/*Sign Up Button*/
+.btnSignUp{
+    position:absolute; 
+    top:300px; 
+    left:700px;
+    width:300px;
+
+}
+
+/*Continue*/
+.btnContinue {
+    position: absolute;
+    top: 300px;
+    left: 1200px;
+}
+
 /* Submit Button */
-.btnSubmit {
+.BtnSubmit, .btnSubmit {
     position: fixed;
     top: 750px;
     left: 1500px;
@@ -289,14 +305,19 @@ footer {
     transition-duration: 0.5s;
 }
 
+.btnSubmit {
+    top: 620px;
+    left: 1500px;
+}
+
 /* Submit Hover Effect */
-.btnSubmit:hover {
+.BtnSubmit:hover, .btnSubmit:hover {
     background-color: darkgreen;
     color: white;
 }
 
 /* Close Button */
-.btnClose {
+.BtnClose, .btnClose {
     position: fixed;
     top: 109px;
     left: 1823px;
@@ -310,7 +331,7 @@ footer {
 }
 
 /* Close Hover Button */
-.btnClose:hover {
+.BtnClose:hover, .btnClose:Hover {
     background-color: #cc0000;
     color: white;
 }

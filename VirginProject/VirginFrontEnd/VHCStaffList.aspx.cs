@@ -22,8 +22,7 @@ namespace VirginFrontEnd
             Staff_ID = Convert.ToInt32(Session["Staff_ID"]);
             if (IsPostBack == false)
             {
-                //populate the list of staff
-                DisplayStaff();
+                
             }
         }
 

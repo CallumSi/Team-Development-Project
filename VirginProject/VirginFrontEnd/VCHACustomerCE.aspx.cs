@@ -160,6 +160,37 @@ namespace VirginFrontEnd
             //redirect the user to the customer default page, without having added or edited their customer record
             Response.Redirect("VCHCustomerDefault.aspx");
             Session["UserID"] = UserID;
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+        }
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //redirect the customer to the customer home page
+            Response.Redirect("VCHCustomerHomeCE.aspx");
+        }
+
+        protected void btnAccount_Click(object sender, EventArgs e)
+        {
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //redirect the customers account page 
+            Response.Redirect("VCHACustomerCE.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //direct me to the delete account page
+            Response.Redirect("VCHCustomerDeleteNoticeCE.aspx");
         }
     }
 }

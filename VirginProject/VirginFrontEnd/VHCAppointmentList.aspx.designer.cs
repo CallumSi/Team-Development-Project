@@ -31,6 +31,24 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblWelcomeFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWelcomeFirstName;
+        
+        /// <summary>
+        /// lblWelcome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWelcome;
+        
+        /// <summary>
         /// lstAppointment control.
         /// </summary>
         /// <remarks>
@@ -49,22 +67,22 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// btnListClose control.
+        /// BtnListClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListClose;
+        protected global::System.Web.UI.WebControls.Button BtnListClose;
         
         /// <summary>
-        /// btnAppointmentBook control.
+        /// BtnAppointmentBook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAppointmentBook;
+        protected global::System.Web.UI.WebControls.Button BtnAppointmentBook;
         
         /// <summary>
         /// lblAppointmentDate control.
@@ -85,12 +103,12 @@ namespace VirginFrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtAppointmentDate;
         
         /// <summary>
-        /// btnAppointmentSearch control.
+        /// BtnAppointmentSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAppointmentSearch;
+        protected global::System.Web.UI.WebControls.Button BtnAppointmentSearch;
     }
 }

@@ -8,10 +8,17 @@ using VirginClassLibrary;
 
 namespace VirginFrontEnd
 {
+    ///This page uses code originated by Matthew Dean.
+    ///it is free for use by anybody so long as you give credit to the original author.
+    ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
+
     public partial class VPStaffList : System.Web.UI.Page
     {
+        Int32 Staff_ID;
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
+            //get the Staff ID
+            Staff_ID = Convert.ToInt32(Session["Staff_ID"]);
             //the first time the page is displayed 
             if (IsPostBack == false)
             {
@@ -158,5 +165,11 @@ namespace VirginFrontEnd
                 //redirect to log out page
                 Response.Redirect("VirginLogin.aspx");
             }
+
+        protected void btnStaffList_Click(object sender, EventArgs e)
+        {
+            //redirect to staff list
+            Response.Redirect("VPStaffList.aspx");
         }
+    }
     }

@@ -74,6 +74,8 @@ namespace VirginClassLibrary
             DB.AddParameter("@Patient_Password", mThisPatient.Patient_Password);
             DB.AddParameter("@Patient_Telephone", mThisPatient.Patient_Telephone);
             DB.AddParameter("@Patient_Status", mThisPatient.Patient_Status);
+            DB.AddParameter("@OriginalID", mThisPatient.OriginalID);
+
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblVHCPatient_Insert");
         }

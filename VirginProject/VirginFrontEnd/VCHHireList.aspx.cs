@@ -12,6 +12,7 @@ namespace VirginFrontEnd
     {
         //variable to store the primary keywith page level scope
         Int32 StaffID;
+        Int32 HireBookingID;
 
         //function to handle this pages load event
         protected void Page_Load(object sender, EventArgs e)
@@ -213,6 +214,30 @@ namespace VirginFrontEnd
             } 
         }
 
+        protected void btnBookHire_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //var to store the primary key value
+            Int32 HireID;
+            //if a record has been selected from the list
+            if (lstHires.SelectedIndex != -1)
+            {
+                //retrieve intended delete records primary key
+                HireID = Convert.ToInt32(lstHires.SelectedValue);
+                //store the data in the session object
+                Session["HireID"] = HireID;
+                Session["HireBookingID"] = -1;
+                //redirect the booking page
+                Response.Redirect("VCHAHireBooking.aspx");
+            }
+            else //if a user has not selected a car hire record to book
+            {
+                //display an error
+                lblError.Text = "Please select a Hire record to Book.";
+            }
+        }
+
         protected void btnStaff_Click(object sender, EventArgs e)
         {
             //Add the StaffID to session object 
@@ -252,5 +277,20 @@ namespace VirginFrontEnd
             //direct me to the staff home page
             Response.Redirect("VCHStaffDefault.aspx");
         }
+
+        protected void btnBooking_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHHireBookingList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
+        }
+
     }
 }

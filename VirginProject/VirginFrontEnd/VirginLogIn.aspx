@@ -35,9 +35,6 @@
             <asp:Label ID="lblErrorMessage" runat="server" CssClass="lblErrorMessage"></asp:Label>
             <%--BUTTON: FORUM ADMIN--%>
             <asp:Button ID="btnForumAdmin" runat="server"  CssClass="btnForumAdmin" OnClick="btnForumAdmin_Click" Text="ACCESS ADMIN" />
-             <%--LABEL: OTHER--%>
-            <asp:Label ID="lblOther" runat="server" CssClass="lblOther" Text="ADMINS"></asp:Label>
-
         </article>
 
         <footer>

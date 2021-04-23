@@ -266,26 +266,6 @@ namespace VirginClassLibrary
                 return "The hire location entered is too short. Please select an appropriate hire location from the listed options.";
             }
 
-            //////////////////////////////////////////////////////////////////////////////////////////////////
-            /*//if the HirePostCode length is blank
-            if (HirePostCode.Length == 0)
-            {
-                //return the following error message
-                return "The postcode may not be blank. Please enter a postcode.";
-            }
-            //if the HirePostCode length is more than 10 characters
-            if (HirePostCode.Length > 10)
-            {
-                //return the following error message
-                return "The postcode entered holds too many characters. Please enter a shorter postcode.";
-            }
-            //if the HirePostCode length is less than 5 characters 
-            if (HirePostCode.Length < 5)
-            {
-                //return the following error message
-                return "The postcode entered is too short. Please enter a longer postcode.";
-            }*/
-
             ////////////////////////////////////////////////////////////////////////////////////////////////// 
             //if the Hire Status length is blank
             if (HireStatus.Length == 0)
@@ -297,13 +277,13 @@ namespace VirginClassLibrary
             if (HireStatus.Length > 20)
             {
                 //return the following error message
-                return "The Hire Status invalid. Please select an appropriate Hire Status.";
+                return "The Hire Status is invalid. Please select an appropriate Hire Status.";
             }
             //if the Hire Status length is less than 8 characters 
             if (HireStatus.Length < 8)
             {
                 //return the following error message
-                return "The Hire Status invalid. Please select an appropriate Hire Status.";
+                return "The Hire Status is invalid. Please select an appropriate Hire Status.";
             }
 
             return Error;

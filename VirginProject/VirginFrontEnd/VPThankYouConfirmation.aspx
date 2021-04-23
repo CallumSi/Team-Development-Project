@@ -4,15 +4,34 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Virgin Media Confirmation</title>
+     <link href="VPhoneStyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Label ID="lblThankYou" runat="server" Font-Bold="True" Font-Size="XX-Large" style="z-index: 1; left: 456px; top: 298px; position: absolute; height: 84px; width: 373px" Text="Thank you for your order"></asp:Label>
-        <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" style="z-index: 1; left: 99px; top: 112px; position: absolute; height: 69px; width: 158px" Text="Home" />
-        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" style="z-index: 1; left: 99px; top: 252px; position: absolute; height: 76px; width: 153px" Text="Log Out" />
+
+        <header> 
+                <h2>
+                    Virgin Media Confirmation
+                </h2>
+        </header>
+        <asp:Label ID="lblThankYou" runat="server" Font-Bold="True" Font-Size="X-Large" style="z-index: 1; left: 773px; top: 336px; position: absolute; height: 39px; width: 296px" Text="Thank you for your order" ForeColor="Black"></asp:Label>
+
+
+        <nav>
+        <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" style="z-index: 1; left: 58px; top: 27px; position: absolute; height: 77px; width: 172px" Text="Home" Font-Bold="True" ForeColor="Black" />
+        <asp:Button ID="btnLogOut" runat="server" OnClick="btnLogOut_Click" style="z-index: 1; left: 58px; top: 150px; position: absolute; height: 77px; width: 172px" Text="Log Out" Font-Bold="True" ForeColor="Black" />
+        </nav>
+   
     </form>
+
+    <footer>
+            <div id="FooterText">
+                © 2021 Virgin Media | All Rights Reserved
+                </div>
+    
+        </footer>
 </body>
 </html>

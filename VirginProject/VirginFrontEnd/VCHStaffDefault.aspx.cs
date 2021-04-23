@@ -57,5 +57,27 @@ namespace VirginFrontEnd
             //direct me to the car hire list page
             Response.Redirect("VCHHireList.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHStaffDefault.aspx");
+        }
+
+        protected void btnBooking_Click(object sender, EventArgs e)
+        {
+            //Add the StaffID to session object 
+            Session["StaffID"] = StaffID;
+            //direct me to the staff home page
+            Response.Redirect("VCHHireBookingList.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
+        }
     }
 }

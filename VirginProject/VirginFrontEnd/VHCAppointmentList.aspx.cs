@@ -15,11 +15,16 @@ namespace VirginFrontEnd
   
     public partial class VHCAppointmentList : System.Web.UI.Page
     {
+        Int32 Patient_ID;
+        Int32 OriginalID;
+
         //create an instance of the appointment collection with page level scope
         clsVHCAppointmentCollection AppointmentList;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Patient_ID = Convert.ToInt32(Session["Patient_ID"]);
+            OriginalID = Convert.ToInt32(Session["OriginalID"]);
             //if this is the first time the page has been displayed
             if (IsPostBack == false)
             {
@@ -27,6 +32,8 @@ namespace VirginFrontEnd
                 AppointmentList = new clsVHCAppointmentCollection(Convert.ToDateTime(txtAppointmentDate.Text));
                 //display the appointments in the list
                 DisplayAppointments();
+                //indicate the Patients Firstname
+                DisplayPatientData();
             }
 
             //if this is a re-load of the page
@@ -36,6 +43,19 @@ namespace VirginFrontEnd
                 AppointmentList = (clsVHCAppointmentCollection)Session["AppointmentList"];
             }
         }
+
+        void DisplayPatientData ()
+        {
+            {
+                //create an instance of the patient collection class
+                clsVHCPatientCollection SomePatient = new clsVHCPatientCollection();
+                //find the patient to update
+                SomePatient.ThisPatient.Find(Patient_ID);
+                //display the data for this record
+                lblWelcomeFirstName.Text = SomePatient.ThisPatient.Patient_Firstname;
+            }
+        }
+
         void DisplayAppointments()
         {
             //function displays the list of appointments in the list box
@@ -74,8 +94,8 @@ namespace VirginFrontEnd
             //store the appointments list in the session object
             Session["AppointmentList"] = AppointmentList;
         }
-
-        protected void btnAppointmentSearch_Click(object sender, EventArgs e)
+        
+        protected void BtnAppointmentSearch_Click(object sender, EventArgs e)
         {
             try
             { //reinitialise the list of appointments with the new date
@@ -92,12 +112,12 @@ namespace VirginFrontEnd
             if (txtAppointmentDate.Text.Length == 0)
             {
                 lblError.Text = "⚠️ DATE SEARCH CANNOT BE BLANK !";
-              
+
             }
 
         }
 
-        protected void btnAppointmentBook_Click(object sender, EventArgs e)
+        protected void BtnAppointmentBook_Click(object sender, EventArgs e)
         {
             //var to store the booking time
             string BookingTime;
@@ -136,9 +156,10 @@ namespace VirginFrontEnd
             }
         }
 
-        //Close Button
-        protected void btnListClose_Click(object sender, EventArgs e)
+        protected void BtnListClose_Click(object sender, EventArgs e)
         {
+            //store data in session object so we can pass it to next page
+            Session["Patient_ID"] = Patient_ID;
             Response.Redirect("VHCMainMenu.aspx");
         }
     }

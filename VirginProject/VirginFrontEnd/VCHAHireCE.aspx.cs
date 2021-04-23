@@ -97,8 +97,8 @@ namespace VirginFrontEnd
                 //add the new car hire record
                 HireCollection.Add();
 
-                //once complete redirect the user to the customer home page
-                Response.Redirect("VCHCustomerHomeCE.aspx");
+                //redirect to hire request successfully submitted page
+                Response.Redirect("VCHHireRequestSuccessful.aspx");
             }
             else
             {
@@ -112,6 +112,28 @@ namespace VirginFrontEnd
             //redirect the user to the customer default page, without having hired a car
             Response.Redirect("VCHCustomerHomeCE.aspx");
             Session["CustomerID"] = CustomerID;
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //redirect the customer to the customer home page
+            Response.Redirect("VCHCustomerHomeCE.aspx");
+        }
+
+        protected void btnAccount_Click(object sender, EventArgs e)
+        {
+            //Add the CustomerID to session object 
+            Session["CustomerID"] = CustomerID;
+            //redirect the customers account page 
+            Response.Redirect("VCHACustomerCE.aspx");
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            //direct me to the log in page
+            Response.Redirect("VirginLogIn.aspx");
         }
     }
 }

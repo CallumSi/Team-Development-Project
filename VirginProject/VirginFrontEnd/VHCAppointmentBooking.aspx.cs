@@ -14,8 +14,12 @@ namespace VirginFrontEnd
 
     public partial class VHCAppointmentBooking : System.Web.UI.Page
     {
+        //variable Patient_ID from session obect
+        Int32 Patient_ID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Patient_ID = Convert.ToInt32(Session["Patient_ID"]);
+
             //vars to store the date and time
             string BookingDate;
             string BookingTime;
@@ -41,11 +45,15 @@ namespace VirginFrontEnd
             //add the new appointment
             Appointment.AddBooking(Appointment_Time, Appointment_Description);
             //redirect to the main page
+            //store data in session object so we can pass it to next page
+            Session["Patient_ID"] = Patient_ID;
             Response.Redirect("VHCAppointmentList.aspx");
         }
 
         protected void btnClose_Click(object sender, EventArgs e)
         {
+            //store data in session object so we can pass it to next page
+            Session["Patient_ID"] = Patient_ID;
             //redirect to the main page
             Response.Redirect("VHCAppointmentList.aspx");
 

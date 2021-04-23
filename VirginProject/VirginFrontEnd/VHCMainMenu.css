@@ -126,6 +126,24 @@ img {
     left: 1370px;
 }
 
+/*Log Out */
+.btnLogOut {
+    position: fixed;
+    z-index: 1;
+    width: 200px;
+    height: 50px;
+    font-size: 20pt;
+    border-radius: 12px;
+    transition-duration: 0.5s;
+    top: 120px;
+    left: 1650px;
+}
+
+.btnLogOut:hover {
+    background-color: darkred;
+    color: white;
+}
+
 /* OptionMessage */
 #OptionMessage {
     position: fixed;

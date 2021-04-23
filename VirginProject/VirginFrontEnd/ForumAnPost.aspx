@@ -20,12 +20,12 @@
              
                 <li>
                      <asp:Label ID="lblTitle" runat="server" style="z-index: 1;" Text="Title"></asp:Label>
-                     <asp:TextBox ID="txtTitle" runat="server" style="z-index: 1; "></asp:TextBox>
+                     <asp:TextBox ID="txtTitle" runat="server" style="z-index: 1; " Height="36px" Width="338px"></asp:TextBox>
                </li>
                <li> 
                      <asp:Label ID="lblMessage" runat="server" style="z-index: 1; " Text="Message"></asp:Label>
 
-                     <asp:TextBox ID="txtMessage" runat="server" style="z-index: 1; " Height="132px" Width="290px" ></asp:TextBox>
+                     <asp:TextBox ID="txtMessage" runat="server" style="z-index: 1; " Height="172px" Width="356px" ></asp:TextBox>
                </li>
                 <li>
                      <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1;" Text="OK" CssClass="navButton" />
