@@ -187,7 +187,7 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredPosts.ReportByPostTitle("test");
+            FilteredPosts.ReportByPostTitle("The best forum ever!");
             //check that the correct number of records 
             if (FilteredPosts.Count == 2)
             {

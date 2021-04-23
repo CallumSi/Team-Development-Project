@@ -179,7 +179,7 @@ namespace VirginTestProject
 
         }
         [TestMethod]
-        public void ReportByAdminUsernameMethodOK()
+        public void ReportByAdminFirstNameMethodOK()
         {
             //create an instance of the class we want to create
             clsForumAdminCollection AllAdmins = new clsForumAdminCollection();
@@ -191,7 +191,7 @@ namespace VirginTestProject
             Assert.AreEqual(AllAdmins.Count, FilteredAdmins.Count);
         }
         [TestMethod]
-        public void ReportByAdminUsernameFound()
+        public void ReportByAdminFirstNameFound()
         {
             //create an instance of the filtered data
             clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
@@ -201,24 +201,24 @@ namespace VirginTestProject
             Assert.AreEqual(0, FilteredAdmins.Count);
         }
         [TestMethod]
-        public void ReportByAdminUserNameTestDataFound()
+        public void ReportByAdminFirstNameTestDataFound()
         {
             //create an instance of filtered data
             clsForumAdminCollection FilteredAdmins = new clsForumAdminCollection();
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredAdmins.ReportByAdminFirstName("Jake");
+            FilteredAdmins.ReportByAdminFirstName("max");
             //check that the correct number of records 
             if (FilteredAdmins.Count == 2)
             {
                 //check that the correct number of records are found
-                if (FilteredAdmins.AdminList[0].AdminID != 5)
+                if (FilteredAdmins.AdminList[0].AdminID != 554)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 6
-                if (FilteredAdmins.AdminList[1].AdminID != 6)
+                if (FilteredAdmins.AdminList[1].AdminID != 556)
                 {
                     OK = false;
                 }

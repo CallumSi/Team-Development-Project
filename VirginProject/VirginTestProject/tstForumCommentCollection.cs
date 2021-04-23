@@ -151,17 +151,17 @@ namespace VirginTestProject
             //var to store outcome
             Boolean OK = true;
             //apply a username that doesn't exist
-            FilteredComments.ReportByCommentMessage("GoodBye");
+            FilteredComments.ReportByCommentMessage("Me too!!");
             //check that the correct number of records 
             if (FilteredComments.Count == 2)
             {
                 //check that the correct number of records are found
-                if (FilteredComments.CommentList[0].CommentID != 26)
+                if (FilteredComments.CommentList[0].CommentID != 5)
                 {
                     OK = false;
                 }
                 //check that the first record is ID 7
-                if (FilteredComments.CommentList[1].CommentID != 27)
+                if (FilteredComments.CommentList[1].CommentID != 9)
                 {
                     OK = false;
                 }

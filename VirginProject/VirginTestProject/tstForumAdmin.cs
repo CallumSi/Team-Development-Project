@@ -113,7 +113,7 @@ namespace VirginTestProject
             //boolean variable to store the result of the validation
             Boolean found = false;
             //create some test data to use with the method
-            Int32 AdminID = 2;
+            Int32 AdminID = 491;
             //invoke the method
             found = AAdmin.Find(AdminID);
             //test to see that the result is correct
@@ -129,11 +129,11 @@ namespace VirginTestProject
             //boolean variable to record if the data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AdminID = 2;
+            Int32 AdminID = 491;
             //invoke the method 
             Found = AAdmin.Find(AdminID);
             //check the Admin ID 
-            if (AAdmin.AdminID != 2)
+            if (AAdmin.AdminID != 491)
             {
                 OK = false;
             }
@@ -151,11 +151,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AdminID = 2;
+            Int32 AdminID = 491;
             //invoke the method
             Found = AnAdmin.Find(AdminID);
             //check the Admin id
-            if (AnAdmin.AdminFirstName != "Taf")
+            if (AnAdmin.AdminFirstName != "Lisa")
             {
                 OK = false;
             }
@@ -172,11 +172,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AdminID = 2;
+            Int32 AdminID = 491;
             //invoke the method
             Found = AAdmin.Find(AdminID);
             //check the Admin id
-            if (AAdmin.AdminLastName != "Edward")
+            if (AAdmin.AdminLastName != "Simpson")
             {
                 OK = false;
             }
@@ -193,11 +193,11 @@ namespace VirginTestProject
             //boolean variable to record if data is OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 AdminID = 2;
+            Int32 AdminID = 491;
             //invoke the method
             Found = AAdmin.Find(AdminID);
             //check the Admin id
-            if (AAdmin.AdminEmail != "Taf@hotmail.com")
+            if (AAdmin.AdminEmail != "lisa@gmail.co.uk")
             {
                 OK = false;
             }
