@@ -131,15 +131,15 @@ namespace VirginFrontEnd
             return RecordCount;
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //Add the StaffID to session object 
-            Session["StaffID"] = StaffID;
-            //store -1 into the session object to indicate this is a new record
-            Session["StaffID"] = -1;
-            //redirect the user back to the staff add page
-            Response.Redirect("VCHAStaff.aspx");
-        }
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    //Add the StaffID to session object 
+        //    Session["StaffID"] = StaffID;
+        //    //store -1 into the session object to indicate this is a new record
+        //    Session["StaffID"] = -1;
+        //    //redirect the user back to the staff add page
+        //    Response.Redirect("VCHAStaff.aspx");
+        //}
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {

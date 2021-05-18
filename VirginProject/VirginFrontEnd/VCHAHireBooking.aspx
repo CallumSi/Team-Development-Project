@@ -34,13 +34,14 @@
         <asp:Label ID="lblHireDescription" runat="server" style="z-index: 1; left: 200px; top: 295px; position: absolute; bottom: 270px" Text="Description & Info:" ForeColor="White"></asp:Label>
         
         <asp:TextBox ID="txtHireID" runat="server" style="z-index: 1; left: 560px; top: 150px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtHireDate" runat="server" style="z-index: 1; left: 560px; top: 195px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtHireDate" runat="server" style="z-index: 1; left: 560px; top: 195px; position: absolute">20/05/2021</asp:TextBox>
         <asp:TextBox ID="txtHireTime" runat="server" style="z-index: 1; left: 560px; top: 245px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtHireDescription" runat="server" style="z-index: 1; left: 560px; top: 295px; position: absolute; height: 134px; width: 595px;"></asp:TextBox>
+        <asp:TextBox ID="txtHireDescription" runat="server" style="z-index: 1; left: 560px; top: 295px; position: absolute; height: 134px; width: 595px;">Upon collection of the hired vehicle, payment will be required.</asp:TextBox>
 
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 200px; top: 470px; position: absolute" Text="Hire identification data must pertain to an active record, failure to supply correct data will result in the failure of system functionality." ForeColor="White"></asp:Label>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 200px; top: 515px; position: absolute" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 255px; top: 515px; position: absolute; right: 1240px;" Text="Cancel" OnClick="btnCancel_Click" />
+            
         </section>
     </form>
 </body>

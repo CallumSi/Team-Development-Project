@@ -30,7 +30,7 @@
         <section>
         <asp:Button ID="btnApply" runat="server" Height="40px" Width="75px" style="z-index: 1; left: 200px; top: 485px; position: absolute; width: 173px;" Text="Apply Filter" OnClick="btnApply_Click" />
         <asp:Button ID="btnDisplayAll" runat="server" Height="40px" OnClick="btnDisplayAll_Click" style="z-index: 1; left: 400px; top: 485px; position: absolute;" Text="Display All Staff" />
-        <asp:Button ID="btnAdd" runat="server" Height="40px" Width="75px" OnClick="btnAdd_Click" style="z-index: 1; left: 200px; top: 540px; position: absolute" Text="Add" />
+        <%--<asp:Button ID="btnAdd" runat="server" Height="40px" Width="75px" OnClick="btnAdd_Click" style="z-index: 1; left: 200px; top: 540px; position: absolute" Text="Add" />--%>
         <asp:Button ID="btnEdit" runat="server" Height="40px" Width="75px" style="z-index: 1; left: 300px; top: 540px; position: absolute; right: 1272px;" Text="Edit" OnClick="btnEdit_Click" />
         <asp:Button ID="btnDelete" runat="server" Height="40px" Width="75px" style="z-index: 1; left: 400px; top: 540px; position: absolute" Text="Delete" OnClick="btnDelete_Click" />
         <asp:TextBox ID="txtBxSearch" runat="server" Height="30px" style="z-index: 1; left: 470px; top: 440px; position: absolute"></asp:TextBox>

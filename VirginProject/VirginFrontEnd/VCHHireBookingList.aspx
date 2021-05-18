@@ -28,7 +28,7 @@
         </nav>
 
         <section>
-        <asp:TextBox ID="txtHireDate" runat="server" style="z-index: 1; left: 200px; top: 100px; position: absolute; width: 325px;">23/04/2021</asp:TextBox>
+        <asp:TextBox ID="txtHireDate" runat="server" style="z-index: 1; left: 200px; top: 100px; position: absolute; width: 325px;">20/05/2021</asp:TextBox>
         <asp:Button ID="btnSearch" runat="server" style="z-index: 1; left: 550px; top: 100px; position: absolute;" OnClick="btnSearch_Click" Text="Search" />
         <asp:ListBox ID="lstHireBookings" runat="server" Height="300px" Width="800px" style="z-index: 1; left: 200px; top: 150px; position: absolute"></asp:ListBox>
         <asp:Button ID="btnBook" runat="server" style="z-index: 1; left: 550px; top: 515px; position: absolute;" OnClick="btnBook_Click" Text="Book Hire" />

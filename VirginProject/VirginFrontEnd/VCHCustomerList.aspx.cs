@@ -71,13 +71,13 @@ namespace VirginFrontEnd
             DisplayCustomers();
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //store -1 into the session object to indicate this is a new record
-            Session["CustomerID"] = -1;
-            //redirect the user back to the customer add page
-            Response.Redirect("VCHACustomer.aspx");
-        }
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    //store -1 into the session object to indicate this is a new record
+        //    Session["CustomerID"] = -1;
+        //    //redirect the user back to the customer add page
+        //    Response.Redirect("VCHACustomer.aspx");
+        //}
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {

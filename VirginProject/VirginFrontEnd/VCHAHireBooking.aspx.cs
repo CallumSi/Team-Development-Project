@@ -13,7 +13,6 @@ namespace VirginFrontEnd
         //variable to store the primary keywith page level scope
         Int32 StaffID;
         Int32 HireBookingID;
-
         //function to handle this pages load event
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +24,7 @@ namespace VirginFrontEnd
             string HireBookingDate;
             string HireBookingTime;
             //get the date and time from the query string
-            HireBookingDate = Request.QueryString["HireBookingDate"];
+            HireBookingDate = Convert.ToString(Session["HireDate"]);
             HireBookingTime = Request.QueryString["HireBookingTime"];
             //display hire booking date
             txtHireDate.Text = HireBookingDate;

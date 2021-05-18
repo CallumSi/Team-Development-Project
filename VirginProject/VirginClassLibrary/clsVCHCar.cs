@@ -390,7 +390,7 @@ namespace VirginClassLibrary
                         }
                         else
                         {
-                            Error += "Car hire price must be between £50.00 and £999.99";
+                            Error += "Car hire price must be between £50.01 and £999.99";
                         }
                     }
                     else

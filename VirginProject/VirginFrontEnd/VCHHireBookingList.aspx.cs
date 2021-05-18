@@ -46,6 +46,7 @@ namespace VirginFrontEnd
             //Save the StaffID when a page unload event happens
             Session["StaffID"] = StaffID;
             Session["HireBookingList"] = HireBookingList;
+            Session["HireDate"] = txtHireDate.Text;
         }
 
         void DisplayHireBookings()
