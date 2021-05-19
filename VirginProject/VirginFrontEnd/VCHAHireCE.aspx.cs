@@ -12,6 +12,7 @@ namespace VirginFrontEnd
     {
         //variable to store the primary & foreign keys with page level scope
         Int32 CustomerID;
+        Int32 UserID;
         Int32 CarID;
         Int32 HireID;
 
@@ -22,6 +23,7 @@ namespace VirginFrontEnd
             HireID = Convert.ToInt32(Session["HireID"]);
             CarID = Convert.ToInt32(Session["CarID"]);
             CustomerID = Convert.ToInt32(Session["CustomerID"]);
+            UserID = Convert.ToInt32(Session["UserID"]);
 
             lblCarIDDisplay.Text = "[CarID]";
             lblCustomerIDDisplay.Text = "[CustomerID]";
@@ -111,13 +113,18 @@ namespace VirginFrontEnd
         {
             //redirect the user to the customer default page, without having hired a car
             Response.Redirect("VCHCustomerHomeCE.aspx");
+            //Add the CustomerID to the session object
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customer to the customer home page
             Response.Redirect("VCHCustomerHomeCE.aspx");
         }
@@ -126,6 +133,8 @@ namespace VirginFrontEnd
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customers account page 
             Response.Redirect("VCHACustomerCE.aspx");
         }

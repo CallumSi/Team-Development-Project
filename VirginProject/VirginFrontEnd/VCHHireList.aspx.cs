@@ -229,7 +229,7 @@ namespace VirginFrontEnd
                 Session["HireID"] = HireID;
                 Session["HireBookingID"] = -1;
                 //redirect the booking page
-                Response.Redirect("VCHAHireBooking.aspx");
+                Response.Redirect("VCHHireBookingList.aspx");
             }
             else //if a user has not selected a car hire record to book
             {

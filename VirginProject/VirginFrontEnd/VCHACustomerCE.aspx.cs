@@ -158,7 +158,7 @@ namespace VirginFrontEnd
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             //redirect the user to the customer default page, without having added or edited their customer record
-            Response.Redirect("VCHCustomerDefault.aspx");
+            Response.Redirect("VCHCustomerHomeCE.aspx");
             Session["UserID"] = UserID;
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
@@ -175,6 +175,8 @@ namespace VirginFrontEnd
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customers account page 
             Response.Redirect("VCHACustomerCE.aspx");
         }

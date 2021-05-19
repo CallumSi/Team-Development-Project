@@ -21,6 +21,7 @@ namespace VirginFrontEnd
         {
             //get the number of the customer/user to be processed
             CustomerID = Convert.ToInt32(Session["CustomerID"]);
+            UserID = Convert.ToInt32(Session["UserID"]);
 
             //get the number of the car to be processed
             CarID = Convert.ToInt32(Session["CarID"]);
@@ -66,6 +67,7 @@ namespace VirginFrontEnd
         {
             //store -1 into the session object to indicate this is a new record
             Session["CustomerID"] = CustomerID;
+            Session["UserID"] = UserID;
             Session["CarID"] = CarID;
             Session["HireID"] = -1;
             //redirect the user to the hire request page
@@ -76,6 +78,8 @@ namespace VirginFrontEnd
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customer to the customer home page
             Response.Redirect("VCHCustomerHomeCE.aspx");
         }
@@ -84,6 +88,8 @@ namespace VirginFrontEnd
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customer to the customer home page
             Response.Redirect("VCHCustomerHomeCE.aspx");
         }
@@ -92,6 +98,8 @@ namespace VirginFrontEnd
         {
             //Add the CustomerID to session object 
             Session["CustomerID"] = CustomerID;
+            //Add the UserID to the session object
+            Session["UserID"] = UserID;
             //redirect the customers account page 
             Response.Redirect("VCHACustomerCE.aspx");
         }
